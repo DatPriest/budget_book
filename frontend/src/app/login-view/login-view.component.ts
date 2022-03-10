@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-login-view',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router) { }
+
+  newBenutzer(): void {
+    this.router.navigate(['register']);
+  }
 
   ngOnInit(): void {
   }

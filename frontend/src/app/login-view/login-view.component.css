@@ -18,12 +18,12 @@
   box-shadow: 0px 0px 24px #5C5696;
 }
 
-.screen__content {
+.screen_content {
   z-index: 1;
   position: relative;
   height: 100%;
 }
-.screen__background {
+.screen_background {
   position: absolute;
   top: 0;
   left: 0;
@@ -34,7 +34,7 @@
   clip-path: inset(0 0 0 0);
 }
 
-.screen__background__shape1 {
+.screen_background_shape1 {
   height: 520px;
   width: 520px;
   background: #FFF;
@@ -43,7 +43,7 @@
   border-radius: 0 72px 0 0;
 }
 
-.screen__background__shape2 {
+.screen_background_shape2 {
   height: 220px;
   width: 220px;
   background: #A4A4A4;
@@ -52,7 +52,7 @@
   border-radius: 32px;
 }
 
-.screen__background__shape3 {
+.screen_background_shape3 {
   height: 540px;
   width: 190px;
   background: linear-gradient(270deg, #585858, #A4A4A4);
@@ -61,7 +61,7 @@
   border-radius: 32px;
 }
 
-.screen__background__shape4 {
+.screen_background_shape4 {
   height: 400px;
   width: 200px;
   background: #585858;
@@ -69,30 +69,26 @@
   right: 50px;
   border-radius: 60px;
 }
+
 .login {
   width: 320px;
   padding: 20px;
   padding-top: 150px;
 }
 
-.login__field {
+.login_field {
   padding: 15px 0px;
   position: relative;
 }
 
-.login__icon {
-  position: absolute;
-  color: #7875B5;
-}
-
-.login__input:active,
-.login__input:focus,
-.login__input:hover {
+.login_input:active,
+.login_input:focus,
+.login_input:hover {
   outline: none;
   border-bottom-color: #6A679E;
 }
 
-.login__submit {
+.login_submit {
   background: #fff;
   font-size: 16px;
   padding: 16px 20px;
@@ -109,14 +105,38 @@
   transition: .2s;
 }
 
-.login__submit:active,
-.login__submit:focus,
-.login__submit:hover {
+.login_submit:active,
+.login_submit:focus,
+.login_submit:hover {
   border-color: #6A679E;
   outline: none;
 }
 
-.button__icon {
+.register_submit {
+  background: #fff;
+  font-size: 16px;
+  padding: 16px 20px;
+  border-radius: 26px;
+  border: 1px solid #D4D3E8;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: #4C489D;
+  box-shadow: 0px 2px 2px #5C5696;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.register_submit:active,
+.register_submit:focus,
+.register_submit:hover {
+  border-color: #6A679E;
+  outline: none;
+}
+
+.button_icon {
   margin-left: auto;
   color: #7875B5;
 }

@@ -6,8 +6,6 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  index: number = 0;
-
   ngOnInit(): void {
   }
 }
