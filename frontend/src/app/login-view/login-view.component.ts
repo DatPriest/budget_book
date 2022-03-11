@@ -20,4 +20,8 @@ export class LoginViewComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  newPassword(): void {
+
+  }
 }

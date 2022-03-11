@@ -42,7 +42,7 @@
   width: 520px;
   background: #FFF;
   top: -50px;
-  right: 120px;
+  right: 100px;
   border-radius: 0 72px 0 0;
 }
 
@@ -101,8 +101,9 @@
   font-weight: 700;
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 75%;
   color: #4C489D;
+  margin-bottom: 10px;
   box-shadow: 0px 2px 2px #5C5696;
   cursor: pointer;
   transition: .2s;
@@ -116,25 +117,46 @@
 }
 
 .register_submit {
-  background: #fff;
-  font-size: 16px;
-  padding: 16px 20px;
-  border-radius: 26px;
-  border: 1px solid #D4D3E8;
+  background: transparent;
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  border-radius: 0px;
+  border: transparent;
   text-transform: uppercase;
   font-weight: 700;
   display: flex;
   align-items: center;
-  width: 100%;
-  color: #4C489D;
-  box-shadow: 0px 2px 2px #5C5696;
+  width: 0%;
+  color: rgb(0, 121, 255);
+  box-shadow: 0px 2px 2px transparent;
   cursor: pointer;
-  transition: .2s;
+  transition: .0s;
 }
 
 .register_submit:active,
 .register_submit:focus,
 .register_submit:hover {
+  border-color: #6A679E;
+  outline: none;
+}
+
+.new_password_submit{
+  background: transparent;
+  padding: 5px 22px;
+  font-size: 14px;
+  border-radius: 0px;
+  border: transparent;
+  width: 0%;
+  color: rgb(0, 121, 255);
+  box-shadow: 0px 2px 2px transparent;
+  cursor: pointer;
+  transition: .0s;
+}
+
+.new_password_submit:active,
+.new_password_submit:focus,
+.new_password_submit:hover {
   border-color: #6A679E;
   outline: none;
 }
