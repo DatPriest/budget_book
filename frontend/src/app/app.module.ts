@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginViewComponent } from './login-view/login-view.component';
 import { RouterModule } from "@angular/router";
+import { LoginViewComponent } from './login-view/login-view.component';
 import { RegisterViewComponent } from './register-view/register-view.component';
 
 @NgModule({

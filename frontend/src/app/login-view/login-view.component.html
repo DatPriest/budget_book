@@ -1,28 +1,33 @@
 <form>
-  <body>
-    <div class="container">
-      <div class="screen">
+  <div class="container">
+    <div class="screen">
+      <header>
         <div class="screen_content">
           <form class="login">
             <span class="header_Text" >Bei dasistcool anmelden</span>
             <div class="login_field">
-              <input type="email" class="login_input" placeholder="E-Mail" #usernameI>
+              <input type="email" class="login_input" placeholder="E-Mail" username>
             </div>
             <div class="login_field">
-              <input type="password" class="login_input" placeholder="Password" #passwordI>
+              <input type="password" class="login_input" placeholder="Password" password>
             </div>
-            <button type="button" class="button login_submit" id="login">
+            <button type="button" class="button login_submit" id="login" (click)="loginUser()">
               <span class="button_text">Login</span>
+            </button>
+            <button type="button" class="button register_submit" id="register" (click)="newUser()">
+              <span class="button_text">Registrieren</span>
             </button>
           </form>
         </div>
+      </header>
+      <body>
         <div class="screen_background">
           <span class="screen_background_shape screen_background_shape4"></span>
           <span class="screen_background_shape screen_background_shape3"></span>
           <span class="screen_background_shape screen_background_shape2"></span>
           <span class="screen_background_shape screen_background_shape1"></span>
         </div>
-      </div>
+      </body>
     </div>
-  </body>
+  </div>
 </form>

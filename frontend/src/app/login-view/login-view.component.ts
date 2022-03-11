@@ -10,7 +10,11 @@ export class LoginViewComponent implements OnInit {
 
   constructor(public router: Router) { }
 
-  newBenutzer(): void {
+  loginUser(): void {
+
+  }
+
+  newUser(): void {
     this.router.navigate(['register']);
   }
 
