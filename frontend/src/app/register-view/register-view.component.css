@@ -209,3 +209,13 @@
 .sicherheit_Text {
   font-size: 11px;
 }
+
+#message{
+  position: absolute;
+  color: rgb(0, 0, 0);
+  font-size: 15px;
+  display: none;
+}
+::placeholder{
+  font-size: 15px;
+}

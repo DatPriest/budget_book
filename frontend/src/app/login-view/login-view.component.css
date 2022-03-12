@@ -119,12 +119,12 @@
 
 /* Registrieren Button */
 .register_submit {
-  background: transparent;
+  background: none;
   font-size: 11px;
   margin-bottom: 10px;
   padding: 10px 20px;
   border-radius: 0px;
-  border: transparent;
+  border: none;
   text-transform: uppercase;
   font-weight: 700;
   display: flex;
@@ -145,11 +145,11 @@
 
 /*  Passwort vergessen Button */
 .new_password_submit{
-  background: transparent;
+  background: none;
   padding: 5px 22px;
   font-size: 11px;
   border-radius: 0px;
-  border: transparent;
+  border: none;
   width: 0%;
   color: rgb(0, 121, 255);
   box-shadow: 0px 2px 2px transparent;
