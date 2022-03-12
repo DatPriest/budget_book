@@ -4,12 +4,12 @@
       <header>
         <div class="screen_content">
           <form class="login">
-            <span class="header_Text" >Bei dasistcool anmelden</span>
-            <div class="login_field">
-              <input type="email" class="login_input" placeholder="E-Mail" username>
+            <span class="header_Text">Bei dasistcool anmelden</span>
+            <div class="input_field">
+              <input type="email" class="input_field" id="UserEmail" placeholder="E-Mail">
             </div>
-            <div class="login_field">
-              <input type="password" class="login_input" placeholder="Password" password>
+            <div class="input_field">
+              <input type="password" class="input_field" id="UserPassword" placeholder="Password">
             </div>
             <button type="button" class="button login_submit" id="login" (click)="loginUser()">
               <span class="button_text">Login</span>
@@ -18,7 +18,7 @@
               <span class="button">Passwort vergessen?</span>
             </button>
             <button type="button" class="button register_submit" id="register" (click)="newUser()">
-              <span class="button_text">Registrieren</span>
+              <span>Registrieren</span>
             </button>
           </form>
         </div>

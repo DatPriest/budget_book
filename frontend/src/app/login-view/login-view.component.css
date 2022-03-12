@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  margin: 0;
   padding: 0;
   font-family: Raleway, sans-serif;
 }
@@ -79,18 +78,20 @@
   padding-top: 150px;
 }
 
-.login_field {
-  padding: 15px 0px;
+/* Login Felder */
+.input_field {
+  padding: 10px 0px;
   position: relative;
 }
 
-.login_input:active,
-.login_input:focus,
-.login_input:hover {
+.input_field:active,
+.input_field:focus,
+.input_field:hover {
   outline: none;
   border-bottom-color: #6A679E;
 }
 
+/* Login Button */
 .login_submit {
   background: #fff;
   font-size: 16px;
@@ -116,9 +117,10 @@
   outline: none;
 }
 
+/* Registrieren Button */
 .register_submit {
   background: transparent;
-  font-size: 14px;
+  font-size: 11px;
   margin-bottom: 10px;
   padding: 10px 20px;
   border-radius: 0px;
@@ -137,14 +139,15 @@
 .register_submit:active,
 .register_submit:focus,
 .register_submit:hover {
-  border-color: #6A679E;
+  color: #2688b6;
   outline: none;
 }
 
+/*  Passwort vergessen Button */
 .new_password_submit{
   background: transparent;
   padding: 5px 22px;
-  font-size: 14px;
+  font-size: 11px;
   border-radius: 0px;
   border: transparent;
   width: 0%;
@@ -159,11 +162,6 @@
 .new_password_submit:hover {
   border-color: #6A679E;
   outline: none;
-}
-
-.button_icon {
-  margin-left: auto;
-  color: #7875B5;
 }
 
 .social-icons {
