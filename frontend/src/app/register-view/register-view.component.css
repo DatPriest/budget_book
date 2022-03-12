@@ -99,7 +99,7 @@
 .register {
   width: 550px;
   padding: 20px;
-  padding-top: 150px;
+  padding-top: 75px;
 }
 
 /* Login Felder */
@@ -115,6 +115,11 @@
   border-bottom-color: #6A679E;
 }
 
+.column_button {
+  float: left;
+  width: 160px;
+}
+
 /* Registrieren Button */
 .register_submit {
   background: #fff;
@@ -126,9 +131,9 @@
   font-weight: 700;
   display: flex;
   align-items: center;
-  width: 75%;
+  width: 95%;
   color: #4C489D;
-  margin-bottom: 10px;
+  margin-bottom: 2px;
   box-shadow: 0px 2px 2px #5C5696;
   cursor: pointer;
   transition: .2s;
@@ -185,7 +190,7 @@
   font-weight: 700;
   display: flex;
   align-items: center;
-  width: 75%;
+  width: 95%;
   color: #4C489D;
   margin-bottom: 10px;
   box-shadow: 0px 2px 2px #5C5696;
@@ -208,6 +213,24 @@
 
 .sicherheit_Text {
   font-size: 11px;
+}
+
+.sicherheit_menu {
+  border-radius: 20px;
+  width: 75%;
+}
+
+.sicherheit_field {
+  padding: 10px 0px;
+  position: relative;
+  width: 85%;
+}
+
+.sicherheit_field:active,
+.sicherheit_field:focus,
+.sicherheit_field:hover {
+  outline: none;
+  border-bottom-color: #6A679E;
 }
 
 #message{
