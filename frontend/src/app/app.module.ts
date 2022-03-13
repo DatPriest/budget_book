@@ -6,13 +6,15 @@ import { RouterModule } from "@angular/router";
 import { LoginViewComponent } from './login-view/login-view.component';
 import { RegisterViewComponent } from './register-view/register-view.component';
 import { PasswordForgottenViewComponent } from './password-forgotten-view/password-forgotten-view.component';
+import { MainMenuViewComponent } from './main-menu-view/main-menu-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginViewComponent,
     RegisterViewComponent,
-    PasswordForgottenViewComponent
+    PasswordForgottenViewComponent,
+    MainMenuViewComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +22,8 @@ import { PasswordForgottenViewComponent } from './password-forgotten-view/passwo
     RouterModule.forRoot([
       {path: '',component: LoginViewComponent},
       {path: 'register',component: RegisterViewComponent},
-      {path: 'password-forgotten',component: PasswordForgottenViewComponent}
+      {path: 'password-forgotten',component: PasswordForgottenViewComponent},
+      {path: 'main-menu',component: MainMenuViewComponent}
     ])
   ],
   providers: [],

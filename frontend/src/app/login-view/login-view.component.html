@@ -9,7 +9,14 @@
               <input type="email" class="input_field" id="UserEmail" placeholder="E-Mail">
             </div>
             <div class="input_field">
-              <input type="password" class="input_field" id="UserPassword" placeholder="Password">
+              <div *ngIf="!this.hidepasswort">
+                <input type="password" class="input_field" id="UserPassword" placeholder="Password" value="Inhalt">
+                <button type="button" class="show_passwort" (click)="showPassword()">Passwort</button>
+              </div>
+              <div *ngIf="this.hidepasswort">
+                <input type="text" class="input_field" id="UserPassword" placeholder="Password" value="Inhalt">
+                <button type="button" class="hide_passwort" (click)="showPassword()">Text</button>
+              </div>
             </div>
             <button type="button" class="button login_submit" id="login" (click)="loginUser()">
               <span class="button_text">Login</span>
@@ -22,6 +29,7 @@
             </button>
           </form>
         </div>
+
       </header>
       <body>
         <div class="screen_background">
