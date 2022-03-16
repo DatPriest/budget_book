@@ -14,4 +14,8 @@ public class User {
         this.firstName = _firstName;
         this.email = _email;
     }
+
+    public User(String _email) {
+        this.email = _email;
+    }
 }

@@ -1,5 +1,6 @@
 package de.szut.backend.controller;
 
+import de.szut.backend.model.RegisterDto;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,5 +26,9 @@ public class LoginController {
     @PostMapping(path = "/", consumes = "application/json", produces = "application/json")
     public User Login(@RequestBody LoginDto dto) throws TypeNotPresentException{
          return service.login(dto);
+    }
+    @PostMapping(path = "/register", consumes = "application/json", produces = "application/json")
+    public User Register(@RequestBody RegisterDto dto) throws TypeNotPresentException{
+        return service.register(dto);
     }
 }
