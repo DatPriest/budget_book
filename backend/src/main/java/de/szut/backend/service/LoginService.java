@@ -37,7 +37,7 @@ public class LoginService extends DatabaseService {
 
         // Save User to Database with salt
 
-        return this.instance.saveUserToDatabase(dto);
+        return DatabaseService.getInstance().saveUserToDatabase(dto);
     }
 
 

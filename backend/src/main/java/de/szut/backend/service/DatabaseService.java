@@ -11,9 +11,14 @@ import java.util.UUID;
 
 @Service
 public class DatabaseService extends BaseService {
-    protected DatabaseService instance;
+    private static DatabaseService instance;
     public DatabaseService() {
-        this.instance = this;
+    }
+    public static DatabaseService getInstance() {
+        if (instance == null) {
+            instance = new DatabaseService();
+        }
+        return instance;
     }
 
     protected User saveUserToDatabase(RegisterDto dto) {

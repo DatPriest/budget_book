@@ -1,6 +1,7 @@
 package de.szut.backend.controller;
 
 import de.szut.backend.model.User;
+import de.szut.backend.repository.UserRepository;
 import de.szut.backend.service.UserService;
 
 import org.apache.logging.log4j.LogManager;
@@ -17,10 +18,12 @@ import com.google.gson.Gson;
 @RequestMapping(value = "/api/v1/user")
 public class UserController {
     private final UserService service;
+    private final UserRepository userRepository;
     private static final Logger LOGGER = LogManager.getLogger();
 
-    public UserController(UserService service) {
-        this.service = service;
+    public UserController(UserService _service, UserRepository _userRepository) {
+        this.service = _service;
+        this.userRepository = _userRepository;
     }
 
     @GetMapping(path = "/some", produces = "application/json")
