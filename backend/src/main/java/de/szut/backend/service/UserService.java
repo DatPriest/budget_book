@@ -6,10 +6,10 @@ import de.szut.backend.model.User;
 import org.apache.logging.log4j.Logger;
 
 @Service
-public class UserService extends ParentService {
+public class UserService extends DatabaseService {
 
     public UserService() {
-
+        super();
     }
 
     public User[] GetUser() {

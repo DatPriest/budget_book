@@ -14,7 +14,7 @@ import de.szut.backend.model.User;
 import de.szut.backend.service.LoginService;
 
 @RestController
-@RequestMapping(value = "/api/v1/login")
+@RequestMapping(value = "/api/v1/")
 public class LoginController {
     private final LoginService service;
     private static final Logger LOGGER = LogManager.getLogger();
@@ -23,7 +23,7 @@ public class LoginController {
         this.service = _service;
     }
 
-    @PostMapping(path = "/", consumes = "application/json", produces = "application/json")
+    @PostMapping(path = "/login", consumes = "application/json", produces = "application/json")
     public User Login(@RequestBody LoginDto dto) throws TypeNotPresentException{
          return service.login(dto);
     }

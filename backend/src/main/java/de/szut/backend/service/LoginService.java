@@ -15,51 +15,30 @@ import java.security.NoSuchAlgorithmException;
 import java.util.UUID;
 
 @Service
-public class LoginService extends ParentService {
-
+public class LoginService extends DatabaseService {
     public LoginService() {
         super();
     }
 
     public User login(LoginDto dto) {
-        ParentService.LOGGER.info(dto);
+
+        this.logger.info(dto);
         if (dto.password.contentEquals("test") && dto.userName.contentEquals("test"))
         {
-            ParentService.LOGGER.info("YESSSS");
+            this.logger.info("YES");
             return new User("MusterJulian", "Lukas", "Lukas@Lukasmail.Julian.de");
         }
         return new User(null, null, null);
     }
 
     public User register(RegisterDto dto) {
-        ParentService.LOGGER.info(dto);
-        dto.hash += this.getSalt();
-        dto.hash = hashPassword(dto.hash);
+        this.logger.info(dto.toString());
+
 
         // Save User to Database with salt
 
-        return saveUserToDatabase(dto);
+        return this.instance.saveUserToDatabase(dto);
     }
 
-    private User saveUserToDatabase(RegisterDto dto) {
-        // Dont works actually, just returning a new User
-        return new User(dto.email);
-    }
 
-    private String hashPassword(String hash) {
-        try {
-            MessageDigest digest = MessageDigest.getInstance("SHA-256");
-            return digest.digest(
-                    hash.getBytes(StandardCharsets.UTF_8)).toString();
-        }
-        catch (NoSuchAlgorithmException e) {
-            ParentService.LOGGER.error(e);
-        }
-
-        throw new RuntimeException("Hash couldn't generated!");
-    }
-
-    private String getSalt() {
-       return UUID.randomUUID().toString();
-    }
 }
