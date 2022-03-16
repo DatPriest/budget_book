@@ -8,17 +8,11 @@ import { Router } from "@angular/router";
 })
 export class LoginViewComponent implements OnInit {
 
-  hidepasswort: boolean = false;
+  showPassword: boolean = false;
   constructor(public router: Router) { }
 
-  showPassword(): boolean {
-    if(this.hidepasswort == true) {
-      this.hidepasswort = false;
-    }
-    else {
-      this.hidepasswort = true;
-    }
-    return this.hidepasswort;
+  public togglePassword() {
+    this.showPassword = !this.showPassword;
   }
 
   loginUser(): void {

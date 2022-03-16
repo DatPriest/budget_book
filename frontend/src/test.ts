@@ -1,4 +1,4 @@
-// LBU Datei in Commit "9f75373" gelöscht und wieder in Commit "xyz" wiederhergestellt. 
+// LBU Datei in Commit "9f75373" gelöscht und in Commit "e5414d7" wiederhergestellt.
 // This file is required by karma.conf.js and loads recursively all the .spec and framework files
 
 import 'zone.js/testing';
