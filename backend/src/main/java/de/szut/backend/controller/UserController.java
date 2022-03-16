@@ -27,8 +27,7 @@ public class UserController {
     public String GetUser() {
         User[] userList = this.service.GetUser();
         Gson gson = new Gson();
-        // gson.toJson(userList);
-        this.LOGGER.info(userList[0].age);
+        this.LOGGER.info(userList[0]);
         return gson.toJson(userList);
     }
 }

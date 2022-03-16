@@ -22,8 +22,8 @@ public class LoginController {
         this.service = _service;
     }
 
-    @PostMapping(path = "/", consumes = "application/json")
-    public User Login(@RequestBody LoginDto dto) {
-        return new User(dto.userName, dto.password);
+    @PostMapping(path = "/", consumes = "application/json", produces = "application/json")
+    public User Login(@RequestBody LoginDto dto) throws TypeNotPresentException{
+         return service.login(dto);
     }
 }

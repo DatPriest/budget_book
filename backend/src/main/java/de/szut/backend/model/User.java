@@ -1,11 +1,17 @@
 package de.szut.backend.model;
 
 public class User {
-    public String name;
-    public int age;
+    public String lastName;
+    public String firstName;
+    public String email;
 
-    public User(String _name, int _age) {
-        this.name = _name;
-        this.age = _age;
+    public User(
+            String _lastName,
+            String _firstName,
+            String _email)
+    {
+        this.lastName = _lastName;
+        this.firstName = _firstName;
+        this.email = _email;
     }
 }
