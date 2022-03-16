@@ -41,8 +41,9 @@
   width: 520px;
   background: #FFF;
   top: -50px;
-  right: 100px;
+  right: 120px;
   border-radius: 0 72px 0 0;
+
 }
 
 .screen_background_shape2 {
@@ -55,10 +56,10 @@
 }
 
 .screen_background_shape3 {
-  height: 540px;
+  height: 640px;
   width: 190px;
   background: linear-gradient(270deg, #585858, #A4A4A4);
-  top: -24px;
+  top: -68px;
   right: 0;
   border-radius: 32px;
 }
@@ -73,9 +74,9 @@
 }
 
 .login {
-  width: 320px;
+  width: 280px;
   padding: 20px;
-  padding-top: 150px;
+  padding-top: 130px;
 }
 
 /* Login Felder */
@@ -121,7 +122,6 @@
 .register_submit {
   background: none;
   font-size: 11px;
-  margin-bottom: 10px;
   padding: 10px 20px;
   border-radius: 0px;
   border: none;
@@ -139,7 +139,7 @@
 .register_submit:active,
 .register_submit:focus,
 .register_submit:hover {
-  color: #2688b6;
+  color: #000000;
   outline: none;
 }
 
@@ -160,7 +160,7 @@
 .new_password_submit:active,
 .new_password_submit:focus,
 .new_password_submit:hover {
-  border-color: #6A679E;
+  color: #000000;
   outline: none;
 }
 
@@ -191,6 +191,12 @@
   box-shadow: 0px 2px 2px transparent;
   cursor: pointer;
   transition: .0s;
+}
+.show_passwort:active,
+.show_passwort:focus,
+.show_passwort:hover {
+  color: #000000;
+  outline: none;
 }
 
 .hide_passwort{
