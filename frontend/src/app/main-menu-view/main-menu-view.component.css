@@ -1,13 +1,12 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  text-align: center;
-  padding: 0;
 }
 
 .header_Hauptmenu {
   color: black;
   font-size: 40px;
+  text-align: center;
   font-family: Raleway, sans-serif;
 }
 
@@ -170,3 +169,23 @@
   border-radius: 32px;
 }
 
+.burgerMenu{
+  font-size: 20px;
+  left: -250px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.group {
+  font-size: 20px;
+  color: black;
+  /*text-align: center !important;
+  position: calc(height/width);*/
+}
+
+.group_create {
+  font-size: 150px;
+  color: black;
+  height: 150px;
+  width: 550px;
+}

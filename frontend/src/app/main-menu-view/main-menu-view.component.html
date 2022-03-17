@@ -1,5 +1,8 @@
 <form>
-  <span class="header_Hauptmenu">Hallo Hauptmenü</span>
+  <span class="material-icons burgerMenu">
+    menu
+    </span>
+  <span class="header_Hauptmenu">Hauptmenü</span>
   <div class="container">
     <div class="screen">
       <body>
@@ -14,10 +17,12 @@
         <span class="screen_background_shape screen_background_shape4"></span>
         <span class="screen_background_shape screen_background_shape3"></span>
         <span class="screen_background_shape screen_background_shape2"></span>
-        <span class="screen_background_shape screen_group_1"></span>
-        <span class="screen_background_shape screen_group_2"></span>
-        <span class="screen_background_shape screen_group_3"></span>
-        <span class="screen_background_shape screen_group_4"></span>
+        <ng-container>
+          <button type="button" id="Group1" class="screen_background_shape screen_group_1"><span class="group">1</span></button>
+          <button type="button" id="Group2" class="screen_background_shape screen_group_2"><span class="group">2</span></button>
+          <button type="button" id="Group3" class="screen_background_shape screen_group_3"><span class="group">3</span></button>
+        </ng-container>
+        <button type="button" id="createGroup" class="screen_background_shape screen_group_4" (click)="createGroup()"><span class="group_create material-icons">add_circle_outline</span></button>
       </div>
       </body>
     </div>

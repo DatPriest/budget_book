@@ -10,8 +10,8 @@ export class MainMenuViewComponent implements OnInit {
 
   constructor(public router: Router) { }
 
-  logout(): void {
-    this.router.navigate(['']);
+  createGroup(): void {
+    //this.router.navigate(['']);
   }
 
   ngOnInit(): void {
