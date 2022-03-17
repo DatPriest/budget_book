@@ -5,6 +5,9 @@ import de.szut.backend.model.LoginDto;
 import de.szut.backend.model.RegisterDto;
 import de.szut.backend.model.User;
 import de.szut.backend.service.VerificationService;
+import org.apache.coyote.Response;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,11 +24,15 @@ public class VerificationController {
     }
 
     @PostMapping(path = "/login", consumes = "application/json", produces = "application/json")
-    public User Login(@RequestBody LoginDto dto) throws TypeNotPresentException{
-        return service.login(dto);
+    public ResponseEntity<User> Login(@RequestBody LoginDto dto) throws TypeNotPresentException{
+        return new ResponseEntity<>(service.login(dto), HttpStatus.OK);
     }
     @PostMapping(path = "/register", consumes = "application/json", produces = "application/json")
-    public User Register(@RequestBody RegisterDto dto) throws TypeNotPresentException{
-        return service.register(dto);
+    public ResponseEntity<User> Register(@RequestBody RegisterDto dto) throws TypeNotPresentException {
+        User result = service.register(dto);
+        if (result.email == null) {
+            return new ResponseEntity("Email already exists", HttpStatus.NOT_ACCEPTABLE);
+        }
+        return new ResponseEntity(result, HttpStatus.CREATED);
     }
 }

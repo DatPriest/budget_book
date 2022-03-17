@@ -15,6 +15,7 @@ public class User {
     public String lastName;
     public String firstName;
     public String email;
+    public String salt;
     public String hash;
     @CreationTimestamp
     public Date created;

@@ -4,11 +4,11 @@ import lombok.Data;
 
 @Data
 public class LoginDto {
-    public String userName;
-    public String password;
+    public String email;
+    public String hash;
 
-    public LoginDto(String _username, String _password) {
-        this.userName = _username;
-        this.password = _password;
+    public LoginDto(String _email, String _hash) {
+        this.email = _email;
+        this.hash = _hash;
     }
 }

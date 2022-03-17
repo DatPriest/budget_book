@@ -5,11 +5,15 @@ import de.szut.backend.model.LoginDto;
 import de.szut.backend.model.RegisterDto;
 import de.szut.backend.model.User;
 import de.szut.backend.repository.UserRepository;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.UUID;
 
 @Service
@@ -24,24 +28,28 @@ public class VerificationService extends BaseService {
     }
 
     public User login(LoginDto dto) {
-
-        this.logger.info(dto);
-        if (dto.password.contentEquals("test") && dto.userName.contentEquals("test"))
-        {
-            this.logger.info("YES");
-            return new User();
+        User user = this.userMapper.mapLoginDtoToUser(dto);
+        User queryUser = userRepository.findByEmail(user.email);
+        if (hashPassword(user.hash + queryUser.salt).equals(queryUser.hash)) {
+            queryUser.lastLogin = new Date();
+            userRepository.save(queryUser);
+            return queryUser;
+        } else {
+            return null;
         }
-        return new User();
     }
 
     public User register(RegisterDto dto) {
         this.logger.info(dto.toString());
 
-
         // Save User to Database with salt
-        dto.hash = hashPassword(dto.hash);
-        //return this.userRepository.save(new User().hash);
+        dto.salt = getSalt();
+        dto.hash = hashPassword(dto.hash + dto.salt);
 
+        //return this.userRepository.save(new User().hash);
+        if (userRepository.existsByEmail(dto.email)) {
+            return new User();
+        }
         return this.userRepository.save(userMapper.mapRegisterDtoToUser(dto));
     }
 
@@ -49,7 +57,7 @@ public class VerificationService extends BaseService {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             byte[] encodedHash = digest.digest(
-                    saltHash(hash).getBytes(StandardCharsets.UTF_16));
+                    hash.getBytes(StandardCharsets.UTF_16));
             return bytesToHex(encodedHash);
         }
         catch (NoSuchAlgorithmException e) {
@@ -59,8 +67,8 @@ public class VerificationService extends BaseService {
         throw new RuntimeException("Hash couldn't generated!");
     }
 
-    private String saltHash(String hash) {
-        return (hash + UUID.randomUUID().toString());
+    private String getSalt() {
+        return UUID.randomUUID().toString();
     }
 
     private String bytesToHex(byte[] hash) {
