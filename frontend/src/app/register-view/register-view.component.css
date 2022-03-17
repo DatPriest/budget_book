@@ -2,7 +2,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Raleway, sans-serif;
 }
 
 .container {
@@ -106,7 +105,7 @@
 
 .column {
   float: left;
-  width: 50%;
+  width: 45%;
 }
 
 .row:after {
@@ -116,9 +115,10 @@
 }
 
 .register {
-  width: 550px;
+  width: 560px;
   padding: 20px;
   padding-top: 75px;
+  font-family: Raleway, sans-serif;
 }
 
 /* Login Felder */
@@ -242,7 +242,7 @@
 .sicherheit_field {
   padding: 10px 0px;
   position: relative;
-  width: 85%;
+  width: 80%;
 }
 
 .sicherheit_field:active,
@@ -260,4 +260,13 @@
 }
 ::placeholder{
   font-size: 15px;
+}
+
+.show_passwort{
+  font-size: 20px;
+  border: none;
+  align-items: center;
+  width: 0%;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
 }

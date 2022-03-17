@@ -176,18 +176,10 @@
 }
 
 .show_passwort{
-  background: none;
-  font-size: 11px;
-  margin-bottom: 10px;
-  border-radius: 0px;
+  font-size: 20px;
   border: none;
-  font-weight: 700;
-  display: flex;
   align-items: center;
   width: 0%;
   color: rgb(0, 0, 0);
-  box-shadow: 0px 2px 2px transparent;
   cursor: pointer;
-  transition: .0s;
-  top: 500px;
 }

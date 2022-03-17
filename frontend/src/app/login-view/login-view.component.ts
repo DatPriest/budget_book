@@ -11,7 +11,7 @@ export class LoginViewComponent implements OnInit {
   showPassword: boolean = false;
   constructor(public router: Router) { }
 
-  public togglePassword() {
+  togglePassword(): void {
     this.showPassword = !this.showPassword;
   }
 

@@ -8,7 +8,17 @@ import { Router } from "@angular/router";
 })
 export class PasswordForgottenViewComponent implements OnInit {
 
+  showPassword: boolean = false;
+  showPasswordReplay: boolean = false;
   constructor(public router: Router) { }
+
+  togglePassword(): void {
+    this.showPassword = !this.showPassword;
+  }
+
+  togglePasswordReplay(): void {
+    this.showPasswordReplay = !this.showPasswordReplay;
+  }
 
   savePassword(): void {
     //this.router.navigate(['']);
