@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/api/v1/user")
 public class UserController {
@@ -28,9 +30,9 @@ public class UserController {
 
     @GetMapping(path = "/some", produces = "application/json")
     public String GetUser() {
-        User[] userList = this.service.GetUser();
+        List<User> userList = this.service.GetAllUser();
         Gson gson = new Gson();
-        this.LOGGER.info(userList[0]);
+        this.LOGGER.info(userList.get(0));
         return gson.toJson(userList);
     }
 }

@@ -1,25 +1,24 @@
 package de.szut.backend.service;
 
+import de.szut.backend.repository.UserRepository;
 import org.apache.logging.log4j.LogManager;
 import org.springframework.stereotype.Service;
 import de.szut.backend.model.User;
 import org.apache.logging.log4j.Logger;
 
-@Service
-public class UserService extends DatabaseService {
+import java.util.List;
 
-    public UserService() {
+@Service
+public class UserService extends BaseService {
+    private UserRepository userRepository;
+    public UserService(UserRepository _userRepository) {
         super();
+        this.userRepository = _userRepository;
     }
 
-    public User[] GetUser() {
+    public List<User> GetAllUser() {
 
         // Default Values
-        User[] userList = {
-                new User("Toastmann", "Simon", "Simon"),
-                new User("Nochmann", "Simon", "Simon"),
-                new User("Lukasmann", "Simon", "Simon"),
-        };
-        return userList;
+        return userRepository.findAll();
     }
 }
