@@ -1,5 +1,6 @@
 package de.szut.backend.service;
 
+import de.szut.backend.mapper.UserMapper;
 import de.szut.backend.model.LoginDto;
 import de.szut.backend.model.RegisterDto;
 import de.szut.backend.model.User;
@@ -14,8 +15,12 @@ import java.util.UUID;
 @Service
 public class VerificationService extends BaseService {
     UserRepository userRepository;
-    public VerificationService(UserRepository _userRepository) {
+    UserMapper userMapper;
+
+    public VerificationService(UserRepository _userRepository, UserMapper _userMapper) {
         this.userRepository = _userRepository;
+        this.userMapper = _userMapper;
+
     }
 
     public User login(LoginDto dto) {
@@ -36,7 +41,8 @@ public class VerificationService extends BaseService {
         // Save User to Database with salt
         dto.hash = hashPassword(dto.hash);
         //return this.userRepository.save(new User().hash);
-        return new User();
+
+        return this.userRepository.save(userMapper.mapRegisterDtoToUser(dto));
     }
 
     private String hashPassword(String hash) {

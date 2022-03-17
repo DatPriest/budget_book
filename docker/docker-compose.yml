@@ -1,17 +1,11 @@
-version: '3'
-
-volumes:
-  budget_book_postgres_data:
-    driver: local
 
 services:
   postgres-budget-book:
     image: postgres:13.3
-    volumes:
-      - budget_book_postgres_data:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: budget_db
-      POSTGRES_USER: budget
-      POSTGRES_PASSWORD: secret
+      POSTGRES_USER: budget # The PostgreSQL user (useful to connect to the database)
+      POSTGRES_PASSWORD: secret # The PostgreSQL password (useful to connect to the database)
+      POSTGRES_DB: budget_db # The PostgreSQL default database (automatically created at first launch)
+    restart: unless-stopped
     ports:
       - "5432:5432"

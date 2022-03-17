@@ -1,5 +1,6 @@
 package de.szut.backend.controller;
 
+import de.szut.backend.mapper.UserMapper;
 import de.szut.backend.model.LoginDto;
 import de.szut.backend.model.RegisterDto;
 import de.szut.backend.model.User;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/api/v1/verification")
 public class VerificationController {
     VerificationService service;
+    UserMapper userMapper;
+
     public VerificationController (VerificationService _service) {
         this.service = _service;
     }
