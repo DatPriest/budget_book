@@ -7,6 +7,7 @@ import { LoginViewComponent } from './component/login-view/login-view.component'
 import { RegisterViewComponent } from './component/register-view/register-view.component';
 import { PasswordForgottenViewComponent } from './component/password-forgotten-view/password-forgotten-view.component';
 import { MainMenuViewComponent } from './component/main-menu-view/main-menu-view.component';
+import { BackgroundViewComponent } from './component/background-view/background-view.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MainMenuViewComponent } from './component/main-menu-view/main-menu-view
     LoginViewComponent,
     RegisterViewComponent,
     PasswordForgottenViewComponent,
-    MainMenuViewComponent
+    MainMenuViewComponent,
+    BackgroundViewComponent
   ],
   imports: [
     BrowserModule,
