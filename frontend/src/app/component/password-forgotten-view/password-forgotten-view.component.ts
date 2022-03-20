@@ -30,5 +30,4 @@ export class PasswordForgottenViewComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

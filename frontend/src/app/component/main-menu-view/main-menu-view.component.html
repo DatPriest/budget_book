@@ -1,33 +1,28 @@
 <form>
-  <span class="material-icons burgerMenu">
-    menu
-    </span>
-  <span class="header_Hauptmenu">Hauptmenü</span>
-  <div class="container">
-    <div class="screen">
-      <body>
-      <div class="screen_background">
-        <span class="screen_background_shape screen_background_shape11"></span>
-        <span class="screen_background_shape screen_background_shape10"></span>
-        <span class="screen_background_shape screen_background_shape9"></span>
-        <span class="screen_background_shape screen_background_shape8"></span>
-        <span class="screen_background_shape screen_background_shape7"></span>
-        <span class="screen_background_shape screen_background_shape6"></span>
-        <span class="screen_background_shape screen_background_shape5"></span>
-        <span class="screen_background_shape screen_background_shape4"></span>
-        <span class="screen_background_shape screen_background_shape3"></span>
-        <span class="screen_background_shape screen_background_shape2"></span>
+  <header>
+    <span class="material-icons burgerMenu">menu</span>
+    <span class="header_Hauptmenu">Hauptmenü</span>
+  </header>
+  <body>
+    <div class="container">
+      <div class="screen">
+        <div class="screen_background">
+          <span class="screen_background_shape screen_background_shape11"></span>
+          <span class="screen_background_shape screen_background_shape10"></span>
+          <span class="screen_background_shape screen_background_shape9"></span>
+          <span class="screen_background_shape screen_background_shape8"></span>
+          <span class="screen_background_shape screen_background_shape7"></span>
+          <span class="screen_background_shape screen_background_shape6"></span>
+          <span class="screen_background_shape screen_background_shape5"></span>
+          <span class="screen_background_shape screen_background_shape4"></span>
+          <span class="screen_background_shape screen_background_shape3"></span>
+          <span class="screen_background_shape screen_background_shape2"></span>
+        </div>
         <ng-container *ngFor="let g of groups">
           <button type="button" id="Group{{g.id}}" class="screen_background_shape screen_group_{{g.id}}" (click)="openGroup(g.id, g.name)"><span class="group">{{g.name}}</span></button>
         </ng-container>
-        <!--<ng-container>
-          <button type="button" id="Group1" class="screen_background_shape screen_group_1"><span class="group">1</span></button>
-          <button type="button" id="Group2" class="screen_background_shape screen_group_2"><span class="group">2</span></button>
-          <button type="button" id="Group3" class="screen_background_shape screen_group_3"><span class="group">3</span></button>
-        </ng-container>-->
         <button type="button" id="createGroup" class="screen_background_shape screen_group_4" (click)="createGroup()"><span class="group_create material-icons">add_circle_outline</span></button>
       </div>
-      </body>
     </div>
-  </div>
+  </body>
 </form>

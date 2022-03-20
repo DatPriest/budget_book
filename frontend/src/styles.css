@@ -11,7 +11,7 @@ button {
   border: 1px solid #D4D3E8;
   text-transform: uppercase;
   font-weight: 700;
-  display: flex;
+  /*display: flex; Kommentiert am 19.03 von LBU*/
   align-items: center;
   width: 100%;
   color: #4C489D;

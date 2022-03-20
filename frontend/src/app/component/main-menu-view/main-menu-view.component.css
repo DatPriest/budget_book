@@ -1,13 +1,13 @@
 * {
   box-sizing: border-box;
-  padding: 0;
 }
 
 .header_Hauptmenu {
   color: black;
   font-size: 40px;
-  text-align: center;
+  width: 150px;
   font-family: Raleway, sans-serif;
+  text-align: center;
 }
 
 .container {
@@ -51,6 +51,7 @@
   border-radius: 25px 25px 25px 25px;
   transform: none;
 }
+
 .screen_group_2 {
   height: 240px;
   width: 240px;
@@ -60,6 +61,7 @@
   border-radius: 25px 25px 25px 25px;
   transform: none;
 }
+
 .screen_group_3 {
   height: 240px;
   width: 240px;
@@ -170,8 +172,7 @@
 }
 
 .burgerMenu{
-  font-size: 20px;
-  left: -250px;
+  font-size: 45px;
   color: rgb(0, 0, 0);
   cursor: pointer;
 }
@@ -179,13 +180,12 @@
 .group {
   font-size: 20px;
   color: black;
-  /*text-align: center !important;
-  position: calc(height/width);*/
+  text-align: center;
+  /*position: calc(height/width);*/
 }
 
 .group_create {
   font-size: 150px;
   color: black;
   height: 150px;
-  width: 550px;
 }
