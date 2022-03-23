@@ -6,6 +6,8 @@ import de.szut.backend.model.RegisterDto;
 import de.szut.backend.model.User;
 import org.springframework.stereotype.Service;
 
+import java.util.AbstractMap;
+
 @Service
 public class UserMapper {
     public User mapRegisterDtoToUser(RegisterDto dto) {
@@ -13,6 +15,7 @@ public class UserMapper {
         user.email = dto.email;
         user.hash = dto.hash;
         user.salt = dto.salt;
+        user.securityQuestion = new AbstractMap.SimpleEntry<>(dto.securityQuestion, dto.securityAnswer);
         return user;
     }
 

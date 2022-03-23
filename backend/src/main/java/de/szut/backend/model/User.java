@@ -4,6 +4,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.util.AbstractMap;
 import java.util.Date;
 
 @Entity
@@ -15,6 +16,7 @@ public class User {
     public String lastName;
     public String firstName;
     public String email;
+    public AbstractMap.SimpleEntry<Question, String> securityQuestion;
     public String salt;
     public String hash;
     @CreationTimestamp
@@ -25,3 +27,4 @@ public class User {
 
 
 }
+
