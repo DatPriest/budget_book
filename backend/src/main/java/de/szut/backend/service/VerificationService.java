@@ -3,14 +3,11 @@ package de.szut.backend.service;
 import de.szut.backend.mapper.UserMapper;
 import de.szut.backend.model.*;
 import de.szut.backend.repository.UserRepository;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Locale;
 import java.util.UUID;
@@ -45,17 +42,18 @@ public class VerificationService extends BaseService {
     }
 
     public User register(RegisterDto dto) {
-        this.logger.info(dto.toString());
-
-        // Save User to Database with salt
-        dto.salt = getSalt();
-        dto.hash = hashPassword(dto.hash + dto.salt);
-
-        //return this.userRepository.save(new User().hash);
         if (userRepository.existsByEmail(dto.email)) {
             return new User();
         }
-        return this.userRepository.save(userMapper.mapRegisterDtoToUser(dto));
+        this.logger.info(dto.toString());
+
+        User user = userMapper.mapRegisterDtoToUser(dto);
+        // Save User to Database with salt
+        user.salt = getSalt();
+        user.hash = hashPassword(user.hash + user.salt);
+
+
+        return this.userRepository.save(user);
     }
 
     private String hashPassword(String hash) {
@@ -91,7 +89,7 @@ public class VerificationService extends BaseService {
     public User updatePassword(UpdateDto dto) {
         var user = userRepository.findByEmailAndId(dto.email, dto.id);
         user.salt = getSalt();
-        user.hash = hashPassword(dto.password + user.salt);
+        user.hash = hashPassword(dto.hash + user.salt);
         return userRepository.save(user);
 
     }

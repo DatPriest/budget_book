@@ -13,7 +13,6 @@ public class UserMapper {
         User user = new User();
         user.email = dto.email;
         user.hash = dto.hash;
-        user.salt = dto.salt;
         user.question = dto.securityQuestion;
         user.answer = dto.securityAnswer.toLowerCase(Locale.ROOT);
         return user;

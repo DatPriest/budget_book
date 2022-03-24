@@ -1,5 +1,6 @@
 package de.szut.backend.model;
 
+import com.sun.istack.NotNull;
 import lombok.Data;
 
 import java.util.AbstractMap;
@@ -11,13 +12,8 @@ public class RegisterDto {
     public String lastName;
     public String hash;
     public String email;
-    public String salt;
+    @NotNull
     public Question securityQuestion;
+    @NotNull
     public String securityAnswer;
-    public RegisterDto(String _hash, String _email, Question _securityQuestion, String _securityAnswer) {
-        hash = _hash;
-        email = _email;
-        securityQuestion = _securityQuestion;
-        securityAnswer = _securityAnswer.toLowerCase(Locale.ROOT);
-    }
 }
