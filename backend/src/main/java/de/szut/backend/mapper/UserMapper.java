@@ -1,12 +1,11 @@
 package de.szut.backend.mapper;
 
 
-import de.szut.backend.model.LoginDto;
-import de.szut.backend.model.RegisterDto;
-import de.szut.backend.model.User;
+import de.szut.backend.model.*;
 import org.springframework.stereotype.Service;
 
 import java.util.AbstractMap;
+import java.util.Locale;
 
 @Service
 public class UserMapper {
@@ -15,7 +14,8 @@ public class UserMapper {
         user.email = dto.email;
         user.hash = dto.hash;
         user.salt = dto.salt;
-        user.securityQuestion = new AbstractMap.SimpleEntry<>(dto.securityQuestion, dto.securityAnswer);
+        user.question = dto.securityQuestion;
+        user.answer = dto.securityAnswer.toLowerCase(Locale.ROOT);
         return user;
     }
 

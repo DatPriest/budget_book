@@ -16,7 +16,8 @@ public class User {
     public String lastName;
     public String firstName;
     public String email;
-    public AbstractMap.SimpleEntry<Question, String> securityQuestion;
+    public Question question;
+    public String answer;
     public String salt;
     public String hash;
     @CreationTimestamp

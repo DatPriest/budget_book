@@ -1,9 +1,7 @@
 package de.szut.backend.service;
 
 import de.szut.backend.mapper.UserMapper;
-import de.szut.backend.model.LoginDto;
-import de.szut.backend.model.RegisterDto;
-import de.szut.backend.model.User;
+import de.szut.backend.model.*;
 import de.szut.backend.repository.UserRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +12,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.Locale;
 import java.util.UUID;
 
 @Service
@@ -24,7 +23,6 @@ public class VerificationService extends BaseService {
     public VerificationService(UserRepository _userRepository, UserMapper _userMapper) {
         this.userRepository = _userRepository;
         this.userMapper = _userMapper;
-
     }
 
     public User login(LoginDto dto) {
@@ -37,6 +35,13 @@ public class VerificationService extends BaseService {
         } else {
             return null;
         }
+    }
+
+    public User forgotPassword(ForgotDto dto) {
+        return userRepository.findByEmailAndQuestionAndAnswer(
+                dto.email,
+                dto.securityQuestion,
+                dto.securityAnswer.toLowerCase(Locale.ROOT));
     }
 
     public User register(RegisterDto dto) {
@@ -81,5 +86,13 @@ public class VerificationService extends BaseService {
             hexString.append(hex);
         }
         return hexString.toString();
+    }
+
+    public User updatePassword(UpdateDto dto) {
+        var user = userRepository.findByEmailAndId(dto.email, dto.id);
+        user.salt = getSalt();
+        user.hash = hashPassword(dto.password + user.salt);
+        return userRepository.save(user);
+
     }
 }

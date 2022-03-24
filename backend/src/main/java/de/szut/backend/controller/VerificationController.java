@@ -1,17 +1,11 @@
 package de.szut.backend.controller;
 
 import de.szut.backend.mapper.UserMapper;
-import de.szut.backend.model.LoginDto;
-import de.szut.backend.model.RegisterDto;
-import de.szut.backend.model.User;
+import de.szut.backend.model.*;
 import de.szut.backend.service.VerificationService;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/api/v1/verification")
@@ -27,6 +21,17 @@ public class VerificationController {
     public ResponseEntity<User> Login(@RequestBody LoginDto dto) throws TypeNotPresentException{
         return new ResponseEntity<>(service.login(dto), HttpStatus.OK);
     }
+
+    @PostMapping(path = "/forgotPassword", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<User> ForgotPassword(@RequestBody ForgotDto dto) throws TypeNotPresentException{
+        return new ResponseEntity<>(service.forgotPassword(dto), HttpStatus.OK);
+    }
+
+    @PutMapping(path = "/updatePassword", consumes = "application/json")
+    public ResponseEntity<User> UpdatePassword(@RequestBody UpdateDto dto) throws TypeNotPresentException{
+        return new ResponseEntity<>(service.updatePassword(dto), HttpStatus.OK);
+    }
+
     @PostMapping(path = "/register", consumes = "application/json", produces = "application/json")
     public ResponseEntity<User> Register(@RequestBody RegisterDto dto) throws TypeNotPresentException {
         User result = service.register(dto);

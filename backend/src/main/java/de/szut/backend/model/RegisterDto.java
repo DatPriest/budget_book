@@ -3,6 +3,7 @@ package de.szut.backend.model;
 import lombok.Data;
 
 import java.util.AbstractMap;
+import java.util.Locale;
 
 @Data
 public class RegisterDto {
@@ -14,9 +15,9 @@ public class RegisterDto {
     public Question securityQuestion;
     public String securityAnswer;
     public RegisterDto(String _hash, String _email, Question _securityQuestion, String _securityAnswer) {
-        this.hash = _hash;
-        this.email = _email;
+        hash = _hash;
+        email = _email;
         securityQuestion = _securityQuestion;
-        securityAnswer = _securityAnswer;
+        securityAnswer = _securityAnswer.toLowerCase(Locale.ROOT);
     }
 }
