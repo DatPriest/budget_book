@@ -20,11 +20,11 @@
               <div class="column">
                 <div class="input_field">
                   <input type="{{showPassword ? 'text' : 'password' }}" class="input_field" id="newUserPassword" placeholder="Passwort">
-                  <button type="button" class="show_passwort material-icons" (click)="togglePassword()">{{showPassword ? 'visibility' : 'visibility_off' }}</button>
+                  <button type="button" class="show_passwort material-icons" (click)="togglePassword()">{{showPassword ? 'visibility_off' : 'visibility' }}</button>
                 </div>
                 <div class="input_field">
                   <input type="{{showPasswordReplay ? 'text' : 'password' }}" class="input_field" id="newUserPasswordreplay" placeholder="Passwort Wiederholung">
-                  <button type="button" class="show_passwort material-icons" (click)="togglePasswordReplay()">{{showPasswordReplay ? 'visibility' : 'visibility_off' }}</button>
+                  <button type="button" class="show_passwort material-icons" (click)="togglePasswordReplay()">{{showPasswordReplay ? 'visibility_off' : 'visibility' }}</button>
                 </div>
               </div>
             </div>

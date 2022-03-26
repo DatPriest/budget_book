@@ -12,6 +12,10 @@ export class RegisterViewComponent implements OnInit {
   showPasswordReplay: boolean = false;
   constructor(public router: Router) { }
 
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+  }
+
   togglePassword(): void {
     this.showPassword = !this.showPassword;
   }
@@ -20,8 +24,9 @@ export class RegisterViewComponent implements OnInit {
     this.showPasswordReplay = !this.showPasswordReplay;
   }
 
-  registrationUser(): void {
-    //  this.router.navigate(['']);
+  async registrationUser(): Promise<void> {
+    await this.delay(1500);
+    this.router.navigate(['']);
   }
 
   cancel(): void {

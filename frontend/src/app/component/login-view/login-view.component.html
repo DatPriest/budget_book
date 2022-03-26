@@ -11,7 +11,7 @@
             <div class="input_field">
               <div>
                 <input type="{{showPassword ? 'text' : 'password' }}" class="input_field" id="UserPassword" placeholder="Password">
-                <button type="button" class="show_passwort material-icons" (click)="togglePassword()">{{showPassword ? 'visibility' : 'visibility_off' }}</button>
+                <button type="button" class="show_passwort material-icons" (click)="togglePassword()">{{showPassword ? 'visibility_off' : 'visibility' }}</button>
               </div>
             </div>
             <button type="button" class="button login_submit" id="login" (click)="loginUser()">
