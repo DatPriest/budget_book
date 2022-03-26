@@ -12,18 +12,18 @@ export class LoginViewComponent implements OnInit {
   showPassword: boolean = false;
   constructor(public router: Router, private toast: NgToastService) { }
 
-  showSuccess() {
+  /*showSuccess() {
     this.toast.success({detail:"SUCCESS",summary:'Your Success Message',duration:5000});
     // https://www.npmjs.com/package/ng-angular-popup
-  }
+  }*/
 
   togglePassword(): void {
     this.showPassword = !this.showPassword;
   }
 
   loginUser(): void {
-    this.showSuccess();
-    //this.router.navigate(['main-menu']);
+    //this.showSuccess();
+    this.router.navigate(['main-menu']);
   }
 
   newUser(): void {

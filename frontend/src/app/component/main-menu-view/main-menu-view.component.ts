@@ -20,14 +20,17 @@ export class MainMenuViewComponent implements OnInit {
     return new Promise( resolve => setTimeout(resolve, ms) );
   }
 
-  async createGroup(): Promise<void> {
-    await this.delay(5000);
-    //this.router.navigate(['']);
+  createGroup(): void {
+    this.router.navigate(['/group-new']);
   }
 
   openGroup(id: number, name: string): void {
     console.log('Loading Group...\n' + id + ' ' + name);
-    //this.router.navigate(['']);
+    this.router.navigate(['/group-detail']);
+  }
+
+  openMenu(): void {
+    alert('Das Menü hat aktuell keine Funktion!');
   }
 
   ngOnInit(): void {
