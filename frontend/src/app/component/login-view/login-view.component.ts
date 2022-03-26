@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-login-view',
@@ -9,14 +10,20 @@ import { Router } from "@angular/router";
 export class LoginViewComponent implements OnInit {
 
   showPassword: boolean = false;
-  constructor(public router: Router) { }
+  constructor(public router: Router, private toast: NgToastService) { }
+
+  showSuccess() {
+    this.toast.success({detail:"SUCCESS",summary:'Your Success Message',duration:5000});
+    // https://www.npmjs.com/package/ng-angular-popup
+  }
 
   togglePassword(): void {
     this.showPassword = !this.showPassword;
   }
 
   loginUser(): void {
-    this.router.navigate(['main-menu']);
+    this.showSuccess();
+    //this.router.navigate(['main-menu']);
   }
 
   newUser(): void {
