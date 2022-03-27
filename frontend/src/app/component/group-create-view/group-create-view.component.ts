@@ -11,7 +11,13 @@ export class GroupCreateViewComponent implements OnInit {
   constructor(public router: Router) { }
 
   back(): void {
+    //this.router.navigate(['/main-menu']);
+    this.router.navigate(['/group-new']);
+  }
+
+  create(): void {
     this.router.navigate(['/main-menu']);
+    //this.router.navigate(['/group-new']);
   }
 
   ngOnInit(): void {
