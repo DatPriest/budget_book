@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { Group } from 'src/app/model/Group';
 import { GroupService } from 'src/app/service/group/group.service';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { GroupCreateViewComponent } from '../group-create-view/group-create-view.component';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
+export interface DialogData {
+  groupname: string;
+}
 
 @Component({
   selector: 'app-main-menu-view',
@@ -12,19 +15,24 @@ import { GroupCreateViewComponent } from '../group-create-view/group-create-view
 })
 export class MainMenuViewComponent implements OnInit {
   groups: Group[] = [];
-  constructor(public router: Router, private groupService: GroupService, private dialog: MatDialog) {
+  groupname: string | undefined;
+
+  constructor(public router: Router, private groupService: GroupService, public dialog: MatDialog) {
     this.groups.push(new Group(1,"Teddybär Bande")),
     this.groups.push(new Group(2,"Rosenrot")),
     this.groups.push(new Group(3,"Rainbow Gang"))
   }
 
-  delay(ms: number) {
-    return new Promise( resolve => setTimeout(resolve, ms) );
-  }
+  createGroupDialog(): void {
+    const dialogRef = this.dialog.open(MainMenuViewComponentDialog, {
+      //width: '250px',
+      data: {groupname: this.groupname},
+    });
 
-  createGroup(): void {
-    this.dialog.open(GroupCreateViewComponent);
-    //this.router.navigate(['/group-new']);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.groupname = result;
+    });
   }
 
   openGroup(id: number, name: string): void {
@@ -33,9 +41,30 @@ export class MainMenuViewComponent implements OnInit {
   }
 
   openMenu(): void {
-    alert('Das Menü hat aktuell keine Funktion!');
+    console.error('Das Menü hat aktuell keine Funktion!');
   }
 
   ngOnInit(): void {
+  }
+}
+
+@Component({
+  selector: 'app-main-menu-view-dialog',
+  templateUrl: './main-menu-view.component-dialog.html',
+  styleUrls: ['./main-menu-view.component-dialog.css']
+})
+export class MainMenuViewComponentDialog {
+  constructor(
+    public dialogRef: MatDialogRef<MainMenuViewComponentDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData,
+  ) {}
+
+  createGroup(): void {
+    console.log('Group ... was created');
+    this.dialogRef.close();
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 }
