@@ -1,5 +1,6 @@
-package de.szut.backend.model;
+package de.szut.backend.dto;
 
+import de.szut.backend.model.Question;
 import lombok.Data;
 
 @Data

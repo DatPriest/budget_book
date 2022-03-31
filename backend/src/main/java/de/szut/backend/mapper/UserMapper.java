@@ -1,10 +1,11 @@
 package de.szut.backend.mapper;
 
 
+import de.szut.backend.dto.LoginDto;
+import de.szut.backend.dto.RegisterDto;
 import de.szut.backend.model.*;
 import org.springframework.stereotype.Service;
 
-import java.util.AbstractMap;
 import java.util.Locale;
 
 @Service

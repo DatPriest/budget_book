@@ -1,4 +1,4 @@
-package de.szut.backend.model;
+package de.szut.backend.dto;
 
 import lombok.Data;
 
