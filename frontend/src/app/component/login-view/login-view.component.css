@@ -100,7 +100,6 @@
   border: 1px solid #D4D3E8;
   text-transform: uppercase;
   font-weight: 700;
-  display: flex;
   align-items: center;
   width: 55%;
   color: #4C489D;
@@ -115,6 +114,11 @@
 .login_submit:hover {
   border-color: #6A679E;
   outline: none;
+}
+
+.button-loading .button_text {
+  visibility: hidden;
+  opacity: 0;
 }
 
 /* Registrieren Button */
@@ -149,6 +153,7 @@
   font-size: 11px;
   border-radius: 0px;
   border: none;
+  display: flex;
   width: 0%;
   color: rgb(0, 121, 255);
   box-shadow: 0px 2px 2px transparent;
