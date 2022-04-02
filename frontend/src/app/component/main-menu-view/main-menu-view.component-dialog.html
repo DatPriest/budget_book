@@ -2,8 +2,10 @@
   <header>
     <form class="createGroup">
       <h1 class="header_Text">Neue Gruppe!</h1>
+      <form>
           <input type="file" class="input_file" id="inputImage" placeholder="Logo" accept="image/png, image/jpeg">
           <input type="text" class="input_field" id="GroupName" placeholder="Group Name">
+        </form>
       <div class="row">
         <div class="column_save">
           <button type="button" id="save" (click)="createGroup()"><span class="group_create material-icons">save</span></button>
@@ -17,3 +19,28 @@
   <body>
   </body>
 </form>
+
+
+<!--<form>
+  <header>
+    <form class="createGroup">
+      <h1 mat-dialog-title class="header_Text">Neue Gruppe!</h1>
+      <div mat-dialog-content>
+        <mat-form-field appearance="fill">
+          <input type="file" class="input_file" id="inputImage" placeholder="Logo" accept="image/png, image/jpeg">
+          <input type="text" class="input_field" id="GroupName" placeholder="Group Name">
+        </mat-form-field>
+      </div>
+      <div mat-dialog-actions class="row">
+        <div class="column_save">
+          <button type="button" id="save" (click)="createGroup()"><span class="group_create material-icons">save</span></button>
+        </div>
+        <div class="column_close">
+          <button type="button" id="close" (click)="onNoClick()"><span class="group_create material-icons">close</span></button>
+        </div>
+      </div>
+    </form>
+  </header>
+  <body>
+  </body>
+</form>-->

@@ -2,11 +2,17 @@
   box-sizing: border-box;
 }
 
-.header_Hauptmenu {
+.header_hauptmenu {
   color: black;
   font-size: 40px;
   width: 150px;
   font-family: Raleway, sans-serif;
+}
+
+.burgerMenu{
+  font-size: 45px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
 }
 
 .column_burger {
@@ -185,12 +191,6 @@
   top:  180px;
   left: 370px;
   border-radius: 32px;
-}
-
-.burgerMenu{
-  font-size: 45px;
-  color: rgb(0, 0, 0);
-  cursor: pointer;
 }
 
 .group {

@@ -29,7 +29,6 @@ export class MainMenuViewComponent implements OnInit {
 
   createGroupDialog(): void {
     const dialogRef = this.dialog.open(MainMenuViewComponentDialog, {
-      //width: '250px',
       data: {groupname: this.groupname},
     });
 
@@ -45,8 +44,7 @@ export class MainMenuViewComponent implements OnInit {
   }
 
   async openMenu(): Promise<void> {
-    console.error('Menü hat aktuell keine Funktion!');
-    console.warn('Menü leitet temporär zum Login zurück ...');
+    console.warn('Diese Funktion ist kein Bestandteil des aktuellen Sprintes!\n Leitet temporär zum Login zurück.');
 
     await this.delay(1500);
     this.router.navigate(['']);
@@ -56,6 +54,7 @@ export class MainMenuViewComponent implements OnInit {
   }
 }
 
+// Create Group Pop Up
 @Component({
   selector: 'app-main-menu-view-dialog',
   templateUrl: './main-menu-view.component-dialog.html',

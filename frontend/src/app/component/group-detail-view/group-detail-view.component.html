@@ -1,5 +1,68 @@
-<p>group-detail-view works!</p>
-
-<button type="button" (click)="back()"><span class="group_create material-icons">arrow_back</span></button>
-<button type="button" (click)="history()"><span class="group_create material-icons">history</span></button>
-<button type="button" (click)="ausgaben()"><span class="group_create material-icons">attach_money</span></button>
+<form>
+  <header>
+    <div class="row">
+      <div class="column_burger">
+        <span class="material-icons burgerMenu" (click)="openMenu()">menu</span>
+      </div>
+      <div class="column_menu">
+        <span class="header_groupname">Teddybär Bande</span>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="container">
+      <div class="screen">
+        <div class="screen_background">
+          <span class="screen_background_shape screen_background_shape11"></span>
+          <span class="screen_background_shape screen_background_shape10"></span>
+          <span class="screen_background_shape screen_background_shape9"></span>
+          <span class="screen_background_shape screen_background_shape8"></span>
+          <span class="screen_background_shape screen_background_shape7"></span>
+          <span class="screen_background_shape screen_background_shape6"></span>
+          <span class="screen_background_shape screen_background_shape5"></span>
+          <span class="screen_background_shape screen_background_shape4"></span>
+          <span class="screen_background_shape screen_background_shape3"></span>
+          <span class="screen_background_shape screen_background_shape2"></span>
+        </div>
+        <img class="group_image" src='https://static.yoursurprise.com/galleryimage/c0/c073953ab71828a7741820d013ac9a9d/kuscheltier-mit-namen-aufblasbar_5.jpg?width=250&crop=1%3A1'>
+        <ul>
+          <div class="row_nav">
+            <div class="column_ausgaben">
+              <button type="button" (click)="ausgaben()"><span class="group_expenditures">Ausgaben</span></button>
+            </div>
+            <div class="column_categories">
+              <button type="button" (click)="nofunction()"><span class="group_categories">Kategorien</span></button>
+            </div>
+              <div class="column_statistics">
+              <button type="button" (click)="nofunction()"><span class="group_statistics">Statistik</span></button>
+            </div>
+          </div>
+        </ul>
+        <ul class="sidebar">
+          <div class="pages_menu">
+            <button type="button" (click)="nofunction()"><span class="group_history material-icons">edit</span></button>
+            <button type="button" (click)="nofunction()"><span class="group_history material-icons">add</span></button>
+            <button type="button" (click)="nofunction()"><span class="group_history material-icons">delete</span></button>
+            <button type="button" (click)="history()"><span class="group_history material-icons">history</span></button>
+          </div>
+        </ul>
+        <table class="user_table">
+          <thead>
+            <tr>
+              <th>
+                <p>Name:</p>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let u of users">
+              <tr id="row-id#{{u.id}}">
+                <td>{{u.name}}</td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</form>
