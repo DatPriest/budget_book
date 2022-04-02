@@ -1,0 +1,39 @@
+<form>
+  <div class="container">
+    <div class="screen">
+      <header>
+        <div class="screen_content">
+          <form class="login">
+            <span class="header_Text">Bei dasistcool anmelden</span>
+            <div class="input_field">
+              <input type="email" class="input_field" id="UserEmail" placeholder="E-Mail">
+            </div>
+            <div class="input_field">
+              <div>
+                <input type="{{showPassword ? 'text' : 'password' }}" class="input_field" id="UserPassword" placeholder="Password">
+                <button type="button" class="show_passwort material-icons" (click)="togglePassword()">{{showPassword ? 'visibility_off' : 'visibility' }}</button>
+              </div>
+            </div>
+            <button type="submit" class="button login_submit" id="login" (click)="loginUser()">
+              <span class="button_text">Login</span>
+            </button>
+            <button type="button" class="button new_password_submit" id="password" (click)="newPassword()">
+              <span class="button">Passwort vergessen?</span>
+            </button>
+            <button type="button" class="button register_submit" id="register" (click)="newUser()">
+              <span>Registrieren</span>
+            </button>
+          </form>
+        </div>
+      </header>
+      <body>
+        <div class="screen_background">
+          <span class="screen_background_shape screen_background_shape4"></span>
+          <span class="screen_background_shape screen_background_shape3"></span>
+          <span class="screen_background_shape screen_background_shape2"></span>
+          <span class="screen_background_shape screen_background_shape1"></span>
+        </div>
+      </body>
+    </div>
+  </div>
+</form>

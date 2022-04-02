@@ -1,0 +1,73 @@
+<form>
+  <div class="container">
+    <div class="screen">
+      <header>
+        <div class="screen_content">
+          <form class="register">
+            <span class="header_Text">Registrierung</span>
+            <div class="row">
+              <div class="column">
+                <div class="input_field">
+                  <input type="text" class="input_field" id="newUserFirstName" placeholder="Vorname">
+                </div>
+                <div class="input_field">
+                  <input type="text" class="input_field" id="newUserLastName" placeholder="Nachname">
+                </div>
+                <div class="input_field">
+                  <input type="email" class="input_field" id="newUserEmail" placeholder="E-Mail">
+                </div>
+              </div>
+              <div class="column">
+                <div class="input_field">
+                  <input type="{{showPassword ? 'text' : 'password' }}" class="input_field" id="newUserPassword" placeholder="Passwort">
+                  <button type="button" class="show_passwort material-icons" (click)="togglePassword()">{{showPassword ? 'visibility_off' : 'visibility' }}</button>
+                </div>
+                <div class="input_field">
+                  <input type="{{showPasswordReplay ? 'text' : 'password' }}" class="input_field" id="newUserPasswordreplay" placeholder="Passwort Wiederholung">
+                  <button type="button" class="show_passwort material-icons" (click)="togglePasswordReplay()">{{showPasswordReplay ? 'visibility_off' : 'visibility' }}</button>
+                </div>
+              </div>
+            </div>
+            <div>
+              <label class="sicherheit_Header">Sicherheitsfrage:
+                <span class="sicherheit_Text">Wählen Sie 1 Frage aus!</span>
+                <select name="Sicherheitsfrage" form="formular1" class="sicherheit_menu">
+                  <option value="questionA">In welcher Stadt bzw. an welchem Ort wurden Sie geboren?</option>
+                  <option value="questionB">Wie lautet der zweite Vorname Ihrer ältesten Schwester bzw. Ihres ältesten Bruders?</option>
+                  <option value="questionC">Welches war Ihr erstes Konzert, das Sie besucht haben?</option>
+                  <option value="questionD">Geben Sie Marke und Modell Ihres ersten Autos an.</option>
+                  <option value="questionE">In welcher Stadt bzw. welchem Ort haben sich Ihre Eltern kennengelernt?</option>
+                </select>
+                <div class="sicherheit_field">
+                  <input type="text" class="sicherheit_field" id="Sicherheitsfrage" placeholder="Sicherheitsfrage" autocomplete="off">
+                </div>
+              </label>
+            </div>
+            <div class="row">
+              <div class="column_button">
+                <button type="button" class="button register_submit" id="register" onclick="this.classList.toggle('button-loading')" (click)="registrationUser()">
+                  <span class="button_text">registrieren</span>
+                </button>
+              </div>
+              <div class="column_button">
+                <button type="button" class="button register_cancel" id="cancel" (click)="cancel()">
+                  <span class="button_text">abbrechen</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </header>
+      <body>
+        <div class="screen_background">
+          <span class="screen_background_shape screen_background_shape6"></span>
+          <span class="screen_background_shape screen_background_shape5"></span>
+          <span class="screen_background_shape screen_background_shape4"></span>
+          <span class="screen_background_shape screen_background_shape3"></span>
+          <span class="screen_background_shape screen_background_shape2"></span>
+          <span class="screen_background_shape screen_background_shape1"></span>
+        </div>
+      </body>
+    </div>
+  </div>
+</form>

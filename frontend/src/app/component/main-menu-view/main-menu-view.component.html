@@ -1,0 +1,35 @@
+<form>
+  <header>
+    <div class="row">
+      <div class="column_burger">
+        <span class="material-icons burgerMenu" (click)="openMenu()">menu</span>
+      </div>
+      <div class="column_menu">
+        <span class="header_Hauptmenu">Hauptmenü</span>
+      </div>
+  </div>
+  </header>
+  <body>
+    <div class="container">
+      <div class="screen">
+        <div class="screen_background">
+          <span class="screen_background_shape screen_background_shape11"></span>
+          <span class="screen_background_shape screen_background_shape10"></span>
+          <span class="screen_background_shape screen_background_shape9"></span>
+          <span class="screen_background_shape screen_background_shape8"></span>
+          <span class="screen_background_shape screen_background_shape7"></span>
+          <span class="screen_background_shape screen_background_shape6"></span>
+          <span class="screen_background_shape screen_background_shape5"></span>
+          <span class="screen_background_shape screen_background_shape4"></span>
+          <span class="screen_background_shape screen_background_shape3"></span>
+          <span class="screen_background_shape screen_background_shape2"></span>
+        </div>
+        <ng-container *ngFor="let g of groups">
+          <button type="button" id="Group{{g.id}}" class="screen_background_shape screen_group_{{g.id}}" (click)="openGroup(g.id, g.name)"><span class="group">{{g.name}}</span></button>
+        </ng-container>
+        <!--<button type="button" id="createGroup" class="screen_background_shape screen_group_4" (click)="createGroup()"><span class="group_create material-icons">add_circle_outline</span></button>-->
+        <button mat-raised-button type="button" id="createGroup" class="screen_background_shape screen_group_4" (click)="createGroupDialog()"><span class="group_create material-icons">add_circle_outline</span></button>
+      </div>
+    </div>
+  </body>
+</form>

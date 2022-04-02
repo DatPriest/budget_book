@@ -1,0 +1,190 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+}
+
+.screen {
+  background: linear-gradient(90deg, #5D54A4, #7C78B8);
+  position: relative;
+  height: 600px;
+  width: 360px;
+  box-shadow: 0px 0px 24px #5C5696;
+}
+
+.screen_content {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+}
+
+.screen_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+}
+
+.screen_background_shape1 {
+  height: 520px;
+  width: 520px;
+  background: #FFF;
+  top: -50px;
+  right: 120px;
+  border-radius: 0 72px 0 0;
+}
+
+.screen_background_shape2 {
+  height: 220px;
+  width: 220px;
+  background: #A4A4A4;
+  top: -172px;
+  right: 0;
+  border-radius: 32px;
+}
+
+.screen_background_shape3 {
+  height: 640px;
+  width: 190px;
+  background: linear-gradient(270deg, #585858, #A4A4A4);
+  top: -68px;
+  right: 0;
+  border-radius: 32px;
+}
+
+.screen_background_shape4 {
+  height: 400px;
+  width: 200px;
+  background: #585858;
+  top: 420px;
+  right: 50px;
+  border-radius: 60px;
+}
+
+.login {
+  width: 280px;
+  padding: 20px;
+  padding-top: 130px;
+  font-family: Raleway, sans-serif;
+}
+
+/* Login Felder */
+.input_field {
+  padding: 10px 0px;
+  position: relative;
+}
+
+.input_field:active,
+.input_field:focus,
+.input_field:hover {
+  outline: none;
+  border-bottom-color: #6A679E;
+}
+
+/* Login Button */
+.login_submit {
+  background: #fff;
+  font-size: 16px;
+  padding: 16px 20px;
+  border-radius: 26px;
+  border: 1px solid #D4D3E8;
+  text-transform: uppercase;
+  font-weight: 700;
+  align-items: center;
+  width: 55%;
+  color: #4C489D;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 2px #5C5696;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.login_submit:active,
+.login_submit:focus,
+.login_submit:hover {
+  border-color: #6A679E;
+  outline: none;
+}
+
+.button-loading .button_text {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Registrieren Button */
+.register_submit {
+  background: none;
+  font-size: 11px;
+  padding: 10px 20px;
+  border-radius: 0px;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  width: 0%;
+  color: rgb(0, 121, 255);
+  box-shadow: 0px 2px 2px transparent;
+  cursor: pointer;
+  transition: .0s;
+}
+
+.register_submit:active,
+.register_submit:focus,
+.register_submit:hover {
+  color: #000000;
+  outline: none;
+}
+
+/*  Passwort vergessen Button */
+.new_password_submit{
+  background: none;
+  padding: 5px 22px;
+  font-size: 11px;
+  border-radius: 0px;
+  border: none;
+  display: flex;
+  width: 0%;
+  color: rgb(0, 121, 255);
+  box-shadow: 0px 2px 2px transparent;
+  cursor: pointer;
+  transition: .0s;
+}
+
+.new_password_submit:active,
+.new_password_submit:focus,
+.new_password_submit:hover {
+  color: #000000;
+  outline: none;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header_Text {
+  color: #7875B5;
+  text-shadow: black;
+  font-size: 20px;
+}
+
+.show_passwort{
+  font-size: 20px;
+  border: none;
+  align-items: center;
+  width: 0%;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
