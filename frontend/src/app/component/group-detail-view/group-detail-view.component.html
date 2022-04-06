@@ -12,32 +12,14 @@
   <body>
     <div class="container">
       <div class="screen">
-        <div class="screen_background">
-          <span class="screen_background_shape screen_background_shape11"></span>
-          <span class="screen_background_shape screen_background_shape10"></span>
-          <span class="screen_background_shape screen_background_shape9"></span>
-          <span class="screen_background_shape screen_background_shape8"></span>
-          <span class="screen_background_shape screen_background_shape7"></span>
-          <span class="screen_background_shape screen_background_shape6"></span>
-          <span class="screen_background_shape screen_background_shape5"></span>
-          <span class="screen_background_shape screen_background_shape4"></span>
-          <span class="screen_background_shape screen_background_shape3"></span>
-          <span class="screen_background_shape screen_background_shape2"></span>
+        <div class="button">
+          <button type="button" (click)="ausgaben()"><span class="group_expenditures">Ausgaben</span></button>
+          <button type="button" (click)="nofunction()"><span class="group_categories">Kategorien</span></button>
+          <button type="button" (click)="nofunction()"><span class="group_statistics">Statistik</span></button>
         </div>
-        <img class="group_image" src='https://static.yoursurprise.com/galleryimage/c0/c073953ab71828a7741820d013ac9a9d/kuscheltier-mit-namen-aufblasbar_5.jpg?width=250&crop=1%3A1'>
-        <ul>
-          <div class="row_nav">
-            <div class="column_ausgaben">
-              <button type="button" (click)="ausgaben()"><span class="group_expenditures">Ausgaben</span></button>
-            </div>
-            <div class="column_categories">
-              <button type="button" (click)="nofunction()"><span class="group_categories">Kategorien</span></button>
-            </div>
-              <div class="column_statistics">
-              <button type="button" (click)="nofunction()"><span class="group_statistics">Statistik</span></button>
-            </div>
-          </div>
-        </ul>
+        <div class="picture">
+          <img src='https://static.yoursurprise.com/galleryimage/c0/c073953ab71828a7741820d013ac9a9d/kuscheltier-mit-namen-aufblasbar_5.jpg?width=250&crop=1%3A1'>
+        </div>
         <ul class="sidebar">
           <div class="pages_menu">
             <button type="button" (click)="nofunction()"><span class="group_history material-icons">edit</span></button>
@@ -50,7 +32,7 @@
           <thead>
             <tr>
               <th>
-                <p>Name:</p>
+                <p>Gruppenmitglieder:</p>
               </th>
             </tr>
           </thead>

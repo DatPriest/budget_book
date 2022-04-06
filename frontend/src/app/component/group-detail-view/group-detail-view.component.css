@@ -7,6 +7,7 @@
   font-size: 40px;
   width: 150px;
   font-family: Raleway, sans-serif;
+  position: center;
 }
 
 .burgerMenu{
@@ -23,12 +24,12 @@
   text-align: center;
 }
 
+/*
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
-
 .column_ausgaben {
   text-align: left;
   width: 130px;
@@ -49,9 +50,21 @@
   display: table;
   clear: both;
 }
+*/
+
+.button{
+  text-align: center;
+  width: 150px;
+  position: absolute;
+  top: 52px;
+  left: 360px;
+}
 
 .sidebar {
   width: 150px;
+  position: absolute;
+  top: 10px;
+  right: 25px;
 }
 
 .pages_menu {
@@ -80,9 +93,10 @@
   height: 100%;
 }
 
-.group_image {
-  border: black;
-  top: 50px;
+.picture {
+  position: absolute;
+  top: 22px;
+  left: 60px;
 }
 
 .ul {
@@ -97,4 +111,15 @@
 
 .user_table {
   font-size: x-large;
+  border-spacing: 50px 10px;
+  padding: .3em .5em;
+  text-align: center;
+  border-width: 2px;
+  border-style: solid;
+  border-color: white;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 45px;
+  right: 400px;
 }
