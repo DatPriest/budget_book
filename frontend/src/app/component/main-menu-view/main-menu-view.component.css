@@ -7,6 +7,7 @@
   font-size: 40px;
   width: 150px;
   font-family: Raleway, sans-serif;
+  position: center;
 }
 
 .burgerMenu{
@@ -20,7 +21,9 @@
 }
 
 .column_menu {
-  text-align: center;
+  position: absolute;
+  top: 35px;
+  right: 610px;
 }
 
 .row:after {
