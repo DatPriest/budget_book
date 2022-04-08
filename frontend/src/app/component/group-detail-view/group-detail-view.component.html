@@ -31,15 +31,15 @@
         <table class="user_table">
           <thead>
             <tr>
-              <th>
+              <th class="user_table_header">
                 <p>Gruppenmitglieder:</p>
               </th>
             </tr>
           </thead>
           <tbody>
             <ng-container *ngFor="let u of users">
-              <tr id="row-id#{{u.id}}">
-                <td>{{u.name}}</td>
+              <tr class="user_table_line">
+                <td class="user_name">{{u.name}}</td>
               </tr>
             </ng-container>
           </tbody>

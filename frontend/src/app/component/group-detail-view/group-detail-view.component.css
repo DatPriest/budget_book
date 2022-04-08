@@ -115,15 +115,33 @@
 
 .user_table {
   font-size: x-large;
+  border-collapse: collapse;
   border-spacing: 50px 10px;
-  padding: .3em .5em;
-  text-align: center;
-  border-width: 2px;
-  border-style: solid;
-  border-color: white;
+  border-width: thin 0 0 thin;
+  margin: 0 0 1em;
+  table-layout: auto;
+  max-width: 100%;
   width: 150px;
-  height: 150px;
+  padding: .3em .5em;
   position: absolute;
+  text-align: center;
+  height: 150px;
   top: 45px;
   right: 400px;
+}
+
+.user_table_header {
+  border: thin solid white;
+  padding: .4em .6em;
+  background-color: gray;
+  font-weight: 700;
+}
+
+.user_table_line {
+  border: thin solid white;
+}
+
+.user_name {
+  text-align: left;
+  padding: .4em .6em;
 }
