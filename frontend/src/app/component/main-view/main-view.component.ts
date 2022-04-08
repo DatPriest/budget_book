@@ -9,11 +9,11 @@ export interface DialogData {
 }
 
 @Component({
-  selector: 'app-main-menu-view',
-  templateUrl: './main-menu-view.component.html',
-  styleUrls: ['./main-menu-view.component.css']
+  selector: 'app-main-view',
+  templateUrl: './main-view.component.html',
+  styleUrls: ['./main-view.component.css']
 })
-export class MainMenuViewComponent implements OnInit {
+export class MainViewComponent implements OnInit {
   groups: Group[] = [];
   groupname: string | undefined;
 
@@ -28,7 +28,7 @@ export class MainMenuViewComponent implements OnInit {
   }
 
   createGroupDialog(): void {
-    const dialogRef = this.dialog.open(MainMenuViewComponentDialog, {
+    const dialogRef = this.dialog.open(MainViewComponentDialog, {
       data: {groupname: this.groupname},
     });
 
@@ -40,14 +40,14 @@ export class MainMenuViewComponent implements OnInit {
 
   openGroup(id: number, name: string): void {
     console.log('Loading Group...\n' + id + ' ' + name);
-    this.router.navigate(['/group-detail']);
+    this.router.navigate(['/group']);
   }
 
   async openMenu(): Promise<void> {
     console.warn('Diese Funktion ist kein Bestandteil des aktuellen Sprintes!\n Leitet temporär zum Login zurück.');
 
     await this.delay(1500);
-    this.router.navigate(['']);
+    this.router.navigate(['/sign-in']);
   }
 
   ngOnInit(): void {
@@ -56,13 +56,13 @@ export class MainMenuViewComponent implements OnInit {
 
 // Create Group Pop Up
 @Component({
-  selector: 'app-main-menu-view-dialog',
-  templateUrl: './main-menu-view.component-dialog.html',
-  styleUrls: ['./main-menu-view.component-dialog.css']
+  selector: 'app-main-view-dialog',
+  templateUrl: './main-view.component-dialog.html',
+  styleUrls: ['./main-view.component-dialog.css']
 })
-export class MainMenuViewComponentDialog {
+export class MainViewComponentDialog {
   constructor(
-    public dialogRef: MatDialogRef<MainMenuViewComponentDialog>,
+    public dialogRef: MatDialogRef<MainViewComponentDialog>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
   ) {}
 

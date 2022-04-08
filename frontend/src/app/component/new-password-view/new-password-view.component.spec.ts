@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NewPasswordViewComponent } from './new-password-view.component';
 
-import { LoginViewComponent } from './login-view.component';
-
-describe('LoginViewComponent', () => {
-  let component: LoginViewComponent;
-  let fixture: ComponentFixture<LoginViewComponent>;
+describe('NewPasswordViewComponent', () => {
+  let component: NewPasswordViewComponent;
+  let fixture: ComponentFixture<NewPasswordViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginViewComponent ]
+      declarations: [ NewPasswordViewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoginViewComponent);
+    fixture = TestBed.createComponent(NewPasswordViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

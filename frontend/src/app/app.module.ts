@@ -8,27 +8,27 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MaterialExampleModule } from 'src/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
-
-import { LoginViewComponent } from './component/login-view/login-view.component';
-import { RegisterViewComponent } from './component/register-view/register-view.component';
-import { PasswordForgottenViewComponent } from './component/password-forgotten-view/password-forgotten-view.component';
-import { MainMenuViewComponent } from './component/main-menu-view/main-menu-view.component';
 import { NgToastModule } from 'ng-angular-popup';
-import { GroupDetailViewComponent } from './component/group-detail-view/group-detail-view.component';
-import { AusgabenViewComponent } from './component/ausgaben-view/ausgaben-view.component';
-import { AddAusgabenViewComponent } from './component/add-ausgaben-view/add-ausgaben-view.component';
+
+import { SignInViewComponent } from './component/sign-in-view/sign-in-view.component';
+import { SignUpViewComponent } from './component/sign-up-view/sign-up-view.component';
+import { NewPasswordViewComponent } from './component/new-password-view/new-password-view.component';
+import { MainViewComponent } from './component/main-view/main-view.component';
+import { GroupViewComponent } from './component/group-view/group-view.component';
+import { IssuesViewComponent } from './component/issues-view/issues-view.component';
+import { NewIssuesViewComponent } from './component/new-issues-view/new-issues-view.component'
 import { HistoryViewComponent } from './component/history-view/history-view.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginViewComponent,
-    RegisterViewComponent,
-    PasswordForgottenViewComponent,
-    MainMenuViewComponent,
-    GroupDetailViewComponent,
-    AusgabenViewComponent,
-    AddAusgabenViewComponent,
+    SignInViewComponent,
+    SignUpViewComponent,
+    NewPasswordViewComponent,
+    MainViewComponent,
+    GroupViewComponent,
+    IssuesViewComponent,
+    NewIssuesViewComponent,
     HistoryViewComponent
   ],
   imports: [
@@ -37,14 +37,14 @@ import { HistoryViewComponent } from './component/history-view/history-view.comp
     AngularMaterialModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      {path: '',component: LoginViewComponent},
-      {path: 'register',component: RegisterViewComponent},
-      {path: 'password-forgotten',component: PasswordForgottenViewComponent},
-      {path: 'main-menu',component: MainMenuViewComponent},
-      {path: 'group-detail',component: GroupDetailViewComponent},
-      {path: 'history',component: HistoryViewComponent},
-      {path: 'ausgaben',component: AusgabenViewComponent},
-      {path: 'ausgaben-add',component: AddAusgabenViewComponent}
+      {path: 'sign-in',component: SignInViewComponent},             // ''
+      {path: 'sign-up',component: SignUpViewComponent},             // register
+      {path: 'new-password',component: NewPasswordViewComponent},   // password-forgotten
+      {path: 'main',component: MainViewComponent},                  // main-menu
+      {path: 'group',component: GroupViewComponent},                // group-detail
+      {path: 'history',component: HistoryViewComponent},            // history
+      {path: 'issues',component: IssuesViewComponent},              // ausgaben
+      {path: 'issues/new',component: NewIssuesViewComponent}        // ausgaben-add
     ]),
     NgToastModule,
     FormsModule,

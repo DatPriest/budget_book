@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-register-view',
-  templateUrl: './register-view.component.html',
-  styleUrls: ['./register-view.component.css']
+  selector: 'app-new-password-view',
+  templateUrl: './new-password-view.component.html',
+  styleUrls: ['./new-password-view.component.css']
 })
-export class RegisterViewComponent implements OnInit {
+export class NewPasswordViewComponent implements OnInit {
 
   showPassword: boolean = false;
   showPasswordReplay: boolean = false;
@@ -24,13 +24,13 @@ export class RegisterViewComponent implements OnInit {
     this.showPasswordReplay = !this.showPasswordReplay;
   }
 
-  async registrationUser(): Promise<void> {
+  async savePassword(): Promise<void> {
     await this.delay(1500);
-    this.router.navigate(['']);
+    this.router.navigate(['/sign-in']);
   }
 
   cancel(): void {
-    this.router.navigate(['']);
+    this.router.navigate(['/sign-in']);
   }
 
   ngOnInit(): void {

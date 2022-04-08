@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { GroupViewComponent } from './group-view.component';
 
-import { MainMenuViewComponent } from './main-menu-view.component';
-
-describe('MainMenuViewComponent', () => {
-  let component: MainMenuViewComponent;
-  let fixture: ComponentFixture<MainMenuViewComponent>;
+describe('GroupViewComponent', () => {
+  let component: GroupViewComponent;
+  let fixture: ComponentFixture<GroupViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainMenuViewComponent ]
+      declarations: [ GroupViewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MainMenuViewComponent);
+    fixture = TestBed.createComponent(GroupViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

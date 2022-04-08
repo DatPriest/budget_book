@@ -3,11 +3,11 @@ import { Router } from "@angular/router";
 import { NgToastService } from 'ng-angular-popup';
 
 @Component({
-  selector: 'app-login-view',
-  templateUrl: './login-view.component.html',
-  styleUrls: ['./login-view.component.css']
+  selector: 'app-sign-in-view',
+  templateUrl: './sign-in-view.component.html',
+  styleUrls: ['./sign-in-view.component.css']
 })
-export class LoginViewComponent implements OnInit {
+export class SignInViewComponent implements OnInit {
 
   showPassword: boolean = false;
   constructor(public router: Router, private toast: NgToastService) { }
@@ -23,15 +23,15 @@ export class LoginViewComponent implements OnInit {
 
   loginUser(): void {
     //this.showSuccess();
-    this.router.navigate(['main-menu']);
+    this.router.navigate(['main']);
   }
 
   newUser(): void {
-    this.router.navigate(['register']);
+    this.router.navigate(['sign-up']);
   }
 
   newPassword(): void {
-    this.router.navigate(['password-forgotten']);
+    this.router.navigate(['new-password']);
   }
 
   ngOnInit(): void {

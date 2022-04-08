@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SignUpViewComponent } from './sign-up-view.component';
 
-import { AusgabenViewComponent } from './ausgaben-view.component';
-
-describe('AusgabenViewComponent', () => {
-  let component: AusgabenViewComponent;
-  let fixture: ComponentFixture<AusgabenViewComponent>;
+describe('SignUpViewComponent', () => {
+  let component: SignUpViewComponent;
+  let fixture: ComponentFixture<SignUpViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AusgabenViewComponent ]
+      declarations: [ SignUpViewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AusgabenViewComponent);
+    fixture = TestBed.createComponent(SignUpViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NewIssuesViewComponent } from "./new-issues-view.component";
 
-import { GroupDetailViewComponent } from './group-detail-view.component';
-
-describe('GroupDetailViewComponent', () => {
-  let component: GroupDetailViewComponent;
-  let fixture: ComponentFixture<GroupDetailViewComponent>;
+describe('NewIssuesViewComponent', () => {
+  let component: NewIssuesViewComponent;
+  let fixture: ComponentFixture<NewIssuesViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GroupDetailViewComponent ]
+      declarations: [ NewIssuesViewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GroupDetailViewComponent);
+    fixture = TestBed.createComponent(NewIssuesViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

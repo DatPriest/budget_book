@@ -5,17 +5,17 @@ import { User } from 'src/app/model/User';
 import { UserService } from 'src/app/service/user/user.service';
 
 @Component({
-  selector: 'app-group-detail-view',
-  templateUrl: './group-detail-view.component.html',
-  styleUrls: ['./group-detail-view.component.css']
+  selector: 'app-group-view',
+  templateUrl: './group-view.component.html',
+  styleUrls: ['./group-view.component.css']
 })
-export class GroupDetailViewComponent implements OnInit {
+export class GroupViewComponent implements OnInit {
   users: User[] = [];
 
-  constructor(public router: Router, private userService: UserService) {
-    this.users.push(new Group(1, 'Max')),
-    this.users.push(new Group(2, 'Leon')),
-    this.users.push(new Group(3, 'Lisa'))
+  constructor(public router: Router, private UserService: UserService) {
+    this.users.push(new User(1, 'Max', 'Mustermann')),
+    this.users.push(new User(2, 'Leon', 'Cordes')),
+    this.users.push(new User(3, 'Lisa', 'Müller'))
   }
 
   delay(ms: number) {
@@ -26,7 +26,7 @@ export class GroupDetailViewComponent implements OnInit {
     console.warn('Diese Funktion ist kein Bestandteil des aktuellen Sprintes!\n Leitet temporär zum Hauptmenü zurück.');
 
     await this.delay(1500);
-    this.router.navigate(['/main-menu']);
+    this.router.navigate(['/main']);
   }
 
   history(): void {
@@ -34,7 +34,7 @@ export class GroupDetailViewComponent implements OnInit {
   }
 
   ausgaben(): void {
-    this.router.navigate(['/ausgaben']);
+    this.router.navigate(['/issues']);
   }
 
   nofunction(): void {

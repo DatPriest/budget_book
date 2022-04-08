@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HistoryViewComponent } from './history-view.component';
+import { SignInViewComponent } from './sign-in-view.component';
 
-describe('HistoryViewComponent', () => {
-  let component: HistoryViewComponent;
-  let fixture: ComponentFixture<HistoryViewComponent>;
+describe('SignInViewComponent', () => {
+  let component: SignInViewComponent;
+  let fixture: ComponentFixture<SignInViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HistoryViewComponent ]
+      declarations: [ SignInViewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HistoryViewComponent);
+    fixture = TestBed.createComponent(SignInViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
