@@ -25,6 +25,7 @@
 
 .button{
   float: left;
+  background: none;
 }
 
 .screen {
@@ -42,7 +43,19 @@
   height: 100%;
 }
 
-#konsole {
+.input_field {
+  padding: 10px 0px;
+  position: relative;
+}
+
+.input_field:active,
+.input_field:focus,
+.input_field:hover {
+  outline: none;
+  border-bottom-color: #6A679E;
+}
+
+#console {
   font-size: x-large;
   border-spacing: 50px 10px;
   padding: .3em .5em;
@@ -50,8 +63,10 @@
   border-style: solid;
   border-color: white;
   width: 800px;
-  height: 600px;
+  height: 550px;
   position: absolute;
   top: 105px;
   left: 210px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
 }

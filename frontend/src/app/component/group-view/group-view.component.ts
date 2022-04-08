@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Group } from 'src/app/model/Group';
 import { User } from 'src/app/model/User';
-import { UserService } from 'src/app/service/user/user.service';
 
 @Component({
   selector: 'app-group-view',
@@ -12,7 +10,7 @@ import { UserService } from 'src/app/service/user/user.service';
 export class GroupViewComponent implements OnInit {
   users: User[] = [];
 
-  constructor(public router: Router, private UserService: UserService) {
+  constructor(public router: Router) {
     this.users.push(new User(1, 'Max', 'Mustermann')),
     this.users.push(new User(2, 'Leon', 'Cordes')),
     this.users.push(new User(3, 'Lisa', 'Müller'))

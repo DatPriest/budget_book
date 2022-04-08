@@ -23,10 +23,6 @@
   min-height: 85vh;
 }
 
-.button{
-  float: left;
-}
-
 .screen {
   background: linear-gradient(90deg, #5D54A4, #7C78B8);
   position: absolute;
@@ -42,17 +38,53 @@
   height: 100%;
 }
 
-.ausgaben_table {
+.issues_table {
   font-size: x-large;
+  border-collapse: collapse;
   border-spacing: 50px 10px;
+  border-width: thin 0 0 thin;
+  margin: 0 0 1em;
+  table-layout: auto;
+  max-width: 100%;
+  width: 550px;
   padding: .3em .5em;
-  text-align: center;
-  border-width: 2px;
-  border-style: solid;
-  border-color: white;
-  width: 150px;
-  height: 150px;
   position: absolute;
+  text-align: center;
+  height: 550px;
   top: 45px;
   right: 400px;
+}
+
+.issues_table_header {
+  border: thin solid white;
+  padding: .4em .6em;
+  background: gray;
+  font-weight: 700;
+  text-align: center;
+}
+
+.issues_table_line {
+  font-weight: 400;
+  text-align: center;
+}
+
+.issues_subject {
+  text-align: left;
+  padding: .4em .6em;
+  border: thin solid white;
+}
+
+.issues_amount {
+  padding: .4em .6em;
+  border: thin solid white;
+}
+
+.issues_currency {
+  padding: .4em .6em;
+  border: thin solid white;
+}
+
+.issues_date {
+  padding: .4em .6em;
+  border: thin solid white;
 }
