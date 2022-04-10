@@ -2,7 +2,9 @@ package de.szut.backend.controller;
 
 import de.szut.backend.dto.GroupCreateDto;
 import de.szut.backend.dto.LoginDto;
+import de.szut.backend.dto.UserToGroupDto;
 import de.szut.backend.model.Group;
+import de.szut.backend.model.GroupXUser;
 import de.szut.backend.model.User;
 import de.szut.backend.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,5 +26,10 @@ public class GroupController {
     @PostMapping(path = "/create", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Group> CreateGroup(@RequestBody GroupCreateDto dto) throws TypeNotPresentException {
         return new ResponseEntity<>(service.createGroup(dto), HttpStatus.OK);
+    }
+
+    @PostMapping(path = "/addUserToGroup", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<GroupXUser> CreateGroup(@RequestBody UserToGroupDto dto) throws TypeNotPresentException {
+        return new ResponseEntity<>(service.addUserToGroup(dto), HttpStatus.OK);
     }
 }
