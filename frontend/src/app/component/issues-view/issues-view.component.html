@@ -1,7 +1,7 @@
 <form>
   <header>
     <div class="row">
-      <div class="button" style="float: left">
+      <div class="button" style="float: left;">
         <button type="button" (click)="back()"><span class="issues_back material-icons">arrow_back</span></button>
       </div>
       <div class="column_menu">
@@ -12,7 +12,7 @@
   <body>
   <div class="container">
     <div class="screen">
-      <div class="button" style="float: right">
+      <div class="button" style="float: right;">
         <button type="button" (click)="add()"><span class="issues_create material-icons">add</span></button>
       </div>
       <table class="issues_table">
@@ -28,8 +28,7 @@
           <ng-container *ngFor="let i of issues">
             <tr class="issues_table_line">
               <td class="issues_subject">{{i.subject}}</td>
-              <td class="issues_amount">{{i.amount}}</td>
-              <td class="issues_currency">{{i.currency}}</td>
+              <td class="issues_amount">{{i.amount}} €</td>
               <td class="issues_date">{{i.date}}</td>
             </tr>
           </ng-container>

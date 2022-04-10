@@ -11,8 +11,8 @@ export class IssuesViewComponent implements OnInit {
   issues: Issues[] = [];
 
   constructor(public router: Router) {
-    this.issues.push(new Issues(1, 'Miete', '124,47', 'EUR', '02.04.2022'));
-    this.issues.push(new Issues(2, 'Einkauf', '47,95', 'EUR', '05.04.2022'));
+    this.issues.push(new Issues(1, 'Miete', '124,47', '02.04.2022'));
+    this.issues.push(new Issues(2, 'Einkauf', '47,95', '05.04.2022'));
   }
 
   back(): void {

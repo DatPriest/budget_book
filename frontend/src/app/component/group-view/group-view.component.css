@@ -145,3 +145,7 @@
   text-align: left;
   padding: .4em .6em;
 }
+
+.li_list {
+  display: inline;
+}
