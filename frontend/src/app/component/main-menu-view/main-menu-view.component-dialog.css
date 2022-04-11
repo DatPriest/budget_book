@@ -2,9 +2,31 @@
   box-sizing: border-box;
 }
 
-.column {
+.createGroup {
+  width: 280px;
+  padding: 30px;
+  padding-top: 200px;
+  font-family: Raleway, sans-serif;
+}
+
+.column_file {
   float: left;
-  width: 45%;
+  width: 100px;
+}
+
+.column_name {
+  float: right;
+  width: 50%;
+}
+
+.column_save {
+   float: left;
+   width: 25%;
+ }
+
+.column_close {
+  float: right;
+  width: 25%;
 }
 
 .row:after {
@@ -12,3 +34,22 @@
   display: table;
   clear: both;
 }
+
+.input_field {
+  padding: 10px 0px;
+  position: relative;
+}
+
+.input_field:active,
+.input_field:focus,
+.input_field:hover {
+  outline: none;
+  border-bottom-color: #6A679E;
+}
+
+.header_Text {
+  color: #7875B5;
+  text-shadow: black;
+  font-size: 20px;
+}
+

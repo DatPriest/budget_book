@@ -23,6 +23,10 @@ export class MainMenuViewComponent implements OnInit {
     this.groups.push(new Group(3,"Rainbow Gang"))
   }
 
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+  }
+
   createGroupDialog(): void {
     const dialogRef = this.dialog.open(MainMenuViewComponentDialog, {
       //width: '250px',
@@ -40,8 +44,12 @@ export class MainMenuViewComponent implements OnInit {
     this.router.navigate(['/group-detail']);
   }
 
-  openMenu(): void {
-    console.error('Das Menü hat aktuell keine Funktion!');
+  async openMenu(): Promise<void> {
+    console.error('Menü hat aktuell keine Funktion!');
+    console.warn('Menü leitet temporär zum Login zurück ...');
+
+    await this.delay(1500);
+    this.router.navigate(['']);
   }
 
   ngOnInit(): void {

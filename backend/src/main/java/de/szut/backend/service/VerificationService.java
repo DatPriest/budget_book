@@ -1,5 +1,9 @@
 package de.szut.backend.service;
 
+import de.szut.backend.dto.ForgotDto;
+import de.szut.backend.dto.LoginDto;
+import de.szut.backend.dto.RegisterDto;
+import de.szut.backend.dto.UpdateDto;
 import de.szut.backend.mapper.UserMapper;
 import de.szut.backend.model.*;
 import de.szut.backend.model.History.HistoryActionToProcess;

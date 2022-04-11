@@ -1,25 +1,18 @@
 <form>
   <header>
-    <h1>Neue Gruppe!</h1>
-    <h3>Habe ich mir hierbei viel Mühe gegeben? Nein? Richtig, habe ich nicht :)</h3>
-    <div class="row">
-      <div class="column">
-        <!--<a href="https://www.geeksforgeeks.org/angular-file-upload/">Link zum Bild einfügen!</a>-->
-        <input type="file" class="" id="inputfile" placeholder="2">
-        <!--<p>Wird in diesem Tab geöffnet!</p>-->
+    <form class="createGroup">
+      <h1 class="header_Text">Neue Gruppe!</h1>
+          <input type="file" class="input_file" id="inputImage" placeholder="Logo" accept="image/png, image/jpeg">
+          <input type="text" class="input_field" id="GroupName" placeholder="Group Name">
+      <div class="row">
+        <div class="column_save">
+          <button type="button" id="save" (click)="createGroup()"><span class="group_create material-icons">save</span></button>
+        </div>
+        <div class="column_close">
+          <button type="button" id="close" (click)="onNoClick()"><span class="group_create material-icons">close</span></button>
+        </div>
       </div>
-      <div class="column">
-        <p>Input Feld für Gruppenname</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column">
-        <button type="button" id="save" (click)="createGroup()"><span class="group_create material-icons">save</span></button>
-      </div>
-      <div class="column">
-        <button type="button" id="close" (click)="onNoClick()"><span class="group_create material-icons">close</span></button>
-      </div>
-    </div>
+    </form>
   </header>
   <body>
   </body>
