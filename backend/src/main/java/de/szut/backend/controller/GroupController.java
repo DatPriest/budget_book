@@ -10,10 +10,10 @@ import de.szut.backend.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.logging.Logger;
 
 @RequestMapping(value = "/api/v1/groups")
 @RestController
@@ -23,13 +23,31 @@ public class GroupController {
         this.service = _gs;
     }
 
+    /**
+     * @param dto
+     * @return
+     * @throws TypeNotPresentException
+     */
     @PostMapping(path = "/create", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Group> CreateGroup(@RequestBody GroupCreateDto dto) throws TypeNotPresentException {
-        return new ResponseEntity<>(service.createGroup(dto), HttpStatus.OK);
+        return new ResponseEntity<>(service.createGroup(dto), HttpStatus.CREATED);
     }
 
+    /**
+     * @param dto
+     * @return
+     * @throws TypeNotPresentException
+     */
     @PostMapping(path = "/addUserToGroup", consumes = "application/json", produces = "application/json")
     public ResponseEntity<GroupXUser> CreateGroup(@RequestBody UserToGroupDto dto) throws TypeNotPresentException {
-        return new ResponseEntity<>(service.addUserToGroup(dto), HttpStatus.OK);
+        var user = service.addUserToGroup(dto);
+        if (user == null)
+            return new ResponseEntity<>(null, HttpStatus.LOOP_DETECTED);
+        return new ResponseEntity<>(user, HttpStatus.OK);
+    }
+
+    @PostMapping(path = "/getUsers/{groupId}", produces = "application/json")
+    public ResponseEntity<ArrayList<User>> GetUsersToGroup(@PathVariable long groupId) throws TypeNotPresentException {
+        return new ResponseEntity<>(service.getUsersToGroup(groupId), HttpStatus.OK);
     }
 }

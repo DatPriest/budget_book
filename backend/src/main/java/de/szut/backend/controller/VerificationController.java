@@ -22,17 +22,17 @@ public class VerificationController {
     }
 
     @PostMapping(path = "/login", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<User> Login(@RequestBody LoginDto dto) throws TypeNotPresentException{
+    public ResponseEntity<User> Login(@RequestBody LoginDto dto) throws TypeNotPresentException {
         return new ResponseEntity<>(service.login(dto), HttpStatus.OK);
     }
 
     @PostMapping(path = "/forgotPassword", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<User> ForgotPassword(@RequestBody ForgotDto dto) throws TypeNotPresentException{
+    public ResponseEntity<User> ForgotPassword(@RequestBody ForgotDto dto) throws TypeNotPresentException {
         return new ResponseEntity<>(service.forgotPassword(dto), HttpStatus.OK);
     }
 
     @PutMapping(path = "/updatePassword", consumes = "application/json")
-    public ResponseEntity<User> UpdatePassword(@RequestBody UpdateDto dto) throws TypeNotPresentException{
+    public ResponseEntity<User> UpdatePassword(@RequestBody UpdateDto dto) throws TypeNotPresentException {
         return new ResponseEntity<>(service.updatePassword(dto), HttpStatus.OK);
     }
 

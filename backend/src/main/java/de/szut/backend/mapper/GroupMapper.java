@@ -11,7 +11,6 @@ public class GroupMapper {
     public Group mapGroupCreateDtoToGroup(GroupCreateDto dto) {
         Group group = new Group();
         group.groupName = dto.getGroupName();
-
         return group;
     }
 

@@ -1,5 +1,6 @@
 package de.szut.backend.model;
 
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
@@ -15,7 +16,7 @@ public class GroupXUser {
     public Long userId;
     public Long groupId;
 
-    @CreatedDate
+    @CreationTimestamp
     public Date dateCreated;
 
 }

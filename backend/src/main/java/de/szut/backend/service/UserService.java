@@ -21,4 +21,8 @@ public class UserService extends BaseService {
         // Default Values
         return userRepository.findAll();
     }
+
+    public User getUserById(long id) {
+        return userRepository.findById(id).get();
+    }
 }

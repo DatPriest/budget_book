@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class GroupCreateDto {
-    String groupName;
-    long id;
+    public String groupName;
+    public long id;
+    public String image;
 }
