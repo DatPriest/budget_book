@@ -64,7 +64,7 @@
 }
 
 .issues_table_header {
-  border: thin solid white;
+  border: thin solid black;
   background: white;
   font-weight: 700;
   text-align: center;
@@ -78,22 +78,26 @@
 .issues_subject {
   text-align: left;
   padding: .4em .6em;
-  border: thin solid white;
+  border: thin solid black;
+  background: white;
 }
 
 .issues_amount {
   padding: .4em .6em;
-  border: thin solid white;
+  border: thin solid black;
+  background: white;
 }
 
 .issues_currency {
   padding: .4em .6em;
-  border: thin solid white;
+  border: thin solid black;
+  background: white;
 }
 
 .issues_date {
   padding: .4em .6em;
-  border: thin solid white;
+  border: thin solid black;
+  background: white;
 }
 
 .button_add {
