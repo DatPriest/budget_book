@@ -1,7 +1,12 @@
 package de.szut.backend.service;
 
+import de.szut.backend.dto.ForgotDto;
+import de.szut.backend.dto.LoginDto;
+import de.szut.backend.dto.RegisterDto;
+import de.szut.backend.dto.UpdateDto;
 import de.szut.backend.mapper.UserMapper;
 import de.szut.backend.model.*;
+import de.szut.backend.model.History.HistoryActionToProcess;
 import de.szut.backend.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,10 +21,12 @@ import java.util.UUID;
 public class VerificationService extends BaseService {
     UserRepository userRepository;
     UserMapper userMapper;
+    HistoryLogService logService;
 
-    public VerificationService(UserRepository _userRepository, UserMapper _userMapper) {
+    public VerificationService(UserRepository _userRepository, UserMapper _userMapper, HistoryLogService logService) {
         this.userRepository = _userRepository;
         this.userMapper = _userMapper;
+        this.logService = logService;
     }
 
     public User login(LoginDto dto) {
@@ -28,6 +35,7 @@ public class VerificationService extends BaseService {
         if (hashPassword(user.hash + queryUser.salt).equals(queryUser.hash)) {
             queryUser.lastLogin = new Date();
             userRepository.save(queryUser);
+            //log("UserLoginSuccess",queryUser.lastLogin.toString());
             return queryUser;
         } else {
             return null;
@@ -92,5 +100,12 @@ public class VerificationService extends BaseService {
         user.hash = hashPassword(dto.hash + user.salt);
         return userRepository.save(user);
 
+    }
+    //Beispiel Implementierung für die Erstellung eines Log-Eintrags
+    private void log (String action, String addition){
+        HistoryActionToProcess actionToProcess = new HistoryActionToProcess();
+        actionToProcess.setAction(action);
+        actionToProcess.setAdditionalInformation(addition);
+        logService.createLogEntry(actionToProcess);
     }
 }
