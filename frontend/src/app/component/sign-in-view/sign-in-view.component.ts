@@ -11,7 +11,7 @@ export class SignInViewComponent implements OnInit {
 
   showPassword: boolean = false;
   constructor(public router: Router, private toast: NgToastService) {
-    alert('Bitte die Seite nicht übersetzen lassen falls dies angeboten wird!');
+    //alert('Bitte die Seite nicht übersetzen lassen falls dies angeboten wird!'); Stört etwas
   }
 
   togglePassword(): void {
