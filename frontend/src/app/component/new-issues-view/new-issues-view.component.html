@@ -1,3 +1,68 @@
-<p>add-ausgaben-view works!</p>
-
-<button type="button" (click)="back()"><span class="group_create material-icons">arrow_back</span></button>
+<form>
+  <header>
+    <div class="row">
+      <div class="button_back">
+        <button type="button" (click)="back()"><span class="issues_back material-icons">arrow_back</span></button>
+      </div>
+      <div class="column_menu">
+        <span class="header_new_issues">Ausgaben hinzufügen</span>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="container">
+      <div class="screen">
+        <div class="screen_issues">
+          <div class="line_issues">
+            <table>
+              <ng-container *ngFor="let index of [].constructor(this.index)">
+                <tr>
+                  <td>
+                    <div class="column_category">
+                      <div class="row">
+                        <div class="column">
+                          <label for="category"><p>Kategorie:&nbsp;</p></label>
+                        </div>
+                        <div class="column">
+                          <select id="category" form="formular1" class="category_menu">
+                            <option value="noSelection"></option>
+                            <option value="questionA">Miete</option>
+                            <option value="questionB">Einkauf</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="column_issues">
+                      <div class="row">
+                        <div class="column">
+                          <input type="text" class="input_field" id="Issues_issues" placeholder="Ausgabe">
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="column_price">
+                      <div class="row">
+                        <div class="column">
+                          <input type="text" class="input_field" id="Issues_price" placeholder="Betrag">
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </ng-container>
+            </table>
+          </div>
+        </div>
+        <div class="button_add">
+          <button type="button" (click)="add()"><span class="issues_back material-icons">add</span></button>
+        </div>
+        <div class="button_save">
+          <button type="button" (click)="save()" onclick="this.classList.toggle('button-loading')"><span class="issues_save material-icons">save</span></button>
+        </div>
+      </div>
+    </div>
+  </body>
+</form>

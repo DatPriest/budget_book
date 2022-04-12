@@ -9,9 +9,26 @@ import { Router } from '@angular/router';
 })
 export class NewIssuesViewComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  index: number = 1;
+
+  constructor(public router: Router) {
+    this.index;
+  }
+
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+  }
 
   back(): void {
+    this.router.navigate(['/issues']);
+  }
+
+  add(): void {
+   this.index++;
+  }
+
+  async save(): Promise<void> {
+    await this.delay(1500);
     this.router.navigate(['/issues']);
   }
 

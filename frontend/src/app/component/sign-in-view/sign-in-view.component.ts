@@ -10,19 +10,15 @@ import { NgToastService } from 'ng-angular-popup';
 export class SignInViewComponent implements OnInit {
 
   showPassword: boolean = false;
-  constructor(public router: Router, private toast: NgToastService) { }
-
-  /*showSuccess() {
-    this.toast.success({detail:"SUCCESS",summary:'Your Success Message',duration:5000});
-    // https://www.npmjs.com/package/ng-angular-popup
-  }*/
+  constructor(public router: Router, private toast: NgToastService) {
+    alert('Bitte die Seite nicht übersetzen lassen falls dies angeboten wird!');
+  }
 
   togglePassword(): void {
     this.showPassword = !this.showPassword;
   }
 
   loginUser(): void {
-    //this.showSuccess();
     this.router.navigate(['main']);
   }
 

@@ -38,27 +38,34 @@
   height: 100%;
 }
 
+.screen_issues {
+  position: absolute;
+  top: 65px;
+  height: 550px;
+  width: 550px;
+  right: 25%;
+  font-size: 18px;
+  box-shadow: 0px 0px 24px #5C5696;
+  overflow-y: scroll;
+}
+
 .issues_table {
   font-size: x-large;
   border-collapse: collapse;
-  border-spacing: 50px 10px;
   border-width: thin 0 0 thin;
   margin: 0 0 1em;
   table-layout: auto;
   max-width: 100%;
   width: 550px;
-  padding: .3em .5em;
-  position: absolute;
-  text-align: center;
   height: 550px;
   top: 45px;
   right: 400px;
+  font-size: 18px;
 }
 
 .issues_table_header {
   border: thin solid white;
-  padding: .4em .6em;
-  background: gray;
+  background: white;
   font-weight: 700;
   text-align: center;
 }
@@ -87,4 +94,30 @@
 .issues_date {
   padding: .4em .6em;
   border: thin solid white;
+}
+
+.button_add {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+.button_back {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
+}
+
+.input_field {
+  padding: 10px 0px;
+  position: relative;
+}
+
+.input_field:active,
+.input_field:focus,
+.input_field:hover {
+  outline: none;
+  border-bottom-color: #6A679E;
 }

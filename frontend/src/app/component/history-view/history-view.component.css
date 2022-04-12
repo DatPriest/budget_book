@@ -24,8 +24,10 @@
 }
 
 .button{
-  float: left;
-  background: none;
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
 }
 
 .screen {
@@ -68,5 +70,4 @@
   top: 105px;
   left: 210px;
   overflow-y: scroll;
-  scrollbar-width: thin;
 }

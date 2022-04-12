@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
+import { User } from 'src/app/model/User';
+import { UserService } from 'src/app/service/user/user.service';
 
 @Component({
   selector: 'app-sign-up-view',
@@ -10,7 +12,7 @@ export class SignUpViewComponent implements OnInit {
 
   showPassword: boolean = false;
   showPasswordReplay: boolean = false;
-  constructor(public router: Router) { }
+  constructor(public router: Router, private userService: UserService) { }
 
   delay(ms: number) {
     return new Promise( resolve => setTimeout(resolve, ms) );
@@ -24,9 +26,9 @@ export class SignUpViewComponent implements OnInit {
     this.showPasswordReplay = !this.showPasswordReplay;
   }
 
-  async registrationUser(): Promise<void> {
+  async registrationUser(user: User): Promise<void> {
     await this.delay(1500);
-    this.router.navigate(['/sign-in']);
+    //this.userService.registerUser(user).subscribe(data => this.router.navigate(['/sign-in', data]));
   }
 
   cancel(): void {

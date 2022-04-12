@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+
+.header_new_issues {
+  color: black;
+  font-size: 40px;
+  width: 150px;
+  font-family: Raleway, sans-serif;
+}
+
+.column_menu {
+  position: absolute;
+  top: 25px;
+  right: 600px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+}
+
+.screen {
+  background: linear-gradient(90deg, #5D54A4, #7C78B8);
+  position: absolute;
+  top: 65px;
+  height: 730px;
+  width: 1260px;
+  box-shadow: 0px 0px 24px #5C5696;
+}
+
+.screen_issues {
+  position: absolute;
+  top: 65px;
+  height: 550px;
+  width: 550px;
+  right: 25%;
+  text-align: center;
+  font-size: 18px;
+  box-shadow: 0px 0px 24px #5C5696;
+  overflow-y: scroll;
+}
+
+.screen_content {
+  z-index: 1;
+  position: relative;
+}
+
+.line_issues {
+  padding-right: 100px;
+  background-color: aliceblue;
+}
+
+.button_back {
+  float: left;
+}
+
+.category_menu {
+  position: relative;
+}
+
+.column {
+  float: left;
+  padding: 10px 0px;
+  position: relative;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column_category {
+  float: left;
+  width: 175px;
+}
+
+.column_issues {
+  float: left;
+}
+
+.column_price {
+  float: left;
+}
+
+.input_field {
+  padding: 10px 0px;
+  position: relative;
+}
+
+.input_field:active,
+.input_field:focus,
+.input_field:hover {
+  outline: none;
+  border-bottom-color: #6A679E;
+}
+
+.button_add {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
+}
+
+.button_save {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+.button-loading .issues_save {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.button-loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 4px solid transparent;
+  border-top-color: #4C489D;
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}

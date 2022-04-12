@@ -13,6 +13,32 @@ export class IssuesViewComponent implements OnInit {
   constructor(public router: Router) {
     this.issues.push(new Issues(1, 'Miete', '124,47', '02.04.2022'));
     this.issues.push(new Issues(2, 'Einkauf', '47,95', '05.04.2022'));
+    this.issues.push(new Issues(1, 'Miete', '124,47', '02.04.2022'));
+    this.issues.push(new Issues(2, 'Einkauf', '47,95', '05.04.2022'));
+    this.issues.push(new Issues(1, 'Miete', '124,47', '02.04.2022'));
+    this.issues.push(new Issues(2, 'Einkauf', '47,95', '05.04.2022'));
+    this.issues.push(new Issues(1, 'Miete', '124,47', '02.04.2022'));
+    this.issues.push(new Issues(2, 'Einkauf', '47,95', '05.04.2022'));
+    this.issues.push(new Issues(1, 'Miete', '124,47', '02.04.2022'));
+    this.issues.push(new Issues(2, 'Einkauf', '47,95', '05.04.2022'));
+    this.issues.push(new Issues(1, 'Miete', '124,47', '02.04.2022'));
+    this.issues.push(new Issues(2, 'Einkauf', '47,95', '05.04.2022'));
+    this.issues.push(new Issues(1, 'Miete', '124,47', '02.04.2022'));
+    this.issues.push(new Issues(2, 'Einkauf', '47,95', '05.04.2022'));
+    this.issues.push(new Issues(1, 'Miete', '124,47', '02.04.2022'));
+    this.issues.push(new Issues(2, 'Einkauf', '47,95', '05.04.2022'));
+    this.issues.push(new Issues(1, 'Miete', '124,47', '02.04.2022'));
+    this.issues.push(new Issues(2, 'Einkauf', '47,95', '05.04.2022'));
+    this.issues.push(new Issues(1, 'Miete', '124,47', '02.04.2022'));
+    this.issues.push(new Issues(2, 'Einkauf', '47,95', '05.04.2022'));
+    this.issues.push(new Issues(1, 'Miete', '124,47', '02.04.2022'));
+    this.issues.push(new Issues(2, 'Einkauf', '47,95', '05.04.2022'));
+    this.issues.push(new Issues(1, 'Miete', '124,47', '02.04.2022'));
+    this.issues.push(new Issues(2, 'Einkauf', '47,95', '05.04.2022'));
+    this.issues.push(new Issues(1, 'Miete', '124,47', '02.04.2022'));
+    this.issues.push(new Issues(2, 'Einkauf', '47,95', '05.04.2022'));
+    this.issues.push(new Issues(1, 'Miete', '124,47', '02.04.2022'));
+    this.issues.push(new Issues(2, 'Einkauf', '47,95', '05.04.2022'));
   }
 
   back(): void {
