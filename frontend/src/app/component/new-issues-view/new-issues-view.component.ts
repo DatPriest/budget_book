@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,8 +9,9 @@ import { Router } from '@angular/router';
 })
 export class NewIssuesViewComponent implements OnInit {
 
+  newIssuesForm!: FormGroup;
   index: number = 1;
-  constructor(public router: Router) {
+  constructor(public router: Router, private formBuilder: FormBuilder) {
     this.index;
   }
 
@@ -21,11 +23,17 @@ export class NewIssuesViewComponent implements OnInit {
    this.index++;
   }
 
-  save(): void {
+  save(signUpForm: NgForm): void {
+    console.log(signUpForm.value);
     this.router.navigate(['/issues']);
   }
 
   ngOnInit(): void {
+    this.newIssuesForm = this.formBuilder.group({
+      subject: '',
+      amount: '',
+      date: ''
+    });
   }
 
 }

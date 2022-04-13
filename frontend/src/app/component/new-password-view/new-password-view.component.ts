@@ -9,20 +9,10 @@ import { Router } from "@angular/router";
 })
 export class NewPasswordViewComponent implements OnInit {
 
-  form: FormGroup | undefined;
   newPasswordForm!: FormGroup;
   showPassword: boolean = false;
   showPasswordReplay: boolean = false;
-  constructor(public router: Router, private formBuilder: FormBuilder) {
-    this.form = this.formBuilder.group({
-      email: '',
-      password_1: '',
-      password_2: '',
-      securityQuestion: '',
-      securityAnswer: '',
-      hash: ''
-    });
-  }
+  constructor(public router: Router, private formBuilder: FormBuilder) {}
 
   togglePassword(): void {
     this.showPassword = !this.showPassword;
@@ -39,7 +29,7 @@ export class NewPasswordViewComponent implements OnInit {
     } else {
       console.error("Passwörter stimmen nicht überein!"); // Übergangsweise!
     }
-    //this.router.navigate(['/sign-in']);
+    this.router.navigate(['/sign-in']);
   }
 
   cancel(): void {

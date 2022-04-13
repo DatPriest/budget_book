@@ -8,56 +8,58 @@
   <body>
     <div class="container">
       <div class="screen">
-        <div class="screen_issues">
-          <div class="line_issues">
-            <table>
-              <ng-container *ngFor="let index of [].constructor(this.index)">
-                <tr>
-                  <td>
-                    <div class="column_category">
-                      <div class="row">
-                        <div class="column">
-                          <label for="category"><p>Kategorie:&nbsp;</p></label>
-                        </div>
-                        <div class="column">
-                          <select id="category" form="formular1" class="category_menu">
-                            <option value="noSelection"></option>
-                            <option value="questionA">Miete</option>
-                            <option value="questionB">Einkauf</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="column_issues">
-                      <div class="row">
-                        <div class="column">
-                          <input type="text" class="input_field" id="Issues_issues" placeholder="Ausgabe">
+        <form (ngSubmit)="save(newIssuesForm)" #newIssuesForm="ngForm">
+          <div class="screen_issues">
+            <div class="line_issues">
+              <table>
+                <ng-container *ngFor="let index of [].constructor(this.index)">
+                  <tr>
+                    <td>
+                      <div class="column_category">
+                        <div class="row">
+                          <div class="column">
+                            <label for="category"><p>Kategorie:&nbsp;</p></label>
+                          </div>
+                          <div class="column">
+                            <select name="subject" id="category" form="formular1" class="category_menu" ngModel>
+                              <option value="noSelection"></option>
+                              <option value="Rent">Miete</option>
+                              <option value="Purchasing">Einkauf</option>
+                            </select>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="column_price">
-                      <div class="row">
-                        <div class="column">
-                          <input type="text" class="input_field" id="Issues_price" placeholder="Betrag">
+                    </td>
+                    <td>
+                      <div class="column_issues">
+                        <div class="row">
+                          <div class="column">
+                            <input name="amount" type="text" class="input_field" id="Issues_price" ngModel placeholder="Betrag">
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </td>
-                </tr>
-              </ng-container>
-            </table>
+                    </td>
+                    <td>
+                      <div class="column_price">
+                        <div class="row">
+                          <div class="column">
+                            <input name="date" type="text" class="input_field" id="Issues_date" ngModel placeholder="Datum">
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </ng-container>
+              </table>
+            </div>
           </div>
-        </div>
-        <div class="button_add">
-          <button type="button" (click)="add()"><span class="issues_back material-icons">add</span></button>
-        </div>
-        <div class="button_save">
-          <button type="button" (click)="save()" onclick="this.classList.toggle('button-loading')"><span class="issues_save material-icons">save</span></button>
-        </div>
+          <div class="button_add">
+            <button type="button" (click)="add()"><span class="issues_back material-icons">add</span></button>
+          </div>
+          <div class="button_save">
+            <button type="submit" onclick="this.classList.toggle('button-loading')"><span class="issues_save material-icons">save</span></button>
+          </div>
+        </form>
       </div>
     </div>
   </body>

@@ -10,15 +10,9 @@ import { Router } from "@angular/router";
 })
 export class SignInViewComponent implements OnInit {
 
-  form: FormGroup | undefined;
   signInForm!: FormGroup;
   showPassword: boolean = false;
-  constructor(public router: Router, private formBuilder: FormBuilder) {
-    this.form = this.formBuilder.group({
-      email: '',
-      password: ''
-    });
-  }
+  constructor(public router: Router, private formBuilder: FormBuilder) {}
 
   togglePassword(): void {
     this.showPassword = !this.showPassword;
