@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
-import { NgToastService } from 'ng-angular-popup';
-import {UserService} from "../../service/user/user.service";
+import {HttpClient} from '@angular/common/http';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, NgForm} from '@angular/forms';
+import {Router} from "@angular/router";
 import {LoginUser} from "../../model/LoginUser";
+import {UserService} from "../../service/user/user.service";
+import {User} from "../../model/User";
 
 @Component({
   selector: 'app-sign-in-view',
@@ -11,35 +13,40 @@ import {LoginUser} from "../../model/LoginUser";
 })
 export class SignInViewComponent implements OnInit {
 
+  form: FormGroup | undefined;
+  signInForm!: FormGroup;
+  user: User|undefined;
   showPassword: boolean = false;
-  service: UserService | undefined;
-  private user!: LoginUser;
-  constructor(public router: Router, private toast: NgToastService) {
-    //alert('Bitte die Seite nicht übersetzen lassen falls dies angeboten wird!'); Stört etwas
+  private service: UserService;
+
+  constructor(public router: Router, private http: HttpClient, private formBuilder: FormBuilder) {
+    this.service = new UserService(this.http);
+    this.form = this.formBuilder.group({
+      email: '',
+      password: ''
+    });
   }
 
   togglePassword(): void {
     this.showPassword = !this.showPassword;
   }
 
-  /**
-   * Macht eine Abfrage aus der Datenbbank, ob Benutzername existiert, und ob das dazugehörige Passwort richtig ist.
-   * Und führt dann den Login-Vorgang aus.
-   * Falls Benutzername oder Passwort falsch sind, wird eine Fehlermeldung ausgegeben.
-   * @param email Die Emailadresse, die auf der Website eingegeben wurde
-   * @param pw Das Passwortm, dass auf der Website eingegeben wurde
-   */
-  loginUser(email: string, pw: string): void {
-    this.router.navigate(['main']);
-    // TODO: Abfrage aus Datenbank
-  //   this.user = new LoginUser(email, pw);
-  // if (this.service?.loginUser(this.user)){
-  //   this.router.navigate(['main']);
-  //   console.log("User eingeloggt")
-  // }
-  // else {
-  //   console.warn('Diese Funktion ist kein Bestandteil des aktuellen Sprintes!\n Leitet temporär zum Hauptmenü zurück.');
-  // }
+  loginUser(signInForm: NgForm): void {
+    //console.log(signInForm.value);
+    let user: LoginUser = new LoginUser(signInForm.value.email, signInForm.value.password);
+    //console.log(user);
+
+    this.service.loginUser(user).subscribe(value => {this.user = new User(value.firstName, value.lastName, value.password, value.email, value.securityQuestion, value.securityAnswer)})
+    this.service.loginUser(user).subscribe(value => {console.log(value)})
+    if(this.user.email == signInForm.value.email){
+      console.log("Benutzername " + signInForm.value.email + " bekannt")
+      if(this.user.password == signInForm.value.password){
+        console.log("Passwort bekannt")
+        this.router.navigate(['main'])
+      }else{console.error("Falsches Passwort")}
+    }else{console.error("Falscher Benutzername")}
+    //this.service.loginUser(user).subscribe(value => {console.log(value.password)})
+    //console.error("Benutzername nicht verfügbar")
 
   }
 
@@ -52,5 +59,9 @@ export class SignInViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.signInForm = this.formBuilder.group({
+      email: [''],
+      password: ['']
+    })
   }
 }

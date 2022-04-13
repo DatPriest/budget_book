@@ -3,12 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from "@angular/router";
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatNativeDateModule } from '@angular/material/core';
 import { MaterialExampleModule } from 'src/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
 import { NgToastModule } from 'ng-angular-popup';
+import { HttpClientModule } from "@angular/common/http";
 
 import { SignInViewComponent } from './component/sign-in-view/sign-in-view.component';
 import { SignUpViewComponent } from './component/sign-up-view/sign-up-view.component';
@@ -34,6 +35,7 @@ import { HistoryViewComponent } from './component/history-view/history-view.comp
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
+    HttpClientModule,
     AngularMaterialModule,
     AppRoutingModule,
     RouterModule.forRoot([
@@ -48,6 +50,7 @@ import { HistoryViewComponent } from './component/history-view/history-view.comp
     ]),
     NgToastModule,
     FormsModule,
+    ReactiveFormsModule,
     MatNativeDateModule,
     MaterialExampleModule
   ],

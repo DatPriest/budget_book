@@ -21,6 +21,7 @@ public class VerificationController {
         this.service = _service;
     }
 
+    @CrossOrigin
     @PostMapping(path = "/login", consumes = "application/json", produces = "application/json")
     public ResponseEntity<User> Login(@RequestBody LoginDto dto) throws TypeNotPresentException {
         return new ResponseEntity<>(service.login(dto), HttpStatus.OK);
@@ -36,6 +37,7 @@ public class VerificationController {
         return new ResponseEntity<>(service.updatePassword(dto), HttpStatus.OK);
     }
 
+    @CrossOrigin
     @PostMapping(path = "/register", consumes = "application/json", produces = "application/json")
     public ResponseEntity<User> Register(@RequestBody RegisterDto dto) throws TypeNotPresentException {
         User result = service.register(dto);

@@ -26,5 +26,4 @@ export class IssuesViewComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

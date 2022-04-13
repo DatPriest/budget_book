@@ -3,67 +3,30 @@
 }
 
 .header_groupname {
+  position: absolute;
+  width: 98%;
+  top: 15px;
+  text-align: center;
   color: black;
   font-size: 40px;
-  width: 150px;
   font-family: Raleway, sans-serif;
-  position: center;
 }
 
 .burgerMenu{
+  position: absolute;
+  top: 8px;
+  left: 16px;
   font-size: 45px;
   color: rgb(0, 0, 0);
   cursor: pointer;
 }
 
-.column_burger {
-  position: absolute;
-  top: 8px;
-  left: 16px;
-  font-size: 18px;
-}
-
-.column_menu {
-  position: absolute;
-  top: 25px;
-  right: 610px;
-}
-
-
-/*
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.column_ausgaben {
-  text-align: left;
-  width: 130px;
-}
-
-.column_categories {
-  text-align: center;
-  width: 130px;
-}
-
-.column_statistics {
-  text-align: right;
-  width: 130px;
-}
-
-.row_nav:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-*/
-
 .button{
   text-align: center;
   width: 150px;
   position: absolute;
-  top: 52px;
-  left: 360px;
+  top: 90px;
+  right: 25px;
 }
 
 .sidebar {
@@ -103,7 +66,7 @@
 .picture {
   position: absolute;
   top: 22px;
-  left: 60px;
+  left: 470px;
 }
 
 .ul {
@@ -129,8 +92,8 @@
   position: absolute;
   text-align: center;
   height: 150px;
-  top: 45px;
-  right: 400px;
+  top: 350px;
+  right: 270px;
 }
 
 .user_table_header {
@@ -151,4 +114,19 @@
 
 .li_list {
   display: inline;
+}
+
+#console {
+  font-size: x-large;
+  border-spacing: 50px 10px;
+  padding: .3em .5em;
+  border-width: 2px;
+  border-style: solid;
+  border-color: white;
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  top: 355px;
+  left: 160px;
+  overflow-y: scroll;
 }

@@ -1,13 +1,7 @@
 <form>
   <header>
-    <div class="row">
-      <div class="column_burger">
-        <span class="material-icons burgerMenu" (click)="openMenu()">menu</span>
-      </div>
-      <div class="column_menu">
-        <span class="header_groupname">Teddybär Bande</span>
-      </div>
-    </div>
+    <span class="material-icons burgerMenu" (click)="openMenu()">menu</span>
+    <span class="header_groupname">Teddybär Bande</span>
   </header>
   <body>
     <div class="container">
@@ -41,11 +35,13 @@
           <tbody>
             <ng-container *ngFor="let u of users">
               <tr class="user_table_line">
-                <td class="user_name">{{u.firstname}} {{u.lastname}}</td>
+                <td class="user_name">{{u.firstName}} {{u.lastName}}</td>
               </tr>
             </ng-container>
           </tbody>
         </table>
+        <div id="console">
+          </div>
       </div>
     </div>
   </body>
