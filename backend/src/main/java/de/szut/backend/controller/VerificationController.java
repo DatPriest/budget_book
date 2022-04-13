@@ -24,6 +24,10 @@ public class VerificationController {
 
     @PostMapping(path = "/login", consumes = "application/json", produces = "application/json")
     public ResponseEntity<User> Login(@RequestBody LoginDto dto) throws TypeNotPresentException {
+        var user = service.login(dto);
+        if (user == null) {
+            return new ResponseEntity("User not found, bad password", HttpStatus.UNAUTHORIZED);
+        }
         return new ResponseEntity<>(service.login(dto), HttpStatus.OK);
     }
 
