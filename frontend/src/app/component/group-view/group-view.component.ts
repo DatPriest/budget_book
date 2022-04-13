@@ -11,9 +11,9 @@ export class GroupViewComponent implements OnInit {
   users: User[] = [];
 
   constructor(public router: Router) {
-    this.users.push(new User(1, 'Max', 'Mustermann')),
-    this.users.push(new User(2, 'Leon', 'Cordes')),
-    this.users.push(new User(3, 'Lisa', 'Müller'))
+    this.users.push(new User('Max', 'Mustermann', '', '', '', '')),
+    this.users.push(new User('Leon', 'Cordes', '', '', '', '')),
+    this.users.push(new User('Lisa', 'Müller', '', '', '', ''))
   }
 
   delay(ms: number) {
