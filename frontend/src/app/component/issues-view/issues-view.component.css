@@ -56,8 +56,6 @@
   border-collapse: collapse;
   border-width: thin 0 0 thin;
   margin: 0 0 1em;
-  table-layout: auto;
-  max-width: 100%;
   width: 550px;
   height: 550px;
   top: 45px;
@@ -105,6 +103,13 @@
 .button_add {
   position: absolute;
   top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+.button_delete {
+  position: absolute;
+  top: 80px;
   right: 16px;
   font-size: 18px;
 }

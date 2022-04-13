@@ -25,8 +25,8 @@
   text-align: center;
   width: 150px;
   position: absolute;
-  top: 52px;
-  left: 360px;
+  top: 90px;
+  right: 25px;
 }
 
 .sidebar {
@@ -66,7 +66,7 @@
 .picture {
   position: absolute;
   top: 22px;
-  left: 60px;
+  left: 470px;
 }
 
 .ul {
@@ -92,8 +92,8 @@
   position: absolute;
   text-align: center;
   height: 150px;
-  top: 45px;
-  right: 400px;
+  top: 350px;
+  right: 270px;
 }
 
 .user_table_header {
@@ -114,4 +114,19 @@
 
 .li_list {
   display: inline;
+}
+
+#console {
+  font-size: x-large;
+  border-spacing: 50px 10px;
+  padding: .3em .5em;
+  border-width: 2px;
+  border-style: solid;
+  border-color: white;
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  top: 355px;
+  left: 160px;
+  overflow-y: scroll;
 }
