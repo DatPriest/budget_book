@@ -37,7 +37,7 @@ import { HistoryViewComponent } from './component/history-view/history-view.comp
     AngularMaterialModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      {path: 'sign-in',component: SignInViewComponent},             // ''
+      {path: 'sign-in',component: SignInViewComponent},             // sign-In
       {path: 'sign-up',component: SignUpViewComponent},             // register
       {path: 'new-password',component: NewPasswordViewComponent},   // password-forgotten
       {path: 'main',component: MainViewComponent},                  // main-menu
