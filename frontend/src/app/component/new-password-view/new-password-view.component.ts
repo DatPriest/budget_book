@@ -10,7 +10,7 @@ import { Router } from "@angular/router";
 export class NewPasswordViewComponent implements OnInit {
 
   form: FormGroup | undefined;
-  signInForm!: FormGroup;
+  newPasswordForm!: FormGroup;
   showPassword: boolean = false;
   showPasswordReplay: boolean = false;
   constructor(public router: Router, private formBuilder: FormBuilder) {
@@ -47,7 +47,7 @@ export class NewPasswordViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.form = this.formBuilder.group({
+    this.newPasswordForm = this.formBuilder.group({
       email: '',
       password_1: '',
       password_2: '',
