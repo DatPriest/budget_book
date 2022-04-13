@@ -3,11 +3,13 @@
 }
 
 .header_ausgaben {
+  position: absolute;
+  width: 98%;
+  top: 15px;
+  text-align: center;
   color: black;
   font-size: 40px;
-  width: 150px;
   font-family: Raleway, sans-serif;
-  position: center;
 }
 
 .column_menu {

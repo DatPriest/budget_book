@@ -3,36 +3,22 @@
 }
 
 .header_hauptmenu {
+  position: absolute;
+  width: 98%;
+  top: 15px;
+  text-align: center;
   color: black;
   font-size: 40px;
-  width: 150px;
   font-family: Raleway, sans-serif;
-  position: center;
 }
 
 .burgerMenu{
-  font-size: 45px;
-  color: rgb(0, 0, 0);
-  cursor: pointer;
-}
-
-.column_burger {
   position: absolute;
   top: 8px;
   left: 16px;
-  font-size: 18px;
-}
-
-.column_menu {
-  position: absolute;
-  top: 35px;
-  right: 610px;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+  font-size: 45px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
 }
 
 .container {
@@ -164,11 +150,11 @@
 }
 
 .screen_background_shape8 {
-  height: 540px;
+  height: 350px;
   width: 190px;
   background: linear-gradient(270deg, #585858, #A4A4A4);
-  top: 438px;
-  left: 30px;
+  top: 480px;
+  left: 90px;
   border-radius: 32px;
 }
 

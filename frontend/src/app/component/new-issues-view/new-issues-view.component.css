@@ -3,9 +3,12 @@
 }
 
 .header_new_issues {
+  position: absolute;
+  width: 98%;
+  top: 15px;
+  text-align: center;
   color: black;
   font-size: 40px;
-  width: 150px;
   font-family: Raleway, sans-serif;
 }
 
@@ -54,7 +57,10 @@
 }
 
 .button_back {
-  float: left;
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
 }
 
 .category_menu {

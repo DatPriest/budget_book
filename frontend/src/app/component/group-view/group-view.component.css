@@ -3,60 +3,23 @@
 }
 
 .header_groupname {
+  position: absolute;
+  width: 98%;
+  top: 15px;
+  text-align: center;
   color: black;
   font-size: 40px;
-  width: 150px;
   font-family: Raleway, sans-serif;
-  position: center;
 }
 
 .burgerMenu{
+  position: absolute;
+  top: 8px;
+  left: 16px;
   font-size: 45px;
   color: rgb(0, 0, 0);
   cursor: pointer;
 }
-
-.column_burger {
-  position: absolute;
-  top: 8px;
-  left: 16px;
-  font-size: 18px;
-}
-
-.column_menu {
-  position: absolute;
-  top: 25px;
-  right: 610px;
-}
-
-
-/*
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.column_ausgaben {
-  text-align: left;
-  width: 130px;
-}
-
-.column_categories {
-  text-align: center;
-  width: 130px;
-}
-
-.column_statistics {
-  text-align: right;
-  width: 130px;
-}
-
-.row_nav:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-*/
 
 .button{
   text-align: center;
