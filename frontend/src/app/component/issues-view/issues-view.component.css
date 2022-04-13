@@ -57,6 +57,7 @@
   border-width: thin 0 0 thin;
   margin: 0 0 1em;
   width: 550px;
+  max-width: 100%;
   height: 550px;
   top: 45px;
   right: 400px;
@@ -75,26 +76,14 @@
   text-align: center;
 }
 
-.issues_subject {
+.issues_line_subject {
   text-align: left;
   padding: .4em .6em;
   border: thin solid black;
   background: white;
 }
 
-.issues_amount {
-  padding: .4em .6em;
-  border: thin solid black;
-  background: white;
-}
-
-.issues_currency {
-  padding: .4em .6em;
-  border: thin solid black;
-  background: white;
-}
-
-.issues_date {
+.issues_line {
   padding: .4em .6em;
   border: thin solid black;
   background: white;
@@ -107,17 +96,20 @@
   font-size: 18px;
 }
 
-.button_delete {
-  position: absolute;
-  top: 80px;
-  right: 16px;
-  font-size: 18px;
-}
-
 .button_back {
   position: absolute;
   top: 8px;
   left: 16px;
+  font-size: 18px;
+}
+
+.button_edit {
+  text-align: left;
+  font-size: 18px;
+}
+
+.button_delete {
+  text-align: right;
   font-size: 18px;
 }
 

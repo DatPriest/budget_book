@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-sign-in-view',
@@ -10,7 +9,8 @@ import { NgToastService } from 'ng-angular-popup';
 export class SignInViewComponent implements OnInit {
 
   showPassword: boolean = false;
-  constructor(public router: Router, private toast: NgToastService) {
+
+  constructor(public router: Router) {
     //alert('Bitte die Seite nicht übersetzen lassen falls dies angeboten wird!'); Stört etwas
   }
 

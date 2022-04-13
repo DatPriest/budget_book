@@ -1,42 +1,52 @@
 <form>
   <header>
     <div class="button_back">
-      <button type="button" (click)="back()"><span class="issues_back material-icons">arrow_back</span></button>
+      <button type="button" (click)="back()"><span class="material-icons">arrow_back</span></button>
     </div>
     <span class="header_ausgaben">Alle Ausgaben</span>
   </header>
   <body>
-  <div class="container">
-    <div class="screen">
-      <div class="button_add">
-        <button type="button" (click)="add()"><span class="issues_create material-icons">add</span></button>
-      </div>
-      <div class="button_delete">
-        <button type="button"><span class="issues_create material-icons">delete</span></button>
-      </div>
-      <div class="screen_issues">
-        <table class="issues_table">
-          <thead class="issues_table_header">
-            <th>
-              <p>Ausgaben:</p>
-            </th>
-            <th></th>
-            <th>
-              <!--<input type="text" class="input_field" id="Issues_search" placeholder="Suche">-->
-            </th>
-          </thead>
-          <tbody>
-            <ng-container *ngFor="let i of issues">
-              <tr class="issues_table_line">
-                <td class="issues_subject">{{i.subject}}</td>
-                <td class="issues_amount">{{i.amount}} €</td>
-                <td class="issues_date">{{i.date}}</td>
-              </tr>
-            </ng-container>
-          </tbody>
-        </table>
+    <div class="container">
+      <div class="screen">
+        <div class="button_add">
+          <button type="button" (click)="add()"><span class="material-icons">add</span></button>
+        </div>
+        <div class="screen_issues">
+          <table class="issues_table">
+            <thead class="issues_table_header">
+              <th>
+                <p>Ausgaben:</p>
+              </th>
+              <th></th>
+              <th>
+                <!--<input type="text" class="input_field" id="Issues_search" placeholder="Suche">-->
+              </th>
+              <th></th>
+            </thead>
+            <tbody>
+              <ng-container *ngFor="let i of issues">
+                <tr class="issues_table_line">
+                  <td class="issues_line_subject">{{i.subject}}</td>
+                  <td class="issues_line">{{i.amount}} €</td>
+                  <td class="issues_line">{{i.date}}</td>
+                  <td class="issues_line">
+                    <div class="button_edit">
+                      <button type="button">
+                        <span class="issues_button material-icons">edit</span>
+                      </button>
+                    </div>
+                    <div class="button_delete">
+                      <button type="button">
+                        <span class="issues_button material-icons">delete</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
   </body>
 </form>

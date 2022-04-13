@@ -3,7 +3,7 @@
     <div class="screen">
       <header>
         <div class="screen_content">
-          <form class="login">
+          <div class="login">
             <span class="header_Text">Bei dasistcool anmelden</span>
             <div class="input_field">
               <input type="email" class="input_field" id="UserEmail" placeholder="E-Mail">
@@ -14,7 +14,7 @@
                 <button type="button" class="show_passwort material-icons" (click)="togglePassword()">{{showPassword ? 'visibility_off' : 'visibility' }}</button>
               </div>
             </div>
-            <button type="submit" class="button login_submit" id="login" (click)="loginUser()">
+            <button type="button" class="button login_submit" id="login" (click)="loginUser()">
               <span class="button_text">Login</span>
             </button>
             <button type="button" class="button new_password_submit" id="password" (click)="newPassword()">
@@ -23,7 +23,7 @@
             <button type="button" class="button register_submit" id="register" (click)="newUser()">
               <span>Registrieren</span>
             </button>
-          </form>
+          </div>
         </div>
       </header>
       <body>
