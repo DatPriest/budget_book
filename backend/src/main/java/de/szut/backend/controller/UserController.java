@@ -7,15 +7,13 @@ import de.szut.backend.service.UserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.google.gson.Gson;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/api/v1/user")
 public class UserController {
