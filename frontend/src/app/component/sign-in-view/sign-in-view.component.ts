@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from "@angular/router";
 
 @Component({
@@ -8,17 +10,24 @@ import { Router } from "@angular/router";
 })
 export class SignInViewComponent implements OnInit {
 
-  showPassword: boolean = false;
+  form: FormGroup | undefined;
+  signInForm!: FormGroup;
 
-  constructor(public router: Router) {
-    //alert('Bitte die Seite nicht übersetzen lassen falls dies angeboten wird!'); Stört etwas
+  showPassword: boolean = false;
+  constructor(public router: Router, private http: HttpClient, private formBuilder: FormBuilder) {
+    this.form = this.formBuilder.group({
+      email: '',
+      password: ''
+
+    });
   }
 
   togglePassword(): void {
     this.showPassword = !this.showPassword;
   }
 
-  loginUser(): void {
+  loginUser(signInForm: NgForm): void {
+    console.log(signInForm.value);
     this.router.navigate(['main']);
   }
 
@@ -31,5 +40,8 @@ export class SignInViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.signInForm = this.formBuilder.group({
+      email:[''],
+      password:['']})
   }
 }
