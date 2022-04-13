@@ -1,12 +1,8 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { Group } from 'src/app/model/Group';
-import { GroupService } from 'src/app/service/group/group.service';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-
-export interface DialogData {
-  groupname: string;
-}
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-main-view',
@@ -15,27 +11,17 @@ export interface DialogData {
 })
 export class MainViewComponent implements OnInit {
   groups: Group[] = [];
+  picture: string | undefined; // Image File
   groupname: string | undefined;
 
-  constructor(public router: Router, private groupService: GroupService, public dialog: MatDialog) {
-    this.groups.push(new Group(1,"Teddybär Bande")),
-    this.groups.push(new Group(2,"Rosenrot")),
-    this.groups.push(new Group(3,"Rainbow Gang"))
-  }
-
-  delay(ms: number) {
-    return new Promise( resolve => setTimeout(resolve, ms) );
+  constructor(public router: Router, public dialog: MatDialog) {
+    this.groups.push(new Group(1,"Gruppe 1")),
+    this.groups.push(new Group(2,"Gruppe 2")),
+    this.groups.push(new Group(3,"Gruppe 3"))
   }
 
   createGroupDialog(): void {
-    const dialogRef = this.dialog.open(MainViewComponentDialog, {
-      data: {groupname: this.groupname},
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.groupname = result;
-    });
+    const dialogRef = this.dialog.open(MainViewComponentDialog);
   }
 
   openGroup(id: number, name: string): void {
@@ -43,10 +29,8 @@ export class MainViewComponent implements OnInit {
     this.router.navigate(['/group']);
   }
 
-  async openMenu(): Promise<void> {
+  openMenu(): void {
     console.warn('Diese Funktion ist kein Bestandteil des aktuellen Sprintes!\n Leitet temporär zum Login zurück.');
-
-    await this.delay(1500);
     this.router.navigate(['/sign-in']);
   }
 
@@ -54,24 +38,31 @@ export class MainViewComponent implements OnInit {
   }
 }
 
-// Create Group Pop Up
+// Create Group Dialog
 @Component({
   selector: 'app-main-view-dialog',
   templateUrl: './main-view.component-dialog.html',
   styleUrls: ['./main-view.component-dialog.css']
 })
 export class MainViewComponentDialog {
-  constructor(
-    public dialogRef: MatDialogRef<MainViewComponentDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData,
-  ) {}
 
-  createGroup(): void {
-    console.log('Group ... was created');
+  groupDialogForm!: FormGroup;
+  constructor(public dialogRef: MatDialogRef<MainViewComponentDialog>,
+    private formBuilder: FormBuilder) {}
+
+  createGroup(groupDialogForm: NgForm): void {
+    console.log('Group ' + groupDialogForm.value.name + ' was created');
     this.dialogRef.close();
   }
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  ngOnInit(): void {
+    this.groupDialogForm = this.formBuilder.group({
+      picture: '',
+      groupname: ''
+    });
   }
 }

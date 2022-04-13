@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
+@CrossOrigin
 @RequestMapping(value = "/api/v1/groups")
 @RestController
 public class GroupController {

@@ -3,27 +3,27 @@
     <div class="screen">
       <header>
         <div class="screen_content">
-          <form class="register">
+          <form class="register" (ngSubmit)="registrationUser(signUpForm)" #signUpForm="ngForm">
             <span class="header_Text">Registrierung</span>
             <div class="row">
               <div class="column">
                 <div class="input_field">
-                  <input type="text" class="input_field" id="newUserFirstName" placeholder="Vorname">
+                  <input name="firstName" type="text" class="input_field" id="newUserFirstName" ngModel placeholder="Vorname">
                 </div>
                 <div class="input_field">
-                  <input type="text" class="input_field" id="newUserLastName" placeholder="Nachname">
+                  <input name="lastName" type="text" class="input_field" id="newUserLastName" ngModel placeholder="Nachname">
                 </div>
                 <div class="input_field">
-                  <input type="email" class="input_field" id="newUserEmail" placeholder="E-Mail">
+                  <input name="email" type="email" class="input_field" id="newUserEmail" ngModel placeholder="E-Mail">
                 </div>
               </div>
               <div class="column">
                 <div class="input_field">
-                  <input type="{{showPassword ? 'text' : 'password' }}" class="input_field" id="newUserPassword" placeholder="Passwort">
+                  <input name="password_1" type="{{showPassword ? 'text' : 'password' }}" class="input_field" id="newUserPassword" ngModel placeholder="Passwort">
                   <button type="button" class="show_passwort material-icons" (click)="togglePassword()">{{showPassword ? 'visibility_off' : 'visibility' }}</button>
                 </div>
                 <div class="input_field">
-                  <input type="{{showPasswordReplay ? 'text' : 'password' }}" class="input_field" id="newUserPasswordreplay" placeholder="Passwort Wiederholung">
+                  <input name="password_2" type="{{showPasswordReplay ? 'text' : 'password' }}" class="input_field" id="newUserPasswordreplay" ngModel placeholder="Passwort Wiederholung">
                   <button type="button" class="show_passwort material-icons" (click)="togglePasswordReplay()">{{showPasswordReplay ? 'visibility_off' : 'visibility' }}</button>
                 </div>
               </div>
@@ -31,22 +31,22 @@
             <div>
               <label class="sicherheit_Header">Sicherheitsfrage:
                 <span class="sicherheit_Text">Wählen Sie 1 Frage aus!</span>
-                <select name="Sicherheitsfrage" form="formular1" class="sicherheit_menu">
+                <select name="securityQuestion" form="formular1" class="sicherheit_menu" ngModel>
                   <option value="noSelection"></option>
-                  <option value="questionA">In welcher Stadt bzw. an welchem Ort wurden Sie geboren?</option>
-                  <option value="questionB">Wie lautet der zweite Vorname Ihrer ältesten Schwester bzw. Ihres ältesten Bruders?</option>
-                  <option value="questionC">Welches war Ihr erstes Konzert, das Sie besucht haben?</option>
-                  <option value="questionD">Geben Sie Marke und Modell Ihres ersten Autos an.</option>
-                  <option value="questionE">In welcher Stadt bzw. welchem Ort haben sich Ihre Eltern kennengelernt?</option>
+                  <option value="PlaceBorn">In welcher Stadt bzw. an welchem Ort wurden Sie geboren?</option>
+                  <option value="MiddleName">Wie lautet der zweite Vorname Ihrer ältesten Schwester bzw. Ihres ältesten Bruders?</option>
+                  <option value="FirstConcert">Welches war Ihr erstes Konzert, das Sie besucht haben?</option>
+                  <option value="FirstCar">Geben Sie Marke und Modell Ihres ersten Autos an.</option>
+                  <option value="MetParents">In welcher Stadt bzw. welchem Ort haben sich Ihre Eltern kennengelernt?</option>
                 </select>
                 <div class="sicherheit_field">
-                  <input type="text" class="sicherheit_field" id="Sicherheitsfrage" placeholder="Sicherheitsfrage" autocomplete="off">
+                  <input name="securityAnswer" type="text" class="sicherheit_field" id="Sicherheitsfrage" ngModel placeholder="Sicherheitsfrage" autocomplete="off">
                 </div>
               </label>
             </div>
             <div class="row">
               <div class="column_button">
-                <button type="submit" class="button register_submit" id="register" onClick="this.classList.toggle('button-loading')">
+                <button type="submit" class="button register_submit" id="register">
                   <span class="button_text">registrieren</span>
                 </button>
               </div>

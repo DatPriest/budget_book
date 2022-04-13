@@ -16,14 +16,9 @@ export class GroupViewComponent implements OnInit {
     this.users.push(new User('Lisa', 'Müller', '', '', '', ''))
   }
 
-  delay(ms: number) {
-    return new Promise( resolve => setTimeout(resolve, ms) );
-  }
-
-  async openMenu(): Promise<void> {
+  openMenu(): void {
     console.warn('Diese Funktion ist kein Bestandteil des aktuellen Sprintes!\n Leitet temporär zum Hauptmenü zurück.');
 
-    await this.delay(1500);
     this.router.navigate(['/main']);
   }
 
