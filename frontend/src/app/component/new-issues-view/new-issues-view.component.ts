@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-new-issues-view',
   templateUrl: './new-issues-view.component.html',
@@ -10,13 +9,8 @@ import { Router } from '@angular/router';
 export class NewIssuesViewComponent implements OnInit {
 
   index: number = 1;
-
   constructor(public router: Router) {
     this.index;
-  }
-
-  delay(ms: number) {
-    return new Promise( resolve => setTimeout(resolve, ms) );
   }
 
   back(): void {
@@ -27,8 +21,7 @@ export class NewIssuesViewComponent implements OnInit {
    this.index++;
   }
 
-  async save(): Promise<void> {
-    await this.delay(1500);
+  save(): void {
     this.router.navigate(['/issues']);
   }
 

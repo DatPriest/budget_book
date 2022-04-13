@@ -13,7 +13,6 @@ export class SignUpViewComponent implements OnInit {
 
   form: FormGroup | undefined;
   signInForm!: FormGroup;
-
   showPassword: boolean = false;
   showPasswordReplay: boolean = false;
   constructor(public router: Router, private userService: UserService, private formBuilder: FormBuilder) {

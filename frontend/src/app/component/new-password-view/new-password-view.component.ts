@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from "@angular/router";
 
 @Component({
@@ -8,12 +9,19 @@ import { Router } from "@angular/router";
 })
 export class NewPasswordViewComponent implements OnInit {
 
+  form: FormGroup | undefined;
+  signInForm!: FormGroup;
   showPassword: boolean = false;
   showPasswordReplay: boolean = false;
-  constructor(public router: Router) { }
-
-  delay(ms: number) {
-    return new Promise( resolve => setTimeout(resolve, ms) );
+  constructor(public router: Router, private formBuilder: FormBuilder) {
+    this.form = this.formBuilder.group({
+      email: '',
+      password_1: '',
+      password_2: '',
+      securityQuestion: '',
+      securityAnswer: '',
+      hash: ''
+    });
   }
 
   togglePassword(): void {
@@ -24,9 +32,14 @@ export class NewPasswordViewComponent implements OnInit {
     this.showPasswordReplay = !this.showPasswordReplay;
   }
 
-  async savePassword(): Promise<void> {
-    await this.delay(1500);
-    this.router.navigate(['/sign-in']);
+  savePassword(newPasswordForm: NgForm): void {
+    console.log(newPasswordForm.value);
+    if (newPasswordForm.value.password_1 == newPasswordForm.value.password_2) {
+      newPasswordForm.value.hash = newPasswordForm.value.password_1;
+    } else {
+      console.error("Passwörter stimmen nicht überein!"); // Übergangsweise!
+    }
+    //this.router.navigate(['/sign-in']);
   }
 
   cancel(): void {
@@ -34,5 +47,13 @@ export class NewPasswordViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      email: '',
+      password_1: '',
+      password_2: '',
+      securityQuestion: '',
+      securityAnswer: '',
+      hash: ''
+    });
   }
 }
