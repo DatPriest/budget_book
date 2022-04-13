@@ -10,10 +10,10 @@ export class UserService {
   constructor(public http: HttpClient) { }
 
   registerUser(user: User) {
-    return this.http.post<User>('localhost:4000/api/v1/veryfication/register', user, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.post<User>('localhost:4000/api/v1/verification/register', user, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   loginUser(user: User) {
-    return this.http.post<User>('localhost:4000/api/v1/veryfication/login', user, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.post<User>('localhost:4000/api/v1/verification/login', user, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 }

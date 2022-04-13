@@ -14,7 +14,7 @@ export class SignInViewComponent implements OnInit {
   signInForm!: FormGroup;
 
   showPassword: boolean = false;
-  constructor(public router: Router, private http: HttpClient, private formBuilder: FormBuilder) {
+  constructor(public router: Router, private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
       email: '',
       password: ''

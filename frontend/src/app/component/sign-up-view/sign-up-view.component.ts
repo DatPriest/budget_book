@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from "@angular/router";
 import { User } from 'src/app/model/User';
 import { UserService } from 'src/app/service/user/user.service';
@@ -10,12 +11,21 @@ import { UserService } from 'src/app/service/user/user.service';
 })
 export class SignUpViewComponent implements OnInit {
 
+  form: FormGroup | undefined;
+  signInForm!: FormGroup;
+
   showPassword: boolean = false;
   showPasswordReplay: boolean = false;
-  constructor(public router: Router, private userService: UserService) { }
-
-  delay(ms: number) {
-    return new Promise( resolve => setTimeout(resolve, ms) );
+  constructor(public router: Router, private userService: UserService, private formBuilder: FormBuilder) {
+    this.form = this.formBuilder.group({
+      firstName: '',
+      lastName: '',
+      password: '',
+      email: '',
+      securityQuestion: '',
+      securityAnswer: '',
+      hash: ''
+    });
   }
 
   togglePassword(): void {
@@ -26,8 +36,13 @@ export class SignUpViewComponent implements OnInit {
     this.showPasswordReplay = !this.showPasswordReplay;
   }
 
-  async registrationUser(user: User): Promise<void> {
-    await this.delay(1500);
+  registrationUser(signUpForm: NgForm): void { // (user: User)
+    console.log(signUpForm.value);
+    if (signUpForm.value.password_1 == signUpForm.value.password_2) {
+      signUpForm.value.hash = signUpForm.value.password_1;
+    } else {
+      console.error("Passwörter stimmen nicht überein!"); // Übergangsweise!
+    }
     //this.userService.registerUser(user).subscribe(data => this.router.navigate(['/sign-in', data]));
   }
 
@@ -36,5 +51,15 @@ export class SignUpViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      firstName: '',
+      lastName: '',
+      password_1: '',
+      password_2: '',
+      email: '',
+      securityQuestion: '',
+      securityAnswer: '',
+      hash: ''
+    });
   }
 }
