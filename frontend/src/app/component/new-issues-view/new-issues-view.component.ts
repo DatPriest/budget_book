@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-new-issues-view',
@@ -10,22 +11,16 @@ import { Router } from '@angular/router';
 export class NewIssuesViewComponent implements OnInit {
 
   newIssuesForm: FormGroup;
-  index: number = 1;
-  constructor(public router: Router, private formBuilder: FormBuilder) {
-    this.index;
+  constructor(public router: Router, private formBuilder: FormBuilder,
+    public dialogRef: MatDialogRef<NewIssuesViewComponent>) { }
+
+  closeIssues(): void {
+    this.dialogRef.close();
   }
 
-  back(): void {
-    this.router.navigate(['/issues']);
-  }
-
-  add(): void {
-   this.index++;
-  }
-
-  save(signUpForm: NgForm): void {
-    console.log(signUpForm.value);
-    this.router.navigate(['/issues']);
+  createIssues(newIssuesForm: NgForm): void {
+    console.log(newIssuesForm.value);
+    newIssuesForm.reset();
   }
 
   ngOnInit(): void {

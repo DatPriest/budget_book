@@ -25,7 +25,7 @@ export class MainViewComponent implements OnInit {
     dialogConfig.autoFocus = true;
 
     this.dialog.open(CreateGroupViewComponent, dialogConfig);
-}
+  }
 
   openGroup(id: number, name: string): void {
     console.log('Loading Group...\n' + id + ' ' + name);
