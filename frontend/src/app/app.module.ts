@@ -18,7 +18,8 @@ import { MainViewComponent } from './component/main-view/main-view.component';
 import { GroupViewComponent } from './component/group-view/group-view.component';
 import { IssuesViewComponent } from './component/issues-view/issues-view.component';
 import { NewIssuesViewComponent } from './component/new-issues-view/new-issues-view.component'
-import { HistoryViewComponent } from './component/history-view/history-view.component'
+import { HistoryViewComponent } from './component/history-view/history-view.component';
+import { CreateGroupViewComponent } from './component/create-group-view/create-group-view.component'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HistoryViewComponent } from './component/history-view/history-view.comp
     GroupViewComponent,
     IssuesViewComponent,
     NewIssuesViewComponent,
-    HistoryViewComponent
+    HistoryViewComponent,
+    CreateGroupViewComponent
   ],
   imports: [
     BrowserAnimationsModule,

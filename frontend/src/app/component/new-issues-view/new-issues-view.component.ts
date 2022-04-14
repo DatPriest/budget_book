@@ -30,9 +30,9 @@ export class NewIssuesViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.newIssuesForm = this.formBuilder.group({
-      subject: '',
-      amount: '',
-      date: ''
+      subject: [''],
+      amount: [''],
+      date: ['']
     });
   }
 

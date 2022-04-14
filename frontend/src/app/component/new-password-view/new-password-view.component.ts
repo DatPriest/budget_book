@@ -38,12 +38,12 @@ export class NewPasswordViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.newPasswordForm = this.formBuilder.group({
-      email: '',
-      password_1: '',
-      password_2: '',
-      securityQuestion: '',
-      securityAnswer: '',
-      hash: ''
+      email: [''],
+      password_1: [''],
+      password_2: [''],
+      securityQuestion: [''],
+      securityAnswer: [''],
+      hash: ['']
     });
   }
 }

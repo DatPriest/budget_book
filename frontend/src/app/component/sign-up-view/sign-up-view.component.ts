@@ -41,14 +41,14 @@ export class SignUpViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.signUpForm = this.formBuilder.group({
-      firstName: '',
-      lastName: '',
-      password_1: '',
-      password_2: '',
-      email: '',
-      securityQuestion: '',
-      securityAnswer: '',
-      hash: ''
+      firstName: [''],
+      lastName: [''],
+      password_1: [''],
+      password_2: [''],
+      email: [''],
+      securityQuestion: [''],
+      securityAnswer: [''],
+      hash: ['']
     });
   }
 }

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { Group } from 'src/app/model/Group';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { CreateGroupViewComponent } from '../create-group-view/create-group-view.component';
 
 @Component({
   selector: 'app-main-view',
@@ -11,8 +11,6 @@ import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 })
 export class MainViewComponent implements OnInit {
   groups: Group[] = [];
-  picture: string | undefined; // Image File
-  groupname: string | undefined;
 
   constructor(public router: Router, public dialog: MatDialog) {
     this.groups.push(new Group(1,"Gruppe 1")),
@@ -20,9 +18,14 @@ export class MainViewComponent implements OnInit {
     this.groups.push(new Group(3,"Gruppe 3"))
   }
 
-  createGroupDialog(): void {
-    const dialogRef = this.dialog.open(MainViewComponentDialog);
-  }
+  createGroupDialog() {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(CreateGroupViewComponent, dialogConfig);
+}
 
   openGroup(id: number, name: string): void {
     console.log('Loading Group...\n' + id + ' ' + name);
@@ -35,34 +38,5 @@ export class MainViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
-}
-
-// Create Group Dialog
-@Component({
-  selector: 'app-main-view-dialog',
-  templateUrl: './main-view.component-dialog.html',
-  styleUrls: ['./main-view.component-dialog.css']
-})
-export class MainViewComponentDialog {
-
-  groupDialogForm!: FormGroup;
-  constructor(public dialogRef: MatDialogRef<MainViewComponentDialog>,
-    private formBuilder: FormBuilder) {}
-
-  createGroup(groupDialogForm: NgForm): void {
-    console.log('Group ' + groupDialogForm.value.name + ' was created');
-    this.dialogRef.close();
-  }
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
-  ngOnInit(): void {
-    this.groupDialogForm = this.formBuilder.group({
-      picture: '',
-      groupname: ''
-    });
   }
 }

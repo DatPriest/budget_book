@@ -1,0 +1,13 @@
+<form class="createGroup" (ngSubmit)="createGroup(createGroupForm)" #createGroupForm="ngForm">
+  <h1 class="header_Text">Neue Gruppe!</h1>
+    <input name="picture" type="file" class="input_file" id="inputImage" ngModel placeholder="Logo" accept="image/png, image/jpeg">
+    <input name="name" type="text" class="input_field" id="GroupName" ngModel placeholder="Gruppen Name">
+  <div class="row">
+    <div class="column_save">
+      <button type="submit" id="save"><span class="group_create material-icons">save</span></button>
+    </div>
+    <div class="column_close">
+      <button type="button" id="close" (click)="closeGroup()"><span class="group_create material-icons">close</span></button>
+    </div>
+  </div>
+</form>

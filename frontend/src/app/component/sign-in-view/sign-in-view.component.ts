@@ -13,18 +13,11 @@ import {User} from "../../model/User";
 })
 export class SignInViewComponent implements OnInit {
 
-  form: FormGroup | undefined;
   signInForm!: FormGroup;
-  user: User|undefined;
+  user: User;
   showPassword: boolean = false;
-  private service: UserService;
-
-  constructor(public router: Router, private http: HttpClient, private formBuilder: FormBuilder) {
+  constructor(public router: Router, private http: HttpClient, private formBuilder: FormBuilder, private service: UserService) {
     this.service = new UserService(this.http);
-    this.form = this.formBuilder.group({
-      email: '',
-      password: ''
-    });
   }
 
   togglePassword(): void {
@@ -32,22 +25,22 @@ export class SignInViewComponent implements OnInit {
   }
 
   loginUser(signInForm: NgForm): void {
+
     //console.log(signInForm.value);
     let user: LoginUser = new LoginUser(signInForm.value.email, signInForm.value.password);
     //console.log(user);
 
-    this.service.loginUser(user).subscribe(value => {this.user = new User(value.firstName, value.lastName, value.password, value.email, value.securityQuestion, value.securityAnswer)})
-    this.service.loginUser(user).subscribe(value => {console.log(value)})
-    if(this.user.email == signInForm.value.email){
-      console.log("Benutzername " + signInForm.value.email + " bekannt")
-      if(this.user.password == signInForm.value.password){
-        console.log("Passwort bekannt")
-        this.router.navigate(['main'])
-      }else{console.error("Falsches Passwort")}
-    }else{console.error("Falscher Benutzername")}
-    //this.service.loginUser(user).subscribe(value => {console.log(value.password)})
-    //console.error("Benutzername nicht verfügbar")
-
+    this.service.loginUser(user).subscribe(value => {
+      this.user = new User(value.firstName, value.lastName, value.password, value.email, value.securityQuestion, value.securityAnswer)
+      if(this.user.email == signInForm.value.email){
+        console.log("Benutzername " + signInForm.value.email + " bekannt")
+        if(this.user.password == signInForm.value.password){
+          console.log("Passwort bekannt");
+          this.router.navigate(['main']);
+        } else{console.error("Falsches Passwort")};
+      } else{console.error("Falscher Benutzername")};
+    });
+    this.router.navigate(['main']) // Temp - LBU140422
   }
 
   newUser(): void {
