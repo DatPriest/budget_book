@@ -9,9 +9,13 @@ import java.util.Locale;
 
 @Data
 public class RegisterDto {
+    @NotNull
     public String firstName;
+    @NotNull
     public String lastName;
+    @NotNull
     public String hash;
+    @NotNull
     public String email;
     @NotNull
     public Question securityQuestion;

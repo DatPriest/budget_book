@@ -32,7 +32,7 @@ public class VerificationService extends BaseService {
     public User login(LoginDto dto) {
         User user = this.userMapper.mapLoginDtoToUser(dto);
         User queryUser = userRepository.findByEmail(user.email);
-        if (hashPassword(user.hash + queryUser.salt).equals(queryUser.hash)) {
+        if (queryUser != null && hashPassword(user.hash + queryUser.salt).equals(queryUser.hash)) {
             queryUser.lastLogin = new Date();
             userRepository.save(queryUser);
             //log("UserLoginSuccess",queryUser.lastLogin.toString());

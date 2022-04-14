@@ -43,6 +43,9 @@ public class VerificationController {
 
     @PostMapping(path = "/register", consumes = "application/json", produces = "application/json")
     public ResponseEntity<User> Register(@RequestBody RegisterDto dto) throws TypeNotPresentException {
+        if (dto.hash.length() <= 7) {
+            return new ResponseEntity("Password is empty or too short", HttpStatus.BAD_REQUEST);
+        }
         User result = service.register(dto);
         if (result.email == null) {
             return new ResponseEntity("Email already exists", HttpStatus.NOT_ACCEPTABLE);
