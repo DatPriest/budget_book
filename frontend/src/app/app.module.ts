@@ -47,8 +47,7 @@ import { CreateGroupViewComponent } from './component/create-group-view/create-g
       {path: 'main',component: MainViewComponent},                  // main-menu
       {path: 'group',component: GroupViewComponent},                // group-detail
       {path: 'history',component: HistoryViewComponent},            // history
-      {path: 'issues',component: IssuesViewComponent},              // ausgaben
-      {path: 'issues/new',component: NewIssuesViewComponent}        // ausgaben-add
+      {path: 'issues',component: IssuesViewComponent}             // ausgaben
     ]),
     NgToastModule,
     FormsModule,

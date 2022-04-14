@@ -24,15 +24,18 @@ export class SignUpViewComponent implements OnInit {
     this.showPasswordReplay = !this.showPasswordReplay;
   }
 
-  registrationUser(signUpForm: NgForm): void { // (user: User)
-    console.log(signUpForm.value);
+  registrationUser(signUpForm: NgForm): void {
     if (signUpForm.value.password_1 == signUpForm.value.password_2) {
-      signUpForm.value.hash = signUpForm.value.password_1; // hash muss noch gehasht werden.
+      if (signUpForm.value.securityQuestion != '' && signUpForm.value.securityAnswer != '') {
+        signUpForm.value.hash = signUpForm.value.password_1; // hash muss noch gehasht werden.
+        const signUpData = new User(signUpForm.value.firstName, signUpForm.value.lastName, signUpForm.value.hash, signUpForm.value.email, signUpForm.value.securityQuestion, signUpForm.value.securityAnswer);
+        this.userService.registerUser(signUpData).subscribe(data => this.router.navigate(['/sign-in', data]));
+      } else {
+        alert('Bitte eine Sicherheitsfrage und eine Antwort ausfüllen!')
+      }
     } else {
-      console.error("Passwörter stimmen nicht überein!"); // Übergangsweise!
+      alert("Passwörter stimmen nicht überein!");
     }
-    this.router.navigate(['/sign-in']);
-    //this.userService.registerUser(user).subscribe(data => this.router.navigate(['/sign-in', data]));
   }
 
   cancel(): void {

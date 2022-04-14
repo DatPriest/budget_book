@@ -2,74 +2,14 @@
   box-sizing: border-box;
 }
 
-.header_new_issues {
-  position: absolute;
-  width: 98%;
-  top: 15px;
-  text-align: center;
-  color: black;
-  font-size: 40px;
-  font-family: Raleway, sans-serif;
-}
-
-.column_menu {
-  position: absolute;
-  top: 25px;
-  right: 600px;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 85vh;
-}
-
-.screen {
-  background: linear-gradient(90deg, #5D54A4, #7C78B8);
-  position: absolute;
-  top: 65px;
-  height: 730px;
-  width: 1260px;
-  box-shadow: 0px 0px 24px #5C5696;
-}
-
-.screen_issues {
-  position: absolute;
-  top: 65px;
-  height: 550px;
+.createIssues {
   width: 550px;
-  right: 25%;
-  text-align: center;
-  font-size: 18px;
-  box-shadow: 0px 0px 24px #5C5696;
-  overflow-y: scroll;
-}
-
-.screen_content {
-  z-index: 1;
-  position: relative;
-}
-
-.line_issues {
-  padding-right: 100px;
-  background-color: aliceblue;
-}
-
-.button_back {
-  position: absolute;
-  top: 8px;
-  left: 16px;
-  font-size: 18px;
-}
-
-.category_menu {
-  position: relative;
+  font-family: Raleway, sans-serif;
 }
 
 .column {
   float: left;
-  padding: 10px 0px;
+  padding: 2.5px 0px;
   position: relative;
 }
 
@@ -93,27 +33,33 @@
 }
 
 .input_field {
-  padding: 10px 0px;
-  position: relative;
+ padding: 10px 0px;
+ position: relative;
 }
 
 .input_field:active,
 .input_field:focus,
 .input_field:hover {
-  outline: none;
-  border-bottom-color: #6A679E;
+ outline: none;
+ border-bottom-color: #6A679E;
 }
 
-.button_add {
-  position: absolute;
-  top: 8px;
-  left: 16px;
-  font-size: 18px;
+.header_Text {
+  color: #7875B5;
+  text-shadow: black;
+  font-size: 20px;
 }
 
-.button_save {
-  position: absolute;
-  bottom: 8px;
-  right: 16px;
-  font-size: 18px;
+.row_button:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column_save {
+  float: left;
+}
+
+.column_close {
+ float: right;
 }

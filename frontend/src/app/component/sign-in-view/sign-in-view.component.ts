@@ -1,10 +1,10 @@
-import {HttpClient} from '@angular/common/http';
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, NgForm} from '@angular/forms';
-import {Router} from "@angular/router";
-import {LoginUser} from "../../model/LoginUser";
-import {UserService} from "../../service/user/user.service";
-import {User} from "../../model/User";
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
+import { Router } from "@angular/router";
+import { User } from 'src/app/model/User';
+import { LoginUser } from "../../model/LoginUser";
+import { UserService } from "../../service/user/user.service";
 
 @Component({
   selector: 'app-sign-in-view',
@@ -14,10 +14,11 @@ import {User} from "../../model/User";
 export class SignInViewComponent implements OnInit {
 
   signInForm: FormGroup;
-  user: User;
   showPassword: boolean = false;
-  constructor(public router: Router, private http: HttpClient, private formBuilder: FormBuilder, private service: UserService) {
-    this.service = new UserService(this.http);
+  user: LoginUser;
+  errorText: string | undefined;
+  constructor(public router: Router, private http: HttpClient, private formBuilder: FormBuilder, private userService: UserService) {
+    this.userService = new UserService(this.http);
   }
 
   togglePassword(): void {
@@ -25,9 +26,23 @@ export class SignInViewComponent implements OnInit {
   }
 
   loginUser(signInForm: NgForm): void {
+    const signInData = new LoginUser(signInForm.value.email, signInForm.value.password);
+    //this.userService.loginUser(signInData).subscribe(value => {this.user = new LoginUser(value.email, value.hash)});
+    this.user = this.userService.loginUser(signInData);
+    if (this.user.email == signInForm.value.email) {
+      if (this.user.hash == signInForm.value.password) {
+        this.router.navigate(['main']);
+      } else {
+          alert("Falsches Passwort!");
+        }
+    } else {
+        alert("Falsche E-Mail!");
+    }
+
+
     //Zum vorstellen des projektes
     //TODO: Passwortprüfung wird später mit kompletter funktion implementiert
-    this.router.navigate(['main'])
+    //this.router.navigate(['main'])
     //console.log(signInForm.value);
     //let user: LoginUser = new LoginUser(signInForm.value.email, signInForm.value.password);
     //console.log(user);
