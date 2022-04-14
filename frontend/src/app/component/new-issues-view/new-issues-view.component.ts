@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class NewIssuesViewComponent implements OnInit {
 
-  newIssuesForm!: FormGroup;
+  newIssuesForm: FormGroup;
   index: number = 1;
   constructor(public router: Router, private formBuilder: FormBuilder) {
     this.index;

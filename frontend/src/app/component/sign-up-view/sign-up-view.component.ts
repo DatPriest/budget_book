@@ -11,7 +11,7 @@ import { UserService } from 'src/app/service/user/user.service';
 })
 export class SignUpViewComponent implements OnInit {
 
-  signUpForm!: FormGroup;
+  signUpForm: FormGroup;
   showPassword: boolean = false;
   showPasswordReplay: boolean = false;
   constructor(public router: Router, private userService: UserService, private formBuilder: FormBuilder) {}

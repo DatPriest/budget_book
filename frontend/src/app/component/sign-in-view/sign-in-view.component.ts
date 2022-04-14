@@ -13,7 +13,7 @@ import {User} from "../../model/User";
 })
 export class SignInViewComponent implements OnInit {
 
-  signInForm!: FormGroup;
+  signInForm: FormGroup;
   user: User;
   showPassword: boolean = false;
   constructor(public router: Router, private http: HttpClient, private formBuilder: FormBuilder, private service: UserService) {

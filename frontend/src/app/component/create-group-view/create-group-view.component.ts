@@ -9,7 +9,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class CreateGroupViewComponent implements OnInit {
 
-  createGroupForm!: FormGroup;
+  createGroupForm: FormGroup;
   constructor(private formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<CreateGroupViewComponent>) {}
 

@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
 })
 export class NewPasswordViewComponent implements OnInit {
 
-  newPasswordForm!: FormGroup;
+  newPasswordForm: FormGroup;
   showPassword: boolean = false;
   showPasswordReplay: boolean = false;
   constructor(public router: Router, private formBuilder: FormBuilder) {}
