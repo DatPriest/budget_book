@@ -11,22 +11,10 @@ import { UserService } from 'src/app/service/user/user.service';
 })
 export class SignUpViewComponent implements OnInit {
 
-  form: FormGroup | undefined;
-  signInForm!: FormGroup;
-
+  signUpForm!: FormGroup;
   showPassword: boolean = false;
   showPasswordReplay: boolean = false;
-  constructor(public router: Router, private userService: UserService, private formBuilder: FormBuilder) {
-    this.form = this.formBuilder.group({
-      firstName: '',
-      lastName: '',
-      password: '',
-      email: '',
-      securityQuestion: '',
-      securityAnswer: '',
-      hash: ''
-    });
-  }
+  constructor(public router: Router, private userService: UserService, private formBuilder: FormBuilder) {}
 
   togglePassword(): void {
     this.showPassword = !this.showPassword;
@@ -39,10 +27,11 @@ export class SignUpViewComponent implements OnInit {
   registrationUser(signUpForm: NgForm): void { // (user: User)
     console.log(signUpForm.value);
     if (signUpForm.value.password_1 == signUpForm.value.password_2) {
-      signUpForm.value.hash = signUpForm.value.password_1;
+      signUpForm.value.hash = signUpForm.value.password_1; // hash muss noch gehasht werden.
     } else {
       console.error("Passwörter stimmen nicht überein!"); // Übergangsweise!
     }
+    this.router.navigate(['/sign-in']);
     //this.userService.registerUser(user).subscribe(data => this.router.navigate(['/sign-in', data]));
   }
 
@@ -51,7 +40,7 @@ export class SignUpViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.form = this.formBuilder.group({
+    this.signUpForm = this.formBuilder.group({
       firstName: '',
       lastName: '',
       password_1: '',
