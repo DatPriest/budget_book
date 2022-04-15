@@ -26,39 +26,16 @@ export class SignInViewComponent implements OnInit {
   }
 
   loginUser(signInForm: NgForm): void {
+    //console.warn("Login Funktion vorrübergend kommentiert!");
+    //this.router.navigate(['main']);
     const signInData = new LoginUser(signInForm.value.email, signInForm.value.password);
     this.userService.loginUser(signInData).subscribe(data => {
-      if (data.email == signInForm.value.email) {
-        if (data.hash == signInForm.value.password) {
-          this.router.navigate(['main']);
-        } else {
-            alert("Falsches Passwort!");
-          }
-      } else {
-          alert("Falsche E-Mail!");
+      if (data.email != null && data.hash != null) {
+        this.router.navigate(['main']);
       }
     });
-
-    //Zum vorstellen des projektes
-    //TODO: Passwortprüfung wird später mit kompletter funktion implementiert
-    //this.router.navigate(['main'])
-    //console.log(signInForm.value);
-    //let user: LoginUser = new LoginUser(signInForm.value.email, signInForm.value.password);
-    //console.log(user);
-
-    // this.service.loginUser(user).subscribe(value => {this.user = new User(value.firstName, value.lastName, value.password, value.email, value.securityQuestion, value.securityAnswer)})
-    // this.service.loginUser(user).subscribe(value => {console.log(value)})
-    // if(this.user.email == signInForm.value.email){
-    //   console.log("Benutzername " + signInForm.value.email + " bekannt")
-    //   if(this.user.password == signInForm.value.password){
-    //     console.log("Passwort bekannt")
-    //     this.router.navigate(['main'])
-    //   }else{console.error("Falsches Passwort")}
-    // }else{console.error("Falscher Benutzername")}
-    //this.service.loginUser(user).subscribe(value => {console.log(value.password)})
-    //console.error("Benutzername nicht verfügbar")
-
   }
+
 
   newUser(): void {
     this.router.navigate(['sign-up']);

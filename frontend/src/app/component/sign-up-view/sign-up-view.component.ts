@@ -29,7 +29,7 @@ export class SignUpViewComponent implements OnInit {
       if (signUpForm.value.securityQuestion != '' && signUpForm.value.securityAnswer != '') {
         signUpForm.value.hash = signUpForm.value.password_1; // hash muss noch gehasht werden.
         const signUpData = new User(signUpForm.value.firstName, signUpForm.value.lastName, signUpForm.value.hash, signUpForm.value.email, signUpForm.value.securityQuestion, signUpForm.value.securityAnswer);
-        this.userService.registerUser(signUpData).subscribe(data => this.router.navigate(['/sign-in', data]));
+        this.userService.registerUser(signUpData).subscribe(data => this.router.navigate(['/sign-in']));
       } else {
         alert('Bitte eine Sicherheitsfrage und eine Antwort ausfüllen!')
       }
