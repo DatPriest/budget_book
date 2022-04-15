@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from "@angular/router";
-import { User } from 'src/app/model/User';
 import { LoginUser } from "../../model/LoginUser";
 import { UserService } from "../../service/user/user.service";
 

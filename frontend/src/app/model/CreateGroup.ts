@@ -1,7 +1,7 @@
-export class Group {
+export class CreateGroup {
   constructor (
     public id: number,
     public name: string,
-    //public picture?: HTMLImageElement
+    public picture: string
   ) { }
 }
