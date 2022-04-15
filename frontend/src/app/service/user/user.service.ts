@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { NewPassword } from 'src/app/model/NewPassword';
+import { NewPasswordRequest } from 'src/app/model/NewPasswordRequest';
+import { NewPasswordVerification } from 'src/app/model/NewPasswortVerification';
 import { User } from 'src/app/model/User';
 import { LoginUser } from "../../model/LoginUser";
 
@@ -8,8 +9,6 @@ import { LoginUser } from "../../model/LoginUser";
   providedIn: 'root'
 })
 export class UserService {
-
-  public readonly testUser = new LoginUser("test@mail.com", "12345");
 
   constructor(public http: HttpClient) { }
 
@@ -19,10 +18,13 @@ export class UserService {
 
   loginUser(user: LoginUser) {
     return this.http.post<LoginUser>('http://localhost:4000/api/v1/verification/login', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
-    //return this.testUser;
   }
 
-  passwordForgot(user: NewPassword) {
-    return this.http.post<NewPassword>('http://localhost:4000/api/v1/verification/forgotPassword', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  passwordForgotRequest(user: NewPasswordRequest) {
+    return this.http.post<NewPasswordRequest>('http://localhost:4000/api/v1/verification/forgotPassword', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
+  passwordForgotVerification(user: NewPasswordVerification) {
+    return this.http.post<NewPasswordVerification>('http://localhost:4000/api/v1/verification/updatePassword', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 }
