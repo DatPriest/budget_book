@@ -23,13 +23,11 @@ export class NewPasswordViewComponent implements OnInit {
   }
 
   savePassword(newPasswordForm: NgForm): void {
-    console.log(newPasswordForm.value);
     if (newPasswordForm.value.password_1 == newPasswordForm.value.password_2) {
-      newPasswordForm.value.hash = newPasswordForm.value.password_1;
+      alert("Passwörter stimmen überein!");
     } else {
-      console.error("Passwörter stimmen nicht überein!"); // Übergangsweise!
+      alert("Passwörter stimmen nicht überein!");
     }
-    this.router.navigate(['/sign-in']);
   }
 
   cancel(): void {
