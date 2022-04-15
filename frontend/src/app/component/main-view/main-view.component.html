@@ -19,7 +19,7 @@
           <span class="screen_background_shape screen_background_shape2"></span>
         </div>
         <ng-container *ngFor="let g of groups">
-          <button type="button" id="Group{{g.id}}" class="screen_background_shape screen_group_{{g.id}}" (click)="openGroup(g.id, g.name)"><span class="group">{{g.name}}</span></button>
+          <button type="button" id="Group1" class="screen_background_shape screen_group_1" (click)="openGroup(g.groupName)"><span class="group">{{g.groupName}}</span></button>
         </ng-container>
         <button mat-raised-button type="button" id="createGroup" class="screen_background_shape screen_group_4" (click)="createGroupDialog()"><span class="group_create material-icons">add_circle_outline</span></button>
       </div>

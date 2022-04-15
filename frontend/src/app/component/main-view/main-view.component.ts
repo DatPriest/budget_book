@@ -27,8 +27,8 @@ export class MainViewComponent implements OnInit {
     this.dialog.open(CreateGroupViewComponent, dialogConfig);
   }
 
-  openGroup(id: number, name: string): void {
-    console.log('Loading Group...\n' + id + ' ' + name);
+  openGroup(name: string): void {
+    console.log('Loading Group...\n' + ' ' + name);
     this.router.navigate(['/group']);
   }
 

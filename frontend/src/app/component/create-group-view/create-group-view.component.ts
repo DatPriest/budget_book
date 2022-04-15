@@ -14,15 +14,14 @@ export class CreateGroupViewComponent implements OnInit {
 
   createGroupForm: FormGroup;
   image: string;
-  groupImage: undefined;
   constructor(private formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<CreateGroupViewComponent>, private groupService: GroupService) {}
 
   createGroup(createGroupForm: NgForm): void {
-    if (createGroupForm.value.picture != '' && createGroupForm.value.name != '') {
-      const createGroupData = new CreateGroup(null, this.image, createGroupForm.value.name);
+    if (createGroupForm.value.image != '' && createGroupForm.value.groupName != '') {
+      const createGroupData = new CreateGroup(createGroupForm.value.groupName, this.image);
+      console.log(createGroupData);
       this.groupService.createGroup(createGroupData).subscribe(data => {
-        console.log(data);
         this.dialogRef.close();
       });
     };
@@ -43,7 +42,6 @@ export class CreateGroupViewComponent implements OnInit {
     });
     observable.subscribe((data) => {
       this.image = data;
-      console.warn(this.image);
     });
   }
 
@@ -63,8 +61,8 @@ export class CreateGroupViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.createGroupForm = this.formBuilder.group({
-      picture: [''],
-      groupname: ['']
+      groupname: [''],
+      picture: ['']
     });
   }
 }

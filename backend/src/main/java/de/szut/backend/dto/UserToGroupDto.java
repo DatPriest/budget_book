@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class UserToGroupDto {
-    private Long userId;
-    private Long groupId;
+    public Long userId;
+    public Long groupId;
 }
