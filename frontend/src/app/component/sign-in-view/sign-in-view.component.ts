@@ -25,14 +25,14 @@ export class SignInViewComponent implements OnInit {
   }
 
   loginUser(signInForm: NgForm): void {
-    //console.warn("Login Funktion vorrübergend kommentiert!");
-    //this.router.navigate(['main']);
-    const signInData = new LoginUser(signInForm.value.email, signInForm.value.password);
+    console.warn("Login Funktion vorrübergend kommentiert!");
+    this.router.navigate(['main']);
+    /*const signInData = new LoginUser(signInForm.value.email, signInForm.value.password);
     this.userService.loginUser(signInData).subscribe(data => {
       if (data.email != null && data.hash != null) {
         this.router.navigate(['main', data]);
       }
-    });
+    });*/
   }
 
 
