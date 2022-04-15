@@ -13,20 +13,20 @@ import { Observable, Subscriber } from 'rxjs';
 export class CreateGroupViewComponent implements OnInit {
 
   createGroupForm: FormGroup;
-  image: string| undefined;
+  image: string;
   groupImage: undefined;
   constructor(private formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<CreateGroupViewComponent>, private groupService: GroupService) {}
 
   createGroup(createGroupForm: NgForm): void {
     if (createGroupForm.value.picture != '' && createGroupForm.value.name != '') {
-      createGroupForm.value.id = 1;
+      /*createGroupForm.value.id = 1; // Funktion kann aktuell nicht voll getestet werden. Gund dafür ist ein Fehler im Backend. "createGroupForm.value.id = 1;" ist aus Test zwecken aktuell da.
       const createGroupData = new CreateGroup(createGroupForm.value.id, this.image, createGroupForm.value.name);
       this.groupService.createGroup(createGroupData).subscribe(data => {
         console.log(data.id);
         this.dialogRef.close();
-      });
-    }
+      });*/
+    };
   }
 
   closeGroup(): void {
@@ -42,8 +42,8 @@ export class CreateGroupViewComponent implements OnInit {
     const observable = new Observable((subscriber: Subscriber<any>) => {
       this.readFile(file, subscriber);
     });
-    observable.subscribe((d) => {
-      this.image = d;
+    observable.subscribe((data) => {
+      this.image = data;
     });
   }
 
