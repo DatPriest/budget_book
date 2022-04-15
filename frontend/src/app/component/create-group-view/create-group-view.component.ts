@@ -20,12 +20,11 @@ export class CreateGroupViewComponent implements OnInit {
 
   createGroup(createGroupForm: NgForm): void {
     if (createGroupForm.value.picture != '' && createGroupForm.value.name != '') {
-      /*createGroupForm.value.id = 1; // Funktion kann aktuell nicht voll getestet werden. Gund dafür ist ein Fehler im Backend. "createGroupForm.value.id = 1;" ist aus Test zwecken aktuell da.
-      const createGroupData = new CreateGroup(createGroupForm.value.id, this.image, createGroupForm.value.name);
+      const createGroupData = new CreateGroup(null, this.image, createGroupForm.value.name);
       this.groupService.createGroup(createGroupData).subscribe(data => {
-        console.log(data.id);
+        console.log(data);
         this.dialogRef.close();
-      });*/
+      });
     };
   }
 
@@ -44,6 +43,7 @@ export class CreateGroupViewComponent implements OnInit {
     });
     observable.subscribe((data) => {
       this.image = data;
+      console.warn(this.image);
     });
   }
 
