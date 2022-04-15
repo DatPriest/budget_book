@@ -27,18 +27,17 @@ export class SignInViewComponent implements OnInit {
 
   loginUser(signInForm: NgForm): void {
     const signInData = new LoginUser(signInForm.value.email, signInForm.value.password);
-    //this.userService.loginUser(signInData).subscribe(value => {this.user = new LoginUser(value.email, value.hash)});
-    this.user = this.userService.loginUser(signInData);
-    if (this.user.email == signInForm.value.email) {
-      if (this.user.hash == signInForm.value.password) {
-        this.router.navigate(['main']);
+    this.userService.loginUser(signInData).subscribe(data => {
+      if (data.email == signInForm.value.email) {
+        if (data.hash == signInForm.value.password) {
+          this.router.navigate(['main']);
+        } else {
+            alert("Falsches Passwort!");
+          }
       } else {
-          alert("Falsches Passwort!");
-        }
-    } else {
-        alert("Falsche E-Mail!");
-    }
-
+          alert("Falsche E-Mail!");
+      }
+    });
 
     //Zum vorstellen des projektes
     //TODO: Passwortprüfung wird später mit kompletter funktion implementiert

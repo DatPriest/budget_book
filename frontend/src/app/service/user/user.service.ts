@@ -18,8 +18,8 @@ export class UserService {
   }
 
   loginUser(user: LoginUser) {
-    //return this.http.post<LoginUser>('http://localhost:4000/api/v1/verification/login', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
-    return this.testUser;
+    return this.http.post<LoginUser>('http://localhost:4000/api/v1/verification/login', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    //return this.testUser;
   }
 
   passwordForgot(user: NewPassword) {
