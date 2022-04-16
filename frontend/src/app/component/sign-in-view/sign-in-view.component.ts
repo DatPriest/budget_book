@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from "@angular/router";
+import { AppComponent } from 'src/app/app.component';
 import { LoginUser } from "../../model/LoginUser";
 import { UserService } from "../../service/user/user.service";
 
@@ -16,7 +17,7 @@ export class SignInViewComponent implements OnInit {
   showPassword: boolean = false;
   user: LoginUser;
   errorText: string | undefined;
-  constructor(public router: Router, private http: HttpClient, private formBuilder: FormBuilder, private userService: UserService) {
+  constructor(public router: Router, private http: HttpClient, private formBuilder: FormBuilder, private userService: UserService, public app: AppComponent) {
     this.userService = new UserService(this.http);
   }
 
@@ -25,16 +26,14 @@ export class SignInViewComponent implements OnInit {
   }
 
   loginUser(signInForm: NgForm): void {
-    //console.warn("Login Funktion vorrübergend kommentiert!");
-    //this.router.navigate(['main']);
     const signInData = new LoginUser(signInForm.value.email, signInForm.value.password);
     this.userService.loginUser(signInData).subscribe(data => {
       if (data.email != null && data.hash != null) {
+        // TODO: Create a function in which the user ID is put into the "this.app.userId" variable.
         this.router.navigate(['main', data]);
       }
     });
   }
-
 
   newUser(): void {
     this.router.navigate(['sign-up']);

@@ -7,6 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  userId: number = 0;
+  groupId: number = 0;
   constructor(public router: Router) {
   }
 

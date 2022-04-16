@@ -1,9 +1,14 @@
 package de.szut.backend.model;
 
 public enum Question {
-    DogName,
+    BornCity,
+    MiddleName,
+    FirstConcert,
+    FirstCar,
+    MetParents
+    /*DogName,
     FavoriteMovie,
     BornCity,
-    FavoritePlace
+    FavoritePlace*/
 }
 

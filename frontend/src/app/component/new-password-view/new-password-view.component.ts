@@ -15,6 +15,7 @@ export class NewPasswordViewComponent implements OnInit {
   newPasswordForm: FormGroup;
   showPassword: boolean = false;
   showPasswordReplay: boolean = false;
+  userID: number;
   constructor(public router: Router, private formBuilder: FormBuilder, private userService: UserService) {}
 
   togglePassword(): void {
@@ -31,12 +32,12 @@ export class NewPasswordViewComponent implements OnInit {
         const newPasswordData = new NewPasswordRequest(newPasswordForm.value.email, newPasswordForm.value.securityQuestion, newPasswordForm.value.securityAnswer);
         this.userService.passwordForgotRequest(newPasswordData).subscribe(data => {
           console.warn(data);
-          console.error(data.email + ' ' + data.securityQuestion + ' ' + data.securityAnswer)
-          if (data.email != null && data.securityQuestion != null && data.securityAnswer != null) {
+          console.error(data.email + ' ' + data.securityQuestion + ' ' + data.securityAnswer);
+          /*if (data.email != null && data.securityQuestion != null && data.securityAnswer != null) {
             newPasswordForm.value.hash = newPasswordForm.value.password_1; // hash muss noch gehasht werden.
-            const newPasswordVerifyData = new NewPasswordVerification(newPasswordForm.value.hash, 4, newPasswordForm.value.email); // '2' = temp ID
+            const newPasswordVerifyData = new NewPasswordVerification(newPasswordForm.value.hash, 1, newPasswordForm.value.email); // '2' = temp ID
             this.userService.passwordForgotVerification(newPasswordVerifyData).subscribe(data => this.router.navigate(['/sign-in']));
-          }
+          }*/
         });
       }
     } else {
