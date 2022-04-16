@@ -4,7 +4,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { GroupService } from 'src/app/service/group/group.service';
 import { CreateGroup } from 'src/app/model/CreateGroup'
 import { Observable, Subscriber } from 'rxjs';
-import { AppComponent } from 'src/app/app.component';
+import { AppModule } from 'src/app/app.module';
 
 @Component({
   selector: 'app-create-group-view',
@@ -16,13 +16,14 @@ export class CreateGroupViewComponent implements OnInit {
   createGroupForm: FormGroup;
   image: string;
   constructor(private formBuilder: FormBuilder,
-    public dialogRef: MatDialogRef<CreateGroupViewComponent>, private groupService: GroupService, public app: AppComponent) {}
+    public dialogRef: MatDialogRef<CreateGroupViewComponent>, private groupService: GroupService, public app: AppModule) {} // "public app: AppComponent" funktioniert nicht!!
 
   createGroup(createGroupForm: NgForm): void {
     if (createGroupForm.value.image != '' && createGroupForm.value.groupName != '') {
       const createGroupData = new CreateGroup(createGroupForm.value.groupName, this.image);
       this.groupService.createGroup(createGroupData).subscribe(data => {
         // TODO: Create a function in which the group ID is put into the "this.app.groupId" variable.
+        console.log(this.app.groupId);
         this.dialogRef.close();
       });
     };

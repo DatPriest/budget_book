@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from "@angular/router";
-import { AppComponent } from 'src/app/app.component';
+import { AppModule } from 'src/app/app.module';
 import { LoginUser } from "../../model/LoginUser";
 import { UserService } from "../../service/user/user.service";
 
@@ -17,7 +17,7 @@ export class SignInViewComponent implements OnInit {
   showPassword: boolean = false;
   user: LoginUser;
   errorText: string | undefined;
-  constructor(public router: Router, private http: HttpClient, private formBuilder: FormBuilder, private userService: UserService, public app: AppComponent) {
+  constructor(public router: Router, private http: HttpClient, private formBuilder: FormBuilder, private userService: UserService, public app: AppModule) {
     this.userService = new UserService(this.http);
   }
 

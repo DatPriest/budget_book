@@ -58,4 +58,7 @@ import { CreateGroupViewComponent } from './component/create-group-view/create-g
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  userId: number = 0;
+  groupId: number = 0;
+}

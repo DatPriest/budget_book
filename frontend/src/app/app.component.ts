@@ -8,8 +8,6 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
-  userId: number = 0;
-  groupId: number = 0;
   constructor(public router: Router) {
   }
 
