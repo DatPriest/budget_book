@@ -30,7 +30,7 @@ export class SignInViewComponent implements OnInit {
     this.userService.loginUser(signInData).subscribe(data => {
       if (data.email != null && data.hash != null) {
         // TODO: Create a function in which the user ID is put into the "this.app.userId" variable.
-        this.router.navigate(['main', data]);
+        this.router.navigate(['main']);
       }
     });
   }

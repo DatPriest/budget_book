@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { GroupService } from 'src/app/service/group/group.service';
-import { CreateGroup } from 'src/app/model/CreateGroup'
+import { Group } from 'src/app/model/Group'
 import { Observable, Subscriber } from 'rxjs';
 import { AppModule } from 'src/app/app.module';
 
@@ -20,10 +20,9 @@ export class CreateGroupViewComponent implements OnInit {
 
   createGroup(createGroupForm: NgForm): void {
     if (createGroupForm.value.image != '' && createGroupForm.value.groupName != '') {
-      const createGroupData = new CreateGroup(createGroupForm.value.groupName, this.image);
+      const createGroupData = new Group(createGroupForm.value.groupName, this.image);
       this.groupService.createGroup(createGroupData).subscribe(data => {
         // TODO: Create a function in which the group ID is put into the "this.app.groupId" variable.
-        console.log(this.app.groupId);
         this.dialogRef.close();
       });
     };

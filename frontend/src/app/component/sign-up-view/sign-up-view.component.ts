@@ -27,7 +27,7 @@ export class SignUpViewComponent implements OnInit {
   registrationUser(signUpForm: NgForm): void {
     if (signUpForm.value.password_1 == signUpForm.value.password_2) {
       if (signUpForm.value.securityQuestion != '' && signUpForm.value.securityAnswer != '') {
-        signUpForm.value.hash = signUpForm.value.password_1; // hash muss noch gehasht werden.
+        signUpForm.value.hash = signUpForm.value.password_1; // hash muss noch gehasht werden. MH-18
         const signUpData = new User(signUpForm.value.firstName, signUpForm.value.lastName, signUpForm.value.hash, signUpForm.value.email, signUpForm.value.securityQuestion, signUpForm.value.securityAnswer);
         this.userService.registerUser(signUpData).subscribe(data => this.router.navigate(['/sign-in']));
       } else {

@@ -19,9 +19,10 @@
               </th>
               <th></th>
               <th>
+                <!-- Anderer Sprint! -->
                 <!--<input type="text" class="input_field" id="Issues_search" placeholder="Suche">-->
               </th>
-              <th></th>
+              <!--<th></th>-->
             </thead>
             <tbody>
               <ng-container *ngFor="let i of issues">
@@ -29,7 +30,8 @@
                   <td class="issues_line_subject">{{i.subject}}</td>
                   <td class="issues_line">{{i.amount}} €</td>
                   <td class="issues_line">{{i.date}}</td>
-                  <td class="issues_line">
+                  <!-- Anderer Sprint! -->
+                  <!--<td class="issues_line">
                     <div class="button_edit">
                       <button type="button">
                         <span class="issues_button material-icons">edit</span>
@@ -40,7 +42,7 @@
                         <span class="issues_button material-icons">delete</span>
                       </button>
                     </div>
-                  </td>
+                  </td>-->
                 </tr>
               </ng-container>
             </tbody>

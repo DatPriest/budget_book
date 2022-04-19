@@ -31,10 +31,10 @@ export class NewPasswordViewComponent implements OnInit {
       if (newPasswordForm.value.securityQuestion != '' && newPasswordForm.value.securityAnswer != '') {
         const newPasswordData = new NewPasswordRequest(newPasswordForm.value.email, newPasswordForm.value.securityQuestion, newPasswordForm.value.securityAnswer);
         this.userService.passwordForgotRequest(newPasswordData).subscribe(data => {
-          console.warn(data);
-          console.error(data.email + ' ' + data.securityQuestion + ' ' + data.securityAnswer);
+          console.warn(data); // Gibt eine ganzen User aus.
+          console.error(data.email + ' ' + data.securityQuestion + ' ' + data.securityAnswer); // Gibt die E-Mail aus, rest ist undefiniert. 
           /*if (data.email != null && data.securityQuestion != null && data.securityAnswer != null) {
-            newPasswordForm.value.hash = newPasswordForm.value.password_1; // hash muss noch gehasht werden.
+            newPasswordForm.value.hash = newPasswordForm.value.password_1; // hash muss noch gehasht werden. MH-18
             const newPasswordVerifyData = new NewPasswordVerification(newPasswordForm.value.hash, 1, newPasswordForm.value.email); // '2' = temp ID
             this.userService.passwordForgotVerification(newPasswordVerifyData).subscribe(data => this.router.navigate(['/sign-in']));
           }*/

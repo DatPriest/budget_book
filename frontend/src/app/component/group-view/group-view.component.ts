@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { AppModule } from 'src/app/app.module';
 import { User } from 'src/app/model/User';
+import { GroupService } from 'src/app/service/group/group.service';
 
 @Component({
   selector: 'app-group-view',
@@ -8,12 +11,9 @@ import { User } from 'src/app/model/User';
   styleUrls: ['./group-view.component.css']
 })
 export class GroupViewComponent implements OnInit {
-  users: User[] = [];
-
-  constructor(public router: Router) {
-    this.users.push(new User('Max', 'Mustermann', '', '', '', '')),
-    this.users.push(new User('Leon', 'Cordes', '', '', '', '')),
-    this.users.push(new User('Lisa', 'Müller', '', '', '', ''))
+  user$ : Observable<User[]> = of([]);
+  constructor(public router: Router, public groupService: GroupService, public app: AppModule) {
+    this.user$ = this.groupService.getGroupUsers(this.app.groupId);
   }
 
   openMenu(): void {

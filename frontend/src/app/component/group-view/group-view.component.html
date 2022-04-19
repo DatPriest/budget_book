@@ -8,6 +8,7 @@
       <div class="screen">
         <div class="button">
           <button type="button" (click)="ausgaben()"><span class="group_expenditures">Ausgaben</span></button>
+          <!-- Anderer Sprint! -->
           <!--<button type="button" (click)="nofunction()"><span class="group_categories">Kategorien</span></button>
           <button type="button" (click)="nofunction()"><span class="group_statistics">Statistik</span></button>-->
         </div>
@@ -17,6 +18,7 @@
         <ul class="sidebar">
           <li class="li_list">
             <div class="pages_menu">
+              <!-- Anderer Sprint! -->
               <!--<button type="button" (click)="nofunction()"><span class="group_history material-icons">edit</span></button>
               <button type="button" (click)="nofunction()"><span class="group_history material-icons">add</span></button>
               <button type="button" (click)="nofunction()"><span class="group_history material-icons">delete</span></button>-->
@@ -33,7 +35,7 @@
             </tr>
           </thead>
           <tbody>
-            <ng-container *ngFor="let u of users">
+            <ng-container *ngFor="let u of user$ | async">
               <tr class="user_table_line">
                 <td class="user_name">{{u.firstName}} {{u.lastName}}</td>
               </tr>
