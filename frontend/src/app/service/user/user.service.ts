@@ -20,7 +20,7 @@ export class UserService {
 
   loginUser(user: LoginUser) {
     return this.http.post<LoginUser>('http://localhost:4000/api/v1/verification/login', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")
-    }).pipe(catchError(this.handleError<LoginUser>("User not found, bad password")));
+    }).pipe(catchError(this.handleError<LoginUser>("User not found or bad password")));
   }
 
   passwordForgotRequest(user: NewPasswordRequest) {
