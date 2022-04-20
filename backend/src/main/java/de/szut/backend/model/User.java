@@ -16,8 +16,8 @@ public class User {
     public String lastName;
     public String firstName;
     public String email;
-    public Question question;
-    public String answer;
+    public Question securityQuestion;
+    public String securityAnswer;
     public String salt;
     public String hash;
     @CreationTimestamp

@@ -1,6 +1,7 @@
 package de.szut.backend.controller;
 
 import de.szut.backend.dto.GroupCreateDto;
+import de.szut.backend.dto.GroupListDto;
 import de.szut.backend.dto.LoginDto;
 import de.szut.backend.dto.UserToGroupDto;
 import de.szut.backend.model.Group;
@@ -50,5 +51,10 @@ public class GroupController {
     @PostMapping(path = "/getUsers/{groupId}", produces = "application/json")
     public ResponseEntity<ArrayList<User>> GetUsersToGroup(@PathVariable long groupId) throws TypeNotPresentException {
         return new ResponseEntity<>(service.getUsersToGroup(groupId), HttpStatus.OK);
+    }
+
+    @PostMapping(path = "/getGroups", produces = "application/json")
+    public ResponseEntity<GroupListDto> GetGroups(@PathVariable long groupId) throws TypeNotPresentException {
+        return new ResponseEntity<>(null, HttpStatus.OK);
     }
 }
