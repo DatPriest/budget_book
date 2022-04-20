@@ -43,7 +43,7 @@ public class VerificationService extends BaseService {
     }
 
     public User forgotPassword(ForgotDto dto) {
-        return userRepository.findByEmailAndQuestionAndAnswer(
+        return userRepository.findByEmailAndSecurityQuestionAndSecurityAnswer(
                 dto.email,
                 dto.securityQuestion,
                 dto.securityAnswer.toLowerCase(Locale.ROOT));

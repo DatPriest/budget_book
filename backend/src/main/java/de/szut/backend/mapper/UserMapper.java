@@ -18,8 +18,8 @@ public class UserMapper {
         user.lastName = dto.lastName;
         user.lastLogin = new Date();
         user.hash = dto.hash;
-        user.question = dto.securityQuestion;
-        user.answer = dto.securityAnswer.toLowerCase(Locale.ROOT);
+        user.securityQuestion = dto.securityQuestion;
+        user.securityAnswer = dto.securityAnswer.toLowerCase(Locale.ROOT);
         return user;
     }
 
