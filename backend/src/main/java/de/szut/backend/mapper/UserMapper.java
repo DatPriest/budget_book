@@ -1,6 +1,8 @@
 package de.szut.backend.mapper;
 
 
+import de.szut.backend.dto.CreateUserDto;
+import de.szut.backend.dto.ForgotBackDto;
 import de.szut.backend.dto.LoginDto;
 import de.szut.backend.dto.RegisterDto;
 import de.szut.backend.model.*;
@@ -29,5 +31,21 @@ public class UserMapper {
         user.hash = dto.hash;
         user.lastLogin = new Date();
         return user;
+    }
+
+    public CreateUserDto mapUserToUserCreateDto(User user) {
+        CreateUserDto dto = new CreateUserDto();
+        dto.email = user.email;
+        dto.id = user.id;
+        dto.firstName = user.firstName;
+        dto.lastName = user.lastName;
+        return dto;
+    }
+
+    public ForgotBackDto mapUserToForgotBackDto(User user) {
+        ForgotBackDto dto = new ForgotBackDto();
+        dto.status = "Success";
+        dto.id = user.id;
+        return dto;
     }
 }

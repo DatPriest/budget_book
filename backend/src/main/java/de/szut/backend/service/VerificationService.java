@@ -1,9 +1,6 @@
 package de.szut.backend.service;
 
-import de.szut.backend.dto.ForgotDto;
-import de.szut.backend.dto.LoginDto;
-import de.szut.backend.dto.RegisterDto;
-import de.szut.backend.dto.UpdateDto;
+import de.szut.backend.dto.*;
 import de.szut.backend.mapper.UserMapper;
 import de.szut.backend.model.*;
 import de.szut.backend.model.History.HistoryActionToProcess;
@@ -42,16 +39,24 @@ public class VerificationService extends BaseService {
         }
     }
 
-    public User forgotPassword(ForgotDto dto) {
-        return userRepository.findByEmailAndSecurityQuestionAndSecurityAnswer(
+    public ForgotBackDto forgotPassword(ForgotDto dto) {
+        var user =  userRepository.findByEmailAndSecurityQuestionAndSecurityAnswer(
                 dto.email,
                 dto.securityQuestion,
                 dto.securityAnswer.toLowerCase(Locale.ROOT));
+        if (user != null) {
+            user.salt = getSalt();
+            user.hash = hashPassword(user.hash + user.salt);
+            var newUser = userRepository.save(user);
+            return userMapper.mapUserToForgotBackDto(newUser);
+        } else {
+            return null;
+        }
     }
 
-    public User register(RegisterDto dto) {
+    public CreateUserDto register(RegisterDto dto) {
         if (userRepository.existsByEmail(dto.email)) {
-            return new User();
+            return new CreateUserDto();
         }
         this.logger.info(dto.toString());
 
@@ -61,7 +66,7 @@ public class VerificationService extends BaseService {
         user.hash = hashPassword(user.hash + user.salt);
 
 
-        return this.userRepository.save(user);
+        return userMapper.mapUserToUserCreateDto(this.userRepository.save(user));
     }
 
     private String hashPassword(String hash) {
