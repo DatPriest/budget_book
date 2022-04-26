@@ -19,24 +19,24 @@ public class HistoryLogService {
     }
 
     //Erstellt einen neuen HistoryLogEntry
-    public void createLogEntry(HistoryActionToProcess actionToProcess){
+    /*public void createLogEntry(HistoryActionToProcess actionToProcess){
         long actionTypeId = -1L;
         //Wenn es die Action noch nicht gibt, fliegt eine Exception und sie wird erstellt.
         try{
             actionTypeId = getHistoryActionTypeId(actionToProcess);
         }catch(Exception e){
             HistoryAction newAction = new HistoryAction();
-            newAction.setAction(actionToProcess.getAction());
+            //newAction.setAction(actionToProcess.getAction());
             createNewAction(newAction);
             actionTypeId = getHistoryActionTypeId(actionToProcess);
         }
         //Speichern eines HistoryLog-Eintrags.
         HistoryLogEntry entryToSave = new HistoryLogEntry();
-        entryToSave.setActionId(actionTypeId);
-        entryToSave.setAdditionalInformation(actionToProcess.getAdditionalInformation());
+        //entryToSave.setActionId(actionTypeId);
+        //entryToSave.setAdditionalInformation(actionToProcess.getAdditionalInformation());
 
         historyLogRepository.save(entryToSave);
-    }
+    }*/
 
     //Holt alle bisherigen Log-Einträge aus der Datenbank.
     public List<HistoryLogEntry> getAllLogEntries(){
@@ -44,9 +44,9 @@ public class HistoryLogService {
     }
     //Holt sich die ActionId anhand eines Action-Names.
     //Wenn noch nicht vorhanden, fliegt eine Exception.
-    private long getHistoryActionTypeId(HistoryActionToProcess action){
-        return this.historyActionRepository.findHistoryActionByName(action.getAction());
-    }
+    //private long getHistoryActionTypeId(HistoryActionToProcess action){
+    //    return this.historyActionRepository.findHistoryActionByName(action.getAction());
+    //}
 
     //Erstellt eine neue HistoryAction.
     private void createNewAction(HistoryAction action){

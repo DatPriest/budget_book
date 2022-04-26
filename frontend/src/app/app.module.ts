@@ -16,8 +16,8 @@ import { SignUpViewComponent } from './component/sign-up-view/sign-up-view.compo
 import { NewPasswordViewComponent } from './component/new-password-view/new-password-view.component';
 import { MainViewComponent } from './component/main-view/main-view.component';
 import { GroupViewComponent } from './component/group-view/group-view.component';
-import { IssuesViewComponent } from './component/issues-view/issues-view.component';
-import { NewIssuesViewComponent } from './component/new-issues-view/new-issues-view.component'
+import { ExpensesViewComponent } from './component/expenses-view/expenses-view.component';
+import { NewExpensesViewComponent } from './component/new-expenses-view/new-expenses-view.component'
 import { HistoryViewComponent } from './component/history-view/history-view.component';
 import { CreateGroupViewComponent } from './component/create-group-view/create-group-view.component'
 
@@ -29,8 +29,8 @@ import { CreateGroupViewComponent } from './component/create-group-view/create-g
     NewPasswordViewComponent,
     MainViewComponent,
     GroupViewComponent,
-    IssuesViewComponent,
-    NewIssuesViewComponent,
+    ExpensesViewComponent,
+    NewExpensesViewComponent,
     HistoryViewComponent,
     CreateGroupViewComponent
   ],
@@ -47,7 +47,7 @@ import { CreateGroupViewComponent } from './component/create-group-view/create-g
       {path: 'main',component: MainViewComponent},                  // main-menu
       {path: 'group',component: GroupViewComponent},                // group-detail
       {path: 'history',component: HistoryViewComponent},            // history
-      {path: 'issues',component: IssuesViewComponent}             // ausgaben
+      {path: 'expenses',component: ExpensesViewComponent}             // ausgaben
     ]),
     NgToastModule,
     FormsModule,

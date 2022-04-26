@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from "@angular/router";
 import { AppModule } from 'src/app/app.module';
-import { LoginUser } from "../../model/LoginUser";
+import { LoginUserModule } from 'src/app/model/login-user/login-user.module';
 import { UserService } from "../../service/user/user.service";
 
 @Component({
@@ -15,7 +15,7 @@ export class SignInViewComponent implements OnInit {
 
   signInForm: FormGroup;
   showPassword: boolean = false;
-  user: LoginUser;
+  user: LoginUserModule;
   errorText: string | undefined;
   constructor(public router: Router, private http: HttpClient, private formBuilder: FormBuilder, private userService: UserService, public app: AppModule) {
     this.userService = new UserService(this.http);
@@ -26,7 +26,7 @@ export class SignInViewComponent implements OnInit {
   }
 
   loginUser(signInForm: NgForm): void {
-    const signInData = new LoginUser(signInForm.value.email, signInForm.value.password);
+    const signInData = new LoginUserModule(signInForm.value.email, signInForm.value.password);
     this.userService.loginUser(signInData).subscribe(data => {
       if (data.email != null && data.hash != null) {
         // TODO: Create a function in which the user ID is put into the "this.app.userId" variable.

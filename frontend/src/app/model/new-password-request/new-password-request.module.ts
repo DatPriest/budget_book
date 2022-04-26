@@ -1,7 +1,7 @@
-export class NewPasswordRequest {
+export class NewPasswordRequestModule {
   constructor (
     public email: string,
     public securityQuestion: string,
-    public securityAnswer: string
+    public securityAnswer: string,
   ) { }
 }

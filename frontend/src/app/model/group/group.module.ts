@@ -1,6 +1,6 @@
-export class Group {
+export class GroupModule {
   constructor (
     public groupName: string,
-    public image: string
+    public image: string,
   ) { }
 }

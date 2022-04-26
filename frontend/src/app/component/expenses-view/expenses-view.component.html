@@ -11,35 +11,35 @@
         <div class="button_add">
           <button type="button" (click)="add()"><span class="material-icons">add</span></button>
         </div>
-        <div class="screen_issues">
-          <table class="issues_table">
-            <thead class="issues_table_header">
+        <div class="screen_expenses">
+          <table class="expenses_table">
+            <thead class="expenses_table_header">
               <th>
                 <p>Ausgaben:</p>
               </th>
               <th></th>
               <th>
                 <!-- Anderer Sprint! -->
-                <!--<input type="text" class="input_field" id="Issues_search" placeholder="Suche">-->
+                <!--<input type="text" class="input_field" id="expenses_search" placeholder="Suche">-->
               </th>
               <!--<th></th>-->
             </thead>
             <tbody>
-              <ng-container *ngFor="let i of issues">
-                <tr class="issues_table_line">
-                  <td class="issues_line_subject">{{i.subject}}</td>
-                  <td class="issues_line">{{i.amount}} €</td>
-                  <td class="issues_line">{{i.date}}</td>
+              <ng-container *ngFor="let e of expenses">
+                <tr class="expenses_table_line">
+                  <td class="expenses_line_subject">{{e.subject}}</td>
+                  <td class="expenses_line">{{e.amount}} €</td>
+                  <td class="expenses_line">{{e.date}}</td>
                   <!-- Anderer Sprint! -->
-                  <!--<td class="issues_line">
+                  <!--<td class="expenses_line">
                     <div class="button_edit">
                       <button type="button">
-                        <span class="issues_button material-icons">edit</span>
+                        <span class="expenses_button material-icons">edit</span>
                       </button>
                     </div>
                     <div class="button_delete">
                       <button type="button">
-                        <span class="issues_button material-icons">delete</span>
+                        <span class="expenses_button material-icons">delete</span>
                       </button>
                     </div>
                   </td>-->

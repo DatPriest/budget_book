@@ -102,10 +102,10 @@ public class VerificationService extends BaseService {
 
     }
     //Beispiel Implementierung für die Erstellung eines Log-Eintrags
-    private void log (String action, String addition){
+    /*private void log (String action, String addition){
         HistoryActionToProcess actionToProcess = new HistoryActionToProcess();
         actionToProcess.setAction(action);
         actionToProcess.setAdditionalInformation(addition);
         logService.createLogEntry(actionToProcess);
-    }
+    }*/
 }

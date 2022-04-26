@@ -40,7 +40,7 @@
   height: 100%;
 }
 
-.screen_issues {
+.screen_expenses {
   position: absolute;
   top: 65px;
   height: 550px;
@@ -51,7 +51,7 @@
   overflow-y: scroll;
 }
 
-.issues_table {
+.expenses_table {
   font-size: x-large;
   border-collapse: collapse;
   border-width: thin 0 0 thin;
@@ -64,26 +64,26 @@
   font-size: 18px;
 }
 
-.issues_table_header {
+.expenses_table_header {
   border: thin solid black;
   background: white;
   font-weight: 700;
   text-align: center;
 }
 
-.issues_table_line {
+.expenses_table_line {
   font-weight: 400;
   text-align: center;
 }
 
-.issues_line_subject {
+.expenses_line_subject {
   text-align: left;
   padding: .4em .6em;
   border: thin solid black;
   background: white;
 }
 
-.issues_line {
+.expenses_line {
   padding: .4em .6em;
   border: thin solid black;
   background: white;

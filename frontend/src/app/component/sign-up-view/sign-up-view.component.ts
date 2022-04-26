@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from "@angular/router";
-import { User } from 'src/app/model/User';
+import { UserModule } from 'src/app/model/user/user.module';
 import { UserService } from 'src/app/service/user/user.service';
 
 @Component({
@@ -28,7 +28,7 @@ export class SignUpViewComponent implements OnInit {
     if (signUpForm.value.password_1 == signUpForm.value.password_2) {
       if (signUpForm.value.securityQuestion != '' && signUpForm.value.securityAnswer != '') {
         signUpForm.value.hash = signUpForm.value.password_1; // hash muss noch gehasht werden. MH-18
-        const signUpData = new User(signUpForm.value.firstName, signUpForm.value.lastName, signUpForm.value.hash, signUpForm.value.email, signUpForm.value.securityQuestion, signUpForm.value.securityAnswer);
+        const signUpData = new UserModule(signUpForm.value.firstName, signUpForm.value.lastName, signUpForm.value.hash, signUpForm.value.email, signUpForm.value.securityQuestion, signUpForm.value.securityAnswer);
         this.userService.registerUser(signUpData).subscribe(data => this.router.navigate(['/sign-in']));
       } else {
         alert('Bitte eine Sicherheitsfrage und eine Antwort ausfüllen!')

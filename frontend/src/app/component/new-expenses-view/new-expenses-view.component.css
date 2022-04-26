@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-.createIssues {
+.createExpenses {
   width: 550px;
   font-family: Raleway, sans-serif;
 }
@@ -24,7 +24,7 @@
   width: 175px;
 }
 
-.column_issues {
+.column_Expenses {
   float: left;
 }
 
