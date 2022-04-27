@@ -28,6 +28,10 @@ import { FaqViewComponent } from './component/faq-view/faq-view.component';
 import { PrivacyViewComponent } from './component/privacy-view/privacy-view.component';
 import { ImprintViewComponent } from './component/imprint-view/imprint-view.component';
 import { AskQuestionViewComponent } from './component/ask-question-view/ask-question-view.component';
+import { EditPasswordViewComponent } from './component/edit-password-view/edit-password-view.component';
+import { CategorieViewComponent } from './component/categorie-view/categorie-view.component';
+import { NewCategorieViewComponent } from './component/new-categorie-view/new-categorie-view.component';
+import { InviteLinkViewComponent } from './component/invite-link-view/invite-link-view.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +52,11 @@ import { AskQuestionViewComponent } from './component/ask-question-view/ask-ques
     FaqViewComponent,
     PrivacyViewComponent,
     ImprintViewComponent,
-    AskQuestionViewComponent
+    AskQuestionViewComponent,
+    EditPasswordViewComponent,
+    CategorieViewComponent,
+    NewCategorieViewComponent,
+    InviteLinkViewComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -66,11 +74,12 @@ import { AskQuestionViewComponent } from './component/ask-question-view/ask-ques
       {path: 'expenses',component: ExpensesViewComponent},
       {path: 'profile', component: ProfileViewComponent},
       {path: 'profile/edit', component: EditProfileViewComponent},
-      {path: 'faq', component: FaqViewComponent},                  // FQA
+      {path: 'faq', component: FaqViewComponent},                  // FAQ
+      {path: 'ask-question', component: AskQuestionViewComponent},  // Frage stellen
       {path: 'gtc', component: GtcViewComponent},                  // AGB´s
       {path: 'privacy', component: PrivacyViewComponent},          // Datenschutz
       {path: 'imprint', component: ImprintViewComponent},          // Impressum
-      {path: 'ask-question', component: AskQuestionViewComponent}  // Frage stellen
+      {path: 'categorie', component: CategorieViewComponent}       // Kategorien 
     ]),
     NgToastModule,
     FormsModule,

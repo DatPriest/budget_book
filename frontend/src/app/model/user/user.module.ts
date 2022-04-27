@@ -6,5 +6,6 @@ export class UserModule {
     public email: string,
     public securityQuestion: string,
     public securityAnswer: string,
+    public image: string,
   ) { }
 }
