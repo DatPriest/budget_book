@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { GroupModule } from 'src/app/model/group/group.module';
 import { UserModule } from 'src/app/model/user/user.module';
+import { NewExpensesModule } from 'src/app/model/new-expenses/new-expenses.module';
 
 @Injectable({
   providedIn: 'root'
@@ -18,11 +19,7 @@ export class GroupService {
     return this.http.post<UserModule[]>('http://localhost:4000/api/v1/groups/getUsers/' + groupId, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
-  addNewIssues(newIssues: NewIssues) {
-    return this.http.post<NewIssues>('http://localhost:4000/api/v1/groups/addIssues', JSON.stringify(newIssues), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
-  }
-
-  getHistory(groupId: number) {
-    return this.http.get
+  addNewIssues(newExpenses: NewExpensesModule) {
+    return this.http.post<NewExpensesModule>('http://localhost:4000/api/v1/groups/addIssues', JSON.stringify(newExpenses), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 }

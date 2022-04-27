@@ -1,4 +1,4 @@
-export class NewIssues {
+export class NewExpensesModule {
   constructor (
     public groupId: number,
     public unserId: number,
