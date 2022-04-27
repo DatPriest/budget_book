@@ -32,7 +32,7 @@ public class VerificationService extends BaseService {
         if (queryUser != null && hashPassword(user.hash + queryUser.salt).equals(queryUser.hash)) {
             queryUser.lastLogin = new Date();
             userRepository.save(queryUser);
-            //log("UserLoginSuccess",queryUser.lastLogin.toString());
+            //log("UserLoginSuccess",queryUser.lastLogin.toString(),1);
             return queryUser;
         } else {
             return null;
@@ -107,10 +107,11 @@ public class VerificationService extends BaseService {
 
     }
     //Beispiel Implementierung für die Erstellung eines Log-Eintrags
-    private void log (String action, String addition){
+    private void log (String action, String addition, long groupId){
         HistoryActionToProcess actionToProcess = new HistoryActionToProcess();
         actionToProcess.setAction(action);
         actionToProcess.setAdditionalInformation(addition);
+        actionToProcess.setGroupId(groupId);
         logService.createLogEntry(actionToProcess);
     }
 }
