@@ -14,6 +14,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long categoryId;
     private String name;
+    private long groupId;
     @CreationTimestamp
     private Date date_Created;
 }
