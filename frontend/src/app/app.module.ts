@@ -19,7 +19,10 @@ import { GroupViewComponent } from './component/group-view/group-view.component'
 import { ExpensesViewComponent } from './component/expenses-view/expenses-view.component';
 import { NewExpensesViewComponent } from './component/new-expenses-view/new-expenses-view.component'
 import { HistoryViewComponent } from './component/history-view/history-view.component';
-import { CreateGroupViewComponent } from './component/create-group-view/create-group-view.component'
+import { CreateGroupViewComponent } from './component/create-group-view/create-group-view.component';
+import { MenuViewComponent } from './component/menu-view/menu-view.component';
+import { ProfileViewComponent } from './component/profile-view/profile-view.component';
+import { EditProfileViewComponent } from './component/edit-profile-view/edit-profile-view.component'
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { CreateGroupViewComponent } from './component/create-group-view/create-g
     ExpensesViewComponent,
     NewExpensesViewComponent,
     HistoryViewComponent,
-    CreateGroupViewComponent
+    CreateGroupViewComponent,
+    MenuViewComponent,
+    ProfileViewComponent,
+    EditProfileViewComponent
   ],
   imports: [
     BrowserAnimationsModule,
