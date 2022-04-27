@@ -53,7 +53,9 @@ import { EditProfileViewComponent } from './component/edit-profile-view/edit-pro
       {path: 'main',component: MainViewComponent},                  // main-menu
       {path: 'group',component: GroupViewComponent},                // group-detail
       {path: 'history',component: HistoryViewComponent},            // history
-      {path: 'expenses',component: ExpensesViewComponent}             // ausgaben
+      {path: 'expenses',component: ExpensesViewComponent},             // ausgaben
+      {path: 'profile', component: ProfileViewComponent},
+      {path: 'profile/edit', component: EditProfileViewComponent}
     ]),
     NgToastModule,
     FormsModule,
