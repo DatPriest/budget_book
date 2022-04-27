@@ -7,6 +7,7 @@ import de.szut.backend.repository.HistoryActionRepository;
 import de.szut.backend.repository.HistoryLogRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -34,13 +35,14 @@ public class HistoryLogService {
         HistoryLogEntry entryToSave = new HistoryLogEntry();
         entryToSave.setActionId(actionTypeId);
         entryToSave.setAdditionalInformation(actionToProcess.getAdditionalInformation());
+        entryToSave.setGroupId(actionToProcess.getGroupId());
 
         historyLogRepository.save(entryToSave);
     }
 
     //Holt alle bisherigen Log-Einträge aus der Datenbank.
-    public List<HistoryLogEntry> getAllLogEntries(){
-        return this.historyLogRepository.findAll();
+    public List<HistoryLogEntry> getAllLogEntriesForGroup(long groupId){
+        return this.historyLogRepository.findAllByGroupId(groupId);
     }
     //Holt sich die ActionId anhand eines Action-Names.
     //Wenn noch nicht vorhanden, fliegt eine Exception.
