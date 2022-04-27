@@ -32,10 +32,6 @@ export class MainViewComponent implements OnInit {
     this.router.navigate(['/sign-in']);
   }
 
-  moveToProfile(): void {
-    this.router.navigate(['/profile']);
-  }
-
   ngOnInit(): void {
   }
 }

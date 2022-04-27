@@ -1,6 +1,8 @@
 <form>
   <header>
-    <span class="material-icons burgerMenu" (click)="openMenu()">menu</span>
+    <span class="material-icons burgerMenu">
+      <app-menu-view></app-menu-view>
+    </span>
     <span class="header_hauptmenu">Hauptmenü</span>
   </header>
   <body>
@@ -25,5 +27,4 @@
       </div>
     </div>
   </body>
-  <button type="button" ide="profile" (click)="moveToProfile()">Zum Profil</button>
 </form>

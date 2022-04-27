@@ -22,7 +22,11 @@ import { HistoryViewComponent } from './component/history-view/history-view.comp
 import { CreateGroupViewComponent } from './component/create-group-view/create-group-view.component';
 import { MenuViewComponent } from './component/menu-view/menu-view.component';
 import { ProfileViewComponent } from './component/profile-view/profile-view.component';
-import { EditProfileViewComponent } from './component/edit-profile-view/edit-profile-view.component'
+import { EditProfileViewComponent } from './component/edit-profile-view/edit-profile-view.component';
+import { GtcViewComponent } from './component/gtc-view/gtc-view.component';
+import { FaqViewComponent } from './component/faq-view/faq-view.component';
+import { PrivacyViewComponent } from './component/privacy-view/privacy-view.component';
+import { ImprintViewComponent } from './component/imprint-view/imprint-view.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,11 @@ import { EditProfileViewComponent } from './component/edit-profile-view/edit-pro
     CreateGroupViewComponent,
     MenuViewComponent,
     ProfileViewComponent,
-    EditProfileViewComponent
+    EditProfileViewComponent,
+    GtcViewComponent,
+    FaqViewComponent,
+    PrivacyViewComponent,
+    ImprintViewComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -47,15 +55,19 @@ import { EditProfileViewComponent } from './component/edit-profile-view/edit-pro
     AngularMaterialModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      {path: 'sign-in',component: SignInViewComponent},             // sign-In
-      {path: 'sign-up',component: SignUpViewComponent},             // register
-      {path: 'new-password',component: NewPasswordViewComponent},   // password-forgotten
-      {path: 'main',component: MainViewComponent},                  // main-menu
-      {path: 'group',component: GroupViewComponent},                // group-detail
-      {path: 'history',component: HistoryViewComponent},            // history
-      {path: 'expenses',component: ExpensesViewComponent},             // ausgaben
+      {path: 'sign-in',component: SignInViewComponent},
+      {path: 'sign-up',component: SignUpViewComponent},
+      {path: 'new-password',component: NewPasswordViewComponent},
+      {path: 'main',component: MainViewComponent},
+      {path: 'group',component: GroupViewComponent},
+      {path: 'history',component: HistoryViewComponent},
+      {path: 'expenses',component: ExpensesViewComponent},
       {path: 'profile', component: ProfileViewComponent},
-      {path: 'profile/edit', component: EditProfileViewComponent}
+      {path: 'profile/edit', component: EditProfileViewComponent},
+      {path: 'faq', component: FaqViewComponent},                  // FQA
+      {path: 'gtc', component: GtcViewComponent},                  // AGB´s
+      {path: 'privacy', component: PrivacyViewComponent},          // Datenschutz
+      {path: 'imprint', component: ImprintViewComponent}           // Impressum
     ]),
     NgToastModule,
     FormsModule,
