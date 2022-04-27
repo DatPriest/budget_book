@@ -32,7 +32,6 @@ import { EditPasswordViewComponent } from './component/edit-password-view/edit-p
 import { CategorieViewComponent } from './component/categorie-view/categorie-view.component';
 import { NewCategorieViewComponent } from './component/new-categorie-view/new-categorie-view.component';
 import { InviteLinkViewComponent } from './component/invite-link-view/invite-link-view.component';
-import { NewExpensesModule } from "./model/new-expenses/NewExpensesModule";
 
 @NgModule({
   declarations: [
@@ -86,8 +85,7 @@ import { NewExpensesModule } from "./model/new-expenses/NewExpensesModule";
     FormsModule,
     ReactiveFormsModule,
     MatNativeDateModule,
-    MaterialExampleModule,
-    NewExpensesModule
+    MaterialExampleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
