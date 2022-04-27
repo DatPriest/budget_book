@@ -12,7 +12,7 @@
               <div class="input_field">
                 <div class="form-floating">
                   <input name="password" type="{{showPassword ? 'text' : 'password' }}" class="input_field form-control" id="UserPassword" ngModel placeholder="Password">
-                  <button type="button" class="show_passwort material-icons" (click)="togglePassword()">{{showPassword ? 'visibility_off' : 'visibility' }}</button>
+                  <button type="button" class="show_passwort material-icons" (click)="togglePassword()" tabindex="-1">{{showPassword ? 'visibility_off' : 'visibility' }}</button>
                 </div>
               </div>
               <button type="submit" class="button login_submit" id="login">

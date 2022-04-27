@@ -17,4 +17,12 @@ export class GroupService {
   getGroupUsers(groupId: number) {
     return this.http.post<UserModule[]>('http://localhost:4000/api/v1/groups/getUsers/' + groupId, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
+
+  addNewIssues(newIssues: NewIssues) {
+    return this.http.post<NewIssues>('http://localhost:4000/api/v1/groups/addIssues', JSON.stringify(newIssues), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
+  getHistory(groupId: number) {
+    return this.http.get
+  }
 }
