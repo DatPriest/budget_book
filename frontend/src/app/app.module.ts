@@ -27,6 +27,7 @@ import { GtcViewComponent } from './component/gtc-view/gtc-view.component';
 import { FaqViewComponent } from './component/faq-view/faq-view.component';
 import { PrivacyViewComponent } from './component/privacy-view/privacy-view.component';
 import { ImprintViewComponent } from './component/imprint-view/imprint-view.component';
+import { AskQuestionViewComponent } from './component/ask-question-view/ask-question-view.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { ImprintViewComponent } from './component/imprint-view/imprint-view.comp
     GtcViewComponent,
     FaqViewComponent,
     PrivacyViewComponent,
-    ImprintViewComponent
+    ImprintViewComponent,
+    AskQuestionViewComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -67,7 +69,8 @@ import { ImprintViewComponent } from './component/imprint-view/imprint-view.comp
       {path: 'faq', component: FaqViewComponent},                  // FQA
       {path: 'gtc', component: GtcViewComponent},                  // AGB´s
       {path: 'privacy', component: PrivacyViewComponent},          // Datenschutz
-      {path: 'imprint', component: ImprintViewComponent}           // Impressum
+      {path: 'imprint', component: ImprintViewComponent},          // Impressum
+      {path: 'ask-question', component: AskQuestionViewComponent}  // Frage stellen
     ]),
     NgToastModule,
     FormsModule,

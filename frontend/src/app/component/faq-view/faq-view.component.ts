@@ -14,6 +14,10 @@ export class FaqViewComponent implements OnInit {
     this.router.navigate(['main']);
   }
 
+  askQuestion(): void {
+    this.router.navigate(['ask-question']);
+  }
+
   ngOnInit(): void {
   }
 
