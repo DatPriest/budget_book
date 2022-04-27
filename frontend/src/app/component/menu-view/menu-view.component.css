@@ -1,0 +1,33 @@
+.logout {
+  color: #FD0303;
+}
+
+.mat-menu-content {
+  width: 500px;
+}
+
+.container {
+ width: 250px;
+}
+
+.column {
+  float: left;
+  width: 20%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.MenuTrigger{
+  background: none;
+  padding: 5px 22px;
+  border-radius: 0px;
+  border: none;
+  display: flex;
+  box-shadow: 0px 2px 2px transparent;
+  cursor: pointer;
+  transition: .0s;
+}

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from "@angular/router";
-import { NewPasswordRequest } from 'src/app/model/NewPasswordRequest';
-import { NewPasswordVerification } from 'src/app/model/NewPasswortVerification';
+import { NewPasswordRequestModule } from 'src/app/model/new-password-request/new-password-request.module';
+import { NewPasswordVerificationModule } from 'src/app/model/new-password-verification/new-password-verification.module';
 import { UserService } from 'src/app/service/user/user.service';
 
 @Component({
@@ -29,10 +29,10 @@ export class NewPasswordViewComponent implements OnInit {
   savePassword(newPasswordForm: NgForm): void {
     if (newPasswordForm.value.password_1 == newPasswordForm.value.password_2) {
       if (newPasswordForm.value.securityQuestion != '' && newPasswordForm.value.securityAnswer != '') {
-        const newPasswordData = new NewPasswordRequest(newPasswordForm.value.email, newPasswordForm.value.securityQuestion, newPasswordForm.value.securityAnswer);
+        const newPasswordData = new NewPasswordRequestModule(newPasswordForm.value.email, newPasswordForm.value.securityQuestion, newPasswordForm.value.securityAnswer);
         this.userService.passwordForgotRequest(newPasswordData).subscribe(data => {
           console.warn(data); // Gibt eine ganzen User aus.
-          console.error(data.email + ' ' + data.securityQuestion + ' ' + data.securityAnswer); // Gibt die E-Mail aus, rest ist undefiniert. 
+          console.error(data.email + ' ' + data.securityQuestion + ' ' + data.securityAnswer); // Gibt die E-Mail aus, rest ist undefiniert.
           /*if (data.email != null && data.securityQuestion != null && data.securityAnswer != null) {
             newPasswordForm.value.hash = newPasswordForm.value.password_1; // hash muss noch gehasht werden. MH-18
             const newPasswordVerifyData = new NewPasswordVerification(newPasswordForm.value.hash, 1, newPasswordForm.value.email); // '2' = temp ID

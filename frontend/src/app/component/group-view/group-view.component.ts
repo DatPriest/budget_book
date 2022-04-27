@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { AppModule } from 'src/app/app.module';
-import { User } from 'src/app/model/User';
+import { UserModule } from 'src/app/model/user/user.module';
 import { GroupService } from 'src/app/service/group/group.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { GroupService } from 'src/app/service/group/group.service';
   styleUrls: ['./group-view.component.css']
 })
 export class GroupViewComponent implements OnInit {
-  user$ : Observable<User[]> = of([]);
+  user$ : Observable<UserModule[]> = of([]);
   constructor(public router: Router, public groupService: GroupService, public app: AppModule) {
     this.user$ = this.groupService.getGroupUsers(this.app.groupId);
   }
@@ -27,7 +27,7 @@ export class GroupViewComponent implements OnInit {
   }
 
   ausgaben(): void {
-    this.router.navigate(['/issues']);
+    this.router.navigate(['/expenses']);
   }
 
   nofunction(): void {

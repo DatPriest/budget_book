@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-import { Group } from 'src/app/model/Group';
+import { GroupModule } from 'src/app/model/group/group.module';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { CreateGroupViewComponent } from '../create-group-view/create-group-view.component';
 
@@ -10,7 +10,7 @@ import { CreateGroupViewComponent } from '../create-group-view/create-group-view
   styleUrls: ['./main-view.component.css']
 })
 export class MainViewComponent implements OnInit {
-  groups: Group[] = [];
+  groups: GroupModule[] = [];
 
   constructor(public router: Router, public dialog: MatDialog) { }
 

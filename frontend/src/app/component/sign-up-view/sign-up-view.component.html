@@ -26,6 +26,7 @@
                   <input name="password_2" type="{{showPasswordReplay ? 'text' : 'password' }}" class="input_field" id="newUserPasswordreplay" ngModel placeholder="Passwort Wiederholung">
                   <button type="button" class="show_passwort material-icons" (click)="togglePasswordReplay()">{{showPasswordReplay ? 'visibility_off' : 'visibility' }}</button>
                 </div>
+                <input name="image" (change)="onChange($event)" type="file" class="input_file" id="inputImage" ngModel placeholder="Logo" accept="image/png, image/jpeg">
               </div>
             </div>
             <div>
