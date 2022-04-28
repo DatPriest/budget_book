@@ -5,7 +5,6 @@ import de.szut.backend.mapper.CategoryMapper;
 import de.szut.backend.model.Categorys.Category;
 import de.szut.backend.model.Categorys.dtos.CreateCategoryDTO;
 import de.szut.backend.model.Categorys.dtos.GetCategoryDTO;
-import de.szut.backend.model.History.HistoryLogEntry;
 import de.szut.backend.service.CategoryService;
 import org.springframework.web.bind.annotation.*;
 
