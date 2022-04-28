@@ -13,7 +13,9 @@
         <input type="text" class="input_field" id="Search" placeholder="Search">
       </div>-->
       <div id="console">
-        <p>History Log!</p>
+        <ng-container *ngFor="let h of history$ | async">
+          <p>{{h.text}}</p>
+        </ng-container>
       </div>
     </div>
   </div>

@@ -5,6 +5,7 @@ import { NewPasswordRequestModule } from 'src/app/model/new-password-request/new
 import { NewPasswordVerificationModule } from 'src/app/model/new-password-verification/new-password-verification.module';
 import { UserModule } from 'src/app/model/user/user.module';
 import { LoginUserModule } from 'src/app/model/login-user/login-user.module';
+import { SecurityQuestionModule } from 'src/app/model/security-question/security-question.module';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,11 @@ export class UserService {
   passwordForgotVerification(user: NewPasswordVerificationModule) {
     return this.http.put<NewPasswordVerificationModule>('http://localhost:4000/api/v1/verification/updatePassword', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
+
+  /*getSecurityQuestion(question: SecurityQuestionModule) {
+    //let headers = new Headers();
+    return this.http.get<SecurityQuestionModule[]>('http://localhost:4000/api/v1/verification/securityQuestion', JSON.stringify(question), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }*/
 
   public handleError<T>(origin = "origin", result? : T) {
     return (error: any) : Observable<T> => {

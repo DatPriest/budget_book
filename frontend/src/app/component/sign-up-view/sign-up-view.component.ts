@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from "@angular/router";
-import { Observable, Subscriber } from 'rxjs';
+import { Observable, of, Subscriber } from 'rxjs';
 import { UserModule } from 'src/app/model/user/user.module';
 import { UserService } from 'src/app/service/user/user.service';
+import { SecurityQuestionModule } from 'src/app/model/security-question/security-question.module';
 
 @Component({
   selector: 'app-sign-up-view',
@@ -16,7 +17,10 @@ export class SignUpViewComponent implements OnInit {
   showPassword: boolean = false;
   showPasswordReplay: boolean = false;
   image: string;
-  constructor(public router: Router, private userService: UserService, private formBuilder: FormBuilder) {}
+  securityQuestion$ : Observable<SecurityQuestionModule[]> = of([]);
+  constructor(public router: Router, private userService: UserService, private formBuilder: FormBuilder) {
+    //this.securityQuestion$ = this.userService.getSecurityQuestion;
+  }
 
   togglePassword(): void {
     this.showPassword = !this.showPassword;
