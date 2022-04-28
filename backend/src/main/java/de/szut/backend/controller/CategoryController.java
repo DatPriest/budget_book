@@ -45,7 +45,7 @@ public class CategoryController {
         return gson.toJson(toGet);
     }
 
-    @GetMapping(path = "/category/{categoryId}", produces = "application/json")
+    @GetMapping(path = "/category/{groupId}", produces = "application/json")
     public String getAllCategoriesForGroup(@PathVariable long groupId) {
         List<Category> toGet = this.c_Service.getAllCategoriesForGroup(groupId);
         ArrayList<GetCategoryDTO> resultSet = new ArrayList<>();
