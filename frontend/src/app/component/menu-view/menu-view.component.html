@@ -1,0 +1,37 @@
+<span class="material-icons burgerMenu" [matMenuTriggerFor]="menu">menu</span>
+<mat-menu #menu="matMenu">
+  <div class="container">
+    <div class="row" (click)="moveToProfile()">
+      <div class="column">
+          <span class="material-icons">
+            account_circle
+          </span>
+      </div>
+      <div class="column">
+        <p>Profil</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <span class="material-icons">
+          settings
+        </span>
+      </div>
+      <div class="column">
+        <p mat-menu-item [matMenuTriggerFor]="settings">Einstellung</p>
+      </div>
+    </div>
+    <h1 class="logout" (click)="logout()">Logout</h1>
+  </div>
+</mat-menu>
+
+<mat-menu #settings="matMenu">
+  <div class="container">
+    <h1>Hilfe & Einstellungen</h1>
+    <p (click)="openFAQ()">FAQ</p>
+    <p (click)="openAGB()">AGB</p>
+    <p (click)="openDatenschutz()">Datenschutz</p>
+    <p (click)="openImpressum()">Impressum</p>
+    <p (click)="openSprache()">Sprache</p>
+  </div>
+</mat-menu>

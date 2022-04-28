@@ -3,10 +3,7 @@ package de.szut.backend.controller;
 import com.google.gson.Gson;
 import de.szut.backend.model.History.HistoryLogEntry;
 import de.szut.backend.service.HistoryLogService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,9 +17,9 @@ public class HistoryLogController {
         this.historyLogService = historyLogService;
     }
 
-    @GetMapping(path = "/entries", produces = "application/json")
-    public String GetUser() {
-        List<HistoryLogEntry> historyLog = this.historyLogService.getAllLogEntries();
+    @GetMapping(path = "/entries/{groupId}", produces = "application/json")
+    public String GetUser(@PathVariable long groupId) {
+        List<HistoryLogEntry> historyLog = this.historyLogService.getAllLogEntriesForGroup(groupId);
         Gson gson = new Gson();
         return gson.toJson(historyLog);
     }

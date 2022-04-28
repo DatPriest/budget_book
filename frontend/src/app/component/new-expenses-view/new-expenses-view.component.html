@@ -1,0 +1,35 @@
+<form class="createExpenses" (ngSubmit)="createExpenses(newExpensesForm)" #newExpensesForm="ngForm">
+  <h1 class="header_Text">Ausgaben hinzufügen</h1>
+  <div class="column_category">
+    <div class="row">
+      <div class="column">
+        <label for="category"><p>Kategorie:&nbsp;</p></label>
+      </div>
+      <div class="column">
+        <select name="subject" id="category" form="formular1" class="category_menu" ngModel>
+          <option value="noSelection"></option>
+          <option value="Rent">Miete</option>
+          <option value="Purchasing">Einkauf</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="column_expenses">
+      <input name="amount" type="text" class="input_field" id="Expenses_price" ngModel placeholder="Betrag">
+    </div>
+    <div class="column_price">
+      <input name="date" type="text" class="input_field" id="Expenses_date" ngModel placeholder="Datum">
+    </div>
+  </div>
+  <div>
+    <div class="row_button">
+      <div class="column_save">
+          <button type="submit"><span class="expenses_back material-icons">add</span></button>
+      </div>
+      <div class="column_close">
+          <button type="button" (click)="closeExpenses()"><span class="expenses_close material-icons">close</span></button>
+      </div>
+    </div>
+  </div>
+</form>

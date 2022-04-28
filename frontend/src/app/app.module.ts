@@ -16,10 +16,22 @@ import { SignUpViewComponent } from './component/sign-up-view/sign-up-view.compo
 import { NewPasswordViewComponent } from './component/new-password-view/new-password-view.component';
 import { MainViewComponent } from './component/main-view/main-view.component';
 import { GroupViewComponent } from './component/group-view/group-view.component';
-import { IssuesViewComponent } from './component/issues-view/issues-view.component';
-import { NewIssuesViewComponent } from './component/new-issues-view/new-issues-view.component'
+import { ExpensesViewComponent } from './component/expenses-view/expenses-view.component';
+import { NewExpensesViewComponent } from './component/new-expenses-view/new-expenses-view.component'
 import { HistoryViewComponent } from './component/history-view/history-view.component';
-import { CreateGroupViewComponent } from './component/create-group-view/create-group-view.component'
+import { CreateGroupViewComponent } from './component/create-group-view/create-group-view.component';
+import { MenuViewComponent } from './component/menu-view/menu-view.component';
+import { ProfileViewComponent } from './component/profile-view/profile-view.component';
+import { EditProfileViewComponent } from './component/edit-profile-view/edit-profile-view.component';
+import { GtcViewComponent } from './component/gtc-view/gtc-view.component';
+import { FaqViewComponent } from './component/faq-view/faq-view.component';
+import { PrivacyViewComponent } from './component/privacy-view/privacy-view.component';
+import { ImprintViewComponent } from './component/imprint-view/imprint-view.component';
+import { AskQuestionViewComponent } from './component/ask-question-view/ask-question-view.component';
+import { EditPasswordViewComponent } from './component/edit-password-view/edit-password-view.component';
+import { CategorieViewComponent } from './component/categorie-view/categorie-view.component';
+import { NewCategorieViewComponent } from './component/new-categorie-view/new-categorie-view.component';
+import { InviteLinkViewComponent } from './component/invite-link-view/invite-link-view.component';
 
 @NgModule({
   declarations: [
@@ -29,10 +41,22 @@ import { CreateGroupViewComponent } from './component/create-group-view/create-g
     NewPasswordViewComponent,
     MainViewComponent,
     GroupViewComponent,
-    IssuesViewComponent,
-    NewIssuesViewComponent,
+    ExpensesViewComponent,
+    NewExpensesViewComponent,
     HistoryViewComponent,
-    CreateGroupViewComponent
+    CreateGroupViewComponent,
+    MenuViewComponent,
+    ProfileViewComponent,
+    EditProfileViewComponent,
+    GtcViewComponent,
+    FaqViewComponent,
+    PrivacyViewComponent,
+    ImprintViewComponent,
+    AskQuestionViewComponent,
+    EditPasswordViewComponent,
+    CategorieViewComponent,
+    NewCategorieViewComponent,
+    InviteLinkViewComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -41,13 +65,21 @@ import { CreateGroupViewComponent } from './component/create-group-view/create-g
     AngularMaterialModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      {path: 'sign-in',component: SignInViewComponent},             // sign-In
-      {path: 'sign-up',component: SignUpViewComponent},             // register
-      {path: 'new-password',component: NewPasswordViewComponent},   // password-forgotten
-      {path: 'main',component: MainViewComponent},                  // main-menu
-      {path: 'group',component: GroupViewComponent},                // group-detail
-      {path: 'history',component: HistoryViewComponent},            // history
-      {path: 'issues',component: IssuesViewComponent}             // ausgaben
+      {path: 'sign-in',component: SignInViewComponent},
+      {path: 'sign-up',component: SignUpViewComponent},
+      {path: 'new-password',component: NewPasswordViewComponent},
+      {path: 'main',component: MainViewComponent},
+      {path: 'group',component: GroupViewComponent},
+      {path: 'history',component: HistoryViewComponent},
+      {path: 'expenses',component: ExpensesViewComponent},
+      {path: 'profile', component: ProfileViewComponent},
+      {path: 'profile/edit', component: EditProfileViewComponent},
+      {path: 'faq', component: FaqViewComponent},                  // FAQ
+      {path: 'ask-question', component: AskQuestionViewComponent},  // Frage stellen
+      {path: 'gtc', component: GtcViewComponent},                  // AGB´s
+      {path: 'privacy', component: PrivacyViewComponent},          // Datenschutz
+      {path: 'imprint', component: ImprintViewComponent},          // Impressum
+      {path: 'categorie', component: CategorieViewComponent}       // Kategorien
     ]),
     NgToastModule,
     FormsModule,

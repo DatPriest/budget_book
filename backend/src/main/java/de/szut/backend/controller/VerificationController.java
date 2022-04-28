@@ -1,9 +1,6 @@
 package de.szut.backend.controller;
 
-import de.szut.backend.dto.ForgotDto;
-import de.szut.backend.dto.LoginDto;
-import de.szut.backend.dto.RegisterDto;
-import de.szut.backend.dto.UpdateDto;
+import de.szut.backend.dto.*;
 import de.szut.backend.mapper.UserMapper;
 import de.szut.backend.model.*;
 import de.szut.backend.service.VerificationService;
@@ -33,8 +30,13 @@ public class VerificationController {
     }
 
     @PostMapping(path = "/forgotPassword", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<User> ForgotPassword(@RequestBody ForgotDto dto) throws TypeNotPresentException {
-        return new ResponseEntity<>(service.forgotPassword(dto), HttpStatus.OK);
+    public ResponseEntity<ForgotBackDto> ForgotPassword(@RequestBody ForgotDto dto) throws TypeNotPresentException {
+        var result = service.forgotPassword(dto);
+        if ( result != null ) {
+            return new ResponseEntity<>(result, HttpStatus.OK);
+        }
+        return new ResponseEntity("Securityanswer don't equals", HttpStatus.UNAUTHORIZED);
+
     }
 
     @PutMapping(path = "/updatePassword", consumes = "application/json")
@@ -44,11 +46,11 @@ public class VerificationController {
 
     @CrossOrigin
     @PostMapping(path = "/register", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<User> Register(@RequestBody RegisterDto dto) throws TypeNotPresentException {
+    public ResponseEntity<CreateUserDto> Register(@RequestBody RegisterDto dto) throws TypeNotPresentException {
         if (dto.hash.length() <= 7) {
             return new ResponseEntity("Password is empty or too short", HttpStatus.BAD_REQUEST);
         }
-        User result = service.register(dto);
+        CreateUserDto result = service.register(dto);
         if (result.email == null) {
             return new ResponseEntity("Email already exists", HttpStatus.NOT_ACCEPTABLE);
         }

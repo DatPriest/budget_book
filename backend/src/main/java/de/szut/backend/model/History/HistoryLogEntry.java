@@ -21,4 +21,5 @@ public class HistoryLogEntry {
     private Date date_Created;
     @UpdateTimestamp
     private Date date_Changed;
+    private long groupId;
 }
