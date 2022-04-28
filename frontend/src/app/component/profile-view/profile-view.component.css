@@ -76,10 +76,11 @@
 }
 
 .label{
-  margin-top: 102px;
-  margin-bottom: 120px;
-  margin-inside: 120px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-inside: 5px;
 }
+
 .button{
   position: absolute;
   top: 475px;
