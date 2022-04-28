@@ -20,6 +20,10 @@ export class ProfileViewComponent implements OnInit {
     this.router.navigate(['/profile/edit']);
   }
 
+  /*moveToEditProfile(user$: UserModule): void {
+    this.router.navigate(['/profile/edit' + '/' + user$]);
+  }*/
+
   moveToEditPassword(): void {
     this.router.navigate(['/edit-passwort']);
   }
@@ -29,10 +33,6 @@ export class ProfileViewComponent implements OnInit {
       console.log('Konto wurde gelöscht.');
     }
   }
-
-  /*moveToEditProfile(user$: UserModule): void {
-    this.router.navigate(['/profile/edit' + '/' + user$]);
-  }*/
 
   ngOnInit(): void {
   }

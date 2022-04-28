@@ -9,10 +9,12 @@
         <img src='' alt="Bild der jeweiligen Person">
       </div>
       <div class="info">
-      <label class="label">Vorname:</label><br>
-      <label class="label">Nachname:</label><br>
-        <label class="label">E-Mail:</label><br>
-        </div>
+        <ng-container>
+          <label class="label">Vorname:</label><br>
+          <label class="label">Nachname:</label><br>
+          <label class="label">E-Mail:</label><br>
+        </ng-container>
+      </div>
       <div class="button">
       <tr>
         <button type="button" ide="profile" (click)="moveToEditProfile()">bearbeiten</button>
