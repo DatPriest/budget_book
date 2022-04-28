@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/service/user/user.service';
+import { UserModule } from 'src/app/model/user/user.module';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-profile-view',
@@ -8,11 +11,18 @@ import { Router } from '@angular/router';
 })
 export class ProfileViewComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  user$ : Observable<UserModule[]> = of([]);
+  constructor(public router: Router, private userService: UserService) {
+    this.user$ = this.userService.getProfile();
+  }
 
   moveToEditProfile(): void {
     this.router.navigate(['/profile/edit']);
   }
+
+  /*moveToEditProfile(user$: UserModule): void {
+    this.router.navigate(['/profile/edit' + '/' + user$]);
+  }*/
 
   ngOnInit(): void {
   }

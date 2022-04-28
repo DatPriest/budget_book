@@ -19,7 +19,7 @@ export class SignUpViewComponent implements OnInit {
   image: string;
   securityQuestion$ : Observable<SecurityQuestionModule[]> = of([]);
   constructor(public router: Router, private userService: UserService, private formBuilder: FormBuilder) {
-    //this.securityQuestion$ = this.userService.getSecurityQuestion;
+    this.securityQuestion$ = this.userService.getSecurityQuestion();
   }
 
   togglePassword(): void {

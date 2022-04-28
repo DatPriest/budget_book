@@ -27,6 +27,13 @@ export class SignInViewComponent implements OnInit {
 
   loginUser(signInForm: NgForm): void {
     this.router.navigate(['main']);
+    /*const signInData = new LoginUserModule(signInForm.value.email, signInForm.value.password);
+    this.userService.loginUser(signInData).subscribe(data => {
+      if (data.email != null && data.hash != null) {
+        // TODO: Create a function in which the user ID is put into the "this.app.userId" variable.
+        this.router.navigate(['main']);
+      }
+    });*/
   }
 
   newUser(): void {
