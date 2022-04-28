@@ -23,13 +23,10 @@ public class CategoryController {
     }
 
     @PostMapping(path = "/category", produces = "application/json")
-    public void createCategory(@RequestBody CreateCategoryDTO categoryDTO) {
-        this.c_Service.createCategory(this.c_Mapper.mapCreateCategoryDtoToCategory(categoryDTO));
-    }
-
-    @PutMapping(path = "/category", produces = "application/json")
-    public void updateCategory(@RequestBody CreateCategoryDTO categoryDTO) {
-        this.c_Service.updateCategory(this.c_Mapper.mapCreateCategoryDtoToCategory(categoryDTO));
+    public String createCategory(@RequestBody CreateCategoryDTO categoryDTO) {
+        GetCategoryDTO getDTO = this.c_Mapper.mapCategoryToGetCategoryDto(this.c_Service.createCategory(this.c_Mapper.mapCreateCategoryDtoToCategory(categoryDTO)));
+        Gson gson = new Gson();
+        return gson.toJson(getDTO);
     }
 
     @DeleteMapping(path = "/category/{categoryId}", produces = "application/json")
@@ -44,7 +41,7 @@ public class CategoryController {
         return gson.toJson(toGet);
     }
 
-    @GetMapping(path = "/category/{groupId}", produces = "application/json")
+    @GetMapping(path = "/categories/{groupId}", produces = "application/json")
     public String getAllCategoriesForGroup(@PathVariable long groupId) {
         List<Category> toGet = this.c_Service.getAllCategoriesForGroup(groupId);
         ArrayList<GetCategoryDTO> resultSet = new ArrayList<>();
@@ -52,6 +49,6 @@ public class CategoryController {
             resultSet.add(this.c_Mapper.mapCategoryToGetCategoryDto(c));
         }
         Gson gson = new Gson();
-        return gson.toJson(toGet);
+        return gson.toJson(resultSet);
     }
 }

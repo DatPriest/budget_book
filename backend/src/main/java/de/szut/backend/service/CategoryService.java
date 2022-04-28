@@ -8,16 +8,18 @@ import java.util.List;
 @Service
 public class CategoryService {
     private CategoryRepository c_Repository;
+
     public CategoryService(CategoryRepository c_Repository){
         this.c_Repository = c_Repository;
     }
 
-    public void createCategory(Category categoryToCreate){
-        this.c_Repository.save(categoryToCreate);
-    }
-
-    public void updateCategory(Category categoryToChange){
-        this.c_Repository.save(categoryToChange);
+    public Category createCategory(Category categoryToCreate){
+        var inDB = getCategoryByNameAndGroup(categoryToCreate.getName(), categoryToCreate.getGroupId());
+        if(inDB != null){
+            return inDB;
+        }
+        else
+            return this.c_Repository.save(categoryToCreate);
     }
 
     public void deleteCategoryById(long categoryId){
@@ -25,10 +27,14 @@ public class CategoryService {
     }
 
     public Category getCategoryById(long categoryId){
-        return this.c_Repository.findCategoryById(categoryId);
+        return this.c_Repository.findById(categoryId).get();
     }
 
     public List<Category> getAllCategoriesForGroup(long groupId){
         return this.c_Repository.findAllByGroupId(groupId);
+    }
+
+    private Category getCategoryByNameAndGroup(String name, long groupId){
+        return this.c_Repository.findCategoryByNameAndGroupId(name, groupId);
     }
 }
