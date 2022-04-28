@@ -20,6 +20,16 @@ export class ProfileViewComponent implements OnInit {
     this.router.navigate(['/profile/edit']);
   }
 
+  moveToEditPassword(): void {
+    this.router.navigate(['/edit-passwort']);
+  }
+
+  deleteProfile(): void {
+    if(confirm('Möchten Sie wirklich Ihr Konto löschen?')) {
+      console.log('Konto wurde gelöscht.');
+    }
+  }
+
   /*moveToEditProfile(user$: UserModule): void {
     this.router.navigate(['/profile/edit' + '/' + user$]);
   }*/

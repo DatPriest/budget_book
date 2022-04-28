@@ -79,7 +79,8 @@ import { InviteLinkViewComponent } from './component/invite-link-view/invite-lin
       {path: 'gtc', component: GtcViewComponent},                  // AGB´s
       {path: 'privacy', component: PrivacyViewComponent},          // Datenschutz
       {path: 'imprint', component: ImprintViewComponent},          // Impressum
-      {path: 'categorie', component: CategorieViewComponent}       // Kategorien
+      {path: 'categorie', component: CategorieViewComponent},       // Kategorien
+      {path: 'edit-passwort', component: EditPasswordViewComponent} // Edit Passwort im Profil
     ]),
     NgToastModule,
     FormsModule,
