@@ -32,10 +32,17 @@ export class UserService {
     return this.http.put<NewPasswordVerificationModule>('http://localhost:4000/api/v1/verification/updatePassword', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
-  /*getSecurityQuestion(question: SecurityQuestionModule) {
-    //let headers = new Headers();
-    return this.http.get<SecurityQuestionModule[]>('http://localhost:4000/api/v1/verification/securityQuestion', JSON.stringify(question), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
-  }*/
+  getSecurityQuestion() {
+    return this.http.get<SecurityQuestionModule[]>('http://localhost:4000/api/v1/verification/getQuestions', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
+  getProfile() {
+    return this.http.get<UserModule[]>('http://localhost:4000/api/v1/verification/getUserProfile/${userId}', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
+  updateProfile(user: UserModule) {
+    return this.http.put<UserModule>('http://localhost:4000/api/v1/verification/postUserProfile', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
 
   public handleError<T>(origin = "origin", result? : T) {
     return (error: any) : Observable<T> => {
