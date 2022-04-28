@@ -21,14 +21,6 @@
   cursor: pointer;
 }
 
-.button{
-  text-align: center;
-  width: 150px;
-  position: absolute;
-  top: 90px;
-  right: 25px;
-}
-
 .pages_menu {
   width: 100px;
   text-align: right;
@@ -67,7 +59,6 @@
   top: 150px;
   left: 210px;
   width: 320px;
-  background-color: #D4D3E8;
 }
 
 .input_field:active,
@@ -77,6 +68,23 @@
   border-bottom-color: #6A679E;
 }
 
+.info{
+  font-size: 17px;
+  position: absolute;
+  top: 295px;
+  left: 370px;
+}
+
+.label{
+  margin-top: 102px;
+  margin-bottom: 120px;
+  margin-inside: 120px;
+}
+.button{
+  position: absolute;
+  top: 475px;
+  left: 350px;
+}
 
 
 

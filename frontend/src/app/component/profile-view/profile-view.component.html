@@ -8,14 +8,18 @@
       <div class="picture">
         <img src= '/Users/josi/Documents/Berufsschule/budget_book/frontend/src/app/image/Profilicon.png' alt="Bild der jeweiligen Person">
       </div>
-      <div class="input_field">
-        <input name="firstName" type="text" class="input_field" id="newUserFirstName" ngModel text="Vorname" readonly>
-        <input name="lastName" type="text" class="input_field" id="newUserLastName" ngModel text="Nachname" readonly>
-        <input name="email" type="email" class="input_field" id="newUserEmail" ngModel text="E-Mail" readonly>
+      <div class="info">
+      <label class="label">Vorname:</label><br>
+      <label class="label">Nachname:</label><br>
+        <label class="label">E-Mail:</label><br>
+        </div>
+      <div class="button">
+      <tr>
+        <button type="button" ide="profile" (click)="moveToEditProfile()">bearbeiten</button>
+        <button type="button" ide="profile" (click)="moveToEditProfile()">Passwort ändern</button>
+        <button type="button" ide="profile" (click)="moveToEditProfile()">Konto löschen</button>
+      </tr>
       </div>
-        <tr>
-          <button type="button" ide="profile" (click)="moveToEditProfile()">Zum Edit Profil</button>
-        </tr>
     </div>
   </div>
   </body>

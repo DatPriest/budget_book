@@ -107,7 +107,11 @@ input[type=submit]:hover {
   background-color: #45a049;
 }
 
-
+.label{
+  margin-top: 102px;
+  margin-bottom: 120px;
+  margin-inside: 120px;
+}
 
 
 
