@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from "@angular/router";
+import { Observable, of } from 'rxjs';
 import { NewPasswordRequestModule } from 'src/app/model/new-password-request/new-password-request.module';
 import { NewPasswordVerificationModule } from 'src/app/model/new-password-verification/new-password-verification.module';
+import { SecurityQuestionModule } from 'src/app/model/security-question/security-question.module';
 import { UserService } from 'src/app/service/user/user.service';
 
 @Component({
@@ -16,7 +18,10 @@ export class NewPasswordViewComponent implements OnInit {
   showPassword: boolean = false;
   showPasswordReplay: boolean = false;
   userID: number;
-  constructor(public router: Router, private formBuilder: FormBuilder, private userService: UserService) {}
+  securityQuestion$ : Observable<SecurityQuestionModule[]> = of([]);
+  constructor(public router: Router, private formBuilder: FormBuilder, private userService: UserService) {
+    this.securityQuestion$ = this.userService.getSecurityQuestion();
+  }
 
   togglePassword(): void {
     this.showPassword = !this.showPassword;
