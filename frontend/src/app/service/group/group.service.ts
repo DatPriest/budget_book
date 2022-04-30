@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { GroupModule } from 'src/app/model/group/group.module';
 import { UserModule } from 'src/app/model/user/user.module';
 import { NewExpensesModule } from 'src/app/model/new-expenses/new-expenses.module';
+import { HistoryModule } from 'src/app/model/history/history.module';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,10 @@ export class GroupService {
   }
 
   addNewIssues(newExpenses: NewExpensesModule) {
-    return this.http.post<NewExpensesModule>('http://localhost:4000/api/v1/groups/addIssues', JSON.stringify(newExpenses), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.post<NewExpensesModule>('http://localhost:4000/api/v1/groups/addExpenses', JSON.stringify(newExpenses), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
+  getHistory(groupId: number) {
+    return this.http.post<HistoryModule[]>('http://localhost:4000/api/v1/groups/getHistory/' + groupId, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 }

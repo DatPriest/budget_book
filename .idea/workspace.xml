@@ -12,13 +12,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="TypeScript File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -31,6 +24,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="26Bsgnp9h3sWN6AJXYXLTJxF9jr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -89,8 +83,9 @@
       <workItem from="1646917244023" duration="13000" />
       <workItem from="1647020476297" duration="122000" />
       <workItem from="1648716556301" duration="1229000" />
-      <workItem from="1651041370290" duration="294000" />
-      <workItem from="1651042133675" duration="4023000" />
+      <workItem from="1651041469992" duration="467000" />
+      <workItem from="1651042139689" duration="10000" />
+      <workItem from="1651133598993" duration="450000" />
     </task>
     <task id="LOCAL-00001" summary="Edit Login .css">
       <created>1648717419214</created>
@@ -99,7 +94,21 @@
       <option name="project" value="LOCAL" />
       <updated>1648717419214</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Mein Konto überarbeitet">
+      <created>1651140772801</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1651140772801</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Mein Konto überarbeitet">
+      <created>1651140787608</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1651140787608</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,7 +125,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="feature_view" />
+                        <option value="feature/ui-and-api-calls" />
                       </list>
                     </value>
                   </entry>
@@ -131,6 +140,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Edit Login .css" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit Login .css" />
+    <MESSAGE value="Mein Konto überarbeitet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mein Konto überarbeitet" />
   </component>
 </project>

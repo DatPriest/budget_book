@@ -1,5 +1,37 @@
-<p>profile-view works!</p>
+<form>
+  <header>
+    <span class="header_name">Mein Konto</span>
+  </header>
+  <body>
+  <div class="container">
+    <div class="screen">
+      <div class="picture">
+        <img src='' alt="Bild der jeweiligen Person">
+      </div>
+      <div class="info">
+        <ng-container>
+          <div class="label">
+            <label>Vorname:</label>
+            <p>Vorname:</p>
+          </div>
+          <div class="label">
+            <label class="label">Nachname:</label>
+          </div>
+          <div class="label">
+            <label class="label">E-Mail:</label>
+          </div>
+        </ng-container>
+      </div>
+      <div class="button">
+      <tr>
+        <button type="button" ide="profile" (click)="moveToEditProfile()">bearbeiten</button>
+        <button type="button" ide="profile" (click)="moveToEditPassword()">Passwort ändern</button>
+        <button type="button" ide="profile" (click)="deleteProfile()">Konto löschen</button>
+      </tr>
+      </div>
+    </div>
+  </div>
+  </body>
+</form>
 
 
-
-<button type="button" ide="profile" (click)="moveToEditProfile()">Zum Edit Profil</button>
