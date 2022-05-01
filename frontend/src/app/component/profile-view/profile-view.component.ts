@@ -11,9 +11,11 @@ import { Observable, of } from 'rxjs';
 })
 export class ProfileViewComponent implements OnInit {
 
-  user$ : Observable<UserModule[]> = of([]);
+  profile: UserModule[] = [];
+  //user$ : Observable<UserModule[]> = of([]);
   constructor(public router: Router, private userService: UserService) {
-    this.user$ = this.userService.getProfile();
+    //this.user$ = this.userService.getProfile();
+    this.profile.push(new UserModule('Lukas', 'Bullwinkel', null, 'lukas.bullwinkel@web.de', null, null, '55555585858588448578'));
   }
 
   moveToEditProfile(): void {

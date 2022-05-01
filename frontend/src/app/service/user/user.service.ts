@@ -36,7 +36,7 @@ export class UserService {
     return this.http.get<SecurityQuestionModule[]>('http://localhost:4000/api/v1/verification/getQuestions', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
-  getProfile() {
+  getProfile(userId: number) {
     return this.http.get<UserModule[]>('http://localhost:4000/api/v1/verification/getUserProfile/${userId}', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 

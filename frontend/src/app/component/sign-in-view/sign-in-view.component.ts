@@ -27,13 +27,13 @@ export class SignInViewComponent implements OnInit {
 
   loginUser(signInForm: NgForm): void {
     this.router.navigate(['main']);
-    /*const signInData = new LoginUserModule(signInForm.value.email, signInForm.value.password);
+    const signInData = new LoginUserModule(null, signInForm.value.email, signInForm.value.password);
     this.userService.loginUser(signInData).subscribe(data => {
       if (data.email != null && data.hash != null) {
-        // TODO: Create a function in which the user ID is put into the "this.app.userId" variable.
+        this.app.userId = data.userId;
         this.router.navigate(['main']);
       }
-    });*/
+    });
   }
 
   newUser(): void {
@@ -43,6 +43,14 @@ export class SignInViewComponent implements OnInit {
   newPassword(): void {
     this.router.navigate(['new-password']);
   }
+
+  getUserId(data: LoginUserModule): void {
+    /*
+      Funktion
+    */
+    this.app.userId = 1;
+  }
+
 
   ngOnInit(): void {
     this.signInForm = this.formBuilder.group({

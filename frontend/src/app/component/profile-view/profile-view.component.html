@@ -3,34 +3,54 @@
     <span class="header_name">Mein Konto</span>
   </header>
   <body>
-  <div class="container">
-    <div class="screen">
-      <div class="picture">
-        <img src='' alt="Bild der jeweiligen Person">
-      </div>
-      <div class="info">
-        <ng-container>
-          <div class="label">
-            <label>Vorname:</label>
-            <p>Vorname:</p>
+    <ng-container *ngFor="let p of profile">
+      <div class="container">
+        <div class="screen">
+          <div class="picture">
+            <img src={{p.image}} alt="Bild der jeweiligen Person">
           </div>
-          <div class="label">
-            <label class="label">Nachname:</label>
+          <div class="info">
+            <div class="row">
+              <div class="column">
+                <div class="label">
+                  <label>Vorname:&nbsp;</label>
+                </div>
+              </div>
+              <div class="column">
+                <input name="vorname" class="input_field form-control" id="UserName" value="{{p.firstName}}" readonly placeholder=".">
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="label">
+                  <label class="label">Nachname:</label>
+                </div>
+              </div>
+              <div class="column">
+                <input name="nachname" class="input_field form-control" id="UserName2" value="{{p.lastName}}" readonly placeholder=".">
+              </div>
+            </div>
+            <div class="row">
+              <div class="column">
+                <div class="label">
+                  <label class="label">E-Mail:</label>
+                </div>
+              </div>
+              <div class="column">
+                <input name="email" class="input_field form-control" id="UserEmail" value="{{p.email}}" readonly placeholder=".">
+              </div>
+            </div>
           </div>
-          <div class="label">
-            <label class="label">E-Mail:</label>
+          <div class="button">
+            <tr>
+              <button type="button" ide="profile" (click)="moveToEditProfile()">bearbeiten</button>
+              <button type="button" ide="profile" (click)="moveToEditPassword()">Passwort ändern</button>
+              <button type="button" ide="profile" (click)="deleteProfile()">Konto löschen</button>
+            </tr>
           </div>
-        </ng-container>
+        </div>
       </div>
-      <div class="button">
-      <tr>
-        <button type="button" ide="profile" (click)="moveToEditProfile()">bearbeiten</button>
-        <button type="button" ide="profile" (click)="moveToEditPassword()">Passwort ändern</button>
-        <button type="button" ide="profile" (click)="deleteProfile()">Konto löschen</button>
-      </tr>
-      </div>
-    </div>
-  </div>
+    </ng-container>
   </body>
 </form>
 

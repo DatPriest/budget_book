@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppModule } from 'src/app/app.module';
+import { UserService } from 'src/app/service/user/user.service';
 
 @Component({
   selector: 'app-menu-view',
@@ -8,9 +10,10 @@ import { Router } from '@angular/router';
 })
 export class MenuViewComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  constructor(public router: Router, public userService: UserService, public app: AppModule) { }
 
   moveToProfile(): void {
+    //this.userService.getProfile(this.app.userId).subscribe(data => this.router.navigate(['/profile', data]));
     this.router.navigate(['/profile']);
   }
 
@@ -36,9 +39,9 @@ export class MenuViewComponent implements OnInit {
     this.router.navigate(['/imprint']);
   }
 
-  openSprache(): void {
-    //this.router.navigate(['/xxx']);
-  }
+  /*openSprache(): void {
+    this.router.navigate(['/xxx']);
+  }*/
 
   ngOnInit(): void {
   }

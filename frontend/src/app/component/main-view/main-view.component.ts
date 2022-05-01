@@ -3,6 +3,9 @@ import { Router } from "@angular/router";
 import { GroupModule } from 'src/app/model/group/group.module';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { CreateGroupViewComponent } from '../create-group-view/create-group-view.component';
+import { GroupService } from 'src/app/service/group/group.service';
+import { Observable, of } from 'rxjs';
+import { AppModule } from 'src/app/app.module';
 
 @Component({
   selector: 'app-main-view',
@@ -10,9 +13,10 @@ import { CreateGroupViewComponent } from '../create-group-view/create-group-view
   styleUrls: ['./main-view.component.css']
 })
 export class MainViewComponent implements OnInit {
-  groups: GroupModule[] = [];
-
-  constructor(public router: Router, public dialog: MatDialog) { }
+  userGroups$ : Observable<GroupModule[]> = of([]);
+  constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule) {
+    this.userGroups$ = this.groupService.getGroupsByUser(this.app.userId);
+  }
 
   createGroupDialog() {
     const dialogConfig = new MatDialogConfig();
@@ -23,13 +27,8 @@ export class MainViewComponent implements OnInit {
     this.dialog.open(CreateGroupViewComponent, dialogConfig);
   }
 
-  openGroup(): void {
-    this.router.navigate(['/group']);
-  }
-
-  openMenu(): void {
-    console.warn('Diese Funktion ist kein Bestandteil des aktuellen Sprintes!\n Leitet temporär zum Login zurück.');
-    this.router.navigate(['/sign-in']);
+  openGroup(groupId: number): void {
+    this.groupService.getGroupById(groupId).subscribe(data => this.router.navigate(['/group', data]));
   }
 
   ngOnInit(): void {

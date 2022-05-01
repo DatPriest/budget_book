@@ -12,19 +12,27 @@ export class GroupService {
 
   constructor(public http: HttpClient) { }
 
+  getGroupsByUser(userId: number) {
+    return this.http.post<GroupModule[]>('http://localhost:4000/api/v1/groups/getGroups/${userId}', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
   createGroup(user: GroupModule) {
     return this.http.post<GroupModule>('http://localhost:4000/api/v1/groups/create', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
-  getGroupUsers(groupId: number) {
-    return this.http.post<UserModule[]>('http://localhost:4000/api/v1/groups/getUsers/' + groupId, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  getUsersByGroup(groupId: number) {
+    return this.http.post<UserModule[]>('http://localhost:4000/api/v1/groups/getUsers/${groupId}', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
-  addNewIssues(newExpenses: NewExpensesModule) {
+  getGroupById(groupId: number) {
+    return this.http.get<GroupModule[]>('http://localhost:4000/api/v1/groups/getGroupDetail/${groupId}', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
+  addNewExpenses(newExpenses: NewExpensesModule) {
     return this.http.post<NewExpensesModule>('http://localhost:4000/api/v1/groups/addExpenses', JSON.stringify(newExpenses), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   getHistory(groupId: number) {
-    return this.http.post<HistoryModule[]>('http://localhost:4000/api/v1/groups/getHistory/' + groupId, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.post<HistoryModule[]>('http://localhost:4000/api/v1/groups/getHistory/${groupId}', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 }
