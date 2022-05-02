@@ -34,7 +34,7 @@ export class NewPasswordViewComponent implements OnInit {
   savePassword(newPasswordForm: NgForm): void {
     if (newPasswordForm.value.password_1 == newPasswordForm.value.password_2) {
       if (newPasswordForm.value.securityQuestion != '' && newPasswordForm.value.securityAnswer != '') {
-        const newPasswordData = new NewPasswordRequestModule(newPasswordForm.value.email, newPasswordForm.value.securityQuestion, newPasswordForm.value.securityAnswer);
+        const newPasswordData = new NewPasswordRequestModule(newPasswordForm.value.email, newPasswordForm.value.password_1, newPasswordForm.value.securityQuestion, newPasswordForm.value.securityAnswer);
         this.userService.passwordForgotRequest(newPasswordData).subscribe(data => {
           console.warn(data); // Gibt eine ganzen User aus.
           console.error(data.email + ' ' + data.securityQuestion + ' ' + data.securityAnswer); // Gibt die E-Mail aus, rest ist undefiniert.

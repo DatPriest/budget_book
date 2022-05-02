@@ -1,7 +1,7 @@
 export class NewPasswordVerificationModule {
   constructor (
-    public hash: string,
-    public id: number,
+    public userId: number,
     public email: string,
+    public hash: string,
   ) { }
 }
