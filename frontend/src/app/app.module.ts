@@ -8,7 +8,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MaterialExampleModule } from 'src/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
-import { NgToastModule } from 'ng-angular-popup';
 import { HttpClientModule } from "@angular/common/http";
 
 import { SignInViewComponent } from './component/sign-in-view/sign-in-view.component';
@@ -82,7 +81,6 @@ import { InviteLinkViewComponent } from './component/invite-link-view/invite-lin
       {path: 'categorie', component: CategorieViewComponent},       // Kategorien
       {path: 'edit-passwort', component: EditPasswordViewComponent} // Edit Passwort im Profil
     ]),
-    NgToastModule,
     FormsModule,
     ReactiveFormsModule,
     MatNativeDateModule,
