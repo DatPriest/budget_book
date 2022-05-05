@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from "@angular/router";
 import { AppModule } from 'src/app/app.module';
 import { LoginUserModule } from 'src/app/model/login-user/login-user.module';
+import { HashingService } from 'src/app/service/hashing/hashing.service';
 import { UserService } from "../../service/user/user.service";
 
 @Component({
@@ -17,7 +18,8 @@ export class SignInViewComponent implements OnInit {
   showPassword: boolean = false;
   user: LoginUserModule;
   errorText: string | undefined;
-  constructor(public router: Router, private http: HttpClient, private formBuilder: FormBuilder, private userService: UserService, public app: AppModule) {
+  constructor(public router: Router, private http: HttpClient, private formBuilder: FormBuilder, private userService: UserService, public app: AppModule,
+    public hash: HashingService) {
     this.userService = new UserService(this.http);
   }
 
@@ -27,6 +29,9 @@ export class SignInViewComponent implements OnInit {
 
   loginUser(signInForm: NgForm): void {
     this.router.navigate(['main']);
+
+    this.errorText = this.hash.encrypt(signInForm.value.password);
+
     const signInData = new LoginUserModule(null, signInForm.value.email, signInForm.value.password);
     this.userService.loginUser(signInData).subscribe(data => {
       if (data.email != null && data.hash != null) {

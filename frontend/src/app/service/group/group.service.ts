@@ -13,7 +13,7 @@ export class GroupService {
   constructor(public http: HttpClient) { }
 
   getGroupsByUser(userId: number) {
-    return this.http.post<GroupModule[]>('http://localhost:4000/api/v1/groups/getGroups/${userId}', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.post<GroupModule[]>(`http://localhost:4000/api/v1/groups/getGroups/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   createGroup(user: GroupModule) {
@@ -21,11 +21,11 @@ export class GroupService {
   }
 
   getUsersByGroup(groupId: number) {
-    return this.http.post<UserModule[]>('http://localhost:4000/api/v1/groups/getUsers/${groupId}', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.post<UserModule[]>(`http://localhost:4000/api/v1/groups/getUsers/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   getGroupById(groupId: number) {
-    return this.http.get<GroupModule[]>('http://localhost:4000/api/v1/groups/getGroupDetail/${groupId}', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.get<GroupModule[]>(`http://localhost:4000/api/v1/groups/getGroupDetail/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   addNewExpenses(newExpenses: NewExpensesModule) {
@@ -33,6 +33,6 @@ export class GroupService {
   }
 
   getHistory(groupId: number) {
-    return this.http.post<HistoryModule[]>('http://localhost:4000/api/v1/groups/getHistory/${groupId}', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.post<HistoryModule[]>(`http://localhost:4000/api/v1/groups/getHistory/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 }
