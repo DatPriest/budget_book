@@ -9,38 +9,18 @@
           <div class="picture">
             <img src={{p.image}} alt="Bild der jeweiligen Person">
           </div>
+          <div class="column">
           <div class="info">
-            <div class="row">
-              <div class="column">
-                <div class="label">
-                  <label>Vorname:&nbsp;</label>
-                </div>
-              </div>
-              <div class="column">
-                <input name="vorname" class="input_field form-control" id="UserName" value="{{p.firstName}}" readonly placeholder=".">
-              </div>
-            </div>
-            <div class="row">
-              <div class="column">
-                <div class="label">
-                  <label class="label">Nachname:</label>
-                </div>
-              </div>
-              <div class="column">
-                <input name="nachname" class="input_field form-control" id="UserName2" value="{{p.lastName}}" readonly placeholder=".">
-              </div>
-            </div>
-            <div class="row">
-              <div class="column">
-                <div class="label">
-                  <label class="label">E-Mail:</label>
-                </div>
-              </div>
-              <div class="column">
-                <input name="email" class="input_field form-control" id="UserEmail" value="{{p.email}}" readonly placeholder=".">
-              </div>
-            </div>
+            <label class="label">Vorname:</label><br>
+            <input type="text" id="UserName" value="{{p.firstName}}"name="fname"><br><br>
+            <label class="label">Nachname:</label>
+            <input type="text" id="UserName2" value="{{p.lastName}}"name="lname"><br><br>
+            <label class="label">E-Mail:</label>
+            <input type="text" id="UserEmail" value="{{p.email}}"name="email"><br><br>
           </div>
+        </div>
+        </div>
+      </div>
           <div class="button">
             <tr>
               <button type="button" ide="profile" (click)="moveToEditProfile()">bearbeiten</button>
@@ -48,8 +28,6 @@
               <button type="button" ide="profile" (click)="deleteProfile()">Konto löschen</button>
             </tr>
           </div>
-        </div>
-      </div>
     </ng-container>
   </body>
 </form>
