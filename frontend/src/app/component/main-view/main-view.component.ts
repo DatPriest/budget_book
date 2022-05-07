@@ -13,10 +13,9 @@ import { AppModule } from 'src/app/app.module';
   styleUrls: ['./main-view.component.css']
 })
 export class MainViewComponent implements OnInit {
+
   userGroups$ : Observable<GroupModule[]> = of([]);
-  constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule) {
-    this.userGroups$ = this.groupService.getGroupsByUser(this.app.userId);
-  }
+  constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule) { }
 
   createGroupDialog() {
     const dialogConfig = new MatDialogConfig();

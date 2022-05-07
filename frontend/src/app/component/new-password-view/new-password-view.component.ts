@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { Observable, of } from 'rxjs';
 import { NewPasswordRequestModule } from 'src/app/model/new-password-request/new-password-request.module';
 import { SecurityQuestionModule } from 'src/app/model/security-question/security-question.module';
+import { AlertService } from 'src/app/service/alert/alert.service';
 import { HashingService } from 'src/app/service/hashing/hashing.service';
 import { UserService } from 'src/app/service/user/user.service';
 
@@ -20,7 +21,8 @@ export class NewPasswordViewComponent implements OnInit {
   userID: number;
   hash: string;
   securityQuestion$ : Observable<SecurityQuestionModule[]> = of([]);
-  constructor(public router: Router, private formBuilder: FormBuilder, private userService: UserService, public hashService: HashingService) {
+  constructor(public router: Router, private formBuilder: FormBuilder, private userService: UserService,
+    public hashService: HashingService, public alertService: AlertService) {
     this.securityQuestion$ = this.userService.getSecurityQuestion();
   }
 
@@ -38,11 +40,12 @@ export class NewPasswordViewComponent implements OnInit {
       if (newPasswordForm.value.securityQuestion != '' && newPasswordForm.value.securityAnswer != '') {
         const newPasswordData = new NewPasswordRequestModule(newPasswordForm.value.email, this.hash, newPasswordForm.value.securityQuestion, newPasswordForm.value.securityAnswer);
         this.userService.passwordForgotRequest(newPasswordData).subscribe(data => {
+          this.alertService.successfulAlert("Passwort erfolgreich zurückgesetzt!" ,  "" ,  "success", 2500);
           this.router.navigate(['/sign-in']);
         });
       }
     } else {
-      alert("Passwörter stimmen nicht überein!");
+      this.alertService.alert("Oops" ,  "Die Passwörter stimmen nicht überein!" ,  "error");
     }
   }
 

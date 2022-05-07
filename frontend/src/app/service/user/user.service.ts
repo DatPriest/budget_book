@@ -15,7 +15,7 @@ export class UserService {
 
   registerUser(user: UserModule) {
     return this.http.post<UserModule>('http://localhost:4000/api/v1/verification/register', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")
-  }).pipe(catchError(this.handleError<UserModule>("Email already exists or Password is empty or too short")));
+    }).pipe(catchError(this.handleError<UserModule>("Email already exists or Password is empty or too short")));
   }
 
   loginUser(user: LoginUserModule) {

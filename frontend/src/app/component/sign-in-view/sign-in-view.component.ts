@@ -4,8 +4,10 @@ import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from "@angular/router";
 import { AppModule } from 'src/app/app.module';
 import { LoginUserModule } from 'src/app/model/login-user/login-user.module';
+import { AlertService } from 'src/app/service/alert/alert.service';
 import { HashingService } from 'src/app/service/hashing/hashing.service';
 import { UserService } from "../../service/user/user.service";
+import { GroupService } from "../../service/group/group.service";
 
 @Component({
   selector: 'app-sign-in-view',
@@ -17,9 +19,9 @@ export class SignInViewComponent implements OnInit {
   signInForm: FormGroup;
   showPassword: boolean = false;
   user: LoginUserModule;
-  errorText: string | undefined;
+  hash: string;
   constructor(public router: Router, private http: HttpClient, private formBuilder: FormBuilder, private userService: UserService, public app: AppModule,
-    public hash: HashingService) {
+    public hashService: HashingService, public alertService: AlertService, public groupService: GroupService) {
     this.userService = new UserService(this.http);
   }
 
@@ -28,15 +30,20 @@ export class SignInViewComponent implements OnInit {
   }
 
   loginUser(signInForm: NgForm): void {
-    this.router.navigate(['main']);
+    this.router.navigate(['main']); // temp
+    this.alertService.successfulAlert("Herzlich willkommen!" ,  "Der Login war erfolgreich." ,  "success", 2500); // temp
 
-    this.errorText = this.hash.encrypt(signInForm.value.password);
-
-    const signInData = new LoginUserModule(null, signInForm.value.email, signInForm.value.password);
+    this.hash = this.hashService.encrypt(signInForm.value.password);
+    const signInData = new LoginUserModule(null, signInForm.value.email, this.hash);
     this.userService.loginUser(signInData).subscribe(data => {
       if (data.email != null && data.hash != null) {
         this.app.userId = data.userId;
-        this.router.navigate(['main']);
+        this.groupService.getGroupsByUser(this.app.userId).subscribe(data => {
+          this.router.navigate(['main', data]);
+          this.alertService.successfulAlert("Herzlich willkommen!" ,  "Der Login war erfolgreich." ,  "success", 2500);
+        });
+      } else {
+        this.alertService.alert("Oops" ,  "User not found or bad password" ,  "error");
       }
     });
   }
@@ -48,14 +55,6 @@ export class SignInViewComponent implements OnInit {
   newPassword(): void {
     this.router.navigate(['new-password']);
   }
-
-  getUserId(data: LoginUserModule): void {
-    /*
-      Funktion
-    */
-    this.app.userId = 1;
-  }
-
 
   ngOnInit(): void {
     this.signInForm = this.formBuilder.group({

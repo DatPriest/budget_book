@@ -5,6 +5,8 @@ import { Observable, of, Subscriber } from 'rxjs';
 import { UserModule } from 'src/app/model/user/user.module';
 import { UserService } from 'src/app/service/user/user.service';
 import { SecurityQuestionModule } from 'src/app/model/security-question/security-question.module';
+import { AlertService } from 'src/app/service/alert/alert.service';
+import { HashingService } from 'src/app/service/hashing/hashing.service';
 
 @Component({
   selector: 'app-sign-up-view',
@@ -18,7 +20,9 @@ export class SignUpViewComponent implements OnInit {
   showPasswordReplay: boolean = false;
   image: string;
   securityQuestion$ : Observable<SecurityQuestionModule[]> = of([]);
-  constructor(public router: Router, private userService: UserService, private formBuilder: FormBuilder) {
+  hash: string;
+  constructor(public router: Router, private userService: UserService, private formBuilder: FormBuilder,
+    public hashService: HashingService, public alertService: AlertService) {
     this.securityQuestion$ = this.userService.getSecurityQuestion();
   }
 
@@ -33,14 +37,17 @@ export class SignUpViewComponent implements OnInit {
   registrationUser(signUpForm: NgForm): void {
     if (signUpForm.value.password_1 == signUpForm.value.password_2) {
       if (signUpForm.value.securityQuestion != '' && signUpForm.value.securityAnswer != '') {
-        signUpForm.value.hash = signUpForm.value.password_1; // hash muss noch gehasht werden. MH-18
-        const signUpData = new UserModule(signUpForm.value.firstName, signUpForm.value.lastName, signUpForm.value.hash, signUpForm.value.email, signUpForm.value.securityQuestion, signUpForm.value.securityAnswer, this.image);
-        this.userService.registerUser(signUpData).subscribe(data => this.router.navigate(['/sign-in']));
+        this.hash = this.hashService.encrypt(signUpForm.value.password_1);
+        const signUpData = new UserModule(signUpForm.value.firstName, signUpForm.value.lastName, this.hash, signUpForm.value.email, signUpForm.value.securityQuestion, signUpForm.value.securityAnswer, this.image);
+        this.userService.registerUser(signUpData).subscribe(data => {
+          this.alertService.successfulAlert("Erfolgreich registriert!" ,  "" ,  "success", 2500);
+          this.router.navigate(['/sign-in']);
+        });
       } else {
-        alert('Bitte eine Sicherheitsfrage und eine Antwort ausfüllen!')
+        this.alertService.alert("Oops" ,  "Bitte eine Sicherheitsfrage und eine Antwort ausfüllen!" ,  "error");
       }
     } else {
-      alert("Passwörter stimmen nicht überein!");
+        this.alertService.alert("Oops" ,  "Die Passwörter stimmen nicht überein!" ,  "error");
     }
   }
 
@@ -85,7 +92,6 @@ export class SignUpViewComponent implements OnInit {
       email: [''],
       securityQuestion: [''],
       securityAnswer: [''],
-      hash: [''],
       image: ['']
     });
   }
