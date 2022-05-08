@@ -3,29 +3,31 @@
     <span class="header_name">Mein Konto</span>
   </header>
   <body>
-    <div class="container">
-      <div class="screen">
-        <div class="picture">
-          <img alt="Bild der jeweiligen Person">
-        </div>
-        <div class="column">
-          <div class="info">
-            <label class="label">Vorname:</label><br>
-            <input type="text" id="UserName" value="firstname"name="fname"><br><br>
-            <label class="label">Nachname:</label>
-            <input type="text" id="UserName2" value="lastname"name="lname"><br><br>
-            <label class="label">E-Mail:</label>
-            <input type="text" id="UserEmail" value="email"name="email"><br><br>
+    <form (ngSubmit)="saveEditUser(editProfileForm)" #editProfileForm="ngForm">
+      <div class="container">
+        <div class="screen">
+          <div class="picture">
+            <input name="image" (change)="onChange($event)" type="file" class="input_file" id="inputImage" ngModel placeholder="Logo" accept="image/png, image/jpeg">
+          </div>
+          <div class="column">
+            <div class="info">
+              <label class="label">Vorname:</label><br>
+              <input type="text" id="UserName" name="firstName" placeholder="Vorname" value="{{user.firstName}}"><br><br>
+              <label class="label">Nachname:</label>
+              <input type="text" id="UserName2" name="lastName" placeholder="Nachname" value="{{user.lastName}}"><br><br>
+              <label class="label">E-Mail:</label>
+              <input type="text" id="UserEmail" name="email" placeholder="E-Mail" value="{{user.email}}"><br><br>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="button">
-      <tr>
-        <button type="button" ide="profile">Speichern</button>
-        <button type="button" ide="profile">Zurück</button>
-      </tr>
-    </div>
+      <div class="button">
+        <tr>
+          <button type="submit">Speichern</button>
+          <button type="button" (click)="backToProfile()">Zurück</button>
+        </tr>
+      </div>
+    </form>
   </body>
 </form>
 

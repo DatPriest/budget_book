@@ -13,7 +13,6 @@ export class MenuViewComponent implements OnInit {
   constructor(public router: Router, public userService: UserService, public app: AppModule) { }
 
   moveToProfile(): void {
-    //this.userService.getProfile(this.app.userId).subscribe(data => this.router.navigate(['/profile', data]));
     this.router.navigate(['/profile']);
   }
 
@@ -39,11 +38,6 @@ export class MenuViewComponent implements OnInit {
     this.router.navigate(['/imprint']);
   }
 
-  /*openSprache(): void {
-    this.router.navigate(['/xxx']);
-  }*/
-
   ngOnInit(): void {
   }
-
 }

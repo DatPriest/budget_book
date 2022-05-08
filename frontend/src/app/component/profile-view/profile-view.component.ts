@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { UserService } from 'src/app/service/user/user.service';
 import { UserModule } from 'src/app/model/user/user.module';
 import { Observable, of } from 'rxjs';
+import { AppModule } from 'src/app/app.module';
 
 @Component({
   selector: 'app-profile-view',
@@ -11,20 +12,14 @@ import { Observable, of } from 'rxjs';
 })
 export class ProfileViewComponent implements OnInit {
 
-  profile: UserModule[] = [];
-  //user$ : Observable<UserModule[]> = of([]);
-  constructor(public router: Router, private userService: UserService) {
-    //this.user$ = this.userService.getProfile();
-    this.profile.push(new UserModule('Lukas', 'Bullwinkel', null, 'lukas.bullwinkel@web.de', null, null, '55555585858588448578'));
+  user: UserModule;
+  constructor(public router: Router, public userService: UserService, public app: AppModule) {
+    this.userService.getProfile(this.app.userId);
   }
 
-  moveToEditProfile(): void {
-    this.router.navigate(['/profile/edit']);
+  moveToEditProfile(data: UserModule): void {
+    this.router.navigate(['/profile/edit', data]);
   }
-
-  /*moveToEditProfile(user$: UserModule): void {
-    this.router.navigate(['/profile/edit' + '/' + user$]);
-  }*/
 
   moveToEditPassword(): void {
     this.router.navigate(['/edit-passwort']);

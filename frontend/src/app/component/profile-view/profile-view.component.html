@@ -1,29 +1,32 @@
 <form>
   <header>
+    <span class="material-icons burgerMenu">
+      <app-menu-view></app-menu-view>
+    </span>
     <span class="header_name">Mein Konto</span>
   </header>
   <body>
-    <ng-container *ngFor="let p of profile">
+    <ng-container>
       <div class="container">
         <div class="screen">
           <div class="picture">
-            <img src={{p.image}} alt="Bild der jeweiligen Person">
+            <img src={{user.image}} alt="Bild der jeweiligen Person">
           </div>
           <div class="column">
           <div class="info">
             <label class="label">Vorname:</label><br>
-            <input type="text" id="UserName" value="{{p.firstName}}"name="fname"><br><br>
+            <input type="text" id="UserName" name="fname" placeholder="Vorname" value="{{user.firstName}}" readonly><br><br>
             <label class="label">Nachname:</label>
-            <input type="text" id="UserName2" value="{{p.lastName}}"name="lname"><br><br>
+            <input type="text" id="UserName2" name="lname" placeholder="Nachname" value="{{user.lastName}}" readonly><br><br>
             <label class="label">E-Mail:</label>
-            <input type="text" id="UserEmail" value="{{p.email}}"name="email"><br><br>
+            <input type="text" id="UserEmail" name=" email" placeholder="E-Mail" value="{{user.email}}" readonly><br><br>
           </div>
         </div>
         </div>
       </div>
           <div class="button">
             <tr>
-              <button type="button" ide="profile" (click)="moveToEditProfile()">bearbeiten</button>
+              <button type="button" ide="profile" (click)="moveToEditProfile(user)">bearbeiten</button>
               <button type="button" ide="profile" (click)="moveToEditPassword()">Passwort ändern</button>
               <button type="button" ide="profile" (click)="deleteProfile()">Konto löschen</button>
             </tr>

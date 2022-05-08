@@ -17,7 +17,7 @@
           settings
         </span>
       </div>
-      <div class="column">
+      <div class="column_setting_menu">
         <p mat-menu-item [matMenuTriggerFor]="settings">Einstellung</p>
       </div>
     </div>
@@ -27,11 +27,46 @@
 
 <mat-menu #settings="matMenu">
   <div class="container">
-    <h1>Hilfe & Einstellungen</h1>
-    <p (click)="openFAQ()">FAQ</p>
-    <p (click)="openAGB()">AGB</p>
-    <p (click)="openDatenschutz()">Datenschutz</p>
-    <p (click)="openImpressum()">Impressum</p>
-    <!--<p (click)="openSprache()">Sprache</p>-->
+    <h1 class="header">Hilfe & Einstellungen</h1>
+    <div class="row" (click)="openFAQ()">
+      <div class="column">
+          <span class="material-icons">
+            quiz
+          </span>
+      </div>
+      <div class="column">
+        <p>FAQ</p>
+      </div>
+    </div>
+    <div class="row" (click)="openAGB()">
+      <div class="column">
+          <span class="material-icons">
+            assignment
+          </span>
+      </div>
+      <div class="column">
+        <p>AGB</p>
+      </div>
+    </div>
+    <div class="row" (click)="openDatenschutz()">
+      <div class="column">
+          <span class="material-icons">
+            privacy_tip
+          </span>
+      </div>
+      <div class="column">
+        <p>Datenschutz</p>
+      </div>
+    </div>
+    <div class="row" (click)="openImpressum()">
+      <div class="column">
+          <span class="material-icons">
+            description
+          </span>
+      </div>
+      <div class="column">
+        <p>Impressum</p>
+      </div>
+    </div>
   </div>
 </mat-menu>

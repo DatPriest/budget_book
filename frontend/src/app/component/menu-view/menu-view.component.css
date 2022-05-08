@@ -1,13 +1,13 @@
+.mat-menu-content {
+  width: 500px !important;
+}
+
 .logout {
   color: #FD0303;
 }
 
-.mat-menu-content {
-  width: 500px;
-}
-
 .container {
- width: 250px;
+ padding: 5%;
 }
 
 .column {
@@ -30,4 +30,9 @@
   box-shadow: 0px 2px 2px transparent;
   cursor: pointer;
   transition: .0s;
+}
+
+.column_setting_menu {
+  float: left;
+  width: 105%;
 }

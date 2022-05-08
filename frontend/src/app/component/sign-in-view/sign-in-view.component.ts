@@ -20,10 +20,8 @@ export class SignInViewComponent implements OnInit {
   showPassword: boolean = false;
   user: LoginUserModule;
   hash: string;
-  constructor(public router: Router, private http: HttpClient, private formBuilder: FormBuilder, private userService: UserService, public app: AppModule,
-    public hashService: HashingService, public alertService: AlertService, public groupService: GroupService) {
-    this.userService = new UserService(this.http);
-  }
+  constructor(public router: Router, public http: HttpClient, public formBuilder: FormBuilder, public userService: UserService, public app: AppModule,
+    public hashService: HashingService, public alertService: AlertService, public groupService: GroupService) { }
 
   togglePassword(): void {
     this.showPassword = !this.showPassword;
@@ -31,17 +29,15 @@ export class SignInViewComponent implements OnInit {
 
   loginUser(signInForm: NgForm): void {
     this.router.navigate(['main']); // temp
-    this.alertService.successfulAlert("Herzlich willkommen!" ,  "Der Login war erfolgreich." ,  "success", 2500); // temp
+    //this.alertService.successfulAlert("Herzlich willkommen!" ,  "Der Login war erfolgreich." ,  "success", 2500); // temp
 
     this.hash = this.hashService.encrypt(signInForm.value.password);
     const signInData = new LoginUserModule(null, signInForm.value.email, this.hash);
     this.userService.loginUser(signInData).subscribe(data => {
       if (data.email != null && data.hash != null) {
         this.app.userId = data.userId;
-        this.groupService.getGroupsByUser(this.app.userId).subscribe(data => {
-          this.router.navigate(['main', data]);
-          this.alertService.successfulAlert("Herzlich willkommen!" ,  "Der Login war erfolgreich." ,  "success", 2500);
-        });
+        this.router.navigate(['main']);
+        this.alertService.successfulAlert("Herzlich willkommen!" ,  "Der Login war erfolgreich." ,  "success", 2500);
       } else {
         this.alertService.alert("Oops" ,  "User not found or bad password" ,  "error");
       }

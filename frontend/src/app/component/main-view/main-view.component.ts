@@ -15,9 +15,15 @@ import { AppModule } from 'src/app/app.module';
 export class MainViewComponent implements OnInit {
 
   userGroups$ : Observable<GroupModule[]> = of([]);
-  constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule) { }
+  constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule) {
+    this.getGroupsByUserId();
+  }
 
-  createGroupDialog() {
+  getGroupsByUserId(): void {
+    this.groupService.getGroupsByUser(this.app.userId);
+  }
+
+  createGroupDialog(): void {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;

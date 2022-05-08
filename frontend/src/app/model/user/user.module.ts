@@ -1,5 +1,6 @@
 export class UserModule {
   constructor (
+    public userId: number,
     public firstName: string,
     public lastName: string,
     public hash: string,

@@ -1,4 +1,4 @@
-export class NewPasswordRequestModule {
+export class NewPasswordModule {
   constructor (
     public email: string,
     public hash: string,

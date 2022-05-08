@@ -21,7 +21,7 @@ export class SignUpViewComponent implements OnInit {
   image: string;
   securityQuestion$ : Observable<SecurityQuestionModule[]> = of([]);
   hash: string;
-  constructor(public router: Router, private userService: UserService, private formBuilder: FormBuilder,
+  constructor(public router: Router, public userService: UserService, public formBuilder: FormBuilder,
     public hashService: HashingService, public alertService: AlertService) {
     this.securityQuestion$ = this.userService.getSecurityQuestion();
   }
@@ -38,7 +38,7 @@ export class SignUpViewComponent implements OnInit {
     if (signUpForm.value.password_1 == signUpForm.value.password_2) {
       if (signUpForm.value.securityQuestion != '' && signUpForm.value.securityAnswer != '') {
         this.hash = this.hashService.encrypt(signUpForm.value.password_1);
-        const signUpData = new UserModule(signUpForm.value.firstName, signUpForm.value.lastName, this.hash, signUpForm.value.email, signUpForm.value.securityQuestion, signUpForm.value.securityAnswer, this.image);
+        const signUpData = new UserModule(null, signUpForm.value.firstName, signUpForm.value.lastName, this.hash, signUpForm.value.email, signUpForm.value.securityQuestion, signUpForm.value.securityAnswer, this.image);
         this.userService.registerUser(signUpData).subscribe(data => {
           this.alertService.successfulAlert("Erfolgreich registriert!" ,  "" ,  "success", 2500);
           this.router.navigate(['/sign-in']);

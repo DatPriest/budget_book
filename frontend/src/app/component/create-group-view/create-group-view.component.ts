@@ -15,8 +15,8 @@ export class CreateGroupViewComponent implements OnInit {
 
   createGroupForm: FormGroup;
   image: string;
-  constructor(private formBuilder: FormBuilder,
-    public dialogRef: MatDialogRef<CreateGroupViewComponent>, private groupService: GroupService, public app: AppModule) { }
+  constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<CreateGroupViewComponent>,
+      public groupService: GroupService, public app: AppModule) { }
 
   createGroup(createGroupForm: NgForm): void {
     if (createGroupForm.value.image != '' && createGroupForm.value.groupName != '') {
