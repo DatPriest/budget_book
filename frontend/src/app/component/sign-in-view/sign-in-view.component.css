@@ -36,46 +36,74 @@
 }
 
 .screen_background_shape1 {
-  height: 520px;
+  height: 80%;
+  width: 150%;
+  background: #FFF;
+  top: -8%;
+  right: 32%;
+  border-radius: 0 10% 0 0;
+  /*height: 520px;
   width: 520px;
   background: #FFF;
   top: -50px;
   right: 120px;
-  border-radius: 0 72px 0 0;
+  border-radius: 0 72px 0 0;*/
 }
 
 .screen_background_shape2 {
-  height: 220px;
+  height: 38%;
+  width: 60%;
+  background: #A4A4A4;
+  top: -30%;
+  right: 0;
+  border-radius: 15%;
+  /*height: 220px;
   width: 220px;
   background: #A4A4A4;
   top: -172px;
   right: 0;
-  border-radius: 32px;
+  border-radius: 32px;*/
 }
 
 .screen_background_shape3 {
-  height: 640px;
+  height: 105%;
+  width: 55%;
+  background: linear-gradient(270deg, #585858, #A4A4A4);
+  top: -10%;
+  right: 0;
+  border-radius: 15%;
+  /*height: 640px;
   width: 190px;
   background: linear-gradient(270deg, #585858, #A4A4A4);
   top: -68px;
   right: 0;
-  border-radius: 32px;
+  border-radius: 32px;*/
 }
 
 .screen_background_shape4 {
-  height: 400px;
+  height: 70%;
+  width: 55%;
+  background: #585858;
+  top: 70%;
+  right: 15%;
+  border-radius: 25%;
+  /*height: 400px;
   width: 200px;
   background: #585858;
   top: 420px;
   right: 50px;
-  border-radius: 60px;
+  border-radius: 60px;*/
 }
 
 .login {
-  width: 280px;
+  width: 80%;
+  padding: 5%;
+  padding-top: 35%;
+  font-family: Raleway, sans-serif;
+  /*width: 280px;
   padding: 20px;
   padding-top: 130px;
-  font-family: Raleway, sans-serif;
+  font-family: Raleway, sans-serif;*/
 }
 
 /* Login Felder */
@@ -94,6 +122,20 @@
 /* Login Button */
 .login_submit {
   background: #fff;
+  font-size: 110%;
+  padding: 5% 10%;
+  border-radius: 26px;
+  border: 1px solid #D4D3E8;
+  text-transform: uppercase;
+  font-weight: 700;
+  align-items: center;
+  width: 50%;
+  color: #4C489D;
+  margin-bottom: 5%;
+  box-shadow: 0px 2px 2px #5C5696;
+  cursor: pointer;
+  transition: .2s;
+  /*background: #fff;
   font-size: 16px;
   padding: 16px 20px;
   border-radius: 26px;
@@ -106,7 +148,7 @@
   margin-bottom: 10px;
   box-shadow: 0px 2px 2px #5C5696;
   cursor: pointer;
-  transition: .2s;
+  transition: .2s;*/
 }
 
 .login_submit:active,
@@ -124,6 +166,20 @@
 /* Registrieren Button */
 .register_submit {
   background: none;
+  font-size: 75%;
+  padding: 5% 10%;
+  border-radius: 0px;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  width: 0%;
+  color: rgb(0, 121, 255);
+  box-shadow: 0px 2px 2px transparent;
+  cursor: pointer;
+  transition: .0s;
+  /*background: none;
   font-size: 11px;
   padding: 10px 20px;
   border-radius: 0px;
@@ -136,7 +192,7 @@
   color: rgb(0, 121, 255);
   box-shadow: 0px 2px 2px transparent;
   cursor: pointer;
-  transition: .0s;
+  transition: .0s;*/
 }
 
 .register_submit:active,
@@ -149,6 +205,17 @@
 /*  Passwort vergessen Button */
 .new_password_submit{
   background: none;
+  padding: 5% 10%;
+  font-size: 75%;
+  border-radius: 0px;
+  border: none;
+  display: flex;
+  width: 0%;
+  color: rgb(0, 121, 255);
+  box-shadow: 0px 2px 2px transparent;
+  cursor: pointer;
+  transition: .0s;
+  /*background: none;
   padding: 5px 22px;
   font-size: 11px;
   border-radius: 0px;
@@ -158,7 +225,7 @@
   color: rgb(0, 121, 255);
   box-shadow: 0px 2px 2px transparent;
   cursor: pointer;
-  transition: .0s;
+  transition: .0s;*/
 }
 
 .new_password_submit:active,
@@ -177,14 +244,16 @@
 .header_Text {
   color: #7875B5;
   text-shadow: black;
-  font-size: 20px;
+  font-size: 150%;
+  /*font-size: 20px;*/
 }
 
 .show_passwort{
-  font-size: 20px;
+  font-size: 150%;
   border: none;
   align-items: center;
   width: 0%;
   color: rgb(0, 0, 0);
   cursor: pointer;
+  /*font-size: 20px;*/
 }
