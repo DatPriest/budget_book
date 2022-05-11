@@ -13,6 +13,7 @@
 .column {
   float: left;
   width: 20%;
+  cursor: pointer;
 }
 
 .row:after {
