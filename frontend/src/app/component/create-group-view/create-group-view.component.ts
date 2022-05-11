@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { GroupService } from 'src/app/service/group/group.service';
 import { GroupModule } from 'src/app/model/group/group.module';
-import { AppModule } from 'src/app/app.module';
 import { Observable, Subscriber } from 'rxjs';
 
 @Component({
@@ -16,7 +15,7 @@ export class CreateGroupViewComponent implements OnInit {
   createGroupForm: FormGroup;
   image: string;
   constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<CreateGroupViewComponent>,
-      public groupService: GroupService, public app: AppModule) { }
+      public groupService: GroupService) { }
 
   createGroup(createGroupForm: NgForm): void {
     if (createGroupForm.value.image != '' && createGroupForm.value.groupName != '') {

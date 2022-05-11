@@ -14,9 +14,12 @@ import { AppModule } from 'src/app/app.module';
 })
 export class MainViewComponent implements OnInit {
 
-  userGroups$ : Observable<GroupModule[]> = of([]);
+  //userGroups$ : Observable<GroupModule[]> = of([]);
+  image: string;
+  groups: GroupModule[] = []
   constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule) {
-    this.getGroupsByUserId();
+    //this.getGroupsByUserId();
+    this.groups.push(new GroupModule(1, 'Test', this.image));
   }
 
   getGroupsByUserId(): void {
