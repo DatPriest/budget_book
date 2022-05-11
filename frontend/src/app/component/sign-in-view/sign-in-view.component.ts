@@ -29,7 +29,6 @@ export class SignInViewComponent implements OnInit {
 
   loginUser(signInForm: NgForm): void {
     this.router.navigate(['main']); // temp
-    this.alertService.successfulAlert("Herzlich willkommen!" ,  "Der Login war erfolgreich." ,  "success", 2500);
 
     this.hash = this.hashService.encrypt(signInForm.value.password);
     const signInData = new LoginUserModule(null, signInForm.value.email, this.hash);
