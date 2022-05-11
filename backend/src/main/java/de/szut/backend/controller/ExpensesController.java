@@ -40,7 +40,7 @@ public class ExpensesController {
         return gson.toJson(getDTO);
     }
 
-    @GetMapping(path = "/expense/{groupId}", produces = "application/json")
+    @GetMapping(path = "/group/{groupId}", produces = "application/json")
     public String getExpensesByGroupId(@PathVariable long groupId){
         ArrayList<GetExpenseDTO> result = new ArrayList<>();
         for(var ex : this.ex_Service.getAllExpensesByGroupId(groupId)){
@@ -50,7 +50,7 @@ public class ExpensesController {
         return gson.toJson(result);
     }
 
-    @GetMapping(path = "/expense/{categoryId}", produces = "application/json")
+    @GetMapping(path = "/category/{categoryId}", produces = "application/json")
     public String getExpensesByCategoryId(@PathVariable long categoryId){
         ArrayList<GetExpenseDTO> result = new ArrayList<>();
         for(var ex : this.ex_Service.getAllExpensesByCategoryId(categoryId)){
@@ -60,7 +60,7 @@ public class ExpensesController {
         return gson.toJson(result);
     }
 
-    @GetMapping(path = "/expense/{userId}", produces = "application/json")
+    @GetMapping(path = "/user/{userId}", produces = "application/json")
     public String getExpensesByUserId(@PathVariable long userId){
         ArrayList<GetExpenseDTO> result = new ArrayList<>();
         for(var ex : this.ex_Service.getAllExpensesByUserId(userId)){
