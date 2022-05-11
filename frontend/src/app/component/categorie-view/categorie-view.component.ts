@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-categorie-view',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategorieViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router) { }
+
+  backToMenuTemp(): void {
+    this.router.navigate(['/main']);
+  }
 
   ngOnInit(): void {
   }
