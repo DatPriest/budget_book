@@ -18,7 +18,7 @@ export class ProfileViewComponent implements OnInit {
   }
 
   moveToEditProfile(data: UserModule): void {
-    this.router.navigate(['/profile/edit', data]);
+    this.router.navigate(['/profile/edit']);
   }
 
   moveToEditPassword(): void {

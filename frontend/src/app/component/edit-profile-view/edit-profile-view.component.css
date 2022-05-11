@@ -81,6 +81,7 @@
   top: 69%;
   left: 31%;
 }
+
 div {
   border-radius: 5px;
   padding: 20px;
@@ -116,3 +117,5 @@ input[type=submit]:hover {
   margin-bottom: 120px;
   margin-inside: 120px;
 }
+
+
