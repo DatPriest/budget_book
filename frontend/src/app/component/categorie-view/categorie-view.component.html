@@ -1,3 +1,28 @@
-<p>categorie-view works!</p>
+<form>
+  <header>
+    <span class="material-icons burgerMenu">
+      <app-menu-view></app-menu-view>
+    </span>
+    <span class="header_name">Kategorien</span>
+  </header>
+  <body>
+  <ng-container>
+    <div class="container">
+      <div class="screen">
+        <label *ngFor="let category of categories$| async">{{category}}</label>
+        <div class="column">
+        </div>
+      </div>
+    </div>
+    <div class="button">
+      <tr>
+        <button type="button" (click)="backToMenuTemp()"><span class="material-icons">arrow_back</span></button>
+        <button type="button" ide="profile">Hinzufügen</button>
+        <button type="button" ide="profile">Löschen</button>
+      </tr>
+    </div>
+  </ng-container>
+  </body>
+</form>
 
-<button type="button" (click)="backToMenuTemp()"><span class="material-icons">arrow_back</span></button>
+
