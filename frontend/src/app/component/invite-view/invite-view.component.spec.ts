@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InviteLinkViewComponent } from './invite-link-view.component';
+import { InviteLinkViewComponent } from './invite-view.component';
 
 describe('InviteLinkViewComponent', () => {
   let component: InviteLinkViewComponent;
