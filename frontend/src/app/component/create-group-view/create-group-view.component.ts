@@ -22,7 +22,6 @@ export class CreateGroupViewComponent implements OnInit {
     if (createGroupForm.value.image != '' && createGroupForm.value.groupName != '') {
       const createGroupData = new GroupModule(null, createGroupForm.value.groupName, this.image);
       this.groupService.createGroup(createGroupData).subscribe(data => {
-        // TODO: Create a function in which the group ID is put into the "this.app.groupId" variable.
         this.dialogRef.close();
       });
     };
