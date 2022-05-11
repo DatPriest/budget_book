@@ -36,7 +36,6 @@ export class ProfileViewComponent implements OnInit {
   joinGroupDialog(): void {
     const dialogConfig = new MatDialogConfig();
 
-    dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
     this.dialog.open(InviteViewComponent, dialogConfig);
