@@ -14,8 +14,13 @@ public class ExpensesService {
         this.ex_Service = ex_Service;
     }
 
-    public void createExpense(Expense expenseToCreate){
-        this.ex_Service.save(expenseToCreate);
+    public Expense createExpense(Expense expenseToCreate){
+        var inDB = ex_Service.findExpenseByGroupIdAndCategoryIdAndUserId(expenseToCreate.getGroupId(), expenseToCreate.getCategoryId(), expenseToCreate.getUserId());
+        if(inDB != null){
+            return inDB;
+        }
+        else
+            return this.ex_Service.save(expenseToCreate);
     }
 
     public List<Expense> getAllExpensesByGroupId(long groupId){
@@ -26,11 +31,15 @@ public class ExpensesService {
         return this.ex_Service.findAllByUserId(userId);
     }
 
+    public List<Expense> getAllExpensesByCategoryId(long categoryId) {
+        return this.ex_Service.findAllByCategoryId(categoryId);
+    }
+
     public Expense getExpenseById(long expenseId){
         return this.ex_Service.findById(expenseId).get();
     }
 
-    public void deleteExpense(Expense expenseToDelete){
-        this.ex_Service.delete(expenseToDelete);
+    public void deleteExpenseById(long expenseId){
+        this.ex_Service.deleteById(expenseId);
     }
 }
