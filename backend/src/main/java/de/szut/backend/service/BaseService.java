@@ -8,9 +8,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class BaseService {
     protected final Logger logger;
-
     public BaseService() {
-        this.logger = LogManager.getLogger(this.getClass().getName());
+        this.logger = LogManager.getLogger();
     }
 
 }

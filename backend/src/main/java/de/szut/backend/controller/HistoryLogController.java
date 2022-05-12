@@ -18,7 +18,7 @@ public class HistoryLogController {
     }
 
     @GetMapping(path = "/entries/{groupId}", produces = "application/json")
-    public String GetAllHistoryEntriesForGroup(@PathVariable long groupId) {
+    public String GetUser(@PathVariable long groupId) {
         List<HistoryLogEntry> historyLog = this.historyLogService.getAllLogEntriesForGroup(groupId);
         Gson gson = new Gson();
         return gson.toJson(historyLog);

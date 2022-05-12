@@ -30,7 +30,7 @@ import { AskQuestionViewComponent } from './component/ask-question-view/ask-ques
 import { EditPasswordViewComponent } from './component/edit-password-view/edit-password-view.component';
 import { CategorieViewComponent } from './component/categorie-view/categorie-view.component';
 import { NewCategorieViewComponent } from './component/new-categorie-view/new-categorie-view.component';
-import { InviteViewComponent } from './component/invite-view/invite-view.component';
+import { InviteLinkViewComponent } from './component/invite-link-view/invite-link-view.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +55,7 @@ import { InviteViewComponent } from './component/invite-view/invite-view.compone
     EditPasswordViewComponent,
     CategorieViewComponent,
     NewCategorieViewComponent,
-    InviteViewComponent
+    InviteLinkViewComponent
   ],
   imports: [
     BrowserAnimationsModule,

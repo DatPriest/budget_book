@@ -19,19 +19,15 @@ export class EditPasswordViewComponent implements OnInit {
     public userService: UserService) { }
 
   saveNewPassword(editPasswordForm: NgForm): void {
-    if (editPasswordForm.value.password_1 == '' && editPasswordForm.value.password_2 == '') {
-      this.alertService.alert("Oops" ,  "Die Passwörter dürfen nicht leer sein!" ,  "error");
+    if (editPasswordForm.value.password_1 == editPasswordForm.value.password_2) {
+      this.hash = this.hashService.encrypt(editPasswordForm.value.password_1);
+      const editPasswordData = new UpdatePasswordModule(editPasswordForm.value.email, this.hash);
+      this.userService.updateUserPassword(editPasswordData).subscribe(data => {
+        this.alertService.successfulAlert("Passwort wurde erfolgreich geändert!" ,  "" ,  "success", 2500);
+        this.router.navigate(['/profile']);
+      })
     } else {
-      if (editPasswordForm.value.password_1 == editPasswordForm.value.password_2) {
-        this.hash = this.hashService.encrypt(editPasswordForm.value.password_1);
-        const editPasswordData = new UpdatePasswordModule(editPasswordForm.value.email, this.hash);
-        this.userService.updateUserPassword(editPasswordData).subscribe(data => {
-          this.alertService.successfulAlert("Passwort wurde erfolgreich geändert!" ,  "" ,  "success", 2500);
-          this.router.navigate(['/profile']);
-        })
-      } else {
-        this.alertService.alert("Oops" ,  "Die Passwörter stimmen nicht überein!" ,  "error");
-      }
+      this.alertService.alert("Oops" ,  "Die Passwörter stimmen nicht überein!" ,  "error");
     }
   }
 

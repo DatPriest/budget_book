@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="Passwort ändern/ Konto anzeigen/ Konto bearbeiten">
+    <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="invite">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/edit-password-view/edit-password-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/edit-password-view/edit-password-view.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/edit-password-view/edit-password-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/edit-password-view/edit-password-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/edit-profile-view/edit-profile-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/edit-profile-view/edit-profile-view.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/edit-profile-view/edit-profile-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/edit-profile-view/edit-profile-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/profile-view/profile-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/profile-view/profile-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/sign-in-view/sign-in-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/sign-in-view/sign-in-view.component.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +55,7 @@
       <workItem from="1651042139689" duration="10000" />
       <workItem from="1651133598993" duration="450000" />
       <workItem from="1652249401406" duration="4531000" />
+      <workItem from="1652261704251" duration="47000" />
     </task>
     <task id="LOCAL-00001" summary="Edit Login .css">
       <created>1648717419214</created>

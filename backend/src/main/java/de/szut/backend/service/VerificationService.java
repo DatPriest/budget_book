@@ -4,8 +4,6 @@ import de.szut.backend.dto.*;
 import de.szut.backend.mapper.UserMapper;
 import de.szut.backend.model.*;
 import de.szut.backend.model.History.HistoryActionToProcess;
-import de.szut.backend.repository.ImageRepository;
-import de.szut.backend.repository.SecurityQuestionRepository;
 import de.szut.backend.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -18,23 +16,14 @@ import java.util.UUID;
 
 @Service
 public class VerificationService extends BaseService {
-    private final UserRepository userRepository;
-    private final UserMapper userMapper;
-    private final HistoryLogService logService;
-    private final ImageRepository imageRepository;
-    private final SecurityQuestionRepository securityQuestionRepository;
+    UserRepository userRepository;
+    UserMapper userMapper;
+    HistoryLogService logService;
 
-
-    public VerificationService(UserRepository _userRepository,
-                               UserMapper _userMapper,
-                               HistoryLogService logService,
-                               ImageRepository _imageRepository,
-                               SecurityQuestionRepository _securityQuestionRepository) {
+    public VerificationService(UserRepository _userRepository, UserMapper _userMapper, HistoryLogService logService) {
         this.userRepository = _userRepository;
         this.userMapper = _userMapper;
         this.logService = logService;
-        this.imageRepository = _imageRepository;
-        this.securityQuestionRepository = _securityQuestionRepository;
     }
 
     public User login(LoginDto dto) {
@@ -51,9 +40,9 @@ public class VerificationService extends BaseService {
     }
 
     public ForgotBackDto forgotPassword(ForgotDto dto) {
-        User user =  userRepository.findByEmailAndSecurityQuestionIdAndSecurityAnswer(
+        var user =  userRepository.findByEmailAndSecurityQuestionAndSecurityAnswer(
                 dto.email,
-                securityQuestionRepository.findByKey(dto.securityQuestionKey).getId(),
+                dto.securityQuestion,
                 dto.securityAnswer.toLowerCase(Locale.ROOT));
         if (user != null) {
             user.salt = getSalt();
@@ -75,10 +64,8 @@ public class VerificationService extends BaseService {
         // Save User to Database with salt
         user.salt = getSalt();
         user.hash = hashPassword(user.hash + user.salt);
-        Image image = new Image();
-        image.imageString = dto.image;
-        image = this.imageRepository.save(image);
-        user.imageId = image.id;
+
+
         return userMapper.mapUserToUserCreateDto(this.userRepository.save(user));
     }
 

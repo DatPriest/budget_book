@@ -12,6 +12,7 @@ import java.util.List;
 public class UserService extends BaseService {
     private UserRepository userRepository;
     public UserService(UserRepository _userRepository) {
+        super();
         this.userRepository = _userRepository;
     }
 

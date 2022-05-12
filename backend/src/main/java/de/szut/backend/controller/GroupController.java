@@ -42,29 +42,19 @@ public class GroupController {
      */
     @PostMapping(path = "/addUserToGroup", consumes = "application/json", produces = "application/json")
     public ResponseEntity<GroupXUser> CreateGroup(@RequestBody UserToGroupDto dto) throws TypeNotPresentException {
-        GroupXUser user = null;
-        try {
-            user = service.addUserToGroup(dto);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        var user = service.addUserToGroup(dto);
         if (user == null)
             return new ResponseEntity<>(null, HttpStatus.LOOP_DETECTED);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
-    @GetMapping(path = "/getUsers/{groupId}", produces = "application/json")
+    @PostMapping(path = "/getUsers/{groupId}", produces = "application/json")
     public ResponseEntity<ArrayList<User>> GetUsersToGroup(@PathVariable long groupId) throws TypeNotPresentException {
         return new ResponseEntity<>(service.getUsersToGroup(groupId), HttpStatus.OK);
     }
 
-    @GetMapping(path = "/getGroups/{userId}", produces = "application/json")
-    public ResponseEntity<GroupListDto> GetGroups(@PathVariable long userId) throws TypeNotPresentException {
-        GroupListDto groups = this.service.getGroups(userId);
-        if (groups != null && !groups.groups.isEmpty()) {
-            return new ResponseEntity<>(groups, HttpStatus.OK);
-        }
+    @PostMapping(path = "/getGroups", produces = "application/json")
+    public ResponseEntity<GroupListDto> GetGroups(@PathVariable long groupId) throws TypeNotPresentException {
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
 }

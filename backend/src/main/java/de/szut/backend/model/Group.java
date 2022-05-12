@@ -13,7 +13,7 @@ public class Group {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long id;
     public String groupName;
-    public long imageId;
+    public long ImageId;
     @CreationTimestamp
     public Date created;
     @UpdateTimestamp

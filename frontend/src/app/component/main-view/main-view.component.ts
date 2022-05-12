@@ -29,6 +29,7 @@ export class MainViewComponent implements OnInit {
   createGroupDialog(): void {
     const dialogConfig = new MatDialogConfig();
 
+    dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
     this.dialog.open(CreateGroupViewComponent, dialogConfig);
