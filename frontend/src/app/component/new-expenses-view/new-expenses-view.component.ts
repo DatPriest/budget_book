@@ -11,8 +11,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class NewExpensesViewComponent implements OnInit {
 
   newExpensesForm: FormGroup;
-  constructor(public router: Router, private formBuilder: FormBuilder,
-    public dialogRef: MatDialogRef<NewExpensesViewComponent>) { }
+  constructor(public router: Router, public formBuilder: FormBuilder, public dialogRef: MatDialogRef<NewExpensesViewComponent>) { }
 
   closeExpenses(): void {
     this.dialogRef.close();

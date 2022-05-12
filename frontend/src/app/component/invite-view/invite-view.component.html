@@ -1,0 +1,12 @@
+<form class="joinGroup" (ngSubmit)="joinGroup(joinGroupForm)" #joinGroupForm="ngForm">
+  <h1 class="header_Text">Gruppe beitreten</h1>
+    <input name="inviteCode" type="text" class="input_field" id="invite_Code" ngModel placeholder="Invite Code">
+  <div class="row">
+    <div class="column_save">
+      <button type="submit" id="save"><span class="group_create material-icons">check</span></button>
+    </div>
+    <div class="column_close">
+      <button type="button" id="close" (click)="closeInvite()"><span class="group_create material-icons">close</span></button>
+    </div>
+  </div>
+</form>

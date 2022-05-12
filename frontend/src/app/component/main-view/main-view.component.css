@@ -123,11 +123,11 @@
 }
 
 .screen_background_shape5 {
-  height: 220px;
-  width: 120px;
+  height: 245px;
+  width: 190px;
   background: linear-gradient(270deg, #585858, #A4A4A4);
-  top: 0px;
-  left: 615px;
+  top: 15px;
+  left: 605px;
   border-radius: 32px;
 }
 

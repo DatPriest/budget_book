@@ -8,7 +8,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MaterialExampleModule } from 'src/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
-import { NgToastModule } from 'ng-angular-popup';
 import { HttpClientModule } from "@angular/common/http";
 
 import { SignInViewComponent } from './component/sign-in-view/sign-in-view.component';
@@ -31,7 +30,7 @@ import { AskQuestionViewComponent } from './component/ask-question-view/ask-ques
 import { EditPasswordViewComponent } from './component/edit-password-view/edit-password-view.component';
 import { CategorieViewComponent } from './component/categorie-view/categorie-view.component';
 import { NewCategorieViewComponent } from './component/new-categorie-view/new-categorie-view.component';
-import { InviteLinkViewComponent } from './component/invite-link-view/invite-link-view.component';
+import { InviteViewComponent } from './component/invite-view/invite-view.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +55,7 @@ import { InviteLinkViewComponent } from './component/invite-link-view/invite-lin
     EditPasswordViewComponent,
     CategorieViewComponent,
     NewCategorieViewComponent,
-    InviteLinkViewComponent
+    InviteViewComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -82,7 +81,6 @@ import { InviteLinkViewComponent } from './component/invite-link-view/invite-lin
       {path: 'categorie', component: CategorieViewComponent},       // Kategorien
       {path: 'edit-passwort', component: EditPasswordViewComponent} // Edit Passwort im Profil
     ]),
-    NgToastModule,
     FormsModule,
     ReactiveFormsModule,
     MatNativeDateModule,

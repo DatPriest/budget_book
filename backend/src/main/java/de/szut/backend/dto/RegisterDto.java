@@ -1,11 +1,8 @@
 package de.szut.backend.dto;
 
 import com.sun.istack.NotNull;
-import de.szut.backend.model.Question;
+import de.szut.backend.model.SecurityQuestion;
 import lombok.Data;
-
-import java.util.AbstractMap;
-import java.util.Locale;
 
 @Data
 public class RegisterDto {
@@ -18,7 +15,9 @@ public class RegisterDto {
     @NotNull
     public String email;
     @NotNull
-    public Question securityQuestion;
+    public String securityQuestionKey;
     @NotNull
     public String securityAnswer;
+
+    public String image;
 }
