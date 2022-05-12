@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { UserService } from 'src/app/service/user/user.service';
 import { UserModule } from 'src/app/model/user/user.module';
 import { Observable, of } from 'rxjs';
+import { AppModule } from 'src/app/app.module';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { InviteViewComponent } from '../invite-view/invite-view.component';
 
 @Component({
   selector: 'app-profile-view',
@@ -11,18 +14,14 @@ import { Observable, of } from 'rxjs';
 })
 export class ProfileViewComponent implements OnInit {
 
-  user$ : Observable<UserModule[]> = of([]);
-  constructor(public router: Router, private userService: UserService) {
-    this.user$ = this.userService.getProfile();
+  user: UserModule;
+  constructor(public router: Router, public userService: UserService, public app: AppModule, public dialog: MatDialog) {
+    this.userService.getProfile(this.app.userId);
   }
 
-  moveToEditProfile(): void {
+  moveToEditProfile(data: UserModule): void {
     this.router.navigate(['/profile/edit']);
   }
-
-  /*moveToEditProfile(user$: UserModule): void {
-    this.router.navigate(['/profile/edit' + '/' + user$]);
-  }*/
 
   moveToEditPassword(): void {
     this.router.navigate(['/edit-passwort']);
@@ -32,6 +31,14 @@ export class ProfileViewComponent implements OnInit {
     if(confirm('Möchten Sie wirklich Ihr Konto löschen?')) {
       console.log('Konto wurde gelöscht.');
     }
+  }
+
+  joinGroupDialog(): void {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(InviteViewComponent, dialogConfig);
   }
 
   ngOnInit(): void {

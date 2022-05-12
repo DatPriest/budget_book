@@ -1,11 +1,11 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable } from 'rxjs';
-import { NewPasswordRequestModule } from 'src/app/model/new-password-request/new-password-request.module';
-import { NewPasswordVerificationModule } from 'src/app/model/new-password-verification/new-password-verification.module';
+import { NewPasswordModule } from 'src/app/model/new-password/new-password.module';
 import { UserModule } from 'src/app/model/user/user.module';
 import { LoginUserModule } from 'src/app/model/login-user/login-user.module';
 import { SecurityQuestionModule } from 'src/app/model/security-question/security-question.module';
+import { UpdatePasswordModule } from 'src/app/model/update-password/update-password.module';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class UserService {
 
   registerUser(user: UserModule) {
     return this.http.post<UserModule>('http://localhost:4000/api/v1/verification/register', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")
-  }).pipe(catchError(this.handleError<UserModule>("Email already exists or Password is empty or too short")));
+    }).pipe(catchError(this.handleError<UserModule>("Email already exists or Password is empty or too short")));
   }
 
   loginUser(user: LoginUserModule) {
@@ -24,24 +24,24 @@ export class UserService {
     }).pipe(catchError(this.handleError<LoginUserModule>("User not found or bad password")));
   }
 
-  passwordForgotRequest(user: NewPasswordRequestModule) {
-    return this.http.post<NewPasswordRequestModule>('http://localhost:4000/api/v1/verification/forgotPassword', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
-  }
-
-  passwordForgotVerification(user: NewPasswordVerificationModule) {
-    return this.http.put<NewPasswordVerificationModule>('http://localhost:4000/api/v1/verification/updatePassword', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  passwordForgotRequest(user: NewPasswordModule) {
+    return this.http.post<NewPasswordModule>('http://localhost:4000/api/v1/verification/forgotPassword', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   getSecurityQuestion() {
-    return this.http.get<SecurityQuestionModule[]>('http://localhost:4000/api/v1/verification/getQuestions', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.get<SecurityQuestionModule[]>('http://localhost:4000/api/v1/securityQuestions', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
-  getProfile() {
-    return this.http.get<UserModule[]>('http://localhost:4000/api/v1/verification/getUserProfile/${userId}', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  getProfile(userId: number) {
+    return this.http.get<UserModule[]>(`http://localhost:4000/api/v1/verification/getUserProfile/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   updateProfile(user: UserModule) {
     return this.http.put<UserModule>('http://localhost:4000/api/v1/verification/postUserProfile', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
+  updateUserPassword(user: UpdatePasswordModule) {
+    return this.http.put<UpdatePasswordModule>('http://localhost:4000/api/v1/profile/updatePassword', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   public handleError<T>(origin = "origin", result? : T) {

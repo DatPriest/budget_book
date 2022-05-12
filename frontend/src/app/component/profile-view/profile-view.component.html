@@ -1,36 +1,38 @@
 <form>
   <header>
+    <span class="material-icons burgerMenu">
+      <app-menu-view></app-menu-view>
+    </span>
     <span class="header_name">Mein Konto</span>
   </header>
   <body>
-  <div class="container">
-    <div class="screen">
-      <div class="picture">
-        <img src='' alt="Bild der jeweiligen Person">
-      </div>
-      <div class="info">
-        <ng-container>
-          <div class="label">
-            <label>Vorname:</label>
-            <p>Vorname:</p>
+    <ng-container>
+      <div class="container">
+        <div class="screen">
+          <div class="picture">
+           <img src={{user.image}} alt="Bild der jeweiligen Person">
           </div>
-          <div class="label">
+          <div class="column">
+          <div class="info">
+            <label class="label">Vorname:</label><br>
+            <input type="text" id="UserName" name="fname" placeholder="Vorname" value="{{user.firstName}}" readonly><br><br>
             <label class="label">Nachname:</label>
-          </div>
-          <div class="label">
+            <input type="text" id="UserName2" name="lname" placeholder="Nachname" value="{{user.lastName}}" readonly><br><br>
             <label class="label">E-Mail:</label>
+            <input type="text" id="UserEmail" name=" email" placeholder="E-Mail" value="{{user.email}}" readonly><br><br>
           </div>
-        </ng-container>
+        </div>
+        </div>
       </div>
-      <div class="button">
-      <tr>
-        <button type="button" ide="profile" (click)="moveToEditProfile()">bearbeiten</button>
-        <button type="button" ide="profile" (click)="moveToEditPassword()">Passwort ändern</button>
-        <button type="button" ide="profile" (click)="deleteProfile()">Konto löschen</button>
-      </tr>
-      </div>
-    </div>
-  </div>
+          <div class="button">
+            <tr>
+              <button type="button" ide="profile" (click)="joinGroupDialog()">Join Group</button>
+              <button type="button" ide="profile" (click)="moveToEditProfile(user)">bearbeiten</button>
+              <button type="button" ide="profile" (click)="moveToEditPassword()">Passwort ändern</button>
+              <button type="button" ide="profile" (click)="deleteProfile()">Konto löschen</button>
+            </tr>
+          </div>
+    </ng-container>
   </body>
 </form>
 

@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="Edit Login .css">
-      <change beforePath="$PROJECT_DIR$/.idea/budget_book.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/budget_book.iml" afterDir="false" />
+    <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="Passwort ändern/ Konto anzeigen/ Konto bearbeiten">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/edit-password-view/edit-password-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/edit-password-view/edit-password-view.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/edit-password-view/edit-password-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/edit-password-view/edit-password-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/edit-profile-view/edit-profile-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/edit-profile-view/edit-profile-view.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/edit-profile-view/edit-profile-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/edit-profile-view/edit-profile-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/profile-view/profile-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/profile-view/profile-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/sign-in-view/sign-in-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/sign-in-view/sign-in-view.component.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,13 +19,16 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/frontend/package.json" />
   </component>
   <component name="ProjectId" id="26Bsgnp9h3sWN6AJXYXLTJxF9jr" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -30,46 +37,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Users\d.mertens-lokal\IdeaProjects\budget_book\frontend\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/frontend/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\d.mertens-lokal\IdeaProjects\budget_book\frontend\src\app\service\hashing" />
-    </key>
-  </component>
-  <component name="RunManager" selected="npm.Angular CLI Server">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
-      <method v="2" />
-    </configuration>
-    <configuration name="Angular CLI Server" type="js.build_tools.npm">
-      <package-json value="$PROJECT_DIR$/frontend/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -86,6 +61,7 @@
       <workItem from="1651041469992" duration="467000" />
       <workItem from="1651042139689" duration="10000" />
       <workItem from="1651133598993" duration="450000" />
+      <workItem from="1652249401406" duration="4531000" />
     </task>
     <task id="LOCAL-00001" summary="Edit Login .css">
       <created>1648717419214</created>
@@ -108,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651140787608</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Passwort ändern/ Konto anzeigen/ Konto bearbeiten">
+      <created>1651745556368</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1651745556368</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,11 +119,11 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Edit Login .css" />
     <MESSAGE value="Mein Konto überarbeitet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mein Konto überarbeitet" />
+    <MESSAGE value="Passwort ändern/ Konto anzeigen/ Konto bearbeiten" />
+    <option name="LAST_COMMIT_MESSAGE" value="Passwort ändern/ Konto anzeigen/ Konto bearbeiten" />
   </component>
 </project>

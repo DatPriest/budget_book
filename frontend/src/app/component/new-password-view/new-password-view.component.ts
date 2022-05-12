@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from "@angular/router";
 import { Observable, of } from 'rxjs';
-import { NewPasswordRequestModule } from 'src/app/model/new-password-request/new-password-request.module';
-import { NewPasswordVerificationModule } from 'src/app/model/new-password-verification/new-password-verification.module';
+import { NewPasswordModule } from 'src/app/model/new-password/new-password.module';
 import { SecurityQuestionModule } from 'src/app/model/security-question/security-question.module';
+import { AlertService } from 'src/app/service/alert/alert.service';
+import { HashingService } from 'src/app/service/hashing/hashing.service';
 import { UserService } from 'src/app/service/user/user.service';
 
 @Component({
@@ -18,8 +19,10 @@ export class NewPasswordViewComponent implements OnInit {
   showPassword: boolean = false;
   showPasswordReplay: boolean = false;
   userID: number;
+  hash: string;
   securityQuestion$ : Observable<SecurityQuestionModule[]> = of([]);
-  constructor(public router: Router, private formBuilder: FormBuilder, private userService: UserService) {
+  constructor(public router: Router, public formBuilder: FormBuilder, public userService: UserService,
+    public hashService: HashingService, public alertService: AlertService) {
     this.securityQuestion$ = this.userService.getSecurityQuestion();
   }
 
@@ -32,21 +35,21 @@ export class NewPasswordViewComponent implements OnInit {
   }
 
   savePassword(newPasswordForm: NgForm): void {
-    if (newPasswordForm.value.password_1 == newPasswordForm.value.password_2) {
-      if (newPasswordForm.value.securityQuestion != '' && newPasswordForm.value.securityAnswer != '') {
-        const newPasswordData = new NewPasswordRequestModule(newPasswordForm.value.email, newPasswordForm.value.securityQuestion, newPasswordForm.value.securityAnswer);
-        this.userService.passwordForgotRequest(newPasswordData).subscribe(data => {
-          console.warn(data); // Gibt eine ganzen User aus.
-          console.error(data.email + ' ' + data.securityQuestion + ' ' + data.securityAnswer); // Gibt die E-Mail aus, rest ist undefiniert.
-          /*if (data.email != null && data.securityQuestion != null && data.securityAnswer != null) {
-            newPasswordForm.value.hash = newPasswordForm.value.password_1; // hash muss noch gehasht werden. MH-18
-            const newPasswordVerifyData = new NewPasswordVerification(newPasswordForm.value.hash, 1, newPasswordForm.value.email); // '2' = temp ID
-            this.userService.passwordForgotVerification(newPasswordVerifyData).subscribe(data => this.router.navigate(['/sign-in']));
-          }*/
-        });
-      }
+    if (newPasswordForm.value.password_1 == '' && newPasswordForm.value.password_2 == '') {
+      this.alertService.alert("Oops" ,  "Die Passwörter dürfen nicht leer sein!" ,  "error");
     } else {
-      alert("Passwörter stimmen nicht überein!");
+      if (newPasswordForm.value.password_1 == newPasswordForm.value.password_2) {
+        this.hash = this.hashService.encrypt(newPasswordForm.value.password_1);
+        if (newPasswordForm.value.securityQuestion != '' && newPasswordForm.value.securityAnswer != '') {
+          const newPasswordData = new NewPasswordModule(newPasswordForm.value.email, this.hash, newPasswordForm.value.securityQuestion, newPasswordForm.value.securityAnswer);
+          this.userService.passwordForgotRequest(newPasswordData).subscribe(data => {
+            this.alertService.successfulAlert("Passwort erfolgreich zurückgesetzt!" ,  "" ,  "success", 2500);
+            this.router.navigate(['/sign-in']);
+          });
+        }
+      } else {
+        this.alertService.alert("Oops" ,  "Die Passwörter stimmen nicht überein!" ,  "error");
+      }
     }
   }
 

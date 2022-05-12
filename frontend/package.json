@@ -20,14 +20,14 @@
     "@angular/platform-browser": "~13.0.0",
     "@angular/platform-browser-dynamic": "~13.0.0",
     "@angular/router": "~13.0.0",
-    "ng-angular-popup": "^0.1.2",
     "rxjs": "~7.4.0",
+    "sweetalert": "^2.1.2",
     "ts-md5": "^1.2.11",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~13.0.4",
+    "@angular-devkit/build-angular": "^13.3.5",
     "@angular/cli": "~13.0.4",
     "@angular/compiler-cli": "~13.0.0",
     "@types/jasmine": "~3.10.0",
