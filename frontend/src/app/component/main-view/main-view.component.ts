@@ -19,7 +19,7 @@ export class MainViewComponent implements OnInit {
   groups: GroupModule[] = []
   constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule) {
     //this.getGroupsByUserId();
-    this.groups.push(new GroupModule(1, 'Test', this.image));
+    this.groups.push(new GroupModule(1, 'Test', null));
   }
 
   getGroupsByUserId(): void {
