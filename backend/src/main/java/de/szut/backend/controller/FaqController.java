@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Controller der API-Calls für die FAQ Tabelle
+ */
 @CrossOrigin
 @RequestMapping(value = "/api/v1/faq")
 @RestController
@@ -28,6 +31,7 @@ public class FaqController {
     }
 
     /**
+     * Neue Frage wird an die Datenbank übermittelt
      * @param postFaqDto
      * @return
      * @throws TypeNotPresentException
@@ -37,6 +41,10 @@ public class FaqController {
         return new ResponseEntity<>(service.createFaq(postFaqDto), HttpStatus.CREATED);
     }
 
+    /**
+     * Gibt alle Fragen zurück egal ob beantwortet oder nicht.
+     * @return
+     */
     @GetMapping(path = "/getAll", produces = "application/json")
     public String GetAllFaqs() {
         List<OutputFaqDto> faqList = this.service.getAllOutputFaq();
@@ -44,6 +52,10 @@ public class FaqController {
         return gson.toJson(faqList);
     }
 
+    /**
+     * Gibt alle Fragen zurück die beantwortet sind
+     * @return
+     */
     @GetMapping(path = "/getAllWithAnswers", produces = "application/json")
     public String GetAllFaqsWithAnswers() {
         List<OutputFaqDto> faqList = this.service.getAllOutputFaqWithAnswers();
@@ -52,12 +64,12 @@ public class FaqController {
     }
 
     /**
-     * TODO:
+     * Gibt alle Fragen (und die Antworten falls es welche gibt) eines Benutzers zurück.
      * @param userId
      * @return
      * @throws TypeNotPresentException
      */
-    @GetMapping(path = "/getAllFromUser/{UserId}", produces = "application/json")
+    @GetMapping(path = "/getAllFromUser/{userId}", produces = "application/json")
     public String GetUsersToGroup(@PathVariable long userId) throws TypeNotPresentException {
         List<OutputFaqDto> faqList = this.service.getAllFaqFromUser(userId);
         Gson gson = new Gson();
