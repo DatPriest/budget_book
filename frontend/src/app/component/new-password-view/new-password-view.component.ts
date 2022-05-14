@@ -46,6 +46,8 @@ export class NewPasswordViewComponent implements OnInit {
             this.alertService.successfulAlert("Passwort erfolgreich zurückgesetzt!",  "",  "success", 2500);
             this.router.navigate(['/sign-in']);
           });
+        } else {
+          this.alertService.alert("Oops",  "Bitte eine Sicherheitsfrage und eine Antwort ausfüllen!",  "error");
         }
       } else {
         this.alertService.alert("Oops",  "Passwörter stimmen nicht überein!",  "error");
