@@ -33,6 +33,10 @@ export class GroupService {
     return this.http.post<NewExpensesModule>('http://localhost:4000/api/v1/groups/addExpenses', JSON.stringify(newExpenses), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
+  createInviteCode(groupId: number, inviteCode: string) {
+    return this.http.post<GroupInviteModule[]>(`http://localhost:4000/api/v1/groups/create/inviteCode/${groupId}/${inviteCode}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
   joinGroup(inviteCode: string) {
     return this.http.post<GroupInviteModule[]>(`http://localhost:4000/api/v1/groups/joinGroup/${inviteCode}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }

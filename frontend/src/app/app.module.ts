@@ -31,6 +31,7 @@ import { EditPasswordViewComponent } from './component/edit-password-view/edit-p
 import { CategorieViewComponent } from './component/categorie-view/categorie-view.component';
 import { NewCategorieViewComponent } from './component/new-categorie-view/new-categorie-view.component';
 import { InviteViewComponent } from './component/invite-view/invite-view.component';
+import { CreateInviteViewComponent } from './component/create-invite-view/create-invite-view.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { InviteViewComponent } from './component/invite-view/invite-view.compone
     EditPasswordViewComponent,
     CategorieViewComponent,
     NewCategorieViewComponent,
-    InviteViewComponent
+    InviteViewComponent,
+    CreateInviteViewComponent
   ],
   imports: [
     BrowserAnimationsModule,

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InviteViewComponent } from './invite-view.component';
+import { CreateInviteViewComponent } from './create-invite-view.component';
 
-describe('InviteLinkViewComponent', () => {
-  let component: InviteViewComponent;
-  let fixture: ComponentFixture<InviteViewComponent>;
+describe('CreateInviteViewComponent', () => {
+  let component: CreateInviteViewComponent;
+  let fixture: ComponentFixture<CreateInviteViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InviteViewComponent ]
+      declarations: [ CreateInviteViewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InviteViewComponent);
+    fixture = TestBed.createComponent(CreateInviteViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
