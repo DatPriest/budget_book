@@ -36,9 +36,9 @@ export class SignInViewComponent implements OnInit {
       if (data.email != null && data.hash != null) {
         this.app.userId = data.userId;
         this.router.navigate(['main']);
-        this.alertService.successfulAlert("Herzlich willkommen!" ,  "Der Login war erfolgreich." ,  "success", 2500);
+        this.alertService.successfulAlert("Herzlich willkommen!",  "Login war erfolgreich.",  "success", 2500);
       } else {
-        this.alertService.alert("Oops" ,  "User not found or bad password" ,  "error");
+        this.alertService.alert("Oops",  "E-Mail und Passwort stimmen nicht überein!",  "error");
       }
     });
   }

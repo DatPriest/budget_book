@@ -36,19 +36,19 @@ export class NewPasswordViewComponent implements OnInit {
 
   savePassword(newPasswordForm: NgForm): void {
     if (newPasswordForm.value.password_1 == '' && newPasswordForm.value.password_2 == '') {
-      this.alertService.alert("Oops" ,  "Die Passwörter dürfen nicht leer sein!" ,  "error");
+      this.alertService.alert("Oops",  "Passwörter dürfen nicht leer sein!",  "error");
     } else {
       if (newPasswordForm.value.password_1 == newPasswordForm.value.password_2) {
         this.hash = this.hashService.encrypt(newPasswordForm.value.password_1);
         if (newPasswordForm.value.securityQuestion != '' && newPasswordForm.value.securityAnswer != '') {
           const newPasswordData = new NewPasswordModule(newPasswordForm.value.email, this.hash, newPasswordForm.value.securityQuestion, newPasswordForm.value.securityAnswer);
           this.userService.passwordForgotRequest(newPasswordData).subscribe(data => {
-            this.alertService.successfulAlert("Passwort erfolgreich zurückgesetzt!" ,  "" ,  "success", 2500);
+            this.alertService.successfulAlert("Passwort erfolgreich zurückgesetzt!",  "",  "success", 2500);
             this.router.navigate(['/sign-in']);
           });
         }
       } else {
-        this.alertService.alert("Oops" ,  "Die Passwörter stimmen nicht überein!" ,  "error");
+        this.alertService.alert("Oops",  "Passwörter stimmen nicht überein!",  "error");
       }
     }
   }
