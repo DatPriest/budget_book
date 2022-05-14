@@ -35,19 +35,23 @@ export class SignUpViewComponent implements OnInit {
   }
 
   registrationUser(signUpForm: NgForm): void {
-    if (signUpForm.value.password_1 == signUpForm.value.password_2) {
-      if (signUpForm.value.securityQuestion != '' && signUpForm.value.securityAnswer != '') {
-        this.hash = this.hashService.encrypt(signUpForm.value.password_1);
-        const signUpData = new UserModule(null, signUpForm.value.firstName, signUpForm.value.lastName, this.hash, signUpForm.value.email, signUpForm.value.securityQuestion, signUpForm.value.securityAnswer, this.image);
-        this.userService.registerUser(signUpData).subscribe(data => {
-          this.alertService.successfulAlert("Erfolgreich registriert!" ,  "" ,  "success", 2500);
-          this.router.navigate(['/sign-in']);
-        });
-      } else {
-        this.alertService.alert("Oops" ,  "Bitte eine Sicherheitsfrage und eine Antwort ausfüllen!" ,  "error");
-      }
+    if (signUpForm.value.password_1 == '' && signUpForm.value.password_2 == '') {
+      this.alertService.alert("Oops" ,  "Die Passwörter dürfen nicht leer sein!" ,  "error");
     } else {
-        this.alertService.alert("Oops" ,  "Die Passwörter stimmen nicht überein!" ,  "error");
+      if (signUpForm.value.password_1 == signUpForm.value.password_2) {
+        if (signUpForm.value.securityQuestion != '' && signUpForm.value.securityAnswer != '') {
+          this.hash = this.hashService.encrypt(signUpForm.value.password_1);
+          const signUpData = new UserModule(null, signUpForm.value.firstName, signUpForm.value.lastName, this.hash, signUpForm.value.email, signUpForm.value.securityQuestion, signUpForm.value.securityAnswer, this.image);
+          this.userService.registerUser(signUpData).subscribe(data => {
+            this.alertService.successfulAlert("Erfolgreich registriert!" ,  "" ,  "success", 2500);
+            this.router.navigate(['/sign-in']);
+          });
+        } else {
+          this.alertService.alert("Oops" ,  "Bitte eine Sicherheitsfrage und eine Antwort ausfüllen!" ,  "error");
+        }
+      } else {
+          this.alertService.alert("Oops" ,  "Die Passwörter stimmen nicht überein!" ,  "error");
+      }
     }
   }
 
