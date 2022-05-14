@@ -8,6 +8,7 @@ import {Observable, of} from "rxjs";
   styleUrls: ['./categorie-view.component.css']
 })
 export class CategorieViewComponent implements OnInit {
+  
   categories$: Observable<String[]> = of([]);
   constructor(public router: Router) { }
 

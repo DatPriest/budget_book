@@ -42,6 +42,6 @@ export class GroupService {
   }
 
   getHistory(groupId: number) {
-    return this.http.post<HistoryModule[]>(`http://localhost:4000/api/v1/groups/getHistory/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.get<HistoryModule[]>(`http://localhost:4000/api/v1/history/entries/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 }

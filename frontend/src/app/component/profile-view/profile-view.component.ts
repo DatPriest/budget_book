@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/service/user/user.service';
 import { UserModule } from 'src/app/model/user/user.module';
-import { Observable, of } from 'rxjs';
 import { AppModule } from 'src/app/app.module';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { InviteViewComponent } from '../invite-view/invite-view.component';

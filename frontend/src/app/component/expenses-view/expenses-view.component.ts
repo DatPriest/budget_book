@@ -10,8 +10,8 @@ import { NewExpensesViewComponent } from '../new-expenses-view/new-expenses-view
   styleUrls: ['./expenses-view.component.css']
 })
 export class ExpensesViewComponent implements OnInit {
-  expenses: ExpensesModule[] = [];
 
+  expenses: ExpensesModule[] = [];
   constructor(public router: Router, public dialog: MatDialog) {
     // Wenn mehr Datensätze vorhanden sind, werden die Zeilen auch kleiner.
     this.expenses.push(new ExpensesModule('Miete', '124,47', '02.04.2022'));

@@ -15,6 +15,7 @@ import { CreateInviteViewComponent } from '../create-invite-view/create-invite-v
   styleUrls: ['./group-view.component.css']
 })
 export class GroupViewComponent implements OnInit {
+  
   user$ : Observable<UserModule[]> = of([]);
   group: GroupModule;
   inviteCode: string;
