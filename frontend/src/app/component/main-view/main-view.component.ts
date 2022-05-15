@@ -6,6 +6,7 @@ import { CreateGroupViewComponent } from '../create-group-view/create-group-view
 import { GroupService } from 'src/app/service/group/group.service';
 import { Observable, of } from 'rxjs';
 import { AppModule } from 'src/app/app.module';
+import { CreateInviteViewComponent } from '../create-invite-view/create-invite-view.component';
 
 @Component({
   selector: 'app-main-view',

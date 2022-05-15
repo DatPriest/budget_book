@@ -1,6 +1,12 @@
 <form class="createInvite">
   <h1 class="header_Text">Einladungscode erstellen</h1>
-    <input name="inviteCode" type="text" class="input_field" id="invite_Code" value="{{this.inviteCode}}" placeholder="Invite Code" readonly>
+
+    <div class="input_field">
+      <div class="form-floating">
+        <input name="inviteCode" type="text" class="input_field" id="invite_Code" value="{{this.inviteCode}}" placeholder="Invite Code" readonly>
+        <button type="button" class="copy_inviteCode material-icons" (click)="copyMessage(this.inviteCode)" tabindex="-1">content_copy</button>
+      </div>
+    </div>
   <div class="row">
     <div class="column_save">
       <button type="button" id="save" (click)="createInvite()"><span class="group_create material-icons">restart_alt</span></button>

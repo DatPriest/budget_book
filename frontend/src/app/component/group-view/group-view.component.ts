@@ -15,7 +15,7 @@ import { CreateInviteViewComponent } from '../create-invite-view/create-invite-v
   styleUrls: ['./group-view.component.css']
 })
 export class GroupViewComponent implements OnInit {
-  
+
   user$ : Observable<UserModule[]> = of([]);
   group: GroupModule;
   inviteCode: string;
@@ -45,6 +45,7 @@ export class GroupViewComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.autoFocus = true;
+    dialogConfig.width = "400px";
 
     this.dialog.open(CreateInviteViewComponent, dialogConfig)
   }

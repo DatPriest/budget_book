@@ -42,3 +42,24 @@
   text-shadow: black;
   font-size: 20px;
 }
+
+.input_field {
+  padding: 10px 0px;
+  position: relative;
+}
+
+.input_field:active,
+.input_field:focus,
+.input_field:hover {
+  outline: none;
+  border-bottom-color: #6A679E;
+}
+
+.copy_inviteCode{
+  font-size: 150%;
+  border: none;
+  align-items: center;
+  width: 0%;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}

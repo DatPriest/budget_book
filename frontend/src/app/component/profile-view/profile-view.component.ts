@@ -36,6 +36,7 @@ export class ProfileViewComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.autoFocus = true;
+    dialogConfig.width = "400px";
 
     this.dialog.open(InviteViewComponent, dialogConfig);
   }
