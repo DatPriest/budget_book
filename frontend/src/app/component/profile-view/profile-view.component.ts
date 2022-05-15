@@ -5,6 +5,7 @@ import { UserModule } from 'src/app/model/user/user.module';
 import { AppModule } from 'src/app/app.module';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { InviteViewComponent } from '../invite-view/invite-view.component';
+import { AlertService } from 'src/app/service/alert/alert.service';
 
 @Component({
   selector: 'app-profile-view',
@@ -14,7 +15,7 @@ import { InviteViewComponent } from '../invite-view/invite-view.component';
 export class ProfileViewComponent implements OnInit {
 
   user: UserModule;
-  constructor(public router: Router, public userService: UserService, public app: AppModule, public dialog: MatDialog) {
+  constructor(public router: Router, public userService: UserService, public app: AppModule, public dialog: MatDialog, public alertService: AlertService) {
     this.userService.getProfile(this.app.userId);
   }
 
@@ -27,9 +28,7 @@ export class ProfileViewComponent implements OnInit {
   }
 
   deleteProfile(): void {
-    if(confirm('Möchten Sie wirklich Ihr Konto löschen?')) {
-      console.log('Konto wurde gelöscht.');
-    }
+    this.alertService.deleteAccountAlert();
   }
 
   joinGroupDialog(): void {
