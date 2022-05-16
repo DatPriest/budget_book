@@ -32,13 +32,15 @@
 .sidebar {
   width: 150px;
   position: absolute;
-  top: 10px;
+  bottom: 150px;
   right: 25px;
 }
 
 .pages_menu {
-  width: 100px;
-  text-align: right;
+  width: 150px;
+  position: absolute;
+  right: 25px;
+
 }
 
 .container {

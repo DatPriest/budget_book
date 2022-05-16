@@ -29,7 +29,6 @@ export class ExpensesViewComponent implements OnInit {
   add(): void {
     const dialogConfig = new MatDialogConfig();
 
-    dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
     this.dialog.open(NewExpensesViewComponent, dialogConfig);
