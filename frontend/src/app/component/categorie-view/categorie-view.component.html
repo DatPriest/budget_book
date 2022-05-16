@@ -9,7 +9,7 @@
   <ng-container>
     <div class="container">
       <div class="screen">
-        <label *ngFor="let category of categories$| async">{{category}}</label>
+        <label *ngFor="let c of categories$| async">{{c.categorie}}</label>
         <div class="column">
         </div>
       </div>
@@ -17,7 +17,7 @@
     <div class="button">
       <tr>
         <button type="button" (click)="backToMenuTemp()"><span class="material-icons">arrow_back</span></button>
-        <button type="button" ide="profile">Hinzufügen</button>
+        <button type="button" ide="profile" (click)="add()">Hinzufügen</button>
         <button type="button" ide="profile">Löschen</button>
       </tr>
     </div>

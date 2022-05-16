@@ -6,6 +6,8 @@ import { NewExpensesModule } from 'src/app/model/new-expenses/new-expenses.modul
 import { HistoryModule } from 'src/app/model/history/history.module';
 import { GroupInviteModule } from 'src/app/model/group-invite/group-invite.module';
 import { ExpensesModule } from 'src/app/model/expenses/expenses.module';
+import { NewCategorieModule } from 'src/app/model/new-categorie/new-categorie.module';
+import { CategorieModule } from 'src/app/model/categorie/categorie.module';
 
 @Injectable({
   providedIn: 'root'
@@ -48,5 +50,13 @@ export class GroupService {
 
   getHistory(groupId: number) {
     return this.http.get<HistoryModule[]>(`http://localhost:4000/api/v1/history/entries/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
+  createCategorie(newCategorie: NewCategorieModule) {
+    return this.http.post<NewCategorieModule>('http://localhost:4000/api/v1/categories/category', JSON.stringify(newCategorie), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
+  getAllCategorieByGroupId(groupId: number) {
+    return this.http.get<CategorieModule[]>(`http://localhost:4000/api/v1/categories/categories/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 }
