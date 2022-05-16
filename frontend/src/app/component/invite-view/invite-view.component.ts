@@ -18,8 +18,12 @@ export class InviteViewComponent implements OnInit {
   joinGroup(joinGroupForm: NgForm): void {
     if (joinGroupForm.value.inviteCode != '') {
       this.groupService.joinGroup(joinGroupForm.value.inviteCode).subscribe(data => {
-        this.alertService.successfulAlert("Herzlich Glückwunsch!" ,  "Sie sind erfolgreich der Gruppe beigetreten." ,  "success", 2500);
-        this.dialogRef.close();
+        if (data.valid = true) {
+          this.alertService.successfulAlert("Herzlich Glückwunsch!" ,  "Sie sind erfolgreich der Gruppe beigetreten." ,  "success", 2500);
+          this.dialogRef.close();
+        } else {
+          this.alertService.alert("Oops" ,  "Der Einladungslink ist ungültig!" ,  "error");
+        }
       })
     } else {
       this.alertService.alert("Oops" ,  "Der Einladungslink ist leer!" ,  "error");
