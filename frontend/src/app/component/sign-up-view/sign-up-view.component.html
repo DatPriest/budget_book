@@ -4,34 +4,34 @@
       <header>
         <div class="screen_content">
           <form class="register" (ngSubmit)="registrationUser(signUpForm)" #signUpForm="ngForm">
-            <span class="header_Text">Registrierung</span>
+            <span class="header_Text">{{'signup.register'| translate}}</span>
             <div class="row">
               <div class="column">
                 <div class="input_field">
-                  <input name="firstName" type="text" class="input_field" id="newUserFirstName" ngModel placeholder="Vorname">
+                  <input name="firstName" type="text" class="input_field" id="newUserFirstName" ngModel placeholder="{{'forename'| translate}}">
                 </div>
                 <div class="input_field">
-                  <input name="lastName" type="text" class="input_field" id="newUserLastName" ngModel placeholder="Nachname">
+                  <input name="lastName" type="text" class="input_field" id="newUserLastName" ngModel placeholder="{{'surname'| translate}}">
                 </div>
                 <div class="input_field">
-                  <input name="email" type="email" class="input_field" id="newUserEmail" ngModel placeholder="E-Mail">
+                  <input name="email" type="email" class="input_field" id="newUserEmail" ngModel placeholder="{{'email'| translate}}">
                 </div>
               </div>
               <div class="column">
                 <div class="input_field">
-                  <input name="password_1" type="{{showPassword ? 'text' : 'password' }}" class="input_field" id="newUserPassword" ngModel placeholder="Passwort">
+                  <input name="password_1" type="{{showPassword ? 'text' : 'password' }}" class="input_field" id="newUserPassword" ngModel placeholder="{{'password'| translate}}">
                   <button type="button" class="show_passwort material-icons" (click)="togglePassword()" tabindex="-1">{{showPassword ? 'visibility_off' : 'visibility' }}</button>
                 </div>
                 <div class="input_field">
-                  <input name="password_2" type="{{showPasswordReplay ? 'text' : 'password' }}" class="input_field" id="newUserPasswordreplay" ngModel placeholder="Passwort Wiederholung">
+                  <input name="password_2" type="{{showPasswordReplay ? 'text' : 'password' }}" class="input_field" id="newUserPasswordreplay" ngModel placeholder="{{'signup.pwretype'| translate}}">
                   <button type="button" class="show_passwort material-icons" (click)="togglePasswordReplay()" tabindex="-1">{{showPasswordReplay ? 'visibility_off' : 'visibility' }}</button>
                 </div>
-                <input name="image" (change)="onChange($event)" type="file" class="input_file" id="inputImage" ngModel placeholder="Logo" accept="image/png, image/jpeg">
+                <input name="image" (change)="onChange($event)" type="file" class="input_file" id="inputImage" ngModel placeholder="{{'signup.logo'| translate}}" accept="image/png, image/jpeg">
               </div>
             </div>
             <div>
-              <label class="sicherheit_Header">Sicherheitsfrage:
-                <span class="sicherheit_Text">Wählen Sie 1 Frage aus!</span>
+              <label class="sicherheit_Header">{{'secQuestion'| translate}}
+                <span class="sicherheit_Text">{{'secLine'| translate}}</span>
                 <select name="securityQuestion" form="formular1" class="sicherheit_menu" ngModel>
                   <ng-container *ngFor="let sQ of securityQuestion$ | async">
                     <option value="{{sQ.securityAnswer}}">{{sQ.securityQuestion}}</option>
@@ -43,7 +43,7 @@
                   <option value="MetParents">In welcher Stadt bzw. welchem Ort haben sich Ihre Eltern kennengelernt?</option>-->
                 </select>
                 <div class="sicherheit_field">
-                  <input name="securityAnswer" type="text" class="sicherheit_field" id="Sicherheitsfrage" ngModel placeholder="Sicherheitsfrage" autocomplete="off">
+                  <input name="securityAnswer" type="text" class="sicherheit_field" id="Sicherheitsfrage" ngModel placeholder="{{'secAnswer'| translate}}" autocomplete="off">
                 </div>
               </label>
             </div>

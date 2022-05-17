@@ -12,7 +12,7 @@ export class AppComponent {
 
   constructor(public router: Router, public translate: TranslateService) {
     translate.addLangs(['en', 'de']);
-    translate.setDefaultLang('en');
+    translate.setDefaultLang('de');
   }
 
 
