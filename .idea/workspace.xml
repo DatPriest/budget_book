@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="settings">
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/i18n/de.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/i18n/en.json" afterDir="false" />
+    <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="MH-103 #time 3h #comment service hinzugefügt/ Json Dateien angelegt / Texte bearbeitet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/ask-question-view/ask-question-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/ask-question-view/ask-question-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/create-group-view/create-group-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/create-group-view/create-group-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/edit-profile-view/edit-profile-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/edit-profile-view/edit-profile-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/expenses-view/expenses-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/expenses-view/expenses-view.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/component/menu-view/menu-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/menu-view/menu-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/new-categorie-view/new-categorie-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/new-categorie-view/new-categorie-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/new-expenses-view/new-expenses-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/new-expenses-view/new-expenses-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/new-password-view/new-password-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/new-password-view/new-password-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/privacy-view/privacy-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/privacy-view/privacy-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/profile-view/profile-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/profile-view/profile-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/sign-in-view/sign-in-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/sign-in-view/sign-in-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/sign-up-view/sign-up-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/sign-up-view/sign-up-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/i18n/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/i18n/de.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652790697406</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="MH-103 #time 3h #comment service hinzugefügt/ Json Dateien angelegt / Texte bearbeitet">
+      <created>1652795200230</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1652795200230</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +191,7 @@
     <MESSAGE value="Mein Konto überarbeitet" />
     <MESSAGE value="Passwort ändern/ Konto anzeigen/ Konto bearbeiten" />
     <MESSAGE value="settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="settings" />
+    <MESSAGE value="MH-103 #time 3h #comment service hinzugefügt/ Json Dateien angelegt / Texte bearbeitet" />
+    <option name="LAST_COMMIT_MESSAGE" value="MH-103 #time 3h #comment service hinzugefügt/ Json Dateien angelegt / Texte bearbeitet" />
   </component>
 </project>

@@ -6,6 +6,8 @@
   "secAnswer": "Antwort:",
   "secLine": "Wählen Sie 1 Frage aus!",
   "secQuestion": "Sicherheitsfrage:",
+  "saveBtn": "speichern",
+  "clsBtn": "Zurück",
   "login": {
     "title": "Log dich ein!",
     "loginmsg": "Anmelden",
@@ -46,7 +48,9 @@
     "date": "Datum",
     "amount": "Betrag",
     "addBtn": "Hinzufügen",
-    "closeBtn": "Schließen"
+    "closeBtn": "Schließen",
+    "headerExp": "Alle Ausgaben",
+    "expenses": "Ausgaben:"
   },
   "newCategory": {
     "sample": "new-categorie-view works!"
@@ -55,10 +59,29 @@
     "settings": "Einstellungen",
     "logout": "Ausloggen",
     "help&settings": "Hilfe & Einstellungen",
-    "quiz" : "Quiz",
-    "faq" : "FAQ",
+    "quiz": "Quiz",
+    "faq": "FAQ",
     "privacy": "Datenschutz",
-    "impressum": "Impressum"
+    "impressum": "Impressum",
+    "agb": "AGB",
+    "category" : "Kategorie"
+  },
+  "askQuestions": {
+    "template": "ask-question-view works!",
+    "backBtn": "Zurück"
+  },
+  "createGroup": {
+    "header": "Neue Gruppe",
+    "logoMsg": "Logo",
+    "grpNameMsg": "Gruppen Name",
+    "saveBtn": "speichern",
+    "clsBtn": "Schließen"
+  },
+  "editProfile": {
+    "header": "Mein Konto"
+  },
+  "group" : {
+
   }
 }
 

@@ -1,6 +1,6 @@
 <form>
   <header>
-    <span class="header_name">Mein Konto</span>
+    <span class="header_name">{{'editProfile.header'|translate}}</span>
   </header>
   <body>
     <form (ngSubmit)="saveEditUser(editProfileForm)" #editProfileForm="ngForm">
@@ -12,20 +12,20 @@
           </div>
           <div class="column">
             <div class="info">
-              <label class="label">Vorname:</label><br>
-              <input type="text" id="UserName" name="firstName" placeholder="Vorname" value="{{user.firstName}}"><br><br>
-              <label class="label">Nachname:</label>
-              <input type="text" id="UserName2" name="lastName" placeholder="Nachname" value="{{user.lastName}}"><br><br>
-              <label class="label">E-Mail:</label>
-              <input type="text" id="UserEmail" name="email" placeholder="E-Mail" value="{{user.email}}"><br><br>
+              <label class="label">{{'forename'|translate}}</label><br>
+              <input type="text" id="UserName" name="firstName" placeholder="{{'forename'|translate}}" value="{{user.firstName}}"><br><br>
+              <label class="label">{{'surname'|translate}}</label>
+              <input type="text" id="UserName2" name="lastName" placeholder="{{'surname'|translate}}" value="{{user.lastName}}"><br><br>
+              <label class="label">{{'email'|translate}}:</label>
+              <input type="text" id="UserEmail" name="email" placeholder="{{'email'|translate}}" value="{{user.email}}"><br><br>
             </div>
           </div>
         </div>
       </div>
       <div class="button">
         <tr>
-          <button type="button">Speichern</button>
-          <button type="button" (click)="backToProfile()">Zurück</button>
+          <button type="button">{{'saveBtn'|translate}}</button>
+          <button type="button" (click)="backToProfile()">{{'clsBtn'|translate}}</button>
         </tr>
       </div>
     </form>

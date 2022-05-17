@@ -1,7 +1,7 @@
 <form class="createGroup" (ngSubmit)="createGroup(createGroupForm)" #createGroupForm="ngForm">
-  <h1 class="header_Text">Neue Gruppe!</h1>
-    <input name="image" (change)="onChange($event)" type="file" class="input_file" id="inputImage" ngModel placeholder="Logo" accept="image/png, image/jpeg">
-    <input name="groupName" type="text" class="input_field" id="GroupName" ngModel placeholder="Gruppen Name">
+  <h1 class="header_Text">{{'createGroup.header'|translate}}</h1>
+    <input name="image" (change)="onChange($event)" type="file" class="input_file" id="inputImage" ngModel placeholder="{{'createGroup.logoMsg'|translate}}" accept="image/png, image/jpeg">
+    <input name="groupName" type="text" class="input_field" id="GroupName" ngModel placeholder="{{'createGroup.grpNameMsg'|translate}}">
   <div class="row">
     <div class="column_save">
       <button type="submit" id="save"><span class="group_create material-icons">save</span></button>
