@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="invite">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_05_22__10_51__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_12_05_22__10_51__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-    </list>
+    <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="settings" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,7 +83,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651745556368</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="settings">
+      <created>1652785193510</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1652785193510</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +124,7 @@
     <MESSAGE value="Edit Login .css" />
     <MESSAGE value="Mein Konto überarbeitet" />
     <MESSAGE value="Passwort ändern/ Konto anzeigen/ Konto bearbeiten" />
-    <option name="LAST_COMMIT_MESSAGE" value="Passwort ändern/ Konto anzeigen/ Konto bearbeiten" />
+    <MESSAGE value="settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="settings" />
   </component>
 </project>
