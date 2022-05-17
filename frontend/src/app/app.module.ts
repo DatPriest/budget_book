@@ -8,8 +8,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MaterialExampleModule } from 'src/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
-import { HttpClientModule } from "@angular/common/http";
-
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SignInViewComponent } from './component/sign-in-view/sign-in-view.component';
 import { SignUpViewComponent } from './component/sign-up-view/sign-up-view.component';
 import { NewPasswordViewComponent } from './component/new-password-view/new-password-view.component';
@@ -61,6 +62,13 @@ import { InviteLinkViewComponent } from './component/invite-link-view/invite-lin
     BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
     AngularMaterialModule,
     AppRoutingModule,
     RouterModule.forRoot([
@@ -92,4 +100,9 @@ import { InviteLinkViewComponent } from './component/invite-link-view/invite-lin
 export class AppModule {
   userId: number = 0;
   groupId: number = 0;
+}
+
+// AOT compilation support
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
 }

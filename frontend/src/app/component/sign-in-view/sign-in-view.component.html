@@ -5,7 +5,7 @@
         <div class="screen_content">
           <div class="login">
             <form (ngSubmit)="loginUser(signInForm)" #signInForm="ngForm">
-              <span class="header_Text">Bei dasistcool anmelden</span>
+              <span class="header_Text">{{'title' | translate}}</span>
               <div class="input_field form-floating">
                 <input name="email" type="email" class="input_field form-control" id="UserEmail" ngModel placeholder="E-Mail">
               </div>
