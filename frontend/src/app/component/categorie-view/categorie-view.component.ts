@@ -19,8 +19,8 @@ export class CategorieViewComponent implements OnInit {
     this.categories$ = this.groupService.getAllCategorieByGroupId(this.app.groupId);
   }
 
-  backToMenuTemp(): void {
-    this.router.navigate(['/main']);
+  back(): void {
+    this.router.navigate(['/group']);
   }
 
   add(): void {

@@ -1,10 +1,10 @@
 <form>
   <ng-container>
     <header>
+      <span class="header_name">{{group.groupName}}</span>
       <span class="material-icons burgerMenu">
         <app-menu-view></app-menu-view>
       </span>
-      <span class="header_name">{{group.groupName}}</span>
     </header>
     <body>
       <div class="container">
@@ -12,6 +12,7 @@
           <div class="button">
             <button type="button" (click)="ausgaben()"><span class="group_expenditures">Ausgaben</span></button>
             <button type="button" (click)="categories()"><span class="group_categories">Kategorien</span></button>
+            <button type="button" (click)="history()"><span class="group_history">History</span></button>
             <!--<button type="button" (click)="nofunction()"><span class="group_statistics">Statistik</span></button>-->
           </div>
           <div class="picture">
@@ -23,7 +24,6 @@
                 <!--<button type="button" (click)="nofunction()"><span class="group_history material-icons">edit</span></button>-->
                 <button type="button" (click)="createInviteDialog()"><span class="group_history material-icons">add</span></button>
                 <!--<button type="button" (click)="nofunction()"><span class="group_history material-icons">delete</span></button>-->
-                <button type="button" (click)="history()"><span class="group_history material-icons">history</span></button>
               </div>
             </li>
           </ul>

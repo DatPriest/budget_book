@@ -10,7 +10,7 @@ export class AskQuestionViewComponent implements OnInit {
 
   constructor(public router: Router) { }
 
-  backFAQ(): void {
+  back(): void {
     this.router.navigate(['/faq']);
   }
 

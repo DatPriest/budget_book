@@ -1,6 +1,9 @@
 <form>
   <header>
     <span class="header_name">Mein Konto</span>
+    <div class="button_back">
+      <button type="button" class="back_icon" (click)="back()"><span class="material-icons">arrow_back</span></button>
+    </div>
   </header>
   <body>
     <form (ngSubmit)="saveEditUser(editProfileForm)" #editProfileForm="ngForm">
@@ -25,7 +28,6 @@
       <div class="button">
         <tr>
           <button type="button">Speichern</button>
-          <button type="button" (click)="backToProfile()">Zurück</button>
         </tr>
       </div>
     </form>
