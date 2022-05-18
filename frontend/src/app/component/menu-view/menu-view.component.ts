@@ -37,10 +37,6 @@ export class MenuViewComponent implements OnInit {
     this.router.navigate(['/imprint']);
   }
 
-  moveToKategorie(): void {
-    this.router.navigate(['/categorie']);
-  }
-
   ngOnInit(): void {
   }
 }
