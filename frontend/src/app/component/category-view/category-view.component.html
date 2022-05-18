@@ -9,15 +9,13 @@
   <ng-container>
     <div class="container">
       <div class="screen">
+        <div class="button_add">
+          <button type="button" (click)="add()"><span class="material-icons">add</span></button>
+        </div>
         <label *ngFor="let c of categorys$| async">{{c.category}}</label>
         <div class="column">
         </div>
       </div>
-    </div>
-    <div class="button">
-      <tr>
-        <button type="button" ide="profile" (click)="add()">Hinzufügen</button>
-      </tr>
     </div>
   </ng-container>
   </body>
