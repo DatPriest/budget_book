@@ -53,46 +53,47 @@
 }
 
 .screen_group_1 {
-  height: 50%;
-  width: 50%;
+  height: 35%;
+  width: 20%;
   background: #FFFFFF;
-  top: 40px;
-  left: 80px;
-  border-radius: 25px 25px 25px 25px;
+  top: 10%;
+  left: 10%;
+  border-radius: 10% 10% 10% 10%;
   transform: none;
   overflow: hidden;
 }
 
 .screen_group_2 {
-  height: 240px;
-  width: 240px;
+  height: 35%;
+  width: 20%;
   background: #FFFFFF;
-  top: 40px;
-  left: 355px;
-  border-radius: 25px 25px 25px 25px;
+  top: 10%;
+  left: 40%;
+  border-radius: 10% 10% 10% 10%;
   transform: none;
   overflow: hidden;
 }
 
 .screen_group_3 {
-  height: 240px;
-  width: 240px;
+  height: 35%;
+  width: 20%;
   background: #FFFFFF;
-  top: 40px;
-  left: 625px;
-  border-radius: 25px 25px 25px 25px;
+  top: 10%;
+  left: 70%;
+  border-radius: 10% 10% 10% 10%;
   transform: none;
   overflow: hidden;
 }
 
 .screen_group_4 {
-  height: 240px;
-  width: 240px;
+  height: 35%;
+  width: 20%;
   background: #FFFFFF;
-  top: 320px;
-  left: 355px;
-  border-radius: 25px 25px 25px 25px;
+  top: 50%;
+  left: 40%;
+  border-radius: 10% 10% 10% 10%;
   transform: none;
+  overflow: hidden;
 }
 
 .screen_background_shape2 {
@@ -185,13 +186,14 @@
 }
 
 .group {
-  font-size: 20px;
+  font-size: 260%;
   color: black;
   text-align: center;
 }
 
 .group_create {
-  font-size: 150px;
+  font-size: 980%;
   color: black;
-  height: 150px;
+  left: 30%;
+  height: 980%;
 }
