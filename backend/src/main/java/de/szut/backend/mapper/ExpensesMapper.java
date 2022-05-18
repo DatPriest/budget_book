@@ -18,14 +18,15 @@ public class ExpensesMapper {
         return toCreate;
     }
 
-    public GetExpenseDTO mapExpenseToGetExpenseDto(Expense ExpenseToGet){
+    public GetExpenseDTO mapExpenseToGetExpenseDto(Expense expenseToGet){
         GetExpenseDTO dtoToGet = new GetExpenseDTO();
-        dtoToGet.setGroupId(ExpenseToGet.getGroupId());
-        dtoToGet.setUserId(ExpenseToGet.getUserId());
-        dtoToGet.setAmount(ExpenseToGet.getAmount());
-        dtoToGet.setCategoryId(ExpenseToGet.getCategoryId());
-        dtoToGet.setDate_Created(ExpenseToGet.getDate_Created());
-        dtoToGet.setDescription(ExpenseToGet.getDescription());
+        dtoToGet.setExpenseId(expenseToGet.getExpensesId());
+        dtoToGet.setGroupId(expenseToGet.getGroupId());
+        dtoToGet.setUserId(expenseToGet.getUserId());
+        dtoToGet.setAmount(expenseToGet.getAmount());
+        dtoToGet.setCategoryId(expenseToGet.getCategoryId());
+        dtoToGet.setDate_Created(expenseToGet.getDate_Created());
+        dtoToGet.setDescription(expenseToGet.getDescription());
         return dtoToGet;
     }
 }

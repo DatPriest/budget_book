@@ -6,6 +6,7 @@ import java.util.Date;
 
 @Data
 public class GetExpenseDTO {
+    private long expenseId;
     private long groupId;
     private long userId;
     private float amount;
