@@ -4,6 +4,8 @@ import de.szut.backend.dto.*;
 import de.szut.backend.mapper.UserMapper;
 import de.szut.backend.model.*;
 import de.szut.backend.model.History.HistoryActionToProcess;
+import de.szut.backend.repository.ImageRepository;
+import de.szut.backend.repository.SecurityQuestionRepository;
 import de.szut.backend.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,14 +18,23 @@ import java.util.UUID;
 
 @Service
 public class VerificationService extends BaseService {
-    UserRepository userRepository;
-    UserMapper userMapper;
-    HistoryLogService logService;
+    private final UserRepository userRepository;
+    private final UserMapper userMapper;
+    private final HistoryLogService logService;
+    private final ImageRepository imageRepository;
+    private final SecurityQuestionRepository securityQuestionRepository;
 
-    public VerificationService(UserRepository _userRepository, UserMapper _userMapper, HistoryLogService logService) {
+
+    public VerificationService(UserRepository _userRepository,
+                               UserMapper _userMapper,
+                               HistoryLogService logService,
+                               ImageRepository _imageRepository,
+                               SecurityQuestionRepository _securityQuestionRepository) {
         this.userRepository = _userRepository;
         this.userMapper = _userMapper;
         this.logService = logService;
+        this.imageRepository = _imageRepository;
+        this.securityQuestionRepository = _securityQuestionRepository;
     }
 
     public User login(LoginDto dto) {
@@ -32,7 +43,7 @@ public class VerificationService extends BaseService {
         if (queryUser != null && hashPassword(user.hash + queryUser.salt).equals(queryUser.hash)) {
             queryUser.lastLogin = new Date();
             userRepository.save(queryUser);
-            //log("UserLoginSuccess",queryUser.lastLogin.toString(),1);
+            //log("UserLoginSuccess",queryUser.lastLogin.toString());
             return queryUser;
         } else {
             return null;
@@ -40,9 +51,9 @@ public class VerificationService extends BaseService {
     }
 
     public ForgotBackDto forgotPassword(ForgotDto dto) {
-        var user =  userRepository.findByEmailAndSecurityQuestionAndSecurityAnswer(
+        User user =  userRepository.findByEmailAndSecurityQuestionIdAndSecurityAnswer(
                 dto.email,
-                dto.securityQuestion,
+                securityQuestionRepository.findByKey(dto.securityQuestionKey).getId(),
                 dto.securityAnswer.toLowerCase(Locale.ROOT));
         if (user != null) {
             user.salt = getSalt();
@@ -64,8 +75,10 @@ public class VerificationService extends BaseService {
         // Save User to Database with salt
         user.salt = getSalt();
         user.hash = hashPassword(user.hash + user.salt);
-
-
+        Image image = new Image();
+        image.imageString = dto.image;
+        image = this.imageRepository.save(image);
+        user.imageId = image.id;
         return userMapper.mapUserToUserCreateDto(this.userRepository.save(user));
     }
 
@@ -107,11 +120,10 @@ public class VerificationService extends BaseService {
 
     }
     //Beispiel Implementierung für die Erstellung eines Log-Eintrags
-    private void log (String action, String addition, long groupId){
+    private void log (String action, String addition){
         HistoryActionToProcess actionToProcess = new HistoryActionToProcess();
         actionToProcess.setAction(action);
         actionToProcess.setAdditionalInformation(addition);
-        actionToProcess.setGroupId(groupId);
         logService.createLogEntry(actionToProcess);
     }
 }

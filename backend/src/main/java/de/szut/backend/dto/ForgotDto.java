@@ -1,6 +1,6 @@
 package de.szut.backend.dto;
 
-import de.szut.backend.model.Question;
+import de.szut.backend.model.SecurityQuestion;
 import lombok.Data;
 import lombok.NonNull;
 
@@ -11,7 +11,7 @@ public class ForgotDto {
     @NonNull
     public String hash;
     @NonNull
-    public Question securityQuestion;
+    public String securityQuestionKey;
     @NonNull
     public String securityAnswer;
 

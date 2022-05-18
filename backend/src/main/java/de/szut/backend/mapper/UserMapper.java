@@ -6,6 +6,7 @@ import de.szut.backend.dto.ForgotBackDto;
 import de.szut.backend.dto.LoginDto;
 import de.szut.backend.dto.RegisterDto;
 import de.szut.backend.model.*;
+import de.szut.backend.repository.SecurityQuestionRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -13,6 +14,10 @@ import java.util.Locale;
 
 @Service
 public class UserMapper {
+    final SecurityQuestionRepository securityQuestionRepository;
+    public UserMapper(SecurityQuestionRepository _repo) {
+        this.securityQuestionRepository = _repo;
+    }
     public User mapRegisterDtoToUser(RegisterDto dto) {
         User user = new User();
         user.email = dto.email;
@@ -20,8 +25,9 @@ public class UserMapper {
         user.lastName = dto.lastName;
         user.lastLogin = new Date();
         user.hash = dto.hash;
-        user.securityQuestion = dto.securityQuestion;
+        user.securityQuestionId = this.securityQuestionRepository.findByKey(dto.securityQuestionKey).getId();
         user.securityAnswer = dto.securityAnswer.toLowerCase(Locale.ROOT);
+        user.imageId = 0;
         return user;
     }
 
