@@ -5,20 +5,45 @@
 .header_groupname {
   position: absolute;
   width: 98%;
-  top: 15px;
+  top: 3%;
   text-align: center;
   color: black;
-  font-size: 40px;
+  font-size: 300%;
   font-family: Raleway, sans-serif;
 }
 
 .burgerMenu{
   position: absolute;
-  top: 8px;
-  left: 16px;
-  font-size: 45px;
+  top: 3%;
+  left: 3%;
   color: rgb(0, 0, 0);
   cursor: pointer;
+}
+
+.pages_menu {
+  width: 100%;
+  text-align: right;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+}
+
+.screen {
+  background: linear-gradient(90deg, #5D54A4, #7C78B8);
+  position: absolute;
+  top: 10%;
+  height: 85%;
+  width: 90%;
+}
+
+.screen_content {
+  z-index: 1;
+  position: relative;
+  height: 100%;
 }
 
 .button{
@@ -36,39 +61,10 @@
   right: 25px;
 }
 
-.pages_menu {
-  width: 150px;
-  position: absolute;
-  right: 25px;
-
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 85vh;
-}
-
-.screen {
-  background: linear-gradient(90deg, #5D54A4, #7C78B8);
-  position: absolute;
-  top: 65px;
-  height: 730px;
-  width: 1260px;
-  box-shadow: 0px 0px 24px #5C5696;
-}
-
-.screen_content {
-  z-index: 1;
-  position: relative;
-  height: 100%;
-}
-
 .picture {
   position: absolute;
-  top: 22px;
-  left: 470px;
+  top: 5%;
+  left: 41%;
 }
 
 .ul {
@@ -89,19 +85,19 @@
   margin: 0 0 1em;
   table-layout: auto;
   max-width: 100%;
-  width: 150px;
+  width: 30%;
   padding: .3em .5em;
   position: absolute;
   text-align: center;
-  height: 150px;
-  top: 350px;
-  right: 270px;
+  height: 30%;
+  top: 43%;
+  right: 20%;
 }
 
 .user_table_header {
   border: thin solid white;
-  padding: .4em .6em;
-  background-color: gray;
+  padding: .4em .4em;
+  background-color: #b0b0b0;
   font-weight: 700;
 }
 
@@ -120,15 +116,13 @@
 
 #console {
   font-size: x-large;
-  border-spacing: 50px 10px;
   padding: .3em .5em;
-  border-width: 2px;
   border-style: solid;
   border-color: white;
-  width: 400px;
-  height: 300px;
+  width: 35%;
+  height: 50%;
   position: absolute;
-  top: 355px;
-  left: 160px;
+  top: 43%;
+  left: 10%;
   overflow-y: scroll;
 }
