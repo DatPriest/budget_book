@@ -7,9 +7,9 @@
       </div>
       <div class="column">
         <select name="subject" id="category" form="formular1" class="category_menu" ngModel>
-          <option value="noSelection"></option>
-          <option value="Rent">Miete</option>
-          <option value="Purchasing">Einkauf</option>
+          <ng-container *ngFor="let c of categorie$ | async">
+            <option>{{c.categorie}}</option>
+          </ng-container>
         </select>
       </div>
     </div>

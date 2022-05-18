@@ -18,9 +18,9 @@ export class CreateInviteViewComponent implements OnInit {
     public app: AppModule) { }
 
   createInvite(): void {
-    this.inviteCode = this.createRandomString();
-    this.groupService.createInviteCode(this.app.groupId, this.inviteCode);
+    this.groupService.getInviteCode(this.app.groupId).subscribe(data => this.inviteCode = data.inviteCode);
   }
+
   closeInvite(): void {
     this.dialogRef.close();
   }
@@ -40,16 +40,6 @@ export class CreateInviteViewComponent implements OnInit {
     selBox.select();
     document.execCommand('copy');
     document.body.removeChild(selBox);
-  }
-
-  createRandomString(): string {
-    var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    var result = '';
-    for ( var i = 0; i < 10; i++ ) {
-      result += randomChars.charAt(Math.floor(Math.random() * randomChars.length));
-    }
-    console.warn(result);
-    return result;
   }
 
   ngOnInit(): void {

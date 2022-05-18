@@ -8,6 +8,7 @@ import { GroupInviteModule } from 'src/app/model/group-invite/group-invite.modul
 import { ExpensesModule } from 'src/app/model/expenses/expenses.module';
 import { NewCategorieModule } from 'src/app/model/new-categorie/new-categorie.module';
 import { CategorieModule } from 'src/app/model/categorie/categorie.module';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -40,8 +41,8 @@ export class GroupService {
     return this.http.get<ExpensesModule[]>(`http://localhost:4000/api/v1/groups/getExpenses/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
-  createInviteCode(groupId: number, inviteCode: string) {
-    return this.http.post<GroupInviteModule>(`http://localhost:4000/api/v1/groups/create/inviteCode/${groupId}/${inviteCode}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  getInviteCode(groupId: number) : Observable<GroupInviteModule> {
+    return this.http.get<GroupInviteModule>(`http://localhost:4000/api/v1/groups/create/inviteCode/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   joinGroup(inviteCode: string) {
