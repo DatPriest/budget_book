@@ -37,8 +37,8 @@ export class GroupViewComponent implements OnInit {
     this.router.navigate(['/expenses']);
   }
 
-  categories(): void {
-    this.router.navigate(['/categorie']);
+  categorys(): void {
+    this.router.navigate(['/category']);
   }
 
   createInviteDialog(): void {

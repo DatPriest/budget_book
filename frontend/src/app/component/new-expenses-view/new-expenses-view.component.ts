@@ -6,7 +6,7 @@ import { GroupService } from 'src/app/service/group/group.service';
 import { AlertService } from 'src/app/service/alert/alert.service';
 import { NewExpensesModule } from 'src/app/model/new-expenses/new-expenses.module';
 import { AppModule } from 'src/app/app.module';
-import { CategorieModule } from 'src/app/model/categorie/categorie.module';
+import { CategoryModule } from 'src/app/model/category/category.module';
 import { Observable, of } from 'rxjs';
 
 @Component({
@@ -17,10 +17,10 @@ import { Observable, of } from 'rxjs';
 export class NewExpensesViewComponent implements OnInit {
 
   newExpensesForm: FormGroup;
-  categorie$: Observable<CategorieModule[]> = of([]);
+  category$: Observable<CategoryModule[]> = of([]);
   constructor(public router: Router, public formBuilder: FormBuilder, public dialogRef: MatDialogRef<NewExpensesViewComponent>,
     public groupService: GroupService, public alertService: AlertService, public app: AppModule) {
-      this.categorie$ = this.groupService.getAllCategorieByGroupId(this.app.groupId)
+      this.category$ = this.groupService.getAllCategoryByGroupId(this.app.groupId)
     }
 
   createExpenses(newExpensesForm: NgForm): void {

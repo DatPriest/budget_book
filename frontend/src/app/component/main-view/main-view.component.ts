@@ -36,7 +36,7 @@ export class MainViewComponent implements OnInit {
   }
 
   openGroup(groupId: number): void {
-    this.router.navigate(['/group'])
+    this.router.navigate(['/group']);
     //this.groupService.getGroupById(groupId).subscribe(data => this.router.navigate(['/group', data]));
   }
 

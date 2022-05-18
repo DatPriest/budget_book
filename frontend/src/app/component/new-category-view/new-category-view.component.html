@@ -1,0 +1,18 @@
+<form class="createCategory" (ngSubmit)="createCategory(newCategoryForm)" #newCategoryForm="ngForm">
+  <h1 class="header_Text">Kategorie erstellen</h1>
+  <div>
+    <div class="column_Category">
+      <input name="category" type="text" class="input_field" id="Category_text" ngModel placeholder="Kategorie">
+    </div>
+  </div>
+  <div>
+    <div class="row_button">
+      <div class="column_save">
+          <button type="submit"><span class="expenses_back material-icons">add</span></button>
+      </div>
+      <div class="column_close">
+          <button type="button" (click)="closeCategory()"><span class="expenses_close material-icons">close</span></button>
+      </div>
+    </div>
+  </div>
+</form>

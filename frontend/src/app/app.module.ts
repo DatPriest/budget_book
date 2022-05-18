@@ -28,8 +28,8 @@ import { PrivacyViewComponent } from './component/privacy-view/privacy-view.comp
 import { ImprintViewComponent } from './component/imprint-view/imprint-view.component';
 import { AskQuestionViewComponent } from './component/ask-question-view/ask-question-view.component';
 import { EditPasswordViewComponent } from './component/edit-password-view/edit-password-view.component';
-import { CategorieViewComponent } from './component/categorie-view/categorie-view.component';
-import { NewCategorieViewComponent } from './component/new-categorie-view/new-categorie-view.component';
+import { CategoryViewComponent } from './component/category-view/category-view.component';
+import { NewCategoryViewComponent } from './component/new-category-view/new-category-view.component';
 import { InviteViewComponent } from './component/invite-view/invite-view.component';
 import { CreateInviteViewComponent } from './component/create-invite-view/create-invite-view.component';
 
@@ -54,8 +54,8 @@ import { CreateInviteViewComponent } from './component/create-invite-view/create
     ImprintViewComponent,
     AskQuestionViewComponent,
     EditPasswordViewComponent,
-    CategorieViewComponent,
-    NewCategorieViewComponent,
+    CategoryViewComponent,
+    NewCategoryViewComponent,
     InviteViewComponent,
     CreateInviteViewComponent
   ],
@@ -80,7 +80,7 @@ import { CreateInviteViewComponent } from './component/create-invite-view/create
       {path: 'gtc', component: GtcViewComponent},                  // AGB´s
       {path: 'privacy', component: PrivacyViewComponent},          // Datenschutz
       {path: 'imprint', component: ImprintViewComponent},          // Impressum
-      {path: 'categorie', component: CategorieViewComponent},       // Kategorien
+      {path: 'category', component: CategoryViewComponent},       // Kategorien
       {path: 'edit-passwort', component: EditPasswordViewComponent} // Edit Passwort im Profil
     ]),
     FormsModule,

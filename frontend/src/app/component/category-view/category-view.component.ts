@@ -3,20 +3,20 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import {Observable, of} from "rxjs";
 import { AppModule } from 'src/app/app.module';
-import { CategorieModule } from 'src/app/model/categorie/categorie.module';
+import { CategoryModule } from 'src/app/model/category/category.module';
 import { GroupService } from 'src/app/service/group/group.service';
-import { NewCategorieViewComponent } from '../new-categorie-view/new-categorie-view.component';
+import { NewCategoryViewComponent } from '../new-category-view/new-category-view.component';
 
 @Component({
-  selector: 'app-categorie-view',
-  templateUrl: './categorie-view.component.html',
-  styleUrls: ['./categorie-view.component.css']
+  selector: 'app-category-view',
+  templateUrl: './category-view.component.html',
+  styleUrls: ['./category-view.component.css']
 })
-export class CategorieViewComponent implements OnInit {
+export class CategoryViewComponent implements OnInit {
 
-  categories$: Observable<CategorieModule[]> = of([]);
+  categorys$: Observable<CategoryModule[]> = of([]);
   constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule) {
-    this.categories$ = this.groupService.getAllCategorieByGroupId(this.app.groupId);
+    this.categorys$ = this.groupService.getAllCategoryByGroupId(this.app.groupId);
   }
 
   back(): void {
@@ -28,7 +28,7 @@ export class CategorieViewComponent implements OnInit {
 
     dialogConfig.autoFocus = true;
 
-    this.dialog.open(NewCategorieViewComponent, dialogConfig);
+    this.dialog.open(NewCategoryViewComponent, dialogConfig);
   }
 
   ngOnInit(): void {
