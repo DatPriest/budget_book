@@ -56,8 +56,8 @@ export class AlertService {
         swal("Der Account wurde erfolgreich gelöscht!", {
           icon: "success",
         });
+        this.router.navigate(['/sign-in']);
       }
-      this.router.navigate(['/sign-in']);
     })
   }
 }
