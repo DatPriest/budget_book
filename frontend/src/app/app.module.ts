@@ -83,13 +83,13 @@ import { CreateInviteViewComponent } from './component/create-invite-view/create
       {path: 'expenses',component: ExpensesViewComponent},
       {path: 'profile', component: ProfileViewComponent},
       {path: 'profile/edit', component: EditProfileViewComponent},
-      {path: 'faq', component: FaqViewComponent},                  // FAQ
-      {path: 'ask-question', component: AskQuestionViewComponent},  // Frage stellen
-      {path: 'gtc', component: GtcViewComponent},                  // AGB´s
-      {path: 'privacy', component: PrivacyViewComponent},          // Datenschutz
-      {path: 'imprint', component: ImprintViewComponent},          // Impressum
-      {path: 'category', component: CategoryViewComponent},       // Kategorien
-      {path: 'edit-passwort', component: EditPasswordViewComponent} // Edit Passwort im Profil
+      {path: 'faq', component: FaqViewComponent},
+      {path: 'ask-question', component: AskQuestionViewComponent},
+      {path: 'gtc', component: GtcViewComponent},
+      {path: 'privacy', component: PrivacyViewComponent},
+      {path: 'imprint', component: ImprintViewComponent},
+      {path: 'category', component: CategoryViewComponent},
+      {path: 'edit-passwort', component: EditPasswordViewComponent}
     ]),
     FormsModule,
     ReactiveFormsModule,
