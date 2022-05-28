@@ -1,9 +1,9 @@
 <form>
   <header>
-    <span class="header_ausgaben">Alle Ausgaben</span>
     <div class="button_back">
-      <button type="button" class="back_icon" (click)="back()"><span class="material-icons">arrow_back</span></button>
+      <button type="button" (click)="back()"><span class="material-icons">arrow_back</span></button>
     </div>
+    <span class="header_ausgaben">{{'expenses.headerExp'|translate}}</span>
   </header>
   <body>
     <div class="container">
@@ -14,7 +14,10 @@
         <div class="screen_expenses">
           <table class="expenses_table">
             <thead class="expenses_table_header">
-                <p>Ausgaben:</p>
+              <th>
+                <p>{{'expenses.expenses'|translate}}:</p>
+              </th>
+              <th></th>
               <th>
                 <!-- Anderer Sprint! -->
                 <!--<input type="text" class="input_field" id="expenses_search" placeholder="Suche">-->
@@ -22,7 +25,7 @@
               <!--<th></th>-->
             </thead>
             <tbody>
-              <ng-container *ngFor="let e of expenses$ | async">
+              <ng-container *ngFor="let e of expenses">
                 <tr class="expenses_table_line">
                   <td class="expenses_line_subject">{{e.subject}}</td>
                   <td class="expenses_line">{{e.amount}} €</td>
