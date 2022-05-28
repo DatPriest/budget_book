@@ -1,0 +1,88 @@
+{
+  "forename": " Nachname",
+  "surname": "Vorname",
+  "email": "E-Mail",
+  "password": "Passwort",
+  "secAnswer": "Antwort:",
+  "secLine": "Wählen Sie 1 Frage aus!",
+  "secQuestion": "Sicherheitsfrage:",
+  "saveBtn": "speichern",
+  "clsBtn": "Zurück",
+  "login": {
+    "title": "Log dich ein!",
+    "loginmsg": "Anmelden",
+    "forgotpw": "Passwort vergessen?",
+    "register": "Registrieren"
+  },
+  "main": {
+    "header": "Hauptmenü"
+  },
+  "signup": {
+    "register": "Registrierung",
+    "pwretype": "Passwort Wiederholung",
+    "logo": "Logo"
+  },
+  "profile": {
+    "acc": "Mein Konto",
+    "imgMsg": "Bild der jeweiligen Person",
+    "changePw": "Passwort ändern",
+    "deleteAcc": "Konto löschen",
+    "edit": "Bearbeiten"
+  },
+  "privacy": {
+    "sample": "privacy-view works!",
+    "backBtn": "Zurück"
+  },
+  "newPw": {
+    "resetPw": "Passwort Zurücksetzen",
+    "save": "speichern",
+    "cancel": "abbrechen",
+    "newPw": "Neues Passwort",
+    "retypeNewPw": "Neues Passwort wiederholen"
+  },
+  "expenses": {
+    "category": "Kategorie:",
+    "addExpensesMsg": "Ausgaben hinzufügen",
+    "rent": "Miete",
+    "purchasing": "Einkauf",
+    "date": "Datum",
+    "amount": "Betrag",
+    "addBtn": "Hinzufügen",
+    "closeBtn": "Schließen",
+    "headerExp": "Alle Ausgaben",
+    "expenses": "Ausgaben:"
+  },
+  "newCategory": {
+    "sample": "new-categorie-view works!"
+  },
+  "menu": {
+    "settings": "Einstellungen",
+    "logout": "Ausloggen",
+    "help&settings": "Hilfe & Einstellungen",
+    "quiz": "Quiz",
+    "faq": "FAQ",
+    "privacy": "Datenschutz",
+    "impressum": "Impressum",
+    "agb": "AGB",
+    "category" : "Kategorie"
+  },
+  "askQuestions": {
+    "template": "ask-question-view works!",
+    "backBtn": "Zurück"
+  },
+  "createGroup": {
+    "header": "Neue Gruppe",
+    "logoMsg": "Logo",
+    "grpNameMsg": "Gruppen Name",
+    "saveBtn": "speichern",
+    "clsBtn": "Schließen"
+  },
+  "editProfile": {
+    "header": "Mein Konto"
+  },
+  "group" : {
+
+  }
+}
+
+
