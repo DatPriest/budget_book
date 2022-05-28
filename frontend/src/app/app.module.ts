@@ -8,9 +8,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MaterialExampleModule } from 'src/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 import { SignInViewComponent } from './component/sign-in-view/sign-in-view.component';
 import { SignUpViewComponent } from './component/sign-up-view/sign-up-view.component';
 import { NewPasswordViewComponent } from './component/new-password-view/new-password-view.component';

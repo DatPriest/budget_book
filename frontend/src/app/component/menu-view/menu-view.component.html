@@ -21,6 +21,7 @@
         <p mat-menu-item [matMenuTriggerFor]="settings">{{'menu.settings'| translate}}</p>
       </div>
     </div>
+    <hr>
     <h1 class="logout" (click)="logout()">{{'menu.logout'| translate}}</h1>
   </div>
 </mat-menu>
@@ -35,7 +36,7 @@
           </span>
       </div>
       <div class="column">
-        <p>FAQ</p>
+        <p>FAQ</p> <!--translate fehlt noch-->
       </div>
     </div>
     <div class="row" (click)="openAGB()">

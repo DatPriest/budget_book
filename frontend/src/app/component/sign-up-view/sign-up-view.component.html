@@ -36,11 +36,6 @@
                   <ng-container *ngFor="let sQ of securityQuestion$ | async">
                     <option value="{{sQ.securityAnswer}}">{{sQ.securityQuestion}}</option>
                   </ng-container>
-                  <!--<option value="BornCity">In welcher Stadt bzw. an welchem Ort wurden Sie geboren?</option>
-                  <option value="MiddleName">Wie lautet der zweite Vorname Ihrer ältesten Schwester bzw. Ihres ältesten Bruders?</option>
-                  <option value="FirstConcert">Welches war Ihr erstes Konzert, das Sie besucht haben?</option>
-                  <option value="FirstCar">Geben Sie Marke und Modell Ihres ersten Autos an.</option>
-                  <option value="MetParents">In welcher Stadt bzw. welchem Ort haben sich Ihre Eltern kennengelernt?</option>-->
                 </select>
                 <div class="sicherheit_field">
                   <input name="securityAnswer" type="text" class="sicherheit_field" id="Sicherheitsfrage" ngModel placeholder="{{'secAnswer'| translate}}" autocomplete="off">

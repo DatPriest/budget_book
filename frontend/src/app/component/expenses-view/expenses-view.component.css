@@ -92,13 +92,6 @@
   font-size: 18px;
 }
 
-.button_back {
-  position: absolute;
-  top: 8px;
-  left: 16px;
-  font-size: 18px;
-}
-
 .button_edit {
   position: absolute;
   top: 3%;
@@ -122,6 +115,13 @@
 .input_field:hover {
   outline: none;
   border-bottom-color: #6A679E;
+}
+
+.button_back {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
 }
 
 .back_icon {

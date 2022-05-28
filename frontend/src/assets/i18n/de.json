@@ -9,7 +9,7 @@
   "saveBtn": "speichern",
   "clsBtn": "Zurück",
   "login": {
-    "title": "Log dich ein!",
+    "title": "Log Dich ein!",
     "loginmsg": "Anmelden",
     "forgotpw": "Passwort vergessen?",
     "register": "Registrieren"
@@ -52,6 +52,9 @@
     "headerExp": "Alle Ausgaben",
     "expenses": "Ausgaben:"
   },
+  "category": {
+    "header": "Kategorien"
+  },
   "newCategory": {
     "sample": "new-categorie-view works!"
   },
@@ -67,18 +70,24 @@
     "category" : "Kategorie"
   },
   "askQuestions": {
-    "template": "ask-question-view works!",
-    "backBtn": "Zurück"
+    "template": "Frage stellen!"
   },
   "createGroup": {
-    "header": "Neue Gruppe",
+    "header": "Neue Gruppe erstellen",
     "logoMsg": "Logo",
-    "grpNameMsg": "Gruppen Name",
-    "saveBtn": "speichern",
-    "clsBtn": "Schließen"
+    "grpNameMsg": "Gruppen Name"
+  },
+  "createInvite": {
+    "header": "Einladungscode erstellen",
+    "msg": "Einladungscode"
   },
   "editProfile": {
-    "header": "Mein Konto"
+    "header": "Mein Konto",
+    "logo": "Logo"
+  },
+  "editPassword": {
+    "header": "Passwort ändern",
+    "pwretype": "Passwort Wiederholung"
   },
   "group" : {
 
