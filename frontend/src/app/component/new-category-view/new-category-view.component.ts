@@ -9,7 +9,7 @@ import { GroupService } from 'src/app/service/group/group.service';
 
 @Component({
   selector: 'app-new-category-view',
-  templateUrl: './new-category-view.component.html',
+  templateUrl: './new-categorie-view.component.html',
   styleUrls: ['./new-category-view.component.css']
 })
 export class NewCategoryViewComponent implements OnInit {
