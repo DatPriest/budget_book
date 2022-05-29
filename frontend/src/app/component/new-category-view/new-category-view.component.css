@@ -7,23 +7,6 @@
   font-family: Raleway, sans-serif;
 }
 
-.column {
-  float: left;
-  padding: 2.5px 0px;
-  position: relative;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.column_Category {
-  float: left;
-}
-
-
 .input_field {
  padding: 10px 0px;
  position: relative;
@@ -42,16 +25,16 @@
   font-size: 20px;
 }
 
-.row_button:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 .column_save {
   float: left;
 }
 
 .column_close {
  float: right;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }

@@ -10,13 +10,13 @@
       <div class="container">
         <div class="screen">
           <div class="button">
-            <button type="button" (click)="ausgaben()"><span class="group_expenditures">Ausgaben</span></button>
-            <button type="button" (click)="categorys()"><span class="group_categorys">Kategorien</span></button>
-            <button type="button" (click)="history()"><span class="group_history">History</span></button>
+            <button type="button" (click)="expenses()"><span class="group_expenditures">{{'group.expenses'|translate}}</span></button>
+            <button type="button" (click)="categorys()"><span class="group_categorys">{{'group.categorys'|translate}}</span></button>
+            <button type="button" (click)="history()"><span class="group_history">{{'group.history'|translate}}</span></button>
             <!--<button type="button" (click)="nofunction()"><span class="group_statistics">Statistik</span></button>-->
           </div>
           <div class="picture">
-            <img src={{group.image}} alt="Bild der jeweiligen Gruppe.">
+            <img src={{group.image}} alt="">
           </div>
           <ul class="sidebar">
             <li class="li_list">
@@ -31,7 +31,7 @@
             <thead>
               <tr>
                 <th class="user_table_header">
-                  <p>Gruppenmitglieder:</p>
+                  <p>{{'group.member'|translate}}</p>
                 </th>
               </tr>
             </thead>

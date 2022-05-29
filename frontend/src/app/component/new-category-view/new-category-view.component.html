@@ -1,12 +1,10 @@
 <form class="createCategory" (ngSubmit)="createCategory(newCategoryForm)" #newCategoryForm="ngForm">
-  <h1 class="header_Text">{{'newCategory.sample'| translate}}</h1>
+  <h1 class="header_Text">{{'newCategory.header'| translate}}</h1>
   <div>
-    <div class="column_Category">
-      <input name="category" type="text" class="input_field" id="Category_text" ngModel placeholder="Kategorie">
-    </div>
+    <input name="category" type="text" class="input_field" id="Category_text" ngModel placeholder="{{'newCategory.placeholder'| translate}}">
   </div>
   <div>
-    <div class="row_button">
+    <div class="row">
       <div class="column_save">
           <button type="submit"><span class="expenses_back material-icons">add</span></button>
       </div>

@@ -18,20 +18,22 @@
     "header": "Hauptmenü"
   },
   "signup": {
-    "register": "Registrierung",
+    "header": "Registrierung",
     "pwretype": "Passwort Wiederholung",
-    "logo": "Logo"
+    "logo": "Logo",
+    "register": "Registrieren",
+    "cancel": "abbrechen"
   },
   "profile": {
     "acc": "Mein Konto",
     "imgMsg": "Bild der jeweiligen Person",
     "changePw": "Passwort ändern",
     "deleteAcc": "Konto löschen",
-    "edit": "Bearbeiten"
+    "edit": "Bearbeiten",
+    "join": "Gruppe beitreten"
   },
   "privacy": {
-    "sample": "privacy-view works!",
-    "backBtn": "Zurück"
+    "header": "Datenschutz"
   },
   "newPw": {
     "resetPw": "Passwort Zurücksetzen",
@@ -56,11 +58,13 @@
     "header": "Kategorien"
   },
   "newCategory": {
-    "sample": "new-categorie-view works!"
+    "header": "Neue Kategorie hinzufügen:",
+    "placeholder": "Kategorie"
   },
   "menu": {
     "settings": "Einstellungen",
     "logout": "Ausloggen",
+    "profile": "Profil",
     "help&settings": "Hilfe & Einstellungen",
     "quiz": "Quiz",
     "faq": "FAQ",
@@ -69,8 +73,15 @@
     "agb": "AGB",
     "category" : "Kategorie"
   },
+  "faq": {
+    "header": "FAQ!",
+    "ask": "Frage stellen!"
+  },
   "askQuestions": {
     "template": "Frage stellen!"
+  },
+  "gtc": {
+    "header": "Allgemeine Geschäftsbedingungen"
   },
   "createGroup": {
     "header": "Neue Gruppe erstellen",
@@ -89,8 +100,21 @@
     "header": "Passwort ändern",
     "pwretype": "Passwort Wiederholung"
   },
-  "group" : {
-
+  "group": {
+    "expenses": "Ausgaben",
+    "categorys": "Kategorien",
+    "history": "History",
+    "member": "Gruppenmitglieder:"
+  },
+  "history": {
+    "header": "History"
+  },
+  "imprint": {
+    "header": "Impressum"
+  },
+  "invite": {
+    "header": "Gruppe beitreten",
+    "placeholder": "Einladungscode"
   }
 }
 

@@ -26,9 +26,10 @@
       </div>
           <div class="button">
             <tr>
-              <button type="button" ide="profile" (click)="moveToEditProfile(user)">{{'profile.edit'| translate}}</button>
-              <button type="button" ide="profile" (click)="moveToEditPassword()">{{'profile.changePw'| translate}}</button>
-              <button type="button" ide="profile" (click)="deleteProfile()">{{'profile.deleteAcc'| translate}}</button>
+              <button type="button" ide="profile" (click)="joinGroupDialog()"><p>{{'profile.join'| translate}}</p></button>
+              <button type="button" ide="profile" (click)="moveToEditProfile(user)"><p>{{'profile.edit'| translate}}</p></button>
+              <button type="button" ide="profile" (click)="moveToEditPassword()"><p>{{'profile.changePw'| translate}}</p></button>
+              <button type="button" ide="profile" (click)="deleteProfile()"><p>{{'profile.deleteAcc'| translate}}</p></button>
             </tr>
           </div>
     </ng-container>

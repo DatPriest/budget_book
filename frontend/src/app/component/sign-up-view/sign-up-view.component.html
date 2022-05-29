@@ -4,7 +4,7 @@
       <header>
         <div class="screen_content">
           <form class="register" (ngSubmit)="registrationUser(signUpForm)" #signUpForm="ngForm">
-            <span class="header_Text">{{'signup.register'| translate}}</span>
+            <span class="header_Text">{{'signup.header'| translate}}</span>
             <div class="row">
               <div class="column">
                 <div class="input_field">
@@ -45,12 +45,12 @@
             <div class="row">
               <div class="column_button">
                 <button type="submit" class="button register_submit" id="register">
-                  <span class="button_text">registrieren</span>
+                  <span class="button_text">{{'signup.register'| translate}}</span>
                 </button>
               </div>
               <div class="column_button">
                 <button type="button" class="button register_cancel" id="cancel" (click)="cancel()">
-                  <span class="button_text">abbrechen</span>
+                  <span class="button_text">{{'signup.cancel'| translate}}</span>
                 </button>
               </div>
             </div>

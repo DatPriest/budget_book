@@ -23,17 +23,11 @@ export class GroupViewComponent implements OnInit {
     this.user$ = this.groupService.getUsersByGroup(this.app.groupId);
   }
 
-  openMenu(): void {
-    console.warn('Diese Funktion ist kein Bestandteil des aktuellen Sprintes!\n Leitet temporär zum Hauptmenü zurück.');
-
-    this.router.navigate(['/main']);
-  }
-
   history(): void {
     this.router.navigate(['/history']);
   }
 
-  ausgaben(): void {
+  expenses(): void {
     this.router.navigate(['/expenses']);
   }
 
