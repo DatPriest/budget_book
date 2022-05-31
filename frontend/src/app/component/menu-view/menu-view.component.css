@@ -1,9 +1,10 @@
-.mat-menu-content {
-  width: 500px !important;
+::ng-deep.mat-menu-content {
+  width: 220px !important;
 }
 
 .logout {
   color: #FD0303;
+  text-align:center
 }
 
 .container {
@@ -34,6 +35,6 @@
 }
 
 .column_setting_menu {
-  float: left;
-  width: 105%;
+  float: right;
+  width: 80%;
 }

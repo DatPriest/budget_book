@@ -44,6 +44,10 @@ export class UserService {
     return this.http.put<UpdatePasswordModule>('http://localhost:4000/api/v1/profile/updatePassword', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
+  deleteProfile(userId: number) {
+    return this.http.delete(`http://localhost:4000/api/v1/profile/deleteUserProfile/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
   public handleError<T>(origin = "origin", result? : T) {
     return (error: any) : Observable<T> => {
       throw new Error(`${origin}`);

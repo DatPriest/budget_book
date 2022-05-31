@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CategorieViewComponent } from './categorie-view.component';
+import { CreateInviteViewComponent } from './create-invite-view.component';
 
-describe('CategorieViewComponent', () => {
-  let component: CategorieViewComponent;
-  let fixture: ComponentFixture<CategorieViewComponent>;
+describe('CreateInviteViewComponent', () => {
+  let component: CreateInviteViewComponent;
+  let fixture: ComponentFixture<CreateInviteViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CategorieViewComponent ]
+      declarations: [ CreateInviteViewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CategorieViewComponent);
+    fixture = TestBed.createComponent(CreateInviteViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

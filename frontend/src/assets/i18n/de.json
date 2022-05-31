@@ -9,7 +9,7 @@
   "saveBtn": "speichern",
   "clsBtn": "Zurück",
   "login": {
-    "title": "Log dich ein!",
+    "title": "Log Dich ein!",
     "loginmsg": "Anmelden",
     "forgotpw": "Passwort vergessen?",
     "register": "Registrieren"
@@ -18,20 +18,22 @@
     "header": "Hauptmenü"
   },
   "signup": {
-    "register": "Registrierung",
+    "header": "Registrierung",
     "pwretype": "Passwort Wiederholung",
-    "logo": "Logo"
+    "logo": "Logo",
+    "register": "Registrieren",
+    "cancel": "abbrechen"
   },
   "profile": {
     "acc": "Mein Konto",
     "imgMsg": "Bild der jeweiligen Person",
     "changePw": "Passwort ändern",
     "deleteAcc": "Konto löschen",
-    "edit": "Bearbeiten"
+    "edit": "Bearbeiten",
+    "join": "Gruppe beitreten"
   },
   "privacy": {
-    "sample": "privacy-view works!",
-    "backBtn": "Zurück"
+    "header": "Datenschutz"
   },
   "newPw": {
     "resetPw": "Passwort Zurücksetzen",
@@ -52,12 +54,17 @@
     "headerExp": "Alle Ausgaben",
     "expenses": "Ausgaben:"
   },
+  "category": {
+    "header": "Kategorien"
+  },
   "newCategory": {
-    "sample": "new-categorie-view works!"
+    "header": "Neue Kategorie hinzufügen:",
+    "placeholder": "Kategorie"
   },
   "menu": {
     "settings": "Einstellungen",
     "logout": "Ausloggen",
+    "profile": "Profil",
     "help&settings": "Hilfe & Einstellungen",
     "quiz": "Quiz",
     "faq": "FAQ",
@@ -66,22 +73,48 @@
     "agb": "AGB",
     "category" : "Kategorie"
   },
+  "faq": {
+    "header": "FAQ!",
+    "ask": "Frage stellen!"
+  },
   "askQuestions": {
-    "template": "ask-question-view works!",
-    "backBtn": "Zurück"
+    "template": "Frage stellen!"
+  },
+  "gtc": {
+    "header": "Allgemeine Geschäftsbedingungen"
   },
   "createGroup": {
-    "header": "Neue Gruppe",
+    "header": "Neue Gruppe erstellen",
     "logoMsg": "Logo",
-    "grpNameMsg": "Gruppen Name",
-    "saveBtn": "speichern",
-    "clsBtn": "Schließen"
+    "grpNameMsg": "Gruppen Name"
+  },
+  "createInvite": {
+    "header": "Einladungscode erstellen",
+    "msg": "Einladungscode"
   },
   "editProfile": {
-    "header": "Mein Konto"
+    "header": "Mein Konto",
+    "logo": "Logo"
   },
-  "group" : {
-
+  "editPassword": {
+    "header": "Passwort ändern",
+    "pwretype": "Passwort Wiederholung"
+  },
+  "group": {
+    "expenses": "Ausgaben",
+    "categorys": "Kategorien",
+    "history": "History",
+    "member": "Gruppenmitglieder:"
+  },
+  "history": {
+    "header": "History"
+  },
+  "imprint": {
+    "header": "Impressum"
+  },
+  "invite": {
+    "header": "Gruppe beitreten",
+    "placeholder": "Einladungscode"
   }
 }
 

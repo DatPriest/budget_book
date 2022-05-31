@@ -10,7 +10,7 @@ export class FaqViewComponent implements OnInit {
 
   constructor(public router: Router) { }
 
-  backToMenu(): void {
+  back(): void {
     this.router.navigate(['main']);
   }
 

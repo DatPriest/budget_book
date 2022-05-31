@@ -18,7 +18,6 @@ export class SignInViewComponent implements OnInit {
 
   signInForm: FormGroup;
   showPassword: boolean = false;
-  user: LoginUserModule;
   hash: string;
   constructor(public router: Router, public http: HttpClient, public formBuilder: FormBuilder, public userService: UserService, public app: AppModule,
     public hashService: HashingService, public alertService: AlertService, public groupService: GroupService) { }
@@ -29,19 +28,22 @@ export class SignInViewComponent implements OnInit {
 
   loginUser(signInForm: NgForm): void {
     this.router.navigate(['main']); // temp
-    this.alertService.successfulAlert("Herzlich willkommen!" ,  "Der Login war erfolgreich." ,  "success", 2500);
 
-    this.hash = this.hashService.encrypt(signInForm.value.password);
-    const signInData = new LoginUserModule(null, signInForm.value.email, this.hash);
-    this.userService.loginUser(signInData).subscribe(data => {
-      if (data.email != null && data.hash != null) {
-        this.app.userId = data.userId;
-        this.router.navigate(['main']);
-        this.alertService.successfulAlert("Herzlich willkommen!" ,  "Der Login war erfolgreich." ,  "success", 2500);
-      } else {
-        this.alertService.alert("Oops" ,  "User not found or bad password" ,  "error");
-      }
-    });
+    if (signInForm.value.email == '' && signInForm.value.password == '') {
+      this.alertService.alert("Oops",  "E-Mail und Passwort dürfen nicht leer sein!",  "error");
+    } else {
+      this.hash = this.hashService.encrypt(signInForm.value.password);
+      const signInData = new LoginUserModule(null, signInForm.value.email, this.hash);
+      this.userService.loginUser(signInData).subscribe(data => {
+        if (data.email != null && data.hash != null) {
+          this.app.userId = data.userId;
+          this.router.navigate(['main']);
+          this.alertService.successfulAlert("Herzlich willkommen!",  "Login war erfolgreich.",  "success", 2500);
+        } else {
+          this.alertService.alert("Oops",  "E-Mail und Passwort stimmen nicht überein!",  "error");
+        }
+      });
+    }
   }
 
   newUser(): void {

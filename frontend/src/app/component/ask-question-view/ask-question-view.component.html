@@ -1,3 +1,8 @@
-<p>{{'askQuestions.template'|translate}}</p>
-
-<button (click)="backFAQ()">{{'clsBtn'|translate}}</button>
+<form>
+  <header>
+    <span class="header_name">{{'askQuestions.template'|translate}}</span>
+    <div class="button_back">
+      <button type="button" class="back_icon" (click)="back()"><span class="material-icons">arrow_back</span></button>
+    </div>
+  </header>
+</form>
