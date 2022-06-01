@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+.createExpenses {
+  width: 550px;
+  font-family: Raleway, sans-serif;
+}
+
+.column {
+  float: left;
+  padding: 2.5px 0px;
+  position: relative;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column_category {
+  float: left;
+  width: 175px;
+}
+
+.column_Expenses {
+  float: left;
+}
+
+.column_price {
+  float: left;
+  width: 175px;
+}
+
+.input_field {
+ padding: 10px 0px;
+ position: relative;
+}
+
+.input_field:active,
+.input_field:focus,
+.input_field:hover {
+ outline: none;
+ border-bottom-color: #6A679E;
+}
+
+.header_Text {
+  color: #7875B5;
+  text-shadow: black;
+  font-size: 20px;
+}
+
+.row_button:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column_save {
+  float: right;
+}
+
+.column_close {
+ float: right;
+}

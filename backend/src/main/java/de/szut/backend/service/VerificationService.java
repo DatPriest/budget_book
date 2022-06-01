@@ -1,12 +1,11 @@
 package de.szut.backend.service;
 
-import de.szut.backend.dto.ForgotDto;
-import de.szut.backend.dto.LoginDto;
-import de.szut.backend.dto.RegisterDto;
-import de.szut.backend.dto.UpdateDto;
+import de.szut.backend.dto.*;
 import de.szut.backend.mapper.UserMapper;
 import de.szut.backend.model.*;
 import de.szut.backend.model.History.HistoryActionToProcess;
+import de.szut.backend.repository.ImageRepository;
+import de.szut.backend.repository.SecurityQuestionRepository;
 import de.szut.backend.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -19,14 +18,23 @@ import java.util.UUID;
 
 @Service
 public class VerificationService extends BaseService {
-    UserRepository userRepository;
-    UserMapper userMapper;
-    HistoryLogService logService;
+    private final UserRepository userRepository;
+    private final UserMapper userMapper;
+    private final HistoryLogService logService;
+    private final ImageRepository imageRepository;
+    private final SecurityQuestionRepository securityQuestionRepository;
 
-    public VerificationService(UserRepository _userRepository, UserMapper _userMapper, HistoryLogService logService) {
+
+    public VerificationService(UserRepository _userRepository,
+                               UserMapper _userMapper,
+                               HistoryLogService logService,
+                               ImageRepository _imageRepository,
+                               SecurityQuestionRepository _securityQuestionRepository) {
         this.userRepository = _userRepository;
         this.userMapper = _userMapper;
         this.logService = logService;
+        this.imageRepository = _imageRepository;
+        this.securityQuestionRepository = _securityQuestionRepository;
     }
 
     public User login(LoginDto dto) {
@@ -42,16 +50,24 @@ public class VerificationService extends BaseService {
         }
     }
 
-    public User forgotPassword(ForgotDto dto) {
-        return userRepository.findByEmailAndSecurityQuestionAndSecurityAnswer(
+    public ForgotBackDto forgotPassword(ForgotDto dto) {
+        User user =  userRepository.findByEmailAndSecurityQuestionIdAndSecurityAnswer(
                 dto.email,
-                dto.securityQuestion,
+                securityQuestionRepository.findByKey(dto.securityQuestionKey).getId(),
                 dto.securityAnswer.toLowerCase(Locale.ROOT));
+        if (user != null) {
+            user.salt = getSalt();
+            user.hash = hashPassword(user.hash + user.salt);
+            var newUser = userRepository.save(user);
+            return userMapper.mapUserToForgotBackDto(newUser);
+        } else {
+            return null;
+        }
     }
 
-    public User register(RegisterDto dto) {
+    public CreateUserDto register(RegisterDto dto) {
         if (userRepository.existsByEmail(dto.email)) {
-            return new User();
+            return new CreateUserDto();
         }
         this.logger.info(dto.toString());
 
@@ -59,9 +75,11 @@ public class VerificationService extends BaseService {
         // Save User to Database with salt
         user.salt = getSalt();
         user.hash = hashPassword(user.hash + user.salt);
-
-
-        return this.userRepository.save(user);
+        Image image = new Image();
+        image.imageString = dto.image;
+        image = this.imageRepository.save(image);
+        user.imageId = image.id;
+        return userMapper.mapUserToUserCreateDto(this.userRepository.save(user));
     }
 
     private String hashPassword(String hash) {

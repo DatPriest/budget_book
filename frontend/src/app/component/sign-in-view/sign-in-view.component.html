@@ -5,24 +5,24 @@
         <div class="screen_content">
           <div class="login">
             <form (ngSubmit)="loginUser(signInForm)" #signInForm="ngForm">
-              <span class="header_Text">Bei dasistcool anmelden</span>
+              <span class="header_Text">{{'login.title' | translate}}</span>
               <div class="input_field form-floating">
-                <input name="email" type="email" class="input_field form-control" id="UserEmail" ngModel placeholder="E-Mail">
+                <input name="email" type="email" class="input_field form-control" id="UserEmail" ngModel placeholder="{{'email'| translate}}">
               </div>
               <div class="input_field">
                 <div class="form-floating">
-                  <input name="password" type="{{showPassword ? 'text' : 'password' }}" class="input_field form-control" id="UserPassword" ngModel placeholder="Password">
-                  <button type="button" class="show_passwort material-icons" (click)="togglePassword()">{{showPassword ? 'visibility_off' : 'visibility' }}</button>
+                  <input name="password" type="{{showPassword ? 'text' : 'password' }}" class="input_field form-control" id="UserPassword" ngModel placeholder="{{'password'| translate}}">
+                  <button type="button" class="show_passwort material-icons" (click)="togglePassword()" tabindex="-1">{{showPassword ? 'visibility_off' : 'visibility' }}</button>
                 </div>
               </div>
               <button type="submit" class="button login_submit" id="login">
-                <span class="button_text">Login</span>
+                <span class="button_text">{{'login.loginmsg' | translate}}</span>
               </button>
               <button type="button" class="button new_password_submit" id="password" (click)="newPassword()">
-                <span class="button">Passwort vergessen?</span>
+                <span class="button">{{'login.forgotpw'| translate}}</span>
               </button>
               <button type="button" class="button register_submit" id="register" (click)="newUser()">
-                <span>Registrieren</span>
+                <span>{{'login.register'| translate}}</span>
               </button>
             </form>
           </div>

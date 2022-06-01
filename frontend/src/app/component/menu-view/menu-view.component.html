@@ -1,0 +1,73 @@
+<span class="material-icons burgerMenu" [matMenuTriggerFor]="menu">menu</span>
+<mat-menu #menu="matMenu">
+  <div class="container">
+    <div class="row" (click)="moveToProfile()">
+      <div class="column">
+          <span class="material-icons">
+            account_circle
+          </span>
+      </div>
+      <div class="column">
+        <p>{{'menu.profile'| translate}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <span class="material-icons">
+          settings
+        </span>
+      </div>
+      <div class="column_setting_menu">
+        <p mat-menu-item [matMenuTriggerFor]="settings">{{'menu.settings'| translate}}</p>
+      </div>
+    </div>
+    <hr>
+    <h1 class="logout" (click)="logout()">{{'menu.logout'| translate}}</h1>
+  </div>
+</mat-menu>
+
+<mat-menu #settings="matMenu">
+  <div class="container">
+    <h1 class="header">{{'menu.help&settings'| translate}}</h1>
+    <div class="row" (click)="openFAQ()">
+      <div class="column">
+          <span class="material-icons">
+            quiz
+          </span>
+      </div>
+      <div class="column">
+        <p>FAQ</p> <!--translate fehlt noch-->
+      </div>
+    </div>
+    <div class="row" (click)="openAGB()">
+      <div class="column">
+          <span class="material-icons">
+            assignment
+          </span>
+      </div>
+      <div class="column">
+        <p>{{'menu.agb'| translate}}</p>
+      </div>
+    </div>
+    <div class="row" (click)="openDatenschutz()">
+      <div class="column">
+          <span class="material-icons">
+            privacy_tip
+          </span>
+      </div>
+      <div class="column">
+        <p>{{'menu.privacy'| translate}}</p>
+      </div>
+    </div>
+    <div class="row" (click)="openImpressum()">
+      <div class="column">
+          <span class="material-icons">
+            description
+          </span>
+      </div>
+      <div class="column">
+        <p>{{'menu.impressum'| translate}}</p>
+      </div>
+    </div>
+  </div>
+</mat-menu>

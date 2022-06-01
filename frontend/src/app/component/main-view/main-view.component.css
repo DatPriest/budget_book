@@ -5,18 +5,17 @@
 .header_hauptmenu {
   position: absolute;
   width: 98%;
-  top: 15px;
+  top: 3%;
   text-align: center;
   color: black;
-  font-size: 40px;
+  font-size: 300%;
   font-family: Raleway, sans-serif;
 }
 
 .burgerMenu{
   position: absolute;
-  top: 8px;
-  left: 16px;
-  font-size: 45px;
+  top: 3%;
+  left: 3%;
   color: rgb(0, 0, 0);
   cursor: pointer;
 }
@@ -30,10 +29,10 @@
 
 .screen {
   background: linear-gradient(90deg, #5D54A4, #7C78B8);
-  position: relative;
-  height: 600px;
-  width: 960px;
-  box-shadow: 0px 0px 24px #5C5696;
+  position: absolute;
+  top: 10%;
+  height: 85%;
+  width: 90%;
 }
 
 .screen_content {
@@ -54,46 +53,47 @@
 }
 
 .screen_group_1 {
-  height: 240px;
-  width: 240px;
+  height: 35%;
+  width: 20%;
   background: #FFFFFF;
-  top: 40px;
-  left: 80px;
-  border-radius: 25px 25px 25px 25px;
+  top: 10%;
+  left: 10%;
+  border-radius: 10% 10% 10% 10%;
   transform: none;
   overflow: hidden;
 }
 
 .screen_group_2 {
-  height: 240px;
-  width: 240px;
+  height: 35%;
+  width: 20%;
   background: #FFFFFF;
-  top: 40px;
-  left: 355px;
-  border-radius: 25px 25px 25px 25px;
+  top: 10%;
+  left: 40%;
+  border-radius: 10% 10% 10% 10%;
   transform: none;
   overflow: hidden;
 }
 
 .screen_group_3 {
-  height: 240px;
-  width: 240px;
+  height: 35%;
+  width: 20%;
   background: #FFFFFF;
-  top: 40px;
-  left: 625px;
-  border-radius: 25px 25px 25px 25px;
+  top: 10%;
+  left: 70%;
+  border-radius: 10% 10% 10% 10%;
   transform: none;
   overflow: hidden;
 }
 
 .screen_group_4 {
-  height: 240px;
-  width: 240px;
+  height: 35%;
+  width: 20%;
   background: #FFFFFF;
-  top: 320px;
-  left: 355px;
-  border-radius: 25px 25px 25px 25px;
+  top: 50%;
+  left: 40%;
+  border-radius: 10% 10% 10% 10%;
   transform: none;
+  overflow: hidden;
 }
 
 .screen_background_shape2 {
@@ -123,11 +123,11 @@
 }
 
 .screen_background_shape5 {
-  height: 220px;
-  width: 120px;
+  height: 245px;
+  width: 190px;
   background: linear-gradient(270deg, #585858, #A4A4A4);
-  top: 0px;
-  left: 615px;
+  top: 15px;
+  left: 605px;
   border-radius: 32px;
 }
 
@@ -186,13 +186,14 @@
 }
 
 .group {
-  font-size: 20px;
+  font-size: 260%;
   color: black;
   text-align: center;
 }
 
 .group_create {
-  font-size: 150px;
+  font-size: 980%;
   color: black;
-  height: 150px;
+  left: 30%;
+  height: 980%;
 }

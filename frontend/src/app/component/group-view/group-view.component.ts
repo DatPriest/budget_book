@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { AppModule } from 'src/app/app.module';
-import { User } from 'src/app/model/User';
+import { GroupModule } from 'src/app/model/group/group.module';
+import { UserModule } from 'src/app/model/user/user.module';
+import { AlertService } from 'src/app/service/alert/alert.service';
 import { GroupService } from 'src/app/service/group/group.service';
+import { CreateInviteViewComponent } from '../create-invite-view/create-invite-view.component';
 
 @Component({
   selector: 'app-group-view',
@@ -11,23 +15,33 @@ import { GroupService } from 'src/app/service/group/group.service';
   styleUrls: ['./group-view.component.css']
 })
 export class GroupViewComponent implements OnInit {
-  user$ : Observable<User[]> = of([]);
-  constructor(public router: Router, public groupService: GroupService, public app: AppModule) {
-    this.user$ = this.groupService.getGroupUsers(this.app.groupId);
-  }
 
-  openMenu(): void {
-    console.warn('Diese Funktion ist kein Bestandteil des aktuellen Sprintes!\n Leitet temporär zum Hauptmenü zurück.');
-
-    this.router.navigate(['/main']);
+  user$ : Observable<UserModule[]> = of([]);
+  group: GroupModule;
+  inviteCode: string;
+  constructor(public router: Router, public groupService: GroupService, public app: AppModule, public dialog: MatDialog, public alertService: AlertService) {
+    this.user$ = this.groupService.getUsersByGroup(this.app.groupId);
   }
 
   history(): void {
     this.router.navigate(['/history']);
   }
 
-  ausgaben(): void {
-    this.router.navigate(['/issues']);
+  expenses(): void {
+    this.router.navigate(['/expenses']);
+  }
+
+  categorys(): void {
+    this.router.navigate(['/category']);
+  }
+
+  createInviteDialog(): void {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "400px";
+
+    this.dialog.open(CreateInviteViewComponent, dialogConfig)
   }
 
   nofunction(): void {

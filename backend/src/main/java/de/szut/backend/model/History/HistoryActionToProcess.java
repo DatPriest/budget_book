@@ -6,4 +6,5 @@ import lombok.Data;
 public class HistoryActionToProcess {
     private String action;
     private String additionalInformation;
+    private long groupId;
 }

@@ -8,18 +8,32 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MaterialExampleModule } from 'src/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
-import { NgToastModule } from 'ng-angular-popup';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { SignInViewComponent } from './component/sign-in-view/sign-in-view.component';
 import { SignUpViewComponent } from './component/sign-up-view/sign-up-view.component';
 import { NewPasswordViewComponent } from './component/new-password-view/new-password-view.component';
 import { MainViewComponent } from './component/main-view/main-view.component';
 import { GroupViewComponent } from './component/group-view/group-view.component';
-import { IssuesViewComponent } from './component/issues-view/issues-view.component';
-import { NewIssuesViewComponent } from './component/new-issues-view/new-issues-view.component'
+import { ExpensesViewComponent } from './component/expenses-view/expenses-view.component';
+import { NewExpensesViewComponent } from './component/new-expenses-view/new-expenses-view.component'
 import { HistoryViewComponent } from './component/history-view/history-view.component';
-import { CreateGroupViewComponent } from './component/create-group-view/create-group-view.component'
+import { CreateGroupViewComponent } from './component/create-group-view/create-group-view.component';
+import { MenuViewComponent } from './component/menu-view/menu-view.component';
+import { ProfileViewComponent } from './component/profile-view/profile-view.component';
+import { EditProfileViewComponent } from './component/edit-profile-view/edit-profile-view.component';
+import { GtcViewComponent } from './component/gtc-view/gtc-view.component';
+import { FaqViewComponent } from './component/faq-view/faq-view.component';
+import { PrivacyViewComponent } from './component/privacy-view/privacy-view.component';
+import { ImprintViewComponent } from './component/imprint-view/imprint-view.component';
+import { AskQuestionViewComponent } from './component/ask-question-view/ask-question-view.component';
+import { EditPasswordViewComponent } from './component/edit-password-view/edit-password-view.component';
+import { CategoryViewComponent } from './component/category-view/category-view.component';
+import { NewCategoryViewComponent } from './component/new-category-view/new-category-view.component';
+import { InviteViewComponent } from './component/invite-view/invite-view.component';
+import { CreateInviteViewComponent } from './component/create-invite-view/create-invite-view.component';
 
 @NgModule({
   declarations: [
@@ -29,27 +43,55 @@ import { CreateGroupViewComponent } from './component/create-group-view/create-g
     NewPasswordViewComponent,
     MainViewComponent,
     GroupViewComponent,
-    IssuesViewComponent,
-    NewIssuesViewComponent,
+    ExpensesViewComponent,
+    NewExpensesViewComponent,
     HistoryViewComponent,
-    CreateGroupViewComponent
+    CreateGroupViewComponent,
+    MenuViewComponent,
+    ProfileViewComponent,
+    EditProfileViewComponent,
+    GtcViewComponent,
+    FaqViewComponent,
+    PrivacyViewComponent,
+    ImprintViewComponent,
+    AskQuestionViewComponent,
+    EditPasswordViewComponent,
+    CategoryViewComponent,
+    NewCategoryViewComponent,
+    InviteViewComponent,
+    CreateInviteViewComponent
   ],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    }),
     AngularMaterialModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      {path: 'sign-in',component: SignInViewComponent},             // sign-In
-      {path: 'sign-up',component: SignUpViewComponent},             // register
-      {path: 'new-password',component: NewPasswordViewComponent},   // password-forgotten
-      {path: 'main',component: MainViewComponent},                  // main-menu
-      {path: 'group',component: GroupViewComponent},                // group-detail
-      {path: 'history',component: HistoryViewComponent},            // history
-      {path: 'issues',component: IssuesViewComponent}             // ausgaben
+      {path: 'sign-in',component: SignInViewComponent},
+      {path: 'sign-up',component: SignUpViewComponent},
+      {path: 'new-password',component: NewPasswordViewComponent},
+      {path: 'main',component: MainViewComponent},
+      {path: 'group',component: GroupViewComponent},
+      {path: 'history',component: HistoryViewComponent},
+      {path: 'expenses',component: ExpensesViewComponent},
+      {path: 'profile', component: ProfileViewComponent},
+      {path: 'profile/edit', component: EditProfileViewComponent},
+      {path: 'faq', component: FaqViewComponent},
+      {path: 'ask-question', component: AskQuestionViewComponent},
+      {path: 'gtc', component: GtcViewComponent},
+      {path: 'privacy', component: PrivacyViewComponent},
+      {path: 'imprint', component: ImprintViewComponent},
+      {path: 'category', component: CategoryViewComponent},
+      {path: 'edit-passwort', component: EditPasswordViewComponent}
     ]),
-    NgToastModule,
     FormsModule,
     ReactiveFormsModule,
     MatNativeDateModule,
@@ -61,4 +103,9 @@ import { CreateGroupViewComponent } from './component/create-group-view/create-g
 export class AppModule {
   userId: number = 0;
   groupId: number = 0;
+}
+
+// AOT compilation support
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
 }

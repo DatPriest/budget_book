@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+}
+
+.header_name {
+  position: absolute;
+  width: 98%;
+  top: 3%;
+  text-align: center;
+  color: black;
+  font-size: 300%;
+  font-family: Raleway, sans-serif;
+}
+
+.burgerMenu{
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.pages_menu {
+  width: 100%;
+  text-align: right;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+}
+
+.screen {
+  background: linear-gradient(90deg, #5D54A4, #7C78B8);
+  position: absolute;
+  top: 10%;
+  height: 85%;
+  width: 90%;
+}
+
+.screen_content {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+}
+
+.picture {
+  position: absolute;
+  top: 5%;
+  left: 41%;
+}
+
+.input_field {
+  position: relative;
+  top: 5%;
+  left: 31%;
+  width: 20%;
+}
+
+.input_field:active,
+.input_field:focus,
+.input_field:hover {
+  outline: none;
+  border-bottom-color: #6A679E;
+}
+
+.info{
+  font-size: 150%;
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  width: 70%;
+}
+
+#button1{
+  position: absolute;
+  top: 69%;
+  left: 15%;
+  width: 30%;
+}
+#button2{
+  position: absolute;
+  top: 80%;
+  left: 15%;
+  width: 30%;
+}
+
+#button3{
+  position: absolute;
+  top: 69%;
+  left: 52%;
+  width: 30%;
+}
+
+#button4{
+  position: absolute;
+  top: 80%;
+  left: 52%;
+  width: 30%;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 1% 2%;
+  margin: 2% 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 2%;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 2% 3%;
+  margin: 2% 0;
+  border: none;
+  border-radius: 1%;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}

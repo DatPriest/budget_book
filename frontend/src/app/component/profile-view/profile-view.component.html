@@ -1,0 +1,39 @@
+<form>
+  <header>
+    <span class="header_name">{{'profile.acc'| translate}}</span>
+    <span class="material-icons burgerMenu">
+      <app-menu-view></app-menu-view>
+    </span>
+  </header>
+  <body>
+    <ng-container>
+      <div class="container">
+        <div class="screen">
+          <div class="picture">
+           <img src={{user.image}} alt="{{'profile.imgMsg'| translate}}">
+          </div>
+          <div class="column">
+          <div class="info">
+            <label class="label">Vorname:</label><br>
+            <input type="text" id="UserName" name="fname" placeholder="{{'forename'| translate}}" value="{{user.firstName}}" readonly><br><br>
+            <label class="label">Nachname:</label>
+            <input type="text" id="UserName2" name="lname" placeholder="{{'surname'| translate}}" value="{{user.lastName}}" readonly><br><br>
+            <label class="label">E-Mail:</label>
+            <input type="text" id="UserEmail" name=" email" placeholder="E-{{'email'| translate}}" value="{{user.email}}" readonly><br><br>
+          </div>
+        </div>
+        </div>
+      </div>
+          <div class="button">
+            <tr>
+              <button type="button" ide="profile" (click)="joinGroupDialog()"><p>{{'profile.join'| translate}}</p></button>
+              <button type="button" ide="profile" (click)="moveToEditProfile(user)"><p>{{'profile.edit'| translate}}</p></button>
+              <button type="button" ide="profile" (click)="moveToEditPassword()"><p>{{'profile.changePw'| translate}}</p></button>
+              <button type="button" ide="profile" (click)="deleteProfile()"><p>{{'profile.deleteAcc'| translate}}</p></button>
+            </tr>
+          </div>
+    </ng-container>
+  </body>
+</form>
+
+

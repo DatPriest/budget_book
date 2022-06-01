@@ -1,0 +1,40 @@
+::ng-deep.mat-menu-content {
+  width: 220px !important;
+}
+
+.logout {
+  color: #FD0303;
+  text-align:center
+}
+
+.container {
+ padding: 5%;
+}
+
+.column {
+  float: left;
+  width: 20%;
+  cursor: pointer;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.MenuTrigger{
+  background: none;
+  padding: 5px 22px;
+  border-radius: 0px;
+  border: none;
+  display: flex;
+  box-shadow: 0px 2px 2px transparent;
+  cursor: pointer;
+  transition: .0s;
+}
+
+.column_setting_menu {
+  float: right;
+  width: 80%;
+}
