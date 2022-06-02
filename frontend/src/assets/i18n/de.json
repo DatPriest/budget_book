@@ -71,7 +71,10 @@
     "privacy": "Datenschutz",
     "impressum": "Impressum",
     "agb": "AGB",
-    "category" : "Kategorie"
+    "category" : "Kategorie",
+    "notification" : "Benachrichtigungen",
+    "currency" : "Währung",
+    "language" : "Sprache"
   },
   "faq": {
     "header": "FAQ!",
@@ -115,6 +118,9 @@
   "invite": {
     "header": "Gruppe beitreten",
     "placeholder": "Einladungscode"
+  },
+  "notification": {
+    "header": "Benachrichtigungen"
   }
 }
 
