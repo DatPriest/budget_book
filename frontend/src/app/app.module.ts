@@ -34,6 +34,9 @@ import { CategoryViewComponent } from './component/category-view/category-view.c
 import { NewCategoryViewComponent } from './component/new-category-view/new-category-view.component';
 import { InviteViewComponent } from './component/invite-view/invite-view.component';
 import { CreateInviteViewComponent } from './component/create-invite-view/create-invite-view.component';
+import { LanguageViewComponent } from './component/language-view/language-view.component';
+import { CurrencyViewComponent } from './component/currency-view/currency-view.component';
+import { NotificationViewComponent } from './component/notification-view/notification-view.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +62,10 @@ import { CreateInviteViewComponent } from './component/create-invite-view/create
     CategoryViewComponent,
     NewCategoryViewComponent,
     InviteViewComponent,
-    CreateInviteViewComponent
+    CreateInviteViewComponent,
+    LanguageViewComponent,
+    CurrencyViewComponent,
+    NotificationViewComponent
   ],
   imports: [
     BrowserAnimationsModule,
