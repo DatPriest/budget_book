@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FaqModule } from 'src/app/model/fqa/faq.module';
 
 @Component({
   selector: 'app-faq-view',
@@ -8,7 +9,12 @@ import { Router } from '@angular/router';
 })
 export class FaqViewComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  panelOpenState = false;
+  fragen: FaqModule[] = []
+  constructor(public router: Router) {
+    this.fragen.push(new FaqModule("Warum ist die Banane krumm?", "Weil Du dumm bist?"));
+    this.fragen.push(new FaqModule("Was kann ich machen wenn ich blond bin?", "Schonmal versucht sich die Haare abzuschneiden?"));
+  }
 
   back(): void {
     this.router.navigate(['main']);
