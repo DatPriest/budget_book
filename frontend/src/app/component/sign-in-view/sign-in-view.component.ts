@@ -27,6 +27,8 @@ export class SignInViewComponent implements OnInit {
   }
 
   loginUser(signInForm: NgForm): void {
+    this.router.navigate(['main']); // temp
+
     if (signInForm.value.email == '' && signInForm.value.password == '') {
       this.alertService.alert("Oops",  "E-Mail und Passwort dürfen nicht leer sein!",  "error");
     } else {

@@ -44,7 +44,7 @@
   },
   "expenses": {
     "category": "Kategorie:",
-    "addExpensesMsg": "Ausgaben hinzufügen",
+    "addExpenses": "Ausgaben hinzufügen",
     "rent": "Miete",
     "purchasing": "Einkauf",
     "date": "Datum",
