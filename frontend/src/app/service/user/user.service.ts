@@ -6,6 +6,7 @@ import { UserModule } from 'src/app/model/user/user.module';
 import { LoginUserModule } from 'src/app/model/login-user/login-user.module';
 import { SecurityQuestionModule } from 'src/app/model/security-question/security-question.module';
 import { UpdatePasswordModule } from 'src/app/model/update-password/update-password.module';
+import { NotificationModule } from 'src/app/model/notification/notification.module';
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +47,10 @@ export class UserService {
 
   deleteProfile(userId: number) {
     return this.http.delete(`http://localhost:4000/api/v1/profile/deleteUserProfile/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
+  notificationEmail(user: NotificationModule) {
+    return this.http.put('http://localhost:4000/api/v1/notification/email', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   public handleError<T>(origin = "origin", result? : T) {
