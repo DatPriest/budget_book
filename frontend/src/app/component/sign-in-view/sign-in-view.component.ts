@@ -29,6 +29,7 @@ export class SignInViewComponent implements OnInit {
   loginUser(signInForm: NgForm): void {
     this.router.navigate(['main']); // temp
 
+    /* Temp auskommentiert
     if (signInForm.value.email == '' && signInForm.value.password == '') {
       this.alertService.alert("Oops",  "E-Mail und Passwort dürfen nicht leer sein!",  "error");
     } else {
@@ -43,7 +44,7 @@ export class SignInViewComponent implements OnInit {
           this.alertService.alert("Oops",  "E-Mail und Passwort stimmen nicht überein!",  "error");
         }
       });
-    }
+    }*/
   }
 
   newUser(): void {
