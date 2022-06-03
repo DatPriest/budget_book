@@ -37,6 +37,12 @@ import { CreateInviteViewComponent } from './component/create-invite-view/create
 import { LanguageViewComponent } from './component/language-view/language-view.component';
 import { CurrencyViewComponent } from './component/currency-view/currency-view.component';
 import { NotificationViewComponent } from './component/notification-view/notification-view.component';
+import { EditGroupViewComponent } from './component/edit-group-view/edit-group-view.component';
+import { RemoveMemberViewComponent } from './component/remove-member-view/remove-member-view.component';
+import { PeriodViewComponent } from './component/period-view/period-view.component';
+import { SpecificExpensesViewComponent } from './component/specific-expenses-view/specific-expenses-view.component';
+import { StatisticsViewComponent } from './component/statistics-view/statistics-view.component';
+import { DiagramViewComponent } from './component/diagram-view/diagram-view.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +71,13 @@ import { NotificationViewComponent } from './component/notification-view/notific
     CreateInviteViewComponent,
     LanguageViewComponent,
     CurrencyViewComponent,
-    NotificationViewComponent
+    NotificationViewComponent,
+    EditGroupViewComponent,
+    RemoveMemberViewComponent,
+    PeriodViewComponent,
+    SpecificExpensesViewComponent,
+    StatisticsViewComponent,
+    DiagramViewComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -96,7 +108,11 @@ import { NotificationViewComponent } from './component/notification-view/notific
       {path: 'privacy', component: PrivacyViewComponent},
       {path: 'imprint', component: ImprintViewComponent},
       {path: 'category', component: CategoryViewComponent},
-      {path: 'edit-passwort', component: EditPasswordViewComponent}
+      {path: 'edit-passwort', component: EditPasswordViewComponent},
+      
+      {path: 'group/statistics', component: StatisticsViewComponent},
+      {path: 'group/expenses/specific', component: SpecificExpensesViewComponent},
+      {path: 'group/diagram', component: DiagramViewComponent}
     ]),
     FormsModule,
     ReactiveFormsModule,
