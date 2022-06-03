@@ -93,25 +93,33 @@ import { DiagramViewComponent } from './component/diagram-view/diagram-view.comp
     AngularMaterialModule,
     AppRoutingModule,
     RouterModule.forRoot([
+      // Login
       {path: 'sign-in',component: SignInViewComponent},
       {path: 'sign-up',component: SignUpViewComponent},
       {path: 'new-password',component: NewPasswordViewComponent},
+
+      // Main
       {path: 'main',component: MainViewComponent},
-      {path: 'group',component: GroupViewComponent},
-      {path: 'history',component: HistoryViewComponent},
-      {path: 'expenses',component: ExpensesViewComponent},
-      {path: 'profile', component: ProfileViewComponent},
-      {path: 'profile/edit', component: EditProfileViewComponent},
+
+      // Menu
       {path: 'faq', component: FaqViewComponent},
-      {path: 'ask-question', component: AskQuestionViewComponent},
+      {path: 'faq/ask-question', component: AskQuestionViewComponent},
       {path: 'gtc', component: GtcViewComponent},
       {path: 'privacy', component: PrivacyViewComponent},
       {path: 'imprint', component: ImprintViewComponent},
-      {path: 'category', component: CategoryViewComponent},
-      {path: 'edit-passwort', component: EditPasswordViewComponent},
-      
-      {path: 'group/statistics', component: StatisticsViewComponent},
+
+      // Profile
+      {path: 'profile', component: ProfileViewComponent},
+      {path: 'profile/edit', component: EditProfileViewComponent},
+      {path: 'profile/edit-passwort', component: EditPasswordViewComponent},
+
+      // Group
+      {path: 'group',component: GroupViewComponent},
+      {path: 'group/history',component: HistoryViewComponent},
+      {path: 'group/expenses',component: ExpensesViewComponent},
       {path: 'group/expenses/specific', component: SpecificExpensesViewComponent},
+      {path: 'group/category', component: CategoryViewComponent},
+      {path: 'group/statistics', component: StatisticsViewComponent},
       {path: 'group/diagram', component: DiagramViewComponent}
     ]),
     FormsModule,

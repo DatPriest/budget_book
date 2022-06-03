@@ -24,15 +24,15 @@ export class GroupViewComponent implements OnInit {
   }
 
   history(): void {
-    this.router.navigate(['/history']);
+    this.router.navigate(['/group/history']);
   }
 
   expenses(): void {
-    this.router.navigate(['/expenses']);
+    this.router.navigate(['/group/expenses']);
   }
 
   categorys(): void {
-    this.router.navigate(['/category']);
+    this.router.navigate(['/group/category']);
   }
 
   createInviteDialog(): void {
