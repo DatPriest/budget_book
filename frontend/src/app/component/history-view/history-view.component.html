@@ -8,7 +8,7 @@
   <body>
   <div class="container">
     <div class="screen">
-      <input id="Search" type="text" name="search" class="input_field" [(ngModel)]="searchTerm" placeholder="{{'history.placeholder'|translate}}">
+      <input id="Search" type="text" name="search" class="input_field" [(ngModel)]="searchTerm" placeholder="{{'history.search'|translate}}">
       <div id="console">
         <ng-container *ngFor="let h of historys | historyFilter:searchTerm">
           <p>{{h.text}}</p>
