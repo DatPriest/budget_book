@@ -44,6 +44,8 @@ import { SpecificExpensesViewComponent } from './component/specific-expenses-vie
 import { StatisticsViewComponent } from './component/statistics-view/statistics-view.component';
 import { DiagramViewComponent } from './component/diagram-view/diagram-view.component';
 
+import { HistoryFilterPipe } from './component/history-view/history-filter.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,7 +79,8 @@ import { DiagramViewComponent } from './component/diagram-view/diagram-view.comp
     PeriodViewComponent,
     SpecificExpensesViewComponent,
     StatisticsViewComponent,
-    DiagramViewComponent
+    DiagramViewComponent,
+    HistoryFilterPipe
   ],
   imports: [
     BrowserAnimationsModule,
