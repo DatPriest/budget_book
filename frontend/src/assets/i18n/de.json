@@ -110,7 +110,8 @@
     "member": "Gruppenmitglieder:"
   },
   "history": {
-    "header": "History"
+    "header": "History",
+    "placeholder": "suche"
   },
   "imprint": {
     "header": "Impressum"

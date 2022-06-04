@@ -9,9 +9,9 @@ export class HistoryFilterPipe implements PipeTransform {
   transform(history: HistoryModule[], searchTerm: string): HistoryModule[] {
     if (!history || !searchTerm) {
       return history;
-    } else {
-      return history;
     }
+
+    return history.filter(history => history.text.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
   }
 
 }
