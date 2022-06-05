@@ -123,6 +123,10 @@
   },
   "notification": {
     "header": "Benachrichtigungen"
+  },
+  "currency": {
+    "header": "Währung",
+    "currency": "Währung auswählen"
   }
 }
 

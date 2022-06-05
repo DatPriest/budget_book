@@ -12,7 +12,7 @@ export class ExpensesFilterPipe implements PipeTransform {
     }
 
     var amount = "[0-9]";
-    var date = "";
+    var date = "dd.mm.yyyy";
     if (searchTerm.match(amount)){
       return expenses.filter(expenses => expenses.amount.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
     }
