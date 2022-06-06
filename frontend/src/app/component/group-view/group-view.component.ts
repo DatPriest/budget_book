@@ -35,6 +35,10 @@ export class GroupViewComponent implements OnInit {
     this.router.navigate(['/group/category']);
   }
 
+  statistic(): void {
+    this.router.navigate(['/group/statistics']);
+  }
+
   createInviteDialog(): void {
     const dialogConfig = new MatDialogConfig();
 
@@ -42,10 +46,6 @@ export class GroupViewComponent implements OnInit {
     dialogConfig.width = "400px";
 
     this.dialog.open(CreateInviteViewComponent, dialogConfig)
-  }
-
-  nofunction(): void {
-    console.warn('Diese Funktion ist kein Bestandteil des aktuellen Sprintes!');
   }
 
   ngOnInit(): void {

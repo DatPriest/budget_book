@@ -108,6 +108,7 @@
     "expenses": "Ausgaben",
     "categorys": "Kategorien",
     "history": "History",
+    "statistic": "Statistik",
     "member": "Gruppenmitglieder:"
   },
   "history": {
@@ -127,6 +128,10 @@
   "currency": {
     "header": "Währung",
     "currency": "Währung auswählen"
+  },
+  "statistic": {
+    "header": "Statistik",
+    "tableHeader": "Ausgaben:"
   }
 }
 
