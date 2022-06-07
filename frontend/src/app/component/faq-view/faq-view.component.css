@@ -38,9 +38,16 @@
 }
 
 .container {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
 }
 
 .screen {
-  padding: 5%;
+  /*padding: 5%;*/
+  position: absolute;
+  top: 10%;
+  height: 85%;
+  width: 90%;
 }

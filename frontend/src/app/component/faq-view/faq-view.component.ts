@@ -21,11 +21,11 @@ export class FaqViewComponent implements OnInit {
   }
 
   back(): void {
-    this.router.navigate(['main']);
+    this.router.navigate(['/main']);
   }
 
   askQuestion(): void {
-    this.router.navigate(['ask-question']);
+    this.router.navigate(['/faq/ask-question']);
   }
 
   ngOnInit(): void {

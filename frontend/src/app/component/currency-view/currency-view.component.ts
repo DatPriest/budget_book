@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./currency-view.component.css']
 })
 export class CurrencyViewComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {

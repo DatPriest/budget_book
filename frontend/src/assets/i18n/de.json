@@ -52,7 +52,8 @@
     "addBtn": "Hinzufügen",
     "closeBtn": "Schließen",
     "headerExp": "Alle Ausgaben",
-    "expenses": "Ausgaben:"
+    "expenses": "Ausgaben:",
+    "search": "Suche"
   },
   "category": {
     "header": "Kategorien"
@@ -107,10 +108,12 @@
     "expenses": "Ausgaben",
     "categorys": "Kategorien",
     "history": "History",
+    "statistic": "Statistik",
     "member": "Gruppenmitglieder:"
   },
   "history": {
-    "header": "History"
+    "header": "History",
+    "search": "Suche"
   },
   "imprint": {
     "header": "Impressum"
@@ -121,6 +124,14 @@
   },
   "notification": {
     "header": "Benachrichtigungen"
+  },
+  "currency": {
+    "header": "Währung",
+    "currency": "Währung auswählen"
+  },
+  "statistic": {
+    "header": "Statistik",
+    "tableHeader": "Ausgaben:"
   }
 }
 

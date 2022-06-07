@@ -24,15 +24,19 @@ export class GroupViewComponent implements OnInit {
   }
 
   history(): void {
-    this.router.navigate(['/history']);
+    this.router.navigate(['/group/history']);
   }
 
   expenses(): void {
-    this.router.navigate(['/expenses']);
+    this.router.navigate(['/group/expenses']);
   }
 
   categorys(): void {
-    this.router.navigate(['/category']);
+    this.router.navigate(['/group/category']);
+  }
+
+  statistic(): void {
+    this.router.navigate(['/group/statistics']);
   }
 
   createInviteDialog(): void {
@@ -42,10 +46,6 @@ export class GroupViewComponent implements OnInit {
     dialogConfig.width = "400px";
 
     this.dialog.open(CreateInviteViewComponent, dialogConfig)
-  }
-
-  nofunction(): void {
-    console.warn('Diese Funktion ist kein Bestandteil des aktuellen Sprintes!');
   }
 
   ngOnInit(): void {

@@ -8,12 +8,9 @@
   <body>
   <div class="container">
     <div class="screen">
-      <!-- Anderer Sprint! -->
-      <!--<div class="input_field">
-        <input type="text" class="input_field" id="Search" placeholder="Search">
-      </div>-->
+      <input id="Search" type="text" name="search" class="input_field" [(ngModel)]="searchTerm" placeholder="{{'history.search'|translate}}">
       <div id="console">
-        <ng-container *ngFor="let h of history$ | async">
+        <ng-container *ngFor="let h of historys | historyFilter:searchTerm">
           <p>{{h.text}}</p>
         </ng-container>
       </div>
