@@ -131,7 +131,14 @@
   },
   "statistic": {
     "header": "Statistik",
-    "tableHeader": "Ausgaben:"
+    "tableHeader": "Ausgaben:",
+    "button": "Gruppe"
+  },
+  "period": {
+    "header": "Zeitraum",
+    "period": "Zeitraum",
+    "month": "Monat",
+    "year": "Jahr"
   }
 }
 
