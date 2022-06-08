@@ -9,5 +9,6 @@ public class Image {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 
+    @Column(length = 3000000)
     public String imageString; // Could be an Bitmap or a Url
 }
