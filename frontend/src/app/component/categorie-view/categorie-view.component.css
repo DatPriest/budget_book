@@ -40,97 +40,25 @@
   width: 90%;
 }
 
-.screen_content {
-  z-index: 1;
-  position: relative;
-  height: 100%;
-}
-
-.new_password_submit {
-  background: #fff;
-  font-size: 16px;
-  padding: 16px 20px;
-  border-radius: 20px;
-  border: 1px solid #D4D3E8;
-  text-transform: uppercase;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  color: #4C489D;
-  margin-bottom: 10px;
-  box-shadow: 0px 2px 2px #5C5696;
-  cursor: pointer;
-  transition: .2s;
-  outline: none;
-  position: relative;
-}
-
-.new_password_submit:active,
-.new_password_submit:focus,
-.new_password_submit:hover {
-  border-color: #6A679E;
-  outline: none;
-}
-
-/* Cancel Button */
-.new_password_cancel {
-  background: #fff;
-  font-size: 16px;
-  padding: 16px 20px;
-  border-radius: 20px;
-  border: 1px solid #D4D3E8;
-  text-transform: uppercase;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  color: #4C489D;
-  margin-bottom: 10px;
-  box-shadow: 0px 2px 2px #5C5696;
-  cursor: pointer;
-  transition: .2s;
-  outline: none;
-  position: relative;
-}
-
-.input_field {
-  position: relative;
-  top: 5%;
-  left: 31%;
-  width: 20%;
-}
-
 .button{
   position: absolute;
-  top: 59%;
-  left: 25%;
-  width: 30%;
+  top: 83%;
+  left: 62%;
+  width: 40%;
 }
 
-input[type=text], select {
-  width: 100%;
-  padding: 1% 2%;
-  margin: 2% 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 2%;
-  box-sizing: border-box;
-}
-
-input[type=submit] {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 2% 3%;
-  margin: 2% 0;
-  border: none;
-  border-radius: 1%;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
+#imprint {
+  border-width: 2px;
+  border-style: solid;
+  border-color: white;
+  border-spacing: 50px 10px;
+  width: 40%;
+  height: 70%;
+  position: absolute;
+  top: 12%;
+  left: 28.5%;
+  overflow-y: scroll;
+  text-align: center;
 }
 
 

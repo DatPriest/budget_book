@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="Main-View Shapes entfernt" />
+    <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="Main-View überarbeitet">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/categorie-view/categorie-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/categorie-view/categorie-view.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/categorie-view/categorie-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/categorie-view/categorie-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/imprint-view/imprint-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/imprint-view/imprint-view.component.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +69,8 @@
       <workItem from="1652261704251" duration="47000" />
       <workItem from="1652345578956" duration="837000" />
       <workItem from="1652854258120" duration="6709000" />
-      <workItem from="1654674716303" duration="2589000" />
+      <workItem from="1654674716303" duration="2940000" />
+      <workItem from="1654705835887" duration="5523000" />
     </task>
     <task id="LOCAL-00001" summary="Edit Login .css">
       <created>1648717419214</created>
@@ -115,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654678365232</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Main-View überarbeitet">
+      <created>1654678440900</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1654678440900</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +164,7 @@
     <MESSAGE value="invite" />
     <MESSAGE value="." />
     <MESSAGE value="Main-View Shapes entfernt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Main-View Shapes entfernt" />
+    <MESSAGE value="Main-View überarbeitet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main-View überarbeitet" />
   </component>
 </project>
