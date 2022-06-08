@@ -28,10 +28,17 @@
 }
 
 .screen {
+  background: linear-gradient(90deg, #5D54A4, #7C78B8);
   position: absolute;
   top: 10%;
   height: 85%;
   width: 90%;
+}
+
+.screen_content {
+  z-index: 1;
+  position: relative;
+  height: 100%;
 }
 
 .screen_background {
