@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="invite">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="Abstand Mein Konto Seite">
       <change beforePath="$PROJECT_DIR$/frontend/src/app/component/categorie-view/categorie-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/categorie-view/categorie-view.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/component/edit-password-view/edit-password-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/edit-password-view/edit-password-view.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/component/edit-password-view/edit-password-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/edit-password-view/edit-password-view.component.html" afterDir="false" />
