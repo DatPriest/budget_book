@@ -8,18 +8,6 @@
   <body>
     <div class="container">
       <div class="screen">
-        <div class="screen_background">
-          <span class="screen_background_shape screen_background_shape11"></span>
-          <span class="screen_background_shape screen_background_shape10"></span>
-          <span class="screen_background_shape screen_background_shape9"></span>
-          <span class="screen_background_shape screen_background_shape8"></span>
-          <span class="screen_background_shape screen_background_shape7"></span>
-          <span class="screen_background_shape screen_background_shape6"></span>
-          <span class="screen_background_shape screen_background_shape5"></span>
-          <span class="screen_background_shape screen_background_shape4"></span>
-          <span class="screen_background_shape screen_background_shape3"></span>
-          <span class="screen_background_shape screen_background_shape2"></span>
-        </div>
         <!--<ng-container *ngFor="let g of userGroups$ | async">-->
         <ng-container *ngFor="let g of groups">
           <button type="button" id="Group{{g.groupId}}" class="screen_background_shape screen_group_{{g.groupId}}" (click)="openGroup(g.groupId)"><span class="group">{{g.groupName}}</span></button>
