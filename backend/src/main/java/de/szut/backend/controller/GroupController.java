@@ -1,9 +1,6 @@
 package de.szut.backend.controller;
 
-import de.szut.backend.dto.GroupCreateDto;
-import de.szut.backend.dto.GroupListDto;
-import de.szut.backend.dto.LoginDto;
-import de.szut.backend.dto.UserToGroupDto;
+import de.szut.backend.dto.*;
 import de.szut.backend.model.Group;
 import de.szut.backend.model.GroupXUser;
 import de.szut.backend.model.User;
@@ -41,7 +38,7 @@ public class GroupController {
      * @throws TypeNotPresentException
      */
     @PostMapping(path = "/addUserToGroup", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<GroupXUser> CreateGroup(@RequestBody UserToGroupDto dto) throws TypeNotPresentException {
+    public ResponseEntity<GroupXUser> createGroup(@RequestBody UserToGroupDto dto) throws TypeNotPresentException {
         GroupXUser user = null;
         try {
             user = service.addUserToGroup(dto);
@@ -55,12 +52,17 @@ public class GroupController {
     }
 
     @GetMapping(path = "/getUsers/{groupId}", produces = "application/json")
-    public ResponseEntity<ArrayList<User>> GetUsersToGroup(@PathVariable long groupId) throws TypeNotPresentException {
+    public ResponseEntity<ArrayList<User>> getUsersToGroup(@PathVariable long groupId) throws TypeNotPresentException {
         return new ResponseEntity<>(service.getUsersToGroup(groupId), HttpStatus.OK);
     }
 
+    @PutMapping(path = "/update", produces = "application/json")
+    public ResponseEntity<GroupDto> updateGroup(@RequestBody GroupUpdateDto dto) throws TypeNotPresentException {
+        return new ResponseEntity<>(service.updateGroup(dto), HttpStatus.OK);
+    }
+
     @GetMapping(path = "/getGroups/{userId}", produces = "application/json")
-    public ResponseEntity<GroupListDto> GetGroups(@PathVariable long userId) throws TypeNotPresentException {
+    public ResponseEntity<GroupListDto> getGroups(@PathVariable long userId) throws TypeNotPresentException {
         GroupListDto groups = this.service.getGroups(userId);
         if (groups != null && !groups.groups.isEmpty()) {
             return new ResponseEntity<>(groups, HttpStatus.OK);

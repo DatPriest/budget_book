@@ -1,9 +1,6 @@
 package de.szut.backend.service;
 
-import de.szut.backend.dto.GroupCreateDto;
-import de.szut.backend.dto.GroupDto;
-import de.szut.backend.dto.GroupListDto;
-import de.szut.backend.dto.UserToGroupDto;
+import de.szut.backend.dto.*;
 import de.szut.backend.mapper.GroupMapper;
 import de.szut.backend.model.Group;
 import de.szut.backend.model.GroupXUser;
@@ -24,28 +21,41 @@ public class GroupService extends BaseService {
     private final GroupRepository repo;
     private final GroupXUserRepository groupXUserRepository;
     private final ImageRepository imageRepository;
+    private final ImageService imageService;
     private final UserService userService;
     public GroupService(GroupMapper _mapper, GroupRepository _repo,
                         GroupXUserRepository _groupXUserRepository,
                         UserService _userService,
-                        ImageRepository _imageRepository) {
+                        ImageRepository _imageRepository,
+                        ImageService _imageService) {
         this.mapper = _mapper;
         this.repo = _repo;
         this.groupXUserRepository = _groupXUserRepository;
         this.userService = _userService;
         this.imageRepository = _imageRepository;
+        this.imageService = _imageService;
     }
 
     public Group createGroup(GroupCreateDto dto) {
         var group = mapper.mapGroupCreateDtoToGroup(dto);
         Image image = new Image();
         image.imageString = dto.image;
-        image = this.imageRepository.save(image);
+        image = this.imageService.savePicture(image);
         group.imageId = image.id;
         if (group.groupName.equals("") || group.groupName.equals(null)) {
             return null;
         }
         return repo.save(group);
+    }
+
+    public GroupDto updateGroup(GroupUpdateDto dto) {
+        Group group = mapper.mapGroupUpdateDtoToGroup(dto);
+        Group persistentGroup = repo.getById(dto.id);
+        if (imageService.updatePicture(persistentGroup.imageId, dto.image)) {
+            group.imageId = persistentGroup.imageId;
+            return this.mapper.mapGroupToGroupDto(repo.save(group), dto.image);
+        }
+        return null;
     }
 
     public GroupXUser addUserToGroup(UserToGroupDto dto) throws Exception {
