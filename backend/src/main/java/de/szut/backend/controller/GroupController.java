@@ -44,6 +44,7 @@ public class GroupController {
     public ResponseEntity<GroupXUser> CreateGroup(@RequestBody UserToGroupDto dto) throws TypeNotPresentException {
         GroupXUser user = null;
         try {
+
             user = service.addUserToGroup(dto);
         } catch (Exception e) {
             e.printStackTrace();
@@ -66,5 +67,17 @@ public class GroupController {
             return new ResponseEntity<>(groups, HttpStatus.OK);
         }
         return new ResponseEntity<>(null, HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/getGroupIdForInviteCode/{inviteCode}", produces = "application/json")
+    public ResponseEntity<Long> getGroupIdForInviteCode(@PathVariable String inviteCode){
+        long response;
+        try{
+            response = service.getGroupIdForInviteCode(inviteCode);
+        } catch(NullPointerException e){
+            response  = -1;
+            return new ResponseEntity<>(response,HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }

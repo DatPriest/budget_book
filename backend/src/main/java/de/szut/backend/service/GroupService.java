@@ -93,6 +93,18 @@ public class GroupService extends BaseService {
         return groups;
     }
 
+    public long getGroupIdForInviteCode(String inviteCode) throws NullPointerException{
+        Group foundGroup;
+        long groupId = -1;
+        try{
+            foundGroup = repo.findGroupByInviteCode(inviteCode);
+            groupId = foundGroup.id;
+        } catch (Exception e){
+            throw new NullPointerException();
+        }
+        return groupId;
+    }
+
     private String generateInviteCode(){
         return RandomString.make(8);
     }
