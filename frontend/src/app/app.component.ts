@@ -14,9 +14,7 @@ export class AppComponent {
     translate.addLangs(['en', 'de']);
     translate.setDefaultLang('de');
   }
-
-
-
+  
   ngOnInit(): void {
     this.router.navigate(['/sign-in']);
   }
