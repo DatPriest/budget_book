@@ -1,0 +1,98 @@
+<form>
+  <header>
+    <span class="material-icons burgerMenu">
+      <app-menu-view></app-menu-view>
+    </span>
+    <span class="header_name">Kategorien</span>
+  </header>
+  <body>
+  <ng-container>
+    <div class="container">
+      <div class="screen">
+        <label *ngFor="let c of categories$| async">{{c.categorie}}</label>
+      <div id="imprint">
+      <table>
+      <tr>
+          <th>Kategorie</th>
+          <th>Beschreibung</th>
+          <th>Löschen</th>
+        </tr>
+        <tr>
+          <td><span class="material-icons">directions_car</span></td>
+          <td>Auto</td>
+          <td><button type="button" id="delete_1"><span class="material-icons">delete</span></button></td>
+        </tr>
+        <tr>
+          <td><span class="material-icons">construction</span></td>
+          <td>Reperaturkosten</td>
+          <td><button type="button" id="delete_2"><span class="material-icons">delete</span></button></td>
+        </tr>
+        <tr>
+          <td><span class="material-icons">restaurant</span></td>
+          <td>Lebenshaltung</td>
+          <td><button type="button" id="delete_3"><span class="material-icons">delete</span></button></td>
+        </tr>
+        <tr>
+          <td><span class="material-icons">train</span></td>
+          <td>Fahrtkosten</td>
+          <td><button type="button" id="delete_4"><span class="material-icons">delete</span></button></td>
+        </tr>
+        <tr>
+          <td><span class="material-icons">construction</span></td>
+          <td>Reparaturkosten</td>
+          <td><button type="button" id="delete_5"><span class="material-icons">delete</span></button></td>
+        </tr>
+        <tr>
+          <td><span class="material-icons">restaurant</span></td>
+          <td>Lebenshaltung</td>
+          <td><button type="button" id="delete_6"><span class="material-icons">delete</span></button></td>
+        </tr>
+        <tr>
+          <td><span class="material-icons">apartment</span></td>
+          <td>Haus</td>
+          <td><button type="button" id="delete_7"><span class="material-icons">delete</span></button></td>
+        </tr>
+        <tr>
+          <td><span class="material-icons">lightbulb</span></td>
+          <td>Strom</td>
+          <td><button type="button" id="delete_8"><span class="material-icons">delete</span></button></td>
+        </tr>
+        <tr>
+          <td><span class="material-icons">public</span></td>
+          <td>Urlaub</td>
+          <td><button type="button" id="delete_9"><span class="material-icons">delete</span></button></td>
+        </tr>
+        <tr>
+          <td><span class="material-icons">school</span></td>
+          <td>Schule</td>
+          <td><button type="button" id="delete_10"><span class="material-icons">delete</span></button></td>
+        </tr>
+        <tr>
+          <td><span class="material-icons">kitesurfing</span></td>
+          <td>Sport</td>
+          <td><button type="button" id="delete_11"><span class="material-icons">delete</span></button></td>
+        </tr>
+        <tr>
+          <td><span class="material-icons">family_restroom</span></td>
+          <td>Familie</td>
+          <td><button type="button" id="delete_12"><span class="material-icons">delete</span></button></td>
+        </tr>
+        <tr>
+          <td><span class="material-icons">devices_other</span></td>
+          <td>Sonstiges</td>
+          <td><button type="button" id="delete_13"><span class="material-icons">delete</span></button></td>
+        </tr>
+      </table>
+    </div>
+    <div class="button">
+      <tr>
+        <button type="button" id="add" (click)="add()"><span class="group_create material-icons">add_circle_outline</span></button>
+      </tr>
+    </div>
+    </div>
+        </div>
+  </ng-container>
+  </body>
+</form>
+
+
