@@ -19,16 +19,16 @@
       <input name="amount" type="text" class="input_field" id="Expenses_price" ngModel placeholder="{{'expenses.amount'| translate}}">
     </div>
     <div class="column_price">
-      <input name="date" type="date" class="input_field" id="Expenses_date" ngModel placeholder="{{'expenses.date'| translate}}">
+      <input name="date" type="text" class="input_field" id="Expenses_date" ngModel placeholder="{{'expenses.date'| translate}}">
     </div>
   </div>
   <div>
     <div class="row_button">
       <div class="column_save">
-        <button type="submit"><span class="expenses_back material-icons">{{'expenses.addBtn'| translate}}</span></button>
+        <button type="submit"><span class="material-icons">add</span></button>
       </div>
       <div class="column_close">
-        <button type="button" (click)="closeExpenses()"><span class="expenses_close material-icons">{{'expenses.closeBtn'| translate}}</span></button>
+        <button type="button" (click)="closeExpenses()"><span class="material-icons">close</span></button>
       </div>
     </div>
   </div>
