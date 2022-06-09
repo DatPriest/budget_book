@@ -1,9 +1,9 @@
 <form>
   <header>
+    <span class="header_ausgaben">{{'expenses.headerExp'|translate}}</span>
     <div class="button_back">
       <button type="button" (click)="back()"><span class="material-icons">arrow_back</span></button>
     </div>
-    <span class="header_ausgaben">{{'expenses.headerExp'|translate}}</span>
   </header>
   <body>
     <div class="container">
@@ -15,7 +15,7 @@
           <table class="expenses_table">
             <thead class="expenses_table_header">
               <th>
-                <p>{{'expenses.expenses'|translate}}:</p>
+                <p>{{'expenses.expenses'|translate}}</p>
               </th>
               <th></th>
               <th>
@@ -25,7 +25,7 @@
               <!--<th></th>-->
             </thead>
             <tbody>
-              <ng-container *ngFor="let e of expenses">
+              <ng-container *ngFor="let e of expenses$ | async">
                 <tr class="expenses_table_line">
                   <td class="expenses_line_subject">{{e.subject}}</td>
                   <td class="expenses_line">{{e.amount}} €</td>

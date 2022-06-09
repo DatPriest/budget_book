@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+
+.header_name {
+  position: absolute;
+  width: 98%;
+  top: 3%;
+  text-align: center;
+  color: black;
+  font-size: 300%;
+  font-family: Raleway, sans-serif;
+}
+
+.pages_menu {
+  width: 100%;
+  text-align: right;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+}
+
+.screen {
+  background: linear-gradient(90deg, #5D54A4, #7C78B8);
+  position: absolute;
+  top: 10%;
+  height: 85%;
+  width: 90%;
+}
+
+.screen_content {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+}
+
+.new_password_submit {
+  background: #fff;
+  font-size: 16px;
+  padding: 16px 20px;
+  border-radius: 20px;
+  border: 1px solid #D4D3E8;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: #4C489D;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 2px #5C5696;
+  cursor: pointer;
+  transition: .2s;
+  outline: none;
+  position: relative;
+}
+
+.new_password_submit:active,
+.new_password_submit:focus,
+.new_password_submit:hover {
+  border-color: #6A679E;
+  outline: none;
+}
+
+.input_field {
+  position: relative;
+  top: 5%;
+  left: 31%;
+  width: 20%;
+}
+
+.button{
+  position: absolute;
+  top: 59%;
+  left: 25%;
+  width: 30%;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 1% 2%;
+  margin: 2% 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 2%;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 2% 3%;
+  margin: 2% 0;
+  border: none;
+  border-radius: 1%;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.button_back {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
+}
+
+.back_icon {
+  background: none;
+  padding: 5% 10%;
+  border-radius: 0px;
+  border: none;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  width: 0%;
+  color: rgb(0, 0, 0);
+  box-shadow: 0px 2px 2px transparent;
+  cursor: pointer;
+  transition: .0s;
+}
+
+.button_add {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}

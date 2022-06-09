@@ -1,0 +1,24 @@
+<form>
+  <header>
+    <span class="header_name">{{'category.header'|translate}}</span>
+    <div class="button_back">
+      <button type="button" class="back_icon" (click)="back()"><span class="material-icons">arrow_back</span></button>
+    </div>
+  </header>
+  <body>
+  <ng-container>
+    <div class="container">
+      <div class="screen">
+        <div class="button_add">
+          <button type="button" (click)="add()"><span class="material-icons">add</span></button>
+        </div>
+        <label *ngFor="let c of categorys$| async">{{c.category}}</label>
+        <div class="column">
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  </body>
+</form>
+
+

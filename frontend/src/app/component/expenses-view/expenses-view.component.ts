@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { ExpensesModule } from 'src/app/model/expenses/expenses.module';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { NewExpensesViewComponent } from '../new-expenses-view/new-expenses-view.component';
+import { Observable, of } from 'rxjs';
+import { GroupService } from 'src/app/service/group/group.service';
+import { AppModule } from 'src/app/app.module';
 
 @Component({
   selector: 'app-expenses-view',
@@ -10,12 +13,13 @@ import { NewExpensesViewComponent } from '../new-expenses-view/new-expenses-view
   styleUrls: ['./expenses-view.component.css']
 })
 export class ExpensesViewComponent implements OnInit {
-  expenses: ExpensesModule[] = [];
 
-  constructor(public router: Router, public dialog: MatDialog) {
-    // Wenn mehr Datensätze vorhanden sind, werden die Zeilen auch kleiner.
-    this.expenses.push(new ExpensesModule('Miete', '124,47', '02.04.2022'));
-    this.expenses.push(new ExpensesModule('Einkauf', '47,95', '05.04.2022'));
+  //expenses: ExpensesModule[] = [];
+  expenses$: Observable<ExpensesModule[]> = of([]);
+  constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule) {
+    this.expenses$ = this.groupService.getExpensesByGroupId(this.app.groupId);
+    //this.expenses.push(new ExpensesModule('Miete', '124,47', '02.04.2022'));
+    //this.expenses.push(new ExpensesModule('Einkauf', '47,95', '05.04.2022'));
   }
 
   back(): void {
@@ -25,7 +29,6 @@ export class ExpensesViewComponent implements OnInit {
   add(): void {
     const dialogConfig = new MatDialogConfig();
 
-    dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
     this.dialog.open(NewExpensesViewComponent, dialogConfig);

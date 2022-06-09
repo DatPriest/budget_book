@@ -1,4 +1,9 @@
-<p>faq-view works!</p>
-
-<button (click)="backToMenu()">Back</button>
-<button (click)="askQuestion()">Frage stellen</button>
+<form>
+  <header>
+    <span class="header_faq">{{'faq.header'|translate}}</span>
+    <div class="button_back">
+      <button type="button" class="back_icon" (click)="back()"><span class="material-icons">arrow_back</span></button>
+    </div>
+  </header>
+</form>
+<button (click)="askQuestion()">{{'faq.ask'|translate}}</button>

@@ -30,6 +30,7 @@
 
 .column_price {
   float: left;
+  width: 175px;
 }
 
 .input_field {
@@ -57,7 +58,7 @@
 }
 
 .column_save {
-  float: left;
+  float: right;
 }
 
 .column_close {

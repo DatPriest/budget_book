@@ -6,6 +6,7 @@ import { CreateGroupViewComponent } from '../create-group-view/create-group-view
 import { GroupService } from 'src/app/service/group/group.service';
 import { Observable, of } from 'rxjs';
 import { AppModule } from 'src/app/app.module';
+import { CreateInviteViewComponent } from '../create-invite-view/create-invite-view.component';
 
 @Component({
   selector: 'app-main-view',
@@ -29,14 +30,14 @@ export class MainViewComponent implements OnInit {
   createGroupDialog(): void {
     const dialogConfig = new MatDialogConfig();
 
-    dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
     this.dialog.open(CreateGroupViewComponent, dialogConfig);
   }
 
   openGroup(groupId: number): void {
-    this.groupService.getGroupById(groupId).subscribe(data => this.router.navigate(['/group', data]));
+    this.router.navigate(['/group']);
+    //this.groupService.getGroupById(groupId).subscribe(data => this.router.navigate(['/group', data]));
   }
 
   ngOnInit(): void {

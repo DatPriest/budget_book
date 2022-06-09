@@ -22,7 +22,7 @@ export class EditProfileViewComponent implements OnInit {
     this.userService.updateProfile(editProfileData).subscribe(data => this.router.navigate(['/profile']));
   }
 
-  backToProfile(): void {
+  back(): void {
     this.router.navigate(['/profile']);
   }
 

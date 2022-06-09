@@ -22,7 +22,7 @@ public class SecurityQuestionController {
     @GetMapping(produces = "application/json")
     public ResponseEntity<List<SecurityQuestionDto>> getSecurityQuestions() {
         try {
-            return new ResponseEntity<>(securityQuestionService.getSecurityQuestions(), HttpStatus.CREATED);
+            return new ResponseEntity<>(securityQuestionService.getSecurityQuestions(), HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
             return new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);

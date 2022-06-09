@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NewCategorieViewComponent } from './new-categorie-view.component';
+import { InviteViewComponent } from './invite-view.component';
 
-describe('NewCategorieViewComponent', () => {
-  let component: NewCategorieViewComponent;
-  let fixture: ComponentFixture<NewCategorieViewComponent>;
+describe('InviteLinkViewComponent', () => {
+  let component: InviteViewComponent;
+  let fixture: ComponentFixture<InviteViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NewCategorieViewComponent ]
+      declarations: [ InviteViewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewCategorieViewComponent);
+    fixture = TestBed.createComponent(InviteViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
