@@ -89,3 +89,11 @@
 .button {
   cursor: pointer;
 }
+
+.button_group {
+  width: 10%;
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 18px;
+}

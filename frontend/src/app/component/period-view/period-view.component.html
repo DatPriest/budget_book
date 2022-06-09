@@ -1,2 +1,17 @@
-<p>period-view works!</p>
-<h1>{{data.member.name}}</h1>
+<form  (ngSubmit)="editperiod(periodForm)" #periodForm="ngForm">
+  <h4 class="header_Text">{{'period.header'| translate}}</h4>
+  <div class="row">
+    <div class="column_select">
+      <mat-form-field appearance="fill">
+        <mat-label>{{'period.period'| translate}}</mat-label>
+        <mat-select name="period" ngModel>
+          <mat-option value="month">{{'period.month'| translate}}</mat-option>
+          <mat-option value="year">{{'period.year'| translate}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="column_button">
+      <button type="submit"><span class="material-icons">save</span></button>
+    </div>
+  </div>
+</form>
