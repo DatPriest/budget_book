@@ -99,6 +99,7 @@ import { ExpensesFilterPipe } from './component/expenses-view/expenses-filter.pi
     AppRoutingModule,
     RouterModule.forRoot([
       // Login
+      {path: '', component: SignInViewComponent},
       {path: 'sign-in',component: SignInViewComponent},
       {path: 'sign-up',component: SignUpViewComponent},
       {path: 'new-password',component: NewPasswordViewComponent},

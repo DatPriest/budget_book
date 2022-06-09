@@ -1,145 +1,149 @@
 {
-  "forename": " Nachname",
-  "surname": "Vorname",
-  "email": "E-Mail",
-  "password": "Passwort",
-  "secAnswer": "Antwort:",
-  "secLine": "Wählen Sie 1 Frage aus!",
-  "secQuestion": "Sicherheitsfrage:",
-  "saveBtn": "speichern",
-  "clsBtn": "Zurück",
-  "login": {
-    "title": "Log Dich ein!",
-    "loginmsg": "Anmelden",
-    "forgotpw": "Passwort vergessen?",
-    "register": "Registrieren"
-  },
-  "main": {
-    "header": "Hauptmenü"
-  },
-  "signup": {
-    "header": "Registrierung",
-    "pwretype": "Passwort Wiederholung",
-    "logo": "Logo",
-    "register": "Registrieren",
-    "cancel": "abbrechen"
-  },
-  "profile": {
-    "acc": "Mein Konto",
-    "imgMsg": "Bild der jeweiligen Person",
-    "changePw": "Passwort ändern",
-    "deleteAcc": "Konto löschen",
-    "edit": "Bearbeiten",
-    "join": "Gruppe beitreten"
-  },
-  "privacy": {
-    "header": "Datenschutz"
-  },
-  "newPw": {
-    "resetPw": "Passwort Zurücksetzen",
-    "save": "speichern",
-    "cancel": "abbrechen",
-    "newPw": "Neues Passwort",
-    "retypeNewPw": "Neues Passwort wiederholen"
-  },
-  "expenses": {
-    "category": "Kategorie:",
-    "addExpenses": "Ausgaben hinzufügen",
-    "rent": "Miete",
-    "purchasing": "Einkauf",
-    "date": "Datum",
-    "amount": "Betrag",
-    "addBtn": "Hinzufügen",
-    "closeBtn": "Schließen",
-    "headerExp": "Alle Ausgaben",
-    "expenses": "Ausgaben:",
-    "search": "Suche"
-  },
-  "category": {
-    "header": "Kategorien"
-  },
-  "newCategory": {
-    "header": "Neue Kategorie hinzufügen:",
-    "placeholder": "Kategorie"
-  },
-  "menu": {
-    "settings": "Einstellungen",
-    "logout": "Ausloggen",
-    "profile": "Profil",
-    "help&settings": "Hilfe & Einstellungen",
-    "quiz": "Quiz",
-    "faq": "FAQ",
-    "privacy": "Datenschutz",
-    "impressum": "Impressum",
-    "agb": "AGB",
-    "category" : "Kategorie",
-    "notification" : "Benachrichtigungen",
-    "currency" : "Währung",
-    "language" : "Sprache"
-  },
-  "faq": {
-    "header": "FAQ!",
-    "ask": "Frage stellen!"
-  },
-  "askQuestions": {
-    "template": "Frage stellen!"
-  },
-  "gtc": {
-    "header": "Allgemeine Geschäftsbedingungen"
-  },
-  "createGroup": {
-    "header": "Neue Gruppe erstellen",
-    "logoMsg": "Logo",
-    "grpNameMsg": "Gruppen Name"
-  },
-  "createInvite": {
-    "header": "Einladungscode erstellen",
-    "msg": "Einladungscode"
-  },
-  "editProfile": {
-    "header": "Mein Konto",
-    "logo": "Logo"
-  },
-  "editPassword": {
-    "header": "Passwort ändern",
-    "pwretype": "Passwort Wiederholung"
-  },
-  "group": {
-    "expenses": "Ausgaben",
-    "categorys": "Kategorien",
-    "history": "History",
-    "statistic": "Statistik",
-    "member": "Gruppenmitglieder:"
-  },
-  "history": {
-    "header": "History",
-    "search": "Suche"
-  },
-  "imprint": {
-    "header": "Impressum"
-  },
-  "invite": {
-    "header": "Gruppe beitreten",
-    "placeholder": "Einladungscode"
-  },
-  "notification": {
-    "header": "Benachrichtigungen"
-  },
-  "currency": {
-    "header": "Währung",
-    "currency": "Währung auswählen"
-  },
-  "statistic": {
-    "header": "Statistik",
-    "tableHeader": "Ausgaben:",
-    "button": "Gruppe"
-  },
-  "period": {
-    "header": "Zeitraum",
-    "period": "Zeitraum",
-    "month": "Monat",
-    "year": "Jahr"
-  }
+	"askQuestions": {
+		"template": "Frage stellen!"
+	},
+	"category": {
+		"header": "Kategorien"
+	},
+	"clsBtn": "Zurück",
+	"createGroup": {
+		"grpNameMsg": "Gruppen Name",
+		"header": "Neue Gruppe erstellen",
+		"logoMsg": "Logo"
+	},
+	"createInvite": {
+		"header": "Einladungscode erstellen",
+		"msg": "Einladungscode"
+	},
+	"currency": {
+		"currency": "Währung auswählen",
+		"header": "Währung"
+	},
+	"editPassword": {
+		"header": "Passwort ändern",
+		"pwretype": "Passwort Wiederholung"
+	},
+	"editProfile": {
+		"header": "Mein Konto",
+		"logo": "Logo"
+	},
+	"email": "E-Mail",
+	"expenses": {
+		"addBtn": "Hinzufügen",
+		"addExpenses": "Ausgaben hinzufügen",
+		"amount": "Betrag",
+		"category": "Kategorie:",
+		"closeBtn": "Schließen",
+		"date": "Datum",
+		"expenses": "Ausgaben:",
+		"headerExp": "Alle Ausgaben",
+		"purchasing": "Einkauf",
+		"rent": "Miete",
+		"search": "Suche"
+	},
+	"faq": {
+		"ask": "Frage stellen!",
+		"header": "FAQ!"
+	},
+	"forename": " Nachname",
+	"group": {
+		"categorys": "Kategorien",
+		"expenses": "Ausgaben",
+		"history": "History",
+		"member": "Gruppenmitglieder:",
+		"statistic": "Statistik"
+	},
+	"gtc": {
+		"header": "Allgemeine Geschäftsbedingungen"
+	},
+	"history": {
+		"header": "History",
+		"search": "Suche"
+	},
+	"imprint": {
+		"header": "Impressum"
+	},
+	"invite": {
+		"header": "Gruppe beitreten",
+		"placeholder": "Einladungscode"
+	},
+	"language": {
+		"english": "englisch",
+		"german": "deutsch",
+		"header": "Sprache",
+		"language": "Sprachauswahl:"
+	},
+	"login": {
+		"forgotpw": "Passwort vergessen?",
+		"loginmsg": "Anmelden",
+		"register": "Registrieren",
+		"title": "Log Dich ein!"
+	},
+	"main": {
+		"header": "Hauptmenü"
+	},
+	"menu": {
+		"agb": "AGB",
+		"category": "Kategorie",
+		"currency": "Währung",
+		"faq": "FAQ",
+		"help&settings": "Hilfe & Einstellungen",
+		"impressum": "Impressum",
+		"language": "Sprache",
+		"logout": "Ausloggen",
+		"notification": "Benachrichtigungen",
+		"privacy": "Datenschutz",
+		"profile": "Profil",
+		"quiz": "Quiz",
+		"settings": "Einstellungen"
+	},
+	"newCategory": {
+		"header": "Neue Kategorie hinzufügen:",
+		"placeholder": "Kategorie"
+	},
+	"newPw": {
+		"cancel": "abbrechen",
+		"newPw": "Neues Passwort",
+		"resetPw": "Passwort Zurücksetzen",
+		"retypeNewPw": "Neues Passwort wiederholen",
+		"save": "speichern"
+	},
+	"notification": {
+		"header": "Benachrichtigungen"
+	},
+	"password": "Passwort",
+	"period": {
+		"header": "Zeitraum",
+		"month": "Monat",
+		"period": "Zeitraum",
+		"year": "Jahr"
+	},
+	"privacy": {
+		"header": "Datenschutz"
+	},
+	"profile": {
+		"acc": "Mein Konto",
+		"changePw": "Passwort ändern",
+		"deleteAcc": "Konto löschen",
+		"edit": "Bearbeiten",
+		"imgMsg": "Bild der jeweiligen Person",
+		"join": "Gruppe beitreten"
+	},
+	"saveBtn": "speichern",
+	"secAnswer": "Antwort:",
+	"secLine": "Wählen Sie 1 Frage aus!",
+	"secQuestion": "Sicherheitsfrage:",
+	"signup": {
+		"cancel": "abbrechen",
+		"header": "Registrierung",
+		"logo": "Logo",
+		"pwretype": "Passwort Wiederholung",
+		"register": "Registrieren"
+	},
+	"statistic": {
+		"button": "Gruppe",
+		"header": "Statistik",
+		"tableHeader": "Ausgaben:"
+	},
+	"surname": "Vorname"
 }
-
-

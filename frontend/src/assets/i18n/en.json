@@ -1,5 +1,149 @@
 {
-  "login": {
-    "title": "Login Form"
-  }
+	"askQuestions": {
+		"template": "Ask a Question!"
+	},
+	"category": {
+		"header": "categories"
+	},
+	"clsBtn": "back",
+	"createGroup": {
+		"grpNameMsg": "Group Name",
+		"header": "Create a new group",
+		"logoMsg": "LOGO"
+	},
+	"createInvite": {
+		"header": "Create invitation code",
+		"msg": "Invitation code"
+	},
+	"currency": {
+		"currency": "Select currency",
+		"header": "Currency"
+	},
+	"editPassword": {
+		"header": "Change password",
+		"pwretype": "Password repetition"
+	},
+	"editProfile": {
+		"header": "My account",
+		"logo": "LOGO"
+	},
+	"email": "e-mail",
+	"expenses": {
+		"addBtn": "add",
+		"addExpenses": "Add issues",
+		"amount": "Amount",
+		"category": "Category:",
+		"closeBtn": "Close",
+		"date": "Date",
+		"expenses": "Expenditures:",
+		"headerExp": "All issues",
+		"purchasing": "Purchasing",
+		"rent": "Rent",
+		"search": "Search"
+	},
+	"faq": {
+		"ask": "Ask a Question!",
+		"header": "FAQ!"
+	},
+	"forename": " Surname ",
+	"group": {
+		"categorys": "categories",
+		"expenses": "expenditure",
+		"history": "History",
+		"member": "Group members:",
+		"statistic": "Statistics"
+	},
+	"gtc": {
+		"header": "Terms of Service"
+	},
+	"history": {
+		"header": "History",
+		"search": "Search"
+	},
+	"imprint": {
+		"header": "imprint"
+	},
+	"invite": {
+		"header": "to join a group",
+		"placeholder": "Invitation code"
+	},
+	"language": {
+		"english": "English",
+		"german": "German",
+		"header": "Language",
+		"language": "Language selection:"
+	},
+	"login": {
+		"forgotpw": "Forgot Password?",
+		"loginmsg": "Log In",
+		"register": "To register",
+		"title": "Log in!"
+	},
+	"main": {
+		"header": "MAIN MENU"
+	},
+	"menu": {
+		"agb": "Conditions",
+		"category": "CATEGORY",
+		"currency": "Currency",
+		"faq": "FAQ",
+		"help&settings": "Help & Settings",
+		"impressum": "imprint",
+		"language": "Language",
+		"logout": "Log Out",
+		"notification": "Notifications",
+		"privacy": "data protection",
+		"profile": "Profile",
+		"quiz": "Quiz",
+		"settings": "Settings"
+	},
+	"newCategory": {
+		"header": "Add new category:",
+		"placeholder": "CATEGORY"
+	},
+	"newPw": {
+		"cancel": "Abort, stop",
+		"newPw": "New password",
+		"resetPw": "Reset Password",
+		"retypeNewPw": "Repeat new password",
+		"save": "to save"
+	},
+	"notification": {
+		"header": "Notifications"
+	},
+	"password": "Password",
+	"period": {
+		"header": "Period",
+		"month": "Month",
+		"period": "Period",
+		"year": "Year"
+	},
+	"privacy": {
+		"header": "data protection"
+	},
+	"profile": {
+		"acc": "My account",
+		"changePw": "Change password",
+		"deleteAcc": "Deleting an account",
+		"edit": "To edit",
+		"imgMsg": "picture of the person",
+		"join": "to join a group"
+	},
+	"saveBtn": "to save",
+	"secAnswer": "Answer:",
+	"secLine": "Choose 1 question!",
+	"secQuestion": "Security question:",
+	"signup": {
+		"cancel": "Abort, stop",
+		"header": "Registration",
+		"logo": "LOGO",
+		"pwretype": "Password repetition",
+		"register": "To register"
+	},
+	"statistic": {
+		"button": "Group",
+		"header": "Statistics",
+		"tableHeader": "Expenditure:"
+	},
+	"surname": "first given name"
 }
