@@ -8,8 +8,8 @@
 	"clsBtn": "back",
 	"createGroup": {
 		"grpNameMsg": "Group Name",
-		"header": "Create a new group",
-		"logoMsg": "LOGO"
+		"header": "Create new group",
+		"logoMsg": "Logo"
 	},
 	"createInvite": {
 		"header": "Create invitation code",
@@ -24,10 +24,10 @@
 		"pwretype": "Password repetition"
 	},
 	"editProfile": {
-		"header": "My account",
-		"logo": "LOGO"
+		"header": "My Account",
+		"logo": "Logo"
 	},
-	"email": "e-mail",
+	"email": "E-mail",
 	"expenses": {
 		"addBtn": "add",
 		"addExpenses": "Add issues",
@@ -45,10 +45,10 @@
 		"ask": "Ask a Question!",
 		"header": "FAQ!"
 	},
-	"forename": " Surname ",
+	"forename": " Last name",
 	"group": {
-		"categorys": "categories",
-		"expenses": "expenditure",
+		"categorys": "Categories",
+		"expenses": "Expenditures",
 		"history": "History",
 		"member": "Group members:",
 		"statistic": "Statistics"
@@ -61,7 +61,7 @@
 		"search": "Search"
 	},
 	"imprint": {
-		"header": "imprint"
+		"header": "Imprint"
 	},
 	"invite": {
 		"header": "to join a group",
@@ -80,33 +80,33 @@
 		"title": "Log in!"
 	},
 	"main": {
-		"header": "MAIN MENU"
+		"header": "Main menu"
 	},
 	"menu": {
-		"agb": "Conditions",
-		"category": "CATEGORY",
+		"agb": "GTC",
+		"category": "Category",
 		"currency": "Currency",
 		"faq": "FAQ",
 		"help&settings": "Help & Settings",
-		"impressum": "imprint",
+		"impressum": "Imprint",
 		"language": "Language",
-		"logout": "Log Out",
+		"logout": "Log out",
 		"notification": "Notifications",
-		"privacy": "data protection",
+		"privacy": "Privacy",
 		"profile": "Profile",
 		"quiz": "Quiz",
 		"settings": "Settings"
 	},
 	"newCategory": {
 		"header": "Add new category:",
-		"placeholder": "CATEGORY"
+		"placeholder": "Category"
 	},
 	"newPw": {
-		"cancel": "Abort, stop",
+		"cancel": "Cancel",
 		"newPw": "New password",
 		"resetPw": "Reset Password",
 		"retypeNewPw": "Repeat new password",
-		"save": "to save"
+		"save": "Save"
 	},
 	"notification": {
 		"header": "Notifications"
@@ -119,31 +119,31 @@
 		"year": "Year"
 	},
 	"privacy": {
-		"header": "data protection"
+		"header": "Privacy"
 	},
 	"profile": {
-		"acc": "My account",
+		"acc": "My Account",
 		"changePw": "Change password",
-		"deleteAcc": "Deleting an account",
-		"edit": "To edit",
-		"imgMsg": "picture of the person",
-		"join": "to join a group"
+		"deleteAcc": "Delete account",
+		"edit": "Edit",
+		"imgMsg": "Picture of the respective person",
+		"join": "Join group"
 	},
-	"saveBtn": "to save",
+	"saveBtn": "Save",
 	"secAnswer": "Answer:",
 	"secLine": "Choose 1 question!",
 	"secQuestion": "Security question:",
 	"signup": {
-		"cancel": "Abort, stop",
+		"cancel": "Cancel",
 		"header": "Registration",
-		"logo": "LOGO",
+		"logo": "Logo",
 		"pwretype": "Password repetition",
-		"register": "To register"
+		"register": "Register"
 	},
 	"statistic": {
 		"button": "Group",
 		"header": "Statistics",
-		"tableHeader": "Expenditure:"
+		"tableHeader": "Expenditures:"
 	},
-	"surname": "first given name"
+	"surname": "First name"
 }

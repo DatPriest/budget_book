@@ -49,7 +49,7 @@
 	"group": {
 		"categorys": "Kategorien",
 		"expenses": "Ausgaben",
-		"history": "History",
+		"history": "Verlauf",
 		"member": "Gruppenmitglieder:",
 		"statistic": "Statistik"
 	},
@@ -57,7 +57,7 @@
 		"header": "Allgemeine Geschäftsbedingungen"
 	},
 	"history": {
-		"header": "History",
+		"header": "Verlauf",
 		"search": "Suche"
 	},
 	"imprint": {
@@ -106,7 +106,7 @@
 		"newPw": "Neues Passwort",
 		"resetPw": "Passwort Zurücksetzen",
 		"retypeNewPw": "Neues Passwort wiederholen",
-		"save": "speichern"
+		"save": "Speichern"
 	},
 	"notification": {
 		"header": "Benachrichtigungen"
