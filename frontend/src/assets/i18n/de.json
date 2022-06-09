@@ -44,7 +44,7 @@
   },
   "expenses": {
     "category": "Kategorie:",
-    "addExpensesMsg": "Ausgaben hinzufügen",
+    "addExpenses": "Ausgaben hinzufügen",
     "rent": "Miete",
     "purchasing": "Einkauf",
     "date": "Datum",
@@ -52,7 +52,8 @@
     "addBtn": "Hinzufügen",
     "closeBtn": "Schließen",
     "headerExp": "Alle Ausgaben",
-    "expenses": "Ausgaben:"
+    "expenses": "Ausgaben:",
+    "search": "Suche"
   },
   "category": {
     "header": "Kategorien"
@@ -71,7 +72,10 @@
     "privacy": "Datenschutz",
     "impressum": "Impressum",
     "agb": "AGB",
-    "category" : "Kategorie"
+    "category" : "Kategorie",
+    "notification" : "Benachrichtigungen",
+    "currency" : "Währung",
+    "language" : "Sprache"
   },
   "faq": {
     "header": "FAQ!",
@@ -104,10 +108,12 @@
     "expenses": "Ausgaben",
     "categorys": "Kategorien",
     "history": "History",
+    "statistic": "Statistik",
     "member": "Gruppenmitglieder:"
   },
   "history": {
-    "header": "History"
+    "header": "History",
+    "search": "Suche"
   },
   "imprint": {
     "header": "Impressum"
@@ -115,6 +121,24 @@
   "invite": {
     "header": "Gruppe beitreten",
     "placeholder": "Einladungscode"
+  },
+  "notification": {
+    "header": "Benachrichtigungen"
+  },
+  "currency": {
+    "header": "Währung",
+    "currency": "Währung auswählen"
+  },
+  "statistic": {
+    "header": "Statistik",
+    "tableHeader": "Ausgaben:",
+    "button": "Gruppe"
+  },
+  "period": {
+    "header": "Zeitraum",
+    "period": "Zeitraum",
+    "month": "Monat",
+    "year": "Jahr"
   }
 }
 

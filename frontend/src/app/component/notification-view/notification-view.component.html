@@ -1,0 +1,5 @@
+<form (ngSubmit)="save(signInForm)" #signInForm="ngForm">
+  <h1 class="header_Text">{{'notification.header'|translate}}</h1>
+  <mat-slide-toggle ngModel name="acceptTerms">E-Mail</mat-slide-toggle>
+  <button type="submit"><span class="material-icons">save</span></button>
+</form>
