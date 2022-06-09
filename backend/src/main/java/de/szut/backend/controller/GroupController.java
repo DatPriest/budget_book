@@ -56,7 +56,7 @@ public class GroupController {
         return new ResponseEntity<>(service.getUsersToGroup(groupId), HttpStatus.OK);
     }
 
-    @PutMapping(path = "/update", produces = "application/json")
+    @PutMapping(path = "/update", produces = "application/json", consumes = "application/json")
     public ResponseEntity<GroupDto> updateGroup(@RequestBody GroupUpdateDto dto) throws TypeNotPresentException {
         return new ResponseEntity<>(service.updateGroup(dto), HttpStatus.OK);
     }

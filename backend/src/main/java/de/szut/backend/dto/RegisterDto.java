@@ -19,5 +19,5 @@ public class RegisterDto {
     @NotNull
     public String securityAnswer;
 
-    public String image;
+    public String imageString;
 }

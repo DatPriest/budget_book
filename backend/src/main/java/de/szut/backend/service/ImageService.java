@@ -21,8 +21,14 @@ public class ImageService {
        return this.repo.save(image);
     }
 
+    public Image getPicture(long id) {
+        return this.repo.getById(id);
+    }
+
     public boolean updatePicture(long imageId, String imageString) {
         if (this.repo.findById(imageId).get().id != null) {
+            if (this.repo.findById(imageId).get().imageString == null || imageString == null || imageString == "")
+                return true;
             Image image = new Image();
             image.id = imageId;
             image.imageString = imageString;
