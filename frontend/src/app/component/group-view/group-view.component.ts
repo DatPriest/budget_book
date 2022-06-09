@@ -8,6 +8,8 @@ import { UserModule } from 'src/app/model/user/user.module';
 import { AlertService } from 'src/app/service/alert/alert.service';
 import { GroupService } from 'src/app/service/group/group.service';
 import { CreateInviteViewComponent } from '../create-invite-view/create-invite-view.component';
+import { EditGroupViewComponent } from '../edit-group-view/edit-group-view.component';
+import { RemoveMemberViewComponent } from '../remove-member-view/remove-member-view.component';
 
 @Component({
   selector: 'app-group-view',
@@ -47,6 +49,24 @@ export class GroupViewComponent implements OnInit {
     dialogConfig.width = "400px";
 
     this.dialog.open(CreateInviteViewComponent, dialogConfig)
+  }
+
+  editGroupDialog(): void {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "400px";
+
+    this.dialog.open(EditGroupViewComponent, dialogConfig)
+  }
+
+  deleteUserDialog(): void {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "400px";
+
+    this.dialog.open(RemoveMemberViewComponent, dialogConfig)
   }
 
   ngOnInit(): void {

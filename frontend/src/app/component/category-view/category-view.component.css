@@ -132,3 +132,50 @@ input[type=submit]:hover {
   right: 16px;
   font-size: 18px;
 }
+
+.button_delete {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: .0s;
+}
+
+.screen_table {
+  position: absolute;
+  top: 5%;
+  height: 90%;
+  width: 50%;
+  right: 25%;
+  font-size: 20%;
+  box-shadow: 0px 0px 24px #5C5696;
+  overflow-y: scroll;
+}
+
+.table {
+  font-size: x-large;
+  border-collapse: collapse;
+  border-width: thin 0 0 thin;
+  margin: 0 0 1em;
+  width: 100%;
+  max-width: 100%;
+  height: 90%;
+  top: 10%;
+  overflow-y: scroll;
+}
+
+.table_header {
+  border: thin solid black;
+  background: white;
+  font-weight: 700;
+  text-align: center;
+}
+
+.table_line {
+  padding: .4em .6em;
+  border: thin solid black;
+  font-weight: 400;
+  text-align: center;
+}
