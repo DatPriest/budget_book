@@ -7,4 +7,5 @@ public class GroupDto {
     private long id;
     private String groupName;
     private String imageString;
+    private String inviteCode;
 }

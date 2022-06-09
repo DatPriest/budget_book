@@ -18,5 +18,5 @@ public class Group {
     public Date created;
     @UpdateTimestamp
     public Date lastUpdate;
-
+    public String inviteCode;
 }

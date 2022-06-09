@@ -6,6 +6,7 @@ import de.szut.backend.dto.GroupUpdateDto;
 import de.szut.backend.dto.UserToGroupDto;
 import de.szut.backend.model.Group;
 import de.szut.backend.model.GroupXUser;
+import de.szut.backend.model.Image;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -28,6 +29,7 @@ public class GroupMapper {
         dto.setGroupName(group.groupName);
         dto.setId(group.id);
         dto.setImageString(image);
+        dto.setInviteCode(group.inviteCode);
         return dto;
     }
 
