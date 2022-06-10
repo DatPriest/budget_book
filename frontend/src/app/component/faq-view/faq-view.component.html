@@ -11,9 +11,9 @@
   <body>
     <div class="container">
       <div class="screen">
-        <ng-container *ngFor="let f of fragen">
+        <ng-container *ngFor="let f of questions$ | async">
           <mat-accordion>
-            <mat-expansion-panel hideToggle>
+            <mat-expansion-panel hideToggle class="questions_space">
               <mat-expansion-panel-header>
                 <mat-panel-title>
                   <h2>{{f.question}}</h2>

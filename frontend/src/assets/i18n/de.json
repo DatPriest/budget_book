@@ -139,6 +139,11 @@
     "period": "Zeitraum",
     "month": "Monat",
     "year": "Jahr"
+  },
+  "editGroup": {
+    "header": "Gruppe bearbeiten",
+    "logoMsg": "Gruppenlogo",
+    "grpNameMsg": "Gruppen Name"
   }
 }
 

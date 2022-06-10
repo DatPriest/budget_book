@@ -1,4 +1,8 @@
-.header_name {
+* {
+  box-sizing: border-box;
+}
+
+.header_text {
   position: absolute;
   width: 98%;
   top: 3%;
@@ -6,6 +10,21 @@
   color: black;
   font-size: 300%;
   font-family: Raleway, sans-serif;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+}
+
+.screen {
+  background: linear-gradient(90deg, #5D54A4, #7C78B8);
+  position: absolute;
+  top: 10%;
+  height: 85%;
+  width: 90%;
 }
 
 .button_back {
@@ -28,4 +47,19 @@
   box-shadow: 0px 2px 2px transparent;
   cursor: pointer;
   transition: .0s;
+}
+
+.input_field {
+  background-color: white;
+  position: relative;
+  top: 5%;
+  left: 55%;
+  width: 20%;
+}
+
+.input_field:active,
+.input_field:focus,
+.input_field:hover {
+  outline: none;
+  border-bottom-color: #000000;
 }
