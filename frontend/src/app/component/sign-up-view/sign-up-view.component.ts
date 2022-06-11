@@ -44,7 +44,7 @@ export class SignUpViewComponent implements OnInit {
           const signUpData = new UserModule(null, signUpForm.value.firstName, signUpForm.value.lastName, this.hash, signUpForm.value.email, signUpForm.value.securityQuestion, signUpForm.value.securityAnswer, this.image);
           this.userService.registerUser(signUpData).subscribe(data => {
             this.alertService.successfulAlert("Erfolgreich registriert!",  "",  "success", 2500);
-            this.router.navigate(['/sign-in']);
+            this.router.navigate(['/sign-in']); //temp
           });
         } else {
           this.alertService.alert("Oops",  "Bitte eine Sicherheitsfrage und eine Antwort ausfüllen!",  "error");
