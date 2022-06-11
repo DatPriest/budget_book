@@ -56,7 +56,7 @@ export class SignInViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.router.navigate(['/sign-in']);
+    //this.router.navigate(['/sign-in']);
     this.signInForm = this.formBuilder.group({
       email: [''],
       password: ['']

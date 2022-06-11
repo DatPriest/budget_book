@@ -49,17 +49,23 @@
   transition: .0s;
 }
 
-.input_field {
-  background-color: white;
-  position: relative;
+.textarea {
+  font-size: x-large;
+  border-collapse: collapse;
+  border-width: thin 0 0 thin;
+  margin: 0 0 1em;
+  position: absolute;
   top: 5%;
-  left: 55%;
-  width: 20%;
+  height: 90%;
+  width: 50%;
+  right: 25%;
+  resize: none;
 }
 
-.input_field:active,
-.input_field:focus,
-.input_field:hover {
-  outline: none;
-  border-bottom-color: #000000;
+.button_send {
+  width: 8%;
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 18px;
 }
