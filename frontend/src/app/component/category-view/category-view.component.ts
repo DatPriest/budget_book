@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import {Observable, of} from "rxjs";
+import { Observable, of } from "rxjs";
 import { AppModule } from 'src/app/app.module';
 import { CategoryModule } from 'src/app/model/category/category.module';
 import { GroupService } from 'src/app/service/group/group.service';

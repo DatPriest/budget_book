@@ -26,10 +26,10 @@
       </div>
           <div class="button">
             <tr>
-              <button type="button" ide="profile" (click)="joinGroupDialog()"><p>{{'profile.join'| translate}}</p></button>
-              <button type="button" ide="profile" (click)="moveToEditProfile(user)"><p>{{'profile.edit'| translate}}</p></button>
-              <button type="button" ide="profile" (click)="moveToEditPassword()"><p>{{'profile.changePw'| translate}}</p></button>
-              <button type="button" ide="profile" (click)="deleteProfile()"><p>{{'profile.deleteAcc'| translate}}</p></button>
+              <button type="button" ide="profile" (click)="joinGroupDialog()" translate="profile.join"></button>
+              <button type="button" ide="profile" (click)="moveToEditProfile(user)" translate="profile.edit"></button>
+              <button type="button" ide="profile" (click)="moveToEditPassword()" translate="profile.changePw"></button>
+              <button type="button" ide="profile" (click)="deleteProfile()" translate="profile.deleteAcc"></button>
             </tr>
           </div>
     </ng-container>

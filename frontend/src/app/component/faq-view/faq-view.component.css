@@ -29,3 +29,29 @@
   cursor: pointer;
   transition: .0s;
 }
+
+.button_add {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+}
+
+.screen {
+  /*padding: 5%;*/
+  position: absolute;
+  top: 10%;
+  height: 85%;
+  width: 90%;
+}
+
+.questions_space {
+  margin: 1%;
+}

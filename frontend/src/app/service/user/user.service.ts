@@ -6,6 +6,9 @@ import { UserModule } from 'src/app/model/user/user.module';
 import { LoginUserModule } from 'src/app/model/login-user/login-user.module';
 import { SecurityQuestionModule } from 'src/app/model/security-question/security-question.module';
 import { UpdatePasswordModule } from 'src/app/model/update-password/update-password.module';
+import { NotificationModule } from 'src/app/model/notification/notification.module';
+import { FaqModule } from 'src/app/model/faq/faq.module';
+import { AskFaqModule } from 'src/app/model/ask-faq/ask-faq.module';
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +49,22 @@ export class UserService {
 
   deleteProfile(userId: number) {
     return this.http.delete(`http://localhost:4000/api/v1/profile/deleteUserProfile/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
+  notificationEmail(user: NotificationModule) {
+    return this.http.put('http://localhost:4000/api/v1/notification/email', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
+  getFaqQuestion() {
+    return this.http.get<FaqModule[]>('http://localhost:4000/api/v1/faq/getAllWithAnswers', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
+  getFaqQuestionByUserId(userId: number) {
+    return this.http.get<FaqModule[]>(`http://localhost:4000/api/v1/faq/getAllFromUser/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
+  postQuestion(user: AskFaqModule) {
+    return this.http.post<AskFaqModule>('http://localhost:4000/api/v1/faq/create', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   public handleError<T>(origin = "origin", result? : T) {

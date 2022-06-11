@@ -4,6 +4,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { GroupService } from 'src/app/service/group/group.service';
 import { GroupModule } from 'src/app/model/group/group.module';
 import { Observable, Subscriber } from 'rxjs';
+import { AlertService } from 'src/app/service/alert/alert.service';
 
 @Component({
   selector: 'app-create-group-view',
@@ -15,12 +16,13 @@ export class CreateGroupViewComponent implements OnInit {
   createGroupForm: FormGroup;
   image: string;
   constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<CreateGroupViewComponent>,
-      public groupService: GroupService) { }
+      public groupService: GroupService, public alertService: AlertService) { }
 
   createGroup(createGroupForm: NgForm): void {
     if (createGroupForm.value.image != '' && createGroupForm.value.groupName != '') {
       const createGroupData = new GroupModule(null, createGroupForm.value.groupName, this.image);
       this.groupService.createGroup(createGroupData).subscribe(data => {
+        this.alertService.successfulAlert("Gruppe erfolgreich erstellt!",  "",  "success", 2500);
         this.dialogRef.close();
       });
     };

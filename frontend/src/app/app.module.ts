@@ -34,6 +34,18 @@ import { CategoryViewComponent } from './component/category-view/category-view.c
 import { NewCategoryViewComponent } from './component/new-category-view/new-category-view.component';
 import { InviteViewComponent } from './component/invite-view/invite-view.component';
 import { CreateInviteViewComponent } from './component/create-invite-view/create-invite-view.component';
+import { LanguageViewComponent } from './component/language-view/language-view.component';
+import { CurrencyViewComponent } from './component/currency-view/currency-view.component';
+import { NotificationViewComponent } from './component/notification-view/notification-view.component';
+import { EditGroupViewComponent } from './component/edit-group-view/edit-group-view.component';
+import { RemoveMemberViewComponent } from './component/remove-member-view/remove-member-view.component';
+import { PeriodViewComponent } from './component/period-view/period-view.component';
+import { SpecificExpensesViewComponent } from './component/specific-expenses-view/specific-expenses-view.component';
+import { StatisticsViewComponent } from './component/statistics-view/statistics-view.component';
+import { DiagramViewComponent } from './component/diagram-view/diagram-view.component';
+
+import { HistoryFilterPipe } from './component/history-view/history-filter.pipe';
+import { ExpensesFilterPipe } from './component/expenses-view/expenses-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -59,7 +71,18 @@ import { CreateInviteViewComponent } from './component/create-invite-view/create
     CategoryViewComponent,
     NewCategoryViewComponent,
     InviteViewComponent,
-    CreateInviteViewComponent
+    CreateInviteViewComponent,
+    LanguageViewComponent,
+    CurrencyViewComponent,
+    NotificationViewComponent,
+    EditGroupViewComponent,
+    RemoveMemberViewComponent,
+    PeriodViewComponent,
+    SpecificExpensesViewComponent,
+    StatisticsViewComponent,
+    DiagramViewComponent,
+    HistoryFilterPipe,
+    ExpensesFilterPipe
   ],
   imports: [
     BrowserAnimationsModule,
@@ -75,22 +98,35 @@ import { CreateInviteViewComponent } from './component/create-invite-view/create
     AngularMaterialModule,
     AppRoutingModule,
     RouterModule.forRoot([
+      // Login
+      {path: '', component: SignInViewComponent},
       {path: 'sign-in',component: SignInViewComponent},
       {path: 'sign-up',component: SignUpViewComponent},
       {path: 'new-password',component: NewPasswordViewComponent},
+
+      // Main
       {path: 'main',component: MainViewComponent},
-      {path: 'group',component: GroupViewComponent},
-      {path: 'history',component: HistoryViewComponent},
-      {path: 'expenses',component: ExpensesViewComponent},
-      {path: 'profile', component: ProfileViewComponent},
-      {path: 'profile/edit', component: EditProfileViewComponent},
+
+      // Menu
       {path: 'faq', component: FaqViewComponent},
-      {path: 'ask-question', component: AskQuestionViewComponent},
+      {path: 'faq/ask-question', component: AskQuestionViewComponent},
       {path: 'gtc', component: GtcViewComponent},
       {path: 'privacy', component: PrivacyViewComponent},
       {path: 'imprint', component: ImprintViewComponent},
-      {path: 'category', component: CategoryViewComponent},
-      {path: 'edit-passwort', component: EditPasswordViewComponent}
+
+      // Profile
+      {path: 'profile', component: ProfileViewComponent},
+      {path: 'profile/edit', component: EditProfileViewComponent},
+      {path: 'profile/edit-passwort', component: EditPasswordViewComponent},
+
+      // Group
+      {path: 'group',component: GroupViewComponent},
+      {path: 'group/history',component: HistoryViewComponent},
+      {path: 'group/expenses',component: ExpensesViewComponent},
+      {path: 'group/expenses/specific', component: SpecificExpensesViewComponent},
+      {path: 'group/category', component: CategoryViewComponent},
+      {path: 'group/statistics', component: StatisticsViewComponent},
+      {path: 'group/diagram', component: DiagramViewComponent}
     ]),
     FormsModule,
     ReactiveFormsModule,

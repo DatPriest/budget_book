@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+.createGroup {
+  /*width: 280px;
+  padding: 30px;
+  padding-top: 200px;*/
+  font-family: Raleway, sans-serif;
+}
+
+.column_save {
+  float: left;
+  width: 45%;
+}
+
+.column_close {
+ float: right;
+ width: 45%;
+}
+
+.row:after {
+ content: "";
+ display: table;
+ clear: both;
+}
+
+.input_field {
+ padding: 10px 0px;
+ position: relative;
+}
+
+.input_field:active,
+.input_field:focus,
+.input_field:hover {
+ outline: none;
+ border-bottom-color: #6A679E;
+}
+
+.header_Text {
+  color: #7875B5;
+  text-shadow: black;
+  font-size: 20px;
+}

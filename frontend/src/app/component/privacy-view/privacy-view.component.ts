@@ -11,7 +11,7 @@ export class PrivacyViewComponent implements OnInit {
   constructor(public router: Router) { }
 
   back(): void {
-    this.router.navigate(['main']);
+    this.router.navigate(['/main']);
   }
 
   ngOnInit(): void {

@@ -1,0 +1,10 @@
+.notification-form mat-slide-toggle {
+  margin: 8px 0;
+  display: block;
+}
+
+.header_Text {
+  color: #7875B5;
+  text-shadow: black;
+  font-size: 20px;
+}
