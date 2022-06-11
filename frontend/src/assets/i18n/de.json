@@ -133,7 +133,14 @@
 	"secAnswer": "Antwort:",
 	"secLine": "Wählen Sie 1 Frage aus!",
 	"secQuestion": "Sicherheitsfrage:",
-	"signup": {
+	"secSelection": {
+    "bornCity": "In welcher Stadt bzw. an welchem Ort wurden Sie geboren?",
+    "secondName": "Wie lautet der zweite Vorname Ihrer ältesten Schwester bzw. Ihres ältesten Bruders?",
+    "firstConcert": "Welches war Ihr erstes Konzert, das Sie besucht haben?",
+    "firstCar": "Geben Sie Marke und Modell Ihres ersten Autos an.",
+    "metParents": "In welcher Stadt bzw. welchem Ort haben sich Ihre Eltern kennengelernt?"
+  },
+  "signup": {
 		"cancel": "abbrechen",
 		"header": "Registrierung",
 		"logo": "Logo",
