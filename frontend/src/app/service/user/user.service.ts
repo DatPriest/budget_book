@@ -59,6 +59,10 @@ export class UserService {
     return this.http.get<FaqModule[]>('http://localhost:4000/api/v1/faq/getAllWithAnswers', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
+  getFaqQuestionByUserId(userId: number) {
+    return this.http.get<FaqModule[]>(`http://localhost:4000/api/v1/faq/getAllFromUser/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
   postQuestion(user: AskFaqModule) {
     return this.http.post<AskFaqModule>('http://localhost:4000/api/v1/faq/create', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }

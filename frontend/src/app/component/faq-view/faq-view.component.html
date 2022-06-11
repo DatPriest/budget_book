@@ -11,6 +11,7 @@
   <body>
     <div class="container">
       <div class="screen">
+        <button type="button" class="button_send" (click)="toggleQuestion()" tabindex="-1">{{onlyMyQuestion ? 'Alle von ID' : 'Alle mit Antwort' }}</button>
         <ng-container *ngFor="let f of questions$ | async">
           <mat-accordion>
             <mat-expansion-panel hideToggle class="questions_space">
