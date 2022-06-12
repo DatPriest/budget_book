@@ -19,7 +19,7 @@ export class GroupService {
   constructor(public http: HttpClient) { }
 
   getGroupsByUser(userId: number) {
-    return this.http.post<GroupModule[]>(`http://localhost:4000/api/v1/groups/getGroups/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.get<GroupModule[]>(`http://localhost:4000/api/v1/groups/getGroups/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   createGroup(user: GroupModule) {

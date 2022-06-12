@@ -18,6 +18,7 @@ export class FaqViewComponent implements OnInit {
   questions$: Observable<FaqModule[]> = of([]);
   constructor(public router: Router, public userService: UserService, public app: AppModule) {
     this.questions$ = this.userService.getFaqQuestion();
+    console.warn(this.app.userId);
   }
 
   toggleQuestion(): void {

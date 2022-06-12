@@ -33,7 +33,7 @@ export class AskQuestionViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.askForm = this.formBuilder.group({
-      question: ['TEST'],
+      question: [''],
     });
   }
 

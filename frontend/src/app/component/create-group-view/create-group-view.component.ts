@@ -20,7 +20,7 @@ export class CreateGroupViewComponent implements OnInit {
 
   createGroup(createGroupForm: NgForm): void {
     if (createGroupForm.value.image != '' && createGroupForm.value.groupName != '') {
-      const createGroupData = new GroupModule(null, createGroupForm.value.groupName, this.image);
+      const createGroupData = new GroupModule(null, createGroupForm.value.groupName, this.image, null);
       this.groupService.createGroup(createGroupData).subscribe(data => {
         this.alertService.successfulAlert("Gruppe erfolgreich erstellt!",  "",  "success", 2500);
         this.dialogRef.close();

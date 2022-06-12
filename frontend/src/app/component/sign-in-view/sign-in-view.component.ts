@@ -27,9 +27,8 @@ export class SignInViewComponent implements OnInit {
   }
 
   loginUser(signInForm: NgForm): void {
-    this.router.navigate(['/main']); // temp
+    //this.router.navigate(['/main']); // temp
 
-    /* Temp auskommentiert
     if (signInForm.value.email == '' && signInForm.value.password == '') {
       this.alertService.alert("Oops",  "E-Mail und Passwort dürfen nicht leer sein!",  "error");
     } else {
@@ -37,14 +36,14 @@ export class SignInViewComponent implements OnInit {
       const signInData = new LoginUserModule(null, signInForm.value.email, this.hash);
       this.userService.loginUser(signInData).subscribe(data => {
         if (data.email != null && data.hash != null) {
-          this.app.userId = data.userId;
+          this.app.userId = data.id; // muss wieder auf userId geändert werden.
           this.router.navigate(['/main']);
           this.alertService.successfulAlert("Herzlich willkommen!",  "Login war erfolgreich.",  "success", 2500);
         } else {
           this.alertService.alert("Oops",  "E-Mail und Passwort stimmen nicht überein!",  "error");
         }
       });
-    }*/
+    }
   }
 
   newUser(): void {
@@ -56,7 +55,7 @@ export class SignInViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //this.router.navigate(['/sign-in']);
+    this.router.navigate(['/sign-in']);
     this.signInForm = this.formBuilder.group({
       email: [''],
       password: ['']

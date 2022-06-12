@@ -15,16 +15,12 @@ import { CreateInviteViewComponent } from '../create-invite-view/create-invite-v
 })
 export class MainViewComponent implements OnInit {
 
-  //userGroups$ : Observable<GroupModule[]> = of([]);
+  userGroups$ : Observable<GroupModule[]> = of([]);
   image: string;
-  groups: GroupModule[] = []
+  //groups: GroupModule[] = []
   constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule) {
-    //this.getGroupsByUserId();
-    this.groups.push(new GroupModule(1, 'Test', this.image));
-  }
-
-  getGroupsByUserId(): void {
-    this.groupService.getGroupsByUser(this.app.userId);
+    this.userGroups$ = this.groupService.getGroupsByUser(this.app.userId);
+    //this.groups.push(new GroupModule(1, 'Test', this.image));
   }
 
   createGroupDialog(): void {
@@ -36,8 +32,8 @@ export class MainViewComponent implements OnInit {
   }
 
   openGroup(groupId: number): void {
-    this.router.navigate(['/group']);
-    //this.groupService.getGroupById(groupId).subscribe(data => this.router.navigate(['/group', data]));
+    //this.router.navigate(['/group']);
+    this.groupService.getGroupById(groupId).subscribe(data => this.router.navigate(['/group', data]));
   }
 
   ngOnInit(): void {

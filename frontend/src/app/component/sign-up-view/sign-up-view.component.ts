@@ -41,7 +41,9 @@ export class SignUpViewComponent implements OnInit {
       if (signUpForm.value.password_1 == signUpForm.value.password_2) {
         if (signUpForm.value.securityQuestion != '' && signUpForm.value.securityAnswer != '') {
           this.hash = this.hashService.encrypt(signUpForm.value.password_1);
+          console.warn(this.hash);
           const signUpData = new UserModule(null, signUpForm.value.firstName, signUpForm.value.lastName, this.hash, signUpForm.value.email, signUpForm.value.securityQuestion, signUpForm.value.securityAnswer, this.image);
+          console.warn(signUpData);
           this.userService.registerUser(signUpData).subscribe(data => {
             this.alertService.successfulAlert("Erfolgreich registriert!",  "",  "success", 2500);
             this.router.navigate(['/sign-in']);
