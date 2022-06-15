@@ -1,7 +1,6 @@
 package de.szut.backend.controller;
 
 import de.szut.backend.dto.*;
-import de.szut.backend.exceptions.SecurityQuestionNotExists;
 import de.szut.backend.mapper.UserMapper;
 import de.szut.backend.model.*;
 import de.szut.backend.service.VerificationService;
@@ -21,35 +20,17 @@ public class VerificationController {
 
     @CrossOrigin
     @PostMapping(path = "/login", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<UserDto> login(@RequestBody LoginDto dto) {
-        UserDto user = null;
-        try {
-            user = service.login(dto);
-        } catch (SecurityQuestionNotExists e) {
-            e.printStackTrace();
-            return new ResponseEntity("SecurityQuestion does not exists by key", HttpStatus.NOT_FOUND);
-
-        }
+    public ResponseEntity<UserDto> Login(@RequestBody LoginDto dto) throws TypeNotPresentException {
+        var user = service.login(dto);
         if (user == null) {
             return new ResponseEntity("User not found, bad password", HttpStatus.UNAUTHORIZED);
         }
-        try {
-            return new ResponseEntity<>(service.login(dto), HttpStatus.OK);
-        } catch (SecurityQuestionNotExists e) {
-            e.printStackTrace();
-            return new ResponseEntity("SecurityQuestion does not exists by key", HttpStatus.NOT_FOUND);
-        }
+        return new ResponseEntity<>(service.login(dto), HttpStatus.OK);
     }
 
     @PostMapping(path = "/forgotPassword", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<ForgotBackDto> forgotPassword(@RequestBody ForgotDto dto) {
-        ForgotBackDto result = null;
-        try {
-            result = service.forgotPassword(dto);
-        } catch (SecurityQuestionNotExists e) {
-            e.printStackTrace();
-            return new ResponseEntity("SecurityQuestion does not exists by key", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public ResponseEntity<ForgotBackDto> ForgotPassword(@RequestBody ForgotDto dto) throws TypeNotPresentException {
+        var result = service.forgotPassword(dto);
         if ( result != null ) {
             return new ResponseEntity<>(result, HttpStatus.OK);
         }
@@ -58,23 +39,17 @@ public class VerificationController {
     }
 
     @PutMapping(path = "/updatePassword", consumes = "application/json")
-    public ResponseEntity<User> updatePassword(@RequestBody UpdateDto dto) throws TypeNotPresentException {
+    public ResponseEntity<User> UpdatePassword(@RequestBody UpdateDto dto) throws TypeNotPresentException {
         return new ResponseEntity<>(service.updatePassword(dto), HttpStatus.OK);
     }
 
     @CrossOrigin
     @PostMapping(path = "/register", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<CreateUserDto> register(@RequestBody RegisterDto dto) throws TypeNotPresentException {
+    public ResponseEntity<CreateUserDto> Register(@RequestBody RegisterDto dto) throws TypeNotPresentException {
         if (dto.hash.length() <= 7) {
             return new ResponseEntity("Password is empty or too short", HttpStatus.BAD_REQUEST);
         }
-        CreateUserDto result = null;
-        try {
-            result = service.register(dto);
-        } catch (SecurityQuestionNotExists e) {
-            e.printStackTrace();
-            return new ResponseEntity("SecurityQuestion does not exists by key", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        CreateUserDto result = service.register(dto);
         if (result.email == null) {
             return new ResponseEntity("Email already exists", HttpStatus.NOT_ACCEPTABLE);
         }

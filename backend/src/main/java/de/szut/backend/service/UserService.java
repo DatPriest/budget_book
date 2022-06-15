@@ -21,13 +21,13 @@ public class UserService extends BaseService {
         return userRepository.findAll();
     }
 
-    public User getUserById(long id) {
-        return userRepository.findById(id).get();
+    public User getUserById(long userId) {
+        return userRepository.findById(userId).get();
     }
 
-    public boolean deleteUser(long id) {
+    public boolean deleteUser(long userId) {
         try {
-            this.userRepository.deleteById(id);
+            this.userRepository.deleteById(userId);
         } catch (Exception ex) {
             ex.printStackTrace();
             return false;

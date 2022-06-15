@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class SecurityQuestionDto {
-    private long id;
+    private long securityId;
     private String SecurityQuestionKey;
 }

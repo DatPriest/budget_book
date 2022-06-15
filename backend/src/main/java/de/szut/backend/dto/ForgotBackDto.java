@@ -1,6 +1,6 @@
 package de.szut.backend.dto;
 
 public class ForgotBackDto {
-    public long id;
+    public long forgotBackId;
     public String status;
 }

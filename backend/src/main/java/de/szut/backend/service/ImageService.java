@@ -13,7 +13,7 @@ public class ImageService {
         this.repo = _repo;
     }
 
-    public void SavePictureToGroup(long id) {
+    public void SavePictureToGroup(long groupId) {
         throw new NotYetImplementedException();
     }
 
@@ -21,16 +21,16 @@ public class ImageService {
        return this.repo.save(image);
     }
 
-    public Image getPicture(long id) {
-        return this.repo.getById(id);
+    public Image getPicture(long userId) {
+        return this.repo.getById(userId);
     }
 
     public boolean updatePicture(long imageId, String imageString) {
-        if (this.repo.findById(imageId).get().id != null) {
+        if (this.repo.findById(imageId).get().imageId != null) {
             if (this.repo.findById(imageId).get().imageString == null || imageString == null || imageString == "")
                 return true;
             Image image = new Image();
-            image.id = imageId;
+            image.imageId = imageId;
             image.imageString = imageString;
             this.repo.save(image);
             return true;

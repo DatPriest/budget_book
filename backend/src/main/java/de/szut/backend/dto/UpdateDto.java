@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class UpdateDto {
     public String hash;
-    public long id;
+    public long userId;
     public String email;
 }

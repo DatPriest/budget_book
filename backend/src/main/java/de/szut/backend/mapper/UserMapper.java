@@ -2,7 +2,6 @@ package de.szut.backend.mapper;
 
 
 import de.szut.backend.dto.*;
-import de.szut.backend.exceptions.SecurityQuestionNotExists;
 import de.szut.backend.model.*;
 import de.szut.backend.repository.SecurityQuestionRepository;
 import de.szut.backend.repository.UserRepository;
@@ -22,7 +21,7 @@ public class UserMapper {
         this.imageService = _imageService;
         this.userRepository = _userRepository;
     }
-    public User mapRegisterDtoToUser(RegisterDto dto) throws SecurityQuestionNotExists {
+    public User mapRegisterDtoToUser(RegisterDto dto) {
         User user = new User();
         user.email = dto.email;
         user.firstName = dto.firstName;
@@ -63,7 +62,7 @@ public class UserMapper {
         return dto;
     }
 
-    public User mapUserUpdateDtoToUser(UserUpdateDto dto) throws SecurityQuestionNotExists {
+    public User mapUserUpdateDtoToUser(UserUpdateDto dto) {
         User user = new User();
         User dbUser = this.userRepository.findById(dto.id).get();
         user.id = dto.id;
@@ -81,7 +80,7 @@ public class UserMapper {
         return userRepository.save(user);
     }
 
-    public UserUpdatedDto mapUserToUserUpdatedDto(User user) throws SecurityQuestionNotExists {
+    public UserUpdatedDto mapUserToUserUpdatedDto(User user) {
         UserUpdatedDto dto = new UserUpdatedDto();
         dto.email = user.email;
         dto.id = user.id;
@@ -91,12 +90,12 @@ public class UserMapper {
         dto.lastLogin = user.lastLogin;
         dto.imageString = imageService.getPicture(user.imageId).imageString;
         dto.created = user.created;
-        dto.securityQuestionKey = securityQuestionRepository.findById(user.securityQuestionId).getKey();
+        dto.securityQuestionKey = securityQuestionRepository.findById(user.securityQuestionId).get().getKey();
 
         return dto;
     }
 
-    public UserDto mapUserToUserDto(User user) throws SecurityQuestionNotExists {
+    public UserDto mapUserToUserDto(User user) {
         UserDto dto = new UserDto();
         dto.created = user.created;
         dto.email = user.email;
@@ -105,7 +104,7 @@ public class UserMapper {
         dto.lastLogin = user.lastLogin;
         dto.lastUpdate = user.lastUpdate;
         dto.imageString = imageService.getPicture(user.imageId).imageString;
-        dto.securityQuestionKey = securityQuestionRepository.findById(user.securityQuestionId).getKey();
+        dto.securityQuestionKey = securityQuestionRepository.findById(user.securityQuestionId).get().getKey();
         dto.id = user.id;
         return dto;
     }
