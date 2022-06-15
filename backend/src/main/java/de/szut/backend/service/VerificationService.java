@@ -43,7 +43,7 @@ public class VerificationService extends BaseService {
         if (queryUser != null && hashPassword(user.hash + queryUser.salt).equals(queryUser.hash)) {
             queryUser.lastLogin = new Date();
             userRepository.save(queryUser);
-            log("UserLoginSuccess",queryUser.lastLogin.toString());
+            //log("UserLoginSuccess",queryUser.lastLogin.toString());
             return queryUser;
         } else {
             return null;
