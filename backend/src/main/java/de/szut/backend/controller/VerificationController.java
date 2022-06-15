@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/api/v1/verification")
 public class VerificationController {
     VerificationService service;
-    UserMapper userMapper;
 
     public VerificationController (VerificationService _service) {
         this.service = _service;
@@ -21,7 +20,7 @@ public class VerificationController {
 
     @CrossOrigin
     @PostMapping(path = "/login", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<User> Login(@RequestBody LoginDto dto) throws TypeNotPresentException {
+    public ResponseEntity<UserDto> Login(@RequestBody LoginDto dto) throws TypeNotPresentException {
         var user = service.login(dto);
         if (user == null) {
             return new ResponseEntity("User not found, bad password", HttpStatus.UNAUTHORIZED);
