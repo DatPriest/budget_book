@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80af0ba7-6ce3-4dcf-a521-a9705591f0ea" name="Changes" comment="">
+    <list default="true" id="80af0ba7-6ce3-4dcf-a521-a9705591f0ea" name="Changes" comment="MH-61 #time 30m &#10;MH-61 #comment Datenschutz-Text hinzufügen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/imprint-view/imprint-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/imprint-view/imprint-view.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/imprint-view/imprint-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/imprint-view/imprint-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/sign-in-view/sign-in-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/sign-in-view/sign-in-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/gtc-view/gtc-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/gtc-view/gtc-view.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/assets/i18n/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/i18n/de.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +45,8 @@
       <option name="presentableId" value="Default" />
       <updated>1655275643403</updated>
       <workItem from="1655275645371" duration="8249000" />
+      <workItem from="1655288002958" duration="17000" />
+      <workItem from="1655288039870" duration="611000" />
     </task>
     <task id="LOCAL-00001" summary="MH-60 #time 1h &#10;MH-60 #comment AGB-Text hinzufügen">
       <created>1655281759462</created>
