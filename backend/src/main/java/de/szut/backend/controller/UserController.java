@@ -3,6 +3,7 @@ package de.szut.backend.controller;
 import de.szut.backend.dto.UserDto;
 import de.szut.backend.dto.UserUpdateDto;
 import de.szut.backend.dto.UserUpdatedDto;
+import de.szut.backend.exceptions.SecurityQuestionNotExists;
 import de.szut.backend.mapper.UserMapper;
 import de.szut.backend.model.User;
 import de.szut.backend.repository.UserRepository;
@@ -41,7 +42,13 @@ public class UserController {
     @GetMapping(path = "/id/{id}", produces = "application/json")
     public ResponseEntity<UserDto> getUser(@PathVariable long id) {
         User user = this.service.getUserById(id);
-        UserDto dto = this.userMapper.mapUserToUserDto(user);
+        UserDto dto = null;
+        try {
+            dto = this.userMapper.mapUserToUserDto(user);
+        } catch (SecurityQuestionNotExists e) {
+            e.printStackTrace();
+            return new ResponseEntity("SecurityQuestion does not exists by key", HttpStatus.NOT_FOUND);
+        }
         if (user != null) {
             return new ResponseEntity<>(dto, HttpStatus.OK);
         }
@@ -49,7 +56,7 @@ public class UserController {
     }
 
     @PutMapping(path = "/update", produces = "application/json", consumes = "application/json")
-    public ResponseEntity<UserUpdatedDto> updateUser(@RequestBody UserUpdateDto dto) {
+    public ResponseEntity<UserUpdatedDto> updateUser(@RequestBody UserUpdateDto dto) throws SecurityQuestionNotExists {
         User user = this.userMapper.mapUserUpdateDtoToUser(dto);
         UserUpdatedDto updatedDto = this.userMapper.mapUserToUserUpdatedDto(user);
         return new ResponseEntity<>(updatedDto, HttpStatus.OK);
