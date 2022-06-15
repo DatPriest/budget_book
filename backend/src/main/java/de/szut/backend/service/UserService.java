@@ -24,4 +24,15 @@ public class UserService extends BaseService {
     public User getUserById(long id) {
         return userRepository.findById(id).get();
     }
+
+    public boolean deleteUser(long id) {
+        try {
+            this.userRepository.deleteById(id);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
+        return true;
+
+    }
 }
