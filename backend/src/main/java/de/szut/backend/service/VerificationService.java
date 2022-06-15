@@ -60,7 +60,7 @@ public class VerificationService extends BaseService {
                 dto.securityAnswer.toLowerCase(Locale.ROOT));
         if (user != null) {
             user.salt = getSalt();
-            user.hash = hashPassword(user.hash + user.salt);
+            user.hash = hashPassword(dto.hash + user.salt);
             var newUser = userRepository.save(user);
             return userMapper.mapUserToForgotBackDto(newUser);
         } else {
