@@ -36,8 +36,9 @@ export class SignInViewComponent implements OnInit {
       const signInData = new LoginUserModule(null, signInForm.value.email, this.hash);
       console.error(signInData);
       this.userService.loginUser(signInData).subscribe(data => {
+        console.error(data);
         if (data != undefined) {
-          localStorage.setItem("userId", data.id.toString());
+          localStorage.setItem("userId", data.userId.toString());
           this.router.navigate(['/main']);
           this.alertService.successfulAlert("Herzlich willkommen!",  "Login war erfolgreich.",  "success", 2500);
         } else {
