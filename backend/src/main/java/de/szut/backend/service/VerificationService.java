@@ -61,6 +61,7 @@ public class VerificationService extends BaseService {
             user.salt = getSalt();
             user.hash = hashPassword(user.hash + user.salt);
             var newUser = userRepository.save(user);
+            logger.info("Updated password");
             return userMapper.mapUserToForgotBackDto(newUser);
         } else {
             return null;

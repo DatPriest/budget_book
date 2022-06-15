@@ -22,7 +22,7 @@ export class UserService {
     return this.http.post<UserModule>('http://localhost:4000/api/v1/verification/register', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
-  loginUser(user: LoginUserModule) {
+  loginUser(user : object) {
     return this.http.post<LoginUserModule>('http://localhost:4000/api/v1/verification/login', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
