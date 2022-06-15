@@ -22,11 +22,23 @@ public class VerificationController {
     @CrossOrigin
     @PostMapping(path = "/login", consumes = "application/json", produces = "application/json")
     public ResponseEntity<UserDto> login(@RequestBody LoginDto dto) {
-        var user = service.login(dto);
+        UserDto user = null;
+        try {
+            user = service.login(dto);
+        } catch (SecurityQuestionNotExists e) {
+            e.printStackTrace();
+            return new ResponseEntity("SecurityQuestion does not exists by key", HttpStatus.NOT_FOUND);
+
+        }
         if (user == null) {
             return new ResponseEntity("User not found, bad password", HttpStatus.UNAUTHORIZED);
         }
-        return new ResponseEntity<>(service.login(dto), HttpStatus.OK);
+        try {
+            return new ResponseEntity<>(service.login(dto), HttpStatus.OK);
+        } catch (SecurityQuestionNotExists e) {
+            e.printStackTrace();
+            return new ResponseEntity("SecurityQuestion does not exists by key", HttpStatus.NOT_FOUND);
+        }
     }
 
     @PostMapping(path = "/forgotPassword", consumes = "application/json", produces = "application/json")

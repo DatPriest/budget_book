@@ -81,7 +81,7 @@ public class UserMapper {
         return userRepository.save(user);
     }
 
-    public UserUpdatedDto mapUserToUserUpdatedDto(User user) {
+    public UserUpdatedDto mapUserToUserUpdatedDto(User user) throws SecurityQuestionNotExists {
         UserUpdatedDto dto = new UserUpdatedDto();
         dto.email = user.email;
         dto.id = user.id;
@@ -91,12 +91,12 @@ public class UserMapper {
         dto.lastLogin = user.lastLogin;
         dto.imageString = imageService.getPicture(user.imageId).imageString;
         dto.created = user.created;
-        dto.securityQuestionKey = securityQuestionRepository.findById(user.securityQuestionId).get().getKey();
+        dto.securityQuestionKey = securityQuestionRepository.findById(user.securityQuestionId).getKey();
 
         return dto;
     }
 
-    public UserDto mapUserToUserDto(User user) {
+    public UserDto mapUserToUserDto(User user) throws SecurityQuestionNotExists {
         UserDto dto = new UserDto();
         dto.created = user.created;
         dto.email = user.email;
@@ -105,7 +105,7 @@ public class UserMapper {
         dto.lastLogin = user.lastLogin;
         dto.lastUpdate = user.lastUpdate;
         dto.imageString = imageService.getPicture(user.imageId).imageString;
-        dto.securityQuestionKey = securityQuestionRepository.findById(user.securityQuestionId).get().getKey();
+        dto.securityQuestionKey = securityQuestionRepository.findById(user.securityQuestionId).getKey();
         dto.id = user.id;
         return dto;
     }

@@ -42,7 +42,13 @@ public class UserController {
     @GetMapping(path = "/id/{id}", produces = "application/json")
     public ResponseEntity<UserDto> getUser(@PathVariable long id) {
         User user = this.service.getUserById(id);
-        UserDto dto = this.userMapper.mapUserToUserDto(user);
+        UserDto dto = null;
+        try {
+            dto = this.userMapper.mapUserToUserDto(user);
+        } catch (SecurityQuestionNotExists e) {
+            e.printStackTrace();
+            return new ResponseEntity("SecurityQuestion does not exists by key", HttpStatus.NOT_FOUND);
+        }
         if (user != null) {
             return new ResponseEntity<>(dto, HttpStatus.OK);
         }

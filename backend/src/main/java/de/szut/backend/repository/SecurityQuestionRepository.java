@@ -6,5 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface SecurityQuestionRepository extends JpaRepository<SecurityQuestion, Long>  {
     SecurityQuestion findByKey(String key) throws SecurityQuestionNotExists;
-    boolean existsByKey(String key);
+    boolean existsByKey(String key) throws SecurityQuestionNotExists;
+    SecurityQuestion findById(long id) throws SecurityQuestionNotExists;
 }

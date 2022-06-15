@@ -41,7 +41,7 @@ public class VerificationService extends BaseService {
         this.imageService = _imageService;
     }
 
-    public UserDto login(LoginDto dto) {
+    public UserDto login(LoginDto dto) throws SecurityQuestionNotExists {
         User user = this.userMapper.mapLoginDtoToUser(dto);
         User queryUser = userRepository.findByEmail(user.email);
         if (queryUser != null && hashPassword(user.hash + queryUser.salt).equals(queryUser.hash)) {
