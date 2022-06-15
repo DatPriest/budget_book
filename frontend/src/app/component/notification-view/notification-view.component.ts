@@ -18,7 +18,7 @@ export class NotificationViewComponent implements OnInit {
     public dialogRef: MatDialogRef<NotificationViewComponent>, public app: AppModule) { }
 
   save(notificationForm: NgForm) {
-    const notificationData = new NotificationModule(this.app.userId, notificationForm.value.acceptTerms);
+    const notificationData = new NotificationModule(parseInt(localStorage.getItem("userId")), notificationForm.value.acceptTerms);
     this.userService.notificationEmail(notificationData).subscribe(data => {
       this.alertService.successfulAlert("Erfolgreich geändert!",  "",  "success", 2500);
       this.dialogRef.close();

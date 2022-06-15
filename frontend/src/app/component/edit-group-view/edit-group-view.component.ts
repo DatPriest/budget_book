@@ -21,7 +21,7 @@ export class EditGroupViewComponent implements OnInit {
 
   editGroup(editGroupForm: NgForm): void {
     if (editGroupForm.value.image != '' && editGroupForm.value.groupName != '') {
-      const editGroupData = new EditGroupModule(this.app.groupId, editGroupForm.value.groupName, this.image);
+      const editGroupData = new EditGroupModule(parseInt(localStorage.getItem("groupId")), editGroupForm.value.groupName, this.image);
       this.groupService.editGroup(editGroupData).subscribe(data => {
         this.alertService.successfulAlert("Gruppe erfolgreich geupdated!",  "",  "success", 2500);
         this.dialogRef.close();

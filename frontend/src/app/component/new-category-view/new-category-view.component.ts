@@ -19,9 +19,9 @@ export class NewCategoryViewComponent implements OnInit {
     public groupService: GroupService, public alertService: AlertService, public app: AppModule) { }
 
   createCategory(newCategoryForm: NgForm): void {
-    const newCategoryData = new NewCategoryModule(this.app.groupId, newCategoryForm.value.category);
+    const newCategoryData = new NewCategoryModule(parseInt(localStorage.getItem("groupId")), newCategoryForm.value.category);
     this.groupService.createCategory(newCategoryData).subscribe(data => {
-      this.groupService.getAllCategoryByGroupId(this.app.groupId);
+      this.groupService.getAllCategoryByGroupId(parseInt(localStorage.getItem("groupId")));
       newCategoryForm.reset();
     })
   }

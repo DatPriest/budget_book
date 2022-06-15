@@ -1,6 +1,6 @@
 export class LoginUserModule {
   constructor (
-    public id: number,
+    public userId: number,
     public email: string,
     public hash: string,
   ) { }

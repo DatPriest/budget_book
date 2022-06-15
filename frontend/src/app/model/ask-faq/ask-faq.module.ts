@@ -1,6 +1,6 @@
 export class AskFaqModule {
   constructor(
-    public userID: number,
+    public userId: number,
     public question: string,
   ) { }
 }
