@@ -19,6 +19,7 @@ export class FaqViewComponent implements OnInit {
   constructor(public router: Router, public userService: UserService, public app: AppModule) {
     this.questions$ = this.userService.getFaqQuestion();
     console.warn(this.app.userId);
+    console.error(localStorage.getItem("userId"));
   }
 
   toggleQuestion(): void {

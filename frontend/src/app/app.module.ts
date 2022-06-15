@@ -137,8 +137,8 @@ import { ExpensesFilterPipe } from './component/expenses-view/expenses-filter.pi
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  userId: number = 0;
-  groupId: number = 0;
+  userId: number;
+  groupId: number;
 }
 
 // AOT compilation support
