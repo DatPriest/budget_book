@@ -18,22 +18,6 @@ export class FaqViewComponent implements OnInit {
   questions$: Observable<FaqModule[]> = of([]);
   constructor(public router: Router, public userService: UserService, public app: AppModule) {
     this.questions$ = this.userService.getFaqQuestion();
-    console.warn(this.app.userId);
-    console.error(localStorage.getItem("userId"));
-  }
-
-  toggleQuestion(): void {
-    this.onlyMyQuestion = !this.onlyMyQuestion;
-    this.changeView(this.onlyMyQuestion);
-  }
-
-  changeView(onlyMy: boolean): void {
-    console.error(onlyMy);
-    if (onlyMy = false) {
-      this.questions$ = this.userService.getFaqQuestion();
-    } else {
-      this.questions$ = this.userService.getFaqQuestionByUserId(this.app.userId);
-    }
   }
 
   back(): void {

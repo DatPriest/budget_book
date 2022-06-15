@@ -9,7 +9,7 @@
     <div class="container">
       <div class="screen">
         <ng-container *ngFor="let g of userGroups$ | async">
-          <button type="button" id="Group{{g.id}}" class="screen_background_shape screen_group_{{g.id}}" (click)="openGroup(g.id)"><span class="group">{{g.groupName}}</span></button>
+          <button type="button" id="Group{{g.groupId}}" class="screen_background_shape screen_group_{{g.groupId}}" (click)="openGroup(g.groupId)"><span class="group">{{g.groupName}}</span></button>
         </ng-container>
         <button mat-raised-button type="button" id="createGroup" class="screen_background_shape screen_group_4" (click)="createGroupDialog()"><span class="group_create material-icons">add_circle_outline</span></button>
       </div>

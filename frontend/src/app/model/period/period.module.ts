@@ -1,6 +1,6 @@
 export class PeriodModule {
   constructor(
-    public id: number,
+    public periodId: number,
     public type: string,
     public period: string
   ) { }

@@ -18,7 +18,6 @@ export class NewPasswordViewComponent implements OnInit {
   newPasswordForm: FormGroup;
   showPassword: boolean = false;
   showPasswordReplay: boolean = false;
-  userID: number;
   hash: string;
   securityQuestion$ : Observable<SecurityQuestionModule[]> = of([]);
   constructor(public router: Router, public formBuilder: FormBuilder, public userService: UserService,

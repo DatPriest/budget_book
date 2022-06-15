@@ -18,7 +18,7 @@ export class CreateInviteViewComponent implements OnInit {
     public app: AppModule) { }
 
   createInvite(): void {
-    this.groupService.getInviteCode(this.app.groupId).subscribe(data => this.inviteCode = data.inviteCode);
+    this.groupService.getInviteCode(parseInt(localStorage.getItem("groupId"))).subscribe(data => this.inviteCode = data.inviteCode);
   }
 
   closeInvite(): void {

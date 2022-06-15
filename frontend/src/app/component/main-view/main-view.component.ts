@@ -19,7 +19,7 @@ export class MainViewComponent implements OnInit {
   image: string;
   //groups: GroupModule[] = []
   constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule) {
-    this.userGroups$ = this.groupService.getGroupsByUser(this.app.userId);
+    this.userGroups$ = this.groupService.getGroupsByUser(parseInt(localStorage.getItem("userId")));
     //this.groups.push(new GroupModule(1, 'Test', this.image));
   }
 
@@ -32,7 +32,7 @@ export class MainViewComponent implements OnInit {
   }
 
   openGroup(groupId: number): void {
-    //this.router.navigate(['/group']);
+    localStorage.setItem("groupId", groupId.toString());
     this.groupService.getGroupById(groupId).subscribe(data => this.router.navigate(['/group', data]));
   }
 
