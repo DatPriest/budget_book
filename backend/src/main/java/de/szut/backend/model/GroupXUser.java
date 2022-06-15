@@ -11,7 +11,7 @@ import java.util.Date;
 public class GroupXUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long id;
+    public Long groupXUserId;
 
     public Long userId;
     public Long groupId;

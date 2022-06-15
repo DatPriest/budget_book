@@ -11,7 +11,7 @@ import java.util.Date;
 public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public long id;
+    public long groupId;
     public String groupName;
     public long imageId;
     @CreationTimestamp

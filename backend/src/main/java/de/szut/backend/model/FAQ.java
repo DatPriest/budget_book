@@ -13,7 +13,7 @@ import java.util.Date;
 public class FAQ {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public long id;
+    public long faqId;
     @Column(nullable = false)
     public long userID;
     @Column(nullable = false)

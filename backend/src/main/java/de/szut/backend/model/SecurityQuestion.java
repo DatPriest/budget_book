@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class SecurityQuestion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long securityId;
     private String key;
 }
 

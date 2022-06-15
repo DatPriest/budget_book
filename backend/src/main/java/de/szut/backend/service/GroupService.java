@@ -42,7 +42,7 @@ public class GroupService extends BaseService {
         Image image = new Image();
         image.imageString = dto.image;
         image = this.imageService.savePicture(image);
-        group.imageId = image.id;
+        group.imageId = image.imageId;
         group.inviteCode = generateInviteCode();
         if (group.groupName.equals("") || group.groupName.equals(null)) {
             return null;
@@ -52,7 +52,7 @@ public class GroupService extends BaseService {
 
     public GroupDto updateGroup(GroupUpdateDto dto) {
         Group group = mapper.mapGroupUpdateDtoToGroup(dto);
-        Group persistentGroup = repo.getById(dto.id);
+        Group persistentGroup = repo.getById(dto.groupId);
         if (imageService.updatePicture(persistentGroup.imageId, dto.image)) {
             group.imageId = persistentGroup.imageId;
             return this.mapper.mapGroupToGroupDto(repo.save(group), dto.image);
@@ -108,7 +108,7 @@ public class GroupService extends BaseService {
         long groupId = -1;
         try{
             foundGroup = repo.findGroupByInviteCode(inviteCode);
-            groupId = foundGroup.id;
+            groupId = foundGroup.groupId;
         } catch (Exception e){
             throw new NullPointerException();
         }

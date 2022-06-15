@@ -8,7 +8,7 @@ import javax.persistence.Id;
 
 @Data
 public class GroupUpdateDto {
-    public long id;
+    public long groupId;
     public String groupName;
     public String image;
 }
