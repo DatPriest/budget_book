@@ -72,10 +72,10 @@ public class GroupService extends BaseService {
         return null;
     }
 
-    public ArrayList<User> getUsersToGroup(Long id) {
-        logger.info(id);
+    public ArrayList<User> getUsersToGroup(Long groupId) {
+        logger.info(groupId);
         ArrayList<User> users = new ArrayList<>();
-        var userIds = groupXUserRepository.findAllByGroupId(id);
+        var userIds = groupXUserRepository.findAllByGroupId(groupId);
         for (var userId: userIds) {
             logger.info(userId);
             users.add(userService.getUserById(userId.userId));

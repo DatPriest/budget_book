@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Data
 public class GetHistoryActionDto {
-    private long id;
+    private long historyActionId;
     private String actionName;
     private String additionalInformation;
     private Date date_Created;
