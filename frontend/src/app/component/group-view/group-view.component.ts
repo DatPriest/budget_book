@@ -23,7 +23,7 @@ export class GroupViewComponent implements OnInit {
   inviteCode: string;
   constructor(public router: Router, public groupService: GroupService, public app: AppModule, public dialog: MatDialog,
     public alertService: AlertService) {
-    this.user$ = this.groupService.getUsersByGroup(this.app.groupId);
+    this.user$ = this.groupService.getUsersByGroup(parseInt(localStorage.getItem("groupId")));
   }
 
   history(): void {

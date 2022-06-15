@@ -16,7 +16,7 @@ export class CategoryViewComponent implements OnInit {
 
   categorys$: Observable<CategoryModule[]> = of([]);
   constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule) {
-    this.categorys$ = this.groupService.getAllCategoryByGroupId(this.app.groupId);
+    this.categorys$ = this.groupService.getAllCategoryByGroupId(parseInt(localStorage.getItem("groupId")));
   }
 
   back(): void {

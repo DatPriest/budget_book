@@ -24,7 +24,7 @@ export class PeriodViewComponent implements OnInit {
      if (this.data.type == "User") {
        this.id = this.data.member.id;
      } else {
-       this.id = this.app.groupId;
+       this.id = parseInt(localStorage.getItem("groupId"));
      }
       const periodData = new PeriodModule(this.id, this.data.type, periodForm.value.period);
     }

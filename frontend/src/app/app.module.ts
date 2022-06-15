@@ -136,10 +136,7 @@ import { ExpensesFilterPipe } from './component/expenses-view/expenses-filter.pi
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-  userId: number;
-  groupId: number;
-}
+export class AppModule { }
 
 // AOT compilation support
 export function httpTranslateLoader(http: HttpClient) {

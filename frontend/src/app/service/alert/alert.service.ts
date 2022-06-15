@@ -52,7 +52,7 @@ export class AlertService {
     })
     .then((willLogOut) => {
       if (willLogOut) {
-        this.userService.deleteProfile(this.app.userId);
+        this.userService.deleteProfile(parseInt(localStorage.getItem("userId")));
         swal("Der Account wurde erfolgreich gelöscht!", {
           icon: "success",
         });
