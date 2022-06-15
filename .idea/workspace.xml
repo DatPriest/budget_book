@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80af0ba7-6ce3-4dcf-a521-a9705591f0ea" name="Changes" comment="MH-61 #time 30m &#10;MH-61 #comment Datenschutz-Text hinzufügen">
+    <list default="true" id="80af0ba7-6ce3-4dcf-a521-a9705591f0ea" name="Changes" comment="MH-60 #time 30m &#10;MH-60 #comment AGB'S überarbeitet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/gtc-view/gtc-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/gtc-view/gtc-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/i18n/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/i18n/de.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/currency-view/currency-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/currency-view/currency-view.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/language-view/language-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/language-view/language-view.component.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +46,7 @@
       <updated>1655275643403</updated>
       <workItem from="1655275645371" duration="8249000" />
       <workItem from="1655288002958" duration="17000" />
-      <workItem from="1655288039870" duration="611000" />
+      <workItem from="1655288039870" duration="1834000" />
     </task>
     <task id="LOCAL-00001" summary="MH-60 #time 1h &#10;MH-60 #comment AGB-Text hinzufügen">
       <created>1655281759462</created>
@@ -62,7 +62,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655282702332</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="MH-60 #time 30m &#10;MH-60 #comment AGB'S überarbeitet">
+      <created>1655288949700</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1655288949700</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -82,6 +89,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="MH-60 #time 1h &#10;MH-60 #comment AGB-Text hinzufügen" />
     <MESSAGE value="MH-61 #time 30m &#10;MH-61 #comment Datenschutz-Text hinzufügen" />
-    <option name="LAST_COMMIT_MESSAGE" value="MH-61 #time 30m &#10;MH-61 #comment Datenschutz-Text hinzufügen" />
+    <MESSAGE value="MH-60 #time 30m &#10;MH-60 #comment AGB'S überarbeitet" />
+    <option name="LAST_COMMIT_MESSAGE" value="MH-60 #time 30m &#10;MH-60 #comment AGB'S überarbeitet" />
   </component>
 </project>
