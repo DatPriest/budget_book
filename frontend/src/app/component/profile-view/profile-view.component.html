@@ -21,13 +21,15 @@
               <label class="label">E-Mail:</label>
               <input type="text" id="UserEmail" name=" email" placeholder="E-{{'email'| translate}}" value="{{user.email}}" readonly><br><br>
             </div>
-            <div class="button">
+              <div class="button_left">
               <tr>
                 <button type="button" ide="profile" (click)="joinGroupDialog()" translate="profile.join"></button>
                 <button type="button" ide="profile" (click)="moveToEditProfile(user)" translate="profile.edit"></button>
-                <button type="button" ide="profile" (click)="moveToEditPassword()" translate="profile.changePw"></button>
-                <button type="button" ide="profile" (click)="deleteProfile()" translate="profile.deleteAcc"></button>
               </tr>
+              </div>
+              <div class="button_right">
+              <button type="button" ide="profile" (click)="moveToEditPassword()" translate="profile.changePw"></button>
+              <button type="button" ide="profile" (click)="deleteProfile()" translate="profile.deleteAcc"></button>
             </div>
           </div>
         </div>

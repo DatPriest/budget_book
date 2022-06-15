@@ -54,7 +54,7 @@
 
 .input_field {
   position: relative;
-  top: 5%;
+  top: 2%;
   left: 31%;
   width: 20%;
 }
@@ -74,33 +74,20 @@
   width: 70%;
 }
 
-#button1{
+.button_left{
   position: absolute;
   top: 69%;
   left: 15%;
   width: 30%;
   margin-top: 2%;
 }
-#button2{
-  position: absolute;
-  top: 80%;
-  left: 15%;
-  width: 30%;
-}
 
-#button3{
+.button_right{
   position: absolute;
   top: 69%;
   left: 52%;
   width: 30%;
   margin-top: 2%;
-}
-
-#button4{
-  position: absolute;
-  top: 80%;
-  left: 52%;
-  width: 30%;
 }
 
 input[type=text], select {
