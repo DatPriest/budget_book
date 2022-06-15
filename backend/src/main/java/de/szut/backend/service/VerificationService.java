@@ -55,7 +55,7 @@ public class VerificationService extends BaseService {
     public ForgotBackDto forgotPassword(ForgotDto dto) {
         User user =  userRepository.findByEmailAndSecurityQuestionIdAndSecurityAnswer(
                 dto.email,
-                securityQuestionRepository.findByKey(dto.securityQuestionKey).getId(),
+                securityQuestionRepository.findByKey(dto.securityQuestionKey).getSecurityId(),
                 dto.securityAnswer.toLowerCase(Locale.ROOT));
         if (user != null) {
             user.salt = getSalt();
@@ -80,7 +80,7 @@ public class VerificationService extends BaseService {
         Image image = new Image();
         image.imageString = dto.imageString;
         image = imageService.savePicture(image);
-        user.imageId = image.id;
+        user.imageId = image.imageId;
         return userMapper.mapUserToUserCreateDto(this.userRepository.save(user));
     }
 
@@ -115,7 +115,7 @@ public class VerificationService extends BaseService {
     }
 
     public User updatePassword(UpdateDto dto) {
-        var user = userRepository.findByEmailAndId(dto.email, dto.id);
+        var user = userRepository.findByEmailAndId(dto.email, dto.userId);
         user.salt = getSalt();
         user.hash = hashPassword(dto.hash + user.salt);
         return userRepository.save(user);
