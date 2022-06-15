@@ -58,8 +58,22 @@
 		"search": "Suche"
 	},
 	"imprint": {
-		"header": "Impressum"
-	},
+		"header": "Impressum",
+    "Angaben": "Angaben zum Unternehmen: ",
+    "Straße": "Tommystraße 187",
+    "Straße2": "Tommystraße 205",
+    "Telefax": "Telefax: 030-120400",
+    "Telefon": "Telefon: 030-181001\n",
+    "Telefon2": "Telefon: 030-120400",
+    "Land": "Deutschland",
+    "Name": "Klaus Tom",
+    "Ort": "16695 Ahrensfelde",
+    "E-Mail": "E-Mail: info-IT@google.com",
+    "Email": "E-Mail: info-IT@google.com\n",
+    "Fax": "Telefax: 030-181001",
+    "GmbH": "IT GmbH",
+    "Vertretungsberechtigter": "Vertretungsberechtigter beim Anbieter ist: "
+  },
 	"invite": {
 		"header": "Gruppe beitreten",
 		"placeholder": "Einladungscode"
