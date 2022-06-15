@@ -28,7 +28,7 @@ public class GroupMapper {
         GroupDto dto = new GroupDto();
         dto.setGroupName(group.groupName);
         dto.setId(group.id);
-        dto.setImage(image);
+        dto.setImageString(image);
         dto.setInviteCode(group.inviteCode);
         return dto;
     }

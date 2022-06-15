@@ -19,7 +19,6 @@ public class CategoryMapper {
     public GetCategoryDTO mapCategoryToGetCategoryDto(Category categoryToMap){
         GetCategoryDTO categoryDto = new GetCategoryDTO();
 
-        categoryDto.setCategoryId(categoryToMap.getCategoryId());
         categoryDto.setName(categoryToMap.getName());
         categoryDto.setDate_Created(categoryToMap.getDate_Created());
         return categoryDto;

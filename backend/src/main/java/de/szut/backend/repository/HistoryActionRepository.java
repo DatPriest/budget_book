@@ -9,6 +9,4 @@ import org.springframework.stereotype.Repository;
 public interface HistoryActionRepository extends JpaRepository<HistoryAction,Long> {
     @Query("SELECT ha.actionId FROM HistoryAction ha WHERE ha.Action = ?1")
     long findHistoryActionByName(String name);
-    @Query("SELECT ha.Action FROM HistoryAction ha WHERE ha.actionId = ?1")
-    String findActionById(long actionId);
 }

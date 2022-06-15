@@ -7,6 +7,7 @@ import de.szut.backend.repository.HistoryActionRepository;
 import de.szut.backend.repository.HistoryLogRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -52,9 +53,5 @@ public class HistoryLogService {
     //Erstellt eine neue HistoryAction.
     private void createNewAction(HistoryAction action){
         this.historyActionRepository.save(action);
-    }
-
-    public String getHistoryActionName(long actionId){
-        return this.historyActionRepository.findActionById(actionId);
     }
 }

@@ -1,23 +1,16 @@
 package de.szut.backend.service;
 
-import de.szut.backend.exceptions.CategoryBoundToExpenseException;
 import de.szut.backend.model.Categorys.Category;
-import de.szut.backend.model.Expenses.Expense;
 import de.szut.backend.repository.CategoryRepository;
-import de.szut.backend.repository.ExpensesRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException;
-
 import java.util.List;
 
 @Service
 public class CategoryService {
     private CategoryRepository c_Repository;
-    private ExpensesRepository ex_Repository;
 
-    public CategoryService(CategoryRepository c_Repository, ExpensesRepository ex_Repository){
+    public CategoryService(CategoryRepository c_Repository){
         this.c_Repository = c_Repository;
-        this.ex_Repository = ex_Repository;
     }
 
     public Category createCategory(Category categoryToCreate){
@@ -29,11 +22,7 @@ public class CategoryService {
             return this.c_Repository.save(categoryToCreate);
     }
 
-    public void deleteCategoryById(long categoryId) throws CategoryBoundToExpenseException {
-        Expense expenseWithCategory = ex_Repository.findFirstByCategoryId(categoryId);
-        if(expenseWithCategory != null){
-            throw new CategoryBoundToExpenseException();
-        }
+    public void deleteCategoryById(long categoryId){
         this.c_Repository.deleteById(categoryId);
     }
 

@@ -9,7 +9,6 @@ import de.szut.backend.model.User;
 import de.szut.backend.repository.GroupRepository;
 import de.szut.backend.repository.GroupXUserRepository;
 import de.szut.backend.repository.ImageRepository;
-import net.bytebuddy.utility.RandomString;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -43,7 +42,6 @@ public class GroupService extends BaseService {
         image.imageString = dto.image;
         image = this.imageService.savePicture(image);
         group.imageId = image.id;
-        group.inviteCode = generateInviteCode();
         if (group.groupName.equals("") || group.groupName.equals(null)) {
             return null;
         }
@@ -101,21 +99,5 @@ public class GroupService extends BaseService {
         }
 
         return groups;
-    }
-
-    public long getGroupIdForInviteCode(String inviteCode) throws NullPointerException{
-        Group foundGroup;
-        long groupId = -1;
-        try{
-            foundGroup = repo.findGroupByInviteCode(inviteCode);
-            groupId = foundGroup.id;
-        } catch (Exception e){
-            throw new NullPointerException();
-        }
-        return groupId;
-    }
-
-    private String generateInviteCode(){
-        return RandomString.make(8);
     }
 }
