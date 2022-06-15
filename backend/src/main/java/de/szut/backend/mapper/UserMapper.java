@@ -2,6 +2,7 @@ package de.szut.backend.mapper;
 
 
 import de.szut.backend.dto.*;
+import de.szut.backend.exceptions.SecurityQuestionNotExists;
 import de.szut.backend.model.*;
 import de.szut.backend.repository.SecurityQuestionRepository;
 import de.szut.backend.repository.UserRepository;
@@ -21,7 +22,7 @@ public class UserMapper {
         this.imageService = _imageService;
         this.userRepository = _userRepository;
     }
-    public User mapRegisterDtoToUser(RegisterDto dto) {
+    public User mapRegisterDtoToUser(RegisterDto dto) throws SecurityQuestionNotExists {
         User user = new User();
         user.email = dto.email;
         user.firstName = dto.firstName;
@@ -62,7 +63,7 @@ public class UserMapper {
         return dto;
     }
 
-    public User mapUserUpdateDtoToUser(UserUpdateDto dto) {
+    public User mapUserUpdateDtoToUser(UserUpdateDto dto) throws SecurityQuestionNotExists {
         User user = new User();
         User dbUser = this.userRepository.findById(dto.id).get();
         user.id = dto.id;

@@ -1,6 +1,7 @@
 package de.szut.backend.service;
 
 import de.szut.backend.dto.*;
+import de.szut.backend.exceptions.SecurityQuestionNotExists;
 import de.szut.backend.mapper.UserMapper;
 import de.szut.backend.model.*;
 import de.szut.backend.model.History.HistoryActionToProcess;
@@ -52,7 +53,7 @@ public class VerificationService extends BaseService {
         }
     }
 
-    public ForgotBackDto forgotPassword(ForgotDto dto) {
+    public ForgotBackDto forgotPassword(ForgotDto dto) throws SecurityQuestionNotExists {
         User user =  userRepository.findByEmailAndSecurityQuestionIdAndSecurityAnswer(
                 dto.email,
                 securityQuestionRepository.findByKey(dto.securityQuestionKey).getId(),
@@ -67,7 +68,7 @@ public class VerificationService extends BaseService {
         }
     }
 
-    public CreateUserDto register(RegisterDto dto) {
+    public CreateUserDto register(RegisterDto dto) throws SecurityQuestionNotExists {
         if (userRepository.existsByEmail(dto.email)) {
             return new CreateUserDto();
         }
