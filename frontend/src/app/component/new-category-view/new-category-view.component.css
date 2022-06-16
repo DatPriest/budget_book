@@ -2,13 +2,9 @@
   box-sizing: border-box;
 }
 
-.createExpenses {
-  width: 550px;
-  font-family: Raleway, sans-serif;
-}
-
 .input_field {
- padding: 10px 0px;
+  font-size: 120%;
+ padding: 2%;
  position: relative;
 }
 
@@ -22,19 +18,27 @@
 .header_Text {
   color: #7875B5;
   text-shadow: black;
-  font-size: 20px;
+  font-size: 220%;
 }
 
 .column_save {
-  float: left;
+  right: 10%;
+  top: 10%;
+  width: 25%;
 }
 
 .column_close {
- float: right;
+  right: 10%;
+  top: 10%;
+  width: 25%;
+}
+
+.column_emojis{
+  right: 10%;
+  top: 10%;
+  width: 25%;
 }
 
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+  float: right;
 }
