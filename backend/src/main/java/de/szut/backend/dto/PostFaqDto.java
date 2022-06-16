@@ -6,7 +6,7 @@ import lombok.Data;
 public class PostFaqDto {
     private String question;
     private String answer;
-    private long userID;
+    private long userId;
 
     public PostFaqDto(String _question, long _userID) {
         this.userID = _userID;
