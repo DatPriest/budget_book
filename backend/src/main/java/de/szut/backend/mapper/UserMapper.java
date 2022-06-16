@@ -2,7 +2,6 @@ package de.szut.backend.mapper;
 
 
 import de.szut.backend.dto.*;
-import de.szut.backend.exceptions.SecurityQuestionNotExists;
 import de.szut.backend.model.*;
 import de.szut.backend.repository.SecurityQuestionRepository;
 import de.szut.backend.repository.UserRepository;
@@ -22,19 +21,19 @@ public class UserMapper {
         this.imageService = _imageService;
         this.userRepository = _userRepository;
     }
-    public User mapRegisterDtoToUser(RegisterDto dto) throws SecurityQuestionNotExists {
+    public User mapRegisterDtoToUser(RegisterDto dto) {
         User user = new User();
         user.email = dto.email;
         user.firstName = dto.firstName;
         user.lastName = dto.lastName;
         user.lastLogin = new Date();
         user.hash = dto.hash;
-        user.securityQuestionId = this.securityQuestionRepository.findByKey(dto.securityQuestionKey).getId();
+        user.securityQuestionId = this.securityQuestionRepository.findByKey(dto.securityQuestionKey).getSecurityId();
         user.securityAnswer = dto.securityAnswer.toLowerCase(Locale.ROOT);
         Image image = new Image();
         image.imageString = dto.imageString;
         image = imageService.savePicture(image);
-        user.imageId = image.id;
+        user.imageId = image.imageId;
         return user;
     }
 
@@ -49,7 +48,7 @@ public class UserMapper {
     public CreateUserDto mapUserToUserCreateDto(User user) {
         CreateUserDto dto = new CreateUserDto();
         dto.email = user.email;
-        dto.id = user.id;
+        dto.userId = user.userId;
         dto.firstName = user.firstName;
         dto.lastName = user.lastName;
         dto.imageString = imageService.getPicture(user.imageId).imageString;
@@ -59,20 +58,20 @@ public class UserMapper {
     public ForgotBackDto mapUserToForgotBackDto(User user) {
         ForgotBackDto dto = new ForgotBackDto();
         dto.status = "Success";
-        dto.id = user.id;
+        dto.userId = user.userId;
         return dto;
     }
 
-    public User mapUserUpdateDtoToUser(UserUpdateDto dto) throws SecurityQuestionNotExists {
+    public User mapUserUpdateDtoToUser(UserUpdateDto dto) {
         User user = new User();
-        User dbUser = this.userRepository.findById(dto.id).get();
-        user.id = dto.id;
+        User dbUser = this.userRepository.findById(dto.userId).get();
+        user.userId = dto.userId;
         user.salt = dbUser.salt;
         user.hash = dbUser.hash;
         user.email = dto.email;
         user.firstName = dto.firstName;
         user.lastName = dto.lastName;
-        user.securityQuestionId = securityQuestionRepository.findByKey(dto.securityQuestionKey).getId();
+        user.securityQuestionId = securityQuestionRepository.findByKey(dto.securityQuestionKey).getSecurityId();
         user.securityAnswer = dto.securityAnswer;
         user.lastLogin = dbUser.lastLogin;
         user.imageId = dbUser.imageId;
@@ -81,22 +80,22 @@ public class UserMapper {
         return userRepository.save(user);
     }
 
-    public UserUpdatedDto mapUserToUserUpdatedDto(User user) throws SecurityQuestionNotExists {
+    public UserUpdatedDto mapUserToUserUpdatedDto(User user) {
         UserUpdatedDto dto = new UserUpdatedDto();
         dto.email = user.email;
-        dto.id = user.id;
+        dto.userId = user.userId;
         dto.firstName = user.firstName;
         dto.lastName = user.lastName;
         dto.lastUpdate = user.lastUpdate;
         dto.lastLogin = user.lastLogin;
         dto.imageString = imageService.getPicture(user.imageId).imageString;
         dto.created = user.created;
-        dto.securityQuestionKey = securityQuestionRepository.findById(user.securityQuestionId).getKey();
+        dto.securityQuestionKey = securityQuestionRepository.findById(user.securityQuestionId).get().getKey();
 
         return dto;
     }
 
-    public UserDto mapUserToUserDto(User user) throws SecurityQuestionNotExists {
+    public UserDto mapUserToUserDto(User user) {
         UserDto dto = new UserDto();
         dto.created = user.created;
         dto.email = user.email;
@@ -105,8 +104,8 @@ public class UserMapper {
         dto.lastLogin = user.lastLogin;
         dto.lastUpdate = user.lastUpdate;
         dto.imageString = imageService.getPicture(user.imageId).imageString;
-        dto.securityQuestionKey = securityQuestionRepository.findById(user.securityQuestionId).getKey();
-        dto.id = user.id;
+        dto.securityQuestionKey = securityQuestionRepository.findById(user.securityQuestionId).get().getKey();
+        dto.userId = user.userId;
         return dto;
     }
 }

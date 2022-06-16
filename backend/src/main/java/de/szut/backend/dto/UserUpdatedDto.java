@@ -6,7 +6,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.util.Date;
 
 public class UserUpdatedDto {
-    public long id;
+    public long userId;
     public String lastName;
     public String firstName;
     public String email;

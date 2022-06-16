@@ -24,6 +24,7 @@ export class CreateGroupViewComponent implements OnInit {
       this.groupService.createGroup(createGroupData).subscribe(data => {
         this.alertService.successfulAlert("Gruppe erfolgreich erstellt!",  "",  "success", 2500);
         this.dialogRef.close();
+        this.reloadCurrentPage();
       });
     };
   }
@@ -58,6 +59,9 @@ export class CreateGroupViewComponent implements OnInit {
       subscriber.error(error);
       subscriber.complete();
     }
+  }
+  private reloadCurrentPage() {
+    window. location. reload();
   }
 
   ngOnInit(): void {
