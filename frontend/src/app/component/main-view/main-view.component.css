@@ -90,7 +90,29 @@
   width: 20%;
   background: #FFFFFF;
   top: 50%;
+  left: 10%;
+  border-radius: 10% 10% 10% 10%;
+  transform: none;
+  overflow: hidden;
+}
+
+.screen_group_5 {
+  height: 35%;
+  width: 20%;
+  background: #FFFFFF;
+  top: 50%;
   left: 40%;
+  border-radius: 10% 10% 10% 10%;
+  transform: none;
+  overflow: hidden;
+}
+
+.screen_group_6 {
+  height: 35%;
+  width: 20%;
+  background: #FFFFFF;
+  top: 50%;
+  left: 70%;
   border-radius: 10% 10% 10% 10%;
   transform: none;
   overflow: hidden;
@@ -102,9 +124,10 @@
   text-align: center;
 }
 
-.group_create {
-  font-size: 980%;
-  color: black;
-  left: 30%;
-  height: 980%;
+.icon{
+  font-size: 100px;
 }
+
+
+
+

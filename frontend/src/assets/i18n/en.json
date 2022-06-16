@@ -53,11 +53,45 @@
 		"member": "Group members:",
 		"statistic": "Statistics"
 	},
+	"gtc": {
+		"Text 1": "IT-GmbH renders its services exclusively on the basis of these terms of contract under exclusion of conflicting terms of business or purchase of the customer. If the customer is an entrepreneur in the sense of § 24 of the General Terms and Conditions of Business Act, these terms and conditions shall also apply to all future business transactions, even if they have not been expressly agreed upon again. If the customer is an entrepreneur in the sense of § 24 of the General Terms and Conditions Act , the terms and conditions shall be deemed accepted at the latest with the first use of the services of IT-GmbH.\n2. deviations from these general terms and conditions are only effective after written confirmation by IT-GmbH.\n3. all agreements must be in written form. Deviations and additions as well as dates of performance and delivery shall only become part of the contract if they are confirmed in writing by IT-GmbH. The customer shall be bound to a written order for 14 days.",
+		"Text 2": "IT-GmbH provides its customers with access to Internet services and services. Details of the services are regulated by the product description. The services are provided 24 hours a day, seven days a week.",
+		"Text 2.1": "IT-GmbH is entitled to make adjustments to the contents of the services, taking into account the interests of the customer, in order to improve them, in particular to adapt them to new technical developments, provided that this is reasonable for the customer.",
+		"Text 2.2": "The customer receives support by the IT-GmbH hotline from Monday to Friday in the time from 09.00 o'clock to 17.00 o'clock, except on regional and federal holidays. If the customer has special requirements for the support times, this can be agreed separately, if necessary.",
+		"Text 2.3": "The SLA (Service Level Agreement) for network services is > 99.9% and for simple managed servers 98.5%, for independent clusters of two servers 99.8%, for three 99.9%. For cloud services, this applies accordingly. If higher or different SLAs are required, this can be\nthis can be agreed separately if necessary.",
+		"Text 3": "The customer shall check the proper performance of the services of IT-GmbH within the scope of his possibilities; he shall inform IT-GmbH immediately about recognizable defects and disturbances. If defects or malfunctions have occurred within the customer's area of responsibility, the customer shall reimburse IT-GmbH for all costs incurred in the elimination of the defect or malfunction in the event of an error on the part of the customer as to the cause.",
+		"Text 3.1": "The customer is obliged not to misuse the services and to refrain from illegal actions. In particular, he is obliged to,",
+		"Text 3.2": "not to distribute or retrieve any content or to refer to it via hyperlinks that violate legal provisions, the rights of third parties, in particular their copyrights, or morality;",
+		"Text 3.3": "to refrain from excessive use of network infrastructure through untargeted or improper dissemination of data (e.g. mail spamming) and to avoid the incurrence of inappropriate additional costs at IT-GmbH or third parties;",
+		"Text 3.4": "to inform all persons employed in its business operations and to whom it enables use of the IT-GmbH services in a suitable manner about compliance with these obligations.",
+		"Text 3.5": "to comply with recognized data security principles, in particular to keep access codes secret and to have them changed immediately if it is suspected that unauthorized third parties have gained knowledge of them.",
+		"Text 3.6": "to ensure compliance with statutory regulations and official requirements and to ensure that official permits are granted, insofar as these are currently required or will be required in the future for the use of the services.",
+		"Text 4": " IT-GmbH itself shall collect and process personal data (inventory and usage data) of the customer by machine in accordance with the relevant provisions of data protection law and only for the purpose of executing the contract and exclusively at the German locations of IT-GmbH.\nIT-GmbH undertakes to take all data protection and data security measures required by the applicable data protection regulations. IT-GmbH shall comply with the technical and organizational security measures required by law within the scope of the proper execution of the orders and shall make them available or shall prove them to the customer upon request.\nIf personal data are collected, processed or used by IT-GmbH on behalf of the customer, this shall be done in accordance with the customer's instructions (commissioned data processing). IT-GmbH shall ensure that all order data and their processing are treated in strict confidence and, in particular, are not transmitted to third parties without authorization. The customer shall instruct IT-GmbH to take all necessary technical and organizational measures to bring about rational processing and to secure the data against loss, falsification or unauthorized access.\nFor commissioned data processing, we shall conclude a contract for commissioned data processing with the customer.\nAfter termination of the contract or the commissioned data processing, data stored at the contractor IT-GmbH will be deleted. The customer can export and download the data himself beforehand or give IT-GmbH the order to do so.\nAs far as necessary for the business transaction (e.g. for carrying out corrections/adjustments or for sending SMS messages), personal data of the customer may be passed on by IT-GmbH to designated contractual partners of IT-GmbH. Any subcontractors shall be notified to the customer at the time of placing the order, prior to the transfer. The customer is responsible for ensuring that consent is given in each individual case.",
+		"header": "GTCs",
+		"Überschrift 1": "§ 1 Scope",
+		"Überschrift 2": "§ 2 Subject of the contract",
+		"Überschrift 3": "§ 3 Obligations of the customer",
+		"Überschrift 4": "§ 3 Privacy"
+	},
 	"history": {
 		"header": "History",
 		"search": "Search"
 	},
 	"imprint": {
+		"Angaben": "",
+		"E-Mail": "",
+		"Email": "",
+		"Fax": "",
+		"GmbH": "",
+		"Land": "",
+		"Name": "",
+		"Ort": "",
+		"Straße": "",
+		"Straße2": "",
+		"Telefax": "",
+		"Telefon": "",
+		"Telefon2": "",
+		"Vertretungsberechtigter": "",
 		"header": "Imprint"
 	},
 	"invite": {

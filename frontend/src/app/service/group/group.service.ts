@@ -10,6 +10,7 @@ import { NewCategoryModule } from 'src/app/model/new-category/new-category.modul
 import { CategoryModule } from 'src/app/model/category/category.module';
 import { Observable } from 'rxjs';
 import { EditGroupModule } from 'src/app/model/edit-group/edit-group.module';
+import {GroupList} from "../../model/group/GroupList";
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,8 @@ export class GroupService {
 
   constructor(public http: HttpClient) { }
 
-  getGroupsByUser(userId: number) {
-    return this.http.get<GroupModule[]>(`http://localhost:4000/api/v1/groups/getGroups/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  getGroupsByUser(userId: number): Observable<GroupList> {
+    return this.http.get<GroupList>(`http://localhost:4000/api/v1/groups/getGroups/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   createGroup(user: GroupModule) {

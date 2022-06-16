@@ -14,7 +14,7 @@ public class HistoryLogEntry {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long logEntryId;
+    private long id;
     private long actionId;
     private String additionalInformation;
     @CreationTimestamp
