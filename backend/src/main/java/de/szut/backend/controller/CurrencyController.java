@@ -11,6 +11,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.text.MessageFormat;
 
 @Controller
 @RequestMapping(path = "/api/v1/currency")
@@ -39,7 +40,7 @@ public class CurrencyController {
     @GetMapping(path = "/{baseCurrency}/{toCurrency}", produces = "application/json")
     public ResponseEntity<String> getRate(@PathVariable String baseCurrency, @PathVariable String toCurrency) {
         var request = HttpRequest.newBuilder(
-                        URI.create("https://www.currency-api.com/rates?base="))
+                        URI.create(MessageFormat.format("https://www.currency-api.com/rates?base={0}&symbols={1}", baseCurrency, toCurrency)))
                 .header("accept", "application/json")
                 .build();
         try {
@@ -48,7 +49,7 @@ public class CurrencyController {
 
         } catch (Exception ex) {
             ex.printStackTrace();
-            return new ResponseEntity<>("Get Currency symbols was not successful", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Could not load the Currency", HttpStatus.BAD_REQUEST);
         }
     }
 }
