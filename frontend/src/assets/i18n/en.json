@@ -99,8 +99,8 @@
 		"placeholder": "Invitation code"
 	},
 	"language": {
-		"english": "English",
-		"german": "German",
+		"english": "english",
+		"german": "german",
 		"header": "Language",
 		"language": "Language selection:"
 	},

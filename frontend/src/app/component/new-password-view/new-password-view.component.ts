@@ -41,7 +41,6 @@ export class NewPasswordViewComponent implements OnInit {
         this.hash = this.hashService.encrypt(newPasswordForm.value.password_1);
         if (newPasswordForm.value.securityQuestion != '' && newPasswordForm.value.securityAnswer != '') {
           const newPasswordData = new NewPasswordModule(newPasswordForm.value.email, this.hash, newPasswordForm.value.securityQuestion, newPasswordForm.value.securityAnswer);
-          console.warn(newPasswordData);
           this.userService.passwordForgotRequest(newPasswordData).subscribe(data => {
             this.alertService.successfulAlert("Passwort erfolgreich zurückgesetzt!",  "",  "success", 2500);
             this.router.navigate(['/sign-in']);

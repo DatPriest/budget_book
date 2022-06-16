@@ -18,7 +18,6 @@ export class UserService {
   constructor(public http: HttpClient) { }
 
   registerUser(user: UserModule) {
-    console.log(user);
     return this.http.post<UserModule>('http://localhost:4000/api/v1/verification/register', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 

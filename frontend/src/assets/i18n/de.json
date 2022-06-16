@@ -79,8 +79,8 @@
 		"placeholder": "Einladungscode"
 	},
 	"language": {
-		"english": "englisch",
-		"german": "deutsch",
+		"english": "Englisch",
+		"german": "Deutsch",
 		"header": "Sprache",
 		"language": "Sprachauswahl:"
 	},

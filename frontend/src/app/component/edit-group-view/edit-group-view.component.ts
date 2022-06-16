@@ -44,7 +44,6 @@ export class EditGroupViewComponent implements OnInit {
     });
     observable.subscribe((data) => {
       this.image = data;
-      console.warn(this.image);
     });
   }
 
