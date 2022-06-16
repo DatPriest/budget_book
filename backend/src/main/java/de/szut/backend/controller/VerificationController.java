@@ -58,13 +58,13 @@ public class VerificationController {
     }
 
     @PutMapping(path = "/updatePassword", consumes = "application/json")
-    public ResponseEntity<User> updatePassword(@RequestBody UpdateDto dto) throws TypeNotPresentException {
+    public ResponseEntity<User> updatePassword(@RequestBody UpdateDto dto) {
         return new ResponseEntity<>(service.updatePassword(dto), HttpStatus.OK);
     }
 
     @CrossOrigin
     @PostMapping(path = "/register", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<CreateUserDto> register(@RequestBody RegisterDto dto) throws TypeNotPresentException {
+    public ResponseEntity<CreateUserDto> register(@RequestBody RegisterDto dto) {
         if (dto.hash.length() <= 7) {
             return new ResponseEntity("Password is empty or too short", HttpStatus.BAD_REQUEST);
         }
