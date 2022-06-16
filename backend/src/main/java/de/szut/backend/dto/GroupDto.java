@@ -6,6 +6,6 @@ import lombok.Data;
 public class GroupDto {
     private long id;
     private String groupName;
-    private String image;
+    private String imageString;
     private String inviteCode;
 }

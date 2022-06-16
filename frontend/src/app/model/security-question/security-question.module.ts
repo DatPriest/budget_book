@@ -1,6 +1,6 @@
 export class SecurityQuestionModule {
   constructor (
-    public id: number,
+    public securityId: number,
     public securityQuestionKey: string,
   ) { }
 }

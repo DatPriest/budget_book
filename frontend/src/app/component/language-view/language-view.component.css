@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+.header_Text {
+  color: #7875B5;
+  text-shadow: black;
+  font-size: 180%;
+}
+
+.column_select {
+  float: left;
+  padding: 2%;
+  position: relative;
+}
+
+.column_button {
+  float: right;
+  padding: 2%;
+  position: relative;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

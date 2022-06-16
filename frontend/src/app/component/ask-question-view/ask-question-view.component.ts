@@ -19,7 +19,7 @@ export class AskQuestionViewComponent implements OnInit {
 
   addQuestion(askForm: NgForm): void {
     if (askForm.value.question != '') {
-      const askData = new AskFaqModule(this.app.userId, askForm.value.question);
+      const askData = new AskFaqModule(parseInt(localStorage.getItem("userId")), askForm.value.question);
       this.userService.postQuestion(askData).subscribe(data => {
         this.alertService.successfulAlert("Frage erfolgreich gestellt!", "", "success", 2500);
         this.router.navigate(['/faq']);

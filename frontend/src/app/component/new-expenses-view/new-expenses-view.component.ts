@@ -20,13 +20,13 @@ export class NewExpensesViewComponent implements OnInit {
   category$: Observable<CategoryModule[]> = of([]);
   constructor(public router: Router, public formBuilder: FormBuilder, public dialogRef: MatDialogRef<NewExpensesViewComponent>,
     public groupService: GroupService, public alertService: AlertService, public app: AppModule) {
-      this.category$ = this.groupService.getAllCategoryByGroupId(this.app.groupId)
+      this.category$ = this.groupService.getAllCategoryByGroupId(parseInt(localStorage.getItem("groupId")))
     }
 
   createExpenses(newExpensesForm: NgForm): void {
-    const newExpensesData = new NewExpensesModule(this.app.groupId, newExpensesForm.value.subject, newExpensesForm.value.amount, newExpensesForm.value.date);
+    const newExpensesData = new NewExpensesModule(parseInt(localStorage.getItem("groupId")), newExpensesForm.value.subject, newExpensesForm.value.amount, newExpensesForm.value.date);
     this.groupService.addNewExpenses(newExpensesData).subscribe(data => {
-      this.groupService.getExpensesByGroupId(this.app.groupId);
+      this.groupService.getExpensesByGroupId(parseInt(localStorage.getItem("groupId")));
       newExpensesForm.reset();
     })
   }

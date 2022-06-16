@@ -16,7 +16,7 @@ export class ProfileViewComponent implements OnInit {
 
   user: UserModule;
   constructor(public router: Router, public userService: UserService, public app: AppModule, public dialog: MatDialog, public alertService: AlertService) {
-    this.userService.getProfile(this.app.userId);
+    this.userService.getProfile(parseInt(localStorage.getItem("userId")));
   }
 
   moveToEditProfile(data: UserModule): void {

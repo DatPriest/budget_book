@@ -19,7 +19,7 @@ export class MainViewComponent implements OnInit {
   groupAddPosition: number = 0;
   constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule) {
 
-    this.loadGroups(this.app.userId);
+    this.loadGroups(parseInt(localStorage.getItem("userId")));
   }
 
   createGroupDialog(): void {

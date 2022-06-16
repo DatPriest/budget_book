@@ -5,18 +5,18 @@
 .header_Text {
   color: #7875B5;
   text-shadow: black;
-  font-size: 20px;
+  font-size: 180%;
 }
 
 .column_select {
   float: left;
-  padding: 2.5px 0px;
+  padding: 2%;
   position: relative;
 }
 
 .column_button {
   float: right;
-  padding: 2.5px 0px;
+  padding: 2%;
   position: relative;
 }
 

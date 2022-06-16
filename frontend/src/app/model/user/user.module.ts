@@ -5,7 +5,7 @@ export class UserModule {
     public lastName: string,
     public hash: string,
     public email: string,
-    public securityQuestion: string,
+    public securityQuestionKey: string,
     public securityAnswer: string,
     public image: string,
   ) { }

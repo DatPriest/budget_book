@@ -41,7 +41,6 @@ public class GroupController {
     public ResponseEntity<GroupXUser> createGroup(@RequestBody UserToGroupDto dto) throws TypeNotPresentException {
         GroupXUser user = null;
         try {
-
             user = service.addUserToGroup(dto);
         } catch (Exception e) {
             e.printStackTrace();

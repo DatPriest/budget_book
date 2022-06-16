@@ -21,6 +21,7 @@ public class VerificationService extends BaseService {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
     private final HistoryLogService logService;
+    private final ImageService imageService;
     private final ImageRepository imageRepository;
     private final SecurityQuestionRepository securityQuestionRepository;
 
@@ -29,22 +30,23 @@ public class VerificationService extends BaseService {
                                UserMapper _userMapper,
                                HistoryLogService logService,
                                ImageRepository _imageRepository,
-                               SecurityQuestionRepository _securityQuestionRepository) {
+                               SecurityQuestionRepository _securityQuestionRepository,
+                               ImageService _imageService) {
         this.userRepository = _userRepository;
         this.userMapper = _userMapper;
         this.logService = logService;
         this.imageRepository = _imageRepository;
         this.securityQuestionRepository = _securityQuestionRepository;
+        this.imageService = _imageService;
     }
 
-    public User login(LoginDto dto) {
+    public UserDto login(LoginDto dto) {
         User user = this.userMapper.mapLoginDtoToUser(dto);
         User queryUser = userRepository.findByEmail(user.email);
         if (queryUser != null && hashPassword(user.hash + queryUser.salt).equals(queryUser.hash)) {
             queryUser.lastLogin = new Date();
-            userRepository.save(queryUser);
-            log("UserLoginSuccess",queryUser.lastLogin.toString());
-            return queryUser;
+            user = userRepository.save(queryUser);
+            return this.userMapper.mapUserToUserDto(user);
         } else {
             return null;
         }
@@ -57,8 +59,9 @@ public class VerificationService extends BaseService {
                 dto.securityAnswer.toLowerCase(Locale.ROOT));
         if (user != null) {
             user.salt = getSalt();
-            user.hash = hashPassword(user.hash + user.salt);
+            user.hash = hashPassword(dto.hash + user.salt);
             var newUser = userRepository.save(user);
+            logger.info("Updated password");
             return userMapper.mapUserToForgotBackDto(newUser);
         } else {
             return null;
@@ -76,8 +79,8 @@ public class VerificationService extends BaseService {
         user.salt = getSalt();
         user.hash = hashPassword(user.hash + user.salt);
         Image image = new Image();
-        image.imageString = dto.image;
-        image = this.imageRepository.save(image);
+        image.imageString = dto.imageString;
+        image = imageService.savePicture(image);
         user.imageId = image.id;
         return userMapper.mapUserToUserCreateDto(this.userRepository.save(user));
     }
