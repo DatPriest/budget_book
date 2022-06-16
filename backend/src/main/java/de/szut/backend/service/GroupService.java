@@ -2,6 +2,7 @@ package de.szut.backend.service;
 
 import de.szut.backend.dto.*;
 import de.szut.backend.exceptions.CreateGroupException;
+import de.szut.backend.exceptions.GetGroupByIdException;
 import de.szut.backend.mapper.GroupMapper;
 import de.szut.backend.model.Group;
 import de.szut.backend.model.GroupXUser;
@@ -91,6 +92,17 @@ public class GroupService extends BaseService {
             return this.mapper.mapGroupToGroupDto(repo.save(group), dto.image);
         }
         return null;
+    }
+
+    public GroupDto getGroupById(long groupId) throws GetGroupByIdException {
+        Group group = repo.getById(groupId);
+        Image image = imageService.getPicture(group.imageId);
+        if (group != null && image != null) {
+            GroupDto dto = mapper.mapGroupToGroupDto(group, image.imageString);
+            return dto;
+        } else {
+            throw new GetGroupByIdException("Group or image could not found");
+        }
     }
 
     public GroupXUser addUserToGroup(UserToGroupDto dto) throws Exception {

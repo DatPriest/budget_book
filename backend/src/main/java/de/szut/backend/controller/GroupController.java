@@ -1,6 +1,7 @@
 package de.szut.backend.controller;
 
 import de.szut.backend.dto.*;
+import de.szut.backend.exceptions.GetGroupByIdException;
 import de.szut.backend.model.Group;
 import de.szut.backend.model.GroupXUser;
 import de.szut.backend.model.User;
@@ -83,6 +84,17 @@ public class GroupController {
             return new ResponseEntity<>(groups, HttpStatus.OK);
         }
         return new ResponseEntity<>(null, HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/{groupId}", produces = "application/json")
+    public ResponseEntity<GroupDto> getGroupById(@PathVariable long groupId) {
+        try {
+            GroupDto dto = this.service.getGroupById(groupId);
+            return new ResponseEntity<>(dto, HttpStatus.OK);
+        } catch (GetGroupByIdException e) {
+            e.printStackTrace();
+            return new ResponseEntity(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
     }
 
     @GetMapping(path = "/getGroupIdForInviteCode/{inviteCode}", produces = "application/json")
