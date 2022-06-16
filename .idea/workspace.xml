@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80af0ba7-6ce3-4dcf-a521-a9705591f0ea" name="Changes" comment="MH-132 #time 15m&#10;MH-132 #comment Mein Konto Seite überarbeitet">
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/edit-profile-view/edit-profile-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/edit-profile-view/edit-profile-view.component.html" afterDir="false" />
+    <list default="true" id="80af0ba7-6ce3-4dcf-a521-a9705591f0ea" name="Changes" comment="MH-132 #time 10m&#10;MH-132 #comment Mein Konto Seite überarbeitet">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/controller/VerificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/controller/VerificationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/dto/ForgotBackDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/dto/ForgotBackDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/mapper/GroupMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/mapper/GroupMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/mapper/SecurityQuestionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/mapper/SecurityQuestionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/model/History/HistoryLogEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/model/History/HistoryLogEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/model/History/dtos/GetHistoryActionDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/model/History/dtos/GetHistoryActionDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/service/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/service/GroupService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/service/VerificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/service/VerificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/sign-in-view/sign-in-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/sign-in-view/sign-in-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/model/login-user/login-user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/model/login-user/login-user.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +57,8 @@
       <workItem from="1655275645371" duration="8249000" />
       <workItem from="1655288002958" duration="17000" />
       <workItem from="1655288039870" duration="1834000" />
-      <workItem from="1655291152588" duration="1274000" />
+      <workItem from="1655291152588" duration="1618000" />
+      <workItem from="1655366772457" duration="405000" />
     </task>
     <task id="LOCAL-00001" summary="MH-60 #time 1h &#10;MH-60 #comment AGB-Text hinzufügen">
       <created>1655281759462</created>
@@ -82,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655292334633</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="MH-132 #time 10m&#10;MH-132 #comment Mein Konto Seite überarbeitet">
+      <created>1655292724075</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1655292724075</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,6 +125,7 @@
     <MESSAGE value="MH-60 #time 30m &#10;MH-60 #comment AGB'S überarbeitet" />
     <MESSAGE value="workspace" />
     <MESSAGE value="MH-132 #time 15m&#10;MH-132 #comment Mein Konto Seite überarbeitet" />
-    <option name="LAST_COMMIT_MESSAGE" value="MH-132 #time 15m&#10;MH-132 #comment Mein Konto Seite überarbeitet" />
+    <MESSAGE value="MH-132 #time 10m&#10;MH-132 #comment Mein Konto Seite überarbeitet" />
+    <option name="LAST_COMMIT_MESSAGE" value="MH-132 #time 10m&#10;MH-132 #comment Mein Konto Seite überarbeitet" />
   </component>
 </project>
