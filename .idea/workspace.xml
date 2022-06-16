@@ -1,23 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="Main-View überarbeitet">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/HouseholdGroup/Models/GetHouseholdGroupDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/HouseholdGroup/Models/HouseholdGroup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/HouseholdGroup/Models/PostHouseholdGroupDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/HouseholdGroup/Services/HouseholdGroupService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/model/group/GroupList.ts" afterDir="false" />
+    <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="MH-132 #time 6h&#10;MH-132 #comment Man kann nun 6 Groups haben. Ab 6 verschwindet der Add-Button. GetGroups API-Call funktioniert nun. Add-Button verschiebt sich responsive.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/BackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/BackendApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/create-group-view/create-group-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/create-group-view/create-group-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/sign-in-view/sign-in-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/sign-in-view/sign-in-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/model/group/group.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/model/group/group.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/service/group/group.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/service/group/group.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +78,7 @@
       <workItem from="1654674716303" duration="2940000" />
       <workItem from="1654705835887" duration="5523000" />
       <workItem from="1655279049474" duration="13364000" />
-      <workItem from="1655366380417" duration="2334000" />
+      <workItem from="1655366380417" duration="3168000" />
     </task>
     <task id="LOCAL-00001" summary="Edit Login .css">
       <created>1648717419214</created>
@@ -150,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654678440900</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="MH-132 #time 6h&#10;MH-132 #comment Man kann nun 6 Groups haben. Ab 6 verschwindet der Add-Button. GetGroups API-Call funktioniert nun. Add-Button verschiebt sich responsive.">
+      <created>1655368964393</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1655368964393</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +180,7 @@
     <MESSAGE value="." />
     <MESSAGE value="Main-View Shapes entfernt" />
     <MESSAGE value="Main-View überarbeitet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Main-View überarbeitet" />
+    <MESSAGE value="MH-132 #time 6h&#10;MH-132 #comment Man kann nun 6 Groups haben. Ab 6 verschwindet der Add-Button. GetGroups API-Call funktioniert nun. Add-Button verschiebt sich responsive." />
+    <option name="LAST_COMMIT_MESSAGE" value="MH-132 #time 6h&#10;MH-132 #comment Man kann nun 6 Groups haben. Ab 6 verschwindet der Add-Button. GetGroups API-Call funktioniert nun. Add-Button verschiebt sich responsive." />
   </component>
 </project>
