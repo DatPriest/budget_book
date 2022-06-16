@@ -15,7 +15,7 @@ public class FAQ {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long id;
     @Column(nullable = false)
-    public long userID;
+    public long userId;
     @Column(nullable = false)
     public String question;
     public String answer;
