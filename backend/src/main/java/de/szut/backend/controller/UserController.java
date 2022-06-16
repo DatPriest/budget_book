@@ -3,6 +3,7 @@ package de.szut.backend.controller;
 import de.szut.backend.dto.UserDto;
 import de.szut.backend.dto.UserUpdateDto;
 import de.szut.backend.dto.UserUpdatedDto;
+import de.szut.backend.exceptions.SecurityQuestionNotExists;
 import de.szut.backend.mapper.UserMapper;
 import de.szut.backend.model.User;
 import de.szut.backend.repository.UserRepository;
@@ -38,10 +39,16 @@ public class UserController {
         this.userMapper = _userMapper;
     }
 
-    @GetMapping(path = "/id/{userId}", produces = "application/json")
-    public ResponseEntity<UserDto> getUser(@PathVariable long userId) {
-        User user = this.service.getUserById(userId);
-        UserDto dto = this.userMapper.mapUserToUserDto(user);
+    @GetMapping(path = "/id/{id}", produces = "application/json")
+    public ResponseEntity<UserDto> getUser(@PathVariable long id) {
+        User user = this.service.getUserById(id);
+        UserDto dto = null;
+        try {
+            dto = this.userMapper.mapUserToUserDto(user);
+        } catch (SecurityQuestionNotExists e) {
+            e.printStackTrace();
+            return new ResponseEntity("SecurityQuestion does not exists by key", HttpStatus.NOT_FOUND);
+        }
         if (user != null) {
             return new ResponseEntity<>(dto, HttpStatus.OK);
         }
@@ -49,16 +56,16 @@ public class UserController {
     }
 
     @PutMapping(path = "/update", produces = "application/json", consumes = "application/json")
-    public ResponseEntity<UserUpdatedDto> updateUser(@RequestBody UserUpdateDto dto) {
+    public ResponseEntity<UserUpdatedDto> updateUser(@RequestBody UserUpdateDto dto) throws SecurityQuestionNotExists {
         User user = this.userMapper.mapUserUpdateDtoToUser(dto);
         UserUpdatedDto updatedDto = this.userMapper.mapUserToUserUpdatedDto(user);
         return new ResponseEntity<>(updatedDto, HttpStatus.OK);
     }
 
-    @DeleteMapping(path = "/delete/id/{userId}", produces = "application/json", consumes = "application/json")
-    public ResponseEntity<Boolean> deleteUserById(@PathVariable long userId) {
+    @DeleteMapping(path = "/delete/id/{id}", produces = "application/json", consumes = "application/json")
+    public ResponseEntity<Boolean> deleteUserById(@PathVariable long id) {
         try {
-            boolean deleted = this.service.deleteUser(userId);
+            boolean deleted = this.service.deleteUser(id);
             return new ResponseEntity(deleted, HttpStatus.OK);
         } catch (Exception ex) {
             return new ResponseEntity("User could not get deleted", HttpStatus.BAD_REQUEST);
