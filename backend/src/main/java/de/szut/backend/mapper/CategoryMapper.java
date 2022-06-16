@@ -13,6 +13,7 @@ public class CategoryMapper {
 
         category.setName(dtoToMap.getName());
         category.setGroupId((dtoToMap.getGroupId()));
+        category.setIconName(dtoToMap.getIconName());
         return category;
     }
 
@@ -22,6 +23,7 @@ public class CategoryMapper {
         categoryDto.setCategoryId(categoryToMap.getCategoryId());
         categoryDto.setName(categoryToMap.getName());
         categoryDto.setDate_Created(categoryToMap.getDate_Created());
+        categoryDto.setIconName(categoryToMap.getIconName());
         return categoryDto;
     }
 }

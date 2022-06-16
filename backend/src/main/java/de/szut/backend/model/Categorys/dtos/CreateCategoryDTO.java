@@ -6,4 +6,5 @@ import lombok.Data;
 public class CreateCategoryDTO {
     private String name;
     private long groupId;
+    private String iconName;
 }

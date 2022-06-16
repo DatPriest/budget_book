@@ -15,6 +15,7 @@ public class Category {
     private long categoryId;
     private String name;
     private long groupId;
+    private String iconName;
     @CreationTimestamp
     private Date date_Created;
 }
