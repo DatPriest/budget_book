@@ -38,7 +38,7 @@ export class SignInViewComponent implements OnInit {
       this.userService.loginUser(signInData).subscribe(data => {
         console.warn(data);
         if (data != undefined) {
-          localStorage.setItem("userId", data.userId.toString());
+          localStorage.setItem("userId", data.id.toString());
           this.router.navigate(['/main']);
           this.alertService.successfulAlert("Herzlich willkommen!",  "Login war erfolgreich.",  "success", 2500);
         } else {

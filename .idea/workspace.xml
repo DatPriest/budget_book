@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="MH-132 #time 6h&#10;MH-132 #comment Man kann nun 6 Groups haben. Ab 6 verschwindet der Add-Button. GetGroups API-Call funktioniert nun. Add-Button verschiebt sich responsive.">
+    <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/sign-in-view/sign-in-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/sign-in-view/sign-in-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/model/login-user/login-user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/model/login-user/login-user.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

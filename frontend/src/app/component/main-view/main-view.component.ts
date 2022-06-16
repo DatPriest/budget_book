@@ -36,8 +36,13 @@ export class MainViewComponent implements OnInit {
 
   async loadGroups(userId:number){
     let groupList: GroupModule[] = [];
+    console.log("test");
     let result:any = await firstValueFrom(this.groupService.getGroupsByUser(userId));
-    groupList = result.groups;
+    try{
+      groupList = result.groups;
+    } catch(Exception){
+      //If groups is empty, exception is catcht here
+    }
     this.userGroups$ = of(this.sortForView(groupList));
     this.groupAddPosition = groupList.length + 1;
   }
