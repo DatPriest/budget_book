@@ -4,5 +4,6 @@ export class GroupModule {
     public groupName: string,
     public image: string,
     public inviteCode: string,
+    public viewPosition: number
   ) { }
 }

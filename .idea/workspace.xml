@@ -2,15 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="Main-View überarbeitet">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/HouseholdGroup/Models/GetHouseholdGroupDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/HouseholdGroup/Models/HouseholdGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/HouseholdGroup/Models/PostHouseholdGroupDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/HouseholdGroup/Services/HouseholdGroupService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/model/group/GroupList.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/categorie-view/categorie-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/categorie-view/categorie-view.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/categorie-view/categorie-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/categorie-view/categorie-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/imprint-view/imprint-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/imprint-view/imprint-view.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/BackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/szut/backend/BackendApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/create-group-view/create-group-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/create-group-view/create-group-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/sign-in-view/sign-in-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/sign-in-view/sign-in-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/model/group/group.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/model/group/group.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/service/group/group.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/service/group/group.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -71,6 +91,8 @@
       <workItem from="1652854258120" duration="6709000" />
       <workItem from="1654674716303" duration="2940000" />
       <workItem from="1654705835887" duration="5523000" />
+      <workItem from="1655279049474" duration="13364000" />
+      <workItem from="1655366380417" duration="2334000" />
     </task>
     <task id="LOCAL-00001" summary="Edit Login .css">
       <created>1648717419214</created>
