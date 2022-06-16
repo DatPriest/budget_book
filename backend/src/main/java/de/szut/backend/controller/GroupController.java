@@ -27,9 +27,24 @@ public class GroupController {
      * @return
      * @throws TypeNotPresentException
      */
-    @PostMapping(path = "/create", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Group> CreateGroup(@RequestBody GroupCreateDto dto) throws TypeNotPresentException {
-        return new ResponseEntity<>(service.createGroup(dto), HttpStatus.CREATED);
+    @PostMapping(path = "/create/{userId}", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<Group> CreateGroup(@RequestBody GroupCreateDto dto, @PathVariable long userId) {
+        Group result = null;
+        try {
+            result = service.createGroup(dto, userId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        if (result != null && result != new Group()) {
+            return new ResponseEntity<>(result, HttpStatus.CREATED);
+        } else if (result == null) {
+            return new ResponseEntity("Given User could not be found!", HttpStatus.BAD_REQUEST);
+        } else if (result == new Group()) {
+            return new ResponseEntity("User could not added to group", HttpStatus.INTERNAL_SERVER_ERROR);
+        } else {
+            return new ResponseEntity("Internal Server Error, by creating group", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     /**
