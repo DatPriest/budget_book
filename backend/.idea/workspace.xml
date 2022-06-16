@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55deee20-0fce-4079-b510-22a38dab3415" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/szut/backend/controller/CurrencyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/szut/backend/controller/CurrencyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/szut/backend/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/szut/backend/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/szut/backend/dto/CreateUserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/szut/backend/dto/CreateUserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/szut/backend/dto/PostFaqDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/szut/backend/dto/PostFaqDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/szut/backend/mapper/FaqMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/szut/backend/mapper/FaqMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/szut/backend/mapper/HistoryLogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/szut/backend/mapper/HistoryLogMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/szut/backend/mapper/GroupMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/szut/backend/mapper/GroupMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/szut/backend/mapper/SecurityQuestionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/szut/backend/mapper/SecurityQuestionMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/szut/backend/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/szut/backend/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/szut/backend/service/FaqService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/szut/backend/service/FaqService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/szut/backend/service/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/szut/backend/service/GroupService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/szut/backend/service/VerificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/szut/backend/service/VerificationService.java" afterDir="false" />
     </list>
@@ -41,27 +38,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;b43fdd98b1fd705ae4c3a10cf25aad8a&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "spring.configuration.checksum": "b43fdd98b1fd705ae4c3a10cf25aad8a"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="backend" />
@@ -83,6 +81,7 @@
       <workItem from="1655381009334" duration="683000" />
       <workItem from="1655381726107" duration="126000" />
       <workItem from="1655390213697" duration="136000" />
+      <workItem from="1655391214793" duration="1153000" />
     </task>
     <servers />
   </component>

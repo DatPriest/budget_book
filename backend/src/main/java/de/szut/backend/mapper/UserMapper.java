@@ -49,7 +49,7 @@ public class UserMapper {
     public CreateUserDto mapUserToUserCreateDto(User user) {
         CreateUserDto dto = new CreateUserDto();
         dto.email = user.email;
-        dto.id = user.id;
+        dto.userId = user.id;
         dto.firstName = user.firstName;
         dto.lastName = user.lastName;
         dto.imageString = imageService.getPicture(user.imageId).imageString;
@@ -59,14 +59,14 @@ public class UserMapper {
     public ForgotBackDto mapUserToForgotBackDto(User user) {
         ForgotBackDto dto = new ForgotBackDto();
         dto.status = "Success";
-        dto.id = user.id;
+        dto.userId = user.id;
         return dto;
     }
 
     public User mapUserUpdateDtoToUser(UserUpdateDto dto) throws SecurityQuestionNotExists {
         User user = new User();
-        User dbUser = this.userRepository.findById(dto.id).get();
-        user.id = dto.id;
+        User dbUser = this.userRepository.findById(dto.userId).get();
+        user.id = dto.userId;
         user.salt = dbUser.salt;
         user.hash = dbUser.hash;
         user.email = dto.email;
@@ -84,7 +84,7 @@ public class UserMapper {
     public UserUpdatedDto mapUserToUserUpdatedDto(User user) throws SecurityQuestionNotExists {
         UserUpdatedDto dto = new UserUpdatedDto();
         dto.email = user.email;
-        dto.id = user.id;
+        dto.userId = user.id;
         dto.firstName = user.firstName;
         dto.lastName = user.lastName;
         dto.lastUpdate = user.lastUpdate;
@@ -106,7 +106,7 @@ public class UserMapper {
         dto.lastUpdate = user.lastUpdate;
         dto.imageString = imageService.getPicture(user.imageId).imageString;
         dto.securityQuestionKey = securityQuestionRepository.findById(user.securityQuestionId).getKey();
-        dto.id = user.id;
+        dto.userId = user.id;
         return dto;
     }
 }

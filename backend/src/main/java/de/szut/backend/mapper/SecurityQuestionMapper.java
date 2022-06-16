@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class SecurityQuestionMapper {
     public SecurityQuestionDto mapSecurityQuestionToSecurityQuestionDto(SecurityQuestion securityQuestion) {
         SecurityQuestionDto dto = new SecurityQuestionDto();
-        dto.setId(securityQuestion.getId());
+        dto.setSecurityId(securityQuestion.getId());
         dto.setSecurityQuestionKey(securityQuestion.getKey());
         return dto;
     }

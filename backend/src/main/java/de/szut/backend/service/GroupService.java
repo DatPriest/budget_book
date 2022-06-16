@@ -86,7 +86,7 @@ public class GroupService extends BaseService {
 
     public GroupDto updateGroup(GroupUpdateDto dto) {
         Group group = mapper.mapGroupUpdateDtoToGroup(dto);
-        Group persistentGroup = repo.getById(dto.id);
+        Group persistentGroup = repo.getById(dto.groupId);
         if (imageService.updatePicture(persistentGroup.imageId, dto.image)) {
             group.imageId = persistentGroup.imageId;
             return this.mapper.mapGroupToGroupDto(repo.save(group), dto.image);

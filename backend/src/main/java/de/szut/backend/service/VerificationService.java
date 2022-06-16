@@ -116,7 +116,7 @@ public class VerificationService extends BaseService {
     }
 
     public User updatePassword(UpdateDto dto) {
-        var user = userRepository.findByEmailAndId(dto.email, dto.id);
+        var user = userRepository.findByEmailAndId(dto.email, dto.userId);
         user.salt = getSalt();
         user.hash = hashPassword(dto.hash + user.salt);
         return userRepository.save(user);
