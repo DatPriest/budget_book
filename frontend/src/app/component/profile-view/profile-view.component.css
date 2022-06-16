@@ -52,31 +52,17 @@
   left: 41%;
 }
 
-.input_field {
-  position: relative;
-  top: 2%;
-  left: 31%;
-  width: 20%;
-}
-
-.input_field:active,
-.input_field:focus,
-.input_field:hover {
-  outline: none;
-  border-bottom-color: #6A679E;
-}
-
 .info{
   font-size: 150%;
   position: absolute;
-  top: 25%;
+  top: 30%;
   left: 10%;
   width: 70%;
 }
 
 .button_left{
   position: absolute;
-  top: 69%;
+  top: 75%;
   left: 15%;
   width: 30%;
   margin-top: 2%;
@@ -84,7 +70,7 @@
 
 .button_right{
   position: absolute;
-  top: 69%;
+  top: 75%;
   left: 52%;
   width: 30%;
   margin-top: 2%;
@@ -102,15 +88,9 @@ input[type=text], select {
 
 input[type=submit] {
   width: 100%;
-  background-color: #4CAF50;
-  color: white;
   padding: 2% 3%;
   margin: 2% 0;
   border: none;
   border-radius: 1%;
   cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
 }

@@ -21,7 +21,7 @@
 	},
 	"editPassword": {
 		"header": "Passwort ändern",
-		"pwretype": "Passwort Wiederholung"
+		"pwretype": "Passwort Wiederholen"
 	},
 	"editProfile": {
 		"header": "Mein Konto",
@@ -45,7 +45,7 @@
 		"ask": "Frage stellen!",
 		"header": "FAQ!"
 	},
-	"forename": " Nachname",
+	"forename": "Vorname",
 	"group": {
 		"categorys": "Kategorien",
 		"expenses": "Ausgaben",
@@ -181,7 +181,7 @@
 		"edit": "Bearbeiten",
 		"imgMsg": "Bild der jeweiligen Person",
 		"join": "Gruppe beitreten"
-	},
+  },
 	"saveBtn": "speichern",
 	"secAnswer": "Antwort:",
 	"secLine": "Wählen Sie 1 Frage aus!",
@@ -205,7 +205,7 @@
 		"header": "Statistik",
 		"tableHeader": "Ausgaben:"
 	},
-	"surname": "Vorname",
+	"surname": "Nachname",
   "gtc": {
     "header" : "AGBs",
     "Überschrift 1": "§ 1 Geltungsbereich",

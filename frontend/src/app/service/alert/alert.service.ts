@@ -45,7 +45,7 @@ export class AlertService {
   deleteAccountAlert(): void {
     swal({
       title: "Bist Du Dir sicher?",
-      text: "Einmal gelöscht, kann der Account nicht mehr wiederhergestellt werden!",
+      text: "Wenn Dein Account einmal gelöscht ist, kann er nicht mehr wiederhergesellt werden!",
       icon: "warning",
       buttons: ["Cancel", "OK"],
       dangerMode: true,
