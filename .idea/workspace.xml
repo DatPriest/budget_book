@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="MH-132 #time 10m&#10;MH-132 #comment fix groups">
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/main-view/main-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/group-view/group-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/group-view/group-view.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/new-category-view/new-category-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/new-category-view/new-category-view.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/new-category-view/new-category-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/new-category-view/new-category-view.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
