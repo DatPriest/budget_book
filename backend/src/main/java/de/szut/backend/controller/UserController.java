@@ -38,9 +38,9 @@ public class UserController {
         this.userMapper = _userMapper;
     }
 
-    @GetMapping(path = "/id/{id}", produces = "application/json")
-    public ResponseEntity<UserDto> getUser(@PathVariable long id) {
-        User user = this.service.getUserById(id);
+    @GetMapping(path = "/id/{userId}", produces = "application/json")
+    public ResponseEntity<UserDto> getUser(@PathVariable long userId) {
+        User user = this.service.getUserById(userId);
         UserDto dto = this.userMapper.mapUserToUserDto(user);
         if (user != null) {
             return new ResponseEntity<>(dto, HttpStatus.OK);
@@ -55,10 +55,10 @@ public class UserController {
         return new ResponseEntity<>(updatedDto, HttpStatus.OK);
     }
 
-    @DeleteMapping(path = "/delete/id/{id}", produces = "application/json", consumes = "application/json")
-    public ResponseEntity<Boolean> deleteUserById(@PathVariable long id) {
+    @DeleteMapping(path = "/delete/id/{userId}", produces = "application/json", consumes = "application/json")
+    public ResponseEntity<Boolean> deleteUserById(@PathVariable long userId) {
         try {
-            boolean deleted = this.service.deleteUser(id);
+            boolean deleted = this.service.deleteUser(userId);
             return new ResponseEntity(deleted, HttpStatus.OK);
         } catch (Exception ex) {
             return new ResponseEntity("User could not get deleted", HttpStatus.BAD_REQUEST);
