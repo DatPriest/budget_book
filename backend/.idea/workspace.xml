@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55deee20-0fce-4079-b510-22a38dab3415" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/sign-in-view/sign-in-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/sign-in-view/sign-in-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/model/login-user/login-user.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/model/login-user/login-user.module.ts" afterDir="false" />
-    </list>
+    <list default="true" id="55deee20-0fce-4079-b510-22a38dab3415" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +73,7 @@
       <workItem from="1655381726107" duration="126000" />
       <workItem from="1655390213697" duration="136000" />
       <workItem from="1655391214793" duration="1153000" />
-      <workItem from="1655392449053" duration="293000" />
+      <workItem from="1655392449053" duration="798000" />
     </task>
     <servers />
   </component>
