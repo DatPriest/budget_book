@@ -47,7 +47,7 @@ export class SignUpViewComponent implements OnInit {
             this.router.navigate(['/sign-in']);
           });
         } else {
-          this.alertService.alert("Oops",  "Bitte eine Sicherheitsfrage und eine Antwort ausfüllen!",  "error");
+          this.alertService.alert("Oops",  "Bitte eine Sicherheitsfrage und Antwort ausfüllen!",  "error");
         }
       } else {
           this.alertService.alert("Oops",  "Passwörter stimmen nicht überein!",  "error");
