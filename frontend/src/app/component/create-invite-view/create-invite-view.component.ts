@@ -15,8 +15,9 @@ export class CreateInviteViewComponent implements OnInit {
 
   createInviteForm: FormGroup;
   inviteCode: string;
-  constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<CreateInviteViewComponent>, public groupService: GroupService,
-    public app: AppModule, public loginService: LoginService) { }
+  constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<CreateInviteViewComponent>, public groupService: GroupService, public app: AppModule, public loginService: LoginService) {
+
+  }
 
   createInvite(): void {
     this.groupService.getInviteCode(parseInt(localStorage.getItem("groupId"))).subscribe(data => this.inviteCode = data.inviteCode);

@@ -15,8 +15,9 @@ import { UserService } from 'src/app/service/user/user.service';
 export class NotificationViewComponent implements OnInit {
 
   notificationForm: FormGroup;
-  constructor(public formBuilder: FormBuilder, public alertService: AlertService, public userService: UserService,
-    public dialogRef: MatDialogRef<NotificationViewComponent>, public app: AppModule, public loginService: LoginService) { }
+  constructor(public formBuilder: FormBuilder, public alertService: AlertService, public userService: UserService, public dialogRef: MatDialogRef<NotificationViewComponent>, public app: AppModule, public loginService: LoginService) {
+
+    }
 
   save(notificationForm: NgForm) {
     const notificationData = new NotificationModule(parseInt(localStorage.getItem("userId")), notificationForm.value.acceptTerms);
@@ -24,6 +25,10 @@ export class NotificationViewComponent implements OnInit {
       this.alertService.successfulAlert("Erfolgreich geändert!",  "",  "success", 2500);
       this.dialogRef.close();
     });
+  }
+
+  closePopUp(): void {
+    this.dialogRef.close();
   }
 
   ngOnInit(): void {

@@ -17,8 +17,9 @@ export class EditGroupViewComponent implements OnInit {
 
   editGroupForm: FormGroup;
   image: string;
-  constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<EditGroupViewComponent>,
-      public groupService: GroupService, public app: AppModule, public alertService: AlertService, public loginService: LoginService) { }
+  constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<EditGroupViewComponent>, public groupService: GroupService, public app: AppModule, public alertService: AlertService, public loginService: LoginService) {
+
+  }
 
   editGroup(editGroupForm: NgForm): void {
     if (editGroupForm.value.image != '' && editGroupForm.value.groupName != '') {

@@ -13,8 +13,9 @@ import { LoginService } from 'src/app/service/login/login.service';
 export class InviteViewComponent implements OnInit {
 
   joinGroupForm: FormGroup;
-  constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<InviteViewComponent>,
-    public groupService: GroupService, public alertService: AlertService, public loginService: LoginService) { }
+  constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<InviteViewComponent>, public groupService: GroupService, public alertService: AlertService, public loginService: LoginService) {
+
+  }
 
   joinGroup(joinGroupForm: NgForm): void {
     if (joinGroupForm.value.inviteCode != '') {

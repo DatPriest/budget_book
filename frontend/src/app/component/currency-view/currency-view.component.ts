@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { LoginService } from 'src/app/service/login/login.service';
 
 @Component({
@@ -7,7 +8,13 @@ import { LoginService } from 'src/app/service/login/login.service';
   styleUrls: ['./currency-view.component.css']
 })
 export class CurrencyViewComponent implements OnInit {
-  constructor(public loginService: LoginService) { }
+  constructor(public loginService: LoginService, public dialogRef: MatDialogRef<CurrencyViewComponent>) {
+    
+  }
+
+  closePopUp(): void {
+    this.dialogRef.close();
+  }
 
   ngOnInit(): void {
     this.loginService.checkLogIn();

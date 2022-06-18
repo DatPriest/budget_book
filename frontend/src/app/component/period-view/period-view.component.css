@@ -14,11 +14,15 @@
   position: relative;
 }
 
-.column_button {
-  float: right;
-  padding: 2.5px 0px;
-  position: relative;
+.column_save {
+  float: left;
+  width: 45%;
 }
+
+.column_close {
+  float: right;
+  width: 45%;
+ }
 
 .row:after {
   content: "";

@@ -19,8 +19,7 @@ export class NewExpensesViewComponent implements OnInit {
 
   newExpensesForm: FormGroup;
   category$: Observable<CategoryModule[]> = of([]);
-  constructor(public router: Router, public formBuilder: FormBuilder, public dialogRef: MatDialogRef<NewExpensesViewComponent>,
-    public groupService: GroupService, public alertService: AlertService, public app: AppModule, public loginService: LoginService) {
+  constructor(public router: Router, public formBuilder: FormBuilder, public dialogRef: MatDialogRef<NewExpensesViewComponent>, public groupService: GroupService, public alertService: AlertService, public app: AppModule, public loginService: LoginService) {
       this.category$ = this.groupService.getAllCategoryByGroupId(parseInt(localStorage.getItem("groupId")))
     }
 

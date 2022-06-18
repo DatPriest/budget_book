@@ -16,8 +16,9 @@ import { NotificationViewComponent } from '../notification-view/notification-vie
 })
 export class MenuViewComponent implements OnInit {
 
-  constructor(public router: Router, public userService: UserService, public app: AppModule, public alertService: AlertService,
-    public dialog: MatDialog, public loginService: LoginService) { }
+  constructor(public router: Router, public userService: UserService, public app: AppModule, public alertService: AlertService, public dialog: MatDialog, public loginService: LoginService) {
+    
+  }
 
   moveToProfile(): void {
     this.router.navigate(['/profile']);

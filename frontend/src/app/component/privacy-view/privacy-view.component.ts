@@ -9,7 +9,9 @@ import { LoginService } from 'src/app/service/login/login.service';
 })
 export class PrivacyViewComponent implements OnInit {
 
-  constructor(public router: Router, public loginService: LoginService) { }
+  constructor(public router: Router, public loginService: LoginService) {
+    
+  }
 
   back(): void {
     this.router.navigate(['/main']);

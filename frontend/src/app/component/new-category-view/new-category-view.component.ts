@@ -16,8 +16,9 @@ import { LoginService } from 'src/app/service/login/login.service';
 export class NewCategoryViewComponent implements OnInit {
 
   newCategoryForm: FormGroup;
-  constructor(public router: Router, public formBuilder: FormBuilder, private dialogRef: MatDialogRef<NewCategoryViewComponent>,
-    public groupService: GroupService, public alertService: AlertService, public app: AppModule, public loginService: LoginService) { }
+  constructor(public router: Router, public formBuilder: FormBuilder, private dialogRef: MatDialogRef<NewCategoryViewComponent>, public groupService: GroupService, public alertService: AlertService, public app: AppModule, public loginService: LoginService) {
+
+  }
 
   createCategory(newCategoryForm: NgForm): void {
     const newCategoryData = new NewCategoryModule(parseInt(localStorage.getItem("groupId")), newCategoryForm.value.category);

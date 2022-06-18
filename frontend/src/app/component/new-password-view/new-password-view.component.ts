@@ -20,8 +20,7 @@ export class NewPasswordViewComponent implements OnInit {
   showPasswordReplay: boolean = false;
   hash: string;
   securityQuestion$ : Observable<SecurityQuestionModule[]> = of([]);
-  constructor(public router: Router, public formBuilder: FormBuilder, public userService: UserService,
-    public hashService: HashingService, public alertService: AlertService) {
+  constructor(public router: Router, public formBuilder: FormBuilder, public userService: UserService, public hashService: HashingService, public alertService: AlertService) {
     this.securityQuestion$ = this.userService.getSecurityQuestion();
   }
 

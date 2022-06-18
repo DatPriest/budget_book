@@ -15,8 +15,9 @@ import { UserService } from 'src/app/service/user/user.service';
 export class AskQuestionViewComponent implements OnInit {
 
   askForm: FormGroup;
-  constructor(public router: Router, public app: AppModule, public formBuilder: FormBuilder, public userService: UserService,
-    public alertService: AlertService, public loginService: LoginService) { }
+  constructor(public router: Router, public app: AppModule, public formBuilder: FormBuilder, public userService: UserService, public alertService: AlertService, public loginService: LoginService) {
+    
+  }
 
   addQuestion(askForm: NgForm): void {
     if (askForm.value.question != '') {

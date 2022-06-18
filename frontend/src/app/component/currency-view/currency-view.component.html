@@ -1,6 +1,5 @@
 <form>
   <h4 class="header_Text">{{'currency.header'| translate}}</h4>
-  <div class="row">
     <div class="column_select">
       <mat-form-field appearance="fill">
         <mat-label>{{'currency.currency'| translate}}</mat-label>
@@ -10,8 +9,12 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <div class="column_button">
-      <button type="submit"><span class="material-icons">save</span></button>
+    <div class="row">
+      <div class="column_save">
+        <button type="submit"><span class="material-icons">save</span></button>
+      </div>
+      <div class="column_close">
+        <button type="button" id="close" (click)="closePopUp()"><span class="group_create material-icons">close</span></button>
+      </div>
     </div>
-  </div>
 </form>

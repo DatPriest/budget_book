@@ -16,7 +16,9 @@ export class EditProfileViewComponent implements OnInit {
   user: UserModule;
   image: string;
   editProfileForm: FormGroup;
-  constructor(public userService: UserService, public formBuilder: FormBuilder, public router: Router, public loginService: LoginService) { }
+  constructor(public userService: UserService, public formBuilder: FormBuilder, public router: Router, public loginService: LoginService) {
+    
+  }
 
   saveEditUser(editProfileForm: NgForm): void {
     const editProfileData = new UserModule(null, editProfileForm.value.firstName, editProfileForm.value.lastName, null, editProfileForm.value.email, null, null, this.image);

@@ -22,23 +22,17 @@
 }
 
 .column_save {
-  right: 10%;
-  top: 10%;
-  width: 25%;
+  float: left;
+  width: 45%;
 }
 
 .column_close {
-  right: 10%;
-  top: 10%;
-  width: 25%;
-}
-
-.column_emojis{
-  right: 10%;
-  top: 10%;
-  width: 25%;
-}
+  float: right;
+  width: 45%;
+ }
 
 .row:after {
-  float: right;
+  content: "";
+  display: table;
+  clear: both;
 }

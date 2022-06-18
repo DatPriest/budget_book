@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55deee20-0fce-4079-b510-22a38dab3415" name="Changes" comment="" />
+    <list default="true" id="55deee20-0fce-4079-b510-22a38dab3415" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/currency-view/currency-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/currency-view/currency-view.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/currency-view/currency-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/currency-view/currency-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/currency-view/currency-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/currency-view/currency-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/expenses-view/expenses-filter.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/expenses-view/expenses-filter.pipe.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/language-view/language-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/language-view/language-view.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/language-view/language-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/language-view/language-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/language-view/language-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/language-view/language-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/new-category-view/new-category-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/new-category-view/new-category-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/notification-view/notification-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/notification-view/notification-view.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/notification-view/notification-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/notification-view/notification-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/notification-view/notification-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/notification-view/notification-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/main.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

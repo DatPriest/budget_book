@@ -15,8 +15,9 @@ export class PeriodViewComponent implements OnInit {
 
   periodForm: FormGroup;
   id: number;
-  constructor(public dialogRef: MatDialogRef<PeriodViewComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
-    public formBuilder: FormBuilder, public alertService: AlertService, public app: AppModule, public loginService: LoginService) { }
+  constructor(public dialogRef: MatDialogRef<PeriodViewComponent>, @Inject(MAT_DIALOG_DATA) public data: any, public formBuilder: FormBuilder, public alertService: AlertService, public app: AppModule, public loginService: LoginService) {
+    
+  }
 
   editperiod(periodForm: NgForm): void {
     if (periodForm.value.period == '') {
@@ -29,6 +30,10 @@ export class PeriodViewComponent implements OnInit {
      }
       const periodData = new PeriodModule(this.id, this.data.type, periodForm.value.period);
     }
+  }
+
+  closePopUp(): void {
+    this.dialogRef.close();
   }
 
   ngOnInit(): void {

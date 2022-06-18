@@ -22,8 +22,7 @@ export class GroupViewComponent implements OnInit {
   user$ : Observable<UserModule[]> = of([]);
   group: GroupModule;
   inviteCode: string;
-  constructor(public router: Router, public groupService: GroupService, public app: AppModule, public dialog: MatDialog,
-    public alertService: AlertService, public loginService: LoginService) {
+  constructor(public router: Router, public groupService: GroupService, public app: AppModule, public dialog: MatDialog, public alertService: AlertService, public loginService: LoginService) {
     this.user$ = this.groupService.getUsersByGroup(parseInt(localStorage.getItem("groupId")));
   }
 

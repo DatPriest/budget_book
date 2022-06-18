@@ -16,8 +16,9 @@ export class EditPasswordViewComponent implements OnInit {
 
   editPasswordForm: FormGroup;
   hash: string;
-  constructor(public router: Router, public formBuilder: FormBuilder, public hashService: HashingService, public alertService: AlertService,
-    public userService: UserService, public loginService: LoginService) { }
+  constructor(public router: Router, public formBuilder: FormBuilder, public hashService: HashingService, public alertService: AlertService, public userService: UserService, public loginService: LoginService) {
+
+  }
 
   saveNewPassword(editPasswordForm: NgForm): void {
     if (editPasswordForm.value.password_1 == '' && editPasswordForm.value.password_2 == '') {

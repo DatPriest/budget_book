@@ -8,7 +8,9 @@ import { LoginService } from 'src/app/service/login/login.service';
 })
 export class SpecificExpensesViewComponent implements OnInit {
 
-  constructor(public loginService: LoginService) { }
+  constructor(public loginService: LoginService) {
+    
+  }
 
   ngOnInit(): void {
     this.loginService.checkLogIn();

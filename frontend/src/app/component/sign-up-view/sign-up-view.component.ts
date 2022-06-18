@@ -21,8 +21,7 @@ export class SignUpViewComponent implements OnInit {
   image: string;
   securityQuestion$ : Observable<SecurityQuestionModule[]> = of([]);
   hash: string;
-  constructor(public router: Router, public userService: UserService, public formBuilder: FormBuilder,
-    public hashService: HashingService, public alertService: AlertService) {
+  constructor(public router: Router, public userService: UserService, public formBuilder: FormBuilder, public hashService: HashingService, public alertService: AlertService) {
     this.securityQuestion$ = this.userService.getSecurityQuestion();
   }
 
