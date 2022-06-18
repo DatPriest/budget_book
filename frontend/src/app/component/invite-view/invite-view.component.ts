@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { TranslateService } from '@ngx-translate/core';
 import { AlertService } from 'src/app/service/alert/alert.service';
 import { GroupService } from 'src/app/service/group/group.service';
 import { LoginService } from 'src/app/service/login/login.service';
@@ -13,7 +14,7 @@ import { LoginService } from 'src/app/service/login/login.service';
 export class InviteViewComponent implements OnInit {
 
   joinGroupForm: FormGroup;
-  constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<InviteViewComponent>, public groupService: GroupService, public alertService: AlertService, public loginService: LoginService) {
+  constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<InviteViewComponent>, public groupService: GroupService, public alertService: AlertService, public loginService: LoginService, public translate: TranslateService) {
 
   }
 
@@ -21,14 +22,14 @@ export class InviteViewComponent implements OnInit {
     if (joinGroupForm.value.inviteCode != '') {
       this.groupService.joinGroup(joinGroupForm.value.inviteCode).subscribe(data => {
         if (data.valid = true) {
-          this.alertService.successfulAlert("Herzlich Glückwunsch!" ,  "Sie sind erfolgreich der Gruppe beigetreten." ,  "success", 2500);
+          this.alertService.successfulAlert(this.translate.instant('alert.invite.header'),  this.translate.instant('alert.invite.message'),  "success", 2500);
           this.dialogRef.close();
         } else {
-          this.alertService.alert("Oops" ,  "Der Einladungslink ist ungültig!" ,  "error");
+          this.alertService.alert(this.translate.instant('alert.invite.invalidCode.header'),  this.translate.instant('alert.invite.invalidCode.message'),  "error");
         }
       })
     } else {
-      this.alertService.alert("Oops" ,  "Der Einladungslink ist leer!" ,  "error");
+      this.alertService.alert(this.translate.instant('alert.invite.emptyCode.header'),  this.translate.instant('alert.invite.invalidCode.message'),  "error");
     }
   }
 

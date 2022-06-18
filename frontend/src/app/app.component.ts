@@ -25,7 +25,7 @@ export class AppComponent {
 
   logOut() {
     this.loginService.logOut();
-    this.alertService.alert("Inaktivität", "automatische Abmeldung nach 10 Minuten.", "info");
+    this.alertService.alert(this.translate.instant('alert.appComponent.header'), this.translate.instant('alert.appComponent.message'), "info");
     this.router.navigate(['/sign-in']);
   }
 

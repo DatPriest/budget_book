@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { TranslateService } from '@ngx-translate/core';
 import { Observable, Subscriber } from 'rxjs';
 import { AppModule } from 'src/app/app.module';
 import { EditGroupModule } from 'src/app/model/edit-group/edit-group.module';
@@ -17,7 +18,7 @@ export class EditGroupViewComponent implements OnInit {
 
   editGroupForm: FormGroup;
   image: string;
-  constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<EditGroupViewComponent>, public groupService: GroupService, public app: AppModule, public alertService: AlertService, public loginService: LoginService) {
+  constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<EditGroupViewComponent>, public groupService: GroupService, public app: AppModule, public alertService: AlertService, public loginService: LoginService, public translate: TranslateService) {
 
   }
 
@@ -25,7 +26,7 @@ export class EditGroupViewComponent implements OnInit {
     if (editGroupForm.value.image != '' && editGroupForm.value.groupName != '') {
       const editGroupData = new EditGroupModule(parseInt(localStorage.getItem("groupId")), editGroupForm.value.groupName, this.image);
       this.groupService.editGroup(editGroupData).subscribe(data => {
-        this.alertService.successfulAlert("Gruppe erfolgreich geupdated!",  "",  "success", 2500);
+        this.alertService.successfulAlert(this.translate.instant('alert.editGroup.header'),  this.translate.instant('alert.editGroup.message'),  "success", 2500);
         this.dialogRef.close();
       });
     };

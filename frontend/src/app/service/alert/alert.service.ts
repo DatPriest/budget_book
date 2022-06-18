@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { filter } from 'rxjs';
 import { AppModule } from 'src/app/app.module';
 import swal from 'sweetalert';
 import { UserService } from '../user/user.service';
@@ -9,7 +11,7 @@ import { UserService } from '../user/user.service';
 })
 export class AlertService {
 
-  constructor(public router: Router, public userService: UserService, public app: AppModule) { }
+  constructor(public router: Router, public userService: UserService, public app: AppModule, public translate: TranslateService) { }
 
   alert(header: string, message: string, event: string): void {
     swal (header,  message,  event);
@@ -26,15 +28,15 @@ export class AlertService {
 
   logOutAlert(): void {
     swal({
-      title: "Abmelden",
-      text: "Möchtest Du Dich wirklich abmelden?",
+      title: this.translate.instant('alert.logout.title'),
+      text: this.translate.instant('alert.logout.text'),
       icon: "warning",
       buttons: ["Cancel", "OK"],
       dangerMode: true,
     })
     .then((willLogOut) => {
       if (willLogOut) {
-        swal("Du wurdest erfolgreich abgemeldet!", {
+        swal(this.translate.instant('alert.logout.message'), {
           icon: "success",
         });
         this.router.navigate(['/sign-in']);
@@ -44,19 +46,19 @@ export class AlertService {
 
   deleteAccountAlert(): void {
     swal({
-      title: "Bist Du Dir sicher?",
-      text: "Wenn Dein Account einmal gelöscht ist, kann er nicht mehr wiederhergesellt werden!",
+      title: this.translate.instant('alert.delete.title'),
+      text: this.translate.instant('alert.delete.text'),
       icon: "warning",
       buttons: ["Cancel", "OK"],
       dangerMode: true,
     })
-    .then((willLogOut) => {
-      if (willLogOut) {
+    .then((willDelete) => {
+      if (willDelete) {
         this.userService.deleteProfile(parseInt(localStorage.getItem("userId")));
-        swal("Der Account wurde erfolgreich gelöscht!", {
+        swal(this.translate.instant('alert.delete.message'), {
           icon: "success",
         });
-        this.router.navigate(['/sign-in']);
+        this.router.navigate(['/sign-up']);
       }
     })
   }

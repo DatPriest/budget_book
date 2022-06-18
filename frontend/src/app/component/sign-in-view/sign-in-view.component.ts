@@ -8,6 +8,7 @@ import { AlertService } from 'src/app/service/alert/alert.service';
 import { HashingService } from 'src/app/service/hashing/hashing.service';
 import { UserService } from "../../service/user/user.service";
 import { GroupService } from "../../service/group/group.service";
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sign-in-view',
@@ -19,7 +20,7 @@ export class SignInViewComponent implements OnInit {
   signInForm: FormGroup;
   showPassword: boolean = false;
   hash: string;
-  constructor(public router: Router, public http: HttpClient, public formBuilder: FormBuilder, public userService: UserService, public app: AppModule, public hashService: HashingService, public alertService: AlertService, public groupService: GroupService) {
+  constructor(public router: Router, public http: HttpClient, public formBuilder: FormBuilder, public userService: UserService, public app: AppModule, public hashService: HashingService, public alertService: AlertService, public groupService: GroupService, public translate: TranslateService) {
 
     }
 
@@ -31,7 +32,7 @@ export class SignInViewComponent implements OnInit {
     //this.router.navigate(['/main']); // temp
 
     if (signInForm.value.email == '' && signInForm.value.password == '') {
-      this.alertService.alert("Oops",  "E-Mail und Passwort dürfen nicht leer sein!",  "error");
+      this.alertService.alert(this.translate.instant('alert.signIn.emptyPassword.header'),  this.translate.instant('alert.signIn.emptyPassword.message'),  "error");
     } else {
       this.hash = this.hashService.encrypt(signInForm.value.password);
       const signInData = new LoginUserModule(null, signInForm.value.email, this.hash);
@@ -39,9 +40,9 @@ export class SignInViewComponent implements OnInit {
         if (data != undefined) {
           localStorage.setItem("userId", data.userId.toString());
           this.router.navigate(['/main']);
-          this.alertService.successfulAlert("Herzlich willkommen!",  "Login war erfolgreich.",  "success", 2500);
+          this.alertService.successfulAlert(this.translate.instant('alert.signIn.header'),  this.translate.instant('alert.signIn.message'),  "success", 2500);
         } else {
-          this.alertService.alert("Oops",  "E-Mail und Passwort stimmen nicht überein!",  "error");
+          this.alertService.alert(this.translate.instant('alert.signIn.noMatch.header'),  this.translate.instant('alert.signIn.noMatch.message'),  "error");
         }
       });
     }

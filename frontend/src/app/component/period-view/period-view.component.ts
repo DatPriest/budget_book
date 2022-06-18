@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { TranslateService } from '@ngx-translate/core';
 import { AppModule } from 'src/app/app.module';
 import { PeriodModule } from 'src/app/model/period/period.module';
 import { AlertService } from 'src/app/service/alert/alert.service';
@@ -15,13 +16,13 @@ export class PeriodViewComponent implements OnInit {
 
   periodForm: FormGroup;
   id: number;
-  constructor(public dialogRef: MatDialogRef<PeriodViewComponent>, @Inject(MAT_DIALOG_DATA) public data: any, public formBuilder: FormBuilder, public alertService: AlertService, public app: AppModule, public loginService: LoginService) {
-    
+  constructor(public dialogRef: MatDialogRef<PeriodViewComponent>, @Inject(MAT_DIALOG_DATA) public data: any, public formBuilder: FormBuilder, public alertService: AlertService, public app: AppModule, public loginService: LoginService, public translate: TranslateService) {
+
   }
 
   editperiod(periodForm: NgForm): void {
     if (periodForm.value.period == '') {
-      this.alertService.alert("Oops",  "Bitte wähle einen Zeitraum aus!",  "error");
+      this.alertService.alert(this.translate.instant('alert.period.header'),  this.translate.instant('alert.period.message'),  "error");
      } else {
      if (this.data.type == "User") {
        this.id = this.data.member.id;
