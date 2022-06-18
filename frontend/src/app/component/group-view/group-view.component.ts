@@ -23,6 +23,8 @@ export class GroupViewComponent implements OnInit {
   group: GroupModule;
   inviteCode: string;
   constructor(public router: Router, public groupService: GroupService, public app: AppModule, public dialog: MatDialog, public alertService: AlertService, public loginService: LoginService) {
+    this.group = this.groupService.getGroupById(parseInt(localStorage.getItem("groupId")));
+    this.inviteCode = this.group.inviteCode;
     this.user$ = this.groupService.getUsersByGroup(parseInt(localStorage.getItem("groupId")));
   }
 
@@ -47,6 +49,9 @@ export class GroupViewComponent implements OnInit {
 
     dialogConfig.autoFocus = true;
     dialogConfig.width = "400px";
+    dialogConfig.data = {
+      code: this.inviteCode
+    };
 
     this.dialog.open(CreateInviteViewComponent, dialogConfig)
   }

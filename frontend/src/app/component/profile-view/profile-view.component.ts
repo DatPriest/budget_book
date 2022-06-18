@@ -17,11 +17,11 @@ export class ProfileViewComponent implements OnInit {
 
   user: UserModule;
   constructor(public router: Router, public userService: UserService, public app: AppModule, public dialog: MatDialog, public alertService: AlertService, public loginService: LoginService) {
-    this.userService.getProfile(parseInt(localStorage.getItem("userId")));
+    this.user = this.userService.getProfile(parseInt(localStorage.getItem("userId")));
   }
 
   moveToEditProfile(data: UserModule): void {
-    this.router.navigate(['/profile/edit']);
+    this.router.navigate(['/profile/edit', data]);
   }
 
   moveToEditPassword(): void {

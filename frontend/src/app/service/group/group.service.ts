@@ -23,20 +23,22 @@ export class GroupService {
     return this.http.get<GroupList>(`http://localhost:4000/api/v1/groups/getGroups/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
-  createGroup(user: GroupModule) {
-    return this.http.post<GroupModule>('http://localhost:4000/api/v1/groups/create', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  createGroup(group: GroupModule, userId: number) {
+    return this.http.post<GroupModule>(`http://localhost:4000/api/v1/groups/create/${userId}`, JSON.stringify(group), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
-  editGroup(user: EditGroupModule) {
-    return this.http.post<EditGroupModule>('http://localhost:4000/api/v1/groups/update', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  editGroup(group: EditGroupModule) {
+    return this.http.post<EditGroupModule>('http://localhost:4000/api/v1/groups/update', JSON.stringify(group), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   getUsersByGroup(groupId: number) {
-    return this.http.post<UserModule[]>(`http://localhost:4000/api/v1/groups/getUsers/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.get<UserModule[]>(`http://localhost:4000/api/v1/groups/getUsers/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   getGroupById(groupId: number) {
-    return this.http.get<GroupModule[]>(`http://localhost:4000/api/v1/groups/getGroupDetail/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    const data = new GroupModule(1, "Test", "TEST", "HHZGcVNp", null);
+    return data;
+    //return this.http.get<GroupModule>(`http://localhost:4000/api/v1/groups/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   addNewExpenses(newExpenses: NewExpensesModule) {

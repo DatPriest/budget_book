@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, of, Subscriber } from 'rxjs';
 import { UserModule } from 'src/app/model/user/user.module';
 import { LoginService } from 'src/app/service/login/login.service';
@@ -16,8 +16,8 @@ export class EditProfileViewComponent implements OnInit {
   user: UserModule;
   image: string;
   editProfileForm: FormGroup;
-  constructor(public userService: UserService, public formBuilder: FormBuilder, public router: Router, public loginService: LoginService) {
-    
+  constructor(public userService: UserService, public formBuilder: FormBuilder, public router: Router, public loginService: LoginService, public route: ActivatedRoute,) {
+
   }
 
   saveEditUser(editProfileForm: NgForm): void {
@@ -59,6 +59,11 @@ export class EditProfileViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginService.checkLogIn();
+
+    this.route.params.subscribe(data => {
+      this.user = data as UserModule;
+    });
+
     this.editProfileForm = this.formBuilder.group({
       firstName: [''],
       lastName: [''],

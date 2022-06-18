@@ -34,7 +34,9 @@ export class UserService {
   }
 
   getProfile(userId: number) {
-    return this.http.get<UserModule[]>(`http://localhost:4000/api/v1/verification/getUserProfile/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    const data = new UserModule(1, "Lukas", "Bullwinkel", null, "lukas.bullwinkel@web.de", null, null, null);
+    return data;
+    //return this.http.get<UserModule[]>(`http://localhost:4000/api/v1/verification/getUserProfile/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   updateProfile(user: UserModule) {

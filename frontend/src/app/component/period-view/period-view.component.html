@@ -1,5 +1,12 @@
 <form  (ngSubmit)="editperiod(periodForm)" #periodForm="ngForm">
-  <h4 class="header_Text">{{'period.header'| translate}}</h4>
+  <div class="row">
+    <div class="column_select">
+      <h4 class="header_Text">{{'period.header'| translate}}</h4>
+    </div>
+    <div class="column_selectText">
+      <p>{{'period.select'| translate}}: {{this.data.type}}</p>
+    </div>
+  </div>
   <div class="column_select">
     <mat-form-field appearance="fill">
       <mat-label>{{'period.period'| translate}}</mat-label>

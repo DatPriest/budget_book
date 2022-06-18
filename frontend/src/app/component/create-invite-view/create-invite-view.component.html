@@ -2,12 +2,12 @@
   <h1 class="header_Text" translate="createInvite.header"></h1>
     <div class="input_field">
       <div class="form-floating">
-        <input name="inviteCode" type="text" class="input_field" id="invite_Code" value="{{this.inviteCode}}" readonly>
+        <input name="inviteCode" type="text" class="input_field" id="invite_Code" value="{{this.data.code}}" readonly>
       </div>
     </div>
   <div class="row">
     <div class="column_save">
-      <button type="button" (click)="copyMessage(this.inviteCode)" tabindex="-1"><span class="material-icons">content_copy</span></button>
+      <button type="button" (click)="copyMessage(this.data.code)" tabindex="-1"><span class="material-icons">content_copy</span></button>
     </div>
     <div class="column_close">
       <button type="button" id="close" (click)="closeInvite()"><span class="material-icons">close</span></button>

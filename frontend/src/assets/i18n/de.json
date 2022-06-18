@@ -105,8 +105,8 @@
 		"notification": "Benachrichtigungen",
 		"privacy": "Datenschutz",
 		"profile": "Profil",
-		"quiz": "Quiz",
-		"settings": "Einstellungen"
+		"settings": "Einstellungen",
+    "main": "Hauptmenü"
 	},
 	"newCategory": {
 		"header": "Neue Kategorie hinzufügen:",
@@ -127,7 +127,8 @@
 		"header": "Zeitraum",
 		"month": "Monat",
 		"period": "Zeitraum",
-		"year": "Jahr"
+		"year": "Jahr",
+    "select": "Ausgewählt"
 	},
 	"privacy": {
 		"Datenschutzbeauftragter": "Datenschutzbeauftragte/r beim Anbieter ist:",

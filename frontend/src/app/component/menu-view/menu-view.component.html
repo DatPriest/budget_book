@@ -1,6 +1,16 @@
 <span class="material-icons burgerMenu" [matMenuTriggerFor]="menu">menu</span>
 <mat-menu #menu="matMenu">
   <div class="container">
+    <div class="row" (click)="moveToMainMenu()">
+      <div class="column">
+          <span class="material-icons">
+            home
+          </span>
+      </div>
+      <div class="column">
+        <p>{{'menu.main'| translate}}</p>
+      </div>
+    </div>
     <div class="row" (click)="moveToProfile()">
       <div class="column">
           <span class="material-icons">
@@ -36,7 +46,7 @@
           </span>
       </div>
       <div class="column">
-        <p>FAQ</p> <!--translate fehlt noch-->
+        <p>{{'menu.faq'| translate}}</p>
       </div>
     </div>
     <div class="row" (click)="openAGB()">
