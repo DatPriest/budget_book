@@ -6,6 +6,7 @@ import { CreateGroupViewComponent } from '../create-group-view/create-group-view
 import { GroupService } from 'src/app/service/group/group.service';
 import {firstValueFrom, Observable, of} from 'rxjs';
 import { AppModule } from 'src/app/app.module';
+import { LoginService } from 'src/app/service/login/login.service';
 
 @Component({
   selector: 'app-main-view',
@@ -17,8 +18,7 @@ export class MainViewComponent implements OnInit {
   userGroups$ : Observable<GroupModule[]> = of([]);
   image: string;
   groupAddPosition: number = 0;
-  constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule) {
-
+  constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule, public loginService: LoginService) {
     this.loadGroups(parseInt(localStorage.getItem("userId")));
   }
 
@@ -56,5 +56,6 @@ export class MainViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginService.checkLogIn();
   }
 }

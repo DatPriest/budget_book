@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, of, Subscriber } from 'rxjs';
 import { UserModule } from 'src/app/model/user/user.module';
+import { LoginService } from 'src/app/service/login/login.service';
 import { UserService } from 'src/app/service/user/user.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class EditProfileViewComponent implements OnInit {
   user: UserModule;
   image: string;
   editProfileForm: FormGroup;
-  constructor(public userService: UserService, public formBuilder: FormBuilder, public router: Router) { }
+  constructor(public userService: UserService, public formBuilder: FormBuilder, public router: Router, public loginService: LoginService) { }
 
   saveEditUser(editProfileForm: NgForm): void {
     const editProfileData = new UserModule(null, editProfileForm.value.firstName, editProfileForm.value.lastName, null, editProfileForm.value.email, null, null, this.image);
@@ -55,6 +56,7 @@ export class EditProfileViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginService.checkLogIn();
     this.editProfileForm = this.formBuilder.group({
       firstName: [''],
       lastName: [''],

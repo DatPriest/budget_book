@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/service/login/login.service';
 
 @Component({
   selector: 'app-remove-member-view',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RemoveMemberViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(public loginService: LoginService) { }
 
   ngOnInit(): void {
+    this.loginService.checkLogIn();
   }
 
 }

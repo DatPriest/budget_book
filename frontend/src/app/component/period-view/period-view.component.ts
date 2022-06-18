@@ -4,6 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AppModule } from 'src/app/app.module';
 import { PeriodModule } from 'src/app/model/period/period.module';
 import { AlertService } from 'src/app/service/alert/alert.service';
+import { LoginService } from 'src/app/service/login/login.service';
 
 @Component({
   selector: 'app-period-view',
@@ -15,7 +16,7 @@ export class PeriodViewComponent implements OnInit {
   periodForm: FormGroup;
   id: number;
   constructor(public dialogRef: MatDialogRef<PeriodViewComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
-    public formBuilder: FormBuilder, public alertService: AlertService, public app: AppModule) { }
+    public formBuilder: FormBuilder, public alertService: AlertService, public app: AppModule, public loginService: LoginService) { }
 
   editperiod(periodForm: NgForm): void {
     if (periodForm.value.period == '') {
@@ -31,6 +32,7 @@ export class PeriodViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginService.checkLogIn();
     this.periodForm = this.formBuilder.group({
       period: ['']
     });

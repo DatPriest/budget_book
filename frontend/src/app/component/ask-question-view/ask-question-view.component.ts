@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AppModule } from 'src/app/app.module';
 import { AskFaqModule } from 'src/app/model/ask-faq/ask-faq.module';
 import { AlertService } from 'src/app/service/alert/alert.service';
+import { LoginService } from 'src/app/service/login/login.service';
 import { UserService } from 'src/app/service/user/user.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class AskQuestionViewComponent implements OnInit {
 
   askForm: FormGroup;
   constructor(public router: Router, public app: AppModule, public formBuilder: FormBuilder, public userService: UserService,
-    public alertService: AlertService) { }
+    public alertService: AlertService, public loginService: LoginService) { }
 
   addQuestion(askForm: NgForm): void {
     if (askForm.value.question != '') {
@@ -32,6 +33,7 @@ export class AskQuestionViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginService.checkLogIn();
     this.askForm = this.formBuilder.group({
       question: [''],
     });

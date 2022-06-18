@@ -4,6 +4,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { AppModule } from 'src/app/app.module';
 import { AlertService } from 'src/app/service/alert/alert.service';
 import { GroupService } from 'src/app/service/group/group.service';
+import { LoginService } from 'src/app/service/login/login.service';
 
 @Component({
   selector: 'app-create-invite-view',
@@ -15,7 +16,7 @@ export class CreateInviteViewComponent implements OnInit {
   createInviteForm: FormGroup;
   inviteCode: string;
   constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<CreateInviteViewComponent>, public groupService: GroupService,
-    public app: AppModule) { }
+    public app: AppModule, public loginService: LoginService) { }
 
   createInvite(): void {
     this.groupService.getInviteCode(parseInt(localStorage.getItem("groupId"))).subscribe(data => this.inviteCode = data.inviteCode);
@@ -43,6 +44,7 @@ export class CreateInviteViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginService.checkLogIn();
     this.createInviteForm = this.formBuilder.group({
       inviteCode: ['']
     });

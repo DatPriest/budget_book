@@ -4,6 +4,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { AppModule } from 'src/app/app.module';
 import { NotificationModule } from 'src/app/model/notification/notification.module';
 import { AlertService } from 'src/app/service/alert/alert.service';
+import { LoginService } from 'src/app/service/login/login.service';
 import { UserService } from 'src/app/service/user/user.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class NotificationViewComponent implements OnInit {
 
   notificationForm: FormGroup;
   constructor(public formBuilder: FormBuilder, public alertService: AlertService, public userService: UserService,
-    public dialogRef: MatDialogRef<NotificationViewComponent>, public app: AppModule) { }
+    public dialogRef: MatDialogRef<NotificationViewComponent>, public app: AppModule, public loginService: LoginService) { }
 
   save(notificationForm: NgForm) {
     const notificationData = new NotificationModule(parseInt(localStorage.getItem("userId")), notificationForm.value.acceptTerms);
@@ -26,6 +27,7 @@ export class NotificationViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginService.checkLogIn();
     this.notificationForm = this.formBuilder.group({
       acceptTerms: ['', Validators.requiredTrue]
     })

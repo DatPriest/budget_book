@@ -5,6 +5,7 @@ import { GroupService } from 'src/app/service/group/group.service';
 import { GroupModule } from 'src/app/model/group/group.module';
 import { Observable, Subscriber } from 'rxjs';
 import { AlertService } from 'src/app/service/alert/alert.service';
+import { LoginService } from 'src/app/service/login/login.service';
 
 @Component({
   selector: 'app-create-group-view',
@@ -16,7 +17,7 @@ export class CreateGroupViewComponent implements OnInit {
   createGroupForm: FormGroup;
   image: string;
   constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<CreateGroupViewComponent>,
-      public groupService: GroupService, public alertService: AlertService) { }
+      public groupService: GroupService, public alertService: AlertService, public loginService: LoginService) { }
 
   createGroup(createGroupForm: NgForm): void {
     if (createGroupForm.value.image != '' && createGroupForm.value.groupName != '') {
@@ -65,6 +66,7 @@ export class CreateGroupViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginService.checkLogIn();
     this.createGroupForm = this.formBuilder.group({
       groupname: [''],
       picture: ['']

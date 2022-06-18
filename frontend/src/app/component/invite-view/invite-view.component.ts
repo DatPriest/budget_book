@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { AlertService } from 'src/app/service/alert/alert.service';
 import { GroupService } from 'src/app/service/group/group.service';
+import { LoginService } from 'src/app/service/login/login.service';
 
 @Component({
   selector: 'app-invite-view',
@@ -13,7 +14,7 @@ export class InviteViewComponent implements OnInit {
 
   joinGroupForm: FormGroup;
   constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<InviteViewComponent>,
-    public groupService: GroupService, public alertService: AlertService) { }
+    public groupService: GroupService, public alertService: AlertService, public loginService: LoginService) { }
 
   joinGroup(joinGroupForm: NgForm): void {
     if (joinGroupForm.value.inviteCode != '') {
@@ -35,6 +36,7 @@ export class InviteViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginService.checkLogIn();
     this.joinGroupForm = this.formBuilder.group({
       inviteCode: ['']
     });

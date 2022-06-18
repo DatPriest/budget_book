@@ -3,6 +3,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AppModule } from 'src/app/app.module';
 import { AlertService } from 'src/app/service/alert/alert.service';
+import { LoginService } from 'src/app/service/login/login.service';
 import { UserService } from 'src/app/service/user/user.service';
 import { CurrencyViewComponent } from '../currency-view/currency-view.component';
 import { LanguageViewComponent } from '../language-view/language-view.component';
@@ -16,7 +17,7 @@ import { NotificationViewComponent } from '../notification-view/notification-vie
 export class MenuViewComponent implements OnInit {
 
   constructor(public router: Router, public userService: UserService, public app: AppModule, public alertService: AlertService,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog, public loginService: LoginService) { }
 
   moveToProfile(): void {
     this.router.navigate(['/profile']);
@@ -24,6 +25,7 @@ export class MenuViewComponent implements OnInit {
 
   logout(): void {
     this.alertService.logOutAlert();
+    this.loginService.logOut();
   }
 
   openFAQ(): void {
@@ -70,5 +72,6 @@ export class MenuViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginService.checkLogIn();
   }
 }

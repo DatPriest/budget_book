@@ -7,6 +7,7 @@ import { GroupModule } from 'src/app/model/group/group.module';
 import { UserModule } from 'src/app/model/user/user.module';
 import { AlertService } from 'src/app/service/alert/alert.service';
 import { GroupService } from 'src/app/service/group/group.service';
+import { LoginService } from 'src/app/service/login/login.service';
 import { CreateInviteViewComponent } from '../create-invite-view/create-invite-view.component';
 import { EditGroupViewComponent } from '../edit-group-view/edit-group-view.component';
 import { RemoveMemberViewComponent } from '../remove-member-view/remove-member-view.component';
@@ -22,7 +23,7 @@ export class GroupViewComponent implements OnInit {
   group: GroupModule;
   inviteCode: string;
   constructor(public router: Router, public groupService: GroupService, public app: AppModule, public dialog: MatDialog,
-    public alertService: AlertService) {
+    public alertService: AlertService, public loginService: LoginService) {
     this.user$ = this.groupService.getUsersByGroup(parseInt(localStorage.getItem("groupId")));
   }
 
@@ -70,6 +71,7 @@ export class GroupViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginService.checkLogIn();
   }
 
 }

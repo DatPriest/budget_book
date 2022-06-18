@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { UpdatePasswordModule } from 'src/app/model/update-password/update-password.module';
 import { AlertService } from 'src/app/service/alert/alert.service';
 import { HashingService } from 'src/app/service/hashing/hashing.service';
+import { LoginService } from 'src/app/service/login/login.service';
 import { UserService } from 'src/app/service/user/user.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class EditPasswordViewComponent implements OnInit {
   editPasswordForm: FormGroup;
   hash: string;
   constructor(public router: Router, public formBuilder: FormBuilder, public hashService: HashingService, public alertService: AlertService,
-    public userService: UserService) { }
+    public userService: UserService, public loginService: LoginService) { }
 
   saveNewPassword(editPasswordForm: NgForm): void {
     if (editPasswordForm.value.password_1 == '' && editPasswordForm.value.password_2 == '') {
@@ -40,6 +41,7 @@ export class EditPasswordViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginService.checkLogIn();
     this.editPasswordForm = this.formBuilder.group({
       email: [''],
       password_1: [''],

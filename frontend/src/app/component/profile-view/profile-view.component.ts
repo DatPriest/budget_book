@@ -6,6 +6,7 @@ import { AppModule } from 'src/app/app.module';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { InviteViewComponent } from '../invite-view/invite-view.component';
 import { AlertService } from 'src/app/service/alert/alert.service';
+import { LoginService } from 'src/app/service/login/login.service';
 
 @Component({
   selector: 'app-profile-view',
@@ -15,7 +16,7 @@ import { AlertService } from 'src/app/service/alert/alert.service';
 export class ProfileViewComponent implements OnInit {
 
   user: UserModule;
-  constructor(public router: Router, public userService: UserService, public app: AppModule, public dialog: MatDialog, public alertService: AlertService) {
+  constructor(public router: Router, public userService: UserService, public app: AppModule, public dialog: MatDialog, public alertService: AlertService, public loginService: LoginService) {
     this.userService.getProfile(parseInt(localStorage.getItem("userId")));
   }
 
@@ -41,6 +42,7 @@ export class ProfileViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginService.checkLogIn();
   }
 
 }

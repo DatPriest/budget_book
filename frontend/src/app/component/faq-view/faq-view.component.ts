@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { AppModule } from 'src/app/app.module';
 import { FaqModule } from 'src/app/model/faq/faq.module';
+import { LoginService } from 'src/app/service/login/login.service';
 import { UserService } from 'src/app/service/user/user.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class FaqViewComponent implements OnInit {
   panelOpenState: boolean = false;
   fragen: FaqModule[] = []
   questions$: Observable<FaqModule[]> = of([]);
-  constructor(public router: Router, public userService: UserService, public app: AppModule) {
+  constructor(public router: Router, public userService: UserService, public app: AppModule, public loginService: LoginService) {
     this.questions$ = this.userService.getFaqQuestion();
   }
 
@@ -29,6 +30,7 @@ export class FaqViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginService.checkLogIn();
   }
 
 }

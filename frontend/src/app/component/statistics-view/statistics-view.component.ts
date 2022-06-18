@@ -3,6 +3,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { StatisticsModule } from 'src/app/model/statistics/statistics.module';
 import { GroupService } from 'src/app/service/group/group.service';
+import { LoginService } from 'src/app/service/login/login.service';
 import { PeriodViewComponent } from '../period-view/period-view.component';
 
 @Component({
@@ -13,7 +14,7 @@ import { PeriodViewComponent } from '../period-view/period-view.component';
 export class StatisticsViewComponent implements OnInit {
 
   user: StatisticsModule[] = [];
-  constructor(public router: Router, public groupService: GroupService, public dialog: MatDialog) {
+  constructor(public router: Router, public groupService: GroupService, public dialog: MatDialog, public loginService: LoginService) {
     this.user.push(new StatisticsModule(1, "Lisa", "150")),
     this.user.push(new StatisticsModule(2, "Max", "241")),
     this.user.push(new StatisticsModule(3, "Leon", "47"))
@@ -37,6 +38,7 @@ export class StatisticsViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginService.checkLogIn();
   }
 
 }

@@ -6,6 +6,7 @@ import { AppModule } from 'src/app/app.module';
 import { EditGroupModule } from 'src/app/model/edit-group/edit-group.module';
 import { AlertService } from 'src/app/service/alert/alert.service';
 import { GroupService } from 'src/app/service/group/group.service';
+import { LoginService } from 'src/app/service/login/login.service';
 
 @Component({
   selector: 'app-edit-group-view',
@@ -17,7 +18,7 @@ export class EditGroupViewComponent implements OnInit {
   editGroupForm: FormGroup;
   image: string;
   constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<EditGroupViewComponent>,
-      public groupService: GroupService, public app: AppModule, public alertService: AlertService) { }
+      public groupService: GroupService, public app: AppModule, public alertService: AlertService, public loginService: LoginService) { }
 
   editGroup(editGroupForm: NgForm): void {
     if (editGroupForm.value.image != '' && editGroupForm.value.groupName != '') {
@@ -62,6 +63,7 @@ export class EditGroupViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginService.checkLogIn();
     this.editGroupForm = this.formBuilder.group({
       groupname: [''],
       picture: ['']
