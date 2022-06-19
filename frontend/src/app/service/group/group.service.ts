@@ -6,11 +6,11 @@ import { NewExpensesModule } from 'src/app/model/new-expenses/new-expenses.modul
 import { HistoryModule } from 'src/app/model/history/history.module';
 import { GroupInviteModule } from 'src/app/model/group-invite/group-invite.module';
 import { ExpensesModule } from 'src/app/model/expenses/expenses.module';
-import { NewCategoryModule } from 'src/app/model/new-category/new-category.module';
 import { CategoryModule } from 'src/app/model/category/category.module';
 import { Observable } from 'rxjs';
 import { EditGroupModule } from 'src/app/model/edit-group/edit-group.module';
 import {GroupList} from "../../model/group/GroupList";
+import { NewCategoryModule } from 'src/app/model/new-category/new-category.module';
 
 @Injectable({
   providedIn: 'root'
@@ -41,12 +41,12 @@ export class GroupService {
     //return this.http.get<GroupModule>(`http://localhost:4000/api/v1/groups/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
-  addNewExpenses(newExpenses: NewExpensesModule) {
-    return this.http.post<NewExpensesModule>('http://localhost:4000/api/v1/groups/addExpenses', JSON.stringify(newExpenses), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  getExpensesByGroupId(groupId: number) {
+    return this.http.get<ExpensesModule[]>(`http://localhost:4000/api/v1/expenses/group/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
-  getExpensesByGroupId(groupId: number) {
-    return this.http.get<ExpensesModule[]>(`http://localhost:4000/api/v1/groups/getExpenses/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  addNewExpenses(newExpenses: NewExpensesModule) {
+    return this.http.post<NewExpensesModule>('http://localhost:4000/api/v1/expenses/expense', JSON.stringify(newExpenses), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   getInviteCode(groupId: number) : Observable<GroupInviteModule> {
@@ -57,15 +57,23 @@ export class GroupService {
     return this.http.post<GroupInviteModule>(`http://localhost:4000/api/v1/groups/joinGroup/${inviteCode}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
+  deleteUser(userId: number) {
+    return this.http.delete(`http://localhost:4000/api/v1/groups/delete/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
   getHistory(groupId: number) {
     return this.http.get<HistoryModule[]>(`http://localhost:4000/api/v1/history/entries/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   createCategory(newCategory: NewCategoryModule) {
-    return this.http.post<NewCategoryModule>('http://localhost:4000/api/v1/categorys/category', JSON.stringify(newCategory), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.post<NewCategoryModule>('http://localhost:4000/api/v1/categories/category', JSON.stringify(newCategory), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   getAllCategoryByGroupId(groupId: number) {
-    return this.http.get<CategoryModule[]>(`http://localhost:4000/api/v1/categorys/categorys/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.get<CategoryModule[]>(`http://localhost:4000/api/v1/categories/categories/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
+  deleteCategoryById(categoryId: number) {
+    return this.http.delete(`http://localhost:4000/api/v1/categories/category/${categoryId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 }

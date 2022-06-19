@@ -32,6 +32,12 @@ export class CategoryViewComponent implements OnInit {
     this.dialog.open(NewCategoryViewComponent, dialogConfig);
   }
 
+  delete(categoryId: number): void {
+    this.groupService.deleteCategoryById(categoryId).subscribe(data =>{
+      console.info(data);
+    })
+  }
+
   ngOnInit(): void {
     this.loginService.checkLogIn();
   }

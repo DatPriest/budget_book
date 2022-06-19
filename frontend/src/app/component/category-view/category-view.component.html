@@ -8,22 +8,22 @@
   <body>
     <div class="container">
       <div class="screen">
-        <ng-container>
-          <div class="screen_table">
-            <table class="table">
+        <div class="screen_table">
+          <table class="table">
+            <tr>
+              <th class="table_header">Kategorie</th>
+              <th class="table_header">Beschreibung</th>
+              <th class="table_header">Löschen</th>
+            </tr>
+            <ng-container *ngFor="let c of categorys$ | async">
               <tr>
-                <th class="table_header">Kategorie</th>
-                <th class="table_header">Beschreibung</th>
-                <th class="table_header">Löschen</th>
+                <td class="table_line"><span class="material-icons">{{c.iconName}}</span></td>
+                <td class="table_line">{{c.name}}</td>
+                <td class="table_line"><button type="button" id="delete_1" class="button_delete" (click)="delete(c.categoryId)"><span class="material-icons">delete</span></button></td>
               </tr>
-              <tr>
-                <td class="table_line"><span class="material-icons">directions_car</span></td>
-                <td class="table_line">Auto</td>
-                <td class="table_line"><button type="button" id="delete_1" class="button_delete"><span class="material-icons">delete</span></button></td>
-              </tr>
-            </table>
-          </div>
-        </ng-container>
+            </ng-container>
+          </table>
+        </div>
         <div class="button_add">
           <button type="button" id="add" (click)="add()"><span class="group_create material-icons">add_circle_outline</span></button>
         </div>
