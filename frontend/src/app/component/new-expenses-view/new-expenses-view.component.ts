@@ -20,15 +20,16 @@ export class NewExpensesViewComponent implements OnInit {
   newExpensesForm: FormGroup;
   category$: Observable<CategoryModule[]> = of([]);
   constructor(public router: Router, public formBuilder: FormBuilder, public dialogRef: MatDialogRef<NewExpensesViewComponent>, public groupService: GroupService, public alertService: AlertService, public app: AppModule, public loginService: LoginService) {
-      this.category$ = this.groupService.getAllCategoryByGroupId(parseInt(localStorage.getItem("groupId")))
-    }
+    this.category$ = this.groupService.getAllCategoryByGroupId(parseInt(localStorage.getItem("groupId")));
+  }
 
   createExpenses(newExpensesForm: NgForm): void {
     const newExpensesData = new NewExpensesModule(parseInt(localStorage.getItem("groupId")), newExpensesForm.value.subject, newExpensesForm.value.amount, newExpensesForm.value.date);
+    console.warn(newExpensesData);
+    /*
     this.groupService.addNewExpenses(newExpensesData).subscribe(data => {
-      this.groupService.getExpensesByGroupId(parseInt(localStorage.getItem("groupId")));
       newExpensesForm.reset();
-    })
+    })*/
   }
 
   closeExpenses(): void {
@@ -37,11 +38,6 @@ export class NewExpensesViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginService.checkLogIn();
-    this.newExpensesForm = this.formBuilder.group({
-      subject: [''],
-      amount: [''],
-      date: ['']
-    });
   }
 
 }

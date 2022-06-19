@@ -19,9 +19,9 @@ export class ExpensesViewComponent implements OnInit {
   expenses: ExpensesModule[] = [];
   expenses$: Observable<ExpensesModule[]> = of([]);
   constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule, public loginService: LoginService) {
-    //this.expenses$ = this.groupService.getExpensesByGroupId(this.app.groupId);
-    this.expenses.push(new ExpensesModule(1, 'Miete', '124,47', '02.04.2022'));
-    this.expenses.push(new ExpensesModule(1, 'Einkauf', '47,95', '05.04.2022'));
+    this.expenses$ = this.groupService.getExpensesByGroupId(parseInt(localStorage.getItem("groupId")));
+    //this.expenses.push(new ExpensesModule(1, 'Miete', '124,47', '02.04.2022'));
+    //this.expenses.push(new ExpensesModule(1, 'Einkauf', '47,95', '05.04.2022'));
   }
 
   back(): void {

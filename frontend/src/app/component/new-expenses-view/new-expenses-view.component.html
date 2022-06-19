@@ -7,9 +7,9 @@
       </div>
       <div class="column">
         <select name="subject" id="category" form="formular1" class="category_menu" ngModel>
-          <option value="noSelection"></option>
-          <option value="Rent">{{'expenses.rent'| translate}}</option>
-          <option value="Purchasing">{{'expenses.purchasing'| translate}}</option>
+          <ng-container *ngFor="let c of category$ | async">
+            <option value="{{c.name}}">{{c.name}}</option>
+          </ng-container>
         </select>
       </div>
     </div>
@@ -24,11 +24,11 @@
   </div>
   <div>
     <div class="row_button">
-      <div class="column_save">
-        <button type="submit"><span class="material-icons">add</span></button>
-      </div>
       <div class="column_close">
         <button type="button" (click)="closeExpenses()"><span class="material-icons">close</span></button>
+      </div>
+      <div class="column_save">
+        <button type="submit"><span class="material-icons">add</span></button>
       </div>
     </div>
   </div>
