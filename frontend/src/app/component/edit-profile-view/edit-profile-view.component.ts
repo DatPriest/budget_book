@@ -17,7 +17,6 @@ export class EditProfileViewComponent implements OnInit {
   image: string;
   editProfileForm: FormGroup;
   constructor(public userService: UserService, public formBuilder: FormBuilder, public router: Router, public loginService: LoginService, public route: ActivatedRoute,) {
-
   }
 
   saveEditUser(editProfileForm: NgForm): void {
@@ -62,13 +61,6 @@ export class EditProfileViewComponent implements OnInit {
 
     this.route.params.subscribe(data => {
       this.user = data as UserModule;
-    });
-
-    this.editProfileForm = this.formBuilder.group({
-      firstName: [''],
-      lastName: [''],
-      email: [''],
-      image: ['']
     });
   }
 
