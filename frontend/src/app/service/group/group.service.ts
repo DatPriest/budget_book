@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 import { EditGroupModule } from 'src/app/model/edit-group/edit-group.module';
 import {GroupList} from "../../model/group/GroupList";
 import { NewCategoryModule } from 'src/app/model/new-category/new-category.module';
+import { JoinGroupModule } from 'src/app/model/join-group/join-group.module';
 
 @Injectable({
   providedIn: 'root'
@@ -53,8 +54,12 @@ export class GroupService {
     return this.http.get<GroupInviteModule>(`http://localhost:4000/api/v1/groups/create/inviteCode/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
-  joinGroup(inviteCode: string) {
-    return this.http.post<GroupInviteModule>(`http://localhost:4000/api/v1/groups/joinGroup/${inviteCode}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  requestGroup(inviteCode: string) {
+    return this.http.get(`http://localhost:4000/api/v1/groups/getGroupIdForInviteCode/${inviteCode}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
+  joinGroup(join: JoinGroupModule) {
+    return this.http.post<NewExpensesModule>('http://localhost:4000/api/v1/groups/addUserToGroup', JSON.stringify(join), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   deleteUser(userId: number) {
