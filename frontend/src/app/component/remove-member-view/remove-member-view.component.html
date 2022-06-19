@@ -1,1 +1,16 @@
-<p>remove-member-view works!</p>
+<table class="user_table">
+  <thead>
+    <tr>
+      <th class="user_table_header" translate="group.member"></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let u of user$ | async">
+      <tr class="user_table_line">
+        <td class="user_name">{{u.firstName}} {{u.lastName}}</td>
+        <td class="table_line"><button type="button" id="delete_1" class="button_delete" (click)="delete(u.userId)"><span class="material-icons">delete</span></button></td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

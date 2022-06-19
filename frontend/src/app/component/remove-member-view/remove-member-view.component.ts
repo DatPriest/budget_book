@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { Observable, of } from 'rxjs';
+import { UserModule } from 'src/app/model/user/user.module';
+import { GroupService } from 'src/app/service/group/group.service';
 import { LoginService } from 'src/app/service/login/login.service';
 
 @Component({
@@ -8,8 +12,17 @@ import { LoginService } from 'src/app/service/login/login.service';
 })
 export class RemoveMemberViewComponent implements OnInit {
 
-  constructor(public loginService: LoginService) {
-    
+  user$ : Observable<UserModule[]> = of([]);
+  constructor(public loginService: LoginService, public groupService: GroupService, private dialogRef: MatDialogRef<RemoveMemberViewComponent>) {
+    this.user$ = this.groupService.getUsersByGroup(parseInt(localStorage.getItem("groupId")));
+  }
+
+  delete(userId: number): void {
+    this.groupService.deleteUser(userId);
+  }
+
+  closeCategory(): void {
+    this.dialogRef.close();
   }
 
   ngOnInit(): void {
