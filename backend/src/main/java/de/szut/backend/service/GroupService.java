@@ -95,7 +95,7 @@ public class GroupService extends BaseService {
     }
 
     public GroupDto getGroupById(long groupId) throws GetGroupByIdException {
-        Group group = repo.getById(groupId);
+        Group group = repo.findById(groupId);
         Image image = imageService.getPicture(group.imageId);
         if (group != null && image != null) {
             GroupDto dto = mapper.mapGroupToGroupDto(group, image.imageString);
