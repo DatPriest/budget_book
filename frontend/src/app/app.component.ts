@@ -5,6 +5,7 @@ import { NgForm } from "@angular/forms";
 import { Subject } from 'rxjs';
 import { LoginService } from './service/login/login.service';
 import { AlertService } from './service/alert/alert.service';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ export class AppComponent {
   title: String;
   userActivity: any;
   userInactive: Subject<any> = new Subject();
-  constructor(public router: Router, public translate: TranslateService, public loginService: LoginService, public alertService: AlertService) {
+  constructor(public router: Router, public translate: TranslateService, public loginService: LoginService, public alertService: AlertService, public dialogRef: MatDialog) {
     translate.addLangs(['en', 'de']);
     translate.setDefaultLang(localStorage.getItem('selectedLang') || translate.setDefaultLang(translate.getBrowserCultureLang()) || 'de');
     this.setTimeout();
@@ -25,8 +26,9 @@ export class AppComponent {
 
   logOut() {
     this.loginService.logOut();
-    this.alertService.alert(this.translate.instant('alert.appComponent.header'), this.translate.instant('alert.appComponent.message'), "info");
+    this.dialogRef.closeAll();
     this.router.navigate(['/sign-in']);
+    this.alertService.alert(this.translate.instant('alert.appComponent.header'), this.translate.instant('alert.appComponent.message'), "info");
   }
 
   setTimeout() {

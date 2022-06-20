@@ -58,7 +58,9 @@ export class AlertService {
         swal(this.translate.instant('alert.delete.message'), {
           icon: "success",
         });
-        this.router.navigate(['/sign-up']);
+        this.userService.deleteProfile(parseInt(localStorage.getItem("userId"))).subscribe(() => {
+          this.router.navigate(['/sign-up']);
+        })
       }
     })
   }

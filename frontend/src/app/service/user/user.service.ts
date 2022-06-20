@@ -9,6 +9,7 @@ import { UpdatePasswordModule } from 'src/app/model/update-password/update-passw
 import { NotificationModule } from 'src/app/model/notification/notification.module';
 import { FaqModule } from 'src/app/model/faq/faq.module';
 import { AskFaqModule } from 'src/app/model/ask-faq/ask-faq.module';
+import { UserProfileModule } from 'src/app/model/user-profile/user-profile.module';
 
 @Injectable({
   providedIn: 'root'
@@ -33,14 +34,12 @@ export class UserService {
     return this.http.get<SecurityQuestionModule[]>('http://localhost:4000/api/v1/securityQuestions', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
-  getProfile(userId: number) {
-    const data = new UserModule(1, "Lukas", "Bullwinkel", null, "lukas.bullwinkel@web.de", null, null, null);
-    return data;
-    //return this.http.get<UserModule[]>(`http://localhost:4000/api/v1/verification/getUserProfile/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  getProfile(userId: number){
+    return this.http.get<UserProfileModule>(`http://localhost:4000/api/v1/user/id/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
-  updateProfile(user: UserModule) {
-    return this.http.put<UserModule>('http://localhost:4000/api/v1/verification/postUserProfile', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  updateProfile(user: UserProfileModule) {
+    return this.http.put<UserProfileModule>('http://localhost:4000/api/v1/user/update', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   updateUserPassword(user: UpdatePasswordModule) {
@@ -48,7 +47,7 @@ export class UserService {
   }
 
   deleteProfile(userId: number) {
-    return this.http.delete(`http://localhost:4000/api/v1/profile/deleteUserProfile/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.delete(`http://localhost:4000/api/v1/user/delete/id/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   notificationEmail(user: NotificationModule) {

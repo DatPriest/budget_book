@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Observable, of, Subscriber } from 'rxjs';
+import { UserProfileModule } from 'src/app/model/user-profile/user-profile.module';
 import { UserModule } from 'src/app/model/user/user.module';
 import { LoginService } from 'src/app/service/login/login.service';
 import { UserService } from 'src/app/service/user/user.service';
@@ -13,14 +14,15 @@ import { UserService } from 'src/app/service/user/user.service';
 })
 export class EditProfileViewComponent implements OnInit {
 
-  user: UserModule;
+  user: UserProfileModule;
   image: string;
   editProfileForm: FormGroup;
-  constructor(public userService: UserService, public formBuilder: FormBuilder, public router: Router, public loginService: LoginService, public route: ActivatedRoute,) {
+  constructor(public userService: UserService, public formBuilder: FormBuilder, public router: Router, public loginService: LoginService) {
+    //this.user = this.userService.getProfile(parseInt(localStorage.getItem("userId")));
   }
 
   saveEditUser(editProfileForm: NgForm): void {
-    const editProfileData = new UserModule(null, editProfileForm.value.firstName, editProfileForm.value.lastName, null, editProfileForm.value.email, null, null, this.image);
+    const editProfileData = new UserProfileModule(parseInt(localStorage.getItem("userId")), editProfileForm.value.firstName, editProfileForm.value.lastName, editProfileForm.value.email, this.image);
     this.userService.updateProfile(editProfileData).subscribe(data => this.router.navigate(['/profile']));
   }
 
@@ -58,10 +60,6 @@ export class EditProfileViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginService.checkLogIn();
-
-    this.route.params.subscribe(data => {
-      this.user = data as UserModule;
-    });
   }
 
 }

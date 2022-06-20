@@ -10,7 +10,7 @@
       <div class="container">
         <div class="screen">
           <div class="picture">
-            <img src={{user.image}} alt="{{'profile.imgMsg'| translate}}">
+            <img src={{user.imageString}} alt="{{'profile.imgMsg'| translate}}">
           </div>
           <div class="column">
             <div class="info">
@@ -24,7 +24,7 @@
               <div class="button_left">
               <tr>
                 <button type="button" ide="profile" (click)="joinGroupDialog()" translate="profile.join"></button>
-                <button type="button" ide="profile" (click)="moveToEditProfile(user)" translate="profile.edit"></button>
+                <button type="button" ide="profile" (click)="moveToEditProfile()" translate="profile.edit"></button>
               </tr>
               </div>
               <div class="button_right">

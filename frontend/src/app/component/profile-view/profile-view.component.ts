@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/service/user/user.service';
-import { UserModule } from 'src/app/model/user/user.module';
 import { AppModule } from 'src/app/app.module';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { InviteViewComponent } from '../invite-view/invite-view.component';
 import { AlertService } from 'src/app/service/alert/alert.service';
 import { LoginService } from 'src/app/service/login/login.service';
+import { Observable } from 'rxjs';
+import { UserProfileModule } from 'src/app/model/user-profile/user-profile.module';
 
 @Component({
   selector: 'app-profile-view',
@@ -15,13 +16,13 @@ import { LoginService } from 'src/app/service/login/login.service';
 })
 export class ProfileViewComponent implements OnInit {
 
-  user: UserModule;
+  user: UserProfileModule;
   constructor(public router: Router, public userService: UserService, public app: AppModule, public dialog: MatDialog, public alertService: AlertService, public loginService: LoginService) {
-    this.user = this.userService.getProfile(parseInt(localStorage.getItem("userId")));
+    //this.user = this.userService.getProfile(parseInt(localStorage.getItem("userId")));
   }
 
-  moveToEditProfile(data: UserModule): void {
-    this.router.navigate(['/profile/edit', data]);
+  moveToEditProfile(): void {
+    this.router.navigate(['/profile/edit']);
   }
 
   moveToEditPassword(): void {
