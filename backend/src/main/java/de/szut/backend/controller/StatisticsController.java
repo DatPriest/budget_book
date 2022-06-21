@@ -1,13 +1,9 @@
 package de.szut.backend.controller;
 
-import com.google.gson.Gson;
-import de.szut.backend.dto.OutputFaqDto;
 import de.szut.backend.dto.Statistics.StatisticsPerMonthDto;
 import de.szut.backend.dto.Statistics.StatisticsPerYearDto;
 import de.szut.backend.service.StatisticService;
 import org.springframework.web.bind.annotation.*;
-
-import java.time.Month;
 import java.util.List;
 
 /**
@@ -22,12 +18,9 @@ public class StatisticsController {
         this.service = _service;
     }
 
-
+    //Alle Abfragen pro User
     /**
-     * Gibt die Summer aller Ausgaben pro User Zurück im Monat
-     * @param userId
-     * @return
-     * @throws TypeNotPresentException
+     * @see StatisticService#getAllExpensesSumFromUserPerMonth
      */
     @GetMapping(path = "/AllExpensesSumPerMonth/{userId}/{month}", produces = "application/json")
     public int AllExpensesSumPerMonth(@PathVariable long userId, @PathVariable int month) throws TypeNotPresentException {
@@ -35,24 +28,61 @@ public class StatisticsController {
     }
 
     /**
-     * Gibt die Summer aller Ausgaben pro User Zurück im Jahr
-     * @param userId
-     * @return
-     * @throws TypeNotPresentException
+     * @see StatisticService#getAllExpensesSumFromUserPerYear
      */
-    @GetMapping(path = "/AllExpensesSumPerYear/{userId}/{month}", produces = "application/json")
+    @GetMapping(path = "/AllExpensesSumPerYear/{userId}/{year}", produces = "application/json")
     public int AllExpensesSumPerYear(@PathVariable long userId, @PathVariable int year) throws TypeNotPresentException {
         return this.service.getAllExpensesSumFromUserPerYear(userId, year);
     }
 
+    /**
+     * @see StatisticService#getAllExpensesFromUserPerMonth
+     */
     @GetMapping(path = "/GetAllExpensesPerMonth/{userId}/{month}", produces = "application/json")
     public List<StatisticsPerMonthDto> AllExpensesPerMonth(@PathVariable long userId, @PathVariable int month){
         return this.service.getAllExpensesFromUserPerMonth(userId, month);
 
     }
 
+    /**
+     * @see StatisticService#getAllExpensesFromUserPerYear
+     */
     @GetMapping(path = "/GetAllExpensesPerYear/{userId}/{year}", produces = "application/json")
     public List<StatisticsPerYearDto> AllExpensesPerYear(@PathVariable long userId, @PathVariable int year){
         return this.service.getAllExpensesFromUserPerYear(userId, year);
+    }
+
+    //Alle Abfragen pro Gruppe
+
+    /**
+     * @see StatisticService#getAllExpensesFromGroupPerYear
+     */
+    @GetMapping(path = "/GetAllExpensesPerYearFromGroup/{groupId}/{year}", produces = "application/json")
+    public List<StatisticsPerYearDto> AllExpensesPerYearFromGroup(@PathVariable long groupId, @PathVariable int year){
+        return this.service.getAllExpensesFromGroupPerYear(groupId, year);
+    }
+
+    /**
+     * @see StatisticService#getAllExpensesSumFromGroupPerYear
+     */
+    @GetMapping(path = "/GetAllExpensesSumPerYearFromGroup/{groupId}/{year}", produces = "application/json")
+    public int AllExpensesSumPerYearFromGroup(@PathVariable long groupId, @PathVariable int year){
+        return this.service.getAllExpensesSumFromGroupPerYear(groupId, year);
+    }
+
+    /**
+     * @see StatisticService#getAllExpensesFromGroupPerMonth
+     */
+    @GetMapping(path = "/GetAllExpensesPerMonthFromGroup/{groupId}/{month}", produces = "application/json")
+    public List<StatisticsPerMonthDto> AllExpensesPerMonthFromGroup(@PathVariable long groupId, @PathVariable int month){
+        return this.service.getAllExpensesFromGroupPerMonth(groupId, month);
+    }
+
+    /**
+     * @see StatisticService#getAllExpensesSumFromGroupPerYear
+     */
+    @GetMapping(path = "/GetAllExpensesSumPerMonthFromGroup/{groupId}/{month}", produces = "application/json")
+    public int AllExpensesSumPerMonthFromGroup(@PathVariable long groupId, @PathVariable int month){
+        return this.service.getAllExpensesSumFromGroupPerYear(groupId, month);
     }
 }

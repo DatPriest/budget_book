@@ -191,7 +191,8 @@
 		"firstCar": "Geben Sie Marke und Modell Ihres ersten Autos an.",
 		"firstConcert": "Welches war Ihr erstes Konzert, das Sie besucht haben?",
 		"meetParents": "In welcher Stadt bzw. welchem Ort haben sich Ihre Eltern kennengelernt?",
-		"secondName": "Wie lautet der zweite Vorname Ihrer ältesten Schwester bzw. Ihres ältesten Bruders?"
+		"secondName": "Wie lautet der zweite Vorname Ihrer ältesten Schwester bzw. Ihres ältesten Bruders?",
+    "dogName": "Wie ist der Name deines Hundes?"
 	},
 	"signup": {
 		"cancel": "abbrechen",

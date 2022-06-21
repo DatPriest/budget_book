@@ -37,19 +37,23 @@ public class ExpensesMapper {
 
     public StatisticsPerMonthDto mapExpenseToStatisticsPerMonthDto(Expense expense){
         StatisticsPerMonthDto stats = new StatisticsPerMonthDto();
-        GregorianCalendar cal = null;
-        cal.setTime(expense.getDate_Created());
-        stats.setMonth(cal.get(Calendar.MONTH)+1);
+        GregorianCalendar calendar = new GregorianCalendar();
+        calendar.setTime(expense.getDate_Created());
+        stats.setMonth(calendar.get(Calendar.MONTH)+1);
         stats.setAmount(expense.getAmount());
+        stats.setDescription(expense.getDescription());
+        stats.setUserId(expense.getUserId());
         return stats;
     }
 
     public StatisticsPerYearDto mapExpenseToStatisticsPerYearDto(Expense expense) {
         StatisticsPerYearDto stats = new StatisticsPerYearDto();
-        GregorianCalendar cal = null;
-        cal.setTime(expense.getDate_Created());
-        stats.setYear(cal.get(Calendar.YEAR));
+        GregorianCalendar calendar = new GregorianCalendar();
+        calendar.setTime(expense.getDate_Created());
+        stats.setYear(calendar.get(Calendar.YEAR));
         stats.setAmount(expense.getAmount());
+        stats.setDescription(expense.getDescription());
+        stats.setUserId(expense.getUserId());
         return stats;
     }
 }
