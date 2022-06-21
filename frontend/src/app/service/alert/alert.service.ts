@@ -45,14 +45,14 @@ export class AlertService {
   deleteAccountAlert(): void {
     swal({
       title: "Bist Du Dir sicher?",
-      text: "Einmal gelöscht, kann der Account nicht mehr wiederhergestellt werden!",
+      text: "Wenn Dein Account einmal gelöscht ist, kann er nicht mehr wiederhergesellt werden!",
       icon: "warning",
       buttons: ["Cancel", "OK"],
       dangerMode: true,
     })
     .then((willLogOut) => {
       if (willLogOut) {
-        this.userService.deleteProfile(this.app.userId);
+        this.userService.deleteProfile(parseInt(localStorage.getItem("userId")));
         swal("Der Account wurde erfolgreich gelöscht!", {
           icon: "success",
         });

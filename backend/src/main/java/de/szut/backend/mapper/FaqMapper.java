@@ -16,7 +16,7 @@ public class FaqMapper {
     public FAQ mapPostFaqDtoToFaq(PostFaqDto postFaqDto) {
         FAQ faq = new FAQ();
         faq.question = postFaqDto.getQuestion();
-        faq.userID = postFaqDto.getUserID();
+        faq.userID = postFaqDto.getUserId();
         return faq;
     }
 

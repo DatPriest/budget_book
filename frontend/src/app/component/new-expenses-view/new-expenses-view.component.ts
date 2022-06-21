@@ -8,6 +8,7 @@ import { NewExpensesModule } from 'src/app/model/new-expenses/new-expenses.modul
 import { AppModule } from 'src/app/app.module';
 import { CategoryModule } from 'src/app/model/category/category.module';
 import { Observable, of } from 'rxjs';
+import { LoginService } from 'src/app/service/login/login.service';
 
 @Component({
   selector: 'app-new-expenses-view',
@@ -18,15 +19,14 @@ export class NewExpensesViewComponent implements OnInit {
 
   newExpensesForm: FormGroup;
   category$: Observable<CategoryModule[]> = of([]);
-  constructor(public router: Router, public formBuilder: FormBuilder, public dialogRef: MatDialogRef<NewExpensesViewComponent>,
-    public groupService: GroupService, public alertService: AlertService, public app: AppModule) {
-      this.category$ = this.groupService.getAllCategoryByGroupId(this.app.groupId)
+  constructor(public router: Router, public formBuilder: FormBuilder, public dialogRef: MatDialogRef<NewExpensesViewComponent>, public groupService: GroupService, public alertService: AlertService, public app: AppModule, public loginService: LoginService) {
+      this.category$ = this.groupService.getAllCategoryByGroupId(parseInt(localStorage.getItem("groupId")))
     }
 
   createExpenses(newExpensesForm: NgForm): void {
-    const newExpensesData = new NewExpensesModule(this.app.groupId, newExpensesForm.value.subject, newExpensesForm.value.amount, newExpensesForm.value.date);
+    const newExpensesData = new NewExpensesModule(parseInt(localStorage.getItem("groupId")), newExpensesForm.value.subject, newExpensesForm.value.amount, newExpensesForm.value.date);
     this.groupService.addNewExpenses(newExpensesData).subscribe(data => {
-      this.groupService.getExpensesByGroupId(this.app.groupId);
+      this.groupService.getExpensesByGroupId(parseInt(localStorage.getItem("groupId")));
       newExpensesForm.reset();
     })
   }
@@ -36,6 +36,7 @@ export class NewExpensesViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginService.checkLogIn();
     this.newExpensesForm = this.formBuilder.group({
       subject: [''],
       amount: [''],

@@ -19,23 +19,26 @@ export class SignInViewComponent implements OnInit {
   signInForm: FormGroup;
   showPassword: boolean = false;
   hash: string;
-  constructor(public router: Router, public http: HttpClient, public formBuilder: FormBuilder, public userService: UserService, public app: AppModule,
-    public hashService: HashingService, public alertService: AlertService, public groupService: GroupService) { }
+  constructor(public router: Router, public http: HttpClient, public formBuilder: FormBuilder, public userService: UserService, public app: AppModule, public hashService: HashingService, public alertService: AlertService, public groupService: GroupService) {
+
+    }
 
   togglePassword(): void {
     this.showPassword = !this.showPassword;
   }
 
   loginUser(signInForm: NgForm): void {
+    //this.router.navigate(['/main']); // temp
+
     if (signInForm.value.email == '' && signInForm.value.password == '') {
       this.alertService.alert("Oops",  "E-Mail und Passwort dürfen nicht leer sein!",  "error");
     } else {
       this.hash = this.hashService.encrypt(signInForm.value.password);
       const signInData = new LoginUserModule(null, signInForm.value.email, this.hash);
       this.userService.loginUser(signInData).subscribe(data => {
-        if (data.email != null && data.hash != null) {
-          this.app.userId = data.userId;
-          this.router.navigate(['main']);
+        if (data != undefined) {
+          localStorage.setItem("userId", data.userId.toString());
+          this.router.navigate(['/main']);
           this.alertService.successfulAlert("Herzlich willkommen!",  "Login war erfolgreich.",  "success", 2500);
         } else {
           this.alertService.alert("Oops",  "E-Mail und Passwort stimmen nicht überein!",  "error");
@@ -45,14 +48,15 @@ export class SignInViewComponent implements OnInit {
   }
 
   newUser(): void {
-    this.router.navigate(['sign-up']);
+    this.router.navigate(['/sign-up']);
   }
 
   newPassword(): void {
-    this.router.navigate(['new-password']);
+    this.router.navigate(['/new-password']);
   }
 
   ngOnInit(): void {
+    this.router.navigate(['/sign-in']);
     this.signInForm = this.formBuilder.group({
       email: [''],
       password: ['']

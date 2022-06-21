@@ -1,7 +1,9 @@
 export class GroupModule {
   constructor (
-    public groupId: number, // temp, keine Ahnung ob man das brauch
+    public groupId: number,
     public groupName: string,
     public image: string,
+    public inviteCode: string,
+    public viewPosition: number
   ) { }
 }

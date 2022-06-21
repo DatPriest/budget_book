@@ -1,5 +1,229 @@
 {
-  "login": {
-    "title": "Login Form"
-  }
+	"askQuestions": {
+		"template": "Ask a Question!"
+	},
+	"category": {
+		"header": "categories"
+	},
+	"clsBtn": "back",
+	"createGroup": {
+		"grpNameMsg": "Group Name",
+		"header": "Create new group",
+		"logoMsg": "Logo"
+	},
+	"createInvite": {
+		"header": "Create invitation code",
+		"msg": "Invitation code"
+	},
+	"currency": {
+		"currency": "Select currency",
+		"header": "Currency"
+	},
+	"editPassword": {
+		"header": "Change password",
+		"pwretype": "Password repetition"
+	},
+	"editProfile": {
+		"header": "My Account",
+		"logo": "Logo"
+	},
+	"email": "E-mail",
+	"expenses": {
+		"addBtn": "add",
+		"addExpenses": "Add issues",
+		"amount": "Amount",
+		"category": "Category:",
+		"closeBtn": "Close",
+		"date": "Date",
+		"expenses": "Expenditures:",
+		"headerExp": "All issues",
+		"purchasing": "Purchasing",
+		"rent": "Rent",
+		"search": "Search"
+	},
+	"faq": {
+		"ask": "Ask a Question!",
+		"header": "FAQ!"
+	},
+	"forename": " Last name",
+	"group": {
+		"categorys": "Categories",
+		"expenses": "Expenditures",
+		"history": "History",
+		"member": "Group members:",
+		"statistic": "Statistics"
+	},
+	"gtc": {
+		"Text 1": "IT-GmbH renders its services exclusively on the basis of these terms of contract under exclusion of conflicting terms of business or purchase of the customer. If the customer is an entrepreneur in the sense of § 24 of the General Terms and Conditions of Business Act, these terms and conditions shall also apply to all future business transactions, even if they have not been expressly agreed upon again. If the customer is an entrepreneur in the sense of § 24 of the General Terms and Conditions Act , the terms and conditions shall be deemed accepted at the latest with the first use of the services of IT-GmbH.\n2. deviations from these general terms and conditions are only effective after written confirmation by IT-GmbH.\n3. all agreements must be in written form. Deviations and additions as well as dates of performance and delivery shall only become part of the contract if they are confirmed in writing by IT-GmbH. The customer shall be bound to a written order for 14 days.",
+		"Text 2": "IT-GmbH provides its customers with access to Internet services and services. Details of the services are regulated by the product description. The services are provided 24 hours a day, seven days a week.",
+		"Text 2.1": "IT-GmbH is entitled to make adjustments to the contents of the services, taking into account the interests of the customer, in order to improve them, in particular to adapt them to new technical developments, provided that this is reasonable for the customer.",
+		"Text 2.2": "The customer receives support by the IT-GmbH hotline from Monday to Friday in the time from 09.00 o'clock to 17.00 o'clock, except on regional and federal holidays. If the customer has special requirements for the support times, this can be agreed separately, if necessary.",
+		"Text 2.3": "The SLA (Service Level Agreement) for network services is > 99.9% and for simple managed servers 98.5%, for independent clusters of two servers 99.8%, for three 99.9%. For cloud services, this applies accordingly. If higher or different SLAs are required, this can be\nthis can be agreed separately if necessary.",
+		"Text 3": "The customer shall check the proper performance of the services of IT-GmbH within the scope of his possibilities; he shall inform IT-GmbH immediately about recognizable defects and disturbances. If defects or malfunctions have occurred within the customer's area of responsibility, the customer shall reimburse IT-GmbH for all costs incurred in the elimination of the defect or malfunction in the event of an error on the part of the customer as to the cause.",
+		"Text 3.1": "The customer is obliged not to misuse the services and to refrain from illegal actions. In particular, he is obliged to,",
+		"Text 3.2": "not to distribute or retrieve any content or to refer to it via hyperlinks that violate legal provisions, the rights of third parties, in particular their copyrights, or morality;",
+		"Text 3.3": "to refrain from excessive use of network infrastructure through untargeted or improper dissemination of data (e.g. mail spamming) and to avoid the incurrence of inappropriate additional costs at IT-GmbH or third parties;",
+		"Text 3.4": "to inform all persons employed in its business operations and to whom it enables use of the IT-GmbH services in a suitable manner about compliance with these obligations.",
+		"Text 3.5": "to comply with recognized data security principles, in particular to keep access codes secret and to have them changed immediately if it is suspected that unauthorized third parties have gained knowledge of them.",
+		"Text 3.6": "to ensure compliance with statutory regulations and official requirements and to ensure that official permits are granted, insofar as these are currently required or will be required in the future for the use of the services.",
+		"Text 4": " IT-GmbH itself shall collect and process personal data (inventory and usage data) of the customer by machine in accordance with the relevant provisions of data protection law and only for the purpose of executing the contract and exclusively at the German locations of IT-GmbH.\nIT-GmbH undertakes to take all data protection and data security measures required by the applicable data protection regulations. IT-GmbH shall comply with the technical and organizational security measures required by law within the scope of the proper execution of the orders and shall make them available or shall prove them to the customer upon request.\nIf personal data are collected, processed or used by IT-GmbH on behalf of the customer, this shall be done in accordance with the customer's instructions (commissioned data processing). IT-GmbH shall ensure that all order data and their processing are treated in strict confidence and, in particular, are not transmitted to third parties without authorization. The customer shall instruct IT-GmbH to take all necessary technical and organizational measures to bring about rational processing and to secure the data against loss, falsification or unauthorized access.\nFor commissioned data processing, we shall conclude a contract for commissioned data processing with the customer.\nAfter termination of the contract or the commissioned data processing, data stored at the contractor IT-GmbH will be deleted. The customer can export and download the data himself beforehand or give IT-GmbH the order to do so.\nAs far as necessary for the business transaction (e.g. for carrying out corrections/adjustments or for sending SMS messages), personal data of the customer may be passed on by IT-GmbH to designated contractual partners of IT-GmbH. Any subcontractors shall be notified to the customer at the time of placing the order, prior to the transfer. The customer is responsible for ensuring that consent is given in each individual case.",
+		"header": "GTCs",
+		"Überschrift 1": "§ 1 Scope",
+		"Überschrift 2": "§ 2 Subject of the contract",
+		"Überschrift 3": "§ 3 Obligations of the customer",
+		"Überschrift 4": "§ 3 Privacy"
+	},
+	"history": {
+		"header": "History",
+		"search": "Search"
+	},
+	"imprint": {
+		"Angaben": "",
+		"E-Mail": "",
+		"Email": "",
+		"Fax": "",
+		"GmbH": "",
+		"Land": "",
+		"Name": "",
+		"Ort": "",
+		"Straße": "",
+		"Straße2": "",
+		"Telefax": "",
+		"Telefon": "",
+		"Telefon2": "",
+		"Vertretungsberechtigter": "",
+		"header": "Imprint"
+	},
+	"invite": {
+		"header": "to join a group",
+		"placeholder": "Invitation code"
+	},
+	"language": {
+		"english": "english",
+		"german": "german",
+		"header": "Language",
+		"language": "Language selection:"
+	},
+	"login": {
+		"forgotpw": "Forgot Password?",
+		"loginmsg": "Log In",
+		"register": "To register",
+		"title": "Log in!"
+	},
+	"main": {
+		"header": "Main menu"
+	},
+	"menu": {
+		"agb": "GTC",
+		"category": "Category",
+		"currency": "Currency",
+		"faq": "FAQ",
+		"help&settings": "Help & Settings",
+		"impressum": "Imprint",
+		"language": "Language",
+		"logout": "Log out",
+		"notification": "Notifications",
+		"privacy": "Privacy",
+		"profile": "Profile",
+		"quiz": "Quiz",
+		"settings": "Settings"
+	},
+	"newCategory": {
+		"header": "Add new category:",
+		"placeholder": "Category"
+	},
+	"newPw": {
+		"cancel": "Cancel",
+		"newPw": "New password",
+		"resetPw": "Reset Password",
+		"retypeNewPw": "Repeat new password",
+		"save": "Save"
+	},
+	"notification": {
+		"header": "Notifications"
+	},
+	"password": "Password",
+	"period": {
+		"header": "Period",
+		"month": "Month",
+		"period": "Period",
+		"year": "Year"
+	},
+	"privacy": {
+		"Datenschutzbeauftragter": "Data protection officer at the provider:",
+		"Datenschutzerklärung-text": "Personal data (hereinafter referred to as \"data\") is processed by us only as necessary and for the purpose of providing a functional and user-friendly website, including its content and the services offered there.\n          In accordance with Art. 4 no. 1. of Regulation (EU) 2016/679, i.e. the General Data Protection Regulation (hereinafter referred to only as \"GDPR\"), \"processing\" shall mean any operation or set of operations which is performed upon personal data, whether or not by automated means, such as collection, recording, organization, arrangement, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction.\n          With the following privacy policy, we inform you in particular about the nature, scope, purpose, duration and legal basis of the processing of personal data, insofar as we decide either alone or jointly with others on the purposes and means of processing. In addition, we inform you below about the third-party components used by us for optimization purposes as well as to increase the quality of use, insofar as third parties process data through this, again under their own responsibility.\n          Our data protection declaration is structured as follows:\n          I. Information about us as the responsible party\n          II. rights of users and data subjects\n          III. Information on data processing",
+		"E-Mail": "E-mail: info-IT@google.com",
+		"Email": "E-mail: info-IT@google.com\n",
+		"Fax": "Fax: 030-181001",
+		"GmbH": "IT GmbH",
+		"Informationen über uns als Verantwortliche": "I. Information about us as the responsible party",
+		"Land": "Germany",
+		"Name": "Klaus Tom",
+		"Ort": "16695 Ahrensfelde",
+		"Recht1": "to confirmation as to whether data concerning them is being processed, to information about the data being processed, to further information about the data processing and to copies of the data (cf. also Art. 15 GDPR)",
+		"Recht2": "on, correction or completion of incorrect or incomplete data (see also Art. 16 GDPR)",
+		"Recht3": "the immediate erasure of the data concerning them (cf. also Art. 17 GDPR), or, alternatively, insofar as further processing is required pursuant to Art. 17 (3) GDPR, restriction of processing in accordance with Art. 18 GDPR",
+		"Recht4": "to, receive the data concerning them and provided by them and to transmit this data to other providers/controllers (cf. also Art. 20 GDPR).",
+		"Recht5": "to lodge a complaint with the supervisory authority if they are of the opinion that the data concerning them is being processed by the provider in breach of data protection provisions (cf. also Art. 77 GDPR).",
+		"Straße": "Tommy Street 187",
+		"Straße2": "Tommy Street 205",
+		"Telefax": "Fax: 030-120400",
+		"Telefon": "Phone: 030-181001\n",
+		"Telefon2": "Phone: 030-120400",
+		"Text 3": "Your data processed during the use of our website will be deleted or blocked as soon as the purpose of the storage no longer applies, the deletion of the data does not conflict with any statutory retention obligations and no other information on individual processing procedures is provided below.",
+		"Text 4": "For technical reasons, in particular to ensure a secure and stable Internet presence, data is transmitted by your Internet browser to us or to our web space provider. With these so-called server log files, among other things, the type and version of your Internet browser, the operating system, the website from which you have accessed our website (referrer URL), the website(s) of our website that you visit, the date and time of the respective access and the IP address of the Internet connection from which the use of our website takes place are collected.\nThe data collected in this way is temporarily stored, but not together with other data about you.\nThis storage takes place on the legal basis of Art. 6 para. 1 lit. f) DSGVO. Our legitimate interest lies in the improvement, stability, functionality and security of our website.\nThe data is deleted again after seven days at the latest, unless further storage is required for evidence purposes. Otherwise, the data is exempt from deletion in whole or in part until final clarification of an incident.\n",
+		"Text 5.1": "a) Session cookies / session cookies\nWe use so-called cookies with our Internet presence. Cookies are small text files or other storage technologies that are placed and stored on your terminal device by the Internet browser you use. Through these cookies, certain information from you, such as your browser or location data or your IP address, is processed to an individual extent.  \nThis processing makes our website more user-friendly, effective and secure, as the processing enables, for example, the reproduction of our website in different languages or the offer of a shopping cart function.\nThe legal basis for this processing is Art. 6 para. 1 lit b.) DSGVO, insofar as these cookies data are processed for contract initiation or contract execution.\nIf the processing does not serve the purpose of initiating or executing a contract, our legitimate interest lies in improving the functionality of our website. In this case, the legal basis is Art. 6 para. 1 lit. f) DSGVO.\nThese session cookies are deleted when you close your internet browser.",
+		"Text 5.2": "b) Third-party cookies\nWhere applicable, cookies from partner companies with which we cooperate for the purposes of advertising, analysis or the functionalities of our website are also used with our website.\nThe details of this, in particular the purposes and legal bases of the processing of such third-party cookies, please refer to the following information.",
+		"Text 5.3": "c) Removal option\nYou can prevent or restrict the installation of cookies by setting your internet browser. Likewise, you can delete already stored cookies at any time. However, the steps and measures required for this depend on your specific Internet browser used. If you have any questions, please use the help function or documentation of your Internet browser or contact its manufacturer or support. In the case of so-called Flash cookies, however, processing cannot be prevented via the browser settings. Instead, you must change the settings of your Flash player. The steps and measures required for this also depend on the specific Flash player you use. If you have any questions, please also use the help function or documentation of your Flash player or contact the manufacturer or user support.\nHowever, if you prevent or restrict the installation of cookies, this may mean that not all functions of our website can be fully used.",
+		"Text 6": "To obtain consent for the use of technically unnecessary cookies on the website, the provider uses a cookie manager.\nWhen the website is called up, a cookie with the setting information is stored on the user's end device so that the query regarding consent does not have to be made during a further visit.\nThe cookie is necessary to obtain the user's legally compliant consent.\nThe user can prevent or terminate the installation of cookies by changing the settings of his browser.",
+		"Text 7": "If you create a customer account with us via our website, we will collect and store the data you entered during registration (e.g. your name, address or e-mail address) exclusively for pre-contractual services, for the fulfillment of the contract or for the purpose of customer care (e.g. to provide you with an overview of your previous orders with us or to be able to offer you the so-called notepad function). At the same time, we then store the IP address and the date of your registration along with the time. Of course, this data will not be passed on to third parties.\nDuring the further registration process, your consent to this processing will be obtained and reference will be made to this data protection declaration. The data collected by us in this process will be used exclusively for the provision of the customer account. \nInsofar as you consent to this processing, Art. 6 para. 1 lit. a) GDPR is the legal basis for the processing.\nIf the opening of the customer account also serves pre-contractual measures or the fulfillment of the contract, the legal basis for this processing is also Art. 6 (1) (b) GDPR.\nThe consent given to us for the opening and maintenance of the customer account can be revoked at any time with effect for the future in accordance with Art. 7 (3) GDPR. For this purpose, you only need to inform us of your revocation.\nThe data collected in this respect will be deleted as soon as the processing is no longer necessary. However, we must observe retention periods under tax and commercial law.",
+		"Text 8": "If you contact us via contact form or e-mail, the data you provide will be used to process your request. The provision of the data is necessary for processing and answering your request - without their provision, we can not answer your request or at best limited.\nThe legal basis for this processing is Art. 6 para. 1 lit. b) GDPR.\nYour data will be deleted if your request has been answered conclusively and the deletion does not conflict with any legal obligations to retain data, such as in the case of any subsequent contract processing.",
+		"Text 9": "We offer you the opportunity to publish questions, answers, opinions or ratings, hereinafter referred to as \"contributions\", on our website. If you make use of this offer, we process and publish your contribution, date and time of submission as well as the pseudonym used by you, if applicable.\nThe legal basis for this is Art. 6 para. 1 lit. a) GDPR. In accordance with Art. 7 (3) GDPR, you can revoke your consent at any time with effect for the future. To do this, you only need to inform us of your revocation.\nIn addition, we also process your IP and e-mail address. The IP address is processed because we have a legitimate interest in initiating or supporting further steps if your contribution infringes the rights of third parties and/or it is otherwise illegal.\nThe legal basis in this case is Art. 6 para. 1 lit. f) GDPR. Our legitimate interest lies in the legal defense that may be necessary.",
+		"Text2": "With a view to the data processing described in more detail below, the users and those affected have the right",
+		"Text2.1": "Likewise, users and data subjects have the right to object to the future processing of data concerning them in accordance with Art. 21 GDPR, provided that the data is processed by the provider in accordance with Art. 6 (1) f) GDPR. In particular, an objection to data processing for the purpose of direct marketing is permitted.",
+		"Text2.2": "In addition, the Provider is obliged to inform all recipients to whom data has been disclosed by the Provider about any correction or deletion of data or restriction of processing that takes place on the basis of Articles 16, 17 (1), 18 GDPR. However, this obligation does not exist insofar as this notification is impossible or involves a disproportionate effort. Notwithstanding the above, the user has a right to information about these recipients.",
+		"Verantwortliche": "Responsible provider of this website in terms of data protection is:\n",
+		"header": "Privacy",
+		"info": "privacy policy",
+		"Überschrift 2": "II. Rights of users and data subjects",
+		"Überschrift 3": "III. Information on data processing",
+		"Überschrift 4": "Server data",
+		"Überschrift 5": "Cookies",
+		"Überschrift 6": "Cookie Manager\n",
+		"Überschrift 7": "Customer account / registration function\n",
+		"Überschrift 8": "Contact requests / contact option\n",
+		"Überschrift 9": "User Submissions, Comments and Ratings\n"
+	},
+	"profile": {
+		"acc": "My Account",
+		"changePw": "Change password",
+		"deleteAcc": "Delete account",
+		"edit": "Edit",
+		"imgMsg": "Picture of the respective person",
+		"join": "Join group"
+	},
+	"saveBtn": "Save",
+	"secAnswer": "Answer:",
+	"secLine": "Choose 1 question!",
+	"secQuestion": "Security question:",
+	"secSelection": {
+		"bornCity": "",
+		"firstCar": "",
+		"firstConcert": "",
+		"meetParents": "",
+		"secondName": ""
+	},
+	"signup": {
+		"cancel": "Cancel",
+		"header": "Registration",
+		"logo": "Logo",
+		"pwretype": "Password repetition",
+		"register": "Register"
+	},
+	"statistic": {
+		"button": "Group",
+		"header": "Statistics",
+		"tableHeader": "Expenditures:"
+	},
+	"surname": "First name"
 }

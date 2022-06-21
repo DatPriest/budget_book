@@ -6,6 +6,7 @@ import { AppModule } from 'src/app/app.module';
 import { NewCategoryModule } from 'src/app/model/new-category/new-category.module';
 import { AlertService } from 'src/app/service/alert/alert.service';
 import { GroupService } from 'src/app/service/group/group.service';
+import { LoginService } from 'src/app/service/login/login.service';
 
 @Component({
   selector: 'app-new-category-view',
@@ -15,13 +16,14 @@ import { GroupService } from 'src/app/service/group/group.service';
 export class NewCategoryViewComponent implements OnInit {
 
   newCategoryForm: FormGroup;
-  constructor(public router: Router, public formBuilder: FormBuilder, private dialogRef: MatDialogRef<NewCategoryViewComponent>,
-    public groupService: GroupService, public alertService: AlertService, public app: AppModule) { }
+  constructor(public router: Router, public formBuilder: FormBuilder, private dialogRef: MatDialogRef<NewCategoryViewComponent>, public groupService: GroupService, public alertService: AlertService, public app: AppModule, public loginService: LoginService) {
+
+  }
 
   createCategory(newCategoryForm: NgForm): void {
-    const newCategoryData = new NewCategoryModule(this.app.groupId, newCategoryForm.value.category);
+    const newCategoryData = new NewCategoryModule(parseInt(localStorage.getItem("groupId")), newCategoryForm.value.category);
     this.groupService.createCategory(newCategoryData).subscribe(data => {
-      this.groupService.getAllCategoryByGroupId(this.app.groupId);
+      this.groupService.getAllCategoryByGroupId(parseInt(localStorage.getItem("groupId")));
       newCategoryForm.reset();
     })
   }
@@ -31,6 +33,7 @@ export class NewCategoryViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginService.checkLogIn();
     this.newCategoryForm = this.formBuilder.group({
       category: ['']
     });

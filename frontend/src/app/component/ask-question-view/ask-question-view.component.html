@@ -1,8 +1,16 @@
-<form>
+<form (ngSubmit)="addQuestion(askForm)" #askForm="ngForm">
   <header>
-    <span class="header_name">{{'askQuestions.template'|translate}}</span>
+    <span class="header_text">{{'askQuestions.template'|translate}}</span>
     <div class="button_back">
       <button type="button" class="back_icon" (click)="back()"><span class="material-icons">arrow_back</span></button>
     </div>
   </header>
+  <body>
+    <div class="container">
+      <div class="screen">
+        <textarea name="question" type="text" class="textarea form-control" id="question" ngModel></textarea>
+        <button type="submit" class="button_send" ><span class="material-icons">send</span></button>
+      </div>
+    </div>
+  </body>
 </form>

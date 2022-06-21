@@ -61,7 +61,7 @@
 .info{
   font-size: 150%;
   position: absolute;
-  top: 25%;
+  top: 35%;
   left: 10%;
   width: 70%;
 }
@@ -69,7 +69,8 @@
 .button{
   position: absolute;
   top: 75%;
-  left: 31%;
+  left: 34%;
+  width: 30%;
 }
 
 input[type=text], select {

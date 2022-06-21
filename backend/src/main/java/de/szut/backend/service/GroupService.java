@@ -1,9 +1,8 @@
 package de.szut.backend.service;
 
-import de.szut.backend.dto.GroupCreateDto;
-import de.szut.backend.dto.GroupDto;
-import de.szut.backend.dto.GroupListDto;
-import de.szut.backend.dto.UserToGroupDto;
+import de.szut.backend.dto.*;
+import de.szut.backend.exceptions.CreateGroupException;
+import de.szut.backend.exceptions.GetGroupByIdException;
 import de.szut.backend.mapper.GroupMapper;
 import de.szut.backend.model.Group;
 import de.szut.backend.model.GroupXUser;
@@ -12,6 +11,7 @@ import de.szut.backend.model.User;
 import de.szut.backend.repository.GroupRepository;
 import de.szut.backend.repository.GroupXUserRepository;
 import de.szut.backend.repository.ImageRepository;
+import net.bytebuddy.utility.RandomString;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -24,28 +24,85 @@ public class GroupService extends BaseService {
     private final GroupRepository repo;
     private final GroupXUserRepository groupXUserRepository;
     private final ImageRepository imageRepository;
+    private final ImageService imageService;
     private final UserService userService;
     public GroupService(GroupMapper _mapper, GroupRepository _repo,
                         GroupXUserRepository _groupXUserRepository,
                         UserService _userService,
-                        ImageRepository _imageRepository) {
+                        ImageRepository _imageRepository,
+                        ImageService _imageService) {
         this.mapper = _mapper;
         this.repo = _repo;
         this.groupXUserRepository = _groupXUserRepository;
         this.userService = _userService;
         this.imageRepository = _imageRepository;
+        this.imageService = _imageService;
     }
 
-    public Group createGroup(GroupCreateDto dto) {
+    public Group createGroup(GroupCreateDto dto, long userId) throws Exception {
         var group = mapper.mapGroupCreateDtoToGroup(dto);
-        Image image = new Image();
-        image.imageString = dto.image;
-        image = this.imageRepository.save(image);
-        group.imageId = image.id;
+        var user = userService.getUserById(userId);
+        if (user == null ) {
+            return null;
+        }
         if (group.groupName.equals("") || group.groupName.equals(null)) {
             return null;
         }
-        return repo.save(group);
+        Image image = new Image();
+        image.imageString = dto.image;
+        image = this.imageService.savePicture(image);
+        group.imageId = image.id;
+        group.inviteCode = generateInviteCode();
+
+        group = repo.save(group);
+        if (addUserToGroupByIds(group.id, user.id)) {
+            return group;
+        } else throw new CreateGroupException("Create Group User could not added to group");
+    }
+
+    public boolean addUserToGroupByIds(long groupId, long userId) throws Exception {
+        var groupX = groupXUserRepository.findByGroupId(groupId);
+
+        if (!groupXUserRepository.existsGroupXUserByUserIdAndGroupId(userId, groupId)) {
+            if (repo.existsById(groupId)) {
+                if (groupX == null) {
+                    GroupXUser newGroup = new GroupXUser();
+                    newGroup.groupId = groupId;
+                    newGroup.userId = userId;
+                    groupXUserRepository.save(newGroup);
+                    return true;
+                } else {
+                    groupX.userId = userId;
+                    groupXUserRepository.save(groupX);
+                    return true;
+                }
+
+            } else {
+                throw new Exception("GroupId was not found");
+            }
+        }
+        return false;
+    }
+
+    public GroupDto updateGroup(GroupUpdateDto dto) {
+        Group group = mapper.mapGroupUpdateDtoToGroup(dto);
+        Group persistentGroup = repo.getById(dto.groupId);
+        if (imageService.updatePicture(persistentGroup.imageId, dto.image)) {
+            group.imageId = persistentGroup.imageId;
+            return this.mapper.mapGroupToGroupDto(repo.save(group), dto.image);
+        }
+        return null;
+    }
+
+    public GroupDto getGroupById(long groupId) throws GetGroupByIdException {
+        Group group = repo.findById(groupId);
+        Image image = imageService.getPicture(group.imageId);
+        if (group != null && image != null) {
+            GroupDto dto = mapper.mapGroupToGroupDto(group, image.imageString);
+            return dto;
+        } else {
+            throw new GetGroupByIdException("Group or image could not found");
+        }
     }
 
     public GroupXUser addUserToGroup(UserToGroupDto dto) throws Exception {
@@ -89,5 +146,21 @@ public class GroupService extends BaseService {
         }
 
         return groups;
+    }
+
+    public long getGroupIdForInviteCode(String inviteCode) throws NullPointerException{
+        Group foundGroup;
+        long groupId = -1;
+        try{
+            foundGroup = repo.findGroupByInviteCode(inviteCode);
+            groupId = foundGroup.id;
+        } catch (Exception e){
+            throw new NullPointerException();
+        }
+        return groupId;
+    }
+
+    private String generateInviteCode(){
+        return RandomString.make(8);
     }
 }

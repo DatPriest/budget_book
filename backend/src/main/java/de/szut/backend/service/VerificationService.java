@@ -1,6 +1,7 @@
 package de.szut.backend.service;
 
 import de.szut.backend.dto.*;
+import de.szut.backend.exceptions.SecurityQuestionNotExists;
 import de.szut.backend.mapper.UserMapper;
 import de.szut.backend.model.*;
 import de.szut.backend.model.History.HistoryActionToProcess;
@@ -21,6 +22,7 @@ public class VerificationService extends BaseService {
     private final UserRepository userRepository;
     private final UserMapper userMapper;
     private final HistoryLogService logService;
+    private final ImageService imageService;
     private final ImageRepository imageRepository;
     private final SecurityQuestionRepository securityQuestionRepository;
 
@@ -29,35 +31,36 @@ public class VerificationService extends BaseService {
                                UserMapper _userMapper,
                                HistoryLogService logService,
                                ImageRepository _imageRepository,
-                               SecurityQuestionRepository _securityQuestionRepository) {
+                               SecurityQuestionRepository _securityQuestionRepository,
+                               ImageService _imageService) {
         this.userRepository = _userRepository;
         this.userMapper = _userMapper;
         this.logService = logService;
         this.imageRepository = _imageRepository;
         this.securityQuestionRepository = _securityQuestionRepository;
+        this.imageService = _imageService;
     }
 
-    public User login(LoginDto dto) {
+    public UserDto login(LoginDto dto) throws SecurityQuestionNotExists {
         User user = this.userMapper.mapLoginDtoToUser(dto);
         User queryUser = userRepository.findByEmail(user.email);
         if (queryUser != null && hashPassword(user.hash + queryUser.salt).equals(queryUser.hash)) {
             queryUser.lastLogin = new Date();
-            userRepository.save(queryUser);
-            //log("UserLoginSuccess",queryUser.lastLogin.toString());
-            return queryUser;
+            user = userRepository.save(queryUser);
+            return this.userMapper.mapUserToUserDto(user);
         } else {
             return null;
         }
     }
 
-    public ForgotBackDto forgotPassword(ForgotDto dto) {
+    public ForgotBackDto forgotPassword(ForgotDto dto) throws SecurityQuestionNotExists {
         User user =  userRepository.findByEmailAndSecurityQuestionIdAndSecurityAnswer(
                 dto.email,
                 securityQuestionRepository.findByKey(dto.securityQuestionKey).getId(),
                 dto.securityAnswer.toLowerCase(Locale.ROOT));
         if (user != null) {
             user.salt = getSalt();
-            user.hash = hashPassword(user.hash + user.salt);
+            user.hash = hashPassword(dto.hash + user.salt);
             var newUser = userRepository.save(user);
             return userMapper.mapUserToForgotBackDto(newUser);
         } else {
@@ -65,7 +68,7 @@ public class VerificationService extends BaseService {
         }
     }
 
-    public CreateUserDto register(RegisterDto dto) {
+    public CreateUserDto register(RegisterDto dto) throws SecurityQuestionNotExists {
         if (userRepository.existsByEmail(dto.email)) {
             return new CreateUserDto();
         }
@@ -76,8 +79,8 @@ public class VerificationService extends BaseService {
         user.salt = getSalt();
         user.hash = hashPassword(user.hash + user.salt);
         Image image = new Image();
-        image.imageString = dto.image;
-        image = this.imageRepository.save(image);
+        image.imageString = dto.imageString;
+        image = imageService.savePicture(image);
         user.imageId = image.id;
         return userMapper.mapUserToUserCreateDto(this.userRepository.save(user));
     }
@@ -113,7 +116,7 @@ public class VerificationService extends BaseService {
     }
 
     public User updatePassword(UpdateDto dto) {
-        var user = userRepository.findByEmailAndId(dto.email, dto.id);
+        var user = userRepository.findByEmailAndId(dto.email, dto.userId);
         user.salt = getSalt();
         user.hash = hashPassword(dto.hash + user.salt);
         return userRepository.save(user);

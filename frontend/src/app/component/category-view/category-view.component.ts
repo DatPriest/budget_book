@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import {Observable, of} from "rxjs";
+import { Observable, of } from "rxjs";
 import { AppModule } from 'src/app/app.module';
 import { CategoryModule } from 'src/app/model/category/category.module';
 import { GroupService } from 'src/app/service/group/group.service';
+import { LoginService } from 'src/app/service/login/login.service';
 import { NewCategoryViewComponent } from '../new-category-view/new-category-view.component';
 
 @Component({
@@ -15,8 +16,8 @@ import { NewCategoryViewComponent } from '../new-category-view/new-category-view
 export class CategoryViewComponent implements OnInit {
 
   categorys$: Observable<CategoryModule[]> = of([]);
-  constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule) {
-    this.categorys$ = this.groupService.getAllCategoryByGroupId(this.app.groupId);
+  constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule, public loginService: LoginService) {
+    this.categorys$ = this.groupService.getAllCategoryByGroupId(parseInt(localStorage.getItem("groupId")));
   }
 
   back(): void {
@@ -32,6 +33,7 @@ export class CategoryViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginService.checkLogIn();
   }
 
 }

@@ -4,9 +4,9 @@ import { GroupModule } from 'src/app/model/group/group.module';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { CreateGroupViewComponent } from '../create-group-view/create-group-view.component';
 import { GroupService } from 'src/app/service/group/group.service';
-import { Observable, of } from 'rxjs';
+import {firstValueFrom, Observable, of} from 'rxjs';
 import { AppModule } from 'src/app/app.module';
-import { CreateInviteViewComponent } from '../create-invite-view/create-invite-view.component';
+import { LoginService } from 'src/app/service/login/login.service';
 
 @Component({
   selector: 'app-main-view',
@@ -15,16 +15,11 @@ import { CreateInviteViewComponent } from '../create-invite-view/create-invite-v
 })
 export class MainViewComponent implements OnInit {
 
-  //userGroups$ : Observable<GroupModule[]> = of([]);
+  userGroups$ : Observable<GroupModule[]> = of([]);
   image: string;
-  groups: GroupModule[] = []
-  constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule) {
-    //this.getGroupsByUserId();
-    this.groups.push(new GroupModule(1, 'Test', this.image));
-  }
-
-  getGroupsByUserId(): void {
-    this.groupService.getGroupsByUser(this.app.userId);
+  groupAddPosition: number = 0;
+  constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule, public loginService: LoginService) {
+    this.loadGroups(parseInt(localStorage.getItem("userId")));
   }
 
   createGroupDialog(): void {
@@ -36,10 +31,31 @@ export class MainViewComponent implements OnInit {
   }
 
   openGroup(groupId: number): void {
-    this.router.navigate(['/group']);
-    //this.groupService.getGroupById(groupId).subscribe(data => this.router.navigate(['/group', data]));
+    this.groupService.getGroupById(groupId).subscribe(data => this.router.navigate(['/group', data]));
+  }
+
+  async loadGroups(userId:number){
+    let groupList: GroupModule[] = [];
+    try{
+      let result:any = await firstValueFrom(this.groupService.getGroupsByUser(userId));
+      groupList = result.groups;
+    } catch(Exception){
+      //If groups is empty, exception is catcht here
+    }
+    this.userGroups$ = of(this.sortForView(groupList));
+    this.groupAddPosition = groupList.length + 1;
+  }
+
+  private sortForView(groupModuleList:GroupModule[]):GroupModule[]{
+    let sortedListForView: GroupModule[] = [];
+    groupModuleList.forEach(g =>{
+      g.viewPosition = sortedListForView.length+1;
+      sortedListForView.push(g);
+    });
+    return sortedListForView;
   }
 
   ngOnInit(): void {
+    this.loginService.checkLogIn();
   }
 }

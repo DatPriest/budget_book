@@ -6,29 +6,31 @@
     </div>
   </header>
   <body>
+  <ng-container>
     <form (ngSubmit)="saveEditUser(editProfileForm)" #editProfileForm="ngForm">
       <div class="container">
         <div class="screen">
           <div class="picture">
+            <img [src]="image" width="200px" height="200px" alt="">
             <input name="image" (change)="onChange($event)" type="file" class="input_file" id="inputImage" ngModel placeholder="{{'editProfile.logo'|translate}}" accept="image/png, image/jpeg">
-            <img [src]="this.image" width="200px" height="200px" alt="">
           </div>
           <div class="column">
             <div class="info">
-              <label class="label">{{'forename'|translate}}</label><br>
-              <input type="text" id="UserName" name="firstName" placeholder="{{'forename'|translate}}" ngModel value="{{user.firstName}}"><br><br>
-              <label class="label">{{'surname'|translate}}</label>
-              <input type="text" id="UserName2" name="lastName" placeholder="{{'surname'|translate}}" ngModel value="{{user.lastName}}"><br><br>
-              <label class="label">{{'email'|translate}}:</label>
-              <input type="text" id="UserEmail" name="email" placeholder="{{'email'|translate}}" ngModel value="{{user.email}}"><br><br>
+              <label class="label" translate="forename"></label>
+              <input type="text" id="UserName" name="firstName" ngModel value="{{user.firstName}}"><br>
+              <label class="label" translate="surname"></label>
+              <input type="text" id="UserName2" name="lastName" ngModel value="{{user.lastName}}"><br>
+              <label class="label" translate="email"></label>
+              <input type="text" id="UserEmail" name="email" ngModel value="{{user.email}}"><br>
             </div>
           </div>
         </div>
       </div>
       <div class="button">
-        <button type="button">{{'saveBtn'|translate}}</button>
+        <button type="button" translate="saveBtn"></button>
       </div>
     </form>
+  </ng-container>
   </body>
 </form>
 

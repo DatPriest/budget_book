@@ -9,6 +9,8 @@ import { ExpensesModule } from 'src/app/model/expenses/expenses.module';
 import { NewCategoryModule } from 'src/app/model/new-category/new-category.module';
 import { CategoryModule } from 'src/app/model/category/category.module';
 import { Observable } from 'rxjs';
+import { EditGroupModule } from 'src/app/model/edit-group/edit-group.module';
+import {GroupList} from "../../model/group/GroupList";
 
 @Injectable({
   providedIn: 'root'
@@ -17,12 +19,16 @@ export class GroupService {
 
   constructor(public http: HttpClient) { }
 
-  getGroupsByUser(userId: number) {
-    return this.http.post<GroupModule[]>(`http://localhost:4000/api/v1/groups/getGroups/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  getGroupsByUser(userId: number): Observable<GroupList> {
+    return this.http.get<GroupList>(`http://localhost:4000/api/v1/groups/getGroups/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   createGroup(user: GroupModule) {
     return this.http.post<GroupModule>('http://localhost:4000/api/v1/groups/create', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
+  editGroup(user: EditGroupModule) {
+    return this.http.post<EditGroupModule>('http://localhost:4000/api/v1/groups/update', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   getUsersByGroup(groupId: number) {

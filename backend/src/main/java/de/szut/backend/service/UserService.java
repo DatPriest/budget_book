@@ -22,6 +22,21 @@ public class UserService extends BaseService {
     }
 
     public User getUserById(long id) {
-        return userRepository.findById(id).get();
+        if (userRepository.findById(id).isPresent()) {
+            return userRepository.findById(id).get();
+        } else {
+            return null;
+        }
+    }
+
+    public boolean deleteUser(long id) {
+        try {
+            this.userRepository.deleteById(id);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
+        return true;
+
     }
 }

@@ -13,14 +13,17 @@ public class CategoryMapper {
 
         category.setName(dtoToMap.getName());
         category.setGroupId((dtoToMap.getGroupId()));
+        category.setIconName(dtoToMap.getIconName());
         return category;
     }
 
     public GetCategoryDTO mapCategoryToGetCategoryDto(Category categoryToMap){
         GetCategoryDTO categoryDto = new GetCategoryDTO();
 
+        categoryDto.setCategoryId(categoryToMap.getCategoryId());
         categoryDto.setName(categoryToMap.getName());
         categoryDto.setDate_Created(categoryToMap.getDate_Created());
+        categoryDto.setIconName(categoryToMap.getIconName());
         return categoryDto;
     }
 }

@@ -3,14 +3,27 @@
   <div>
     <input name="category" type="text" class="input_field" id="Category_text" ngModel placeholder="{{'newCategory.placeholder'| translate}}">
   </div>
+    <mat-form-field appearance="fill">
+      <mat-label>Kategorie auswählen</mat-label>
+      <mat-select>
+        <mat-option value="lightbulb"><span class="material-icons">lightbulb</span></mat-option>
+        <mat-option value="directions_car"><span class="material-icons">directions_car</span></mat-option>
+        <mat-option value="restaurant"><span class="material-icons">restaurant</span></mat-option>
+        <mat-option value="train"><span class="material-icons">train</span></mat-option>
+        <mat-option value="apartment"><span class="material-icons">apartment</span></mat-option>
+        <mat-option value="public"><span class="material-icons">public</span></mat-option>
+        <mat-option value="school"><span class="material-icons">school</span></mat-option>
+        <mat-option value="kitesurfing"><span class="material-icons">kitesurfing</span></mat-option>
+        <mat-option value="family_restroom"><span class="material-icons">family_restroom</span></mat-option>
+        <mat-option value="devices_other"><span class="material-icons">devices_other</span></mat-option>
+      </mat-select>
+    </mat-form-field>
   <div>
-    <div class="row">
       <div class="column_save">
           <button type="submit"><span class="expenses_back material-icons">add</span></button>
       </div>
       <div class="column_close">
           <button type="button" (click)="closeCategory()"><span class="expenses_close material-icons">close</span></button>
       </div>
-    </div>
   </div>
 </form>

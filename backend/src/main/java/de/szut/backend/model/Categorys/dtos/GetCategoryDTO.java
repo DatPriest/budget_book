@@ -6,6 +6,8 @@ import java.util.Date;
 
 @Data
 public class GetCategoryDTO {
+    private long categoryId;
     private String name;
+    private String iconName;
     private Date date_Created;
 }

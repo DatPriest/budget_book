@@ -10,10 +10,10 @@
       <div class="container">
         <div class="screen">
           <div class="button">
-            <button type="button" (click)="expenses()"><span class="group_expenditures">{{'group.expenses'|translate}}</span></button>
-            <button type="button" (click)="categorys()"><span class="group_categorys">{{'group.categorys'|translate}}</span></button>
-            <button type="button" (click)="history()"><span class="group_history">{{'group.history'|translate}}</span></button>
-            <!--<button type="button" (click)="nofunction()"><span class="group_statistics">Statistik</span></button>-->
+            <button type="button" (click)="expenses()" translate="group.expenses"></button>
+            <button type="button" (click)="categorys()" translate="group.categorys"></button>
+            <button type="button" (click)="history()" translate="group.history"></button>
+            <button type="button" (click)="statistic()" translate="group.statistic"></button>
           </div>
           <div class="picture">
             <img src={{group.image}} alt="">
@@ -21,18 +21,16 @@
           <ul class="sidebar">
             <li class="li_list">
               <div class="pages_menu">
-                <!--<button type="button" (click)="nofunction()"><span class="group_history material-icons">edit</span></button>-->
+                <button type="button" (click)="editGroupDialog()"><span class="group_history material-icons">edit</span></button>
                 <button type="button" (click)="createInviteDialog()"><span class="group_history material-icons">add</span></button>
-                <!--<button type="button" (click)="nofunction()"><span class="group_history material-icons">delete</span></button>-->
+                <button type="button" (click)="deleteUserDialog()"><span class="group_history material-icons">delete</span></button>
               </div>
             </li>
           </ul>
           <table class="user_table">
             <thead>
               <tr>
-                <th class="user_table_header">
-                  <p>{{'group.member'|translate}}</p>
-                </th>
+                <th class="user_table_header" translate="group.member"></th>
               </tr>
             </thead>
             <tbody>
@@ -43,8 +41,6 @@
               </ng-container>
             </tbody>
           </table>
-          <div id="console">
-            </div>
         </div>
       </div>
     </body>

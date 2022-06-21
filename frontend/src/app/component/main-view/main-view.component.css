@@ -90,99 +90,32 @@
   width: 20%;
   background: #FFFFFF;
   top: 50%;
+  left: 10%;
+  border-radius: 10% 10% 10% 10%;
+  transform: none;
+  overflow: hidden;
+}
+
+.screen_group_5 {
+  height: 35%;
+  width: 20%;
+  background: #FFFFFF;
+  top: 50%;
   left: 40%;
   border-radius: 10% 10% 10% 10%;
   transform: none;
   overflow: hidden;
 }
 
-.screen_background_shape2 {
-  height: 220px;
-  width: 220px;
-  background: linear-gradient(270deg, #a2a1a1, #807e7e);
-  top: -172px;
-  right: 0;
-  border-radius: 32px;
-}
-
-.screen_background_shape3 {
-  height: 850px;
-  width: 190px;
-  background: linear-gradient(270deg, #a2a1a1, #807e7e);
-  right: 160px;
-  border-radius: 32px;
-}
-
-.screen_background_shape4 {
-  height: 400px;
-  width: 200px;
-  background: linear-gradient(270deg, #a2a1a1, #807e7e);
-  top: 420px;
-  right: 50px;
-  border-radius: 60px;
-}
-
-.screen_background_shape5 {
-  height: 245px;
-  width: 190px;
-  background: linear-gradient(270deg, #585858, #A4A4A4);
-  top: 15px;
-  left: 605px;
-  border-radius: 32px;
-}
-
-.screen_background_shape6 {
-  height: 230px;
-  width: 190px;
-  background: linear-gradient(270deg, #585858, #A4A4A4);
-  top: 364px;
-  left: -50px;
-  border-radius: 32px;
-}
-
-.screen_background_shape7 {
-  height: 540px;
-  width: 190px;
-  background: linear-gradient(270deg, #585858, #A4A4A4);
-  top: -164px;
-  left: 30px;
-  border-radius: 32px;
-}
-
-.screen_background_shape8 {
-  height: 350px;
-  width: 190px;
-  background: linear-gradient(270deg, #585858, #A4A4A4);
-  top: 480px;
-  left: 90px;
-  border-radius: 32px;
-}
-
-.screen_background_shape9 {
-  height: 340px;
-  width: 190px;
-  background: linear-gradient(270deg, #585858, #A4A4A4);
-  top: -120px;
-  left: 390px;
-  border-radius: 32px;
-}
-
-.screen_background_shape10 {
-  height: 270px;
-  width: 190px;
-  background: linear-gradient(270deg, #585858, #A4A4A4);
-  top:  150px;
-  left: 145px;
-  border-radius: 32px;
-}
-
-.screen_background_shape11 {
-  height: 380px;
-  width: 190px;
-  background: linear-gradient(270deg, #585858, #A4A4A4);
-  top:  180px;
-  left: 370px;
-  border-radius: 32px;
+.screen_group_6 {
+  height: 35%;
+  width: 20%;
+  background: #FFFFFF;
+  top: 50%;
+  left: 70%;
+  border-radius: 10% 10% 10% 10%;
+  transform: none;
+  overflow: hidden;
 }
 
 .group {
@@ -191,9 +124,10 @@
   text-align: center;
 }
 
-.group_create {
-  font-size: 980%;
-  color: black;
-  left: 30%;
-  height: 980%;
+.icon{
+  font-size: 100px;
 }
+
+
+
+

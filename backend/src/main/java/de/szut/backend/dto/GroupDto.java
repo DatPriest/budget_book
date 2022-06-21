@@ -4,7 +4,8 @@ import lombok.Data;
 
 @Data
 public class GroupDto {
-    private long id;
+    private long groupId;
     private String groupName;
-    private String image;
+    private String imageString;
+    private String inviteCode;
 }

@@ -6,6 +6,7 @@ import { NewExpensesViewComponent } from '../new-expenses-view/new-expenses-view
 import { Observable, of } from 'rxjs';
 import { GroupService } from 'src/app/service/group/group.service';
 import { AppModule } from 'src/app/app.module';
+import { LoginService } from 'src/app/service/login/login.service';
 
 @Component({
   selector: 'app-expenses-view',
@@ -14,12 +15,13 @@ import { AppModule } from 'src/app/app.module';
 })
 export class ExpensesViewComponent implements OnInit {
 
-  //expenses: ExpensesModule[] = [];
+  searchTerm: string;
+  expenses: ExpensesModule[] = [];
   expenses$: Observable<ExpensesModule[]> = of([]);
-  constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule) {
-    this.expenses$ = this.groupService.getExpensesByGroupId(this.app.groupId);
-    //this.expenses.push(new ExpensesModule('Miete', '124,47', '02.04.2022'));
-    //this.expenses.push(new ExpensesModule('Einkauf', '47,95', '05.04.2022'));
+  constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule, public loginService: LoginService) {
+    //this.expenses$ = this.groupService.getExpensesByGroupId(this.app.groupId);
+    this.expenses.push(new ExpensesModule(1, 'Miete', '124,47', '02.04.2022'));
+    this.expenses.push(new ExpensesModule(1, 'Einkauf', '47,95', '05.04.2022'));
   }
 
   back(): void {
@@ -35,5 +37,6 @@ export class ExpensesViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loginService.checkLogIn();
   }
 }

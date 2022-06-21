@@ -4,6 +4,8 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { GroupService } from 'src/app/service/group/group.service';
 import { GroupModule } from 'src/app/model/group/group.module';
 import { Observable, Subscriber } from 'rxjs';
+import { AlertService } from 'src/app/service/alert/alert.service';
+import { LoginService } from 'src/app/service/login/login.service';
 
 @Component({
   selector: 'app-create-group-view',
@@ -14,14 +16,17 @@ export class CreateGroupViewComponent implements OnInit {
 
   createGroupForm: FormGroup;
   image: string;
-  constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<CreateGroupViewComponent>,
-      public groupService: GroupService) { }
+  constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<CreateGroupViewComponent>, public groupService: GroupService, public alertService: AlertService, public loginService: LoginService) {
+    
+  }
 
   createGroup(createGroupForm: NgForm): void {
     if (createGroupForm.value.image != '' && createGroupForm.value.groupName != '') {
-      const createGroupData = new GroupModule(null, createGroupForm.value.groupName, this.image);
+      const createGroupData = new GroupModule(null, createGroupForm.value.groupName, this.image, null, -1);
       this.groupService.createGroup(createGroupData).subscribe(data => {
+        this.alertService.successfulAlert("Gruppe erfolgreich erstellt!",  "",  "success", 2500);
         this.dialogRef.close();
+        this.reloadCurrentPage();
       });
     };
   }
@@ -57,8 +62,12 @@ export class CreateGroupViewComponent implements OnInit {
       subscriber.complete();
     }
   }
+  private reloadCurrentPage() {
+    window. location. reload();
+  }
 
   ngOnInit(): void {
+    this.loginService.checkLogIn();
     this.createGroupForm = this.formBuilder.group({
       groupname: [''],
       picture: ['']

@@ -4,9 +4,10 @@ import lombok.Data;
 
 @Data
 public class CreateUserDto {
-    public long id;
+    public long userId;
     public String firstName;
     public String lastName;
     public String email;
+    public String imageString;
 
 }

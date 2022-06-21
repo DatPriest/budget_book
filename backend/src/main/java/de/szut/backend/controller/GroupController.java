@@ -1,9 +1,7 @@
 package de.szut.backend.controller;
 
-import de.szut.backend.dto.GroupCreateDto;
-import de.szut.backend.dto.GroupListDto;
-import de.szut.backend.dto.LoginDto;
-import de.szut.backend.dto.UserToGroupDto;
+import de.szut.backend.dto.*;
+import de.szut.backend.exceptions.GetGroupByIdException;
 import de.szut.backend.model.Group;
 import de.szut.backend.model.GroupXUser;
 import de.szut.backend.model.User;
@@ -30,9 +28,24 @@ public class GroupController {
      * @return
      * @throws TypeNotPresentException
      */
-    @PostMapping(path = "/create", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Group> CreateGroup(@RequestBody GroupCreateDto dto) throws TypeNotPresentException {
-        return new ResponseEntity<>(service.createGroup(dto), HttpStatus.CREATED);
+    @PostMapping(path = "/create/{userId}", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<Group> CreateGroup(@RequestBody GroupCreateDto dto, @PathVariable long userId) {
+        Group result = null;
+        try {
+            result = service.createGroup(dto, userId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        if (result != null && result != new Group()) {
+            return new ResponseEntity<>(result, HttpStatus.CREATED);
+        } else if (result == null) {
+            return new ResponseEntity("Given User could not be found!", HttpStatus.BAD_REQUEST);
+        } else if (result == new Group()) {
+            return new ResponseEntity("User could not added to group", HttpStatus.INTERNAL_SERVER_ERROR);
+        } else {
+            return new ResponseEntity("Internal Server Error, by creating group", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     /**
@@ -41,7 +54,7 @@ public class GroupController {
      * @throws TypeNotPresentException
      */
     @PostMapping(path = "/addUserToGroup", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<GroupXUser> CreateGroup(@RequestBody UserToGroupDto dto) throws TypeNotPresentException {
+    public ResponseEntity<GroupXUser> createGroup(@RequestBody UserToGroupDto dto) throws TypeNotPresentException {
         GroupXUser user = null;
         try {
             user = service.addUserToGroup(dto);
@@ -55,16 +68,44 @@ public class GroupController {
     }
 
     @GetMapping(path = "/getUsers/{groupId}", produces = "application/json")
-    public ResponseEntity<ArrayList<User>> GetUsersToGroup(@PathVariable long groupId) throws TypeNotPresentException {
+    public ResponseEntity<ArrayList<User>> getUsersToGroup(@PathVariable long groupId) throws TypeNotPresentException {
         return new ResponseEntity<>(service.getUsersToGroup(groupId), HttpStatus.OK);
     }
 
+    @PutMapping(path = "/update", produces = "application/json")
+    public ResponseEntity<GroupDto> updateGroup(@RequestBody GroupUpdateDto dto) throws TypeNotPresentException {
+        return new ResponseEntity<>(service.updateGroup(dto), HttpStatus.OK);
+    }
+
     @GetMapping(path = "/getGroups/{userId}", produces = "application/json")
-    public ResponseEntity<GroupListDto> GetGroups(@PathVariable long userId) throws TypeNotPresentException {
+    public ResponseEntity<GroupListDto> getGroups(@PathVariable long userId) throws TypeNotPresentException {
         GroupListDto groups = this.service.getGroups(userId);
         if (groups != null && !groups.groups.isEmpty()) {
             return new ResponseEntity<>(groups, HttpStatus.OK);
         }
         return new ResponseEntity<>(null, HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/{groupId}", produces = "application/json")
+    public ResponseEntity<GroupDto> getGroupById(@PathVariable long groupId) {
+        try {
+            GroupDto dto = this.service.getGroupById(groupId);
+            return new ResponseEntity<>(dto, HttpStatus.OK);
+        } catch (GetGroupByIdException e) {
+            e.printStackTrace();
+            return new ResponseEntity(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @GetMapping(path = "/getGroupIdForInviteCode/{inviteCode}", produces = "application/json")
+    public ResponseEntity<Long> getGroupIdForInviteCode(@PathVariable String inviteCode){
+        long response;
+        try{
+            response = service.getGroupIdForInviteCode(inviteCode);
+        } catch(NullPointerException e){
+            response  = -1;
+            return new ResponseEntity<>(response,HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }
