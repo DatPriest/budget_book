@@ -78,10 +78,6 @@ public class VerificationService extends BaseService {
         // Save User to Database with salt
         user.salt = getSalt();
         user.hash = hashPassword(user.hash + user.salt);
-        Image image = new Image();
-        image.imageString = dto.imageString;
-        image = imageService.savePicture(image);
-        user.imageId = image.id;
         return userMapper.mapUserToUserCreateDto(this.userRepository.save(user));
     }
 
