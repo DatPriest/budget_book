@@ -18,11 +18,11 @@
               <th></th>
             </thead>
             <tbody>
-              <ng-container *ngFor="let u of user">
+              <ng-container *ngFor="let u of map|keyvalue">
                 <tr class="table_line">
-                  <td class="line">{{u.name}}</td>
-                  <td class="line">{{u.amount}} €</td>
-                  <td class="line button" (click)="periodDialog('User', u)"><span class="material-icons">info</span></td>
+                  <td class="line">{{u.key}}</td>
+                  <td class="line">{{u.value}} €</td>
+<!--                  <td class="line button" (click)="periodDialog('User', u)"><span class="material-icons">info</span></td>-->
                 </tr>
               </ng-container>
             </tbody>

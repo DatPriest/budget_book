@@ -5,6 +5,7 @@ import { StatisticsModule } from 'src/app/model/statistics/statistics.module';
 import { GroupService } from 'src/app/service/group/group.service';
 import { LoginService } from 'src/app/service/login/login.service';
 import { PeriodViewComponent } from '../period-view/period-view.component';
+import {StatisticService} from 'src/app/service/statistic/statistic.service';
 
 @Component({
   selector: 'app-statistics-view',
@@ -13,11 +14,14 @@ import { PeriodViewComponent } from '../period-view/period-view.component';
 })
 export class StatisticsViewComponent implements OnInit {
 
-  user: StatisticsModule[] = [];
-  constructor(public router: Router, public groupService: GroupService, public dialog: MatDialog, public loginService: LoginService) {
-    this.user.push(new StatisticsModule(1, "Lisa", "150")),
-    this.user.push(new StatisticsModule(2, "Max", "241")),
-    this.user.push(new StatisticsModule(3, "Leon", "47"))
+  map: Map<number, number>;
+  constructor(public stats : StatisticService,public router: Router, public groupService: GroupService, public dialog: MatDialog, public loginService: LoginService) {
+    this.getList();
+  }
+
+  private async getList() {
+    this.map = new Map<number, number>()
+    this.stats.getList(1,2022).then(value => this.map = value);
   }
 
   back(): void {
@@ -41,4 +45,9 @@ export class StatisticsViewComponent implements OnInit {
     this.loginService.checkLogIn();
   }
 
+  getUsername(userId: number) {
+    let name : String;
+    this.stats.getUsername(userId).then(value => name = value);
+    return name;
+  }
 }
