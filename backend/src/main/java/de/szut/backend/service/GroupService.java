@@ -138,7 +138,7 @@ public class GroupService extends BaseService {
             if ( tempGroup.isPresent()) {
                 group = tempGroup.get();
                 this.logger.info(group);
-                String imageString = imageRepository.findById(group.imageId).get().imageString;
+                String imageString = imageRepository.findById(group.imageId).imageString;
                 GroupDto dto = mapper.mapGroupToGroupDto(group, imageString);
                 groups.groups.add(dto);
             }
