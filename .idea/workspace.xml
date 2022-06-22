@@ -1,22 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="MH-132 #time 30m&#10;MH-132 #comment Kategorien Pop-up überarbeitet">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/currency-view/currency-view.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/currency-view/currency-view.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/currency-view/currency-view.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/currency-view/currency-view.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/menu-view/menu-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/menu-view/menu-view.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/menu-view/menu-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/menu-view/menu-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/menu-view/menu-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/menu-view/menu-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/notification-view/notification-view.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/notification-view/notification-view.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/notification-view/notification-view.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/notification-view/notification-view.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/i18n/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/i18n/de.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/i18n/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/i18n/en.json" afterDir="false" />
+    <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="MH-132 #time 30m&#10;MH-132 #comment notification, currency entfernt">
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/group-view/group-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/group-view/group-view.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655374118018</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="MH-132 #time 30m&#10;MH-132 #comment notification, currency entfernt">
+      <created>1655890214261</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1655890214261</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +203,7 @@
     <MESSAGE value="MH-132 #time 6h&#10;MH-132 #comment Man kann nun 6 Groups haben. Ab 6 verschwindet der Add-Button. GetGroups API-Call funktioniert nun. Add-Button verschiebt sich responsive." />
     <MESSAGE value="MH-132 #time 10m&#10;MH-132 #comment fix groups" />
     <MESSAGE value="MH-132 #time 1m&#10;MH-132 #comment fix groups" />
-    <option name="LAST_COMMIT_MESSAGE" value="MH-132 #time 1m&#10;MH-132 #comment fix groups" />
+    <MESSAGE value="MH-132 #time 30m&#10;MH-132 #comment notification, currency entfernt" />
+    <option name="LAST_COMMIT_MESSAGE" value="MH-132 #time 30m&#10;MH-132 #comment notification, currency entfernt" />
   </component>
 </project>
