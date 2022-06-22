@@ -186,7 +186,7 @@ public class GroupService extends BaseService {
             DeleteUserOutOfGroupDto dto = new DeleteUserOutOfGroupDto();
             dto.userId = temp.userId;
             dto.groupId = temp.groupId;
-            return temp;
+            return dto;
         }
         return null;
     }
