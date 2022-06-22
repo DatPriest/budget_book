@@ -10,6 +10,7 @@
       <div class="screen">
         <div class="button_add">
           <button type="button" (click)="add()"><span class="material-icons">add</span></button>
+          <button type="button" (click)="openPeriod()"><span class="material-icons">schedule</span></button>
         </div>
         <div class="screen_expenses">
           <table class="expenses_table">
@@ -17,14 +18,22 @@
               <th>
                 <p>{{'expenses.expenses'|translate}}</p>
               </th>
-              <th></th>
+              <th>
+                <label>
+                  <select ngModel>
+                    <ng-container *ngFor="let u of user$ | async">
+                      <option></option>
+                      <option value="{{u.userId}}" [(ngModel)]="searchTerm">{{u.firstName}} {{u.lastName}}</option>
+                    </ng-container>
+                  </select>
+                </label>
+              </th>
               <th>
                 <input id="Search" type="text" name="search" class="input_field" [(ngModel)]="searchTerm" placeholder="{{'expenses.search'|translate}}">
               </th>
             </thead>
             <tbody>
-              <!--<ng-container *ngFor="let e of expenses$ | async">-->
-              <ng-container *ngFor="let e of expenses | expensesFilter:searchTerm">
+              <ng-container *ngFor="let e of expenses$ | async | expensesFilter:searchTerm">
                 <tr class="expenses_table_line">
                   <td class="expenses_line_subject">{{e.subject}}</td>
                   <td class="expenses_line">{{e.amount}}</td>

@@ -16,21 +16,12 @@ export class PeriodViewComponent implements OnInit {
 
   periodForm: FormGroup;
   id: number;
-  constructor(public dialogRef: MatDialogRef<PeriodViewComponent>, @Inject(MAT_DIALOG_DATA) public data: any, public formBuilder: FormBuilder, public alertService: AlertService, public app: AppModule, public loginService: LoginService, public translate: TranslateService) {
+  constructor(public dialogRef: MatDialogRef<PeriodViewComponent>, public formBuilder: FormBuilder, public alertService: AlertService, public app: AppModule, public loginService: LoginService, public translate: TranslateService) {
 
   }
 
   editperiod(periodForm: NgForm): void {
-    if (periodForm.value.period == '') {
-      this.alertService.alert(this.translate.instant('alert.period.header'),  this.translate.instant('alert.period.message'),  "error");
-     } else {
-     if (this.data.type == "User") {
-       this.id = this.data.member.id;
-     } else {
-       this.id = parseInt(localStorage.getItem("groupId"));
-     }
-      const periodData = new PeriodModule(this.id, this.data.type, periodForm.value.period);
-    }
+    
   }
 
   closePopUp(): void {
