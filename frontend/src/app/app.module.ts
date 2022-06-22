@@ -35,8 +35,6 @@ import { NewCategoryViewComponent } from './component/new-category-view/new-cate
 import { InviteViewComponent } from './component/invite-view/invite-view.component';
 import { CreateInviteViewComponent } from './component/create-invite-view/create-invite-view.component';
 import { LanguageViewComponent } from './component/language-view/language-view.component';
-import { CurrencyViewComponent } from './component/currency-view/currency-view.component';
-import { NotificationViewComponent } from './component/notification-view/notification-view.component';
 import { EditGroupViewComponent } from './component/edit-group-view/edit-group-view.component';
 import { RemoveMemberViewComponent } from './component/remove-member-view/remove-member-view.component';
 import { PeriodViewComponent } from './component/period-view/period-view.component';
@@ -73,8 +71,6 @@ import { ExpensesFilterPipe } from './component/expenses-view/expenses-filter.pi
     InviteViewComponent,
     CreateInviteViewComponent,
     LanguageViewComponent,
-    CurrencyViewComponent,
-    NotificationViewComponent,
     EditGroupViewComponent,
     RemoveMemberViewComponent,
     PeriodViewComponent,
