@@ -30,7 +30,7 @@ export class GroupService {
   }
 
   editGroup(group: EditGroupModule) {
-    return this.http.post<EditGroupModule>('http://localhost:4000/api/v1/groups/update', JSON.stringify(group), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.put<EditGroupModule>('http://localhost:4000/api/v1/groups/update', JSON.stringify(group), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   getUsersByGroup(groupId: number) {
