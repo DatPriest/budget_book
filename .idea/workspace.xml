@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="MH-132 #time 30m&#10;MH-132 #comment notification, currency entfernt">
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/group-view/group-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/group-view/group-view.component.html" afterDir="false" />
+    <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="MH-132 #time 5m&#10;MH-132 #comment bei group statisik button entfernt">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/ask-question-view/ask-question-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/ask-question-view/ask-question-view.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/ask-question-view/ask-question-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/ask-question-view/ask-question-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/faq-view/faq-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/faq-view/faq-view.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/faq-view/faq-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/faq-view/faq-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/menu-view/menu-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/menu-view/menu-view.component.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655890214261</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="MH-132 #time 5m&#10;MH-132 #comment bei group statisik button entfernt">
+      <created>1655890332276</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1655890332276</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +216,7 @@
     <MESSAGE value="MH-132 #time 10m&#10;MH-132 #comment fix groups" />
     <MESSAGE value="MH-132 #time 1m&#10;MH-132 #comment fix groups" />
     <MESSAGE value="MH-132 #time 30m&#10;MH-132 #comment notification, currency entfernt" />
-    <option name="LAST_COMMIT_MESSAGE" value="MH-132 #time 30m&#10;MH-132 #comment notification, currency entfernt" />
+    <MESSAGE value="MH-132 #time 5m&#10;MH-132 #comment bei group statisik button entfernt" />
+    <option name="LAST_COMMIT_MESSAGE" value="MH-132 #time 5m&#10;MH-132 #comment bei group statisik button entfernt" />
   </component>
 </project>
