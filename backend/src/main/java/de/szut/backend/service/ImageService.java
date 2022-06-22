@@ -17,7 +17,6 @@ public class ImageService {
     }
 
     public Image getPicture(long id) {
-        Image test = this.repo.findById(id);
         return this.repo.findById(id);
     }
 
