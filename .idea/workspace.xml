@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="MH-132 #time 5m&#10;MH-132 #comment page reload after creating a group">
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/model/group/GetGroupModel.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/component/group-view/group-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/component/group-view/group-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/service/group/group.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/service/group/group.service.ts" afterDir="false" />
-    </list>
+    <list default="true" id="7314eab0-8495-49ba-9a18-3bd26c4de350" name="Changes" comment="image fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,7 +77,7 @@
       <workItem from="1654705835887" duration="5523000" />
       <workItem from="1655279049474" duration="13364000" />
       <workItem from="1655366380417" duration="3168000" />
-      <workItem from="1655895519996" duration="1520000" />
+      <workItem from="1655895519996" duration="1853000" />
     </task>
     <task id="LOCAL-00001" summary="Edit Login .css">
       <created>1648717419214</created>
@@ -168,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655890214261</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="image fix">
+      <created>1655897359087</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1655897359087</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +199,7 @@
     <MESSAGE value="MH-132 #time 10m&#10;MH-132 #comment fix groups" />
     <MESSAGE value="MH-132 #time 1m&#10;MH-132 #comment fix groups" />
     <MESSAGE value="MH-132 #time 30m&#10;MH-132 #comment notification, currency entfernt" />
-    <option name="LAST_COMMIT_MESSAGE" value="MH-132 #time 30m&#10;MH-132 #comment notification, currency entfernt" />
+    <MESSAGE value="image fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="image fix" />
   </component>
 </project>
