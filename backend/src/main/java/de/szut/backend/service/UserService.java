@@ -22,7 +22,11 @@ public class UserService extends BaseService {
     }
 
     public User getUserById(long id) {
-        return userRepository.findById(id).get();
+        if (userRepository.findById(id).isPresent()) {
+            return userRepository.findById(id).get();
+        } else {
+            return null;
+        }
     }
 
     public boolean deleteUser(long id) {

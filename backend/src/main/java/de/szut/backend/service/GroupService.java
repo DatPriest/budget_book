@@ -1,6 +1,7 @@
 package de.szut.backend.service;
 
 import de.szut.backend.dto.*;
+import de.szut.backend.exceptions.CreateGroupException;
 import de.szut.backend.mapper.GroupMapper;
 import de.szut.backend.model.Group;
 import de.szut.backend.model.GroupXUser;
@@ -37,17 +38,49 @@ public class GroupService extends BaseService {
         this.imageService = _imageService;
     }
 
-    public Group createGroup(GroupCreateDto dto) {
+    public Group createGroup(GroupCreateDto dto, long userId) throws Exception {
         var group = mapper.mapGroupCreateDtoToGroup(dto);
+        var user = userService.getUserById(userId);
+        if (user == null ) {
+            return null;
+        }
+        if (group.groupName.equals("") || group.groupName.equals(null)) {
+            return null;
+        }
         Image image = new Image();
         image.imageString = dto.image;
         image = this.imageService.savePicture(image);
         group.imageId = image.id;
         group.inviteCode = generateInviteCode();
-        if (group.groupName.equals("") || group.groupName.equals(null)) {
-            return null;
+
+        group = repo.save(group);
+        if (addUserToGroupByIds(group.id, user.id)) {
+            return group;
+        } else throw new CreateGroupException("Create Group User could not added to group");
+    }
+
+    public boolean addUserToGroupByIds(long groupId, long userId) throws Exception {
+        var groupX = groupXUserRepository.findByGroupId(groupId);
+
+        if (!groupXUserRepository.existsGroupXUserByUserIdAndGroupId(userId, groupId)) {
+            if (repo.existsById(groupId)) {
+                if (groupX == null) {
+                    GroupXUser newGroup = new GroupXUser();
+                    newGroup.groupId = groupId;
+                    newGroup.userId = userId;
+                    groupXUserRepository.save(newGroup);
+                    return true;
+                } else {
+                    groupX.userId = userId;
+                    groupXUserRepository.save(groupX);
+                    return true;
+                }
+
+            } else {
+                throw new Exception("GroupId was not found");
+            }
         }
-        return repo.save(group);
+        return false;
     }
 
     public GroupDto updateGroup(GroupUpdateDto dto) {
