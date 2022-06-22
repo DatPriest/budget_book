@@ -15,7 +15,7 @@ export class StatisticsViewComponent implements OnInit {
 
   user: StatisticsModule[] = [];
   constructor(public router: Router, public groupService: GroupService, public dialog: MatDialog, public loginService: LoginService) {
-    this.user.push(new StatisticsModule(1, "Lisa", "150")),
+    this.user.push(new StatisticsModule(1, "Lisa", "150,58")),
     this.user.push(new StatisticsModule(2, "Max", "241")),
     this.user.push(new StatisticsModule(3, "Leon", "47"))
   }

@@ -99,7 +99,6 @@ import { ExpensesFilterPipe } from './component/expenses-view/expenses-filter.pi
     AppRoutingModule,
     RouterModule.forRoot([
       // Login
-      {path: '', component: SignInViewComponent},
       {path: 'sign-in',component: SignInViewComponent},
       {path: 'sign-up',component: SignUpViewComponent},
       {path: 'new-password',component: NewPasswordViewComponent},
@@ -126,7 +125,10 @@ import { ExpensesFilterPipe } from './component/expenses-view/expenses-filter.pi
       {path: 'group/expenses/specific', component: SpecificExpensesViewComponent},
       {path: 'group/category', component: CategoryViewComponent},
       {path: 'group/statistics', component: StatisticsViewComponent},
-      {path: 'group/diagram', component: DiagramViewComponent}
+      {path: 'group/diagram', component: DiagramViewComponent},
+
+      // Any
+      { path: '',   redirectTo: '/sign-in', pathMatch: 'full'},
     ]),
     FormsModule,
     ReactiveFormsModule,
