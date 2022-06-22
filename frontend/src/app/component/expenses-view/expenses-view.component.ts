@@ -45,6 +45,10 @@ export class ExpensesViewComponent implements OnInit {
     this.dialog.open(PeriodViewComponent, dialogConfig);
   }
 
+  download(): void {
+    
+  }
+
   ngOnInit(): void {
     this.loginService.checkLogIn();
   }

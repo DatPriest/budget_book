@@ -12,6 +12,9 @@
           <button type="button" (click)="add()"><span class="material-icons">add</span></button>
           <button type="button" (click)="openPeriod()"><span class="material-icons">schedule</span></button>
         </div>
+        <div class="button_download">
+          <button type="button" class="back_icon" (click)="download()"><span class="material-icons">file_download</span></button>
+        </div>
         <div class="screen_expenses">
           <table class="expenses_table">
             <thead class="expenses_table_header">
@@ -20,10 +23,9 @@
               </th>
               <th>
                 <label>
-                  <select ngModel>
+                  <select>
                     <ng-container *ngFor="let u of user$ | async">
-                      <option></option>
-                      <option value="{{u.userId}}" [(ngModel)]="searchTerm">{{u.firstName}} {{u.lastName}}</option>
+                      <option [(ngModel)]="searchTerm" value="{{u.userId}}">{{u.firstName}} {{u.lastName}}</option>
                     </ng-container>
                   </select>
                 </label>
@@ -35,9 +37,9 @@
             <tbody>
               <ng-container *ngFor="let e of expenses$ | async | expensesFilter:searchTerm">
                 <tr class="expenses_table_line">
-                  <td class="expenses_line_subject">{{e.subject}}</td>
-                  <td class="expenses_line">{{e.amount}}</td>
-                  <td class="expenses_line">{{e.date}}</td>
+                  <td class="expenses_line_subject">{{e.description}}</td>
+                  <td class="expenses_line">{{e.amount | number: '1.2-2'}}</td>
+                  <td class="expenses_line">{{e.date_Created | date: 'dd.MM.yyyy'}}</td>
                 </tr>
               </ng-container>
             </tbody>

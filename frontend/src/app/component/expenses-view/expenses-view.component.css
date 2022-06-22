@@ -124,6 +124,13 @@
   font-size: 18px;
 }
 
+.button_download {
+  position: absolute;
+  top: 450px;
+  left: 16px;
+  font-size: 18px;
+}
+
 .back_icon {
   background: none;
   padding: 5% 10%;
