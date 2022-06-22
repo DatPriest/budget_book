@@ -45,7 +45,6 @@
 }
 
 .screen {
-  /*padding: 5%;*/
   position: absolute;
   top: 10%;
   height: 85%;
@@ -53,5 +52,5 @@
 }
 
 .questions_space {
-  margin: 1%;
+  margin: 2%;
 }

@@ -29,6 +29,20 @@ public class SecurityQuestionController {
         }
     }
 
+    @GetMapping(path = "/{userId}",produces = "application/json")
+    public ResponseEntity<SecurityQuestionDto> getSecurityUserQuestion(@PathVariable long userId) {
+        try {
+            var dto = securityQuestionService.getSecurityQuestion(userId);
+            if (dto != null) {
+                return new ResponseEntity<>(dto, HttpStatus.OK);
+            }
+            return new ResponseEntity("Something bad happened", HttpStatus.BAD_REQUEST);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
     @PostMapping(produces = "application/json", consumes = "application/json")
     public ResponseEntity<SecurityQuestionDto> postSecurityQuestion(@RequestBody AddSecurityQuestionDto dto) {
         try {

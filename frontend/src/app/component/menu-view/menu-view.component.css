@@ -25,6 +25,10 @@
 
 .column_setting_menu {
   float: left;
+  text-align: left;
   width: 80%;
+}
+.column_setting_menu.mat-menu-item{
+  xPosition: below;
 }
 

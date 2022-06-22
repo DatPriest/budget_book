@@ -16,14 +16,27 @@ export class EditProfileViewComponent implements OnInit {
 
   user: UserProfileModule;
   image: string;
-  editProfileForm: FormGroup;
   constructor(public userService: UserService, public formBuilder: FormBuilder, public router: Router, public loginService: LoginService) {
-    //this.user = this.userService.getProfile(parseInt(localStorage.getItem("userId")));
+    this.userService.getProfile(parseInt(localStorage.getItem("userId"))).then(value => {this.user = value
+    console.log(value.imageString)});
   }
 
   saveEditUser(editProfileForm: NgForm): void {
-    const editProfileData = new UserProfileModule(parseInt(localStorage.getItem("userId")), editProfileForm.value.firstName, editProfileForm.value.lastName, editProfileForm.value.email, this.image);
-    this.userService.updateProfile(editProfileData).subscribe(data => this.router.navigate(['/profile']));
+    this.userService.getProfile(parseInt(localStorage.getItem("userId"))).then(value => this.user = value);
+    if (editProfileForm.value.firstName!=null){
+      this.user.firstName = editProfileForm.value.firstName;
+    }
+    if (editProfileForm.value.lastName!=null){
+      this.user.lastName = editProfileForm.value.lastName;
+    }
+    if (editProfileForm.value.email!=null){
+      this.user.email = editProfileForm.value.email;
+    }
+    if (editProfileForm.value.image!=null){
+      this.user.imageString = this.image;
+      console.log(this.user.imageString)
+    }
+    this.userService.updateProfile(this.user).subscribe(data => this.router.navigate(['/profile']));
   }
 
   back(): void {

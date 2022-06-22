@@ -17,7 +17,9 @@
 	},
 	"editPassword": {
 		"header": "Change password",
-		"pwretype": "Password repetition"
+    "oldPw" : "Old Password",
+    "newPw" : "New Password",
+		"newpwretype": "Repeat New Password"
 	},
 	"editProfile": {
 		"header": "My Account",
@@ -41,7 +43,7 @@
 		"ask": "Ask a Question!",
 		"header": "FAQ"
 	},
-	"forename": " Last name",
+	"forename": "First name",
 	"group": {
 		"categorys": "Categories",
 		"expenses": "Expenditures",
@@ -218,5 +220,5 @@
 		"header": "Statistics",
 		"tableHeader": "Expenditures:"
 	},
-	"surname": "First name"
+	"surname": "Last name"
 }
