@@ -6,9 +6,9 @@
         <label for="category"><p>{{'expenses.category'| translate}}</p></label>
       </div>
       <div class="column">
-        <select name="subject" id="category" form="formular1" class="category_menu" ngModel>
+        <select name="name" id="category" form="formular1" class="category_menu" ngModel>
           <ng-container *ngFor="let c of category$ | async">
-            <option value="{{c.name}}">{{c.name}}</option>
+            <option value="{{c.categoryId}}">{{c.name}}</option>
           </ng-container>
         </select>
       </div>
@@ -16,10 +16,10 @@
   </div>
   <div>
     <div class="column_expenses">
-      <input name="amount" type="text" class="input_field" id="Expenses_price" ngModel placeholder="{{'expenses.amount'| translate}}">
+      <input name="description" type="text" class="input_field" id="Expenses_description" ngModel placeholder="{{'expenses.description'| translate}}">
     </div>
     <div class="column_price">
-      <input name="date" type="text" class="input_field" id="Expenses_date" ngModel placeholder="{{'expenses.date'| translate}}">
+      <input name="amount" type="text" class="input_field" id="Expenses_price" ngModel placeholder="{{'expenses.amount'| translate}}">
     </div>
   </div>
   <div>

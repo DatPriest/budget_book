@@ -7,6 +7,8 @@ import { Observable, of } from 'rxjs';
 import { GroupService } from 'src/app/service/group/group.service';
 import { AppModule } from 'src/app/app.module';
 import { LoginService } from 'src/app/service/login/login.service';
+import { PeriodViewComponent } from '../period-view/period-view.component';
+import { UserModule } from 'src/app/model/user/user.module';
 
 @Component({
   selector: 'app-expenses-view',
@@ -16,12 +18,11 @@ import { LoginService } from 'src/app/service/login/login.service';
 export class ExpensesViewComponent implements OnInit {
 
   searchTerm: string;
-  expenses: ExpensesModule[] = [];
   expenses$: Observable<ExpensesModule[]> = of([]);
+  user$ : Observable<UserModule[]> = of([]);
   constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule, public loginService: LoginService) {
     this.expenses$ = this.groupService.getExpensesByGroupId(parseInt(localStorage.getItem("groupId")));
-    //this.expenses.push(new ExpensesModule(1, 'Miete', '124,47', '02.04.2022'));
-    //this.expenses.push(new ExpensesModule(1, 'Einkauf', '47,95', '05.04.2022'));
+    this.user$ = this.groupService.getUsersByGroup(parseInt(localStorage.getItem("groupId")));
   }
 
   back(): void {
@@ -34,6 +35,18 @@ export class ExpensesViewComponent implements OnInit {
     dialogConfig.autoFocus = true;
 
     this.dialog.open(NewExpensesViewComponent, dialogConfig);
+  }
+
+  openPeriod(): void {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(PeriodViewComponent, dialogConfig);
+  }
+
+  download(): void {
+    
   }
 
   ngOnInit(): void {
