@@ -4,19 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55deee20-0fce-4079-b510-22a38dab3415" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/currency-view/currency-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/currency-view/currency-view.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/currency-view/currency-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/currency-view/currency-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/currency-view/currency-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/currency-view/currency-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/expenses-view/expenses-filter.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/expenses-view/expenses-filter.pipe.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/language-view/language-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/language-view/language-view.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/language-view/language-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/language-view/language-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/language-view/language-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/language-view/language-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/new-category-view/new-category-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/new-category-view/new-category-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/notification-view/notification-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/notification-view/notification-view.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/notification-view/notification-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/notification-view/notification-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/notification-view/notification-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/notification-view/notification-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/main.ts" afterDir="false" />
+    <list default="true" id="cf606b42-0a41-4c54-a80d-c7a099d61720" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/827c6487-a555-4d78-99a6-16d021057f48.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/827c6487-a555-4d78-99a6-16d021057f48.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/827c6487-a555-4d78-99a6-16d021057f48/storage_v2/_src_/database/budget_db.uL-Tmw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/827c6487-a555-4d78-99a6-16d021057f48/storage_v2/_src_/database/budget_db.uL-Tmw/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/szut/backend/service/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/szut/backend/service/ImageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/szut/backend/repository/GroupRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/szut/backend/repository/GroupRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/szut/backend/repository/ImageRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/szut/backend/repository/ImageRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/szut/backend/service/GroupService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/szut/backend/service/GroupService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/szut/backend/service/ImageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/szut/backend/service/ImageService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/de/szut/backend/service/VerificationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/szut/backend/service/VerificationService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,41 +28,21 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="2AerXEMpdjPHu2RTrtqFt1ZxdFj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;b43fdd98b1fd705ae4c3a10cf25aad8a&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;,
-      &quot;postgresql&quot;
-    ]
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
   <component name="RunManager">
     <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="backend" />
@@ -92,5 +71,19 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/de/szut/backend/service/ImageService.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
