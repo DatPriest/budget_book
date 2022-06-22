@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/service/user/user.service';
-import { UserModule } from 'src/app/model/user/user.module';
 import { AppModule } from 'src/app/app.module';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { InviteViewComponent } from '../invite-view/invite-view.component';
 import { AlertService } from 'src/app/service/alert/alert.service';
 import { LoginService } from 'src/app/service/login/login.service';
-import { Observable } from 'rxjs';
 import { UserProfileModule } from 'src/app/model/user-profile/user-profile.module';
 
 @Component({
@@ -22,7 +20,6 @@ export class ProfileViewComponent implements OnInit {
     if (this.user == null){
       this.userService.getProfile(parseInt(localStorage.getItem("userId"))).then(value => this.user = value);
     }
-    console.log(this.user)
   }
 
   moveToEditProfile(): void {
