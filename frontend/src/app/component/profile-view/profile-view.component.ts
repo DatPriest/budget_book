@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/service/user/user.service';
+import { UserModule } from 'src/app/model/user/user.module';
 import { AppModule } from 'src/app/app.module';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { InviteViewComponent } from '../invite-view/invite-view.component';
@@ -18,7 +19,10 @@ export class ProfileViewComponent implements OnInit {
 
   user: UserProfileModule;
   constructor(public router: Router, public userService: UserService, public app: AppModule, public dialog: MatDialog, public alertService: AlertService, public loginService: LoginService) {
-    //this.user = this.userService.getProfile(parseInt(localStorage.getItem("userId")));
+    if (this.user == null){
+      this.userService.getProfile(parseInt(localStorage.getItem("userId"))).then(value => this.user = value);
+    }
+    console.log(this.user)
   }
 
   moveToEditProfile(): void {
