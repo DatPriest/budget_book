@@ -17,7 +17,7 @@ public class ImageService {
     }
 
     public Image getPicture(long id) {
-        return this.repo.getById(id);
+        return this.repo.findById(id);
     }
 
     public boolean updatePicture(long imageId, String imageString) {
