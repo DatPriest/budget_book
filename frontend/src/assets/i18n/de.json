@@ -330,8 +330,8 @@
     "cancel": "abbrechen"
   },
   "error": {
-    "lost": "Sieht aus, als hättest Du dich verirrt",
-    "notAvaible": "Die Seite, die Du suchst, ist nicht verfügbar!",
-    "home": "Gehe zum Anmeldung zurück"
+    "lost": "Sieht so aus, als hättest Du dich verirrt",
+    "notAvaible": "die Seite, die Du suchst, ist nicht verfügbar!",
+    "home": "Zurück zur Anmeldung"
   }
 }
