@@ -328,5 +328,10 @@
       "message": "Automatische Abmeldung nach 10 Minuten."
     },
     "cancel": "abbrechen"
+  },
+  "error": {
+    "lost": "Sieht aus, als hättest Du dich verirrt",
+    "notAvaible": "Die Seite, die Du suchst, ist nicht verfügbar!",
+    "home": "Gehe zum Anmeldung zurück"
   }
 }
