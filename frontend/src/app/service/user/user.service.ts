@@ -34,6 +34,10 @@ export class UserService {
     return this.http.get<SecurityQuestionModule[]>('http://localhost:4000/api/v1/securityQuestions', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
+  getSecurityQuestionByUserId() {
+    return this.http.get<SecurityQuestionModule[]>('http://localhost:4000/api/v1/securityQuestions', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
   async getProfile(userId: number) {
     return await firstValueFrom(this.http.get<UserProfileModule>(`http://localhost:4000/api/v1/user/id/${userId}`, {headers: new HttpHeaders().append("Content-Type", "application/json")}));
   }

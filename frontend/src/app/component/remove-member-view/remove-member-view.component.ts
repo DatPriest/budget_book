@@ -18,10 +18,10 @@ export class RemoveMemberViewComponent implements OnInit {
   }
 
   delete(userId: number): void {
-    this.groupService.deleteUser(userId);
+    this.groupService.deleteUser(userId, parseInt(localStorage.getItem("groupId")));
   }
 
-  closeCategory(): void {
+  close(): void {
     this.dialogRef.close();
   }
 
