@@ -329,6 +329,7 @@
     "appComponent": {
       "header": "Inaktivität",
       "message": "Automatische Abmeldung nach 10 Minuten."
-    }
+    },
+    "cancel": "abbrechen"
   }
 }
