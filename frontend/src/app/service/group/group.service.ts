@@ -12,6 +12,7 @@ import { EditGroupModule } from 'src/app/model/edit-group/edit-group.module';
 import {GroupList} from "../../model/group/GroupList";
 import { NewCategoryModule } from 'src/app/model/new-category/new-category.module';
 import { JoinGroupModule } from 'src/app/model/join-group/join-group.module';
+import {GetGroupModel} from "../../model/group/GetGroupModel";
 
 @Injectable({
   providedIn: 'root'
@@ -36,10 +37,8 @@ export class GroupService {
     return this.http.get<UserModule[]>(`http://localhost:4000/api/v1/groups/getUsers/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
-  getGroupById(groupId: number) {
-    const data = new GroupModule(1, "Test", "TEST", "HHZGcVNp", null);
-    return data;
-    //return this.http.get<GroupModule>(`http://localhost:4000/api/v1/groups/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  getGroupById(groupId: number): Observable<GetGroupModel> {
+    return this.http.get<GetGroupModel>(`http://localhost:4000/api/v1/groups/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   getExpensesByGroupId(groupId: number) {

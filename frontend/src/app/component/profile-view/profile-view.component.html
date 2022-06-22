@@ -10,16 +10,16 @@
       <div class="container">
         <div class="screen">
           <div class="picture">
-            <img src={{user.imageString}} alt="{{'profile.imgMsg'| translate}}">
+<!--            <img src={{user.image}} alt="{{'profile.imgMsg'| translate}}">-->
           </div>
           <div class="column">
             <div class="info">
               <label class="label" translate="forename"></label><br>
-              <input type="text" id="UserName" name="fname" placeholder="{{'forename'|translate}}" value="{{user.firstName}}" readonly><br><br>
-              <label class="label"translate="surname"></label>
-              <input type="text" id="UserName2" name="lname" placeholder="{{'surname'| translate}}" value="{{user.lastName}}" readonly><br><br>
-              <label class="label"translate="email"></label>
-              <input type="text" id="UserEmail" name=" email" placeholder="E-{{'email'| translate}}" value="{{user.email}}" readonly><br><br>
+              <label type="text" id="UserName" name="fname">{{user.firstName}}</label><br><br>
+              <label class="label"translate="surname"></label><br>
+              <label type="text" id="UserName2" name="lname">{{user.lastName}}</label><br><br>
+              <label class="label"translate="email"></label><br>
+              <label type="text" id="UserEmail" name="email">{{user.email}}</label><br><br>
             </div>
               <div class="button_left">
               <tr>

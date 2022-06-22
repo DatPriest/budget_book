@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable } from 'rxjs';
+import {catchError, firstValueFrom, Observable} from 'rxjs';
 import { NewPasswordModule } from 'src/app/model/new-password/new-password.module';
 import { UserModule } from 'src/app/model/user/user.module';
 import { LoginUserModule } from 'src/app/model/login-user/login-user.module';
@@ -34,8 +34,8 @@ export class UserService {
     return this.http.get<SecurityQuestionModule[]>('http://localhost:4000/api/v1/securityQuestions', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
-  getProfile(userId: number){
-    return this.http.get<UserProfileModule>(`http://localhost:4000/api/v1/user/id/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  async getProfile(userId: number) {
+    return await firstValueFrom(this.http.get<UserProfileModule>(`http://localhost:4000/api/v1/user/id/${userId}`, {headers: new HttpHeaders().append("Content-Type", "application/json")}));
   }
 
   updateProfile(user: UserProfileModule) {

@@ -305,6 +305,7 @@
     "editPassword": {
       "header": "Passwort wurde erfolgreich geändert!",
       "message": "",
+      "wrongPw": "Altes passwort falsch",
       "emptyPassword": {
         "header": "Oops",
         "message": "Die Passwörter dürfen nicht leer sein!"
