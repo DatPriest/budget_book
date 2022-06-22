@@ -31,7 +31,6 @@ export class GroupViewComponent implements OnInit {
 
   private async loadGroupDetails(){
     this.group = await firstValueFrom(this.groupService.getGroupById(parseInt(localStorage.getItem("groupId"))));
-    console.log(this.group);
     this.inviteCode = this.group.inviteCode;
   }
 
