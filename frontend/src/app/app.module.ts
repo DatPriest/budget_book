@@ -35,14 +35,9 @@ import { NewCategoryViewComponent } from './component/new-category-view/new-cate
 import { InviteViewComponent } from './component/invite-view/invite-view.component';
 import { CreateInviteViewComponent } from './component/create-invite-view/create-invite-view.component';
 import { LanguageViewComponent } from './component/language-view/language-view.component';
-import { CurrencyViewComponent } from './component/currency-view/currency-view.component';
-import { NotificationViewComponent } from './component/notification-view/notification-view.component';
 import { EditGroupViewComponent } from './component/edit-group-view/edit-group-view.component';
 import { RemoveMemberViewComponent } from './component/remove-member-view/remove-member-view.component';
 import { PeriodViewComponent } from './component/period-view/period-view.component';
-import { SpecificExpensesViewComponent } from './component/specific-expenses-view/specific-expenses-view.component';
-import { StatisticsViewComponent } from './component/statistics-view/statistics-view.component';
-import { DiagramViewComponent } from './component/diagram-view/diagram-view.component';
 
 import { HistoryFilterPipe } from './component/history-view/history-filter.pipe';
 import { ExpensesFilterPipe } from './component/expenses-view/expenses-filter.pipe';
@@ -73,14 +68,9 @@ import { ExpensesFilterPipe } from './component/expenses-view/expenses-filter.pi
     InviteViewComponent,
     CreateInviteViewComponent,
     LanguageViewComponent,
-    CurrencyViewComponent,
-    NotificationViewComponent,
     EditGroupViewComponent,
     RemoveMemberViewComponent,
     PeriodViewComponent,
-    SpecificExpensesViewComponent,
-    StatisticsViewComponent,
-    DiagramViewComponent,
     HistoryFilterPipe,
     ExpensesFilterPipe
   ],
@@ -122,10 +112,7 @@ import { ExpensesFilterPipe } from './component/expenses-view/expenses-filter.pi
       {path: 'group',component: GroupViewComponent},
       {path: 'group/history',component: HistoryViewComponent},
       {path: 'group/expenses',component: ExpensesViewComponent},
-      {path: 'group/expenses/specific', component: SpecificExpensesViewComponent},
       {path: 'group/category', component: CategoryViewComponent},
-      {path: 'group/statistics', component: StatisticsViewComponent},
-      {path: 'group/diagram', component: DiagramViewComponent},
 
       // Any
       { path: '',   redirectTo: '/sign-in', pathMatch: 'full'},

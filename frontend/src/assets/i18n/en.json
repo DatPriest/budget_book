@@ -1,6 +1,6 @@
 {
 	"askQuestions": {
-		"template": "Ask a Question!"
+		"template": "Ask a Question"
 	},
 	"category": {
 		"header": "categories"
@@ -14,10 +14,6 @@
 	"createInvite": {
 		"header": "Create invitation code",
 		"msg": "Invitation code"
-	},
-	"currency": {
-		"currency": "Select currency",
-		"header": "Currency"
 	},
 	"editPassword": {
 		"header": "Change password",
@@ -45,7 +41,7 @@
 	},
 	"faq": {
 		"ask": "Ask a Question!",
-		"header": "FAQ!"
+		"header": "FAQ"
 	},
 	"forename": "First name",
 	"group": {
@@ -140,9 +136,6 @@
 		"resetPw": "Reset Password",
 		"retypeNewPw": "Repeat new password",
 		"save": "Save"
-	},
-	"notification": {
-		"header": "Notifications"
 	},
 	"password": "Password",
 	"period": {

@@ -1,6 +1,6 @@
 {
 	"askQuestions": {
-		"template": "Frage stellen!"
+		"template": "Frage stellen"
 	},
 	"category": {
 		"header": "Kategorien"
@@ -14,10 +14,6 @@
 	"createInvite": {
 		"header": "Einladungscode erstellen",
 		"msg": "Einladungscode"
-	},
-	"currency": {
-		"currency": "Währung auswählen",
-		"header": "Währung"
 	},
 	"editPassword": {
 		"header": "Passwort ändern",
@@ -42,8 +38,8 @@
 		"search": "Suche"
 	},
 	"faq": {
-		"ask": "Frage stellen!",
-		"header": "FAQ!"
+		"ask": "Frage stellen",
+		"header": "FAQ"
 	},
 	"forename": "Vorname",
 	"group": {
@@ -330,6 +326,7 @@
     "appComponent": {
       "header": "Inaktivität",
       "message": "Automatische Abmeldung nach 10 Minuten."
-    }
+    },
+    "cancel": "abbrechen"
   }
 }
