@@ -24,12 +24,12 @@ export class NewExpensesViewComponent implements OnInit {
   }
 
   createExpenses(newExpensesForm: NgForm): void {
-    const newExpensesData = new NewExpensesModule(parseInt(localStorage.getItem("groupId")), newExpensesForm.value.subject, newExpensesForm.value.amount, newExpensesForm.value.date);
+    const newExpensesData = new NewExpensesModule(parseInt(localStorage.getItem("groupId")), parseInt(localStorage.getItem("userId")), newExpensesForm.value.amount, newExpensesForm.value.name, newExpensesForm.value.description);
     console.warn(newExpensesData);
-    /*
     this.groupService.addNewExpenses(newExpensesData).subscribe(data => {
+      console.warn(data);
       newExpensesForm.reset();
-    })*/
+    })
   }
 
   closeExpenses(): void {
