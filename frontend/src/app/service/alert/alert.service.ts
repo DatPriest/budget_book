@@ -31,7 +31,7 @@ export class AlertService {
       title: this.translate.instant('alert.logout.title'),
       text: this.translate.instant('alert.logout.text'),
       icon: "warning",
-      buttons: ["Cancel", "OK"],
+      buttons: [this.translate.instant('alert.cancel'), "OK"],
       dangerMode: true,
     })
     .then((willLogOut) => {
@@ -49,7 +49,7 @@ export class AlertService {
       title: this.translate.instant('alert.delete.title'),
       text: this.translate.instant('alert.delete.text'),
       icon: "warning",
-      buttons: ["Cancel", "OK"],
+      buttons: [this.translate.instant('alert.cancel'), "OK"], //cancel
       dangerMode: true,
     })
     .then((willDelete) => {
