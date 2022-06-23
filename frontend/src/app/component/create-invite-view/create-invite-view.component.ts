@@ -6,6 +6,7 @@ import { GroupModule } from 'src/app/model/group/group.module';
 import { AlertService } from 'src/app/service/alert/alert.service';
 import { GroupService } from 'src/app/service/group/group.service';
 import { LoginService } from 'src/app/service/login/login.service';
+import { ClipboardService } from 'ngx-clipboard';
 
 @Component({
   selector: 'app-create-invite-view',
@@ -15,8 +16,12 @@ import { LoginService } from 'src/app/service/login/login.service';
 export class CreateInviteViewComponent implements OnInit {
 
   createInviteForm: FormGroup;
-  constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<CreateInviteViewComponent>, public groupService: GroupService, public app: AppModule, public loginService: LoginService, @Inject(MAT_DIALOG_DATA) public data: any) {
-    
+  constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<CreateInviteViewComponent>, public groupService: GroupService, public app: AppModule, public loginService: LoginService, @Inject(MAT_DIALOG_DATA) public data: any, private clipboardApi: ClipboardService) {
+
+  }
+
+  copyText(val: string) {
+    this.clipboardApi.copyFromContent(val)
   }
 
   closeInvite(): void {
