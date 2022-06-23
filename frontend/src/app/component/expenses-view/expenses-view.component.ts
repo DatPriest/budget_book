@@ -32,6 +32,10 @@ export class ExpensesViewComponent implements OnInit {
     this.userId = expensesForm.value.user;
   }
 
+  delete(expenseId: number): void {
+    this.groupService.deleteExpensesById(expenseId);
+  }
+
   back(): void {
     this.router.navigate(['/group']);
   }

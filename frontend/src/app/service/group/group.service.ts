@@ -49,6 +49,10 @@ export class GroupService {
     return this.http.post<NewExpensesModule>('http://localhost:4000/api/v1/expenses/expense', JSON.stringify(newExpenses), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
+  deleteExpensesById(expenseId: number) {
+    return this.http.delete(`http://localhost:4000/api/v1/expenses/${expenseId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
   getInviteCode(groupId: number) : Observable<GroupInviteModule> {
     return this.http.get<GroupInviteModule>(`http://localhost:4000/api/v1/groups/create/inviteCode/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }

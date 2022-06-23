@@ -21,6 +21,7 @@
               <th>
                 <p>{{'expenses.expenses'|translate}}</p>
               </th>
+              <th></th>
               <th>
                 <form (ngSubmit)="getUserId(expensesForm)" #expensesForm="ngForm">
                   <div class="row">
@@ -52,6 +53,11 @@
                   <td class="expenses_line_subject">{{e.description}}</td>
                   <td class="expenses_line">{{e.amount | number: '1.2-2'}}</td>
                   <td class="expenses_line">{{e.date_Created | date: 'dd.MM.yyyy'}}</td>
+                  <td class="expenses_line">
+                    <button type="button" class="button back_icon" (click)="delete(e.expenseId)">
+                      <span class="button_text material-icons">delete</span>
+                    </button>
+                  </td>
                 </tr>
               </ng-container>
             </tbody>
