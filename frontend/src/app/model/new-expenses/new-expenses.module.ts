@@ -1,8 +1,9 @@
 export class NewExpensesModule {
   constructor (
     public groupId: number,
-    public categoryId: number,
+    public userId: number,
     public amount: number,
-    public date: string
+    public categoryId: number,
+    public description: string
   ) { }
 }

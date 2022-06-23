@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf606b42-0a41-4c54-a80d-c7a099d61720" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/827c6487-a555-4d78-99a6-16d021057f48.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/827c6487-a555-4d78-99a6-16d021057f48.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/827c6487-a555-4d78-99a6-16d021057f48/storage_v2/_src_/database/budget_db.uL-Tmw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/827c6487-a555-4d78-99a6-16d021057f48/storage_v2/_src_/database/budget_db.uL-Tmw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/backend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/szut/backend/service/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/szut/backend/service/ImageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/szut/backend/repository/GroupRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/szut/backend/repository/GroupRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/szut/backend/repository/ImageRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/szut/backend/repository/ImageRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/szut/backend/service/GroupService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/szut/backend/service/GroupService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/szut/backend/service/ImageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/szut/backend/service/ImageService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/de/szut/backend/service/VerificationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/szut/backend/service/VerificationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/group-view/group-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/group-view/group-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/component/remove-member-view/remove-member-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/component/remove-member-view/remove-member-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/service/group/group.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/service/group/group.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,15 +27,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="backend" />
@@ -71,9 +60,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -2,7 +2,7 @@ export class GetGroupModel{
   constructor (
     public groupId: number,
     public groupName: string,
-    public image: string,
+    public imageString: string,
     public inviteCode: string
   ) { }
 }

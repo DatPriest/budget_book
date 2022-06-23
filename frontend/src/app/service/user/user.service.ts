@@ -6,7 +6,6 @@ import { UserModule } from 'src/app/model/user/user.module';
 import { LoginUserModule } from 'src/app/model/login-user/login-user.module';
 import { SecurityQuestionModule } from 'src/app/model/security-question/security-question.module';
 import { UpdatePasswordModule } from 'src/app/model/update-password/update-password.module';
-import { NotificationModule } from 'src/app/model/notification/notification.module';
 import { FaqModule } from 'src/app/model/faq/faq.module';
 import { AskFaqModule } from 'src/app/model/ask-faq/ask-faq.module';
 import { UserProfileModule } from 'src/app/model/user-profile/user-profile.module';
@@ -34,6 +33,10 @@ export class UserService {
     return this.http.get<SecurityQuestionModule[]>('http://localhost:4000/api/v1/securityQuestions', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
+  getSecurityQuestionByUserId() {
+    return this.http.get<SecurityQuestionModule[]>('http://localhost:4000/api/v1/securityQuestions', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
   async getProfile(userId: number) {
     return await firstValueFrom(this.http.get<UserProfileModule>(`http://localhost:4000/api/v1/user/id/${userId}`, {headers: new HttpHeaders().append("Content-Type", "application/json")}));
   }
@@ -48,10 +51,6 @@ export class UserService {
 
   deleteProfile(userId: number) {
     return this.http.delete(`http://localhost:4000/api/v1/user/delete/id/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
-  }
-
-  notificationEmail(user: NotificationModule) {
-    return this.http.put('http://localhost:4000/api/v1/notification/email', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   getFaqQuestion() {

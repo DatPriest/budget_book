@@ -30,7 +30,7 @@
 		"amount": "Betrag",
 		"category": "Kategorie:",
 		"closeBtn": "Schließen",
-		"date": "Datum",
+		"description": "Ausgabe",
 		"expenses": "Ausgaben:",
 		"headerExp": "Alle Ausgaben",
 		"purchasing": "Einkauf",
@@ -328,5 +328,10 @@
       "message": "Automatische Abmeldung nach 10 Minuten."
     },
     "cancel": "abbrechen"
+  },
+  "error": {
+    "lost": "Sieht so aus, als hättest Du dich verirrt",
+    "notAvaible": "die Seite, die Du suchst, ist nicht verfügbar!",
+    "home": "Zurück zur Anmeldung"
   }
 }

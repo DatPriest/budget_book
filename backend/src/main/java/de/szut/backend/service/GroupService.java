@@ -105,6 +105,14 @@ public class GroupService extends BaseService {
         }
     }
 
+
+    public Group getGroupById(long groupId, boolean _b) throws GetGroupByIdException {
+        Group group = repo.findById(groupId);
+        if (group != null) {
+            return group;
+        }
+        return null;
+    }
     public GroupXUser addUserToGroup(UserToGroupDto dto) throws Exception {
         var groupUser = mapper.mapUserToGroup(dto);
         if (!groupXUserRepository.existsGroupXUserByUserIdAndGroupId(groupUser.userId, groupUser.groupId)) {
@@ -162,5 +170,27 @@ public class GroupService extends BaseService {
 
     private String generateInviteCode(){
         return RandomString.make(8);
+    }
+
+    public DeleteUserOutOfGroupDto removeUserFromGroup(Long userId, Long groupId) {
+        User user = userService.getUserById(userId);
+        Group group = null;
+        try {
+            group = this.getGroupById(groupId, true);
+        } catch (GetGroupByIdException e) {
+            e.printStackTrace();
+        }
+        if (user != null && group != null) {
+            GroupXUser temp = groupXUserRepository.findByGroupIdAndUserId(group.id, user.id);
+            if (temp == null) {
+                return null;
+            }
+            groupXUserRepository.delete(temp);
+            DeleteUserOutOfGroupDto dto = new DeleteUserOutOfGroupDto();
+            dto.userId = temp.userId;
+            dto.groupId = temp.groupId;
+            return dto;
+        }
+        return null;
     }
 }

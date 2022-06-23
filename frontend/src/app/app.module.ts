@@ -38,6 +38,7 @@ import { LanguageViewComponent } from './component/language-view/language-view.c
 import { EditGroupViewComponent } from './component/edit-group-view/edit-group-view.component';
 import { RemoveMemberViewComponent } from './component/remove-member-view/remove-member-view.component';
 import { PeriodViewComponent } from './component/period-view/period-view.component';
+import { PageNotFoundViewComponent } from './component/page-not-found-view/page-not-found-view.component';
 
 import { HistoryFilterPipe } from './component/history-view/history-filter.pipe';
 import { ExpensesFilterPipe } from './component/expenses-view/expenses-filter.pipe';
@@ -72,7 +73,8 @@ import { ExpensesFilterPipe } from './component/expenses-view/expenses-filter.pi
     RemoveMemberViewComponent,
     PeriodViewComponent,
     HistoryFilterPipe,
-    ExpensesFilterPipe
+    ExpensesFilterPipe,
+    PageNotFoundViewComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -89,12 +91,12 @@ import { ExpensesFilterPipe } from './component/expenses-view/expenses-filter.pi
     AppRoutingModule,
     RouterModule.forRoot([
       // Login
-      {path: 'sign-in',component: SignInViewComponent},
-      {path: 'sign-up',component: SignUpViewComponent},
-      {path: 'new-password',component: NewPasswordViewComponent},
+      {path: 'sign-in', component: SignInViewComponent},
+      {path: 'sign-up', component: SignUpViewComponent},
+      {path: 'new-password', component: NewPasswordViewComponent},
 
       // Main
-      {path: 'main',component: MainViewComponent},
+      {path: 'main', component: MainViewComponent},
 
       // Menu
       {path: 'faq', component: FaqViewComponent},
@@ -109,13 +111,14 @@ import { ExpensesFilterPipe } from './component/expenses-view/expenses-filter.pi
       {path: 'profile/edit-passwort', component: EditPasswordViewComponent},
 
       // Group
-      {path: 'group',component: GroupViewComponent},
-      {path: 'group/history',component: HistoryViewComponent},
-      {path: 'group/expenses',component: ExpensesViewComponent},
+      {path: 'group', component: GroupViewComponent},
+      {path: 'group/history', component: HistoryViewComponent},
+      {path: 'group/expenses', component: ExpensesViewComponent},
       {path: 'group/category', component: CategoryViewComponent},
 
       // Any
       { path: '',   redirectTo: '/sign-in', pathMatch: 'full'},
+      { path: '**', component:  PageNotFoundViewComponent},
     ]),
     FormsModule,
     ReactiveFormsModule,

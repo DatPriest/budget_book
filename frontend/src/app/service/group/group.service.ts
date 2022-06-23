@@ -30,7 +30,7 @@ export class GroupService {
   }
 
   editGroup(group: EditGroupModule) {
-    return this.http.post<EditGroupModule>('http://localhost:4000/api/v1/groups/update', JSON.stringify(group), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.put<EditGroupModule>('http://localhost:4000/api/v1/groups/update', JSON.stringify(group), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   getUsersByGroup(groupId: number) {
@@ -61,8 +61,8 @@ export class GroupService {
     return this.http.post<NewExpensesModule>('http://localhost:4000/api/v1/groups/addUserToGroup', JSON.stringify(join), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
-  deleteUser(userId: number) {
-    return this.http.delete(`http://localhost:4000/api/v1/groups/delete/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  deleteUser(userId: number, groupId: number) {
+    return this.http.delete(`http://localhost:4000/api/v1/groups/removeUser/user/${userId}&group/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   getHistory(groupId: number) {

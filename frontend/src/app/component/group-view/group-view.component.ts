@@ -11,7 +11,6 @@ import { LoginService } from 'src/app/service/login/login.service';
 import { CreateInviteViewComponent } from '../create-invite-view/create-invite-view.component';
 import { EditGroupViewComponent } from '../edit-group-view/edit-group-view.component';
 import { RemoveMemberViewComponent } from '../remove-member-view/remove-member-view.component';
-import {group} from "@angular/animations";
 import {GetGroupModel} from "../../model/group/GetGroupModel";
 
 @Component({
@@ -31,7 +30,6 @@ export class GroupViewComponent implements OnInit {
 
   private async loadGroupDetails(){
     this.group = await firstValueFrom(this.groupService.getGroupById(parseInt(localStorage.getItem("groupId"))));
-    console.log(this.group);
     this.inviteCode = this.group.inviteCode;
   }
 
