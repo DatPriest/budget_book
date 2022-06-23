@@ -9,6 +9,7 @@ import { AppModule } from 'src/app/app.module';
 import { LoginService } from 'src/app/service/login/login.service';
 import { PeriodViewComponent } from '../period-view/period-view.component';
 import { UserModule } from 'src/app/model/user/user.module';
+import { FormGroup, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-expenses-view',
@@ -20,9 +21,15 @@ export class ExpensesViewComponent implements OnInit {
   searchTerm: string;
   expenses$: Observable<ExpensesModule[]> = of([]);
   user$ : Observable<UserModule[]> = of([]);
+  userId: number;
+  expensesForm: FormGroup;
   constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule, public loginService: LoginService) {
     this.expenses$ = this.groupService.getExpensesByGroupId(parseInt(localStorage.getItem("groupId")));
     this.user$ = this.groupService.getUsersByGroup(parseInt(localStorage.getItem("groupId")));
+  }
+
+  getUserId(expensesForm: NgForm): void {
+    this.userId = expensesForm.value.user;
   }
 
   back(): void {
@@ -46,7 +53,7 @@ export class ExpensesViewComponent implements OnInit {
   }
 
   download(): void {
-    
+
   }
 
   ngOnInit(): void {
