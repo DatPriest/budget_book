@@ -51,6 +51,7 @@ public class GroupController {
      * @return
      * @throws TypeNotPresentException
      */
+    @CrossOrigin
     @PostMapping(path = "/addUserToGroup", consumes = "application/json", produces = "application/json")
     public ResponseEntity<GroupXUser> createGroup(@RequestBody UserToGroupDto dto) throws TypeNotPresentException {
         GroupXUser user = null;
@@ -65,6 +66,7 @@ public class GroupController {
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
+    @CrossOrigin
     @PostMapping(path = "/removeUser/user/{userId}&group/{groupId}")
     public ResponseEntity<DeleteUserOutOfGroupDto> removeUserFromGroup(@PathVariable Long userId, @PathVariable Long groupId) {
         var dto = this.service.removeUserFromGroup(userId, groupId);
@@ -75,6 +77,7 @@ public class GroupController {
         return new ResponseEntity<>(dto, HttpStatus.OK);
     }
 
+    @CrossOrigin
     @GetMapping(path = "/getUsers/{groupId}", produces = "application/json")
     public ResponseEntity<ArrayList<UserDto>> getUsersToGroup(@PathVariable long groupId) throws TypeNotPresentException {
         var dto = service.getUsersToGroup(groupId);
@@ -84,11 +87,13 @@ public class GroupController {
         return new ResponseEntity<>(dto, HttpStatus.OK);
     }
 
+    @CrossOrigin
     @PutMapping(path = "/update", produces = "application/json")
     public ResponseEntity<GroupDto> updateGroup(@RequestBody GroupUpdateDto dto) throws TypeNotPresentException {
         return new ResponseEntity<>(service.updateGroup(dto), HttpStatus.OK);
     }
 
+    @CrossOrigin
     @GetMapping(path = "/getGroups/{userId}", produces = "application/json")
     public ResponseEntity<GroupListDto> getGroups(@PathVariable long userId) throws TypeNotPresentException {
         GroupListDto groups = this.service.getGroups(userId);
@@ -98,6 +103,7 @@ public class GroupController {
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
 
+    @CrossOrigin
     @GetMapping(path = "/{groupId}", produces = "application/json")
     public ResponseEntity<GroupDto> getGroupById(@PathVariable long groupId) {
         try {
@@ -109,6 +115,7 @@ public class GroupController {
         }
     }
 
+    @CrossOrigin
     @GetMapping(path = "/getGroupIdForInviteCode/{inviteCode}", produces = "application/json")
     public ResponseEntity<Long> getGroupIdForInviteCode(@PathVariable String inviteCode){
         long response;
