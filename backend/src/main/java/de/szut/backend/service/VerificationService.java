@@ -125,4 +125,12 @@ public class VerificationService extends BaseService {
         actionToProcess.setAdditionalInformation(addition);
         logService.createLogEntry(actionToProcess);
     }
+
+    public long getUserIdByEmail(String email) {
+        User user = this.userRepository.findByEmail(email);
+        if (user != null) {
+            return user.id;
+        }
+        return -1;
+    }
 }
