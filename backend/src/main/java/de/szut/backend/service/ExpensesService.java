@@ -20,9 +20,7 @@ public class ExpensesService {
     }
 
     public Expense createExpense(Expense expenseToCreate){
-        if(ex_Service.existsExpenseByCategoryIdAndAmountAndUserIdAndGroupIdAndDescription(expenseToCreate.getCategoryId(), expenseToCreate.getAmount(), expenseToCreate.getUserId(), expenseToCreate.getGroupId(), expenseToCreate.getDescription())){
-            expenseToCreate.setDescription(expenseToCreate.getDescription() + " ");
-        }
+        expenseToCreate = changeDescription(expenseToCreate);
         log("Expense created", "", expenseToCreate.getGroupId());
         return this.ex_Service.save(expenseToCreate);
     }
@@ -54,5 +52,13 @@ public class ExpensesService {
         actionToProcess.setAdditionalInformation(addition);
         actionToProcess.setGroupId(groupId);
         logService.createLogEntry(actionToProcess);
+    }
+
+    private Expense changeDescription(Expense toChange){
+        if(ex_Service.existsExpenseByCategoryIdAndAmountAndUserIdAndGroupIdAndDescription(toChange.getCategoryId(), toChange.getAmount(), toChange.getUserId(), toChange.getGroupId(), toChange.getDescription())){
+            toChange.setDescription(toChange.getDescription() + " ");
+            return changeDescription(toChange);
+        }
+        else return toChange;
     }
 }
