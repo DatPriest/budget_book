@@ -10,6 +10,7 @@ import { LoginService } from 'src/app/service/login/login.service';
 import { PeriodViewComponent } from '../period-view/period-view.component';
 import { UserModule } from 'src/app/model/user/user.module';
 import { FormGroup, NgForm } from '@angular/forms';
+import { AlertService } from 'src/app/service/alert/alert.service';
 
 @Component({
   selector: 'app-expenses-view',
@@ -23,13 +24,19 @@ export class ExpensesViewComponent implements OnInit {
   user$ : Observable<UserModule[]> = of([]);
   userId: number;
   expensesForm: FormGroup;
-  constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule, public loginService: LoginService) {
+  timePeriod: any;
+  constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule, public loginService: LoginService, public alertService: AlertService) {
     this.expenses$ = this.groupService.getExpensesByGroupId(parseInt(localStorage.getItem("groupId")));
     this.user$ = this.groupService.getUsersByGroup(parseInt(localStorage.getItem("groupId")));
   }
 
   getUserId(expensesForm: NgForm): void {
     this.userId = expensesForm.value.user;
+    console.warn(this.userId);
+  }
+
+  delete(expenseId: number): void {
+    this.groupService.deleteExpensesById(expenseId);
   }
 
   back(): void {
@@ -41,7 +48,11 @@ export class ExpensesViewComponent implements OnInit {
 
     dialogConfig.autoFocus = true;
 
-    this.dialog.open(NewExpensesViewComponent, dialogConfig);
+    this.dialog.open(NewExpensesViewComponent, dialogConfig).beforeClosed().subscribe(result => {
+      if (result == true) {
+        window.location.reload();
+      }
+    });
   }
 
   openPeriod(): void {
@@ -49,7 +60,9 @@ export class ExpensesViewComponent implements OnInit {
 
     dialogConfig.autoFocus = true;
 
-    this.dialog.open(PeriodViewComponent, dialogConfig);
+    this.dialog.open(PeriodViewComponent, dialogConfig).beforeClosed().subscribe(result => {
+      this.timePeriod = result;
+    })
   }
 
   download(): void {

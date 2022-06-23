@@ -9,6 +9,7 @@ import { UpdatePasswordModule } from 'src/app/model/update-password/update-passw
 import { FaqModule } from 'src/app/model/faq/faq.module';
 import { AskFaqModule } from 'src/app/model/ask-faq/ask-faq.module';
 import { UserProfileModule } from 'src/app/model/user-profile/user-profile.module';
+import { ExpensesModule } from 'src/app/model/expenses/expenses.module';
 
 @Injectable({
   providedIn: 'root'
@@ -63,5 +64,9 @@ export class UserService {
 
   postQuestion(user: AskFaqModule) {
     return this.http.post<AskFaqModule>('http://localhost:4000/api/v1/faq/create', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
+  getExpensesByUserId(userId: number) {
+    return this.http.get<ExpensesModule[]>(`http://localhost:4000/api/v1/expenses/user/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 }

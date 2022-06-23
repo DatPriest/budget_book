@@ -2,9 +2,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { ExpensesModule } from 'src/app/model/expenses/expenses.module';
 
 @Pipe({
-  name: 'expensesFilter'
+  name: 'expensesProfileFilter'
 })
-export class ExpensesFilterPipe implements PipeTransform {
+export class ExpensesProfileFilterPipe implements PipeTransform {
 
   transform(expenses: ExpensesModule[], searchTerm: string): ExpensesModule[] {
     if (!expenses || !searchTerm) {
@@ -18,4 +18,5 @@ export class ExpensesFilterPipe implements PipeTransform {
       return expenses.filter(expenses => expenses.description.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
     }
   }
+
 }
