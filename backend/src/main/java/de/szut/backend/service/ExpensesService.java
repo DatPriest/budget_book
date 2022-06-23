@@ -1,26 +1,28 @@
 package de.szut.backend.service;
 
 import de.szut.backend.model.Expenses.Expense;
+import de.szut.backend.model.History.HistoryActionToProcess;
 import de.szut.backend.repository.ExpensesRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Service
 public class ExpensesService {
     private ExpensesRepository ex_Service;
+    private HistoryLogService logService;
 
-    public ExpensesService(ExpensesRepository ex_Service){
+    public ExpensesService(ExpensesRepository ex_Service, HistoryLogService logService){
         this.ex_Service = ex_Service;
+        this.logService = logService;
     }
 
     public Expense createExpense(Expense expenseToCreate){
-        var inDB = ex_Service.findExpenseByGroupIdAndCategoryIdAndUserId(expenseToCreate.getGroupId(), expenseToCreate.getCategoryId(), expenseToCreate.getUserId());
-        if(inDB != null){
-            return inDB;
-        }
-        else
-            return this.ex_Service.save(expenseToCreate);
+        expenseToCreate = changeDescription(expenseToCreate);
+        log("Expense created", "", expenseToCreate.getGroupId());
+        return this.ex_Service.save(expenseToCreate);
     }
 
     public List<Expense> getAllExpensesByGroupId(long groupId){
@@ -41,5 +43,22 @@ public class ExpensesService {
 
     public void deleteExpenseById(long expenseId){
         this.ex_Service.deleteById(expenseId);
+    }
+
+    //Beispiel Implementierung für die Erstellung eines Log-Eintrags
+    private void log (String action, String addition, long groupId){
+        HistoryActionToProcess actionToProcess = new HistoryActionToProcess();
+        actionToProcess.setAction(action);
+        actionToProcess.setAdditionalInformation(addition);
+        actionToProcess.setGroupId(groupId);
+        logService.createLogEntry(actionToProcess);
+    }
+
+    private Expense changeDescription(Expense toChange){
+        if(ex_Service.existsExpenseByCategoryIdAndAmountAndUserIdAndGroupIdAndDescription(toChange.getCategoryId(), toChange.getAmount(), toChange.getUserId(), toChange.getGroupId(), toChange.getDescription())){
+            toChange.setDescription(toChange.getDescription() + " ");
+            return changeDescription(toChange);
+        }
+        else return toChange;
     }
 }

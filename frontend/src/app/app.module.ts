@@ -18,6 +18,7 @@ import { NewPasswordViewComponent } from './component/new-password-view/new-pass
 import { MainViewComponent } from './component/main-view/main-view.component';
 import { GroupViewComponent } from './component/group-view/group-view.component';
 import { ExpensesViewComponent } from './component/expenses-view/expenses-view.component';
+import { ExpensesProfileViewComponent } from './component/expenses-profile-view/expenses-profile-view.component';
 import { NewExpensesViewComponent } from './component/new-expenses-view/new-expenses-view.component'
 import { HistoryViewComponent } from './component/history-view/history-view.component';
 import { CreateGroupViewComponent } from './component/create-group-view/create-group-view.component';
@@ -42,6 +43,7 @@ import { PageNotFoundViewComponent } from './component/page-not-found-view/page-
 
 import { HistoryFilterPipe } from './component/history-view/history-filter.pipe';
 import { ExpensesFilterPipe } from './component/expenses-view/expenses-filter.pipe';
+import { ExpensesProfileFilterPipe } from './component/expenses-profile-view/expenses-profile-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -74,7 +76,9 @@ import { ExpensesFilterPipe } from './component/expenses-view/expenses-filter.pi
     PeriodViewComponent,
     HistoryFilterPipe,
     ExpensesFilterPipe,
-    PageNotFoundViewComponent
+    PageNotFoundViewComponent,
+    ExpensesProfileViewComponent,
+    ExpensesProfileFilterPipe
   ],
   imports: [
     BrowserAnimationsModule,
@@ -109,6 +113,7 @@ import { ExpensesFilterPipe } from './component/expenses-view/expenses-filter.pi
       {path: 'profile', component: ProfileViewComponent},
       {path: 'profile/edit', component: EditProfileViewComponent},
       {path: 'profile/edit-passwort', component: EditPasswordViewComponent},
+      {path: 'profile/expenses', component: ExpensesProfileViewComponent},
 
       // Group
       {path: 'group', component: GroupViewComponent},

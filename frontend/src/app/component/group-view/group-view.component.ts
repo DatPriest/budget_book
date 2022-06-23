@@ -76,7 +76,11 @@ export class GroupViewComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.width = "400px";
 
-    this.dialog.open(RemoveMemberViewComponent, dialogConfig)
+    this.dialog.open(RemoveMemberViewComponent, dialogConfig).beforeClosed().subscribe(result => {
+      if (result == true) {
+        window.location.reload();
+      }
+    })
   }
 
   ngOnInit(): void {

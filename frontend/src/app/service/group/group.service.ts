@@ -7,19 +7,21 @@ import { HistoryModule } from 'src/app/model/history/history.module';
 import { GroupInviteModule } from 'src/app/model/group-invite/group-invite.module';
 import { ExpensesModule } from 'src/app/model/expenses/expenses.module';
 import { CategoryModule } from 'src/app/model/category/category.module';
-import { Observable } from 'rxjs';
+import { catchError, Observable } from 'rxjs';
 import { EditGroupModule } from 'src/app/model/edit-group/edit-group.module';
 import {GroupList} from "../../model/group/GroupList";
 import { NewCategoryModule } from 'src/app/model/new-category/new-category.module';
 import { JoinGroupModule } from 'src/app/model/join-group/join-group.module';
 import {GetGroupModel} from "../../model/group/GetGroupModel";
+import { AlertService } from '../alert/alert.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GroupService {
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient, public alertService: AlertService, public translate: TranslateService) { }
 
   getGroupsByUser(userId: number): Observable<GroupList> {
     return this.http.get<GroupList>(`http://localhost:4000/api/v1/groups/getGroups/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
@@ -49,6 +51,13 @@ export class GroupService {
     return this.http.post<NewExpensesModule>('http://localhost:4000/api/v1/expenses/expense', JSON.stringify(newExpenses), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
+  deleteExpensesById(expenseId: number) {
+    return this.http.delete(`http://localhost:4000/api/v1/expenses/expense/${expenseId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")
+    }).subscribe(
+      err => window.location.reload(),
+      () => window.location.reload());
+  }
+
   getInviteCode(groupId: number) : Observable<GroupInviteModule> {
     return this.http.get<GroupInviteModule>(`http://localhost:4000/api/v1/groups/create/inviteCode/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
@@ -62,7 +71,7 @@ export class GroupService {
   }
 
   deleteUser(userId: number, groupId: number) {
-    return this.http.delete(`http://localhost:4000/api/v1/groups/removeUser/user/${userId}&group/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.post(`http://localhost:4000/api/v1/groups/removeUser/user/${userId}&group/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   getHistory(groupId: number) {
@@ -80,4 +89,12 @@ export class GroupService {
   deleteCategoryById(categoryId: number) {
     return this.http.delete(`http://localhost:4000/api/v1/categories/category/${categoryId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
+
 }
+
+/*
+.subscribe(
+    res => this.alertService.successfulAlert(this.translate.instant('alert.notDelete.header'), this.translate.instant('alert.notDelete.message'), "error", 2500),
+    err => console.log('LOL' + err), //ohne Ausgabe & Mitt
+    () => console.log('TEST'));
+*/

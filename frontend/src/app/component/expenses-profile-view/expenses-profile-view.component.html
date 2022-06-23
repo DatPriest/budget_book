@@ -9,7 +9,6 @@
     <div class="container">
       <div class="screen">
         <div class="button_add">
-          <button type="button" (click)="add()"><span class="material-icons">add</span></button>
           <button type="button" (click)="openPeriod()"><span class="material-icons">schedule</span></button>
         </div>
         <div class="button_download">
@@ -23,27 +22,6 @@
               </th>
               <th></th>
               <th>
-                <form (ngSubmit)="getUserId(expensesForm)" #expensesForm="ngForm">
-                  <div class="row">
-                    <div class="column_search">
-                      <label>
-                        <select name="user" form="formular1" class="sicherheit_menu" ngModel>
-                          <option></option>
-                          <ng-container *ngFor="let u of user$ | async">
-                            <option value="{{u.userId}}">{{u.firstName}} {{u.lastName}}</option>
-                          </ng-container>
-                        </select>
-                      </label>
-                    </div>
-                    <div class="column_button button_search">
-                      <button type="submit" class="button back_icon" id="register">
-                        <span class="button_text material-icons">search</span>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </th>
-              <th>
                 <input id="Search" type="text" name="search" class="input_field" [(ngModel)]="searchTerm" placeholder="{{'expenses.search'|translate}}">
               </th>
             </thead>
@@ -53,11 +31,6 @@
                   <td class="expenses_line_subject">{{e.description}}</td>
                   <td class="expenses_line">{{e.amount | number: '1.2-2'}}</td>
                   <td class="expenses_line">{{e.date_Created | date: 'dd.MM.yyyy'}}</td>
-                  <td class="expenses_line">
-                    <button type="button" class="button back_icon" (click)="delete(e.expenseId)">
-                      <span class="button_text material-icons">delete</span>
-                    </button>
-                  </td>
                 </tr>
               </ng-container>
             </tbody>

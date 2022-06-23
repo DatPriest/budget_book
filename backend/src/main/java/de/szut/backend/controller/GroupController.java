@@ -2,6 +2,7 @@ package de.szut.backend.controller;
 
 import de.szut.backend.dto.*;
 import de.szut.backend.exceptions.GetGroupByIdException;
+import de.szut.backend.exceptions.UserHasTooManyGroupsException;
 import de.szut.backend.model.Group;
 import de.szut.backend.model.GroupXUser;
 import de.szut.backend.model.User;
@@ -76,8 +77,12 @@ public class GroupController {
     }
 
     @GetMapping(path = "/getUsers/{groupId}", produces = "application/json")
-    public ResponseEntity<ArrayList<User>> getUsersToGroup(@PathVariable long groupId) throws TypeNotPresentException {
-        return new ResponseEntity<>(service.getUsersToGroup(groupId), HttpStatus.OK);
+    public ResponseEntity<ArrayList<UserDto>> getUsersToGroup(@PathVariable long groupId) throws TypeNotPresentException {
+        var dto = service.getUsersToGroup(groupId);
+        if (dto == null) {
+            return new ResponseEntity("User could not loaded", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return new ResponseEntity<>(dto, HttpStatus.OK);
     }
 
     @PutMapping(path = "/update", produces = "application/json")
