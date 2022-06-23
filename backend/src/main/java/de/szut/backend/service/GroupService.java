@@ -125,13 +125,14 @@ public class GroupService extends BaseService {
         return null;
     }
 
-    public ArrayList<User> getUsersToGroup(Long id) {
+    public ArrayList<UserDto> getUsersToGroup(Long id) {
         logger.info(id);
-        ArrayList<User> users = new ArrayList<>();
+        ArrayList<UserDto> users = new ArrayList<>();
         var userIds = groupXUserRepository.findAllByGroupId(id);
-        for (var userId: userIds) {
-            logger.info(userId);
-            users.add(userService.getUserById(userId.userId));
+        for (GroupXUser groupXUser: userIds) {
+            UserDto dto = mapper.mapGroupXUserToUserDto(groupXUser.userId);
+            users.add(dto);
+            eeas
         }
         return users;
     }

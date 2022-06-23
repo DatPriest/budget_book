@@ -76,7 +76,7 @@ public class GroupController {
     }
 
     @GetMapping(path = "/getUsers/{groupId}", produces = "application/json")
-    public ResponseEntity<ArrayList<User>> getUsersToGroup(@PathVariable long groupId) throws TypeNotPresentException {
+    public ResponseEntity<ArrayList<UserDto>> getUsersToGroup(@PathVariable long groupId) throws TypeNotPresentException {
         return new ResponseEntity<>(service.getUsersToGroup(groupId), HttpStatus.OK);
     }
 
