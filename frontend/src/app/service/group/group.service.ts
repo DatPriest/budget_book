@@ -50,7 +50,7 @@ export class GroupService {
   }
 
   deleteExpensesById(expenseId: number) {
-    return this.http.delete(`http://localhost:4000/api/v1/expenses/${expenseId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.delete(`http://localhost:4000/api/v1/expenses/expense/${expenseId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   getInviteCode(groupId: number) : Observable<GroupInviteModule> {
