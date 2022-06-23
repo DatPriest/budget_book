@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+}
+
+.header_ausgaben {
+  position: absolute;
+  width: 98%;
+  top: 3%;
+  text-align: center;
+  color: black;
+  font-size: 300%;
+  font-family: Raleway, sans-serif;
+}
+
+.pages_menu {
+  width: 100%;
+  text-align: right;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+}
+
+.screen {
+  background: linear-gradient(90deg, #5D54A4, #7C78B8);
+  position: absolute;
+  top: 10%;
+  height: 85%;
+  width: 90%;
+}
+
+.screen_content {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+}
+
+.screen_expenses {
+  position: absolute;
+  top: 5%;
+  height: 90%;
+  width: 50%;
+  right: 25%;
+  font-size: 20%;
+  box-shadow: 0px 0px 24px #5C5696;
+  overflow-y: scroll;
+}
+
+.expenses_table {
+  font-size: x-large;
+  border-collapse: collapse;
+  border-width: thin 0 0 thin;
+  margin: 0 0 1em;
+  width: 100%;
+  max-width: 100%;
+  height: 90%;
+  top: 10%;
+}
+
+.expenses_table_header {
+  border: thin solid black;
+  background: white;
+  font-weight: 700;
+  text-align: center;
+}
+
+.expenses_table_line {
+  font-weight: 400;
+  text-align: center;
+}
+
+.expenses_line_subject {
+  text-align: left;
+  padding: .4em .6em;
+  border: thin solid black;
+  background: white;
+}
+
+.expenses_line {
+  padding: .4em .6em;
+  border: thin solid black;
+  background: white;
+}
+
+.button_add {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+.button_edit {
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.button_delete {
+  text-align: right;
+  font-size: 18px;
+}
+
+.input_field {
+  padding: 10px 0px;
+  position: relative;
+}
+
+.input_field:active,
+.input_field:focus,
+.input_field:hover {
+  outline: none;
+  border-bottom-color: #6A679E;
+}
+
+.button_back {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
+}
+
+.button_download {
+  position: absolute;
+  top: 450px;
+  left: 16px;
+  font-size: 18px;
+}
+
+.back_icon {
+  background: none;
+  padding: 5% 10%;
+  border-radius: 0px;
+  border: none;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  width: 0%;
+  color: rgb(0, 0, 0);
+  box-shadow: 0px 2px 2px transparent;
+  cursor: pointer;
+  transition: .0s;
+}
+
+.column_search {
+  float: left;
+  width: 75%;
+}
+
+.column_button {
+  float: right;
+  width: 25%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.button_search {
+  font-size: 18px;
+}
