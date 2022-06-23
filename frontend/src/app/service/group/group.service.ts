@@ -71,7 +71,7 @@ export class GroupService {
   }
 
   deleteUser(userId: number, groupId: number) {
-    return this.http.delete(`http://localhost:4000/api/v1/groups/removeUser/user/${userId}&group/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.post(`http://localhost:4000/api/v1/groups/removeUser/user/${userId}&group/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   getHistory(groupId: number) {

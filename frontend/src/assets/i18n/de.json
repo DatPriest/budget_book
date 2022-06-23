@@ -331,6 +331,10 @@
       "header": "Oops",
       "message": "Die Kategorie wird noch verwendet!"
     },
+    "removeMember":{
+      "header": "User wurde erfolgreich gelöscht!",
+      "message": ""
+    },
     "cancel": "abbrechen"
   },
   "error": {
