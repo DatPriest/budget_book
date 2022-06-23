@@ -145,3 +145,23 @@
   cursor: pointer;
   transition: .0s;
 }
+
+.column_search {
+  float: left;
+  width: 75%;
+}
+
+.column_button {
+  float: right;
+  width: 25%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.button_search {
+  font-size: 18px;
+}
