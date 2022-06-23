@@ -31,7 +31,7 @@ export class NewExpensesViewComponent implements OnInit {
   }
 
   closeExpenses(): void {
-    this.dialogRef.close();
+    this.dialogRef.close(true);
   }
 
   ngOnInit(): void {

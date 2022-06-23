@@ -327,6 +327,10 @@
       "header": "Inaktivität",
       "message": "Automatische Abmeldung nach 10 Minuten."
     },
+    "notDelete": {
+      "header": "Oops",
+      "message": "Die Kategorie wird noch verwendet!"
+    },
     "cancel": "abbrechen"
   },
   "error": {

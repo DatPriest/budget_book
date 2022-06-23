@@ -34,6 +34,10 @@ export class ProfileViewComponent implements OnInit {
     this.alertService.deleteAccountAlert();
   }
 
+  moveToExpenses(): void {
+    this.router.navigate(['/profile/expenses']);
+  }
+
   joinGroupDialog(): void {
     const dialogConfig = new MatDialogConfig();
 
