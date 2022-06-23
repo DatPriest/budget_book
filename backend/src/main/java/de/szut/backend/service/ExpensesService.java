@@ -5,6 +5,8 @@ import de.szut.backend.model.History.HistoryActionToProcess;
 import de.szut.backend.repository.ExpensesRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Service
@@ -18,13 +20,11 @@ public class ExpensesService {
     }
 
     public Expense createExpense(Expense expenseToCreate){
-        var inDB = ex_Service.findExpenseByGroupIdAndCategoryIdAndUserIdAndAmount(expenseToCreate.getGroupId(), expenseToCreate.getCategoryId(), expenseToCreate.getUserId(), expenseToCreate.getAmount());
-        if(inDB != null){
-            return inDB;
+        if(ex_Service.existsExpenseByCategoryIdAndAmountAndUserIdAndGroupIdAndDescription(expenseToCreate.getCategoryId(), expenseToCreate.getAmount(), expenseToCreate.getUserId(), expenseToCreate.getGroupId(), expenseToCreate.getDescription())){
+            expenseToCreate.setDescription(expenseToCreate.getDescription() + " ");
         }
-        else
-            log("Expense created", "", expenseToCreate.getGroupId());
-            return this.ex_Service.save(expenseToCreate);
+        log("Expense created", "", expenseToCreate.getGroupId());
+        return this.ex_Service.save(expenseToCreate);
     }
 
     public List<Expense> getAllExpensesByGroupId(long groupId){
