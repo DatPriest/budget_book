@@ -6,6 +6,7 @@ import de.szut.backend.exceptions.GetGroupByIdException;
 import de.szut.backend.mapper.GroupMapper;
 import de.szut.backend.model.Group;
 import de.szut.backend.model.GroupXUser;
+import de.szut.backend.model.History.HistoryActionToProcess;
 import de.szut.backend.model.Image;
 import de.szut.backend.model.User;
 import de.szut.backend.repository.GroupRepository;
@@ -26,17 +27,20 @@ public class GroupService extends BaseService {
     private final ImageRepository imageRepository;
     private final ImageService imageService;
     private final UserService userService;
+    private final HistoryLogService logService;
     public GroupService(GroupMapper _mapper, GroupRepository _repo,
                         GroupXUserRepository _groupXUserRepository,
                         UserService _userService,
                         ImageRepository _imageRepository,
-                        ImageService _imageService) {
+                        ImageService _imageService,
+                        HistoryLogService logService) {
         this.mapper = _mapper;
         this.repo = _repo;
         this.groupXUserRepository = _groupXUserRepository;
         this.userService = _userService;
         this.imageRepository = _imageRepository;
         this.imageService = _imageService;
+        this.logService = logService;
     }
 
     public Group createGroup(GroupCreateDto dto, long userId) throws Exception {
@@ -73,6 +77,7 @@ public class GroupService extends BaseService {
                     return true;
                 } else {
                     groupX.userId = userId;
+                    log("User added to Group", "", groupId);
                     groupXUserRepository.save(groupX);
                     return true;
                 }
@@ -85,6 +90,7 @@ public class GroupService extends BaseService {
     }
 
     public GroupDto updateGroup(GroupUpdateDto dto) {
+        log("Group Attribute Changed", "", dto.getGroupId());
         Group group = mapper.mapGroupUpdateDtoToGroup(dto);
         Group persistentGroup = repo.getById(dto.groupId);
         if (imageService.updatePicture(persistentGroup.imageId, dto.image)) {
@@ -117,6 +123,7 @@ public class GroupService extends BaseService {
         var groupUser = mapper.mapUserToGroup(dto);
         if (!groupXUserRepository.existsGroupXUserByUserIdAndGroupId(groupUser.userId, groupUser.groupId)) {
             if (repo.existsById(dto.groupId)) {
+                log("User added to Group", "", groupUser.groupId);
                 return groupXUserRepository.save(groupUser);
             } else {
                 throw new Exception("GroupId was not found");
@@ -194,5 +201,13 @@ public class GroupService extends BaseService {
             return dto;
         }
         return null;
+    }
+
+    private void log (String action, String addition, long groupId){
+        HistoryActionToProcess actionToProcess = new HistoryActionToProcess();
+        actionToProcess.setAction(action);
+        actionToProcess.setAdditionalInformation(addition);
+        actionToProcess.setGroupId(groupId);
+        logService.createLogEntry(actionToProcess);
     }
 }

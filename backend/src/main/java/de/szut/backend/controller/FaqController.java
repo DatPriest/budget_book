@@ -46,10 +46,10 @@ public class FaqController {
      * @return
      */
     @GetMapping(path = "/getAll", produces = "application/json")
-    public String GetAllFaqs() {
+    public ResponseEntity<String> GetAllFaqs() {
         List<OutputFaqDto> faqList = this.service.getAllOutputFaq();
         Gson gson = new Gson();
-        return gson.toJson(faqList);
+        return new ResponseEntity<>(gson.toJson(faqList), HttpStatus.OK);
     }
 
     /**
@@ -57,10 +57,10 @@ public class FaqController {
      * @return
      */
     @GetMapping(path = "/getAllWithAnswers", produces = "application/json")
-    public String GetAllFaqsWithAnswers() {
+    public ResponseEntity<String> GetAllFaqsWithAnswers() {
         List<OutputFaqDto> faqList = this.service.getAllOutputFaqWithAnswers();
         Gson gson = new Gson();
-        return gson.toJson(faqList);
+        return new ResponseEntity<>(gson.toJson(faqList), HttpStatus.OK);
     }
 
     /**
@@ -70,9 +70,9 @@ public class FaqController {
      * @throws TypeNotPresentException
      */
     @GetMapping(path = "/getAllFromUser/{userId}", produces = "application/json")
-    public String GetUsersToGroup(@PathVariable long userId) throws TypeNotPresentException {
+    public ResponseEntity<String> GetAllFAQFromUserId(@PathVariable long userId) throws TypeNotPresentException {
         List<OutputFaqDto> faqList = this.service.getAllFaqFromUser(userId);
         Gson gson = new Gson();
-        return gson.toJson(faqList);
+        return new ResponseEntity<>(gson.toJson(faqList), HttpStatus.OK);
     }
 }
