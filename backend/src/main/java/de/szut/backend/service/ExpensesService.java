@@ -18,7 +18,7 @@ public class ExpensesService {
     }
 
     public Expense createExpense(Expense expenseToCreate){
-        var inDB = ex_Service.findExpenseByGroupIdAndCategoryIdAndUserId(expenseToCreate.getGroupId(), expenseToCreate.getCategoryId(), expenseToCreate.getUserId());
+        var inDB = ex_Service.findExpenseByGroupIdAndCategoryIdAndUserIdAndAmount(expenseToCreate.getGroupId(), expenseToCreate.getCategoryId(), expenseToCreate.getUserId(), expenseToCreate.getAmount());
         if(inDB != null){
             return inDB;
         }
