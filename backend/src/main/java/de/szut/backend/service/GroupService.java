@@ -182,6 +182,9 @@ public class GroupService extends BaseService {
         }
         if (user != null && group != null) {
             GroupXUser temp = groupXUserRepository.findByGroupIdAndUserId(group.id, user.id);
+            if (temp == null) {
+                return null;
+            }
             groupXUserRepository.delete(temp);
             DeleteUserOutOfGroupDto dto = new DeleteUserOutOfGroupDto();
             dto.userId = temp.userId;
