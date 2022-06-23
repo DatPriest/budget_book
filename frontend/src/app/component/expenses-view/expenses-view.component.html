@@ -22,13 +22,25 @@
                 <p>{{'expenses.expenses'|translate}}</p>
               </th>
               <th>
-                <label>
-                  <select>
-                    <ng-container *ngFor="let u of user$ | async">
-                      <option [(ngModel)]="searchTerm" value="{{u.userId}}">{{u.firstName}} {{u.lastName}}</option>
-                    </ng-container>
-                  </select>
-                </label>
+                <form (ngSubmit)="getUserId(expensesForm)" #expensesForm="ngForm">
+                  <div class="row">
+                    <div class="column_search">
+                      <label>
+                        <select name="securityQuestion" form="formular1" class="sicherheit_menu" ngModel>
+                          <option></option>
+                          <ng-container *ngFor="let u of user$ | async">
+                            <option value="{{u.userId}}">{{u.firstName}} {{u.lastName}}</option>
+                          </ng-container>
+                        </select>
+                      </label>
+                    </div>
+                    <div class="column_button button_search">
+                      <button type="submit" class="button back_icon" id="register">
+                        <span class="button_text material-icons">search</span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
               </th>
               <th>
                 <input id="Search" type="text" name="search" class="input_field" [(ngModel)]="searchTerm" placeholder="{{'expenses.search'|translate}}">
