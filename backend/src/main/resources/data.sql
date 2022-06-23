@@ -1,5 +1,11 @@
 INSERT INTO budget_db.public.security_questions (id, key)
 VALUES (1, 'dogName');
+INSERT INTO public.security_questions (id, key) VALUES (2, 'bornCity');
+INSERT INTO public.security_questions (id, key) VALUES (3, 'firstCar');
+INSERT INTO public.security_questions (id, key) VALUES (4, 'firstConcert');
+INSERT INTO public.security_questions (id, key) VALUES (5, 'meetParents');
+INSERT INTO public.security_questions (id, key) VALUES (6, 'secondName');
+
 
 INSERT INTO budget_db.public.images (id, image_string)
 VALUES (1,
