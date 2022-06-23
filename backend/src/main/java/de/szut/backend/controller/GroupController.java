@@ -76,8 +76,12 @@ public class GroupController {
     }
 
     @GetMapping(path = "/getUsers/{groupId}", produces = "application/json")
-    public ResponseEntity<ArrayList<User>> getUsersToGroup(@PathVariable long groupId) throws TypeNotPresentException {
-        return new ResponseEntity<>(service.getUsersToGroup(groupId), HttpStatus.OK);
+    public ResponseEntity<ArrayList<UserDto>> getUsersToGroup(@PathVariable long groupId) throws TypeNotPresentException {
+        var dto = service.getUsersToGroup(groupId);
+        if (dto == null) {
+            return new ResponseEntity("User could not loaded", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return new ResponseEntity<>(dto, HttpStatus.OK);
     }
 
     @PutMapping(path = "/update", produces = "application/json")
