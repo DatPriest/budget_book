@@ -62,6 +62,15 @@ public class VerificationController {
         return new ResponseEntity<>(service.updatePassword(dto), HttpStatus.OK);
     }
 
+    @PostMapping(path = "userByEmail/{email}")
+    public ResponseEntity<Long> getUserIdByEmail(@PathVariable String email) {
+        long userId = this.service.getUserIdByEmail(email);
+        if (userId != -1) {
+            return new ResponseEntity<>(userId, HttpStatus.OK);
+        }
+        return new ResponseEntity("User could not find by email.", HttpStatus.BAD_REQUEST);
+    }
+
     @CrossOrigin
     @PostMapping(path = "/register", consumes = "application/json", produces = "application/json")
     public ResponseEntity<CreateUserDto> register(@RequestBody RegisterDto dto) {
