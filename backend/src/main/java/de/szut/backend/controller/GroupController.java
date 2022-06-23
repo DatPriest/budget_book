@@ -2,6 +2,7 @@ package de.szut.backend.controller;
 
 import de.szut.backend.dto.*;
 import de.szut.backend.exceptions.GetGroupByIdException;
+import de.szut.backend.exceptions.UserHasTooManyGroupsException;
 import de.szut.backend.model.Group;
 import de.szut.backend.model.GroupXUser;
 import de.szut.backend.model.User;

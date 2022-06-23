@@ -3,6 +3,7 @@ package de.szut.backend.service;
 import de.szut.backend.dto.*;
 import de.szut.backend.exceptions.CreateGroupException;
 import de.szut.backend.exceptions.GetGroupByIdException;
+import de.szut.backend.exceptions.UserHasTooManyGroupsException;
 import de.szut.backend.mapper.GroupMapper;
 import de.szut.backend.model.Group;
 import de.szut.backend.model.GroupXUser;
@@ -120,6 +121,10 @@ public class GroupService extends BaseService {
         return null;
     }
     public GroupXUser addUserToGroup(UserToGroupDto dto) throws Exception {
+        if(getGroups(dto.getUserId()).groups.size() == 6){
+            throw new UserHasTooManyGroupsException();
+        }
+
         var groupUser = mapper.mapUserToGroup(dto);
         if (!groupXUserRepository.existsGroupXUserByUserIdAndGroupId(groupUser.userId, groupUser.groupId)) {
             if (repo.existsById(dto.groupId)) {
