@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from "@angular/router";
 import { TranslateService } from '@ngx-translate/core';
 import { Observable, of } from 'rxjs';
@@ -8,6 +9,7 @@ import { SecurityQuestionModule } from 'src/app/model/security-question/security
 import { AlertService } from 'src/app/service/alert/alert.service';
 import { HashingService } from 'src/app/service/hashing/hashing.service';
 import { UserService } from 'src/app/service/user/user.service';
+import { EmailViewComponent } from '../email-view/email-view.component';
 
 @Component({
   selector: 'app-new-password-view',
@@ -21,8 +23,9 @@ export class NewPasswordViewComponent implements OnInit {
   showPasswordReplay: boolean = false;
   hash: string;
   securityQuestion$ : Observable<SecurityQuestionModule[]> = of([]);
-  constructor(public router: Router, public formBuilder: FormBuilder, public userService: UserService, public hashService: HashingService, public alertService: AlertService, public translate: TranslateService) {
+  constructor(public router: Router, public formBuilder: FormBuilder, public userService: UserService, public hashService: HashingService, public alertService: AlertService, public translate: TranslateService, public dialog: MatDialog) {
     this.securityQuestion$ = this.userService.getSecurityQuestion();
+    //this.getEmailDialog();
   }
 
   togglePassword(): void {
@@ -33,8 +36,12 @@ export class NewPasswordViewComponent implements OnInit {
     this.showPasswordReplay = !this.showPasswordReplay;
   }
 
-  getEmail($event: Event) {
-    //if ($event )
+  getEmailDialog(): void {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(EmailViewComponent, dialogConfig);
   }
 
   savePassword(newPasswordForm: NgForm): void {
@@ -63,13 +70,5 @@ export class NewPasswordViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.newPasswordForm = this.formBuilder.group({
-      email: [''],
-      password_1: [''],
-      password_2: [''],
-      securityQuestion: [''],
-      securityAnswer: [''],
-      hash: ['']
-    });
   }
 }
