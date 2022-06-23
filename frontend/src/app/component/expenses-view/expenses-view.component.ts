@@ -33,7 +33,9 @@ export class ExpensesViewComponent implements OnInit {
   }
 
   delete(expenseId: number): void {
-    this.groupService.deleteExpensesById(expenseId);
+    this.groupService.deleteExpensesById(expenseId).subscribe(data => {
+      console.warn(data);
+    });
   }
 
   back(): void {
