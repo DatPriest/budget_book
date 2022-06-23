@@ -33,6 +33,10 @@ export class NewPasswordViewComponent implements OnInit {
     this.showPasswordReplay = !this.showPasswordReplay;
   }
 
+  getEmail($event: Event) {
+    //if ($event )
+  }
+
   savePassword(newPasswordForm: NgForm): void {
     if (newPasswordForm.value.password_1 == '' && newPasswordForm.value.password_2 == '') {
       this.alertService.alert(this.translate.instant('alert.newPassword.emptyPassword.header'),  this.translate.instant('alert.newPassword.emptyPassword.message'),  "error");
