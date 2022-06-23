@@ -69,7 +69,7 @@ public class GroupController {
     public ResponseEntity<DeleteUserOutOfGroupDto> removeUserFromGroup(@PathVariable Long userId, @PathVariable Long groupId) {
         var dto = this.service.removeUserFromGroup(userId, groupId);
         if (dto == null) {
-            return new ResponseEntity("User could not removed out of the group", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity("User could not removed out of the group or has been already removed", HttpStatus.BAD_REQUEST);
         }
 
         return new ResponseEntity<>(dto, HttpStatus.OK);
