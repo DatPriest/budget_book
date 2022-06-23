@@ -27,7 +27,7 @@
                   <div class="row">
                     <div class="column_search">
                       <label>
-                        <select name="securityQuestion" form="formular1" class="sicherheit_menu" ngModel>
+                        <select name="user" form="formular1" class="sicherheit_menu" ngModel>
                           <option></option>
                           <ng-container *ngFor="let u of user$ | async">
                             <option value="{{u.userId}}">{{u.firstName}} {{u.lastName}}</option>

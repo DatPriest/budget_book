@@ -21,7 +21,7 @@ export class PeriodViewComponent implements OnInit {
   }
 
   editperiod(periodForm: NgForm): void {
-    
+    this.dialogRef.close(periodForm.value.period);
   }
 
   closePopUp(): void {
@@ -30,9 +30,6 @@ export class PeriodViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginService.checkLogIn();
-    this.periodForm = this.formBuilder.group({
-      period: ['']
-    });
   }
 
 }

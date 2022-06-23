@@ -24,6 +24,7 @@ export class ExpensesViewComponent implements OnInit {
   user$ : Observable<UserModule[]> = of([]);
   userId: number;
   expensesForm: FormGroup;
+  timePeriod: any;
   constructor(public router: Router, public dialog: MatDialog, public groupService: GroupService, public app: AppModule, public loginService: LoginService, public alertService: AlertService) {
     this.expenses$ = this.groupService.getExpensesByGroupId(parseInt(localStorage.getItem("groupId")));
     this.user$ = this.groupService.getUsersByGroup(parseInt(localStorage.getItem("groupId")));
@@ -31,16 +32,11 @@ export class ExpensesViewComponent implements OnInit {
 
   getUserId(expensesForm: NgForm): void {
     this.userId = expensesForm.value.user;
+    console.warn(this.userId);
   }
 
   delete(expenseId: number): void {
-    this.groupService.deleteExpensesById(expenseId).subscribe(data => {
-      this.reloadCurrentPage();
-    })
-  }
-
-  private reloadCurrentPage() {
-    window.location.reload();
+    this.groupService.deleteExpensesById(expenseId);
   }
 
   back(): void {
@@ -52,7 +48,11 @@ export class ExpensesViewComponent implements OnInit {
 
     dialogConfig.autoFocus = true;
 
-    this.dialog.open(NewExpensesViewComponent, dialogConfig);
+    this.dialog.open(NewExpensesViewComponent, dialogConfig).beforeClosed().subscribe(result => {
+      if (result == true) {
+        window.location.reload();
+      }
+    });
   }
 
   openPeriod(): void {
@@ -60,7 +60,9 @@ export class ExpensesViewComponent implements OnInit {
 
     dialogConfig.autoFocus = true;
 
-    this.dialog.open(PeriodViewComponent, dialogConfig);
+    this.dialog.open(PeriodViewComponent, dialogConfig).beforeClosed().subscribe(result => {
+      this.timePeriod = result;
+    })
   }
 
   download(): void {

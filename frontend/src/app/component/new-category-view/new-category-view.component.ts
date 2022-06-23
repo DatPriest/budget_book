@@ -28,7 +28,7 @@ export class NewCategoryViewComponent implements OnInit {
   }
 
   closeCategory(): void {
-    this.dialogRef.close();
+    this.dialogRef.close(true);
   }
 
   ngOnInit(): void {
