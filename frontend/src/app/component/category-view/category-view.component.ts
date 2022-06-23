@@ -36,8 +36,11 @@ export class CategoryViewComponent implements OnInit {
     this.groupService.deleteCategoryById(categoryId).subscribe(data =>{
       console.info(data);
     })
+    this.reloadCurrentPage();
   }
-
+  private reloadCurrentPage() {
+    window. location. reload();
+  }
   ngOnInit(): void {
     this.loginService.checkLogIn();
   }
