@@ -52,7 +52,7 @@ export class UserService {
   }
 
   updateUserPassword(user: UpdatePasswordModule) {
-    return this.http.put<UpdatePasswordModule>('http://localhost:4000/api/v1/profile/updatePassword', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.put<UpdatePasswordModule>('http://localhost:4000/api/v1/user/updatePassword', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   deleteProfile(userId: number) {

@@ -1,7 +1,7 @@
 export class UpdatePasswordModule {
   constructor (
     public userId: number,
-    public oldPassword: string,
-    public newPassword: string
+    public oldHash: string,
+    public newHash: string
   ) { }
 }
