@@ -12,9 +12,6 @@
           <button type="button" (click)="add()"><span class="material-icons">add</span></button>
           <button type="button" (click)="openPeriod()"><span class="material-icons">schedule</span></button>
         </div>
-        <div class="button_download">
-          <button type="button" class="back_icon" (click)="download()"><span class="material-icons">file_download</span></button>
-        </div>
         <div class="screen_expenses">
           <table class="expenses_table">
             <thead class="expenses_table_header">
@@ -36,7 +33,7 @@
                       </label>
                     </div>
                     <div class="column_button button_search">
-                      <button type="submit" class="button back_icon" id="register" (click)="reloadList(userId)">
+                      <button type="submit" class="button back_icon" (click)="reloadList(userId)" matTooltip="{{'expenses.tooltip'|translate}}">
                         <span class="button_text material-icons">search</span>
                       </button>
                     </div>

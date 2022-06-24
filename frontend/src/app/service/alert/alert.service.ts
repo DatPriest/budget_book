@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { filter } from 'rxjs';
 import { AppModule } from 'src/app/app.module';
 import swal from 'sweetalert';
 import { UserService } from '../user/user.service';

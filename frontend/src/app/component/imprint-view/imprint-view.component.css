@@ -42,12 +42,11 @@
 }
 
 .screen {
-  /*padding: 5%;*/
   position: absolute;
   top: 15%;
   left: 40%;
   height: 85%;
-  width: 90%;
+  width: 30%;
 }
 
 #imprint {
@@ -85,4 +84,16 @@
   box-shadow: 0px 2px 2px transparent;
   cursor: pointer;
   transition: .0s;
+}
+
+.h1 {
+  width: 50%;
+}
+
+.h2 {
+  width: 50%;
+}
+
+.li{
+  width: 50%;
 }

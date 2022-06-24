@@ -1,11 +1,8 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {SecurityQuestionModule} from "../../model/security-question/security-question.module";
-import {StatisticsModule} from "../../model/statistics/statistics.module";
-import {firstValueFrom, Observable} from "rxjs";
-import {UserModule} from "../../model/user/user.module";
-import {UserService} from "../user/user.service";
-import {ExpensesModule} from "../../model/expenses/expenses.module";
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { firstValueFrom } from "rxjs";
+import { UserModule } from "../../model/user/user.module";
+import { ExpensesModule } from "../../model/expenses/expenses.module";
 
 @Injectable({
   providedIn: 'root'

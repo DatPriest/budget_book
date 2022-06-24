@@ -122,7 +122,8 @@
 		}
 	},
 	"askQuestions": {
-		"template": "Frage stellen"
+		"template": "Frage stellen",
+    "placeholder": "Schreibe hier Deine Frage :)"
 	},
 	"category": {
 		"header": "Kategorien"
@@ -172,7 +173,8 @@
 		"headerExp": "Alle Ausgaben",
 		"purchasing": "Einkauf",
 		"rent": "Miete",
-		"search": "Suche"
+		"search": "Suche",
+    "tooltip": "2x drücken zum suchen!"
 	},
 	"faq": {
 		"ask": "Frage stellen",
@@ -204,7 +206,7 @@
 		"Überschrift 1": "§ 1 Geltungsbereich",
 		"Überschrift 2": "§ 2 Vertragsgegenstand",
 		"Überschrift 3": "§ 3 Pflichten des Kunden",
-		"Überschrift 4": "§ 3 Datenschutz"
+		"Überschrift 4": "§ 4 Datenschutz"
 	},
 	"history": {
 		"header": "Verlauf",

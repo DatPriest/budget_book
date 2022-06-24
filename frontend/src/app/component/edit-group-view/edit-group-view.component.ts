@@ -71,9 +71,5 @@ export class EditGroupViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginService.checkLogIn();
-    this.editGroupForm = this.formBuilder.group({
-      groupname: [''],
-      picture: ['']
-    });
   }
 }

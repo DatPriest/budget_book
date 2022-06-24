@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
+import { FormBuilder, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable, of, Subscriber } from 'rxjs';
+import { Observable, Subscriber } from 'rxjs';
 import { UserProfileModule } from 'src/app/model/user-profile/user-profile.module';
-import { UserModule } from 'src/app/model/user/user.module';
 import { LoginService } from 'src/app/service/login/login.service';
 import { UserService } from 'src/app/service/user/user.service';
 
