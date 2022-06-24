@@ -25,13 +25,16 @@ export class EditGroupViewComponent implements OnInit {
   editGroup(editGroupForm: NgForm): void {
     if (editGroupForm.value.image != '' && editGroupForm.value.groupName != '') {
       const editGroupData = new EditGroupModule(parseInt(localStorage.getItem("groupId")), editGroupForm.value.groupName, this.image);
-      console.warn(editGroupData);
-      this.groupService.editGroup(editGroupData).subscribe(data => {
-        console.error(data);
+      this.groupService.editGroup(editGroupData).subscribe(async data => {
         this.alertService.successfulAlert(this.translate.instant('alert.editGroup.header'),  this.translate.instant('alert.editGroup.message'),  "success", 2500);
-        this.dialogRef.close();
+        await this.delay(1000);
+        this.dialogRef.close(true);
       });
     };
+  }
+
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
   }
 
   closeGroup(): void {
