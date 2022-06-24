@@ -18,7 +18,8 @@
 	"editPassword": {
 		"header": "Passwort ändern",
     "password": "Neues Passwort",
-		"pwretype": "Neues Passwort Wiederholen"
+		"pwretype": "Neues Passwort Wiederholen",
+    "passwordOld": "Altes Passwort"
 	},
 	"editProfile": {
 		"header": "Mein Konto",
@@ -354,7 +355,6 @@
   "emailDialog": {
     "header": "E-Mail angeben!"
   },
-  "passwordOld": "Altes Passwort",
   "editGroup": {
     "header": "Gruppe bearbeiten",
     "grpNameMsg": "Name"

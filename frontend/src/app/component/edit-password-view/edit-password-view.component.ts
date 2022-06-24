@@ -18,8 +18,23 @@ export class EditPasswordViewComponent implements OnInit {
   editPasswordForm: FormGroup;
   hash: string;
   oldPassword: string;
+  showPasswordOld: boolean = false;
+  showPassword: boolean = false;
+  showPasswordReplay: boolean = false;
   constructor(public router: Router, public formBuilder: FormBuilder, public hashService: HashingService, public alertService: AlertService, public userService: UserService, public loginService: LoginService, public translate: TranslateService) {
 
+  }
+
+  togglePasswordOld(): void {
+    this.showPasswordOld = !this.showPasswordOld;
+  }
+
+  togglePassword(): void {
+    this.showPassword = !this.showPassword;
+  }
+
+  togglePasswordReplay(): void {
+    this.showPasswordReplay = !this.showPasswordReplay;
   }
 
   saveNewPassword(editPasswordForm: NgForm): void {
@@ -30,6 +45,7 @@ export class EditPasswordViewComponent implements OnInit {
         this.hash = this.hashService.encrypt(editPasswordForm.value.password_1);
         this.oldPassword = this.hashService.encrypt(editPasswordForm.value.password_old);
         const editPasswordData = new UpdatePasswordModule(parseInt(localStorage.getItem("userId")), this.oldPassword, this.hash);
+        console.log(editPasswordData);
         this.userService.updateUserPassword(editPasswordData).subscribe(data => {
           this.alertService.successfulAlert(this.translate.instant('alert.editPassword.header'),  this.translate.instant('alert.editPassword.message'),  "success", 2500);
           this.router.navigate(['/profile']);
