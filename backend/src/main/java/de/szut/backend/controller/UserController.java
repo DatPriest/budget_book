@@ -59,6 +59,9 @@ public class UserController {
     @PutMapping(path = "/update", produces = "application/json", consumes = "application/json")
     public ResponseEntity<UserUpdatedDto> updateUser(@RequestBody UserUpdateDto dto) throws SecurityQuestionNotExists {
         User user = this.userMapper.mapUserUpdateDtoToUser(dto);
+        if (user == null) {
+            return new ResponseEntity("User could not get updated", HttpStatus.BAD_REQUEST);
+        }
         UserUpdatedDto updatedDto = this.userMapper.mapUserToUserUpdatedDto(user);
         return new ResponseEntity<>(updatedDto, HttpStatus.OK);
     }

@@ -92,6 +92,11 @@ public class GroupController {
     @CrossOrigin
     @PutMapping(path = "/update", produces = "application/json")
     public ResponseEntity<GroupDto> updateGroup(@RequestBody GroupUpdateDto dto) throws TypeNotPresentException {
+        GroupDto updatedGroup = null;
+        updatedGroup = service.updateGroup(dto);
+        if (updatedGroup == null) {
+            return new ResponseEntity("Group could not get updated", HttpStatus.BAD_REQUEST);
+        }
         return new ResponseEntity<>(service.updateGroup(dto), HttpStatus.OK);
     }
 
