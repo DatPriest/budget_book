@@ -1,0 +1,56 @@
+.header_faq {
+  position: absolute;
+  width: 98%;
+  top: 3%;
+  text-align: center;
+  color: black;
+  font-size: 300%;
+  font-family: Raleway, sans-serif;
+}
+
+.button_back {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
+}
+
+.back_icon {
+  background: none;
+  padding: 5% 10%;
+  border-radius: 0px;
+  border: none;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  width: 0%;
+  color: rgb(0, 0, 0);
+  box-shadow: 0px 2px 2px transparent;
+  cursor: pointer;
+  transition: .0s;
+}
+
+.button_add {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+}
+
+.screen {
+  position: absolute;
+  top: 10%;
+  height: 85%;
+  width: 90%;
+}
+
+.questions_space {
+  margin: 2%;
+}

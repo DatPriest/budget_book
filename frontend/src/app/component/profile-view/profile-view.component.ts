@@ -38,6 +38,10 @@ export class ProfileViewComponent implements OnInit {
     this.router.navigate(['/profile/expenses']);
   }
 
+  moveToFAQ(): void {
+    this.router.navigate(['/profile/faq']);
+  }
+
   joinGroupDialog(): void {
     const dialogConfig = new MatDialogConfig();
 
