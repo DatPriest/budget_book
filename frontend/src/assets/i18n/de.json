@@ -335,11 +335,22 @@
       "header": "User wurde erfolgreich gelöscht!",
       "message": ""
     },
+    "email": {
+      "header": "Die E-Mail darf nicht leer sein!",
+      "message": "",
+      "invalid": {
+        "header": "Die E-Mail ist ungültig!",
+        "message": ""
+      }
+    },
     "cancel": "abbrechen"
   },
   "error": {
     "lost": "Sieht so aus, als hättest Du dich verirrt",
     "notAvaible": "die Seite, die Du suchst, ist nicht verfügbar!",
     "home": "Zurück zur Anmeldung"
+  },
+  "emailDialog": {
+    "header": "E-Mail angeben!"
   }
 }

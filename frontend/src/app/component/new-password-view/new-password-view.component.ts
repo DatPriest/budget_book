@@ -23,9 +23,9 @@ export class NewPasswordViewComponent implements OnInit {
   showPasswordReplay: boolean = false;
   hash: string;
   securityQuestion$ : Observable<SecurityQuestionModule[]> = of([]);
+  userId: any;
   constructor(public router: Router, public formBuilder: FormBuilder, public userService: UserService, public hashService: HashingService, public alertService: AlertService, public translate: TranslateService, public dialog: MatDialog) {
-    this.securityQuestion$ = this.userService.getSecurityQuestion();
-    //this.getEmailDialog();
+    this.securityQuestion$ = this.userService.getSecurityQuestionByUserId(this.userId);
   }
 
   togglePassword(): void {
@@ -41,7 +41,10 @@ export class NewPasswordViewComponent implements OnInit {
 
     dialogConfig.autoFocus = true;
 
-    this.dialog.open(EmailViewComponent, dialogConfig);
+    this.dialog.open(EmailViewComponent, dialogConfig).afterOpened().subscribe(result => {
+      localStorage.setItem("newPassword", "true");
+      this.userId = result;
+    });
   }
 
   savePassword(newPasswordForm: NgForm): void {
@@ -51,7 +54,7 @@ export class NewPasswordViewComponent implements OnInit {
       if (newPasswordForm.value.password_1 == newPasswordForm.value.password_2) {
         this.hash = this.hashService.encrypt(newPasswordForm.value.password_1);
         if (newPasswordForm.value.securityQuestion != '' && newPasswordForm.value.securityAnswer != '') {
-          const newPasswordData = new NewPasswordModule(newPasswordForm.value.email, this.hash, newPasswordForm.value.securityQuestion, newPasswordForm.value.securityAnswer);
+          const newPasswordData = new NewPasswordModule(this.userId, this.hash, newPasswordForm.value.securityQuestion, newPasswordForm.value.securityAnswer);
           this.userService.passwordForgotRequest(newPasswordData).subscribe(data => {
             this.alertService.successfulAlert(this.translate.instant('alert.newPassword.header'),  this.translate.instant('alert.newPassword.message'),  "success", 2500);
             this.router.navigate(['/sign-in']);
@@ -66,9 +69,13 @@ export class NewPasswordViewComponent implements OnInit {
   }
 
   cancel(): void {
+    localStorage.setItem("newPassword", "false");
     this.router.navigate(['/sign-in']);
   }
 
   ngOnInit(): void {
+    if (localStorage.getItem("newPassword") != "true") {
+      this.getEmailDialog();
+    }
   }
 }

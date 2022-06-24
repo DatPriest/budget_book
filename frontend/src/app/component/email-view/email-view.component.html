@@ -1,3 +1,14 @@
-<p>email-view works!</p>
-
-<button (click)="getEmail()"><span>TEST</span></button>
+<form (ngSubmit)="getEmail(getEmailForm)" #getEmailForm="ngForm">
+  <h4 class="header_Text">{{'emailDialog.header'| translate}}</h4>
+  <div class="row">
+    <div class="column_select">
+      <input name="email" type="email" class="input_field form-control" ngModel placeholder="{{'email'| translate}}">
+    </div>
+    <div class="column_save">
+      <button type="submit"><span class="material-icons">save</span></button>
+    </div>
+    <div class="column_close">
+      <button type="button" id="close" (click)="close()"><span class="group_create material-icons">close</span></button>
+    </div>
+  </div>
+</form>
