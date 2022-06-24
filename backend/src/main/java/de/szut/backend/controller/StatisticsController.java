@@ -29,6 +29,7 @@ public class StatisticsController {
     /**
      * @see StatisticService#getAllExpensesSumFromUserPerMonth
      */
+    @CrossOrigin
     @GetMapping(path = "/AllExpensesSumPerMonth/{userId}/{month}", produces = "application/json")
     public int AllExpensesSumPerMonth(@PathVariable long userId, @PathVariable int month) throws TypeNotPresentException {
         return this.service.getAllExpensesSumFromUserPerMonth(userId, month);
@@ -37,6 +38,7 @@ public class StatisticsController {
     /**
      * @see StatisticService#getAllExpensesSumFromUserPerYear
      */
+    @CrossOrigin
     @GetMapping(path = "/AllExpensesSumPerYear/{userId}/{year}", produces = "application/json")
     public int AllExpensesSumPerYear(@PathVariable long userId, @PathVariable int year) throws TypeNotPresentException {
         return this.service.getAllExpensesSumFromUserPerYear(userId, year);
@@ -45,6 +47,7 @@ public class StatisticsController {
     /**
      * @see StatisticService#getAllExpensesFromUserPerMonth
      */
+    @CrossOrigin
     @GetMapping(path = "/GetAllExpensesPerMonth/{userId}", produces = "application/json")
     public List<GroupUserStatsDTO> AllExpensesPerMonth(@PathVariable long userId){
         return this.service.getAllExpensesFromUserPerMonth(userId);
@@ -54,6 +57,7 @@ public class StatisticsController {
     /**
      * @see StatisticService#getAllExpensesFromUserPerYear
      */
+    @CrossOrigin
     @GetMapping(path = "/GetAllExpensesPerYear/{userId}", produces = "application/json")
     public List<GroupUserStatsDTO> AllExpensesPerYear(@PathVariable long userId){
         return this.service.getAllExpensesFromUserPerYear(userId);
@@ -64,6 +68,7 @@ public class StatisticsController {
     /**
      * @see StatisticService#getAllExpensesFromGroupPerYear
      */
+    @CrossOrigin
     @GetMapping(path = "/GetAllExpensesPerYearFromGroup/{groupId}", produces = "application/json")
     public ResponseEntity<List<GroupUserStatsDTO>> AllExpensesPerYearFromGroup(@PathVariable long groupId){
         return new ResponseEntity<>(this.service.getAllExpensesFromGroupPerYear(groupId) , HttpStatus.OK);
@@ -72,6 +77,7 @@ public class StatisticsController {
     /**
      * @see StatisticService#getAllExpensesSumFromGroupPerYear
      */
+    @CrossOrigin
     @GetMapping(path = "/GetAllExpensesSumPerYearFromGroup/{groupId}/{year}", produces = "application/json")
     public ResponseEntity<Integer> AllExpensesSumPerYearFromGroup(@PathVariable long groupId, @PathVariable int year){
         return new ResponseEntity<>( this.service.getAllExpensesSumFromGroupPerYear(groupId, year), HttpStatus.OK);
@@ -80,6 +86,7 @@ public class StatisticsController {
     /**
      * @see StatisticService#getAllExpensesFromGroupPerMonth
      */
+    @CrossOrigin
     @GetMapping(path = "/GetAllExpensesPerMonthFromGroup/{groupId}", produces = "application/json")
     public ResponseEntity<List<GroupUserStatsDTO>> AllExpensesPerMonthFromGroup(@PathVariable long groupId){
         return new ResponseEntity<>(this.service.getAllExpensesFromGroupPerMonth(groupId) , HttpStatus.OK);
@@ -88,17 +95,20 @@ public class StatisticsController {
     /**
      * @see StatisticService#getAllExpensesSumFromGroupPerYear
      */
+    @CrossOrigin
     @GetMapping(path = "/GetAllExpensesSumPerMonthFromGroup/{groupId}/{month}", produces = "application/json")
     public ResponseEntity<Integer> AllExpensesSumPerMonthFromGroup(@PathVariable long groupId, @PathVariable int month){
         return new ResponseEntity<>(this.service.getAllExpensesSumFromGroupPerYear(groupId, month), HttpStatus.OK);
     }
 
+    @CrossOrigin
     @GetMapping(path = "/getAllExpensesFromGroupUser/{userId}/{groupId}", produces = "application/json")
     public ResponseEntity<List<GroupUserStatsDTO>> getAllExpensesFromGroupUser(@PathVariable long groupId, @PathVariable long userId){
         LOGGER.error("GruppenId: {}", groupId);
         return new ResponseEntity<>(this.service.getAllExpensesFromGroupUser(groupId, userId), HttpStatus.OK);
     }
 
+    @CrossOrigin
     @GetMapping(path = "/getAllExpensesFromGroupUserFromThisMonth/{userId}/{groupId}", produces = "application/json")
     public ResponseEntity<List<GroupUserStatsDTO>> getAllExpensesFromGroupUserFromThisMonth(@PathVariable long groupId, @PathVariable long userId){
         LOGGER.error("GruppenId: {}", groupId);
@@ -106,6 +116,7 @@ public class StatisticsController {
         return new ResponseEntity<>(this.service.getAllExpensesFromGroupUserFromThisMonth(groupId, userId), HttpStatus.OK);
     }
 
+    @CrossOrigin
     @GetMapping(path = "/getAllExpensesFromGroupUserFromThisYear/{userId}/{groupId}", produces = "application/json")
     public ResponseEntity<List<GroupUserStatsDTO>> getAllExpensesFromGroupUserFromThisYear(@PathVariable long groupId, @PathVariable long userId){
         LOGGER.error("GruppenId: {}", groupId);
