@@ -22,6 +22,7 @@ export class AppComponent {
     translate.setDefaultLang(localStorage.getItem('selectedLang') || translate.setDefaultLang(translate.getBrowserCultureLang()) || 'de');
     this.setTimeout();
     this.userInactive.subscribe(() => this.logOut());
+    localStorage.setItem("newPassword", "false");
   }
 
   logOut() {

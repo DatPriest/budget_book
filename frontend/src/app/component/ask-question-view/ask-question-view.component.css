@@ -21,9 +21,8 @@
 
 .button_back {
   position: absolute;
-  top: 8px;
-  left: 16px;
-  font-size: 18px;
+  top: 1%;
+  left: 1%;
 }
 
 .back_icon {

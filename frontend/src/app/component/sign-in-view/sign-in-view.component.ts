@@ -22,15 +22,13 @@ export class SignInViewComponent implements OnInit {
   hash: string;
   constructor(public router: Router, public http: HttpClient, public formBuilder: FormBuilder, public userService: UserService, public app: AppModule, public hashService: HashingService, public alertService: AlertService, public groupService: GroupService, public translate: TranslateService) {
 
-    }
+  }
 
   togglePassword(): void {
     this.showPassword = !this.showPassword;
   }
 
   loginUser(signInForm: NgForm): void {
-    //this.router.navigate(['/main']); // temp
-
     if (signInForm.value.email == '' && signInForm.value.password == '') {
       this.alertService.alert(this.translate.instant('alert.signIn.emptyPassword.header'),  this.translate.instant('alert.signIn.emptyPassword.message'),  "error");
     } else {
