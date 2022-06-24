@@ -65,6 +65,7 @@ public class ExpensesController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
+
     @GetMapping(path = "/category/{categoryId}", produces = "application/json")
     public ResponseEntity<List<GetExpenseDTO>> getExpensesByCategoryId(@PathVariable long categoryId){
         ArrayList<GetExpenseDTO> result = new ArrayList<>();

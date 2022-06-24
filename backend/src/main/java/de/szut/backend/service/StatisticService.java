@@ -1,5 +1,6 @@
 package de.szut.backend.service;
 
+import de.szut.backend.dto.Statistics.GroupUserStatsDTO;
 import de.szut.backend.dto.Statistics.StatisticsPerMonthDto;
 import de.szut.backend.dto.Statistics.StatisticsPerYearDto;
 import de.szut.backend.mapper.ExpensesMapper;
@@ -7,6 +8,8 @@ import de.szut.backend.model.Expenses.Expense;
 import de.szut.backend.repository.ExpensesRepository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -32,14 +35,14 @@ public class StatisticService {
      * @param month Aus welchem Jahr die Ausgaben zurückgegeben werden sollen
      * @return Eine Liste von allen Ausgaben des Monats
      */
-    public List<StatisticsPerMonthDto> getAllExpensesFromUserPerMonth(long userId, int month) {
+    public List<GroupUserStatsDTO> getAllExpensesFromUserPerMonth(long userId, int month) {
         List<Expense> expenseList =  repo.findAllByUserId(userId);
-        List<StatisticsPerMonthDto> monthlyExpensesList  = new ArrayList<>();
+        List<GroupUserStatsDTO> monthlyExpensesList  = new ArrayList<>();
         for (Expense expense: expenseList) {
             GregorianCalendar calendar = new GregorianCalendar();
             calendar.setTime(expense.getDate_Created());
             if ((calendar.get(Calendar.MONTH)+1) == month){
-                monthlyExpensesList.add(mapper.mapExpenseToStatisticsPerMonthDto(expense));
+                monthlyExpensesList.add(mapper.mapExpenseToGroupUserStats(expense));
             }
         }
         return monthlyExpensesList;
@@ -51,14 +54,14 @@ public class StatisticService {
      * @param year Aus welchem Jahr die Ausgaben zurückgegeben werden sollen
      * @return Eine Liste von allen Ausgaben des Jahres
      */
-    public List<StatisticsPerYearDto> getAllExpensesFromUserPerYear(long userId, int year) {
+    public List<GroupUserStatsDTO> getAllExpensesFromUserPerYear(long userId, int year) {
         List<Expense> expenseList =  repo.findAllByUserId(userId);
-        List<StatisticsPerYearDto> monthlyExpensesList = new ArrayList<>();
+        List<GroupUserStatsDTO> monthlyExpensesList = new ArrayList<>();
         for (Expense expense: expenseList) {
             GregorianCalendar calendar = new GregorianCalendar();
             calendar.setTime(expense.getDate_Created());
             if ((calendar.get(Calendar.MONTH)+1) == year){
-                monthlyExpensesList.add(mapper.mapExpenseToStatisticsPerYearDto(expense));
+                monthlyExpensesList.add(mapper.mapExpenseToGroupUserStats(expense));
             }
         }
         return monthlyExpensesList;
@@ -105,17 +108,17 @@ public class StatisticService {
     /**
      * Alle Ausgaben einer Gruppe pro ausgewähltem Jahr zurrrückgeben
      * @param groupId Von welcher Gruppe die Ausgaben zurückgegeben werden sollen
-     * @param year Aus welchem Jahr die Ausgaben zurückgegeben werden sollen
      * @return Eine Liste mit allen Ausgaben des Jahres
      */
-    public List<StatisticsPerYearDto> getAllExpensesFromGroupPerYear(long groupId, int year) {
+    public List<GroupUserStatsDTO> getAllExpensesFromGroupPerYear(long groupId) {
         List<Expense> expenseList =  repo.findAllByGroupId(groupId);
-        List<StatisticsPerYearDto> yearlyExpensesList = new ArrayList<>();
+        List<GroupUserStatsDTO> yearlyExpensesList = new ArrayList<>();
         for (Expense expense: expenseList) {
             GregorianCalendar calendar = new GregorianCalendar();
+            int year = calendar.get(Calendar.YEAR);
             calendar.setTime(expense.getDate_Created());
             if ((calendar.get(Calendar.YEAR)) == year){
-                yearlyExpensesList.add(mapper.mapExpenseToStatisticsPerYearDto(expense));
+                yearlyExpensesList.add(mapper.mapExpenseToGroupUserStats(expense));
             }
         }
         return yearlyExpensesList;
@@ -143,19 +146,65 @@ public class StatisticService {
     /**
      * Alle Ausgaben einer Gruppe pro ausgewähltem Monat zurückgeben
      * @param groupId Von welcher Gruppe die Ausgaben zurückgegeben werden sollen
-     * @param month Aus welchem Monat die Ausgaben zurückgegeben werden sollen
      * @return Eine Liste mit allen Ausgaben des Monats
      */
-    public List<StatisticsPerMonthDto> getAllExpensesFromGroupPerMonth(long groupId, int month) {
+    public List<GroupUserStatsDTO> getAllExpensesFromGroupPerMonth(long groupId) {
         List<Expense> expenseList =  repo.findAllByGroupId(groupId);
-        List<StatisticsPerMonthDto> monthlyExpensesList = new ArrayList<>();
+        List<GroupUserStatsDTO> monthlyExpensesList = new ArrayList<>();
         for (Expense expense: expenseList) {
             GregorianCalendar calendar = new GregorianCalendar();
+            int month = calendar.get(Calendar.MONTH) +1;
             calendar.setTime(expense.getDate_Created());
             if ((calendar.get(Calendar.MONTH)+1) == month){
-                monthlyExpensesList.add(mapper.mapExpenseToStatisticsPerMonthDto(expense));
+                monthlyExpensesList.add(mapper.mapExpenseToGroupUserStats(expense));
             }
         }
         return monthlyExpensesList;
+    }
+
+    public List<GroupUserStatsDTO> getAllExpensesFromGroupUser(long groupId, long userId) {
+        LOGGER.error("Gruppen ID : {}", groupId);
+        List<Expense> expenseList =  repo.findAllByGroupId(groupId);
+        for (Expense expense: expenseList) {
+            LOGGER.error("Unbearbeitete Liste: {}", expense);
+        }
+        List<GroupUserStatsDTO> expensesList = new ArrayList<>();
+        for (Expense expense: expenseList) {
+            if (expense.getUserId() == userId){
+                expensesList.add(mapper.mapExpenseToGroupUserStats(expense));
+            }
+        }
+        for (GroupUserStatsDTO expense: expensesList) {
+            LOGGER.error( "bearbeitete Liste: {}", expense);
+        }
+        return expensesList;
+    }
+
+    public List<GroupUserStatsDTO> getAllExpensesFromGroupUserFromThisMonth(long groupId, long userId) {
+        List<Expense> expenseList =  repo.findAllByGroupId(groupId);
+        List<GroupUserStatsDTO> monthlyExpensesList = new ArrayList<>();
+        for (Expense expense: expenseList) {
+            GregorianCalendar calendar = new GregorianCalendar();
+            int month = calendar.get(Calendar.MONTH) +1;
+            calendar.setTime(expense.getDate_Created());
+            if ((calendar.get(Calendar.MONTH)+1) == month && expense.getUserId() == userId){
+                monthlyExpensesList.add(mapper.mapExpenseToGroupUserStats(expense));
+            }
+        }
+        return monthlyExpensesList;
+    }
+
+    public List<GroupUserStatsDTO> getAllExpensesFromGroupUserFromThisYear(long groupId, long userId) {
+        List<Expense> expenseList =  repo.findAllByGroupId(groupId);
+        List<GroupUserStatsDTO> yearlyExpensesList = new ArrayList<>();
+        for (Expense expense: expenseList) {
+            GregorianCalendar calendar = new GregorianCalendar();
+            int year = calendar.get(Calendar.YEAR);
+            calendar.setTime(expense.getDate_Created());
+            if ((calendar.get(Calendar.YEAR)) == year && expense.getUserId() == userId){
+                yearlyExpensesList.add(mapper.mapExpenseToGroupUserStats(expense));
+            }
+        }
+        return yearlyExpensesList;
     }
 }

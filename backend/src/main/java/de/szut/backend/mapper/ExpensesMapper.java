@@ -1,5 +1,6 @@
 package de.szut.backend.mapper;
 
+import de.szut.backend.dto.Statistics.GroupUserStatsDTO;
 import de.szut.backend.dto.Statistics.StatisticsPerMonthDto;
 import de.szut.backend.dto.Statistics.StatisticsPerYearDto;
 import de.szut.backend.model.Expenses.Expense;
@@ -35,25 +36,15 @@ public class ExpensesMapper {
         return dtoToGet;
     }
 
-    public StatisticsPerMonthDto mapExpenseToStatisticsPerMonthDto(Expense expense){
-        StatisticsPerMonthDto stats = new StatisticsPerMonthDto();
-        GregorianCalendar calendar = new GregorianCalendar();
-        calendar.setTime(expense.getDate_Created());
-        stats.setMonth(calendar.get(Calendar.MONTH)+1);
-        stats.setAmount(expense.getAmount());
-        stats.setDescription(expense.getDescription());
-        stats.setUserId(expense.getUserId());
-        return stats;
-    }
-
-    public StatisticsPerYearDto mapExpenseToStatisticsPerYearDto(Expense expense) {
-        StatisticsPerYearDto stats = new StatisticsPerYearDto();
-        GregorianCalendar calendar = new GregorianCalendar();
-        calendar.setTime(expense.getDate_Created());
-        stats.setYear(calendar.get(Calendar.YEAR));
-        stats.setAmount(expense.getAmount());
-        stats.setDescription(expense.getDescription());
-        stats.setUserId(expense.getUserId());
-        return stats;
+    public GroupUserStatsDTO mapExpenseToGroupUserStats(Expense expense) {
+        GroupUserStatsDTO dto = new GroupUserStatsDTO();
+        dto.expenseId = expense.getExpensesId();
+        dto.groupId = expense.getGroupId();
+        dto.userId = expense.getUserId();
+        dto.amount = expense.getAmount();
+        dto.categoryId = expense.getCategoryId();
+        dto.date_Created = expense.getDate_Created();
+        dto.description = expense.getDescription();
+        return dto;
     }
 }

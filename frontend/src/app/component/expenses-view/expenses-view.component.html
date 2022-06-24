@@ -36,7 +36,7 @@
                       </label>
                     </div>
                     <div class="column_button button_search">
-                      <button type="submit" class="button back_icon" id="register">
+                      <button type="submit" class="button back_icon" id="register" (click)="reloadList(userId)">
                         <span class="button_text material-icons">search</span>
                       </button>
                     </div>
@@ -46,12 +46,15 @@
               <th>
                 <input id="Search" type="text" name="search" class="input_field" [(ngModel)]="searchTerm" placeholder="{{'expenses.search'|translate}}">
               </th>
+              <th>
+              </th>
             </thead>
             <tbody>
-              <ng-container *ngFor="let e of expenses$ | async | expensesFilter:searchTerm">
+              <ng-container *ngFor="let e of expenses$ |async | expensesFilter:searchTerm">
                 <tr class="expenses_table_line">
                   <td class="expenses_line_subject">{{e.description}}</td>
-                  <td class="expenses_line">{{e.amount | number: '1.2-2'}}</td>
+                  <td class="expenses_line">{{e.amount | number: '1.2-2' | currency: 'EUR'}}</td>
+                  <td class="expenses_line">{{e.userId | number : '1.0'}}</td>
                   <td class="expenses_line">{{e.date_Created | date: 'dd.MM.yyyy'}}</td>
                   <td class="expenses_line">
                     <button type="button" class="button back_icon" (click)="delete(e.expenseId)">

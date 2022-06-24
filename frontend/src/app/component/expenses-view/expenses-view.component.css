@@ -50,6 +50,7 @@
 }
 
 .expenses_table {
+  max-height: 10px;
   font-size: x-large;
   border-collapse: collapse;
   border-width: thin 0 0 thin;

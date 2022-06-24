@@ -1,5 +1,7 @@
 package de.szut.backend.service;
 
+import de.szut.backend.dto.Statistics.GroupUserStatsDTO;
+import de.szut.backend.mapper.ExpensesMapper;
 import de.szut.backend.model.Expenses.Expense;
 import de.szut.backend.model.History.HistoryActionToProcess;
 import de.szut.backend.repository.ExpensesRepository;
@@ -7,16 +9,21 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 @Service
 public class ExpensesService {
     private ExpensesRepository ex_Service;
     private HistoryLogService logService;
+    ExpensesMapper mapper;
 
-    public ExpensesService(ExpensesRepository ex_Service, HistoryLogService logService){
+    public ExpensesService(ExpensesRepository ex_Service, HistoryLogService logService, ExpensesMapper mapper){
         this.ex_Service = ex_Service;
         this.logService = logService;
+        this.mapper = mapper;
     }
 
     public Expense createExpense(Expense expenseToCreate){

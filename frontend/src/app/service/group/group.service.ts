@@ -47,6 +47,13 @@ export class GroupService {
     return this.http.get<ExpensesModule[]>(`http://localhost:4000/api/v1/expenses/group/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
+  getExpensesByGroupIdYear(groupId: number) {
+    return this.http.get<ExpensesModule[]>(`http://localhost:4000/api/v1/statistics/GetAllExpensesPerYearFromGroup/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+  getExpensesByGroupIdMonth(groupId: number) {
+    return this.http.get<ExpensesModule[]>(`http://localhost:4000/api/v1/statistics/GetAllExpensesPerMonthFromGroup/${groupId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
   addNewExpenses(newExpenses: NewExpensesModule) {
     return this.http.post<NewExpensesModule>('http://localhost:4000/api/v1/expenses/expense', JSON.stringify(newExpenses), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
