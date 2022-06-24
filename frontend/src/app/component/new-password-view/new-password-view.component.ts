@@ -25,7 +25,7 @@ export class NewPasswordViewComponent implements OnInit {
   securityQuestion$ : Observable<SecurityQuestionModule[]> = of([]);
   userId: any;
   constructor(public router: Router, public formBuilder: FormBuilder, public userService: UserService, public hashService: HashingService, public alertService: AlertService, public translate: TranslateService, public dialog: MatDialog) {
-    this.securityQuestion$ = this.userService.getSecurityQuestionByUserId(this.userId);
+
   }
 
   togglePassword(): void {
@@ -44,6 +44,7 @@ export class NewPasswordViewComponent implements OnInit {
     this.dialog.open(EmailViewComponent, dialogConfig).afterOpened().subscribe(result => {
       localStorage.setItem("newPassword", "true");
       this.userId = result;
+      this.securityQuestion$ = this.userService.getSecurityQuestionByUserId(this.userId);
     });
   }
 
