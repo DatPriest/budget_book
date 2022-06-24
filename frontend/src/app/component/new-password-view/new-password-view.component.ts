@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from "@angular/router";
 import { TranslateService } from '@ngx-translate/core';
-import { Observable, of } from 'rxjs';
+import { firstValueFrom, Observable, of } from 'rxjs';
 import { NewPasswordModule } from 'src/app/model/new-password/new-password.module';
 import { SecurityQuestionModule } from 'src/app/model/security-question/security-question.module';
 import { AlertService } from 'src/app/service/alert/alert.service';
@@ -22,10 +22,14 @@ export class NewPasswordViewComponent implements OnInit {
   showPassword: boolean = false;
   showPasswordReplay: boolean = false;
   hash: string;
-  securityQuestion$ : Observable<SecurityQuestionModule[]> = of([]);
+  securityQuestion: SecurityQuestionModule = new SecurityQuestionModule(null, null);
   userId: any;
-  constructor(public router: Router, public formBuilder: FormBuilder, public userService: UserService, public hashService: HashingService, public alertService: AlertService, public translate: TranslateService, public dialog: MatDialog) {
+  constructor(public router: Router, public formBuilder: FormBuilder, public userService: UserService, public hashService: HashingService, public alertService: AlertService, public translate: TranslateService) {
+    this.getSecQuestion();
+  }
 
+  private async getSecQuestion(){
+    this.securityQuestion = await firstValueFrom(this.userService.getSecurityQuestionByUserId(parseInt(localStorage.getItem("userId"))));
   }
 
   togglePassword(): void {
@@ -34,18 +38,6 @@ export class NewPasswordViewComponent implements OnInit {
 
   togglePasswordReplay(): void {
     this.showPasswordReplay = !this.showPasswordReplay;
-  }
-
-  getEmailDialog(): void {
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.autoFocus = true;
-
-    this.dialog.open(EmailViewComponent, dialogConfig).afterOpened().subscribe(result => {
-      localStorage.setItem("newPassword", "true");
-      this.userId = result;
-      this.securityQuestion$ = this.userService.getSecurityQuestionByUserId(this.userId);
-    });
   }
 
   savePassword(newPasswordForm: NgForm): void {
@@ -75,8 +67,6 @@ export class NewPasswordViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (localStorage.getItem("newPassword") != "true") {
-      this.getEmailDialog();
-    }
+
   }
 }

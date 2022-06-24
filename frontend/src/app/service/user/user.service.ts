@@ -32,15 +32,15 @@ export class UserService {
   }
 
   getUserIdByEmail(email: string) {
-    return this.http.get<UserEmailModule>(`http://localhost:4000/api/v1/verification/${email}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.get<UserEmailModule>(`http://localhost:4000/api/v1/user/byEmail/${email}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   getSecurityQuestion() {
     return this.http.get<SecurityQuestionModule[]>('http://localhost:4000/api/v1/securityQuestions', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
-  getSecurityQuestionByUserId(userId: number) {
-    return this.http.get<SecurityQuestionModule[]>(`http://localhost:4000/api/v1/securityQuestions/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  getSecurityQuestionByUserId(userId: number): Observable<SecurityQuestionModule> {
+    return this.http.get<SecurityQuestionModule>(`http://localhost:4000/api/v1/securityQuestions/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   async getProfile(userId: number) {
