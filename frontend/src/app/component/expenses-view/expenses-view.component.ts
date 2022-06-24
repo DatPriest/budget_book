@@ -31,8 +31,12 @@ export class ExpensesViewComponent implements OnInit {
   }
 
   getUserId(expensesForm: NgForm): void {
-    this.userId = expensesForm.value.user;
-    console.warn(this.userId);
+    if (expensesForm.value.user == '') {
+      console.log("Auswahl ist leer");
+      this.userId = -1;
+    } else {
+      this.userId = expensesForm.value.user;
+    }
   }
 
   delete(expenseId: number): void {

@@ -54,7 +54,7 @@ export class NewPasswordViewComponent implements OnInit {
       if (newPasswordForm.value.password_1 == newPasswordForm.value.password_2) {
         this.hash = this.hashService.encrypt(newPasswordForm.value.password_1);
         if (newPasswordForm.value.securityQuestion != '' && newPasswordForm.value.securityAnswer != '') {
-          const newPasswordData = new NewPasswordModule(this.userId, this.hash, newPasswordForm.value.securityQuestion, newPasswordForm.value.securityAnswer);
+          const newPasswordData = new NewPasswordModule(localStorage.getItem("userEmail"), this.hash, newPasswordForm.value.securityQuestion, newPasswordForm.value.securityAnswer);
           this.userService.passwordForgotRequest(newPasswordData).subscribe(data => {
             this.alertService.successfulAlert(this.translate.instant('alert.newPassword.header'),  this.translate.instant('alert.newPassword.message'),  "success", 2500);
             this.router.navigate(['/sign-in']);
