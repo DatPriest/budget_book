@@ -1,4 +1,126 @@
 {
+	"alert": {
+		"appComponent": {
+			"header": "Inactivity",
+			"message": "Automatic logout after 10 minutes."
+		},
+		"ask": {
+			"header": "Question successfully asked!",
+			"message": ""
+		},
+		"cancel": "Cancel",
+		"createGroup": {
+			"header": "Group successfully created!",
+			"message": ""
+		},
+		"delete": {
+			"message": "The account was successfully deleted!",
+			"text": "Once your account is deleted, it cannot be recovered!",
+			"title": "Are you sure?"
+		},
+		"editGroup": {
+			"header": "Group successfully updated!",
+			"message": ""
+		},
+		"editPassword": {
+			"emptyPassword": {
+				"header": "Oops",
+				"message": "The passwords must not be empty!"
+			},
+			"header": "Password has been changed successfully!",
+			"message": "",
+			"noMatch": {
+				"header": "Oops",
+				"message": "The passwords do not match!"
+			},
+			"wrongPw": "Old password incorrect"
+		},
+		"email": {
+			"header": "The e-mail must not be empty!",
+			"invalid": {
+				"header": "The e-mail is invalid!",
+				"message": ""
+			},
+			"message": ""
+		},
+		"invite": {
+			"emptyCode": {
+				"header": "Oops",
+				"message": "The invitation link is empty!"
+			},
+			"header": "Congratulations!",
+			"invalidCode": {
+				"header": "Oops",
+				"message": "The invitation link is invalid!"
+			},
+			"message": "You have successfully joined the group."
+		},
+		"logout": {
+			"message": "You have been successfully logged out!",
+			"text": "Do you really want to log out?",
+			"title": "Log out"
+		},
+		"newPassword": {
+			"emptyPassword": {
+				"header": "Oops",
+				"message": "Passwords must not be empty!"
+			},
+			"emptySQuestion": {
+				"header": "Oops",
+				"message": "Please fill in a security question and answer!"
+			},
+			"header": "Password reset successfully!",
+			"message": "",
+			"noMatch": {
+				"header": "Oops",
+				"message": "Passwords do not match!"
+			}
+		},
+		"notDelete": {
+			"header": "Oops",
+			"message": "The category is still in use!"
+		},
+		"notification": {
+			"header": "Successfully changed!",
+			"message": ""
+		},
+		"period": {
+			"header": "Oops",
+			"message": "Please select a period!"
+		},
+		"removeMember": {
+			"header": "User was successfully deleted!",
+			"message": ""
+		},
+		"signIn": {
+			"emptyPassword": {
+				"header": "Oops",
+				"message": "Email and password must not be empty!"
+			},
+			"header": "Welcome!",
+			"message": "Login was successful.",
+			"noMatch": {
+				"header": "Oops",
+				"message": "Email and password do not match!"
+			}
+		},
+		"signUp": {
+			"emptyPassword": {
+				"header": "Oops",
+				"message": "Passwords cannot be empty!"
+			},
+			"emptySQuestion": {
+				"header": "Oops",
+				"message": "Please fill out a security question and answer!"
+			},
+			"header": "Registered Successfully!",
+			"message": "",
+			"wrongPassword": {
+				"header": "Oops",
+				"message": "Passwords do not match!"
+			}
+		}
+	},
 	"askQuestions": {
 		"template": "Ask a Question"
 	},
@@ -15,17 +137,28 @@
 		"header": "Create invitation code",
 		"msg": "Invitation code"
 	},
+	"editGroup": {
+		"grpNameMsg": "Surname",
+		"header": "Edit group"
+	},
 	"editPassword": {
 		"header": "Change password",
-    "oldPw" : "Old Password",
-    "newPw" : "New Password",
-		"newpwretype": "Repeat New Password"
+		"password": "New password",
+		"pwretype": "Repeat new password"
 	},
 	"editProfile": {
 		"header": "My Account",
 		"logo": "Logo"
 	},
 	"email": "E-mail",
+	"emailDialog": {
+		"header": "Enter Email!"
+	},
+	"error": {
+		"home": "Back to Login",
+		"lost": "Looks like you got lost",
+		"notAvaible": "The page you are looking for is not available!"
+	},
 	"expenses": {
 		"addBtn": "add",
 		"addExpenses": "Add issues",
@@ -33,6 +166,7 @@
 		"category": "Category:",
 		"closeBtn": "Close",
 		"date": "Date",
+		"description": "Output",
 		"expenses": "Expenditures:",
 		"headerExp": "All issues",
 		"purchasing": "Purchasing",
@@ -40,7 +174,7 @@
 		"search": "Search"
 	},
 	"faq": {
-		"ask": "Ask a Question!",
+		"ask": "Ask a Question",
 		"header": "FAQ"
 	},
 	"forename": "First name",
@@ -76,20 +210,20 @@
 		"search": "Search"
 	},
 	"imprint": {
-		"Angaben": "",
-		"E-Mail": "",
-		"Email": "",
-		"Fax": "",
-		"GmbH": "",
-		"Land": "",
-		"Name": "",
-		"Ort": "",
-		"Straße": "",
-		"Straße2": "",
-		"Telefax": "",
-		"Telefon": "",
-		"Telefon2": "",
-		"Vertretungsberechtigter": "",
+		"Angaben": "Information about the company:",
+		"E-Mail": "Email: info-IT@google.com",
+		"Email": "Email: info-IT@google.com\n",
+		"Fax": "Fax: 030-181001",
+		"GmbH": "IT Ltd",
+		"Land": "Germany",
+		"Name": "Klaus Tom",
+		"Ort": "16695 Ahrensfelde",
+		"Straße": "Tommystrasse 187",
+		"Straße2": "Tommystrasse 205",
+		"Telefax": "Fax: 030-120400",
+		"Telefon": "Telephone: 030-181001\n",
+		"Telefon2": "Telephone: 030-120400",
+		"Vertretungsberechtigter": "Authorized representative at the provider is:",
 		"header": "Imprint"
 	},
 	"invite": {
@@ -120,6 +254,7 @@
 		"impressum": "Imprint",
 		"language": "Language",
 		"logout": "Log out",
+		"main": "Main menu",
 		"notification": "Notifications",
 		"privacy": "Privacy",
 		"profile": "Profile",
@@ -137,11 +272,17 @@
 		"retypeNewPw": "Repeat new password",
 		"save": "Save"
 	},
+	"notification": {
+		"header": "Notifications"
+	},
 	"password": "Password",
+	"passwordOld": "Old password",
 	"period": {
+		"all": "All expenses ",
 		"header": "Period",
 		"month": "Month",
 		"period": "Period",
+		"select": "selected",
 		"year": "Year"
 	},
 	"privacy": {
@@ -193,7 +334,9 @@
 		"acc": "My Account",
 		"changePw": "Change password",
 		"deleteAcc": "Delete account",
-		"edit": "Edit",
+		"edit": "Edit your Profile",
+		"expenses": "Expenses",
+		"faq": "Questions",
 		"imgMsg": "Picture of the respective person",
 		"join": "Join group"
 	},
@@ -202,11 +345,12 @@
 	"secLine": "Choose 1 question!",
 	"secQuestion": "Security question:",
 	"secSelection": {
-		"bornCity": "",
-		"firstCar": "",
-		"firstConcert": "",
-		"meetParents": "",
-		"secondName": ""
+		"bornCity": "In which city or where were you born?",
+		"dogName": "What is your dog's name?",
+		"firstCar": "Enter the make and model of your first car.",
+		"firstConcert": "What was the first concert you went to?",
+		"meetParents": "In which city or town did your parents meet?",
+		"secondName": "What is the middle name of your eldest sister or brother?"
 	},
 	"signup": {
 		"cancel": "Cancel",

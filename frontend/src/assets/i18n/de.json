@@ -1,4 +1,126 @@
 {
+	"alert": {
+		"appComponent": {
+			"header": "Inaktivität",
+			"message": "Automatische Abmeldung nach 10 Minuten."
+		},
+		"ask": {
+			"header": "Frage erfolgreich gestellt!",
+			"message": ""
+		},
+		"cancel": "abbrechen",
+		"createGroup": {
+			"header": "Gruppe erfolgreich erstellt!",
+			"message": ""
+		},
+		"delete": {
+			"message": "Der Account wurde erfolgreich gelöscht!",
+			"text": "Wenn Dein Account einmal gelöscht ist, kann er nicht mehr wiederhergesellt werden!",
+			"title": "Bist Du Dir sicher?"
+		},
+		"editGroup": {
+			"header": "Gruppe erfolgreich geupdated!",
+			"message": ""
+		},
+		"editPassword": {
+			"emptyPassword": {
+				"header": "Oops",
+				"message": "Die Passwörter dürfen nicht leer sein!"
+			},
+			"header": "Passwort wurde erfolgreich geändert!",
+			"message": "",
+			"noMatch": {
+				"header": "Oops",
+				"message": "Die Passwörter stimmen nicht überein!"
+			},
+			"wrongPw": "Altes passwort falsch"
+		},
+		"email": {
+			"header": "Die E-Mail darf nicht leer sein!",
+			"invalid": {
+				"header": "Die E-Mail ist ungültig!",
+				"message": ""
+			},
+			"message": ""
+		},
+		"invite": {
+			"emptyCode": {
+				"header": "Oops",
+				"message": "Der Einladungslink ist leer!"
+			},
+			"header": "Herzlich Glückwunsch!",
+			"invalidCode": {
+				"header": "Oops",
+				"message": "Der Einladungslink ist ungültig!"
+			},
+			"message": "Sie sind erfolgreich der Gruppe beigetreten."
+		},
+		"logout": {
+			"message": "Du wurdest erfolgreich abgemeldet!",
+			"text": "Möchtest Du Dich wirklich abmelden?",
+			"title": "Abmelden"
+		},
+		"newPassword": {
+			"emptyPassword": {
+				"header": "Oops",
+				"message": "Passwörter dürfen nicht leer sein!"
+			},
+			"emptySQuestion": {
+				"header": "Oops",
+				"message": "Bitte eine Sicherheitsfrage und Antwort ausfüllen!"
+			},
+			"header": "Passwort erfolgreich zurückgesetzt!",
+			"message": "",
+			"noMatch": {
+				"header": "Oops",
+				"message": "Passwörter stimmen nicht überein!"
+			}
+		},
+		"notDelete": {
+			"header": "Oops",
+			"message": "Die Kategorie wird noch verwendet!"
+		},
+		"notification": {
+			"header": "Erfolgreich geändert!",
+			"message": ""
+		},
+		"period": {
+			"header": "Oops",
+			"message": "Bitte wähle einen Zeitraum aus!"
+		},
+		"removeMember": {
+			"header": "User wurde erfolgreich gelöscht!",
+			"message": ""
+		},
+		"signIn": {
+			"emptyPassword": {
+				"header": "Oops",
+				"message": "E-Mail und Passwort dürfen nicht leer sein!"
+			},
+			"header": "Herzlich willkommen!",
+			"message": "Login war erfolgreich.",
+			"noMatch": {
+				"header": "Oops",
+				"message": "E-Mail und Passwort stimmen nicht überein!"
+			}
+		},
+		"signUp": {
+			"emptyPassword": {
+				"header": "Oops",
+				"message": "Passwörter dürfen nicht leer sein!"
+			},
+			"emptySQuestion": {
+				"header": "Oops",
+				"message": "Bitte eine Sicherheitsfrage und Antwort ausfüllen!"
+			},
+			"header": "Erfolgreich registriert!",
+			"message": "",
+			"wrongPassword": {
+				"header": "Oops",
+				"message": "Passwörter stimmen nicht überein!"
+			}
+		}
+	},
 	"askQuestions": {
 		"template": "Frage stellen"
 	},
@@ -15,9 +137,13 @@
 		"header": "Einladungscode erstellen",
 		"msg": "Einladungscode"
 	},
+	"editGroup": {
+		"grpNameMsg": "Name",
+		"header": "Gruppe bearbeiten"
+	},
 	"editPassword": {
 		"header": "Passwort ändern",
-    "password": "Neues Passwort",
+		"password": "Neues Passwort",
 		"pwretype": "Neues Passwort Wiederholen"
 	},
 	"editProfile": {
@@ -25,12 +151,21 @@
 		"logo": "Logo"
 	},
 	"email": "E-Mail",
+	"emailDialog": {
+		"header": "E-Mail angeben!"
+	},
+	"error": {
+		"home": "Zurück zur Anmeldung",
+		"lost": "Sieht so aus, als hättest Du dich verirrt",
+		"notAvaible": "die Seite, die Du suchst, ist nicht verfügbar!"
+	},
 	"expenses": {
 		"addBtn": "Hinzufügen",
 		"addExpenses": "Ausgaben hinzufügen",
 		"amount": "Betrag",
 		"category": "Kategorie:",
 		"closeBtn": "Schließen",
+		"date": "",
 		"description": "Ausgabe",
 		"expenses": "Ausgaben:",
 		"headerExp": "Alle Ausgaben",
@@ -50,27 +185,47 @@
 		"member": "Gruppenmitglieder:",
 		"statistic": "Statistik"
 	},
+	"gtc": {
+		"Text 1": "IT-GmbH erbringt ihre Dienste ausschließlich auf der Grundlage dieser Vertragsbedingungen unter Ausschluss entgegenstehender Geschäfts- bzw. Einkaufsbedingungen des Kunden. Sofern es sich bei dem Kunden um einen Unternehmer i. S. v. § 24 AGBG handelt, gelten diese Geschäftsbedingungen auch für alle zukünftigen Geschäfte, auch wenn sie nicht noch einmal ausdrücklich vereinbart worden sind. Soweit es sich bei dem Kunden um einen Unternehmer i. S. v. § 24 AGBG handelt, gelten die Bedingungen spätestens mit der erstmaligen Nutzung der Dienste von IT-GmbH als angenommen.\n2. Abweichungen von diesen AGB sind nur nach schriftlicher Bestätigung durch IT-GmbH wirksam.\n3. Alle Abreden bedürfen der Schriftform. Abweichungen und Ergänzungen sowie Leistungs- und Lieferzeitpunkte werden nur dann Vertragsbestandteil, wenn sie schriftlich von IT-GmbH bestätigt werden. An einen schriftlichen Auftrag ist der Kunde 14 Tage gebunden.",
+		"Text 2": "IT-GmbH ermöglicht ihren Kunden den Zugang zu Internet-Diensten und -Dienstleistungen. Einzelheiten der Dienste regelt die Produktbeschreibung. Die Dienste werden 24 Stunden am Tag an sieben Tagen die Woche erbracht.",
+		"Text 2.1": "IT-GmbH ist berechtigt, unter Berücksichtigung der Interessen des Kunden eine Anpassung der Leistungsinhalte vorzunehmen, um diese zu verbessern, insbesondere sie an neue technische Entwicklungen anzupassen, sofern dies für den Kunden zumutbar ist.",
+		"Text 2.2": "Der Kunde erhält Support durch die IT-GmbH-Hotline von montags bis freitags in der Zeit von 09.00 Uhr bis 17.00 Uhr, außer an regionalen und bundeseinheitlichen Feiertagen. Hat der Kunde spezielle Anforderungen an die Support Zeiten so kann dies ggf. gesondert vereinbart werden.",
+		"Text 2.3": "Das SLA (Service Level Agreement) für Netzwerkdienste beträgt > 99,9% und für einfache Managed Server 98,5%, für unabhängige Cluster aus zwei Servern 99,8%, bei drei 99,9%. Für Cloud Services gilt dies entsprechend. Sollten höhere oder andere SLAs gewünscht werden, so\nkann dies ggf. gesondert vereinbart werden.",
+		"Text 3": "Der Kunde überprüft im Rahmen seiner Möglichkeiten die ordnungsgemäße Erbringung der Leistungen von IT-GmbH; er teilt IT-GmbH erkennbare Mängel und Störungen unverzüglich mit. Sofern Mängel oder Störungen im Verantwortungsbereich des Kunden aufgetreten sind, hat der Kunde bei einem verschuldeten Irrtum seinerseits über die Ursache IT-GmbH alle bei der Beseitigung entstandenen Kosten zu ersetzen.",
+		"Text 3.1": "Der Kunde ist verpflichtet, die Dienste nicht missbräuchlich zu nutzen und rechtswidrige Handlungen zu unterlassen. Insbesondere ist er verpflichtet,",
+		"Text 3.2": "keine Inhalte zu verbreiten oder abzurufen oder auf sie durch Hyperlinks zu verweisen, durch die gegen gesetzliche Bestimmungen, Rechte Dritter, insbesondere deren Urheberrechte, oder die guten Sitten verstoßen wird;\n",
+		"Text 3.3": "eine übermäßige Nutzung Netzinfrastruktur durch ungezielte oder unsachgemäße Verbreitung von Daten zu unterlassen (z.B. Mail-Spamming) und die Entstehung von nicht sachgerechten Mehrkosten bei IT-GmbH oder Dritten zu vermeiden;",
+		"Text 3.4": "alle Personen, die in seinem Geschäftsbetrieb beschäftigt sind und denen er eine Nutzung der IT-GmbH-Dienste ermöglicht, in geeigneter Weise auf die Einhaltung dieser Pflichten hinzuweisen.",
+		"Text 3.5": "anerkannten Grundsätzen der Datensicherheit Rechnung zu tragen, insbesondere Zugangskennungen geheim zu halten und unverzüglich deren Änderung zu veranlassen, falls die Vermutung besteht, dass nicht berechtigte Dritte davon Kenntnis erlangt haben.",
+		"Text 3.6": "die Erfüllung gesetzlicher Vorschriften und behördlicher Auflagen sicherzustellen sowie für die Erteilung behördlicher Erlaubnis Sorge zu tragen, soweit diese gegenwärtig oder künftig für die Nutzung der Dienste erforderlich sind.",
+		"Text 4": " IT-GmbH selbst erhebt und verarbeitet personenbezogene Daten (Bestands- und Nutzungsdaten) des Kunden maschinell nach Maßgabe der einschlägigen datenschutzrechtlichen Bestimmungen und nur zum Zwecke der Vertragsdurchführung und ausschließlich an den deutschen Standorten von IT-GmbH.\nIT-GmbH verpflichtet sich, alle nach den geltenden Datenschutzvorschriften erforderlichen Datenschutz- und Datensicherungsmaßnahmen zu treffen. IT-GmbH wird die im Rahmen der ordnungsgemäßen Abwicklung der Aufträge gesetzlich geforderten technischen und organisatorischen Sicherungsmaßnahmen einhalten und stellt diese zur Verfügung oder wird diese dem Kunden auf Verlangen nachweisen.\nWerden personenbezogene Daten durch IT-GmbH im Auftrag des Kunden erhoben, verarbeitet oder genutzt, erfolgt dies im Rahmen der Weisungen des Kunden (Auftragsdatenverarbeitung). IT-GmbH wird dafür Sorge tragen, dass alle Auftragsdaten und deren Verarbeitung streng vertraulich behandelt und insbesondere nicht unbefugt an Dritte übermittelt werden. Der Kunde beauftragt IT-GmbH mit der Vornahme aller erforderlichen technischen und organisatorischen Maßnahmen zur Herbeiführung einer rationellen Verarbeitung und zur Sicherung der Daten vor Verlust, Verfälschung oder unbefugtem Zugriff.\nFür eine Auftragsdatenverarbeitung schließen wir mit dem Kunden einen Vertrag zur Auftragsdatenverarbeitung ab.\nNach Beendigung des Vertrags bzw. der Auftragsdatenverarbeitung werden beim Auftragnehmer IT-GmbH gespeicherter Daten gelöscht. Der Kunde kann die Daten zuvor selbst exportieren und downloaden oder IT-GmbH den Auftrag hierzu erteilen.\nSoweit für die Geschäftsabwicklung (z.B. für die Durchführen von Korrekturen/Bereinigungen oder für den Versand von SMS Nachrichten) notwendig, können von IT-GmbH personenbezogene Daten des Kunden an benannte Vertragspartner der IT-GmbH weitergegeben werden. Etwaige Unterauftragnehmer werden dem Kunden bei Auftragserteilung vor der Weitergabe angezeigt. Der Kunde trägt in eigener Verantwortung dafür Sorge, dass eine Zustimmung im Einzelfall vorliegt.",
+		"header": "AGBs",
+		"Überschrift 1": "§ 1 Geltungsbereich",
+		"Überschrift 2": "§ 2 Vertragsgegenstand",
+		"Überschrift 3": "§ 3 Pflichten des Kunden",
+		"Überschrift 4": "§ 3 Datenschutz"
+	},
 	"history": {
 		"header": "Verlauf",
 		"search": "Suche"
 	},
 	"imprint": {
-		"header": "Impressum",
-    "Angaben": "Angaben zum Unternehmen: ",
-    "Straße": "Tommystraße 187",
-    "Straße2": "Tommystraße 205",
-    "Telefax": "Telefax: 030-120400",
-    "Telefon": "Telefon: 030-181001\n",
-    "Telefon2": "Telefon: 030-120400",
-    "Land": "Deutschland",
-    "Name": "Klaus Tom",
-    "Ort": "16695 Ahrensfelde",
-    "E-Mail": "E-Mail: info-IT@google.com",
-    "Email": "E-Mail: info-IT@google.com\n",
-    "Fax": "Telefax: 030-181001",
-    "GmbH": "IT GmbH",
-    "Vertretungsberechtigter": "Vertretungsberechtigter beim Anbieter ist: "
-  },
+		"Angaben": "Angaben zum Unternehmen: ",
+		"E-Mail": "E-Mail: info-IT@google.com",
+		"Email": "E-Mail: info-IT@google.com\n",
+		"Fax": "Telefax: 030-181001",
+		"GmbH": "IT GmbH",
+		"Land": "Deutschland",
+		"Name": "Klaus Tom",
+		"Ort": "16695 Ahrensfelde",
+		"Straße": "Tommystraße 187",
+		"Straße2": "Tommystraße 205",
+		"Telefax": "Telefax: 030-120400",
+		"Telefon": "Telefon: 030-181001\n",
+		"Telefon2": "Telefon: 030-120400",
+		"Vertretungsberechtigter": "Vertretungsberechtigter beim Anbieter ist: ",
+		"header": "Impressum"
+	},
 	"invite": {
 		"header": "Gruppe beitreten",
 		"placeholder": "Einladungscode"
@@ -93,15 +248,18 @@
 	"menu": {
 		"agb": "AGB",
 		"category": "Kategorie",
+		"currency": "Währung",
 		"faq": "FAQ",
 		"help&settings": "Hilfe & Einstellungen",
 		"impressum": "Impressum",
 		"language": "Sprache",
 		"logout": "Ausloggen",
+		"main": "Hauptmenü",
+		"notification": "",
 		"privacy": "Datenschutz",
 		"profile": "Profil",
-		"settings": "Einstellungen",
-    "main": "Hauptmenü"
+		"quiz": "",
+		"settings": "Einstellungen"
 	},
 	"newCategory": {
 		"header": "Neue Kategorie hinzufügen:",
@@ -118,12 +276,14 @@
 		"header": "Benachrichtigungen"
 	},
 	"password": "Passwort",
+	"passwordOld": "Altes Passwort",
 	"period": {
+		"all": "Alle Ausgaben",
 		"header": "Zeitraum",
 		"month": "Monat",
 		"period": "Zeitraum",
-		"year": "Jahr",
-    "select": "Ausgewählt"
+		"select": "Ausgewählt",
+		"year": "Jahr"
 	},
 	"privacy": {
 		"Datenschutzbeauftragter": "Datenschutzbeauftragte/r beim Anbieter ist:",
@@ -174,23 +334,23 @@
 		"acc": "Mein Konto",
 		"changePw": "Passwort ändern",
 		"deleteAcc": "Konto löschen",
-		"edit": "Bearbeiten",
+		"edit": "Profil Bearbeiten",
+		"expenses": "Ausgaben",
+		"faq": "Fragen",
 		"imgMsg": "Bild der jeweiligen Person",
-		"join": "Gruppe beitreten",
-    "faq": "Fragen",
-    "expenses": "Ausgaben"
-  },
+		"join": "Gruppe beitreten"
+	},
 	"saveBtn": "speichern",
 	"secAnswer": "Antwort:",
 	"secLine": "Wählen Sie 1 Frage aus!",
 	"secQuestion": "Sicherheitsfrage:",
 	"secSelection": {
 		"bornCity": "In welcher Stadt bzw. an welchem Ort wurden Sie geboren?",
+		"dogName": "Wie ist der Name deines Hundes?",
 		"firstCar": "Geben Sie Marke und Modell Ihres ersten Autos an.",
 		"firstConcert": "Welches war Ihr erstes Konzert, das Sie besucht haben?",
 		"meetParents": "In welcher Stadt bzw. welchem Ort haben sich Ihre Eltern kennengelernt?",
-		"secondName": "Wie lautet der zweite Vorname Ihrer ältesten Schwester bzw. Ihres ältesten Bruders?",
-    "dogName": "Wie ist der Name deines Hundes?"
+		"secondName": "Wie lautet der zweite Vorname Ihrer ältesten Schwester bzw. Ihres ältesten Bruders?"
 	},
 	"signup": {
 		"cancel": "abbrechen",
@@ -204,160 +364,5 @@
 		"header": "Statistik",
 		"tableHeader": "Ausgaben:"
 	},
-	"surname": "Nachname",
-  "gtc": {
-    "header" : "AGBs",
-    "Überschrift 1": "§ 1 Geltungsbereich",
-    "Text 1": "IT-GmbH erbringt ihre Dienste ausschließlich auf der Grundlage dieser Vertragsbedingungen unter Ausschluss entgegenstehender Geschäfts- bzw. Einkaufsbedingungen des Kunden. Sofern es sich bei dem Kunden um einen Unternehmer i. S. v. § 24 AGBG handelt, gelten diese Geschäftsbedingungen auch für alle zukünftigen Geschäfte, auch wenn sie nicht noch einmal ausdrücklich vereinbart worden sind. Soweit es sich bei dem Kunden um einen Unternehmer i. S. v. § 24 AGBG handelt, gelten die Bedingungen spätestens mit der erstmaligen Nutzung der Dienste von IT-GmbH als angenommen.\n2. Abweichungen von diesen AGB sind nur nach schriftlicher Bestätigung durch IT-GmbH wirksam.\n3. Alle Abreden bedürfen der Schriftform. Abweichungen und Ergänzungen sowie Leistungs- und Lieferzeitpunkte werden nur dann Vertragsbestandteil, wenn sie schriftlich von IT-GmbH bestätigt werden. An einen schriftlichen Auftrag ist der Kunde 14 Tage gebunden.",
-    "Überschrift 2": "§ 2 Vertragsgegenstand",
-    "Text 2": "IT-GmbH ermöglicht ihren Kunden den Zugang zu Internet-Diensten und -Dienstleistungen. Einzelheiten der Dienste regelt die Produktbeschreibung. Die Dienste werden 24 Stunden am Tag an sieben Tagen die Woche erbracht.",
-    "Text 2.1": "IT-GmbH ist berechtigt, unter Berücksichtigung der Interessen des Kunden eine Anpassung der Leistungsinhalte vorzunehmen, um diese zu verbessern, insbesondere sie an neue technische Entwicklungen anzupassen, sofern dies für den Kunden zumutbar ist.",
-    "Text 2.2": "Der Kunde erhält Support durch die IT-GmbH-Hotline von montags bis freitags in der Zeit von 09.00 Uhr bis 17.00 Uhr, außer an regionalen und bundeseinheitlichen Feiertagen. Hat der Kunde spezielle Anforderungen an die Support Zeiten so kann dies ggf. gesondert vereinbart werden.",
-    "Text 2.3": "Das SLA (Service Level Agreement) für Netzwerkdienste beträgt > 99,9% und für einfache Managed Server 98,5%, für unabhängige Cluster aus zwei Servern 99,8%, bei drei 99,9%. Für Cloud Services gilt dies entsprechend. Sollten höhere oder andere SLAs gewünscht werden, so\nkann dies ggf. gesondert vereinbart werden.",
-    "Überschrift 3": "§ 3 Pflichten des Kunden",
-    "Text 3": "Der Kunde überprüft im Rahmen seiner Möglichkeiten die ordnungsgemäße Erbringung der Leistungen von IT-GmbH; er teilt IT-GmbH erkennbare Mängel und Störungen unverzüglich mit. Sofern Mängel oder Störungen im Verantwortungsbereich des Kunden aufgetreten sind, hat der Kunde bei einem verschuldeten Irrtum seinerseits über die Ursache IT-GmbH alle bei der Beseitigung entstandenen Kosten zu ersetzen.",
-    "Text 3.1": "Der Kunde ist verpflichtet, die Dienste nicht missbräuchlich zu nutzen und rechtswidrige Handlungen zu unterlassen. Insbesondere ist er verpflichtet,",
-    "Text 3.2":"keine Inhalte zu verbreiten oder abzurufen oder auf sie durch Hyperlinks zu verweisen, durch die gegen gesetzliche Bestimmungen, Rechte Dritter, insbesondere deren Urheberrechte, oder die guten Sitten verstoßen wird;\n",
-    "Text 3.3":"eine übermäßige Nutzung Netzinfrastruktur durch ungezielte oder unsachgemäße Verbreitung von Daten zu unterlassen (z.B. Mail-Spamming) und die Entstehung von nicht sachgerechten Mehrkosten bei IT-GmbH oder Dritten zu vermeiden;",
-    "Text 3.4":"alle Personen, die in seinem Geschäftsbetrieb beschäftigt sind und denen er eine Nutzung der IT-GmbH-Dienste ermöglicht, in geeigneter Weise auf die Einhaltung dieser Pflichten hinzuweisen.",
-    "Text 3.5": "anerkannten Grundsätzen der Datensicherheit Rechnung zu tragen, insbesondere Zugangskennungen geheim zu halten und unverzüglich deren Änderung zu veranlassen, falls die Vermutung besteht, dass nicht berechtigte Dritte davon Kenntnis erlangt haben.",
-    "Text 3.6": "die Erfüllung gesetzlicher Vorschriften und behördlicher Auflagen sicherzustellen sowie für die Erteilung behördlicher Erlaubnis Sorge zu tragen, soweit diese gegenwärtig oder künftig für die Nutzung der Dienste erforderlich sind.",
-    "Überschrift 4": "§ 3 Datenschutz",
-    "Text 4": " IT-GmbH selbst erhebt und verarbeitet personenbezogene Daten (Bestands- und Nutzungsdaten) des Kunden maschinell nach Maßgabe der einschlägigen datenschutzrechtlichen Bestimmungen und nur zum Zwecke der Vertragsdurchführung und ausschließlich an den deutschen Standorten von IT-GmbH.\nIT-GmbH verpflichtet sich, alle nach den geltenden Datenschutzvorschriften erforderlichen Datenschutz- und Datensicherungsmaßnahmen zu treffen. IT-GmbH wird die im Rahmen der ordnungsgemäßen Abwicklung der Aufträge gesetzlich geforderten technischen und organisatorischen Sicherungsmaßnahmen einhalten und stellt diese zur Verfügung oder wird diese dem Kunden auf Verlangen nachweisen.\nWerden personenbezogene Daten durch IT-GmbH im Auftrag des Kunden erhoben, verarbeitet oder genutzt, erfolgt dies im Rahmen der Weisungen des Kunden (Auftragsdatenverarbeitung). IT-GmbH wird dafür Sorge tragen, dass alle Auftragsdaten und deren Verarbeitung streng vertraulich behandelt und insbesondere nicht unbefugt an Dritte übermittelt werden. Der Kunde beauftragt IT-GmbH mit der Vornahme aller erforderlichen technischen und organisatorischen Maßnahmen zur Herbeiführung einer rationellen Verarbeitung und zur Sicherung der Daten vor Verlust, Verfälschung oder unbefugtem Zugriff.\nFür eine Auftragsdatenverarbeitung schließen wir mit dem Kunden einen Vertrag zur Auftragsdatenverarbeitung ab.\nNach Beendigung des Vertrags bzw. der Auftragsdatenverarbeitung werden beim Auftragnehmer IT-GmbH gespeicherter Daten gelöscht. Der Kunde kann die Daten zuvor selbst exportieren und downloaden oder IT-GmbH den Auftrag hierzu erteilen.\nSoweit für die Geschäftsabwicklung (z.B. für die Durchführen von Korrekturen/Bereinigungen oder für den Versand von SMS Nachrichten) notwendig, können von IT-GmbH personenbezogene Daten des Kunden an benannte Vertragspartner der IT-GmbH weitergegeben werden. Etwaige Unterauftragnehmer werden dem Kunden bei Auftragserteilung vor der Weitergabe angezeigt. Der Kunde trägt in eigener Verantwortung dafür Sorge, dass eine Zustimmung im Einzelfall vorliegt."
-  },
-  "alert": {
-    "logout": {
-      "title": "Abmelden",
-      "text": "Möchtest Du Dich wirklich abmelden?",
-      "message": "Du wurdest erfolgreich abgemeldet!"
-    },
-    "delete": {
-      "title": "Bist Du Dir sicher?",
-      "text": "Wenn Dein Account einmal gelöscht ist, kann er nicht mehr wiederhergesellt werden!",
-      "message": "Der Account wurde erfolgreich gelöscht!"
-    },
-    "ask": {
-      "header": "Frage erfolgreich gestellt!",
-      "message": ""
-    },
-    "createGroup": {
-      "header": "Gruppe erfolgreich erstellt!",
-      "message": ""
-    },
-    "signUp": {
-      "header": "Erfolgreich registriert!",
-      "message": "",
-      "emptyPassword": {
-        "header": "Oops",
-        "message": "Passwörter dürfen nicht leer sein!"
-      },
-      "emptySQuestion": {
-        "header": "Oops",
-        "message": "Bitte eine Sicherheitsfrage und Antwort ausfüllen!"
-      },
-      "wrongPassword": {
-        "header": "Oops",
-        "message": "Passwörter stimmen nicht überein!"
-      }
-    },
-    "signIn": {
-      "header": "Herzlich willkommen!",
-      "message": "Login war erfolgreich.",
-      "emptyPassword": {
-        "header": "Oops",
-        "message": "E-Mail und Passwort dürfen nicht leer sein!"
-      },
-      "noMatch": {
-        "header": "Oops",
-        "message": "E-Mail und Passwort stimmen nicht überein!"
-      }
-    },
-    "notification": {
-      "header": "Erfolgreich geändert!",
-      "message": ""
-    },
-    "newPassword": {
-      "header": "Passwort erfolgreich zurückgesetzt!",
-      "message": "",
-      "emptyPassword": {
-        "header": "Oops",
-        "message": "Passwörter dürfen nicht leer sein!"
-      },
-      "emptySQuestion": {
-        "header": "Oops",
-        "message": "Bitte eine Sicherheitsfrage und Antwort ausfüllen!"
-      },
-      "noMatch": {
-        "header": "Oops",
-        "message": "Passwörter stimmen nicht überein!"
-      }
-    },
-    "invite": {
-      "header": "Herzlich Glückwunsch!",
-      "message": "Sie sind erfolgreich der Gruppe beigetreten.",
-      "invalidCode": {
-        "header": "Oops",
-        "message": "Der Einladungslink ist ungültig!"
-      },
-      "emptyCode": {
-        "header": "Oops",
-        "message": "Der Einladungslink ist leer!"
-      }
-    },
-    "editPassword": {
-      "header": "Passwort wurde erfolgreich geändert!",
-      "message": "",
-      "wrongPw": "Altes passwort falsch",
-      "emptyPassword": {
-        "header": "Oops",
-        "message": "Die Passwörter dürfen nicht leer sein!"
-      },
-      "noMatch": {
-        "header": "Oops",
-        "message": "Die Passwörter stimmen nicht überein!"
-      }
-    },
-    "editGroup": {
-      "header": "Gruppe erfolgreich geupdated!",
-      "message": ""
-    },
-    "period": {
-      "header": "Oops",
-      "message": "Bitte wähle einen Zeitraum aus!"
-    },
-    "appComponent": {
-      "header": "Inaktivität",
-      "message": "Automatische Abmeldung nach 10 Minuten."
-    },
-    "notDelete": {
-      "header": "Oops",
-      "message": "Die Kategorie wird noch verwendet!"
-    },
-    "removeMember":{
-      "header": "User wurde erfolgreich gelöscht!",
-      "message": ""
-    },
-    "email": {
-      "header": "Die E-Mail darf nicht leer sein!",
-      "message": "",
-      "invalid": {
-        "header": "Die E-Mail ist ungültig!",
-        "message": ""
-      }
-    },
-    "cancel": "abbrechen"
-  },
-  "error": {
-    "lost": "Sieht so aus, als hättest Du dich verirrt",
-    "notAvaible": "die Seite, die Du suchst, ist nicht verfügbar!",
-    "home": "Zurück zur Anmeldung"
-  },
-  "emailDialog": {
-    "header": "E-Mail angeben!"
-  },
-  "passwordOld": "Altes Passwort",
-  "editGroup": {
-    "header": "Gruppe bearbeiten",
-    "grpNameMsg": "Name"
-  }
+	"surname": "Nachname"
 }
