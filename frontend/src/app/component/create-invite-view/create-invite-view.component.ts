@@ -28,28 +28,8 @@ export class CreateInviteViewComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  copyMessage(val: string){
-    if (val = "undefined") {
-      val = '';
-    }
-    const selBox = document.createElement('textarea');
-    selBox.style.position = 'fixed';
-    selBox.style.left = '0';
-    selBox.style.top = '0';
-    selBox.style.opacity = '0';
-    selBox.value = val;
-    document.body.appendChild(selBox);
-    selBox.focus();
-    selBox.select();
-    document.execCommand('copy');
-    document.body.removeChild(selBox);
-  }
-
   ngOnInit(): void {
     this.loginService.checkLogIn();
-    this.createInviteForm = this.formBuilder.group({
-      inviteCode: ['']
-    });
   }
 
 }

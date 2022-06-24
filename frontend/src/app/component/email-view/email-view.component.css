@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+.header_Text {
+  color: #7875B5;
+  text-shadow: black;
+  font-size: 180%;
+}
+
+.input_field {
+  padding: 10px 0px;
+  position: relative;
+}
+
+.input_field:active,
+.input_field:focus,
+.input_field:hover {
+  outline: none;
+  border-bottom-color: #6A679E;
+}
+
+.column_select {
+  width: 95%;
+  float: left;
+  padding: 2%;
+  position: relative;
+}
+
+.column_save {
+  float: left;
+  width: 45%;
+}
+
+.column_close {
+  float: right;
+  width: 45%;
+ }
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

@@ -41,6 +41,7 @@ import { RemoveMemberViewComponent } from './component/remove-member-view/remove
 import { PeriodViewComponent } from './component/period-view/period-view.component';
 import { PageNotFoundViewComponent } from './component/page-not-found-view/page-not-found-view.component';
 import { FaqProfileViewComponent } from './component/faq-profile-view/faq-profile-view.component';
+import { EmailViewComponent } from './component/email-view/email-view.component';
 
 import { HistoryFilterPipe } from './component/history-view/history-filter.pipe';
 import { ExpensesFilterPipe } from './component/expenses-view/expenses-filter.pipe';
@@ -80,6 +81,7 @@ import { ExpensesProfileFilterPipe } from './component/expenses-profile-view/exp
     PageNotFoundViewComponent,
     ExpensesProfileViewComponent,
     ExpensesProfileFilterPipe,
+    EmailViewComponent,
     FaqProfileViewComponent
   ],
   imports: [
