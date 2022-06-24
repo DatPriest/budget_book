@@ -1,6 +1,6 @@
 export class NewPasswordModule {
   constructor (
-    public email: string,
+    public userId: number,
     public hash: string,
     public securityQuestionKey: string,
     public securityAnswer: string,

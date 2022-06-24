@@ -23,7 +23,6 @@ export class NewPasswordViewComponent implements OnInit {
   showPasswordReplay: boolean = false;
   hash: string;
   securityQuestion: SecurityQuestionModule = new SecurityQuestionModule(null, null);
-  userId: any;
   constructor(public router: Router, public formBuilder: FormBuilder, public userService: UserService, public hashService: HashingService, public alertService: AlertService, public translate: TranslateService) {
     this.getSecQuestion();
   }
@@ -47,7 +46,7 @@ export class NewPasswordViewComponent implements OnInit {
       if (newPasswordForm.value.password_1 == newPasswordForm.value.password_2) {
         this.hash = this.hashService.encrypt(newPasswordForm.value.password_1);
         if (newPasswordForm.value.securityQuestion != '' && newPasswordForm.value.securityAnswer != '') {
-          const newPasswordData = new NewPasswordModule(this.userId, this.hash, newPasswordForm.value.securityQuestion, newPasswordForm.value.securityAnswer);
+          const newPasswordData = new NewPasswordModule(parseInt(localStorage.getItem("userId")), this.hash, newPasswordForm.value.securityQuestion, newPasswordForm.value.securityAnswer);
           this.userService.passwordForgotRequest(newPasswordData).subscribe(data => {
             this.alertService.successfulAlert(this.translate.instant('alert.newPassword.header'),  this.translate.instant('alert.newPassword.message'),  "success", 2500);
             this.router.navigate(['/sign-in']);
