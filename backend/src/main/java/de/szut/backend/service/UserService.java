@@ -4,6 +4,7 @@ import de.szut.backend.controller.StatisticsController;
 import de.szut.backend.model.UserUpdatePasswordDto;
 import de.szut.backend.repository.UserRepository;
 import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.spi.LoggerRegistry;
 import org.springframework.stereotype.Service;
 import de.szut.backend.model.User;
 import org.apache.logging.log4j.Logger;
@@ -22,8 +23,8 @@ public class UserService extends BaseService {
         User user = userRepository.findById(dto.userId);
         LOGGER.info("User mit id {} wird bearbeitet",dto.userId);
         if (user != null) {
-            LOGGER.info("User PasswortHash: {}, Eingegebenes altes PW {}", user.hash,dto.oldHash);
-            if (user.hash.equals(dto.oldHash)) {
+            LOGGER.info("User PasswortHash: {}, Eingegebenes altes PW {}", user.hash,VerificationService.hashPassword(dto.oldHash + user.salt));
+            if (user.hash.equals(VerificationService.hashPassword(dto.oldHash + user.salt))) {
                 LOGGER.info("User wird bearbeitet");
                 user.salt = VerificationService.getSalt();
                 user.hash = VerificationService.hashPassword(dto.newHash + user.salt);
