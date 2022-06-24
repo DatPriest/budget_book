@@ -7,6 +7,7 @@ import { UserService } from 'src/app/service/user/user.service';
 import { SecurityQuestionModule } from 'src/app/model/security-question/security-question.module';
 import { AlertService } from 'src/app/service/alert/alert.service';
 import { HashingService } from 'src/app/service/hashing/hashing.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sign-up-view',
@@ -21,7 +22,7 @@ export class SignUpViewComponent implements OnInit {
   image: string;
   securityQuestion$ : Observable<SecurityQuestionModule[]> = of([]);
   hash: string;
-  constructor(public router: Router, public userService: UserService, public formBuilder: FormBuilder, public hashService: HashingService, public alertService: AlertService) {
+  constructor(public router: Router, public userService: UserService, public formBuilder: FormBuilder, public hashService: HashingService, public alertService: AlertService, public translate: TranslateService) {
     this.securityQuestion$ = this.userService.getSecurityQuestion();
   }
 
@@ -35,21 +36,21 @@ export class SignUpViewComponent implements OnInit {
 
   registrationUser(signUpForm: NgForm): void {
     if (signUpForm.value.password_1 == '' && signUpForm.value.password_2 == '') {
-      this.alertService.alert("Oops",  "Passwörter dürfen nicht leer sein!",  "error");
+      this.alertService.alert(this.translate.instant('alert.signUp.emptyPassword.header'),  this.translate.instant('alert.signUp.emptyPassword.message'),  "error");
     } else {
       if (signUpForm.value.password_1 == signUpForm.value.password_2) {
         if (signUpForm.value.securityQuestion != '' && signUpForm.value.securityAnswer != '') {
           this.hash = this.hashService.encrypt(signUpForm.value.password_1);
           const signUpData = new UserModule(null, signUpForm.value.firstName, signUpForm.value.lastName, this.hash, signUpForm.value.email, signUpForm.value.securityQuestion, signUpForm.value.securityAnswer, this.image);
           this.userService.registerUser(signUpData).subscribe(data => {
-            this.alertService.successfulAlert("Erfolgreich registriert!",  "",  "success", 2500);
+            this.alertService.successfulAlert(this.translate.instant('alert.signUp.header'),  this.translate.instant('alert.signUp.message'),  "success", 2500);
             this.router.navigate(['/sign-in']);
           });
         } else {
-          this.alertService.alert("Oops",  "Bitte eine Sicherheitsfrage und Antwort ausfüllen!",  "error");
+          this.alertService.alert(this.translate.instant('alert.signUp.emptySQuestion.header'),  this.translate.instant('alert.signUp.emptySQuestion.message'),  "error");
         }
       } else {
-          this.alertService.alert("Oops",  "Passwörter stimmen nicht überein!",  "error");
+          this.alertService.alert(this.translate.instant('alert.signUp.wrongPassword.header'),  this.translate.instant('alert.signUp.wrongPassword.message'),  "error");
       }
     }
   }

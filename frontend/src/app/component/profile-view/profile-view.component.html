@@ -10,26 +10,28 @@
       <div class="container">
         <div class="screen">
           <div class="picture">
-            <img src={{user.image}} alt="{{'profile.imgMsg'| translate}}">
+            <img src={{user.imageString}} alt="{{'profile.imgMsg'| translate}}" width="200" height="200">
           </div>
           <div class="column">
             <div class="info">
               <label class="label" translate="forename"></label><br>
-              <input type="text" id="UserName" name="fname" placeholder="{{'forename'|translate}}"value="{{user.firstName}}" readonly><br><br>
-              <label class="label"translate="surname"></label>
-              <input type="text" id="UserName2" name="lname" placeholder="{{'surname'| translate}}" value="{{user.lastName}}" readonly><br><br>
-              <label class="label"translate="email"></label>
-              <input type="text" id="UserEmail" name=" email" placeholder="E-{{'email'| translate}}" value="{{user.email}}" readonly><br><br>
+              <label type="text" id="UserName" name="fname">{{user.firstName}}</label><br><br>
+              <label class="label"translate="surname"></label><br>
+              <label type="text" id="UserName2" name="lname">{{user.lastName}}</label><br><br>
+              <label class="label"translate="email"></label><br>
+              <label type="text" id="UserEmail" name="email">{{user.email}}</label><br><br>
             </div>
               <div class="button_left">
               <tr>
                 <button type="button" ide="profile" (click)="joinGroupDialog()" translate="profile.join"></button>
-                <button type="button" ide="profile" (click)="moveToEditProfile(user)" translate="profile.edit"></button>
+                <button type="button" ide="profile" (click)="moveToEditProfile()" translate="profile.edit"></button>
+                <button type="button" ide="profile" (click)="moveToFAQ()" translate="profile.faq"></button>
               </tr>
               </div>
               <div class="button_right">
               <button type="button" ide="profile" (click)="moveToEditPassword()" translate="profile.changePw"></button>
               <button type="button" ide="profile" (click)="deleteProfile()" translate="profile.deleteAcc"></button>
+              <button type="button" ide="profile" (click)="moveToExpenses()" translate="profile.expenses"></button>
             </div>
           </div>
         </div>

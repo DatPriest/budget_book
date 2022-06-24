@@ -10,5 +10,6 @@ public interface ExpensesRepository extends JpaRepository<Expense,Long> {
     List<Expense> findAllByUserId(long userId);
     List<Expense> findAllByCategoryId(long categoryId);
     Expense findFirstByCategoryId(long categoryId);
-    Expense findExpenseByGroupIdAndCategoryIdAndUserId(long groupId, long categoryId, long userId);
+    Expense findExpenseByGroupIdAndCategoryIdAndUserIdAndAmount(long groupId, long categoryId, long userId, float amount);
+    boolean existsExpenseByCategoryIdAndAmountAndUserIdAndGroupIdAndDescription(long categoryId, float amount, long userId, long groupId, String description);
 }

@@ -1,14 +1,15 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable } from 'rxjs';
+import {catchError, firstValueFrom, Observable} from 'rxjs';
 import { NewPasswordModule } from 'src/app/model/new-password/new-password.module';
 import { UserModule } from 'src/app/model/user/user.module';
 import { LoginUserModule } from 'src/app/model/login-user/login-user.module';
 import { SecurityQuestionModule } from 'src/app/model/security-question/security-question.module';
 import { UpdatePasswordModule } from 'src/app/model/update-password/update-password.module';
-import { NotificationModule } from 'src/app/model/notification/notification.module';
 import { FaqModule } from 'src/app/model/faq/faq.module';
 import { AskFaqModule } from 'src/app/model/ask-faq/ask-faq.module';
+import { UserProfileModule } from 'src/app/model/user-profile/user-profile.module';
+import { ExpensesModule } from 'src/app/model/expenses/expenses.module';
 
 @Injectable({
   providedIn: 'root'
@@ -33,12 +34,16 @@ export class UserService {
     return this.http.get<SecurityQuestionModule[]>('http://localhost:4000/api/v1/securityQuestions', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
-  getProfile(userId: number) {
-    return this.http.get<UserModule[]>(`http://localhost:4000/api/v1/verification/getUserProfile/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  getSecurityQuestionByUserId() {
+    return this.http.get<SecurityQuestionModule[]>('http://localhost:4000/api/v1/securityQuestions', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
-  updateProfile(user: UserModule) {
-    return this.http.put<UserModule>('http://localhost:4000/api/v1/verification/postUserProfile', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  async getProfile(userId: number) {
+    return await firstValueFrom(this.http.get<UserProfileModule>(`http://localhost:4000/api/v1/user/id/${userId}`, {headers: new HttpHeaders().append("Content-Type", "application/json")}));
+  }
+
+  updateProfile(user: UserProfileModule) {
+    return this.http.put<UserProfileModule>('http://localhost:4000/api/v1/user/update', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   updateUserPassword(user: UpdatePasswordModule) {
@@ -46,11 +51,7 @@ export class UserService {
   }
 
   deleteProfile(userId: number) {
-    return this.http.delete(`http://localhost:4000/api/v1/profile/deleteUserProfile/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
-  }
-
-  notificationEmail(user: NotificationModule) {
-    return this.http.put('http://localhost:4000/api/v1/notification/email', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+    return this.http.delete(`http://localhost:4000/api/v1/user/delete/id/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   getFaqQuestion() {
@@ -63,5 +64,9 @@ export class UserService {
 
   postQuestion(user: AskFaqModule) {
     return this.http.post<AskFaqModule>('http://localhost:4000/api/v1/faq/create', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
+  getExpensesByUserId(userId: number) {
+    return this.http.get<ExpensesModule[]>(`http://localhost:4000/api/v1/expenses/user/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 }

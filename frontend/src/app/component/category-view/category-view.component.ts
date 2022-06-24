@@ -29,7 +29,15 @@ export class CategoryViewComponent implements OnInit {
 
     dialogConfig.autoFocus = true;
 
-    this.dialog.open(NewCategoryViewComponent, dialogConfig);
+    this.dialog.open(NewCategoryViewComponent, dialogConfig).beforeClosed().subscribe(result => {
+      if (result == true) {
+        window.location.reload();
+      }
+    });
+  }
+
+  delete(categoryId: number): void {
+    this.groupService.deleteCategoryById(categoryId);
   }
 
   ngOnInit(): void {

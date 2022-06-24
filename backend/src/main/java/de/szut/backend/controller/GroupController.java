@@ -2,17 +2,16 @@ package de.szut.backend.controller;
 
 import de.szut.backend.dto.*;
 import de.szut.backend.exceptions.GetGroupByIdException;
+import de.szut.backend.exceptions.UserHasTooManyGroupsException;
 import de.szut.backend.model.Group;
 import de.szut.backend.model.GroupXUser;
 import de.szut.backend.model.User;
 import de.szut.backend.service.GroupService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.logging.Logger;
 
 @CrossOrigin
 @RequestMapping(value = "/api/v1/groups")
@@ -30,7 +29,7 @@ public class GroupController {
      */
     @PostMapping(path = "/create/{userId}", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Group> CreateGroup(@RequestBody GroupCreateDto dto, @PathVariable long userId) {
-        Group result = null;
+        Group result;
         try {
             result = service.createGroup(dto, userId);
         } catch (Exception e) {
@@ -67,9 +66,23 @@ public class GroupController {
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
+    @PostMapping(path = "/removeUser/user/{userId}&group/{groupId}")
+    public ResponseEntity<DeleteUserOutOfGroupDto> removeUserFromGroup(@PathVariable Long userId, @PathVariable Long groupId) {
+        var dto = this.service.removeUserFromGroup(userId, groupId);
+        if (dto == null) {
+            return new ResponseEntity("User could not removed out of the group or has been already removed", HttpStatus.BAD_REQUEST);
+        }
+
+        return new ResponseEntity<>(dto, HttpStatus.OK);
+    }
+
     @GetMapping(path = "/getUsers/{groupId}", produces = "application/json")
-    public ResponseEntity<ArrayList<User>> getUsersToGroup(@PathVariable long groupId) throws TypeNotPresentException {
-        return new ResponseEntity<>(service.getUsersToGroup(groupId), HttpStatus.OK);
+    public ResponseEntity<ArrayList<UserDto>> getUsersToGroup(@PathVariable long groupId) throws TypeNotPresentException {
+        var dto = service.getUsersToGroup(groupId);
+        if (dto == null) {
+            return new ResponseEntity("User could not loaded", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return new ResponseEntity<>(dto, HttpStatus.OK);
     }
 
     @PutMapping(path = "/update", produces = "application/json")

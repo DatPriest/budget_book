@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AppModule } from 'src/app/app.module';
+import { GroupModule } from 'src/app/model/group/group.module';
 import { AlertService } from 'src/app/service/alert/alert.service';
 import { GroupService } from 'src/app/service/group/group.service';
 import { LoginService } from 'src/app/service/login/login.service';
+import { ClipboardService } from 'ngx-clipboard';
 
 @Component({
   selector: 'app-create-invite-view',
@@ -14,13 +16,12 @@ import { LoginService } from 'src/app/service/login/login.service';
 export class CreateInviteViewComponent implements OnInit {
 
   createInviteForm: FormGroup;
-  inviteCode: string;
-  constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<CreateInviteViewComponent>, public groupService: GroupService, public app: AppModule, public loginService: LoginService) {
+  constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<CreateInviteViewComponent>, public groupService: GroupService, public app: AppModule, public loginService: LoginService, @Inject(MAT_DIALOG_DATA) public data: any, private clipboardApi: ClipboardService) {
 
   }
 
-  createInvite(): void {
-    this.groupService.getInviteCode(parseInt(localStorage.getItem("groupId"))).subscribe(data => this.inviteCode = data.inviteCode);
+  copyText(val: string) {
+    this.clipboardApi.copyFromContent(val)
   }
 
   closeInvite(): void {

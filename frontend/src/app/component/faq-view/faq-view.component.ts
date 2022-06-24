@@ -13,7 +13,6 @@ import { UserService } from 'src/app/service/user/user.service';
 })
 export class FaqViewComponent implements OnInit {
 
-  onlyMyQuestion: boolean = false;
   panelOpenState: boolean = false;
   fragen: FaqModule[] = []
   questions$: Observable<FaqModule[]> = of([]);

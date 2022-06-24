@@ -1,6 +1,6 @@
 {
 	"askQuestions": {
-		"template": "Frage stellen!"
+		"template": "Frage stellen"
 	},
 	"category": {
 		"header": "Kategorien"
@@ -14,10 +14,6 @@
 	"createInvite": {
 		"header": "Einladungscode erstellen",
 		"msg": "Einladungscode"
-	},
-	"currency": {
-		"currency": "Währung auswählen",
-		"header": "Währung"
 	},
 	"editPassword": {
 		"header": "Passwort ändern",
@@ -34,7 +30,7 @@
 		"amount": "Betrag",
 		"category": "Kategorie:",
 		"closeBtn": "Schließen",
-		"date": "Datum",
+		"description": "Ausgabe",
 		"expenses": "Ausgaben:",
 		"headerExp": "Alle Ausgaben",
 		"purchasing": "Einkauf",
@@ -42,8 +38,8 @@
 		"search": "Suche"
 	},
 	"faq": {
-		"ask": "Frage stellen!",
-		"header": "FAQ!"
+		"ask": "Frage stellen",
+		"header": "FAQ"
 	},
 	"forename": "Vorname",
 	"group": {
@@ -96,17 +92,15 @@
 	"menu": {
 		"agb": "AGB",
 		"category": "Kategorie",
-		"currency": "Währung",
 		"faq": "FAQ",
 		"help&settings": "Hilfe & Einstellungen",
 		"impressum": "Impressum",
 		"language": "Sprache",
 		"logout": "Ausloggen",
-		"notification": "Benachrichtigungen",
 		"privacy": "Datenschutz",
 		"profile": "Profil",
-		"quiz": "Quiz",
-		"settings": "Einstellungen"
+		"settings": "Einstellungen",
+    "main": "Hauptmenü"
 	},
 	"newCategory": {
 		"header": "Neue Kategorie hinzufügen:",
@@ -127,7 +121,8 @@
 		"header": "Zeitraum",
 		"month": "Monat",
 		"period": "Zeitraum",
-		"year": "Jahr"
+		"year": "Jahr",
+    "select": "Ausgewählt"
 	},
 	"privacy": {
 		"Datenschutzbeauftragter": "Datenschutzbeauftragte/r beim Anbieter ist:",
@@ -180,7 +175,9 @@
 		"deleteAcc": "Konto löschen",
 		"edit": "Bearbeiten",
 		"imgMsg": "Bild der jeweiligen Person",
-		"join": "Gruppe beitreten"
+		"join": "Gruppe beitreten",
+    "faq": "Fragen",
+    "expenses": "Ausgaben"
   },
 	"saveBtn": "speichern",
 	"secAnswer": "Antwort:",
@@ -226,6 +223,124 @@
     "Text 3.6": "die Erfüllung gesetzlicher Vorschriften und behördlicher Auflagen sicherzustellen sowie für die Erteilung behördlicher Erlaubnis Sorge zu tragen, soweit diese gegenwärtig oder künftig für die Nutzung der Dienste erforderlich sind.",
     "Überschrift 4": "§ 3 Datenschutz",
     "Text 4": " IT-GmbH selbst erhebt und verarbeitet personenbezogene Daten (Bestands- und Nutzungsdaten) des Kunden maschinell nach Maßgabe der einschlägigen datenschutzrechtlichen Bestimmungen und nur zum Zwecke der Vertragsdurchführung und ausschließlich an den deutschen Standorten von IT-GmbH.\nIT-GmbH verpflichtet sich, alle nach den geltenden Datenschutzvorschriften erforderlichen Datenschutz- und Datensicherungsmaßnahmen zu treffen. IT-GmbH wird die im Rahmen der ordnungsgemäßen Abwicklung der Aufträge gesetzlich geforderten technischen und organisatorischen Sicherungsmaßnahmen einhalten und stellt diese zur Verfügung oder wird diese dem Kunden auf Verlangen nachweisen.\nWerden personenbezogene Daten durch IT-GmbH im Auftrag des Kunden erhoben, verarbeitet oder genutzt, erfolgt dies im Rahmen der Weisungen des Kunden (Auftragsdatenverarbeitung). IT-GmbH wird dafür Sorge tragen, dass alle Auftragsdaten und deren Verarbeitung streng vertraulich behandelt und insbesondere nicht unbefugt an Dritte übermittelt werden. Der Kunde beauftragt IT-GmbH mit der Vornahme aller erforderlichen technischen und organisatorischen Maßnahmen zur Herbeiführung einer rationellen Verarbeitung und zur Sicherung der Daten vor Verlust, Verfälschung oder unbefugtem Zugriff.\nFür eine Auftragsdatenverarbeitung schließen wir mit dem Kunden einen Vertrag zur Auftragsdatenverarbeitung ab.\nNach Beendigung des Vertrags bzw. der Auftragsdatenverarbeitung werden beim Auftragnehmer IT-GmbH gespeicherter Daten gelöscht. Der Kunde kann die Daten zuvor selbst exportieren und downloaden oder IT-GmbH den Auftrag hierzu erteilen.\nSoweit für die Geschäftsabwicklung (z.B. für die Durchführen von Korrekturen/Bereinigungen oder für den Versand von SMS Nachrichten) notwendig, können von IT-GmbH personenbezogene Daten des Kunden an benannte Vertragspartner der IT-GmbH weitergegeben werden. Etwaige Unterauftragnehmer werden dem Kunden bei Auftragserteilung vor der Weitergabe angezeigt. Der Kunde trägt in eigener Verantwortung dafür Sorge, dass eine Zustimmung im Einzelfall vorliegt."
-
+  },
+  "alert": {
+    "logout": {
+      "title": "Abmelden",
+      "text": "Möchtest Du Dich wirklich abmelden?",
+      "message": "Du wurdest erfolgreich abgemeldet!"
+    },
+    "delete": {
+      "title": "Bist Du Dir sicher?",
+      "text": "Wenn Dein Account einmal gelöscht ist, kann er nicht mehr wiederhergesellt werden!",
+      "message": "Der Account wurde erfolgreich gelöscht!"
+    },
+    "ask": {
+      "header": "Frage erfolgreich gestellt!",
+      "message": ""
+    },
+    "createGroup": {
+      "header": "Gruppe erfolgreich erstellt!",
+      "message": ""
+    },
+    "signUp": {
+      "header": "Erfolgreich registriert!",
+      "message": "",
+      "emptyPassword": {
+        "header": "Oops",
+        "message": "Passwörter dürfen nicht leer sein!"
+      },
+      "emptySQuestion": {
+        "header": "Oops",
+        "message": "Bitte eine Sicherheitsfrage und Antwort ausfüllen!"
+      },
+      "wrongPassword": {
+        "header": "Oops",
+        "message": "Passwörter stimmen nicht überein!"
+      }
+    },
+    "signIn": {
+      "header": "Herzlich willkommen!",
+      "message": "Login war erfolgreich.",
+      "emptyPassword": {
+        "header": "Oops",
+        "message": "E-Mail und Passwort dürfen nicht leer sein!"
+      },
+      "noMatch": {
+        "header": "Oops",
+        "message": "E-Mail und Passwort stimmen nicht überein!"
+      }
+    },
+    "notification": {
+      "header": "Erfolgreich geändert!",
+      "message": ""
+    },
+    "newPassword": {
+      "header": "Passwort erfolgreich zurückgesetzt!",
+      "message": "",
+      "emptyPassword": {
+        "header": "Oops",
+        "message": "Passwörter dürfen nicht leer sein!"
+      },
+      "emptySQuestion": {
+        "header": "Oops",
+        "message": "Bitte eine Sicherheitsfrage und Antwort ausfüllen!"
+      },
+      "noMatch": {
+        "header": "Oops",
+        "message": "Passwörter stimmen nicht überein!"
+      }
+    },
+    "invite": {
+      "header": "Herzlich Glückwunsch!",
+      "message": "Sie sind erfolgreich der Gruppe beigetreten.",
+      "invalidCode": {
+        "header": "Oops",
+        "message": "Der Einladungslink ist ungültig!"
+      },
+      "emptyCode": {
+        "header": "Oops",
+        "message": "Der Einladungslink ist leer!"
+      }
+    },
+    "editPassword": {
+      "header": "Passwort wurde erfolgreich geändert!",
+      "message": "",
+      "wrongPw": "Altes passwort falsch",
+      "emptyPassword": {
+        "header": "Oops",
+        "message": "Die Passwörter dürfen nicht leer sein!"
+      },
+      "noMatch": {
+        "header": "Oops",
+        "message": "Die Passwörter stimmen nicht überein!"
+      }
+    },
+    "editGroup": {
+      "header": "Gruppe erfolgreich geupdated!",
+      "message": ""
+    },
+    "period": {
+      "header": "Oops",
+      "message": "Bitte wähle einen Zeitraum aus!"
+    },
+    "appComponent": {
+      "header": "Inaktivität",
+      "message": "Automatische Abmeldung nach 10 Minuten."
+    },
+    "notDelete": {
+      "header": "Oops",
+      "message": "Die Kategorie wird noch verwendet!"
+    },
+    "removeMember":{
+      "header": "User wurde erfolgreich gelöscht!",
+      "message": ""
+    },
+    "cancel": "abbrechen"
+  },
+  "error": {
+    "lost": "Sieht so aus, als hättest Du dich verirrt",
+    "notAvaible": "die Seite, die Du suchst, ist nicht verfügbar!",
+    "home": "Zurück zur Anmeldung"
   }
 }

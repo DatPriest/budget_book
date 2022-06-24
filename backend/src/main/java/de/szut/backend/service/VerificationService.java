@@ -78,10 +78,6 @@ public class VerificationService extends BaseService {
         // Save User to Database with salt
         user.salt = getSalt();
         user.hash = hashPassword(user.hash + user.salt);
-        Image image = new Image();
-        image.imageString = dto.imageString;
-        image = imageService.savePicture(image);
-        user.imageId = image.id;
         return userMapper.mapUserToUserCreateDto(this.userRepository.save(user));
     }
 
@@ -122,11 +118,12 @@ public class VerificationService extends BaseService {
         return userRepository.save(user);
 
     }
-    //Beispiel Implementierung für die Erstellung eines Log-Eintrags
-    private void log (String action, String addition){
-        HistoryActionToProcess actionToProcess = new HistoryActionToProcess();
-        actionToProcess.setAction(action);
-        actionToProcess.setAdditionalInformation(addition);
-        logService.createLogEntry(actionToProcess);
+
+    public long getUserIdByEmail(String email) {
+        User user = this.userRepository.findByEmail(email);
+        if (user != null) {
+            return user.id;
+        }
+        return -1;
     }
 }

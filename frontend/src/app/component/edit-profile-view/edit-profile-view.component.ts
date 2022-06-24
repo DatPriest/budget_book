@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, of, Subscriber } from 'rxjs';
+import { UserProfileModule } from 'src/app/model/user-profile/user-profile.module';
 import { UserModule } from 'src/app/model/user/user.module';
 import { LoginService } from 'src/app/service/login/login.service';
 import { UserService } from 'src/app/service/user/user.service';
@@ -13,16 +14,29 @@ import { UserService } from 'src/app/service/user/user.service';
 })
 export class EditProfileViewComponent implements OnInit {
 
-  user: UserModule;
+  user: UserProfileModule;
   image: string;
-  editProfileForm: FormGroup;
   constructor(public userService: UserService, public formBuilder: FormBuilder, public router: Router, public loginService: LoginService) {
-    
+    this.userService.getProfile(parseInt(localStorage.getItem("userId"))).then(value => {this.user = value
+    console.log(value.imageString)});
   }
 
   saveEditUser(editProfileForm: NgForm): void {
-    const editProfileData = new UserModule(null, editProfileForm.value.firstName, editProfileForm.value.lastName, null, editProfileForm.value.email, null, null, this.image);
-    this.userService.updateProfile(editProfileData).subscribe(data => this.router.navigate(['/profile']));
+    this.userService.getProfile(parseInt(localStorage.getItem("userId"))).then(value => this.user = value);
+    if (editProfileForm.value.firstName!=null){
+      this.user.firstName = editProfileForm.value.firstName;
+    }
+    if (editProfileForm.value.lastName!=null){
+      this.user.lastName = editProfileForm.value.lastName;
+    }
+    if (editProfileForm.value.email!=null){
+      this.user.email = editProfileForm.value.email;
+    }
+    if (editProfileForm.value.image!=null){
+      this.user.imageString = this.image;
+      console.log(this.user.imageString)
+    }
+    this.userService.updateProfile(this.user).subscribe(data => this.router.navigate(['/profile']));
   }
 
   back(): void {
@@ -59,12 +73,6 @@ export class EditProfileViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginService.checkLogIn();
-    this.editProfileForm = this.formBuilder.group({
-      firstName: [''],
-      lastName: [''],
-      email: [''],
-      image: ['']
-    });
   }
 
 }

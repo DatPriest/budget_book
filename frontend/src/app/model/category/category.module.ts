@@ -1,7 +1,9 @@
 export class CategoryModule {
   constructor (
-    public groupId: string,
-    public category: string
+    public groupId: number,
+    public categoryId: number,
+    public name: string,
+    public iconName: string,
   ) { }
 }
 

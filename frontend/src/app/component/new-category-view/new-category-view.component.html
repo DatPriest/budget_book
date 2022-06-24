@@ -1,11 +1,11 @@
 <form class="createCategory" (ngSubmit)="createCategory(newCategoryForm)" #newCategoryForm="ngForm">
   <h1 class="header_Text">{{'newCategory.header'| translate}}</h1>
   <div>
-    <input name="category" type="text" class="input_field" id="Category_text" ngModel placeholder="{{'newCategory.placeholder'| translate}}">
+    <input name="name" type="text" class="input_field" id="Category_text" ngModel placeholder="{{'newCategory.placeholder'| translate}}">
   </div>
     <mat-form-field appearance="fill">
       <mat-label>Kategorie auswählen</mat-label>
-      <mat-select>
+      <mat-select name="icon" ngModel>
         <mat-option value="lightbulb"><span class="material-icons">lightbulb</span></mat-option>
         <mat-option value="directions_car"><span class="material-icons">directions_car</span></mat-option>
         <mat-option value="restaurant"><span class="material-icons">restaurant</span></mat-option>

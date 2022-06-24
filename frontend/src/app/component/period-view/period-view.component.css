@@ -14,6 +14,12 @@
   position: relative;
 }
 
+.column_selectText {
+  float: right;
+  padding: 2.5px 0px;
+  position: relative;
+}
+
 .column_save {
   float: left;
   width: 45%;

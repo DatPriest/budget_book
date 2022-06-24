@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class CreateCategoryDTO {
-    private String name;
     private long groupId;
+    private String name;
     private String iconName;
 }

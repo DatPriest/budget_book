@@ -13,9 +13,9 @@ export class ExpensesFilterPipe implements PipeTransform {
 
     var amount = "[0-9]";
     if (searchTerm.match(amount)){
-      return expenses.filter(expenses => expenses.amount.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+      return expenses.filter(expenses => expenses.amount.toFixed().indexOf(searchTerm.toLowerCase()) !== -1);
     } else {
-      return expenses.filter(expenses => expenses.subject.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+      return expenses.filter(expenses => expenses.description.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
     }
   }
 }

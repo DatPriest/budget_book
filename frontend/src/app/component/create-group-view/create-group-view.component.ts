@@ -6,6 +6,7 @@ import { GroupModule } from 'src/app/model/group/group.module';
 import { Observable, Subscriber } from 'rxjs';
 import { AlertService } from 'src/app/service/alert/alert.service';
 import { LoginService } from 'src/app/service/login/login.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-create-group-view',
@@ -16,15 +17,15 @@ export class CreateGroupViewComponent implements OnInit {
 
   createGroupForm: FormGroup;
   image: string;
-  constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<CreateGroupViewComponent>, public groupService: GroupService, public alertService: AlertService, public loginService: LoginService) {
-    
+  constructor(public formBuilder: FormBuilder, public dialogRef: MatDialogRef<CreateGroupViewComponent>, public groupService: GroupService, public alertService: AlertService, public loginService: LoginService, public translate: TranslateService) {
+
   }
 
   createGroup(createGroupForm: NgForm): void {
     if (createGroupForm.value.image != '' && createGroupForm.value.groupName != '') {
       const createGroupData = new GroupModule(null, createGroupForm.value.groupName, this.image, null, -1);
-      this.groupService.createGroup(createGroupData).subscribe(data => {
-        this.alertService.successfulAlert("Gruppe erfolgreich erstellt!",  "",  "success", 2500);
+      this.groupService.createGroup(createGroupData, parseInt(localStorage.getItem("userId"))).subscribe(data => {
+        this.alertService.successfulAlert(this.translate.instant('alert.createGroup.header'),  "",  "success", 2500);
         this.dialogRef.close();
         this.reloadCurrentPage();
       });

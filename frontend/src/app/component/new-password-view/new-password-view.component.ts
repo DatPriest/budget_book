@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from "@angular/router";
+import { TranslateService } from '@ngx-translate/core';
 import { Observable, of } from 'rxjs';
 import { NewPasswordModule } from 'src/app/model/new-password/new-password.module';
 import { SecurityQuestionModule } from 'src/app/model/security-question/security-question.module';
@@ -20,7 +21,7 @@ export class NewPasswordViewComponent implements OnInit {
   showPasswordReplay: boolean = false;
   hash: string;
   securityQuestion$ : Observable<SecurityQuestionModule[]> = of([]);
-  constructor(public router: Router, public formBuilder: FormBuilder, public userService: UserService, public hashService: HashingService, public alertService: AlertService) {
+  constructor(public router: Router, public formBuilder: FormBuilder, public userService: UserService, public hashService: HashingService, public alertService: AlertService, public translate: TranslateService) {
     this.securityQuestion$ = this.userService.getSecurityQuestion();
   }
 
@@ -34,21 +35,21 @@ export class NewPasswordViewComponent implements OnInit {
 
   savePassword(newPasswordForm: NgForm): void {
     if (newPasswordForm.value.password_1 == '' && newPasswordForm.value.password_2 == '') {
-      this.alertService.alert("Oops",  "Passwörter dürfen nicht leer sein!",  "error");
+      this.alertService.alert(this.translate.instant('alert.newPassword.emptyPassword.header'),  this.translate.instant('alert.newPassword.emptyPassword.message'),  "error");
     } else {
       if (newPasswordForm.value.password_1 == newPasswordForm.value.password_2) {
         this.hash = this.hashService.encrypt(newPasswordForm.value.password_1);
         if (newPasswordForm.value.securityQuestion != '' && newPasswordForm.value.securityAnswer != '') {
           const newPasswordData = new NewPasswordModule(newPasswordForm.value.email, this.hash, newPasswordForm.value.securityQuestion, newPasswordForm.value.securityAnswer);
           this.userService.passwordForgotRequest(newPasswordData).subscribe(data => {
-            this.alertService.successfulAlert("Passwort erfolgreich zurückgesetzt!",  "",  "success", 2500);
+            this.alertService.successfulAlert(this.translate.instant('alert.newPassword.header'),  this.translate.instant('alert.newPassword.message'),  "success", 2500);
             this.router.navigate(['/sign-in']);
           });
         } else {
-          this.alertService.alert("Oops",  "Bitte eine Sicherheitsfrage und eine Antwort ausfüllen!",  "error");
+          this.alertService.alert(this.translate.instant('alert.newPassword.emptySQuestion.header'),  this.translate.instant('alert.newPassword.emptySQuestion.message'),  "error");
         }
       } else {
-        this.alertService.alert("Oops",  "Passwörter stimmen nicht überein!",  "error");
+        this.alertService.alert(this.translate.instant('alert.newPassword.noMatch.header'),  this.translate.instant('alert.newPassword.noMatch.message'),  "error");
       }
     }
   }

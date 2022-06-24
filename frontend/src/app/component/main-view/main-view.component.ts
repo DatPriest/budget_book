@@ -31,7 +31,8 @@ export class MainViewComponent implements OnInit {
   }
 
   openGroup(groupId: number): void {
-    this.groupService.getGroupById(groupId).subscribe(data => this.router.navigate(['/group', data]));
+    localStorage.setItem("groupId", groupId.toString());
+    this.router.navigate(['/group']);
   }
 
   async loadGroups(userId:number){

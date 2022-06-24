@@ -1,0 +1,42 @@
+<form>
+  <header>
+    <span class="header_ausgaben">{{'expenses.headerExp'|translate}}</span>
+    <div class="button_back">
+      <button type="button" class="back_icon" (click)="back()"><span class="material-icons">arrow_back</span></button>
+    </div>
+  </header>
+  <body>
+    <div class="container">
+      <div class="screen">
+        <div class="button_add">
+          <button type="button" (click)="openPeriod()"><span class="material-icons">schedule</span></button>
+        </div>
+        <div class="button_download">
+          <button type="button" class="back_icon" (click)="download()"><span class="material-icons">file_download</span></button>
+        </div>
+        <div class="screen_expenses">
+          <table class="expenses_table">
+            <thead class="expenses_table_header">
+              <th>
+                <p>{{'expenses.expenses'|translate}}</p>
+              </th>
+              <th></th>
+              <th>
+                <input id="Search" type="text" name="search" class="input_field" [(ngModel)]="searchTerm" placeholder="{{'expenses.search'|translate}}">
+              </th>
+            </thead>
+            <tbody>
+              <ng-container *ngFor="let e of expenses$ | async | expensesFilter:searchTerm">
+                <tr class="expenses_table_line">
+                  <td class="expenses_line_subject">{{e.description}}</td>
+                  <td class="expenses_line">{{e.amount | number: '1.2-2'}}</td>
+                  <td class="expenses_line">{{e.date_Created | date: 'dd.MM.yyyy'}}</td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</form>

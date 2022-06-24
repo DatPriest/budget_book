@@ -21,22 +21,18 @@ export class NewCategoryViewComponent implements OnInit {
   }
 
   createCategory(newCategoryForm: NgForm): void {
-    const newCategoryData = new NewCategoryModule(parseInt(localStorage.getItem("groupId")), newCategoryForm.value.category);
+    const newCategoryData = new NewCategoryModule(parseInt(localStorage.getItem("groupId")), newCategoryForm.value.name, newCategoryForm.value.icon);
     this.groupService.createCategory(newCategoryData).subscribe(data => {
-      this.groupService.getAllCategoryByGroupId(parseInt(localStorage.getItem("groupId")));
       newCategoryForm.reset();
     })
   }
 
   closeCategory(): void {
-    this.dialogRef.close();
+    this.dialogRef.close(true);
   }
 
   ngOnInit(): void {
     this.loginService.checkLogIn();
-    this.newCategoryForm = this.formBuilder.group({
-      category: ['']
-    });
   }
 
 }

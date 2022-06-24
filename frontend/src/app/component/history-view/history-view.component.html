@@ -11,7 +11,7 @@
       <input id="Search" type="text" name="search" class="input_field" [(ngModel)]="searchTerm" placeholder="{{'history.search'|translate}}">
       <div id="console">
         <ng-container *ngFor="let h of history$ | async | historyFilter:searchTerm">
-          <p>{{h.text}}</p>
+          <p>{{h.actionName}}| {{h.additionalInformation}}</p>
         </ng-container>
       </div>
     </div>

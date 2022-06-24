@@ -5,9 +5,7 @@ import { AppModule } from 'src/app/app.module';
 import { AlertService } from 'src/app/service/alert/alert.service';
 import { LoginService } from 'src/app/service/login/login.service';
 import { UserService } from 'src/app/service/user/user.service';
-import { CurrencyViewComponent } from '../currency-view/currency-view.component';
 import { LanguageViewComponent } from '../language-view/language-view.component';
-import { NotificationViewComponent } from '../notification-view/notification-view.component';
 
 @Component({
   selector: 'app-menu-view',
@@ -17,7 +15,11 @@ import { NotificationViewComponent } from '../notification-view/notification-vie
 export class MenuViewComponent implements OnInit {
 
   constructor(public router: Router, public userService: UserService, public app: AppModule, public alertService: AlertService, public dialog: MatDialog, public loginService: LoginService) {
-    
+
+  }
+
+  moveToMainMenu(): void {
+    this.router.navigate(['/main']);
   }
 
   moveToProfile(): void {
@@ -43,24 +45,6 @@ export class MenuViewComponent implements OnInit {
 
   openImpressum(): void {
     this.router.navigate(['/imprint']);
-  }
-
-  notificationDialog(): void {
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.autoFocus = true;
-    dialogConfig.width = "400px";
-
-    this.dialog.open(NotificationViewComponent, dialogConfig)
-  }
-
-  currencyDialog(): void {
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.autoFocus = true;
-    dialogConfig.width = "400px";
-
-    this.dialog.open(CurrencyViewComponent, dialogConfig)
   }
 
   languageDialog(): void {

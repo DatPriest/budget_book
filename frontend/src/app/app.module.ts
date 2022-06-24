@@ -18,6 +18,7 @@ import { NewPasswordViewComponent } from './component/new-password-view/new-pass
 import { MainViewComponent } from './component/main-view/main-view.component';
 import { GroupViewComponent } from './component/group-view/group-view.component';
 import { ExpensesViewComponent } from './component/expenses-view/expenses-view.component';
+import { ExpensesProfileViewComponent } from './component/expenses-profile-view/expenses-profile-view.component';
 import { NewExpensesViewComponent } from './component/new-expenses-view/new-expenses-view.component'
 import { HistoryViewComponent } from './component/history-view/history-view.component';
 import { CreateGroupViewComponent } from './component/create-group-view/create-group-view.component';
@@ -35,17 +36,15 @@ import { NewCategoryViewComponent } from './component/new-category-view/new-cate
 import { InviteViewComponent } from './component/invite-view/invite-view.component';
 import { CreateInviteViewComponent } from './component/create-invite-view/create-invite-view.component';
 import { LanguageViewComponent } from './component/language-view/language-view.component';
-import { CurrencyViewComponent } from './component/currency-view/currency-view.component';
-import { NotificationViewComponent } from './component/notification-view/notification-view.component';
 import { EditGroupViewComponent } from './component/edit-group-view/edit-group-view.component';
 import { RemoveMemberViewComponent } from './component/remove-member-view/remove-member-view.component';
 import { PeriodViewComponent } from './component/period-view/period-view.component';
-import { SpecificExpensesViewComponent } from './component/specific-expenses-view/specific-expenses-view.component';
-import { StatisticsViewComponent } from './component/statistics-view/statistics-view.component';
-import { DiagramViewComponent } from './component/diagram-view/diagram-view.component';
+import { PageNotFoundViewComponent } from './component/page-not-found-view/page-not-found-view.component';
+import { FaqProfileViewComponent } from './component/faq-profile-view/faq-profile-view.component';
 
 import { HistoryFilterPipe } from './component/history-view/history-filter.pipe';
 import { ExpensesFilterPipe } from './component/expenses-view/expenses-filter.pipe';
+import { ExpensesProfileFilterPipe } from './component/expenses-profile-view/expenses-profile-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -73,16 +72,15 @@ import { ExpensesFilterPipe } from './component/expenses-view/expenses-filter.pi
     InviteViewComponent,
     CreateInviteViewComponent,
     LanguageViewComponent,
-    CurrencyViewComponent,
-    NotificationViewComponent,
     EditGroupViewComponent,
     RemoveMemberViewComponent,
     PeriodViewComponent,
-    SpecificExpensesViewComponent,
-    StatisticsViewComponent,
-    DiagramViewComponent,
     HistoryFilterPipe,
-    ExpensesFilterPipe
+    ExpensesFilterPipe,
+    PageNotFoundViewComponent,
+    ExpensesProfileViewComponent,
+    ExpensesProfileFilterPipe,
+    FaqProfileViewComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -99,13 +97,12 @@ import { ExpensesFilterPipe } from './component/expenses-view/expenses-filter.pi
     AppRoutingModule,
     RouterModule.forRoot([
       // Login
-      {path: '', component: SignInViewComponent},
-      {path: 'sign-in',component: SignInViewComponent},
-      {path: 'sign-up',component: SignUpViewComponent},
-      {path: 'new-password',component: NewPasswordViewComponent},
+      {path: 'sign-in', component: SignInViewComponent},
+      {path: 'sign-up', component: SignUpViewComponent},
+      {path: 'new-password', component: NewPasswordViewComponent},
 
       // Main
-      {path: 'main',component: MainViewComponent},
+      {path: 'main', component: MainViewComponent},
 
       // Menu
       {path: 'faq', component: FaqViewComponent},
@@ -118,15 +115,18 @@ import { ExpensesFilterPipe } from './component/expenses-view/expenses-filter.pi
       {path: 'profile', component: ProfileViewComponent},
       {path: 'profile/edit', component: EditProfileViewComponent},
       {path: 'profile/edit-passwort', component: EditPasswordViewComponent},
+      {path: 'profile/expenses', component: ExpensesProfileViewComponent},
+      {path: 'profile/faq', component: FaqProfileViewComponent},
 
       // Group
-      {path: 'group',component: GroupViewComponent},
-      {path: 'group/history',component: HistoryViewComponent},
-      {path: 'group/expenses',component: ExpensesViewComponent},
-      {path: 'group/expenses/specific', component: SpecificExpensesViewComponent},
+      {path: 'group', component: GroupViewComponent},
+      {path: 'group/history', component: HistoryViewComponent},
+      {path: 'group/expenses', component: ExpensesViewComponent},
       {path: 'group/category', component: CategoryViewComponent},
-      {path: 'group/statistics', component: StatisticsViewComponent},
-      {path: 'group/diagram', component: DiagramViewComponent}
+
+      // Any
+      { path: '',   redirectTo: '/sign-in', pathMatch: 'full'},
+      { path: '**', component:  PageNotFoundViewComponent},
     ]),
     FormsModule,
     ReactiveFormsModule,

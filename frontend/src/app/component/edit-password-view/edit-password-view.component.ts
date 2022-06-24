@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { UpdatePasswordModule } from 'src/app/model/update-password/update-password.module';
 import { AlertService } from 'src/app/service/alert/alert.service';
 import { HashingService } from 'src/app/service/hashing/hashing.service';
@@ -16,23 +17,23 @@ export class EditPasswordViewComponent implements OnInit {
 
   editPasswordForm: FormGroup;
   hash: string;
-  constructor(public router: Router, public formBuilder: FormBuilder, public hashService: HashingService, public alertService: AlertService, public userService: UserService, public loginService: LoginService) {
+  constructor(public router: Router, public formBuilder: FormBuilder, public hashService: HashingService, public alertService: AlertService, public userService: UserService, public loginService: LoginService, public translate: TranslateService) {
 
   }
 
   saveNewPassword(editPasswordForm: NgForm): void {
     if (editPasswordForm.value.password_1 == '' && editPasswordForm.value.password_2 == '') {
-      this.alertService.alert("Oops" ,  "Die Passwörter dürfen nicht leer sein!" ,  "error");
+      this.alertService.alert(this.translate.instant('alert.editPassword.emptyPassword.header'),  this.translate.instant('alert.editPassword.emptyPassword.header'),  "error");
     } else {
       if (editPasswordForm.value.password_1 == editPasswordForm.value.password_2) {
         this.hash = this.hashService.encrypt(editPasswordForm.value.password_1);
         const editPasswordData = new UpdatePasswordModule(editPasswordForm.value.email, this.hash);
         this.userService.updateUserPassword(editPasswordData).subscribe(data => {
-          this.alertService.successfulAlert("Passwort wurde erfolgreich geändert!" ,  "" ,  "success", 2500);
+          this.alertService.successfulAlert(this.translate.instant('alert.editPassword.header'),  this.translate.instant('alert.editPassword.message'),  "success", 2500);
           this.router.navigate(['/profile']);
         })
       } else {
-        this.alertService.alert("Oops" ,  "Die Passwörter stimmen nicht überein!" ,  "error");
+        this.alertService.alert(this.translate.instant('alert.editPassword.noMatch.header'),  this.translate.instant('alert.editPassword.noMatch.header'),  "error");
       }
     }
   }

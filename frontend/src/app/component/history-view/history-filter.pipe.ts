@@ -11,7 +11,7 @@ export class HistoryFilterPipe implements PipeTransform {
       return history;
     }
 
-    return history.filter(history => history.text.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+    return history.filter(history => history.actionName.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
   }
 
 }

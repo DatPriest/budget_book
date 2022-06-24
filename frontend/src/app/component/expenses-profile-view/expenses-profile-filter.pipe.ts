@@ -1,0 +1,22 @@
+import { Pipe, PipeTransform } from '@angular/core';
+import { ExpensesModule } from 'src/app/model/expenses/expenses.module';
+
+@Pipe({
+  name: 'expensesProfileFilter'
+})
+export class ExpensesProfileFilterPipe implements PipeTransform {
+
+  transform(expenses: ExpensesModule[], searchTerm: string): ExpensesModule[] {
+    if (!expenses || !searchTerm) {
+      return expenses;
+    }
+
+    var amount = "[0-9]";
+    if (searchTerm.match(amount)){
+      return expenses.filter(expenses => expenses.amount.toFixed().indexOf(searchTerm.toLowerCase()) !== -1);
+    } else {
+      return expenses.filter(expenses => expenses.description.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
+    }
+  }
+
+}

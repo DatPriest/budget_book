@@ -19,14 +19,6 @@
   min-height: 85vh;
 }
 
-.screen {
-  background: linear-gradient(90deg, #5D54A4, #7C78B8);
-  position: absolute;
-  top: 10%;
-  height: 85%;
-  width: 90%;
-}
-
 .button_back {
   position: absolute;
   top: 8px;
@@ -55,8 +47,8 @@
   border-width: thin 0 0 thin;
   margin: 0 0 1em;
   position: absolute;
-  top: 5%;
-  height: 90%;
+  top: 15%;
+  height: 70%;
   width: 50%;
   right: 25%;
   resize: none;
@@ -65,7 +57,6 @@
 .button_send {
   width: 8%;
   position: absolute;
-  bottom: 8px;
-  right: 16px;
-  font-size: 18px;
+  right: 2%;
+  top: 90%;
 }
