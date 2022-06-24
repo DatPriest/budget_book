@@ -23,7 +23,7 @@ public class UserService extends BaseService {
         LOGGER.info("User mit id {} wird bearbeitet",dto.userId);
         if (user != null) {
             LOGGER.info("User PasswortHash: {}, Eingegebenes altes PW {}", user.hash,dto.oldHash);
-            if (user.hash.equals(dto.oldHash)) {
+            if (user.hash.equals(VerificationService.hashPassword(dto.oldHash + user.salt))) {
                 LOGGER.info("User wird bearbeitet");
                 user.salt = VerificationService.getSalt();
                 user.hash = VerificationService.hashPassword(dto.newHash + user.salt);
