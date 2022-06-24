@@ -2,23 +2,10 @@
   box-sizing: border-box;
 }
 
-.input_field {
-  font-size: 120%;
-  padding: 2%;
-  position: relative;
-}
-
-.input_field:active,
-.input_field:focus,
-.input_field:hover {
-  outline: none;
-  border-bottom-color: #6A679E;
-}
-
-.user_table_header {
+.header_Text {
   color: #7875B5;
   text-shadow: black;
-  font-size: 220%;
+  font-size: 20px;
 }
 
 .button_back {

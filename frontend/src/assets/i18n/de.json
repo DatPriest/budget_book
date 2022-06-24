@@ -354,5 +354,9 @@
   "emailDialog": {
     "header": "E-Mail angeben!"
   },
-  "passwordOld": "Altes Passwort"
+  "passwordOld": "Altes Passwort",
+  "editGroup": {
+    "header": "Gruppe bearbeiten",
+    "grpNameMsg": "Name"
+  }
 }

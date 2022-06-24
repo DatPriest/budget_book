@@ -6,13 +6,10 @@ import { Router } from '@angular/router';
 })
 export class LoginService {
 
-  userId: string;
   constructor(public router: Router) {}
 
   checkLogIn() {
-    this.userId = localStorage.getItem("userId");
-
-    if (this.userId == null) {
+    if (localStorage.getItem("userId") == null) {
       this.router.navigate(['/sign-in']);
     }
   }

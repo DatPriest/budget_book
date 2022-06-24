@@ -1,6 +1,6 @@
 <form class="editGroup" (ngSubmit)="editGroup(editGroupForm)" #editGroupForm="ngForm">
   <h1 class="header_Text">{{'editGroup.header'|translate}}</h1>
-    <input name="image" (change)="onChange($event)" type="file" class="input_file" id="inputImage" ngModel placeholder="{{'editGroup.logoMsg'|translate}}" accept="image/png, image/jpeg">
+    <input name="image" (change)="onChange($event)" type="file" class="input_file" id="inputImage" ngModel accept="image/png, image/jpeg">
     <input name="groupName" type="text" class="input_field" id="GroupName" ngModel placeholder="{{'editGroup.grpNameMsg'|translate}}">
   <div class="row">
     <div class="column_save">
