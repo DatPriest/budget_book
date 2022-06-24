@@ -1,18 +1,19 @@
 <form>
-  <table class="user_table">
+  <span class="header_Text" translate="group.member"></span>
+  <table>
     <thead>
       <tr>
-        <th class="user_table_header" translate="group.member"></th>
+        <th></th>
         <th></th>
       </tr>
     </thead>
     <tbody>
       <ng-container *ngFor="let u of user$ | async">
-        <tr class="user_table_line">
-          <td class="user_name">{{u.firstName}} {{u.lastName}}</td>
-          <td class="table_line">
+        <tr>
+          <td>{{u.firstName}} {{u.lastName}}</td>
+          <td>
             <div class="button_delete">
-              <button type="button" id="delete_1" class="back_icon" (click)="delete(u.userId)"><span class="material-icons">delete</span></button>
+              <button type="button" class="back_icon" (click)="delete(u.userId)"><span class="material-icons">delete</span></button>
             </div>
           </td>
         </tr>
@@ -20,6 +21,6 @@
     </tbody>
   </table>
   <div class="button_back">
-    <button type="button" id="delete_1" (click)="close()"><span class="material-icons">close</span></button>
+    <button type="button" (click)="close()"><span class="material-icons">close</span></button>
   </div>
 </form>

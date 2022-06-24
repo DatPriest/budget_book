@@ -7,6 +7,9 @@ import { InviteViewComponent } from '../invite-view/invite-view.component';
 import { AlertService } from 'src/app/service/alert/alert.service';
 import { LoginService } from 'src/app/service/login/login.service';
 import { UserProfileModule } from 'src/app/model/user-profile/user-profile.module';
+import { GroupModule } from 'src/app/model/group/group.module';
+import { GroupService } from 'src/app/service/group/group.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-profile-view',
@@ -16,7 +19,7 @@ import { UserProfileModule } from 'src/app/model/user-profile/user-profile.modul
 export class ProfileViewComponent implements OnInit {
 
   user: UserProfileModule;
-  constructor(public router: Router, public userService: UserService, public app: AppModule, public dialog: MatDialog, public alertService: AlertService, public loginService: LoginService) {
+  constructor(public router: Router, public userService: UserService, public app: AppModule, public dialog: MatDialog, public alertService: AlertService, public loginService: LoginService, public groupService: GroupService) {
     if (this.user == null){
       this.userService.getProfile(parseInt(localStorage.getItem("userId"))).then(value => this.user = value);
     }

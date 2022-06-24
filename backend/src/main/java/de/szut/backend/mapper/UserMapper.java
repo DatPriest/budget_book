@@ -65,7 +65,10 @@ public class UserMapper {
 
     public User mapUserUpdateDtoToUser(UserUpdateDto dto) throws SecurityQuestionNotExists {
         User user = new User();
-        User dbUser = this.userRepository.findById(dto.userId).get();
+        User dbUser = this.userRepository.findById(dto.userId);
+        if (dbUser == null) {
+            return null;
+        }
         user.id = dto.userId;
         user.salt = dbUser.salt;
         user.hash = dbUser.hash;

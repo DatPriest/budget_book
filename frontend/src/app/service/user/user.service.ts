@@ -10,6 +10,7 @@ import { FaqModule } from 'src/app/model/faq/faq.module';
 import { AskFaqModule } from 'src/app/model/ask-faq/ask-faq.module';
 import { UserProfileModule } from 'src/app/model/user-profile/user-profile.module';
 import { ExpensesModule } from 'src/app/model/expenses/expenses.module';
+import { UserEmailModule } from 'src/app/model/user-email/user-email.module';
 
 @Injectable({
   providedIn: 'root'
@@ -30,12 +31,16 @@ export class UserService {
     return this.http.post<NewPasswordModule>('http://localhost:4000/api/v1/verification/forgotPassword', JSON.stringify(user), {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
+  getUserIdByEmail(email: string) {
+    return this.http.get<UserEmailModule>(`http://localhost:4000/api/v1/user/byEmail/${email}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  }
+
   getSecurityQuestion() {
     return this.http.get<SecurityQuestionModule[]>('http://localhost:4000/api/v1/securityQuestions', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
-  getSecurityQuestionByUserId() {
-    return this.http.get<SecurityQuestionModule[]>('http://localhost:4000/api/v1/securityQuestions', {headers : new HttpHeaders() .append("Content-Type", "application/json")});
+  getSecurityQuestionByUserId(userId: number): Observable<SecurityQuestionModule> {
+    return this.http.get<SecurityQuestionModule>(`http://localhost:4000/api/v1/securityQuestions/${userId}`, {headers : new HttpHeaders() .append("Content-Type", "application/json")});
   }
 
   async getProfile(userId: number) {

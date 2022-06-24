@@ -93,10 +93,21 @@ public class GroupService extends BaseService {
     public GroupDto updateGroup(GroupUpdateDto dto) {
         log("Group Attribute Changed", "", dto.getGroupId());
         Group group = mapper.mapGroupUpdateDtoToGroup(dto);
-        Group persistentGroup = repo.getById(dto.groupId);
-        if (imageService.updatePicture(persistentGroup.imageId, dto.image)) {
+        Group persistentGroup = repo.findById(dto.groupId);
+        if (persistentGroup == null) {
+            return null;
+        }
+        if (imageService.updatePicture(persistentGroup.imageId, dto.imageString)) {
             group.imageId = persistentGroup.imageId;
-            return this.mapper.mapGroupToGroupDto(repo.save(group), dto.image);
+            group.inviteCode = persistentGroup.inviteCode;
+            Group tempGroup = repo.save(group);
+            if (tempGroup == null) {
+                this.logger.info("Group is null");
+            }
+            return this.mapper.mapGroupToGroupDto(tempGroup, dto.imageString);
+        }
+        else {
+            this.logger.info("Could not update");
         }
         return null;
     }
@@ -121,7 +132,7 @@ public class GroupService extends BaseService {
         return null;
     }
     public GroupXUser addUserToGroup(UserToGroupDto dto) throws Exception {
-        if(getGroups(dto.getUserId()).groups.size() == 6){
+        if (getGroups(dto.getUserId()).groups.size() == 6) {
             throw new UserHasTooManyGroupsException();
         }
 

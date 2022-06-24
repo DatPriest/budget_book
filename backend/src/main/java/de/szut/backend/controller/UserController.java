@@ -6,6 +6,7 @@ import de.szut.backend.dto.UserUpdatedDto;
 import de.szut.backend.exceptions.SecurityQuestionNotExists;
 import de.szut.backend.mapper.UserMapper;
 import de.szut.backend.model.User;
+import de.szut.backend.model.UserUpdatePasswordDto;
 import de.szut.backend.repository.UserRepository;
 import de.szut.backend.service.UserService;
 
@@ -39,6 +40,7 @@ public class UserController {
         this.userMapper = _userMapper;
     }
 
+    @CrossOrigin
     @GetMapping(path = "/id/{id}", produces = "application/json")
     public ResponseEntity<UserDto> getUser(@PathVariable long id) {
         User user = this.service.getUserById(id);
@@ -55,13 +57,37 @@ public class UserController {
         return new ResponseEntity("User with id could not found", HttpStatus.BAD_REQUEST);
     }
 
+    @CrossOrigin
     @PutMapping(path = "/update", produces = "application/json", consumes = "application/json")
     public ResponseEntity<UserUpdatedDto> updateUser(@RequestBody UserUpdateDto dto) throws SecurityQuestionNotExists {
         User user = this.userMapper.mapUserUpdateDtoToUser(dto);
+        if (user == null) {
+            return new ResponseEntity("User could not get updated", HttpStatus.BAD_REQUEST);
+        }
         UserUpdatedDto updatedDto = this.userMapper.mapUserToUserUpdatedDto(user);
         return new ResponseEntity<>(updatedDto, HttpStatus.OK);
     }
 
+    @CrossOrigin
+    @GetMapping(path = "/byEmail/{email}", produces = "application/json")
+    public ResponseEntity<Long> getUserIdByEmail(@PathVariable String email) {
+        long userId = this.service.getUserByEmail(email);
+        if (userId != -1) {
+            return new ResponseEntity<>(userId, HttpStatus.OK);
+        }
+        return new ResponseEntity("User email could not found in the database", HttpStatus.BAD_REQUEST);
+    }
+
+    @CrossOrigin
+    @PutMapping(path = "/updatePassword", produces = "application/json")
+    public ResponseEntity<String> updatePassword(@RequestBody UserUpdatePasswordDto dto) {
+        if (service.updatePassword(dto)) {
+            return new ResponseEntity<>("Successfully updated password!", HttpStatus.OK);
+        }
+        return new ResponseEntity<>("Could not update password!", HttpStatus.BAD_REQUEST);
+    }
+
+    @CrossOrigin
     @DeleteMapping(path = "/delete/id/{id}", produces = "application/json", consumes = "application/json")
     public ResponseEntity<Boolean> deleteUserById(@PathVariable long id) {
         try {
@@ -71,6 +97,4 @@ public class UserController {
             return new ResponseEntity("User could not get deleted", HttpStatus.BAD_REQUEST);
         }
     }
-
-
 }

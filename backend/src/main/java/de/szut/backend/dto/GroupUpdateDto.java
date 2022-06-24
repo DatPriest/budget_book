@@ -10,5 +10,5 @@ import javax.persistence.Id;
 public class GroupUpdateDto {
     public long groupId;
     public String groupName;
-    public String image;
+    public String imageString;
 }

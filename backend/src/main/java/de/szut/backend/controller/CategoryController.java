@@ -25,12 +25,14 @@ public class CategoryController {
         this.c_Mapper = c_Mapper;
     }
 
+    @CrossOrigin
     @PostMapping(path = "/category", produces = "application/json")
     public ResponseEntity<GetCategoryDTO> createCategory(@RequestBody CreateCategoryDTO categoryDTO) {
         GetCategoryDTO getDTO = this.c_Mapper.mapCategoryToGetCategoryDto(this.c_Service.createCategory(this.c_Mapper.mapCreateCategoryDtoToCategory(categoryDTO)));
         return new ResponseEntity<>(getDTO, HttpStatus.OK);
     }
 
+    @CrossOrigin
     @DeleteMapping(path = "/category/{categoryId}", produces = "application/json")
     public ResponseEntity<String> deleteCategory(@PathVariable long categoryId) {
         try{
@@ -41,6 +43,7 @@ public class CategoryController {
         return new ResponseEntity<>("Success", HttpStatus.OK);
     }
 
+    @CrossOrigin
     @GetMapping(path = "/category/{categoryId}", produces = "application/json")
     public ResponseEntity<GetCategoryDTO> getCategoryById(@PathVariable long categoryId) {
         GetCategoryDTO toGet;
@@ -52,6 +55,7 @@ public class CategoryController {
         return new ResponseEntity<>(toGet,HttpStatus.OK);
     }
 
+    @CrossOrigin
     @GetMapping(path = "/categories/{groupId}", produces = "application/json")
     public ResponseEntity<List<GetCategoryDTO>> getAllCategoriesForGroup(@PathVariable long groupId) {
         List<Category> toGet = this.c_Service.getAllCategoriesForGroup(groupId);

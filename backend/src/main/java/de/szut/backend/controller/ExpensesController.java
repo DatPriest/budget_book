@@ -24,12 +24,14 @@ public class ExpensesController {
         this.ex_Mapper = ex_Mapper;
     }
 
+    @CrossOrigin
     @PostMapping(path = "/expense", produces = "application/json")
     public ResponseEntity<GetExpenseDTO> createCategory(@RequestBody CreateExpenseDTO expenseDTO) {
         GetExpenseDTO getDTO = this.ex_Mapper.mapExpenseToGetExpenseDto(this.ex_Service.createExpense(this.ex_Mapper.mapCreateExpensesDtoToExpense(expenseDTO)));
         return new ResponseEntity<>(getDTO, HttpStatus.OK);
     }
 
+    @CrossOrigin
     @DeleteMapping(path = "/expense/{expenseId}", produces = "application/json")
     public ResponseEntity<String> deleteCategory(@PathVariable long expenseId) {
         try{
@@ -41,6 +43,7 @@ public class ExpensesController {
         return new ResponseEntity<>("Success",HttpStatus.OK);
     }
 
+    @CrossOrigin
     @GetMapping(path = "/expense/{expenseId}", produces = "application/json")
     public ResponseEntity<GetExpenseDTO> getExpenseById(@PathVariable long expenseId){
         GetExpenseDTO getDTO;
@@ -52,6 +55,7 @@ public class ExpensesController {
         return new ResponseEntity<>(getDTO, HttpStatus.OK);
     }
 
+    @CrossOrigin
     @GetMapping(path = "/group/{groupId}", produces = "application/json")
     public ResponseEntity<List<GetExpenseDTO>> getExpensesByGroupId(@PathVariable long groupId){
         ArrayList<GetExpenseDTO> result = new ArrayList<>();
@@ -65,7 +69,7 @@ public class ExpensesController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-
+    @CrossOrigin
     @GetMapping(path = "/category/{categoryId}", produces = "application/json")
     public ResponseEntity<List<GetExpenseDTO>> getExpensesByCategoryId(@PathVariable long categoryId){
         ArrayList<GetExpenseDTO> result = new ArrayList<>();
@@ -79,6 +83,7 @@ public class ExpensesController {
         return new ResponseEntity<>(result,HttpStatus.OK);
     }
 
+    @CrossOrigin
     @GetMapping(path = "/user/{userId}", produces = "application/json")
     public ResponseEntity<List<GetExpenseDTO>> getExpensesByUserId(@PathVariable long userId){
         ArrayList<GetExpenseDTO> result = new ArrayList<>();

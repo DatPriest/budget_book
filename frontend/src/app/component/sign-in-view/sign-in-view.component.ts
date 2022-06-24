@@ -9,6 +9,8 @@ import { HashingService } from 'src/app/service/hashing/hashing.service';
 import { UserService } from "../../service/user/user.service";
 import { GroupService } from "../../service/group/group.service";
 import { TranslateService } from '@ngx-translate/core';
+import { EmailViewComponent } from '../email-view/email-view.component';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-sign-in-view',
@@ -20,17 +22,15 @@ export class SignInViewComponent implements OnInit {
   signInForm: FormGroup;
   showPassword: boolean = false;
   hash: string;
-  constructor(public router: Router, public http: HttpClient, public formBuilder: FormBuilder, public userService: UserService, public app: AppModule, public hashService: HashingService, public alertService: AlertService, public groupService: GroupService, public translate: TranslateService) {
+  constructor(public router: Router, public http: HttpClient, public formBuilder: FormBuilder, public userService: UserService, public app: AppModule, public hashService: HashingService, public alertService: AlertService, public groupService: GroupService, public translate: TranslateService, public dialog: MatDialog) {
 
-    }
+  }
 
   togglePassword(): void {
     this.showPassword = !this.showPassword;
   }
 
   loginUser(signInForm: NgForm): void {
-    //this.router.navigate(['/main']); // temp
-
     if (signInForm.value.email == '' && signInForm.value.password == '') {
       this.alertService.alert(this.translate.instant('alert.signIn.emptyPassword.header'),  this.translate.instant('alert.signIn.emptyPassword.message'),  "error");
     } else {
@@ -53,7 +53,13 @@ export class SignInViewComponent implements OnInit {
   }
 
   newPassword(): void {
-    this.router.navigate(['/new-password']);
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(EmailViewComponent, dialogConfig).afterOpened().subscribe(result => {
+      localStorage.setItem("newPassword", "true");
+    });
   }
 
   ngOnInit(): void {

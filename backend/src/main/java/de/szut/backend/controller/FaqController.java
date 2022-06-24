@@ -36,6 +36,7 @@ public class FaqController {
      * @return
      * @throws TypeNotPresentException
      */
+    @CrossOrigin
     @PostMapping(path = "/create", consumes = "application/json", produces = "application/json")
     public ResponseEntity<FAQ> CreateFaq(@RequestBody PostFaqDto postFaqDto) throws TypeNotPresentException {
         return new ResponseEntity<>(service.createFaq(postFaqDto), HttpStatus.CREATED);
@@ -45,6 +46,7 @@ public class FaqController {
      * Gibt alle Fragen zurück egal ob beantwortet oder nicht.
      * @return
      */
+    @CrossOrigin
     @GetMapping(path = "/getAll", produces = "application/json")
     public ResponseEntity<String> GetAllFaqs() {
         List<OutputFaqDto> faqList = this.service.getAllOutputFaq();
@@ -56,6 +58,7 @@ public class FaqController {
      * Gibt alle Fragen zurück die beantwortet sind
      * @return
      */
+    @CrossOrigin
     @GetMapping(path = "/getAllWithAnswers", produces = "application/json")
     public ResponseEntity<String> GetAllFaqsWithAnswers() {
         List<OutputFaqDto> faqList = this.service.getAllOutputFaqWithAnswers();
@@ -69,6 +72,7 @@ public class FaqController {
      * @return
      * @throws TypeNotPresentException
      */
+    @CrossOrigin
     @GetMapping(path = "/getAllFromUser/{userId}", produces = "application/json")
     public ResponseEntity<String> GetAllFAQFromUserId(@PathVariable long userId) throws TypeNotPresentException {
         List<OutputFaqDto> faqList = this.service.getAllFaqFromUser(userId);
