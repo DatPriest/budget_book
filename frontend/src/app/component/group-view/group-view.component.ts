@@ -58,7 +58,7 @@ export class GroupViewComponent implements OnInit {
       code: this.inviteCode
     };
 
-    this.dialog.open(CreateInviteViewComponent, dialogConfig)
+    this.dialog.open(CreateInviteViewComponent, dialogConfig);
   }
 
   editGroupDialog(): void {
@@ -67,7 +67,11 @@ export class GroupViewComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.width = "400px";
 
-    this.dialog.open(EditGroupViewComponent, dialogConfig)
+    this.dialog.open(EditGroupViewComponent, dialogConfig).beforeClosed().subscribe(result => {
+      if (result == true) {
+        window.location.reload();
+      }
+    })
   }
 
   deleteUserDialog(): void {
