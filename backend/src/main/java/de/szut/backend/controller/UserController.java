@@ -79,7 +79,7 @@ public class UserController {
     }
 
     @CrossOrigin
-    @PutMapping(path = "/updatePassword", produces = "application/json")
+    @PutMapping(path = "/updatePassword", produces = "application/json", consumes = "application/json")
     public ResponseEntity<String> updatePassword(@RequestBody UserUpdatePasswordDto dto) {
         if (service.updatePassword(dto)) {
             return new ResponseEntity<>("Successfully updated password!", HttpStatus.OK);
