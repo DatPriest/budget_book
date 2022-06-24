@@ -17,7 +17,8 @@
 	},
 	"editPassword": {
 		"header": "Passwort ändern",
-		"pwretype": "Passwort Wiederholen"
+    "password": "Neues Passwort",
+		"pwretype": "Neues Passwort Wiederholen"
 	},
 	"editProfile": {
 		"header": "Mein Konto",
@@ -352,5 +353,6 @@
   },
   "emailDialog": {
     "header": "E-Mail angeben!"
-  }
+  },
+  "passwordOld": "Altes Passwort"
 }

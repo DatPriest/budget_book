@@ -17,17 +17,19 @@ export class EditPasswordViewComponent implements OnInit {
 
   editPasswordForm: FormGroup;
   hash: string;
+  oldPassword: string;
   constructor(public router: Router, public formBuilder: FormBuilder, public hashService: HashingService, public alertService: AlertService, public userService: UserService, public loginService: LoginService, public translate: TranslateService) {
 
   }
 
   saveNewPassword(editPasswordForm: NgForm): void {
-    if (editPasswordForm.value.password_1 == '' && editPasswordForm.value.password_2 == '') {
+    if (editPasswordForm.value.password_old && editPasswordForm.value.password_1 == '' && editPasswordForm.value.password_2 == '') {
       this.alertService.alert(this.translate.instant('alert.editPassword.emptyPassword.header'),  this.translate.instant('alert.editPassword.emptyPassword.header'),  "error");
     } else {
       if (editPasswordForm.value.password_1 == editPasswordForm.value.password_2) {
         this.hash = this.hashService.encrypt(editPasswordForm.value.password_1);
-        const editPasswordData = new UpdatePasswordModule(editPasswordForm.value.email, this.hash);
+        this.oldPassword = this.hashService.encrypt(editPasswordForm.value.password_old);
+        const editPasswordData = new UpdatePasswordModule(parseInt(localStorage.getItem("userId")), this.oldPassword, this.hash);
         this.userService.updateUserPassword(editPasswordData).subscribe(data => {
           this.alertService.successfulAlert(this.translate.instant('alert.editPassword.header'),  this.translate.instant('alert.editPassword.message'),  "success", 2500);
           this.router.navigate(['/profile']);
@@ -44,11 +46,6 @@ export class EditPasswordViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginService.checkLogIn();
-    this.editPasswordForm = this.formBuilder.group({
-      email: [''],
-      password_1: [''],
-      password_2: ['']
-    })
   }
 
 }
