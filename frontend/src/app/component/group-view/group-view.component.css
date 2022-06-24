@@ -63,8 +63,8 @@
 
 .picture {
   position: absolute;
-  top: 5%;
-  left: 41%;
+  top: 35%;
+  left: 55%;
 }
 
 .ul {
@@ -90,19 +90,20 @@
   position: absolute;
   text-align: center;
   height: 30%;
-  top: 40%;
-  left: 33%;
+  top: 15%;
+  left: 10%;
 }
 
 .user_table_header {
-  border: thin solid white;
+  border: thin solid black;
   padding: .4em .4em;
   background-color: #b0b0b0;
   font-weight: 700;
 }
 
 .user_table_line {
-  border: thin solid white;
+  border: thin solid black;
+  background-color: white;
 }
 
 .user_name {

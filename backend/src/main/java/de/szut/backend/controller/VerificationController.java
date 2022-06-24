@@ -41,6 +41,7 @@ public class VerificationController {
         }
     }
 
+    @CrossOrigin
     @PostMapping(path = "/forgotPassword", consumes = "application/json", produces = "application/json")
     public ResponseEntity<ForgotBackDto> forgotPassword(@RequestBody ForgotDto dto) {
         ForgotBackDto result = null;
@@ -57,12 +58,21 @@ public class VerificationController {
 
     }
 
+    @CrossOrigin
     @PutMapping(path = "/updatePassword", consumes = "application/json")
-    public ResponseEntity<User> updatePassword(@RequestBody UpdateDto dto) {
-        return new ResponseEntity<>(service.updatePassword(dto), HttpStatus.OK);
+    public ResponseEntity<UserDto> updatePassword(@RequestBody UpdateDto dto) {
+        UserDto userDto = null;
+        try {
+            userDto = service.updatePassword(dto);
+        } catch (SecurityQuestionNotExists e) {
+            e.printStackTrace();
+            return new ResponseEntity("SecurityQuestion not exists", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return new ResponseEntity<>(userDto, HttpStatus.OK);
     }
 
-    @PostMapping(path = "userByEmail/{email}")
+    @CrossOrigin
+    @PostMapping(path = "/userByEmail/{email}")
     public ResponseEntity<Long> getUserIdByEmail(@PathVariable String email) {
         long userId = this.service.getUserIdByEmail(email);
         if (userId != -1) {

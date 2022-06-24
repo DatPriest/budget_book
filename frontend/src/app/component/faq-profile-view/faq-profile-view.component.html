@@ -1,0 +1,27 @@
+<form>
+  <header>
+    <span class="header_faq">{{'faq.header'|translate}}</span>
+    <div class="button_back">
+      <button type="button" class="back_icon" (click)="back()"><span class="material-icons">arrow_back</span></button>
+    </div>
+  </header>
+  <body>
+    <div class="container">
+      <div class="screen">
+        <ng-container *ngFor="let f of questions$ | async">
+          <mat-accordion>
+            <mat-expansion-panel hideToggle class="questions_space">
+              <mat-expansion-panel-header [collapsedHeight]="'auto'" [expandedHeight]="'auto'">
+                <mat-panel-title>
+                  <h2>{{f.question}}</h2>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <hr>
+              <em>{{f.answer}}</em>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </ng-container>
+      </div>
+    </div>
+  </body>
+</form>

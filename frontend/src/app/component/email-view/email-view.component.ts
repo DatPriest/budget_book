@@ -21,7 +21,7 @@ export class EmailViewComponent implements OnInit {
     if (getEmailForm.value.email != '') {
       this.dialogRef.close(this.userService.getUserIdByEmail(getEmailForm.value.email).subscribe(data => {
         if (data != null) {
-          localStorage.setItem("userEmail", getEmailForm.value.email);
+          localStorage.setItem("userId", data.toString());
           this.router.navigate(['/new-password']);
         } else {
           this.alertService.alert(this.translate.instant('alert.email.invalid.header'), this.translate.instant('alert.email.invalid.message'), "error");

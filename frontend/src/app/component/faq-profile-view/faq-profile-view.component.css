@@ -1,8 +1,4 @@
-* {
-  box-sizing: border-box;
-}
-
-.header_text {
+.header_faq {
   position: absolute;
   width: 98%;
   top: 3%;
@@ -12,17 +8,11 @@
   font-family: Raleway, sans-serif;
 }
 
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 85vh;
-}
-
 .button_back {
   position: absolute;
-  top: 1%;
-  left: 1%;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
 }
 
 .back_icon {
@@ -40,22 +30,27 @@
   transition: .0s;
 }
 
-.textarea {
-  font-size: x-large;
-  border-collapse: collapse;
-  border-width: thin 0 0 thin;
-  margin: 0 0 1em;
+.button_add {
   position: absolute;
-  top: 15%;
-  height: 70%;
-  width: 50%;
-  right: 25%;
-  resize: none;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
 }
 
-.button_send {
-  width: 8%;
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+}
+
+.screen {
   position: absolute;
-  right: 2%;
-  top: 90%;
+  top: 10%;
+  height: 85%;
+  width: 90%;
+}
+
+.questions_space {
+  margin: 2%;
 }

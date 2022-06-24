@@ -93,13 +93,11 @@
 	"menu": {
 		"agb": "AGB",
 		"category": "Kategorie",
-		"currency": "Währung",
 		"faq": "FAQ",
 		"help&settings": "Hilfe & Einstellungen",
 		"impressum": "Impressum",
 		"language": "Sprache",
 		"logout": "Ausloggen",
-		"notification": "Benachrichtigungen",
 		"privacy": "Datenschutz",
 		"profile": "Profil",
 		"settings": "Einstellungen",
@@ -178,7 +176,9 @@
 		"deleteAcc": "Konto löschen",
 		"edit": "Bearbeiten",
 		"imgMsg": "Bild der jeweiligen Person",
-		"join": "Gruppe beitreten"
+		"join": "Gruppe beitreten",
+    "faq": "Fragen",
+    "expenses": "Ausgaben"
   },
 	"saveBtn": "speichern",
 	"secAnswer": "Antwort:",
@@ -354,5 +354,9 @@
   "emailDialog": {
     "header": "E-Mail angeben!"
   },
-  "passwordOld": "Altes Passwort"
+  "passwordOld": "Altes Passwort",
+  "editGroup": {
+    "header": "Gruppe bearbeiten",
+    "grpNameMsg": "Name"
+  }
 }
