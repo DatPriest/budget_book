@@ -72,7 +72,7 @@ public class VerificationController {
     }
 
     @CrossOrigin
-    @PostMapping(path = "userByEmail/{email}")
+    @PostMapping(path = "/userByEmail/{email}")
     public ResponseEntity<Long> getUserIdByEmail(@PathVariable String email) {
         long userId = this.service.getUserIdByEmail(email);
         if (userId != -1) {
