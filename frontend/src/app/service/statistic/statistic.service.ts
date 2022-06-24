@@ -32,4 +32,13 @@ export class StatisticService {
   getListMonth(userId: number, groupId: number) {
     return this.http.get<ExpensesModule[]>(`http://localhost:4000/api/v1/statistics/getAllExpensesFromGroupUserFromThisMonth/${userId}/${groupId}`, {headers: new HttpHeaders().append("Content-Type", "application/json")});
   }
+
+  getListYearFromUser(userId: number) {
+    return this.http.get<ExpensesModule[]>(`http://localhost:4000/api/v1/statistics/GetAllExpensesPerYear/${userId}`, {headers: new HttpHeaders().append("Content-Type", "application/json")});
+  }
+
+  getListMonthFromUser(userId: number) {
+    return this.http.get<ExpensesModule[]>(`http://localhost:4000/api/v1/statistics/GetAllExpensesPerMonth/${userId}`, {headers: new HttpHeaders().append("Content-Type", "application/json")});
+
+  }
 }

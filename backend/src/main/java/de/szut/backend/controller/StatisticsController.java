@@ -45,18 +45,18 @@ public class StatisticsController {
     /**
      * @see StatisticService#getAllExpensesFromUserPerMonth
      */
-    @GetMapping(path = "/GetAllExpensesPerMonth/{userId}/{month}", produces = "application/json")
-    public List<GroupUserStatsDTO> AllExpensesPerMonth(@PathVariable long userId, @PathVariable int month){
-        return this.service.getAllExpensesFromUserPerMonth(userId, month);
+    @GetMapping(path = "/GetAllExpensesPerMonth/{userId}", produces = "application/json")
+    public List<GroupUserStatsDTO> AllExpensesPerMonth(@PathVariable long userId){
+        return this.service.getAllExpensesFromUserPerMonth(userId);
 
     }
 
     /**
      * @see StatisticService#getAllExpensesFromUserPerYear
      */
-    @GetMapping(path = "/GetAllExpensesPerYear/{userId}/{year}", produces = "application/json")
-    public List<GroupUserStatsDTO> AllExpensesPerYear(@PathVariable long userId, @PathVariable int year){
-        return this.service.getAllExpensesFromUserPerYear(userId, year);
+    @GetMapping(path = "/GetAllExpensesPerYear/{userId}", produces = "application/json")
+    public List<GroupUserStatsDTO> AllExpensesPerYear(@PathVariable long userId){
+        return this.service.getAllExpensesFromUserPerYear(userId);
     }
 
     //Alle Abfragen pro Gruppe
