@@ -7,7 +7,7 @@ import lombok.NonNull;
 @Data
 public class ForgotDto {
     @NonNull
-    public String email;
+    public Long userId;
     @NonNull
     public String hash;
     @NonNull

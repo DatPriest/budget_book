@@ -54,8 +54,8 @@ public class VerificationService extends BaseService {
     }
 
     public ForgotBackDto forgotPassword(ForgotDto dto) throws SecurityQuestionNotExists {
-        User user = userRepository.findByEmailAndSecurityQuestionIdAndSecurityAnswer(
-                dto.email,
+        User user = userRepository.findByIdAndSecurityQuestionIdAndSecurityAnswer(
+                dto.userId,
                 securityQuestionRepository.findByKey(dto.securityQuestionKey).getId(),
                 dto.securityAnswer.toLowerCase(Locale.ROOT));
         if (user != null) {
