@@ -1,5 +1,6 @@
 package de.szut.backend.service;
 
+import de.szut.backend.controller.StatisticsController;
 import de.szut.backend.model.UserUpdatePasswordDto;
 import de.szut.backend.repository.UserRepository;
 import org.apache.logging.log4j.LogManager;
@@ -15,11 +16,15 @@ public class UserService extends BaseService {
     public UserService(UserRepository _userRepository) {
         this.userRepository = _userRepository;
     }
+    private static final Logger LOGGER = LogManager.getLogger(UserService.class, LogManager.getLogger().getMessageFactory());
 
     public boolean updatePassword(UserUpdatePasswordDto dto) {
         User user = userRepository.findById(dto.userId);
+        LOGGER.info("User mit id {} wird bearbeitet",dto.userId);
         if (user != null) {
-            if (user.hash == VerificationService.hashPassword(dto.oldHash + user.salt)) {
+            LOGGER.info("User PasswortHash: {}, Eingegebenes altes PW {}", user.hash,dto.oldHash);
+            if (user.hash.equals(dto.oldHash)) {
+                LOGGER.info("User wird bearbeitet");
                 user.salt = VerificationService.getSalt();
                 user.hash = VerificationService.hashPassword(dto.newHash + user.salt);
                 if (userRepository.save(user) != null) {
