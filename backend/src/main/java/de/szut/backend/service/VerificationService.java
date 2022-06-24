@@ -54,7 +54,7 @@ public class VerificationService extends BaseService {
     }
 
     public ForgotBackDto forgotPassword(ForgotDto dto) throws SecurityQuestionNotExists {
-        User user =  userRepository.findByEmailAndSecurityQuestionIdAndSecurityAnswer(
+        User user = userRepository.findByEmailAndSecurityQuestionIdAndSecurityAnswer(
                 dto.email,
                 securityQuestionRepository.findByKey(dto.securityQuestionKey).getId(),
                 dto.securityAnswer.toLowerCase(Locale.ROOT));
@@ -81,7 +81,7 @@ public class VerificationService extends BaseService {
         return userMapper.mapUserToUserCreateDto(this.userRepository.save(user));
     }
 
-    private String hashPassword(String hash) {
+    public static String hashPassword(String hash) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             byte[] encodedHash = digest.digest(
@@ -89,17 +89,17 @@ public class VerificationService extends BaseService {
             return bytesToHex(encodedHash);
         }
         catch (NoSuchAlgorithmException e) {
-            this.logger.error(e);
+            e.printStackTrace();
         }
 
         throw new RuntimeException("Hash couldn't generated!");
     }
 
-    private String getSalt() {
+    public static String getSalt() {
         return UUID.randomUUID().toString();
     }
 
-    private String bytesToHex(byte[] hash) {
+    public static String bytesToHex(byte[] hash) {
         StringBuilder hexString = new StringBuilder(2 * hash.length);
         for (int i = 0; i < hash.length; i++) {
             String hex = Integer.toHexString(0xff & hash[i]);

@@ -1,5 +1,6 @@
 package de.szut.backend.service;
 
+import de.szut.backend.model.UserUpdatePasswordDto;
 import de.szut.backend.repository.UserRepository;
 import org.apache.logging.log4j.LogManager;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,20 @@ public class UserService extends BaseService {
         this.userRepository = _userRepository;
     }
 
+    public boolean updatePassword(UserUpdatePasswordDto dto) {
+        User user = userRepository.findById(dto.userId);
+        if (user != null) {
+            if (user.hash == VerificationService.hashPassword(dto.oldHash + user.salt)) {
+                user.salt = VerificationService.getSalt();
+                user.hash = VerificationService.hashPassword(dto.newHash + user.salt);
+                if (userRepository.save(user) != null) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     public List<User> GetAllUser() {
 
         // Default Values
@@ -22,8 +37,9 @@ public class UserService extends BaseService {
     }
 
     public User getUserById(long id) {
-        if (userRepository.findById(id).isPresent()) {
-            return userRepository.findById(id).get();
+        User user = userRepository.findById(id);
+        if (user != null) {
+            return user;
         } else {
             return null;
         }
@@ -38,5 +54,14 @@ public class UserService extends BaseService {
         }
         return true;
 
+    }
+
+    public long getUserByEmail(String email) {
+        User tempUser = this.userRepository.findByEmail(email);
+        if (tempUser != null) {
+            long userId = tempUser.id;
+            return userId;
+        }
+        return -1;
     }
 }

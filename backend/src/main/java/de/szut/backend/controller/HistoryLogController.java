@@ -22,6 +22,7 @@ public class HistoryLogController {
         this.historyLogMapper = historyLogMapper;
     }
 
+    @CrossOrigin
     @GetMapping(path = "/entries/{groupId}", produces = "application/json")
     public String GetUser(@PathVariable long groupId) {
         List<HistoryLogEntry> historyLog = this.historyLogService.getAllLogEntriesForGroup(groupId);

@@ -41,6 +41,7 @@ public class VerificationController {
         }
     }
 
+    @CrossOrigin
     @PostMapping(path = "/forgotPassword", consumes = "application/json", produces = "application/json")
     public ResponseEntity<ForgotBackDto> forgotPassword(@RequestBody ForgotDto dto) {
         ForgotBackDto result = null;
@@ -57,11 +58,13 @@ public class VerificationController {
 
     }
 
+    @CrossOrigin
     @PutMapping(path = "/updatePassword", consumes = "application/json")
     public ResponseEntity<User> updatePassword(@RequestBody UpdateDto dto) {
         return new ResponseEntity<>(service.updatePassword(dto), HttpStatus.OK);
     }
 
+    @CrossOrigin
     @PostMapping(path = "userByEmail/{email}")
     public ResponseEntity<Long> getUserIdByEmail(@PathVariable String email) {
         long userId = this.service.getUserIdByEmail(email);

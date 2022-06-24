@@ -121,7 +121,7 @@ public class GroupService extends BaseService {
         return null;
     }
     public GroupXUser addUserToGroup(UserToGroupDto dto) throws Exception {
-        if(getGroups(dto.getUserId()).groups.size() == 6){
+        if (getGroups(dto.getUserId()).groups.size() == 6) {
             throw new UserHasTooManyGroupsException();
         }
 

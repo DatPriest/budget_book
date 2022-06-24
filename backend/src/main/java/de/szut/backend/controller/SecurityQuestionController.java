@@ -19,6 +19,7 @@ public class SecurityQuestionController {
         this.securityQuestionService = _securityQuestionService;
     }
 
+    @CrossOrigin
     @GetMapping(produces = "application/json")
     public ResponseEntity<List<SecurityQuestionDto>> getSecurityQuestions() {
         try {
@@ -29,6 +30,7 @@ public class SecurityQuestionController {
         }
     }
 
+    @CrossOrigin
     @GetMapping(path = "/{userId}",produces = "application/json")
     public ResponseEntity<SecurityQuestionDto> getSecurityUserQuestion(@PathVariable long userId) {
         try {
@@ -43,6 +45,7 @@ public class SecurityQuestionController {
         }
     }
 
+    @CrossOrigin
     @PostMapping(produces = "application/json", consumes = "application/json")
     public ResponseEntity<SecurityQuestionDto> postSecurityQuestion(@RequestBody AddSecurityQuestionDto dto) {
         try {
