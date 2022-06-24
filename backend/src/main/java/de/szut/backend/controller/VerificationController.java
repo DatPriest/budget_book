@@ -60,8 +60,15 @@ public class VerificationController {
 
     @CrossOrigin
     @PutMapping(path = "/updatePassword", consumes = "application/json")
-    public ResponseEntity<User> updatePassword(@RequestBody UpdateDto dto) {
-        return new ResponseEntity<>(service.updatePassword(dto), HttpStatus.OK);
+    public ResponseEntity<UserDto> updatePassword(@RequestBody UpdateDto dto) {
+        UserDto userDto = null;
+        try {
+            userDto = service.updatePassword(dto);
+        } catch (SecurityQuestionNotExists e) {
+            e.printStackTrace();
+            return new ResponseEntity("SecurityQuestion not exists", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return new ResponseEntity<>(userDto, HttpStatus.OK);
     }
 
     @CrossOrigin

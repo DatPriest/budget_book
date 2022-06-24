@@ -6,5 +6,4 @@ import lombok.Data;
 public class UpdateDto {
     public String hash;
     public long userId;
-    public String email;
 }

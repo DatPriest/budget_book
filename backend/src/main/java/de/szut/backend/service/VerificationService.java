@@ -111,11 +111,14 @@ public class VerificationService extends BaseService {
         return hexString.toString();
     }
 
-    public User updatePassword(UpdateDto dto) {
-        var user = userRepository.findByEmailAndId(dto.email, dto.userId);
+    public UserDto updatePassword(UpdateDto dto) throws SecurityQuestionNotExists {
+        var user = userRepository.findById(dto.userId);
+        if (user == null) {
+            return null;
+        }
         user.salt = getSalt();
         user.hash = hashPassword(dto.hash + user.salt);
-        return userRepository.save(user);
+        return userMapper.mapUserToUserDto(userRepository.save(user));
 
     }
 

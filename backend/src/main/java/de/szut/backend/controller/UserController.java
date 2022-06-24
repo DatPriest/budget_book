@@ -40,6 +40,7 @@ public class UserController {
         this.userMapper = _userMapper;
     }
 
+    @CrossOrigin
     @GetMapping(path = "/id/{id}", produces = "application/json")
     public ResponseEntity<UserDto> getUser(@PathVariable long id) {
         User user = this.service.getUserById(id);
@@ -56,6 +57,7 @@ public class UserController {
         return new ResponseEntity("User with id could not found", HttpStatus.BAD_REQUEST);
     }
 
+    @CrossOrigin
     @PutMapping(path = "/update", produces = "application/json", consumes = "application/json")
     public ResponseEntity<UserUpdatedDto> updateUser(@RequestBody UserUpdateDto dto) throws SecurityQuestionNotExists {
         User user = this.userMapper.mapUserUpdateDtoToUser(dto);
@@ -66,6 +68,7 @@ public class UserController {
         return new ResponseEntity<>(updatedDto, HttpStatus.OK);
     }
 
+    @CrossOrigin
     @GetMapping(path = "/byEmail/{email}", produces = "application/json")
     public ResponseEntity<Long> getUserIdByEmail(@PathVariable String email) {
         long userId = this.service.getUserByEmail(email);
@@ -75,6 +78,7 @@ public class UserController {
         return new ResponseEntity("User email could not found in the database", HttpStatus.BAD_REQUEST);
     }
 
+    @CrossOrigin
     @PutMapping(path = "/updatePassword", produces = "application/json")
     public ResponseEntity<String> updatePassword(@RequestBody UserUpdatePasswordDto dto) {
         if (service.updatePassword(dto)) {
@@ -83,6 +87,7 @@ public class UserController {
         return new ResponseEntity<>("Could not update password!", HttpStatus.BAD_REQUEST);
     }
 
+    @CrossOrigin
     @DeleteMapping(path = "/delete/id/{id}", produces = "application/json", consumes = "application/json")
     public ResponseEntity<Boolean> deleteUserById(@PathVariable long id) {
         try {
@@ -92,6 +97,4 @@ public class UserController {
             return new ResponseEntity("User could not get deleted", HttpStatus.BAD_REQUEST);
         }
     }
-
-
 }
