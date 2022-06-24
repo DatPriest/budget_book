@@ -36,9 +36,6 @@ export class AskQuestionViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginService.checkLogIn();
-    this.askForm = this.formBuilder.group({
-      question: [''],
-    });
   }
 
 }

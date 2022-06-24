@@ -122,7 +122,8 @@
 		}
 	},
 	"askQuestions": {
-		"template": "Ask a Question"
+		"template": "Ask a Question",
+    "placeholder": "Write your question here :)"
 	},
 	"category": {
 		"header": "categories"
@@ -138,11 +139,12 @@
 		"msg": "Invitation code"
 	},
 	"editGroup": {
-		"grpNameMsg": "Surname",
+		"grpNameMsg": "Group name",
 		"header": "Edit group"
 	},
 	"editPassword": {
 		"header": "Change password",
+    "passwordOld": "Old password",
 		"password": "New password",
 		"pwretype": "Repeat new password"
 	},
@@ -168,10 +170,11 @@
 		"date": "Date",
 		"description": "Output",
 		"expenses": "Expenditures:",
-		"headerExp": "All issues",
+		"headerExp": "All expenses",
 		"purchasing": "Purchasing",
 		"rent": "Rent",
-		"search": "Search"
+		"search": "Search",
+    "tooltip": "Press 2x to search!"
 	},
 	"faq": {
 		"ask": "Ask a Question",
@@ -203,7 +206,7 @@
 		"Überschrift 1": "§ 1 Scope",
 		"Überschrift 2": "§ 2 Subject of the contract",
 		"Überschrift 3": "§ 3 Obligations of the customer",
-		"Überschrift 4": "§ 3 Privacy"
+		"Überschrift 4": "§ 4 Privacy"
 	},
 	"history": {
 		"header": "History",
@@ -276,7 +279,6 @@
 		"header": "Notifications"
 	},
 	"password": "Password",
-	"passwordOld": "Old password",
 	"period": {
 		"all": "All expenses ",
 		"header": "Period",

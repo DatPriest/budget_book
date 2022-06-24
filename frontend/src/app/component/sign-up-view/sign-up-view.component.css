@@ -121,7 +121,6 @@
   font-family: Raleway, sans-serif;
 }
 
-/* Login Felder */
 .input_field {
   padding: 10px 0px;
   position: relative;
@@ -139,7 +138,6 @@
   width: 160px;
 }
 
-/* Registrieren Button */
 .register_submit {
   background: #fff;
   font-size: 16px;
@@ -167,7 +165,6 @@
   outline: none;
 }
 
-/* Cancel Button */
 .register_cancel {
   background: #fff;
   font-size: 16px;

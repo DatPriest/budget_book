@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ExpensesModule } from 'src/app/model/expenses/expenses.module';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { NewExpensesViewComponent } from '../new-expenses-view/new-expenses-view.component';
 import { Observable, of } from 'rxjs';
-import { GroupService } from 'src/app/service/group/group.service';
 import { AppModule } from 'src/app/app.module';
 import { LoginService } from 'src/app/service/login/login.service';
 import { PeriodViewComponent } from '../period-view/period-view.component';
@@ -39,10 +37,6 @@ export class ExpensesProfileViewComponent implements OnInit {
     this.dialog.open(PeriodViewComponent, dialogConfig).beforeClosed().subscribe(result => {
       this.timePeriod = result;
     })
-  }
-
-  download(): void {
-
   }
 
   ngOnInit(): void {

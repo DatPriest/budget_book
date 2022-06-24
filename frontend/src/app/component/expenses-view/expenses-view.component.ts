@@ -74,9 +74,6 @@ export class ExpensesViewComponent implements OnInit {
     })
   }
 
-  download(): void {
-  }
-
   ngOnInit(): void {
     this.loginService.checkLogIn();
   }
